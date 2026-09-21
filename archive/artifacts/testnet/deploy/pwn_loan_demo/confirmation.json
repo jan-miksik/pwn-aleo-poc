@@ -1,0 +1,123 @@
+{
+  "status": "accepted",
+  "type": "deploy",
+  "index": 0,
+  "transaction": {
+    "type": "deploy",
+    "id": "at15k3cajkrzq98ygluqkq5v6632m2ngq8ywwgnwym7k6acppfa5upqscede2",
+    "owner": {
+      "address": "aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s",
+      "signature": "sign1gsqdccusg2nzurnjl3n0t2huxn8vth078c8wlc0ev4fq9e2swqq68vw25wrd9qp0yv8z5lnq6zfn685wuscyezrguld66sumvsv75qcegrr08yuxfcqgwaskqnzdz4ppd5j6sey7aplul0kah3s74q2mpsa4cj3kwendvkrgfg8w4ea04qm6w2heusxsqy2a2y0fypkmlwupznw3lne"
+    },
+    "deployment": {
+      "edition": 0,
+      "program": "import credits.aleo;\nimport pwn_config_demo.aleo;\nimport pwn_elastic_proposal_demo.aleo;\nimport pwn_hub_demo.aleo;\nimport token_registry.aleo;\n\nprogram pwn_loan_demo.aleo;\n\nstruct Authority:\n    domain as u8;\n    account as address;\n    salt as field;\n\nstruct Loan:\n    loan_id as field;\n    commitment_id as field;\n    credit_amount as u64;\n    collateral_asset as field;\n    collateral_amount as u128;\n    repayment_amount as u64;\n    borrower_auth as field;\n    lender_auth as field;\n\nstruct State:\n    witness_hash as field;\n    maturity as u32;\n    status as u8;\n\nmapping loans:\n    key as field.public;\n    value as State.public;\n\nclosure rounded:\n    input r0 as u64;\n    input r1 as u64;\n    cast r0 into r2 as u128;\n    cast r1 into r3 as u128;\n    mul r2 r3 into r4;\n    add r4 9999u128 into r5;\n    div r5 10000u128 into r6;\n    output r6 as u128;\n\nfunction accept:\n    input r0 as field.public;\n    input r1 as field.public;\n    input r2 as pwn_elastic_proposal_demo.aleo/Terms.public;\n    input r3 as u64.public;\n    input r4 as token_registry.aleo/Token.record;\n    input r5 as field.private;\n    assert.eq r4.token_id r2.collateral_asset;\n    not r4.external_authorization_required into r6;\n    assert.eq r6 true;\n    call rounded r3 r2.collateral_ratio into r7;\n    call rounded r3 r2.repayment_ratio into r8;\n    cast r8 into r9 as u64;\n    cast 2u8 self.signer r5 into r10 as Authority;\n    hash.bhp256 r10 into r11 as field;\n    cast r0 r1 r3 r2.collateral_asset r7 r9 r11 r2.lender_auth into r12 as Loan;\n    hash.bhp256 r12 into r13 as field;\n    call token_registry.aleo/transfer_private_to_public pwn_loan_demo.aleo r7 r4 into r14 r15;\n    call pwn_elastic_proposal_demo.aleo/draw r1 r2 r3 self.signer into r16 r17;\n    async accept r0 r13 r2.duration r15 r17 into r18;\n    output r16 as credits.aleo/credits.record;\n    output r14 as token_registry.aleo/Token.record;\n    output r12 as Loan.public;\n    output r18 as pwn_loan_demo.aleo/accept.future;\n\nfinalize accept:\n    input r0 as field.public;\n    input r1 as field.public;\n    input r2 as u32.public;\n    input r3 as token_registry.aleo/transfer_private_to_public.future;\n    input r4 as pwn_elastic_proposal_demo.aleo/draw.future;\n    contains loans[r0] into r5;\n    not r5 into r6;\n    assert.eq r6 true;\n    add block.height r2 into r7;\n    cast r1 r7 1u8 into r8 as State;\n    set r8 into loans[r0];\n    await r3;\n    await r4;\n\nfunction repay:\n    input r0 as Loan.public;\n    input r1 as credits.aleo/credits.record;\n    input r2 as field.private;\n    cast 2u8 self.signer r2 into r3 as Authority;\n    hash.bhp256 r3 into r4 as field;\n    assert.eq r0.borrower_auth r4;\n    hash.bhp256 r0 into r5 as field;\n    call pwn_elastic_proposal_demo.aleo/receive_repayment r0.commitment_id r1 r0.repayment_amount into r6 r7;\n    call token_registry.aleo/transfer_public_to_private r0.collateral_asset self.signer r0.collateral_amount false into r8 r9;\n    async repay r0 r5 r7 r9 into r10;\n    output r6 as credits.aleo/credits.record;\n    output r8 as token_registry.aleo/Token.record;\n    output r10 as pwn_loan_demo.aleo/repay.future;\n\nfinalize repay:\n    input r0 as Loan.public;\n    input r1 as field.public;\n    input r2 as pwn_elastic_proposal_demo.aleo/receive_repayment.future;\n    input r3 as token_registry.aleo/transfer_public_to_private.future;\n    get loans[r0.loan_id] into r4;\n    assert.eq r4.witness_hash r1;\n    assert.eq r4.status 1u8;\n    lt block.height r4.maturity into r5;\n    assert.eq r5 true;\n    cast r1 r4.maturity 2u8 into r6 as State;\n    set r6 into loans[r0.loan_id];\n    await r2;\n    await r3;\n\nfunction claim_default:\n    input r0 as Loan.public;\n    input r1 as field.private;\n    cast 1u8 self.signer r1 into r2 as Authority;\n    hash.bhp256 r2 into r3 as field;\n    assert.eq r0.lender_auth r3;\n    hash.bhp256 r0 into r4 as field;\n    call token_registry.aleo/transfer_public_to_private r0.collateral_asset self.signer r0.collateral_amount false into r5 r6;\n    async claim_default r0 r4 r6 into r7;\n    output r5 as token_registry.aleo/Token.record;\n    output r7 as pwn_loan_demo.aleo/claim_default.future;\n\nfinalize claim_default:\n    input r0 as Loan.public;\n    input r1 as field.public;\n    input r2 as token_registry.aleo/transfer_public_to_private.future;\n    get loans[r0.loan_id] into r3;\n    assert.eq r3.witness_hash r1;\n    assert.eq r3.status 1u8;\n    gte block.height r3.maturity into r4;\n    assert.eq r4 true;\n    cast r1 r3.maturity 3u8 into r5 as State;\n    set r5 into loans[r0.loan_id];\n    await r2;\n\nconstructor:\n    assert.eq edition 0u16;\n",
+      "verifying_keys": [
+        [
+          "accept",
+          [
+            "verifier1q9qqqqqqqqqqqqz8gyqsqqqqqqqx7sgpqqqqqqqq2dfsxqqqqqqqq20kqvqqqqqqqqldzqgqqqqqqqqvqqqqqqqqqqqrq3ukehty5x0rv3uydlksxrxg7c650mky93pq50gfvvpgkh9a5wzltl34cudskg3z4lzjw6vrwcspzdrudexsjsfhvhlcc3yqeznhxy28m3nn8cxm025f9rnee3pqck4n7ejcpev5ern8jdm36enkjs2qrsr5cgsjz7zg0vxanqj0j7nry788wj568lcdf8wk7xdx68wzfjhc2wau62cf9x4wjly7jmg995q9szz2jluvjurgnkvaej5tj8mwlknmau4jh6k6mety0pv8yfawzaxnnym084n8j000pgj7c6xwcglavq8zmkmmpv2m9h6u3a2k9s595lmf8k9pg4xnj3tlfr0d2u6zld8cuenhs7kcr0t5f86xxrwdvx50tgqs9j8qmuflaxgdjvv7lcpzs982tzcdamry89c535zrhyrt638zx20qh3hg7p5jc5x2dy33vxemqrup75cv3rvmgaekfuq568ewcvax9aza7rx5lv9qgdrd0pw5a2peve9cpmgw0fz7smjfmep2pmds5qqqqe0m6sh8n7xv3s240m267g3fyz6rgjwkjxdqng59kvd69y235vl4k9256n37lcq37cfjac4x8cqnqpj8m53n62kd8m9c8km9lhers4a80j6899t25acagej6lsskqyyh0h5nvvweww5plq97wgad2txddqx6u8zd8x996vt5qt2k6cr2rhadcw5gxddnxzn73mllwky4n0ylldvlqdulmn6x4m7n9s7mhhaftgqq8vxr744pktlj5xqpprtsxaa34lqgkvgkrnx2qs3s42u4w5dnmgqqs9t80vqpd9cylvkxlnvc66cqhwl8ufdklcuam0tzgw7jnjv7djzr98ht8a30lryrjzakn46sqv4cqznspsswnf0xvz54wsxu4phgrpazpvln8vjdyqgdel97puf084m369n50naa8wwnwf7ymrm6t08jn74qzqqqqqqqq007mqy",
+            "certificate1qyqsqqqqqqqqqqqjjpje4arn0p92zeh7cjsh0mhthnvjuy3xp7kc5nxf3zju76gpg49mn88g7fxr6u9j704fnjkft2qsq4ksddh"
+          ]
+        ],
+        [
+          "repay",
+          [
+            "verifier1qysqqqqqqqqqqqzx7yqqqqqqqqqx0ugqqqqqqqqqka7syqqqqqqqq8srqvqqqqqqqqhkgqgqqqqqqqqvqqqqqqqqqqq9f6xcupch57pzswsjrgf99xzqp56h8ru7kzhuuqsucn0m7xxrg8mwhmxrmv4w0t0jn2hshjsexsgqnxq73qlumsrdejkpghqe69famvjgqefwkm28mkhyaz6q3aqkte9zfwqzf66uygcznl3wx203u42spd88watjjs6je6ge2eqfw3v0v0cvs6hx6pdnzhpn99nw9z9tndaxv3hkelg0dx2jtrkzqldd896nqz0jmtqlnchw3tpgg6tn9v0p5g0k4m7fqrcfvy233crjwqwpflc0wdc6slkhw45nvmkl8r8l4jyp5q9jn85uhlh8tpn0tecnkkccttv8kfjmagp5vlrpxlgt89u5l6re3v2kh4m4el5x7895frm4njvj2cqrdl649qjsdm4y4gezm2afd5kjary7uw3radujxan4daha4g940az8sr62l5rhx8enyqw736ddl4vqveekmqpfpwvz3ld98x494r4yx0zt6fwz3yan49mf3jpyxg7xw5tszz2708tgh24rxfmk5lnksyuczuuetc6tllt2d4hrxmra5xadm30f796h0a7fd9xjhvsez95fj8t4l6rgm6eskck84yqk7jj3n0stsyplv2cvy5dsl7mraj5xerw8k948kjq700ex6jl80wzc4s3j80y9hz2f0mrxpahnuzf840ntdfaa5q9f0xk4e3hvvqtyjf2yy90hyrkmct5kar9ng6aztg86508k3nmt272g6psjq0pvcyaflra46443e2qrmd68xhr0x8ettdvjl5fe6ehpclsj055gj3kfx97mk04u68z04gy2294mwj2rd4vvvn04prdrp9qpnryr5e4a7h4sgrmjuqh2t02q6d2kr2mng85alz0rerjshey6arf3gcpj0ltpdfeyvd53233r8ecgqd6kkmc4xeu4fspj9ag4cp37q2067zv92pkdhe0g9kke88yrt2qkyyaszqqqqqqqq3vckmf",
+            "certificate1qyqsqqqqqqqqqq9x9wac54ejffak9prhp44h02atqvyj5nlpc56jwm6dp5z7q2pc2zpetee3n05ms86jnqjk6skgsuqsqszqquk"
+          ]
+        ],
+        [
+          "claim_default",
+          [
+            "verifier1qysqqqqqqqqqqqyx6yqqqqqqqqqfl5gqqqqqqqqq8cysyqqqqqqqpf6vqgqqqqqqqpa5zqgqqqqqqqqvqqqqqqqqqqqxdq9tklu3fkwrckekvy0ttnlppq6scfkr9f9qp7xp5jz5tgl7m8f466f9at7v7sflrsl6457cp25p2qd9wrw2mf3sr9x2960z78zlm8mnkv37mwxpy5vku7ze5rs23za27m7p3mm5fz68340arz6yl6ygpwxslm26e634y2u6r8pvvddz0zzjehhzywspawuv4323l0s3ppmw492rjk8hcckktjl66xtj2mf4sq0esg9s4hwd6x3hxvpxl6xda7ypw4s07hs4tuy494kjfyqt3ywjhm2ngqq4kqlhu90hq48jgssprqyx67eedd3rvnqmxnfxjjzg7smmu7ce2zrlpa3rsd7wr6844j9a2f3y3kp6vhgdqy27atg4k2ehf2qyfgzerwkxn03xs4p8qengpapvpu2w32dfump6nkjesswa2qs3uzfmppdnd3l55845gfcdhl5ace5pxlfrvw6lhfyjvx35n0te5s7xcys0md0xxulsyg0r2egj9me6xpj7c2v08muyn55t0z2ghrtut0zqpva80f2fd6ma4y98f3lks5grvs93evfmqc29sezfankyd0xu5k6cxlrj6gw2s84f20t66s074yp3s9gr9ul6rekrujw376q5zyzcvuec94ag7y7n640gdwf34ehzhxsnkp0frfxsssa9v9w5qxd3ysmmhqyl82fmm9zyy4r5nj83ajy44uphrg76f5tdt59d5fqymdcj2zm0vrwa3ej8x0s2u4h5hsrn9x5zv5qpe9770zyxwxqkm5pkyxmr8kpc2j0ckjvvt666ejk2mlcly3m48u46s2w6pvc75udmjxkl2qyduzqp8phyxcsun220dhtfsehr43c36h666u33d0kf50jufmmzmt9uny789mfe63wlw067zskjq6k6kdwgranflx56frqj7ruzsllg8ucpfg5eq2nv6zz38336fq43ua2er8aycuxqzqqqqqqqqyg2qky",
+            "certificate1qyqsqqqqqqqqqq9gzqyze977zp6wrlm9ylxhdy3qyduazm0ucwv5mvq840k283thnmrxe4wxxrspxl4a7xsgwylkqgqsqje88yz"
+          ]
+        ]
+      ],
+      "program_checksum": [
+        "137u8",
+        "214u8",
+        "178u8",
+        "96u8",
+        "65u8",
+        "1u8",
+        "68u8",
+        "244u8",
+        "211u8",
+        "87u8",
+        "151u8",
+        "248u8",
+        "12u8",
+        "236u8",
+        "28u8",
+        "76u8",
+        "56u8",
+        "103u8",
+        "30u8",
+        "60u8",
+        "17u8",
+        "251u8",
+        "223u8",
+        "109u8",
+        "80u8",
+        "180u8",
+        "244u8",
+        "183u8",
+        "28u8",
+        "90u8",
+        "42u8",
+        "39u8"
+      ],
+      "program_owner": "aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s"
+    },
+    "fee": {
+      "transition": {
+        "id": "au17fkllvzn5pz7hyh6x0u7wf7y43stzh57j9u6ta49y6dwe4mnnurq659jc4",
+        "program": "credits.aleo",
+        "function": "fee_public",
+        "inputs": [
+          {
+            "type": "public",
+            "id": "7750048491682671766852728748074243770817676058948996899513798149579781874598field",
+            "value": "7356942u64"
+          },
+          {
+            "type": "public",
+            "id": "2358331227921011945621924338689496283677536773656379848605050796750813309030field",
+            "value": "0u64"
+          },
+          {
+            "type": "public",
+            "id": "6832194086537364486243765361511631703570849163191033380904522804316187149399field",
+            "value": "1382626595115607630357527317022561864563482915639408014235243744728120567624field"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "future",
+            "id": "879644123018523846572715058726809535085224487669118725343440407653348873274field",
+            "value": "{\n  program_id: credits.aleo,\n  function_name: fee_public,\n  arguments: [\n    aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s,\n    7356942u64\n  ]\n}"
+          }
+        ],
+        "tpk": "1216482021649362744185116534355695615344232543566004545929290428954300889579group",
+        "tcm": "7428763842234308581581859178067461312372161097336398785330174315421860261265field",
+        "scm": "6536434824894319872886296201129312333425093509186945588021170383533578947922field"
+      },
+      "global_state_root": "sr1mdkajhemmf3gt3mjz840yzyvt9rsxulyj9zqza2wd5t2gqtzrsqswvlmqf",
+      "proof": "proof1qyqsqqqqqqqqqqqpqqqqqqqqqqq27e0u7hsx7lcjzfz8ylnp0k7t9szslwr0k28uw2645d7m8erh4288jqtc0e825ynm2jfalnfmjmcpqym430scaes83djamhj6al7pge00v2va8cdcmgw7fenupaf6el0g2spthwjqgh8ry0m6gnc32dt67qxxra96m844emjxe308svhkqfgq7ydj9ya93qvpvzyjh8gyfxv8l384z2tx5huxgukdmvl40044l6qf69ltalv8p03e7r5razx2yaxq3fm9glff72y4vt53fxv39jy7jumns4rk7w6z5xwl37gvv4sf85sq7ks9g2pw677dcd2k5j4vj7c9nec9f5wk6fxulmt9xwwl2dqpenerak0g6240z8u3teea7k28pd0sztrg45htq32y0gswkx9qv5wyva9l3hr6xj3mt8k3k8hwlc060a9s08ct9j69cq22xys4hzfn0d2asygzedmh4psg9jw4a8jd2fulk56v7qldapw97arzum6m3r0tvv53z54x9jggxrz4kpvyk4et5r0y4q2y9x0pn9p5g6xsklqk2vhry8q5jz0vclmk5he52pf5uu5pyp0r06rtysf5nzpl4n8garne73nh3cqy9wgjqzwksr299kr29yx8mmwfzdcmfcnh63q95wlz9ccscf4y7wwdeqndv7js3gakzcuv9vej65sq0grhr2w6wxghe786q5ylzsfxkwh3yw3e3ykfjkd9y5crxeyfgc8s6qdg4z2gy5a7qkr9jle6h4jq9xdupdvgx7ffa4m93hp53vjncze508lujlpj5w6enmzdm2raue3n7sqjsgyhy7hecuk9yhhghy2lq8vq4esnkxqh6j84ugzrxezgc8tg0fvfncs9algrcuc99jax2dqsx9r5x2n7hwywe33x3wxq8t5m66yy6q9lfhyu5msy4zszt49frdqt4n88vw3cu8cyvlcnpe082p8ueumzz9u7y32g9hy3ukzpcy2kqyz03gawwmmu6dh0z8s2433wj832e0dw5xwucz7sq2dg4vqvsrwh2rg33w9ky8ygk7x998csfcqv77zff9wafwqg0xdw0trry28uvavkpv57qfahqyjgmkleyujfjqs2njhyruzx8a5x079gf948rygkpuks6wdx702pmvxnvvvvt3tctz82deksyuehr9znwadjg89454hmcfgfqvqqqqqqqqqqqewhkqlxpvrvvmu7g509hmjl77up68dn2jj7fheec2670we9l48wrmhl3apjy7kzrnypva32jqm4qqq8j758asvc70s3llrwku76p3ayqfag97f6lckfqlxdwd9dgmvt5kjtqpetml6v8ax0r99vanlu2qyqq8gku5uj5c7catekzw5ygp5edhq7pk3t26rqksacmxgucwm4cwhsh64cmuvlg8dpzhfelm95q8d9xy4pwh8l58w4gnfcmetnk6s7wn76dh9rtyzt86kdqqeygqhnyfjrsyqqdns347"
+    }
+  },
+  "finalize": [
+    {
+      "type": "update_key_value",
+      "mapping_id": "2855157744830843716005407030207142101853521493742120919939436395872133863104field",
+      "key_id": "6506976524296272132507800219769308334008756365166160310746465452681451928863field",
+      "value_id": "3025255191197257045509039754371005151356216256686400433405444718440037782680field"
+    },
+    {
+      "type": "initialize_mapping",
+      "mapping_id": "2178118196742018829566513362770681439524125777085326482483352536388266909825field"
+    }
+  ]
+}

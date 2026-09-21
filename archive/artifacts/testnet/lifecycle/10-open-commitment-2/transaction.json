@@ -1,0 +1,174 @@
+{
+  "status": "accepted",
+  "type": "execute",
+  "index": 0,
+  "transaction": {
+    "type": "execute",
+    "id": "at1l5fe5hrnjypzswnucuj726e4qxd7pm6tzec8gmd6x8lc9d5j2v8sxsw833",
+    "execution": {
+      "transitions": [
+        {
+          "id": "au10wf2j2zu07d9yk84kgze4egcsrv2ge42td5jelzua0u0wtxv4gqssz0ks0",
+          "program": "credits.aleo",
+          "function": "transfer_private_to_public",
+          "inputs": [
+            {
+              "type": "record",
+              "id": "5510409055186039344300767972740440175164105932698775122471825772096418898855field",
+              "tag": "3720310784653673872397973415099870962212208327608537806330989760597355411874field"
+            },
+            {
+              "type": "public",
+              "id": "7409665886111631606382587890623032622529798930322641707417149434205333770016field",
+              "value": "aleo1ksdvl3asju5ycclrktv5rutc0r8p0g9attxda3ew7haqe53tgvrs9q2ps3"
+            },
+            {
+              "type": "public",
+              "id": "682252841394104793664478110311728291635628921595969192315702947445168314822field",
+              "value": "300000u64"
+            }
+          ],
+          "outputs": [
+            {
+              "type": "record",
+              "id": "4776926347888404186661771949030841510349018867843226331690002882037759587952field",
+              "checksum": "5470000121987140741182857068839028377471750473133997605573360915849764251454field",
+              "value": "record1qvqsqllmu84ff2kn7usyefrysuz790luhxvusu6dds7nkyglqzu5szqsqyxx66trwfhkxun9v35hguerqqpqzqqy84tc9q0jnvy46h59p98a4qkh43xj6mv7daknvy5979jl9vgfqqyftpmtqup26t583hr6alxksec4lauf9l33y84y7xwv479stxlpq3zalak",
+              "sender_ciphertext": "8050141958397457785239278407396320829517263296487918652124594394552131069068field"
+            },
+            {
+              "type": "future",
+              "id": "8247484570578513329578034606546497513790241827433437190761715675304419784845field",
+              "value": "{\n  program_id: credits.aleo,\n  function_name: transfer_private_to_public,\n  arguments: [\n    aleo1ksdvl3asju5ycclrktv5rutc0r8p0g9attxda3ew7haqe53tgvrs9q2ps3,\n    300000u64\n  ]\n}"
+            }
+          ],
+          "tpk": "6479862300805192888075715201698506339937948713980013008706213376548214496472group",
+          "tcm": "6597692830884281752800265938591615147916731430223796834209488451495951057409field",
+          "scm": "1454535018128144123687457128790150142728239349835670103187461168274644972636field"
+        },
+        {
+          "id": "au1vvcdnajstgxxvmm5eraut4e54uca94f45wjarly904juywwmruzq0q50mh",
+          "program": "pwn_elastic_proposal_demo.aleo",
+          "function": "open_commitment",
+          "inputs": [
+            {
+              "type": "public",
+              "id": "1489845574480512222387543858771100091804772680545650239064945103705225587184field",
+              "value": "2field"
+            },
+            {
+              "type": "public",
+              "id": "4601111619916976823209267507991284474538380446134997102563812394464040005522field",
+              "value": "{\n  credit_asset: aleo1lqmly7ez2k48ajf5hs92ulphaqr05qm4n8qwzj8v0yprmasgpqgsez59gg,\n  collateral_asset: 973588975913841173360640209547978874144844549470571553683862512406247959512field,\n  min_draw: 100000u64,\n  max_draw: 300000u64,\n  collateral_ratio: 15000u64,\n  repayment_ratio: 11000u64,\n  duration: 20u32,\n  expiry: 19673569u32,\n  lender_auth: 4533584518326718400798857678128152200654461163793763827119035632868910830941field\n}"
+            },
+            {
+              "type": "external_record",
+              "id": "1795915335961909929159103973683034384608144719501505301570954494972947178220field"
+            },
+            {
+              "type": "public",
+              "id": "2856418451562893228164844574342905162451905890435245206064697813478723382165field",
+              "value": "300000u64"
+            },
+            {
+              "type": "private",
+              "id": "710694724508525520037124997163585876324195991612370485446518598412237435337field",
+              "value": "ciphertext1qgqfnev48sssklesjmgtw5q6jgytd2lkf88ulsf66ksdvyegd7mm6qzf9na87u574x97xhfwx5lfqp5fe3jsmxccp935avlntdyk48udpyh5kv9z"
+            }
+          ],
+          "outputs": [
+            {
+              "type": "external_record",
+              "id": "2196112936105865079215127655479659020437175811465648573491195068687786458720field"
+            },
+            {
+              "type": "future",
+              "id": "5280540473948257885166700995962570124942514116288271062849997430854464463060field",
+              "value": "{\n  program_id: pwn_elastic_proposal_demo.aleo,\n  function_name: open_commitment,\n  arguments: [\n    4319242018480336643013111020528709485912982167774495916274927734089695154625field,\n    2field,\n    {\n  credit_asset: aleo1lqmly7ez2k48ajf5hs92ulphaqr05qm4n8qwzj8v0yprmasgpqgsez59gg,\n  collateral_asset: 973588975913841173360640209547978874144844549470571553683862512406247959512field,\n  min_draw: 100000u64,\n  max_draw: 300000u64,\n  collateral_ratio: 15000u64,\n  repayment_ratio: 11000u64,\n  duration: 20u32,\n  expiry: 19673569u32,\n  lender_auth: 4533584518326718400798857678128152200654461163793763827119035632868910830941field\n},\n    152983198055069933998723530287497419119538329438475837120376750120578811328field,\n    300000u64,\n    {\n      program_id: credits.aleo,\n      function_name: transfer_private_to_public,\n      arguments: [\n        aleo1ksdvl3asju5ycclrktv5rutc0r8p0g9attxda3ew7haqe53tgvrs9q2ps3,\n        300000u64\n      ]\n    }\n  \n  ]\n}"
+            }
+          ],
+          "tpk": "2096340236651908912469870619876427299885631433253903295569103830174704104489group",
+          "tcm": "2795360410631691535495482219521185433915046020443905540152454833108850116440field",
+          "scm": "1454535018128144123687457128790150142728239349835670103187461168274644972636field"
+        }
+      ],
+      "global_state_root": "sr1vuecqzlsvdw32hzg435glxpwp73snfqgg0pkr0y0vhc79p6xf5xqla2gxw",
+      "proof": "proof1qypsqqqqqqqqqqqpqqqqqqqqqqqqzqqqqqqqqqqqqyqqqqqqqqqqpunty9fmv8phjtpfcvcjj9qe6dn52e64r22q3dhtxg5kmu7prteqzxmtrwq0t57x708vea97m5u8spdfzsm2rmljypad8yhj08wlv4svde4e6v27rsss4yyl7r2d335mpu5y3qdyv5mmgq0p3zpl5aw0pq9gq6pchdfgp850awjc2t0cz527kml0lh46sqgalt0mgxz5xwrycph2f9eu3gzywk48a7q70nraezqqrhxlpfach46637kevw2c8wrx46ukepp4pfkp2kkqgskkelx7ngtcf0z5m0kmxpjt3ve9ppcnlsqnqqaep33exn3e4h5dywhdh80llqxlh6wxkvgkrhktznp4lt4nps7u3f8csjwnnrzpucgpzt86dutxhqxp9pqepv7vv47eyqpum3ptg039z3lnht0z0rlm8cdz5ah2gg8jt0je2xu9vfky7r2nrswl88vkacqrdrlgh2yqry223v682vxe7v8kvq92s9a4cdqmlg9kz05e2j38szk9eupgnyvs93rz5w7mrj3nc3ypxwyswuem2dks5cyd042zw84rwh37e2uw5cwwefunq5ft8a00pcu6w5wkp96dc3qkrhfyqr0lcp0gzcs7ytv2h3gyet6g6c3a53tne2jvsteyavpq0envs62jujw58hz0z762ewwyedcqrt4md9lhjsc2qrf73svl5yrq4k27xw7kpfr0eytlhnt07zasc0hcegznz8heyl72js0pmzce825eh5hasnq6srn2fqyr037vl8hnlmj6pufz7dm6wlfppefwfhg55akuvzuh0mskgy6t3f2fn7w2kwq6kc9qdj8wvw9exqqk96r4xx8e2spkdn8wax2e6je9nwqagh0uw0p6lx7xmurw95wfhy2lfmnupltj95jjs4848r7yfasqaafjk49uew9zrqptks9s8aregcqrs4npacxfv0g0j2nyu4d54jhq7efcf9a6u5vgzudjaazzs95gqhjfmqw9slatkjuh4w4g8hlxk3nxkc885vyunsyn834ktpc4jt53me86gxpzdxt9de50eq40r2k2qpvaa3977avhdrh8xpd4ejunnqem043lqmz0mdtnv9r2j5apq07azr6tl6563yd2vnhn76kxqfs6jqzek6zc4gx9chprefqtlraqwtk96jgfp8hk28kms4pa82e66g33p3xdktse64cg79n4l07mn8ladcq3kqg5hwn9kzk0fte5gunnat6ecjyqy0j6w3602mhxsxd4ww3v7ea4gcw2u9fju3c3grm0gt6zksspjenlmast0hekpn4et8h0kaelmgp72cult99use3yj22th647wgp0pm42cf4a36nujsgsfxu79na3w9tq04q238m4ganrs54g4uuz6q3ep4j8g2v04tv76uthhdzdfy5m5xt7yade7cmsuc474hh2arppz8g76vs6tmusjr6j54y64lrja58vy84wy98007j2f22evxszj2ksv8uek9mtqyzynah0kgwklje8j5qysjat8k2lk6jd0twat2q0x7cxk2kjulc4aml4k2at2qfu9ddjxakx94f7f0g83ydjp4fwcjg0hs9su6u62t7nxdezt79s2dya9wzz6f2mv69vxxfar0yjzk4k7dhwkrhj6dmnlcc4h0tza00twtgn3ume4vkxzy4wsrmrhp65c0l7p67dzrkznm2d4zqp2kxw274vqfz48ycmn7ka9s2p68720txzmarcwlhpq7mu4cz8fs8stmxsgz0r0ckq4vg4nx6ngmwjkjy0zuwpnuexl7qq6jznppzzpwpynqg6pvrgsmgcnf6pylnuqnw92qxy6wg6jnqnuq9vur2nr7affp48j0cdhqrz2yskxzzx27c8ex8vywzy40tx9smnvr9ksym5dwc36fsuyfkuqyrwh645u0hd807qw5kecdqz5mm2yqjkq8yr8aqkvy4wt5t8mfruvy64nz7zy6d5r6tdvqfktdwupwz6sauq4ygxwr4awnzlzj9wdfmj5navkrsuatnxxlxe3a9cem2r6g3apessjswaf53qwzv2musm3u5w2fr54g5a8hqjkwtheeaxwwrc5gygevx5saxltt08qruw95gyfyw55y8rfkhpy5ex8kpany624ytvnyn4uyx32fdt3rsgxaszc5rct40x5uentcjw5z0geugk55lchtl8ke0yqsvjdzqp9peum45lpyrzvztsfmx80fdluxrl4a6f6ddsjw7de52qt9y5wc7xjtfdmpqjq6dr6k8yqk7cq2wp9cv5zd3vc4kdj0ek93c078u33d2k8gvxjehpfm8cl6vdngzpqauj5uffhujwl7phznvrsc9dj8fveat0ky55dds7960m5jcg0ajwkrr75ty55429utushjmvsrzmhp4aaj0ennzl8kwe5cwyp2gdmj5tcruu6qlnjasxf6pd8mump0da0hwmr07aj9e7aaywcs35gysjy8w792qffx948v4a2t3wkf9qcezvjwz0vytquy28wpx56cpj4ztxm4n7d3gpyt0ruc776fx5tuc3ywt5ljssv75ga9jnmcd0jw5q9c8vr87mf87cqn5xqhrm76tlluzjtsqgnug6hd67dzfl430lz0jc8faus7xp8d5ztawwn498ete2sptf8z6cuz3z09ejlhg99lmxqalu7c4lha9edavvyuqh8g0y53c6qupsqqqqqqqqqqq09r6758gwng0az8ey06t6lktqgf7yqmr48mq7ye5d48wccn7ugx722ehdutf23kyu6e27zqjmc5qqpskf07m8yrc7l8cpvk5dmhu3eysy0afw7u9phaakp9l8lcm3azvp425lhz6g0dxqun07ukljxrczsyqedgfsfrnnj6mc3ccklq0pa0ux5qutpdkyycadd4qqkvqkfn226zrl0teaa85t0jhjl9kshqv09dk6l4u7y4ef8cfchpv5cdgc3t0kst3aw30vc95fdaurmrwlrpxdnsqsqh7esj6"
+    },
+    "fee": {
+      "transition": {
+        "id": "au14fepmrxww5seaj0tcf48t9xsc47xvsep9ryxgpdgy5l2fevyacyqdsqhvh",
+        "program": "credits.aleo",
+        "function": "fee_private",
+        "inputs": [
+          {
+            "type": "record",
+            "id": "1085050753252406944868441010997957328107796386518664231317635964688740213469field",
+            "tag": "1999821856659815649951853788352843059001646735527256618037575548784575503613field"
+          },
+          {
+            "type": "public",
+            "id": "4392107883180138444358474459000125565429311524001164574375155717645871151879field",
+            "value": "7353u64"
+          },
+          {
+            "type": "public",
+            "id": "4387230471494147155266823669087018927772138027076359485299256602246188780061field",
+            "value": "0u64"
+          },
+          {
+            "type": "public",
+            "id": "4696429948486434802186361255814755808423176109158475969167491269973838590448field",
+            "value": "5973729291527373050765171942883208696347609000391038128923083014492593975617field"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "record",
+            "id": "845094345586837143767427263905748569835773585101414556053504857628123719367field",
+            "checksum": "839211200781425787583662014993936288546248094387805294982756143549282749712field",
+            "value": "record1qvqsq2jppyese708f0ttncsxh2lk0h228zgfjdxyhhl70vm9x40w8vqdqyxx66trwfhkxun9v35hguerqqpqzqp5j37sh7chya5x8ucvwwpuejmtp3xn7xwk6ayz3m5qvd6jhr7fp7mx5lzk4rcqhuqm3yeau3xqawp2swrrjjx3jhy04pfl60y4fhcqvmd242t",
+            "sender_ciphertext": "7112948492682951801340686874257586218591934548270971732760295410393952855414field"
+          }
+        ],
+        "tpk": "4013139680333645776967318781145419627780249192365212815815862532892386663285group",
+        "tcm": "1337716418957389319265637062452581899856140627440949450645102799603272969946field",
+        "scm": "8396943610320072779252266901730608013596996649663831112548228832829946577088field"
+      },
+      "global_state_root": "sr1fg7rau4cw7lfe86jc75xq76w6dz8j9platmjkmqxura8m9rseuzq2fnmt3",
+      "proof": "proof1qypqqqqqqqqqqqqpqqqqqqqqqqqqzqqqqqqqqqqqkt20p2pw3pusftkg255h9vd3nnzfvr3ruxu5tfjj6jrvfmehcv0ha2dhhgp09tutj9alxs9f4w8sp383qazsmzpkrkljhc580txcp6ywjvcln02qczggy432p6pwhkvsg2e0efm2zzy79m72yq3lpxzwsyqcqrt03pcjqtttd2m6xxtdrgl3wenyl5aklzr7qstwsz5f9ve5ltlkcq467xmy3tv79m6puftw70vq67a74zzmr2smd4x5d6ds6864jh6vwqhq0ru5glky785ff8zjrvqmr0x3lkq8eatgtu8c8p8yqldgp3dneq7wl593jm26zv626uuw9jygesqrl6wmdpl3j65qajrg49psfykkccp25rvym8mahshxrhsdqp8dx3q8qqc405e5z2ggjqrlshk9ncw0d4thghv5dknde0cwvsqstayv75y6jf3vperq3tzc5yyr8qfjkam0psl5amdfvj6qavg9m6c5srcuvgelfupedgm3x69zdc2x486gvq7r6zymqa9tskykxaemksqp643dwflamm4udhsprjq454m8jfzsa49e4zd52l0jftqj9654cx3eu2hnghdmal2f5sfa95mrkuvqeqleyyqgjcfwpdp3y8u0w0cknafwcqaha9dpcgey6mgg4lqx78t4ffthh3qs7d0n48jrffxwpz0sz0arprud9g6w8zn4vdj52aa07p3n2tp98mu899mzax66vdqakjynrcfv3ylv30kvjj2ha4ja02reqpvulys6mvewng4uel8zy6n6us2jt3azcyj2admujzqhyjq6tkv24pljen25yy5euf806d3t38l3aqydy3n0n2h3frdtdftnf6fc3gqg9asyqcjeuc3rcq9g5qndczqrtlw03jtmclque38457xh73z9cgqwxdq4j004mpsryzjkclsyn734q0tuyymh2x8pfcg56v26llk7v9jcyvrp3yu4rchq2ktvcl2ra9gqjg73gftzh5xnkgq3urlg5wtpnx7n29xjm2aljaned4mej8vfnc890grnxnw5qyf5wk7yyptu6ugmcsue702sx03ky2v0u9e24885zqrpuqjlz8gd8znhm2yv5lfahh8s45k93vp6nlw5g62yrm9k4tm2qxcf50uzft42muzwxpe0ttte89d4nzy0e6ax00xfk7sn5m88extq6u2ecdvmmx7m2u9js333w7ltq7r6ta8xe2mcj2s7tvmugrpuzhcsgvzecnkpv8swapvrzn4rw6vh5jjlvjnrl92amln95mmfgcr2jsp3pljmssrrhh86029mxwzhc2m3e3th5wcln9jue45d4ywnkpm2zqjeld4mn7n42w96x4ma2rpvlkffkaz4dsftendr4u52wplcnke5pp3h5het6thy06n6hexdrzj903cf75rqrlmxz9jtlelfnfhyrq43zjfumgdtzurjlq74v0qz5szkd8ks0vul87kf5wavpedt9vw7gjsr5vpfy5nrxlz7ekrm9x6kz5zvqz8zq7wxm2tsspy3tu4zl8eypsxvyw8uy3aj5zypc8hpc0w82adp3dfctvxdlkh33hgumuuja52eyzx8kcu3d9xsa7mgack8h37yanxq393tdtzhe8htvfxrqtmgwkm9q8yy0z370kaflzymvkest3j5mmynqvarfaf3ufkwtf7lhsy8vllssh6jdzc0kfgg7xugg80wh394ecclrnm35hc829s2gsk9sxtuxhcgxpfuywey2k6lvwj50uj0qnf0m8u0e2pf7cfd3jcx4pyyvtndr5qz0sknp05jvd2vmsq8j059mq4grzrus6fwf46ctd4ztjvrjd3m2ypgyguqenk3luep00nhl35jfyxdsuf2q04zf37jr7v76axjlqhxqxkt7ghmfcgxut4au6hea2qdtcu492uk5hn2l82xajy5snd3s2cq2qcqqqqqqqqqqrehzru2cgk2sr4khfsmp8h6jkwgkta6fj4tjk3mp5xegq5ckmxyrw9fg0c3aerftmjhcvmu8c7azqqq2gzmh22jr93z60wzfg079c7vt95rud33u37pfr2n8q3ekpas5xtx3szerdu3a5dquvv7xyrty6cqqqgllrtyg26uyd9785jvcev5fe5vwkdc4td3f6w5ssts0yy65uuvzgxlurnxs42hhlele40aaqrmdmv83gr3y80ffrmfregd892pvl29c3hl2h2gezarkr3azzx2yxw9fqgq5y5fn7"
+    }
+  },
+  "finalize": [
+    {
+      "type": "update_key_value",
+      "mapping_id": "337542054608671435796028481127173594633889539471296153984909721270027840574field",
+      "key_id": "8116379251481394628953663805418428584340357348507526556965330493526568895167field",
+      "value_id": "6679168275582525022629478150598528799121122012359394952177678685920489840291field"
+    },
+    {
+      "type": "update_key_value",
+      "mapping_id": "6619269648874258086171960308339474740543363028191999963959374433358376768294field",
+      "key_id": "7844253646325044714611612933228985853400309760645431205104082098042702945689field",
+      "value_id": "2694750658491749559065566351555824485956413150594544562699578572737833625798field"
+    },
+    {
+      "type": "update_key_value",
+      "mapping_id": "4901254971896447506655742267164519059817484186062257737035906952766668655766field",
+      "key_id": "4306345286258863406339238314802682480421707609169116264534466110731709513986field",
+      "value_id": "4613613632739682799462325847879817627563961454909355209521472405059389736878field"
+    },
+    {
+      "type": "update_key_value",
+      "mapping_id": "5556339919360738966508676378046617538113778296603672309099345479371587184165field",
+      "key_id": "2629204503105527438552775374594714253597670769626987082926101446530882964326field",
+      "value_id": "3948035705900488937185858584575824906551432202124190580507582306552406176573field"
+    },
+    {
+      "type": "update_key_value",
+      "mapping_id": "2855157744830843716005407030207142101853521493742120919939436395872133863104field",
+      "key_id": "3022937037052045487193517449922453291931789962732583817741994241703481889133field",
+      "value_id": "5655454941858525764354441861674101118908035221049472493049754237436222251074field"
+    }
+  ]
+}

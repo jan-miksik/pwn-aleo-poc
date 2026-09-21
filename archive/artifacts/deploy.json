@@ -1,0 +1,313 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:3030",
+    "consensus_version": 19
+  },
+  "deployments": [
+    {
+      "program_id": "token_registry.aleo",
+      "transaction_id": "at19e96qxk489pkcpx6t8dzk43xq4qgl4emclmktrs2ddt4qyv27cgqkeg74t",
+      "stats": {
+        "program_size_bytes": 27441,
+        "max_program_size_bytes": 2048000,
+        "storage_cost": 33142000,
+        "namespace_cost": 1000000,
+        "synthesis_cost": 2198478,
+        "constructor_cost": 2000,
+        "priority_fee": 0,
+        "total_cost": 36342478,
+        "function_costs": [
+          {
+            "name": "transfer_public",
+            "finalize_cost": 3841,
+            "storage_cost": 1633,
+            "execution_cost": 5474
+          },
+          {
+            "name": "transfer_public_as_signer",
+            "finalize_cost": 3841,
+            "storage_cost": 1653,
+            "execution_cost": 5494
+          },
+          {
+            "name": "transfer_private",
+            "finalize_cost": 80,
+            "storage_cost": 2794,
+            "execution_cost": 2874
+          },
+          {
+            "name": "transfer_private_to_public",
+            "finalize_cost": 2649,
+            "storage_cost": 2492,
+            "execution_cost": 5141
+          },
+          {
+            "name": "transfer_public_to_private",
+            "finalize_cost": 1364,
+            "storage_cost": 2067,
+            "execution_cost": 3431
+          },
+          {
+            "name": "join",
+            "finalize_cost": 0,
+            "storage_cost": 2322,
+            "execution_cost": 2322
+          },
+          {
+            "name": "split",
+            "finalize_cost": 0,
+            "storage_cost": 2594,
+            "execution_cost": 2594
+          },
+          {
+            "name": "initialize",
+            "finalize_cost": 1556,
+            "storage_cost": 1220,
+            "execution_cost": 2776
+          },
+          {
+            "name": "register_token",
+            "finalize_cost": 1324,
+            "storage_cost": 1928,
+            "execution_cost": 3252
+          },
+          {
+            "name": "update_token_management",
+            "finalize_cost": 1556,
+            "storage_cost": 1605,
+            "execution_cost": 3161
+          },
+          {
+            "name": "set_role",
+            "finalize_cost": 624,
+            "storage_cost": 1513,
+            "execution_cost": 2137
+          },
+          {
+            "name": "remove_role",
+            "finalize_cost": 492,
+            "storage_cost": 1474,
+            "execution_cost": 1966
+          },
+          {
+            "name": "mint_public",
+            "finalize_cost": 4313,
+            "storage_cost": 1676,
+            "execution_cost": 5989
+          },
+          {
+            "name": "mint_private",
+            "finalize_cost": 1936,
+            "storage_cost": 2090,
+            "execution_cost": 4026
+          },
+          {
+            "name": "burn_public",
+            "finalize_cost": 6515,
+            "storage_cost": 1645,
+            "execution_cost": 8160
+          },
+          {
+            "name": "burn_private",
+            "finalize_cost": 1796,
+            "storage_cost": 2378,
+            "execution_cost": 4174
+          },
+          {
+            "name": "prehook_public",
+            "finalize_cost": 2581,
+            "storage_cost": 1653,
+            "execution_cost": 4234
+          },
+          {
+            "name": "prehook_private",
+            "finalize_cost": 112,
+            "storage_cost": 2819,
+            "execution_cost": 2931
+          },
+          {
+            "name": "approve_public",
+            "finalize_cost": 684,
+            "storage_cost": 1479,
+            "execution_cost": 2163
+          },
+          {
+            "name": "unapprove_public",
+            "finalize_cost": 684,
+            "storage_cost": 1483,
+            "execution_cost": 2167
+          },
+          {
+            "name": "transfer_from_public",
+            "finalize_cost": 4526,
+            "storage_cost": 1750,
+            "execution_cost": 6276
+          },
+          {
+            "name": "transfer_from_public_to_private",
+            "finalize_cost": 2049,
+            "storage_cost": 2184,
+            "execution_cost": 4233
+          }
+        ]
+      },
+      "broadcast": {
+        "fee_id": "au13fksr06kfctdlr5wg6t8cjxtrxg3u0kag6t4lse2zu7vx2jz7y9s04xv32",
+        "fee_transaction_id": "at17egdswdr2xre5845732rhwre7uxz9nw0xz5n63c7huept0vutgqsnw96f7",
+        "confirmed": true
+      }
+    },
+    {
+      "program_id": "pwn_config.aleo",
+      "transaction_id": "at1paw9agz3y9034v7y5yw0n2jumvpewqw57437s97ns2u57utfjyfq2htvkj",
+      "stats": {
+        "program_size_bytes": 1161,
+        "max_program_size_bytes": 2048000,
+        "storage_cost": 2113000,
+        "namespace_cost": 1000000,
+        "synthesis_cost": 191172,
+        "constructor_cost": 2000,
+        "priority_fee": 0,
+        "total_cost": 3306172,
+        "function_costs": [
+          {
+            "name": "initialize",
+            "finalize_cost": 914,
+            "storage_cost": 1212,
+            "execution_cost": 2126
+          },
+          {
+            "name": "set_admin",
+            "finalize_cost": 894,
+            "storage_cost": 1462,
+            "execution_cost": 2356
+          }
+        ]
+      },
+      "broadcast": {
+        "fee_id": "au123h7rtpry4ml2l4hmt5yf7038z0dv03fuv4rd5ctez0yhn8ks5pqze3xjq",
+        "fee_transaction_id": "at1sp5kc0jea7e28ss7scxspdkw852p8akgey2qsq4t2gun72ds8vxqrhrv4l",
+        "confirmed": true
+      }
+    },
+    {
+      "program_id": "pwn_hub.aleo",
+      "transaction_id": "at1f5a2n8se2jzpa9n3wlgeq8ujcug2vn34lujp3qr0dagsv6wrkg9qzjxkmq",
+      "stats": {
+        "program_size_bytes": 808,
+        "max_program_size_bytes": 2048000,
+        "storage_cost": 1141000,
+        "namespace_cost": 1000000000,
+        "synthesis_cost": 95586,
+        "constructor_cost": 2000,
+        "priority_fee": 0,
+        "total_cost": 1001238586,
+        "function_costs": [
+          {
+            "name": "set_tag",
+            "finalize_cost": 612,
+            "storage_cost": 1428,
+            "execution_cost": 2040
+          }
+        ]
+      },
+      "broadcast": {
+        "fee_id": "au1u8lqgeh64y4mps7y3zdnwmhrew8whktch3uh73re408pgvymsvys9gmeef",
+        "fee_transaction_id": "at102k6lvr6nafqx084smsmevtj3f4grgncjz9f880gccrrkrumry9qecxdys",
+        "confirmed": true
+      }
+    },
+    {
+      "program_id": "pwn_elastic_proposal.aleo",
+      "transaction_id": "at1ss5csgkxvxh6wpe8zltfzjg9ku5ejmz7m6y25vx4kpf56a25jy9s2f68s2",
+      "stats": {
+        "program_size_bytes": 6727,
+        "max_program_size_bytes": 2048000,
+        "storage_cost": 7229000,
+        "namespace_cost": 1000000,
+        "synthesis_cost": 477930,
+        "constructor_cost": 2000,
+        "priority_fee": 0,
+        "total_cost": 8708930,
+        "function_costs": [
+          {
+            "name": "draw",
+            "finalize_cost": 1756,
+            "storage_cost": 3498,
+            "execution_cost": 5254
+          },
+          {
+            "name": "receive_repayment",
+            "finalize_cost": 1325,
+            "storage_cost": 3244,
+            "execution_cost": 4569
+          },
+          {
+            "name": "open_commitment",
+            "finalize_cost": 3306,
+            "storage_cost": 4037,
+            "execution_cost": 7343
+          },
+          {
+            "name": "cancel_commitment",
+            "finalize_cost": 2063,
+            "storage_cost": 3153,
+            "execution_cost": 5216
+          },
+          {
+            "name": "withdraw_repayment",
+            "finalize_cost": 1418,
+            "storage_cost": 3155,
+            "execution_cost": 4573
+          }
+        ]
+      },
+      "broadcast": {
+        "fee_id": "au1czn2uhgdceu9xyyrukzqhm99dmlfrrfxhmasglxvt2cl74tzwursrx97ez",
+        "fee_transaction_id": "at1qurr8ahg0rye5pw3lcxnxm4lm3g6t3cy446fa0gd0wuyxc0udvpsc30ftc",
+        "confirmed": true
+      }
+    },
+    {
+      "program_id": "pwn_loan.aleo",
+      "transaction_id": "at1cra3avp9ugvseuzvd36eejkw3tqtv8r6g2jpe7hhrqqu99utf59qdqqk2x",
+      "stats": {
+        "program_size_bytes": 4516,
+        "max_program_size_bytes": 2048000,
+        "storage_cost": 4875000,
+        "namespace_cost": 100000000,
+        "synthesis_cost": 286758,
+        "constructor_cost": 2000,
+        "priority_fee": 0,
+        "total_cost": 105163758,
+        "function_costs": [
+          {
+            "name": "accept",
+            "finalize_cost": 5350,
+            "storage_cost": 13297,
+            "execution_cost": 18647
+          },
+          {
+            "name": "repay",
+            "finalize_cost": 3654,
+            "storage_cost": 9414,
+            "execution_cost": 13068
+          },
+          {
+            "name": "claim_default",
+            "finalize_cost": 2309,
+            "storage_cost": 3875,
+            "execution_cost": 6184
+          }
+        ]
+      },
+      "broadcast": {
+        "fee_id": "au1n5u6ddwy25tyst02trve0hyc7zm76syhqllrtqsmcax9pdhgjvyqqh8fep",
+        "fee_transaction_id": "at16xqxgw863jk7ffeg0efgkgfkuycdlwd5x2vljfjj8fh2dm72gc9sj3mm9x",
+        "confirmed": true
+      }
+    }
+  ]
+}

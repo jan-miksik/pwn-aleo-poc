@@ -1,0 +1,9 @@
+{
+  "program": "pwn_test_utils.aleo",
+  "version": "0.1.0",
+  "description": "",
+  "license": "MIT",
+  "leo": "4.4.2",
+  "dependencies": null,
+  "dev_dependencies": null
+}

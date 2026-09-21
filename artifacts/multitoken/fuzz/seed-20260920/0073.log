@@ -1,0 +1,9 @@
+
+⚠️ No valid private key specified, defaulting to 'APrivateKey1zkp8CZNn3yeCseEtxuVPbDCwSyhGW6yZKUYKfgXmcpoGPWH'.
+
+➕Adding programs to the VM in the following order:
+  - pwn_math_fuzz.aleo (local)
+
+➡️  Output
+
+ • 340282366920938463463374607431768211454u128

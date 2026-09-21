@@ -1,0 +1,26 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:63307",
+    "consensus_version": 19
+  },
+  "program": "pwn_loan_poc.aleo",
+  "function": "claim_arc20",
+  "outputs": [
+    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n  _root: 4490127275315651497532630094800166178689225857535687855630099439696656295007field,\n  _nonce: 2153838531712740344511345093593416585951365214979546791421654597787743438145group,\n  _version: 1u8\n}",
+    "{\n  program_id: pwn_loan_poc.aleo,\n  function_name: claim_arc20,\n  arguments: [\n    {\n  loan_id: 4657046514071013854296992536797402952656621285532455640570116405050932318971field,\n  commitment_id: 1390113485587923145754286344773644894136708898444221732809653553105712894348field,\n  credit_asset: {\n    program_id: 'usdcx_stablecoin',\n    token_id: 0field,\n    family: 3u8,\n    version: 1u16\n  },\n  collateral_asset: {\n    program_id: 'arc20_wbtc',\n    token_id: 0field,\n    family: 2u8,\n    version: 1u16\n  },\n  credit_amount: 400u128,\n  collateral_amount: 600u128,\n  repayment_amount: 440u128,\n  accruing_apr: 0u32,\n  borrower_auth: 7192596371155918336385938401893074327221250279547047412806591348908357057639field,\n  lender_auth: 1184318362592949046997803169426867640004610488067643692793113883309484504405field\n},\n    364492129112265960206661960928917337532957361091283663251526932711418733225field,\n    { _program_id: arc20_wbtc.aleo, _function_name: transfer_public_to_private, _checksum: 3222807678811740099307852627489545609003729789194780653984380804696591119064field }\n  ]\n}"
+  ],
+  "transaction_id": "at1ctxuz3tdxle3qagm4pnw43yef7m95s7wct5y2feqpxnxdnlqgqysxw67n8",
+  "stats": {
+    "storage_cost": 4398,
+    "execution_cost": 2616,
+    "priority_fee": 0,
+    "total_cost": 7014
+  },
+  "broadcast": {
+    "fee_id": "au1wxskm7gg54aqn4wfg8e2kzwek39ym0zzlpus23xrkk3vqduu6qpqlx8ret",
+    "fee_transaction_id": "at155drxzrqxs9ndvysc573ud2rl204t7teuae7ssew65eyq90xgq8s0t3auk",
+    "confirmed": false
+  }
+}

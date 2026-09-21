@@ -1,0 +1,13 @@
+⚠️ No network specified, defaulting to 'testnet'.
+⚠️ No endpoint specified, defaulting to 'https://api.explorer.provable.com/v1'.
+
+       Leo 🔨 Compiling 'custody_probe.aleo'
+       Leo     Program size: 0.96 KB / 2000.00 KB
+       Leo ✅ Compiled 'custody_probe.aleo' into Aleo instructions.
+       Leo ✅ Generated ABI for program 'custody_probe.aleo'.
+       Leo 🔨 Compiling 'test_custody_probe.aleo'
+
+     Running 1 test
+        PASS test_custody_probe.leo::round_trip
+────────────────────────
+     Summary 1 test run: 1 passed, 0 failed

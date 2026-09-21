@@ -1,0 +1,291 @@
+{
+  "network": "testnet",
+  "measured_from": "confirmed transactions re-fetched from the public API",
+  "lender": "aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s",
+  "borrower": "aleo1r7z3attydgg54q22cex0c55mmrnw7caacmau37dxx47uhqafrspsnfdwrd",
+  "flows": [
+    {
+      "flow": "open_commitment",
+      "step": "09-open-commitment-1",
+      "transaction_id": "at1kjszxytexcksnff27xpaxz9udpnalkqy8txn6agwq9vskpg4lqxqallq5c",
+      "block_height": 19653632,
+      "transitions": [
+        "credits.aleo::transfer_private_to_public",
+        "pwn_elastic_proposal_demo.aleo::open_commitment"
+      ],
+      "top_level_input_types": [
+        "public",
+        "public",
+        "external_record",
+        "public",
+        "private"
+      ],
+      "top_level_output_types": [
+        "external_record",
+        "future"
+      ],
+      "public_inputs": [
+        "1field",
+        "{ credit_asset: aleo1lqmly7ez2k48ajf5hs92ulphaqr05qm4n8qwzj8v0yprmasgpqgsez59gg, collateral_asset: 9735889759138411733606402095479788741448445494705715536838625",
+        "400000u64"
+      ],
+      "public_struct_outputs": [],
+      "fee_function": "fee_private",
+      "fee_amount_public": "7353u64",
+      "lender_address_visible": false,
+      "borrower_address_visible": false,
+      "any_address_visible": [
+        "aleo1ksdvl3asju5ycclrktv5rutc0r8p0g9attxda3ew7haqe53tgvrs9q2ps3",
+        "aleo1lqmly7ez2k48ajf5hs92ulphaqr05qm4n8qwzj8v0yprmasgpqgsez59gg"
+      ],
+      "visible_amounts": [
+        "100000u64",
+        "11000u64",
+        "15000u64",
+        "300000u64",
+        "400000u64"
+      ],
+      "visible_ids": [
+        "1field"
+      ],
+      "commitment_to_loan_link_public": false
+    },
+    {
+      "flow": "accept",
+      "step": "12-accept-loan-1",
+      "transaction_id": "at1aupepr5au4h6dkgmwhkwlrdcpd4dzyu2zks7jx90yddekg04avgqgyl8ds",
+      "block_height": 19653708,
+      "transitions": [
+        "token_registry.aleo::transfer_private_to_public",
+        "credits.aleo::transfer_public_to_private",
+        "pwn_elastic_proposal_demo.aleo::draw",
+        "pwn_loan_demo.aleo::accept"
+      ],
+      "top_level_input_types": [
+        "public",
+        "public",
+        "public",
+        "public",
+        "external_record",
+        "private"
+      ],
+      "top_level_output_types": [
+        "external_record",
+        "external_record",
+        "public",
+        "future"
+      ],
+      "public_inputs": [
+        "11field",
+        "1field",
+        "{ credit_asset: aleo1lqmly7ez2k48ajf5hs92ulphaqr05qm4n8qwzj8v0yprmasgpqgsez59gg, collateral_asset: 9735889759138411733606402095479788741448445494705715536838625",
+        "200000u64"
+      ],
+      "public_struct_outputs": [
+        "{ loan_id: 11field, commitment_id: 1field, credit_amount: 200000u64, collateral_asset: 973588975913841173360640209547978874144844549470571553683862512406247959512field, collateral_amount: 300000u128, repayment_amount: 220000u64, borrower_auth: 5107288450332756872126190879032262613217775557665182391212591800475973501385field, lender_auth: 453358451832671840079885767812815220065446116379376382711903"
+      ],
+      "fee_function": "fee_private",
+      "fee_amount_public": "18729u64",
+      "lender_address_visible": false,
+      "borrower_address_visible": false,
+      "any_address_visible": [
+        "aleo1ksdvl3asju5ycclrktv5rutc0r8p0g9attxda3ew7haqe53tgvrs9q2ps3",
+        "aleo1lqmly7ez2k48ajf5hs92ulphaqr05qm4n8qwzj8v0yprmasgpqgsez59gg",
+        "aleo1y4d32mvldsdsaja7ej5f0z2laladce8mlyu307yl0jlphakqrupq5jkwy0"
+      ],
+      "visible_amounts": [
+        "100000u64",
+        "11000u64",
+        "15000u64",
+        "200000u64",
+        "220000u64",
+        "300000u128",
+        "300000u64"
+      ],
+      "visible_ids": [
+        "11field",
+        "1field"
+      ],
+      "commitment_to_loan_link_public": true
+    },
+    {
+      "flow": "repay",
+      "step": "15-repay-loan-1",
+      "transaction_id": "at1d37ge98wq96crex800n06janp3e3c4azpx462qyzzd2zz04ejs9qlacc64",
+      "block_height": 19653814,
+      "transitions": [
+        "credits.aleo::transfer_private_to_public",
+        "pwn_elastic_proposal_demo.aleo::receive_repayment",
+        "token_registry.aleo::transfer_public_to_private",
+        "pwn_loan_demo.aleo::repay"
+      ],
+      "top_level_input_types": [
+        "public",
+        "external_record",
+        "private"
+      ],
+      "top_level_output_types": [
+        "external_record",
+        "external_record",
+        "future"
+      ],
+      "public_inputs": [
+        "{ loan_id: 11field, commitment_id: 1field, credit_amount: 200000u64, collateral_asset: 9735889759138411733606402095479788741448445494705715536838625124062479595"
+      ],
+      "public_struct_outputs": [],
+      "fee_function": "fee_private",
+      "fee_amount_public": "13137u64",
+      "lender_address_visible": false,
+      "borrower_address_visible": false,
+      "any_address_visible": [
+        "aleo1ksdvl3asju5ycclrktv5rutc0r8p0g9attxda3ew7haqe53tgvrs9q2ps3",
+        "aleo1y4d32mvldsdsaja7ej5f0z2laladce8mlyu307yl0jlphakqrupq5jkwy0"
+      ],
+      "visible_amounts": [
+        "200000u64",
+        "220000u64",
+        "300000u128"
+      ],
+      "visible_ids": [
+        "11field",
+        "1field"
+      ],
+      "commitment_to_loan_link_public": true
+    },
+    {
+      "flow": "claim_default",
+      "step": "16-claim-default-loan-2",
+      "transaction_id": "at14qfk6m64a7q70c4ev043esx6gud7705f79erks06hqg37gcd0srqkqyn7e",
+      "block_height": 19653827,
+      "transitions": [
+        "token_registry.aleo::transfer_public_to_private",
+        "pwn_loan_demo.aleo::claim_default"
+      ],
+      "top_level_input_types": [
+        "public",
+        "private"
+      ],
+      "top_level_output_types": [
+        "external_record",
+        "future"
+      ],
+      "public_inputs": [
+        "{ loan_id: 12field, commitment_id: 2field, credit_amount: 300000u64, collateral_asset: 9735889759138411733606402095479788741448445494705715536838625124062479595"
+      ],
+      "public_struct_outputs": [],
+      "fee_function": "fee_private",
+      "fee_amount_public": "6194u64",
+      "lender_address_visible": false,
+      "borrower_address_visible": false,
+      "any_address_visible": [
+        "aleo1y4d32mvldsdsaja7ej5f0z2laladce8mlyu307yl0jlphakqrupq5jkwy0"
+      ],
+      "visible_amounts": [
+        "300000u64",
+        "330000u64",
+        "450000u128"
+      ],
+      "visible_ids": [
+        "12field",
+        "2field"
+      ],
+      "commitment_to_loan_link_public": true
+    },
+    {
+      "flow": "withdraw_repayment",
+      "step": "17-withdraw-repayment",
+      "transaction_id": "at1h7fdl2rjhuvwfdwvj09scrkaff53j0mm7m2x46ytux0gdxjgzu8qlzsss6",
+      "block_height": 19653839,
+      "transitions": [
+        "credits.aleo::transfer_public_to_private",
+        "pwn_elastic_proposal_demo.aleo::withdraw_repayment"
+      ],
+      "top_level_input_types": [
+        "public",
+        "public",
+        "private",
+        "public"
+      ],
+      "top_level_output_types": [
+        "external_record",
+        "future"
+      ],
+      "public_inputs": [
+        "1field",
+        "{ credit_asset: aleo1lqmly7ez2k48ajf5hs92ulphaqr05qm4n8qwzj8v0yprmasgpqgsez59gg, collateral_asset: 9735889759138411733606402095479788741448445494705715536838625",
+        "220000u64"
+      ],
+      "public_struct_outputs": [],
+      "fee_function": "fee_private",
+      "fee_amount_public": "4583u64",
+      "lender_address_visible": false,
+      "borrower_address_visible": false,
+      "any_address_visible": [
+        "aleo1ksdvl3asju5ycclrktv5rutc0r8p0g9attxda3ew7haqe53tgvrs9q2ps3",
+        "aleo1lqmly7ez2k48ajf5hs92ulphaqr05qm4n8qwzj8v0yprmasgpqgsez59gg"
+      ],
+      "visible_amounts": [
+        "100000u64",
+        "11000u64",
+        "15000u64",
+        "220000u64",
+        "300000u64"
+      ],
+      "visible_ids": [
+        "1field"
+      ],
+      "commitment_to_loan_link_public": false
+    },
+    {
+      "flow": "cancel_commitment",
+      "step": "18-cancel-commitment-1",
+      "transaction_id": "at18xxsy240hw8e8046kjuhr96mtu0rgwdymwyrc0xh7y3cwxgg6srqx7kya3",
+      "block_height": 19653853,
+      "transitions": [
+        "credits.aleo::transfer_public_to_private",
+        "pwn_elastic_proposal_demo.aleo::cancel_commitment"
+      ],
+      "top_level_input_types": [
+        "public",
+        "public",
+        "private",
+        "public"
+      ],
+      "top_level_output_types": [
+        "external_record",
+        "future"
+      ],
+      "public_inputs": [
+        "1field",
+        "{ credit_asset: aleo1lqmly7ez2k48ajf5hs92ulphaqr05qm4n8qwzj8v0yprmasgpqgsez59gg, collateral_asset: 9735889759138411733606402095479788741448445494705715536838625",
+        "200000u64"
+      ],
+      "public_struct_outputs": [],
+      "fee_function": "fee_private",
+      "fee_amount_public": "5226u64",
+      "lender_address_visible": false,
+      "borrower_address_visible": false,
+      "any_address_visible": [
+        "aleo1ksdvl3asju5ycclrktv5rutc0r8p0g9attxda3ew7haqe53tgvrs9q2ps3",
+        "aleo1lqmly7ez2k48ajf5hs92ulphaqr05qm4n8qwzj8v0yprmasgpqgsez59gg"
+      ],
+      "visible_amounts": [
+        "100000u64",
+        "11000u64",
+        "15000u64",
+        "200000u64",
+        "300000u64"
+      ],
+      "visible_ids": [
+        "1field"
+      ],
+      "commitment_to_loan_link_public": false
+    }
+  ],
+  "temporal": {
+    "borrower_shield_to_accept_blocks": 88,
+    "borrower_public_funding_to_accept_blocks": 110,
+    "lender_shield_to_open_blocks": 16757,
+    "note": "Block distance between the public transaction that funded an actor and its first private-fee lending transaction. Small distances make amount/timing correlation easy."
+  }
+}

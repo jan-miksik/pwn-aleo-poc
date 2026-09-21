@@ -1,0 +1,502 @@
+
+[WCEI03713000] Warning: a call to `_mapping_get_or_use` runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:151:23 ]
+     │
+ 151 │             assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before + amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a call to `_mapping_get_or_use` runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:168:23 ]
+     │
+ 168 │             assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before - amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a call to `_mapping_get_or_use` runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:180:23 ]
+     │
+ 180 │             assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before + amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a call to `_mapping_get_or_use` runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:197:23 ]
+     │
+ 197 │             assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before - amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a call to `_mapping_get_or_use` runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:214:23 ]
+     │
+ 214 │             assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before - amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:233:23 ]
+     │
+ 233 │             assert_eq(Reserves@(terms.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before + amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:250:23 ]
+     │
+ 250 │             assert_eq(Reserves@(terms.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:262:23 ]
+     │
+ 262 │             assert_eq(Reserves@(asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before + amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:279:23 ]
+     │
+ 279 │             assert_eq(Reserves@(terms.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:296:23 ]
+     │
+ 296 │             assert_eq(Reserves@(terms.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:315:23 ]
+     │
+ 315 │             assert_eq(Reserves@(terms.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before + amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:332:23 ]
+     │
+ 332 │             assert_eq(Reserves@(terms.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:344:23 ]
+     │
+ 344 │             assert_eq(Reserves@(asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before + amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:361:23 ]
+     │
+ 361 │             assert_eq(Reserves@(terms.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:378:23 ]
+     │
+ 378 │             assert_eq(Reserves@(terms.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a call to `_mapping_get_or_use` runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:126:23 ]
+     │
+ 126 │             assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before + collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a call to `_mapping_get_or_use` runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:141:23 ]
+     │
+ 141 │             assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before - witness.collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:160:23 ]
+     │
+ 160 │             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before + collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:175:23 ]
+     │
+ 175 │             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - witness.collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:194:23 ]
+     │
+ 194 │             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before + collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:209:23 ]
+     │
+ 209 │             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - witness.collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a call to `_mapping_get_or_use` runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:228:23 ]
+     │
+ 228 │             assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before + collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a call to `_mapping_get_or_use` runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:243:23 ]
+     │
+ 243 │             assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before - witness.collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:262:23 ]
+     │
+ 262 │             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before + collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:277:23 ]
+     │
+ 277 │             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - witness.collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:296:23 ]
+     │
+ 296 │             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before + collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:311:23 ]
+     │
+ 311 │             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - witness.collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a call to `_mapping_get_or_use` runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:330:23 ]
+     │
+ 330 │             assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before + collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a call to `_mapping_get_or_use` runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:345:23 ]
+     │
+ 345 │             assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before - witness.collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:364:23 ]
+     │
+ 364 │             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before + collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:379:23 ]
+     │
+ 379 │             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - witness.collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:398:23 ]
+     │
+ 398 │             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before + collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:413:23 ]
+     │
+ 413 │             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - witness.collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a call to `_mapping_get_or_use` runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:427:23 ]
+     │
+ 427 │             assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before - witness.collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:441:23 ]
+     │
+ 441 │             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - witness.collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:455:23 ]
+     │
+ 455 │             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - witness.collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+
+📢 Using the following consensus heights: 0,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+  To override, pass in `--consensus-heights` or override the environment variable `CONSENSUS_VERSION_HEIGHTS`.
+
+
+🚀 Execution Plan Summary
+──────────────────────────────────────────────
+🔧 Configuration:
+  Private Key:        APrivateKey1zkpGPDbTcP2r...
+  Address:            aleo16k6wjpe5snzfhzf07mf...
+  Endpoint:           http://127.0.0.1:65083
+  Network:            testnet
+  Consensus Version:  19
+
+🎯 Execution Target:
+  Program:        pwn_loan_poc.aleo
+  Function:       repay_arc20_compliant
+  Source:         local
+
+💸 Fee Info:
+  Priority Fee:   0 μcredits
+  Fee Record:     no (public fee)
+
+⚙️ Actions:
+  - A transaction will be generated, WITHOUT a proof.
+  - Transaction will NOT be printed to the console.
+  - Transaction will NOT be saved to a file.
+  - Transaction will be broadcast to http://127.0.0.1:65083
+──────────────────────────────────────────────
+
+
+➕Adding programs to the VM in the following order:
+  - merkle_tree.aleo (local)
+  - arc20_multisig_core.aleo (local)
+  - arc20_sol.aleo (local)
+  - arc20_wbtc.aleo (local)
+  - usdcx_multisig_core.aleo (local)
+  - usdcx_freezelist.aleo (local)
+  - usdcx_stablecoin.aleo (local)
+  - usad_multisig_core.aleo (local)
+  - usad_freezelist.aleo (local)
+  - usad_stablecoin.aleo (local)
+  - pwn_delta_token.aleo (local)
+  - credits.aleo (already included)
+  - pwn_config_poc.aleo (local)
+  - pwn_hub_poc.aleo (local)
+  - pwn_proposal_poc.aleo (local)
+  - pwn_loan_poc.aleo (local)
+  - pwn_local_fixture.aleo (local)
+
+⚙️ Generating transaction WITHOUT a proof for pwn_loan_poc.aleo/repay_arc20_compliant...
+
+📊 Execution Cost Summary for pwn_loan_poc.aleo
+──────────────────────────────────────────────
+💰 Cost Breakdown (credits)
+  Transaction Storage:  0.018274
+  On-chain Execution:   0.005418
+  Priority Fee:         0.000000
+  Total Fee:            0.023692
+──────────────────────────────────────────────
+
+➡️  Outputs
+
+ • {
+  owner: aleo1l4s8l9fkl0rughvj0qzv3hduzr2ktpwgmwyue3ehkdrgtdl9vgys4xyw23,
+  _root: 7135923260842152057040859093785842882208899567435349741130641360099608530950field,
+  _nonce: 3399879245654714499319409969502278919674717966759227747480967187020555619443group,
+  _version: 1u8
+}
+ • {
+  owner: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue,
+  _root: 2283550889218984820829025596164569630292585230308378085728011493249959785105field,
+  _nonce: 6533397506657640697144202948983042370973870396770566179837159125422779271870group,
+  _version: 1u8
+}
+ • {
+  owner: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue,
+  _root: 5843102730040100884930731230749167254059089200373532297040548417507971884098field,
+  _nonce: 2396695444317693951091749619824572540333815663344310882520062342690119612691group,
+  _version: 1u8
+}
+ • {
+  program_id: pwn_loan_poc.aleo,
+  function_name: repay_arc20_compliant,
+  arguments: [
+    {
+  loan_id: 5823419326548487783868729286422223134217638857645626920156975584179376003414field,
+  commitment_id: 7168070832293273480822185427297831107135001747141411138732696557059259928536field,
+  credit_asset: {
+    program_id: 'arc20_wbtc',
+    token_id: 0field,
+    family: 2u8,
+    version: 1u16
+  },
+  collateral_asset: {
+    program_id: 'usdcx_stablecoin',
+    token_id: 0field,
+    family: 3u8,
+    version: 1u16
+  },
+  credit_amount: 301u128,
+  collateral_amount: 302u128,
+  repayment_amount: 362u128,
+  accruing_apr: 0u32,
+  borrower_auth: 4517643776345680821806256853433273269820389441302026051000576360785617478991field,
+  lender_auth: 6489733687486387658695212355839224257209764295565595900482245603574694091646field
+},
+    1330115963151858644532157737711240320023965385965150139930044252944214349135field,
+    364u128,
+    {
+      program_id: pwn_proposal_poc.aleo,
+      function_name: receive_arc20,
+      arguments: [
+        7168070832293273480822185427297831107135001747141411138732696557059259928536field,
+        {
+  program_id: 'arc20_wbtc',
+  token_id: 0field,
+  family: 2u8,
+  version: 1u16
+},
+        364u128,
+        { _program_id: arc20_wbtc.aleo, _function_name: transfer_private_to_public, _checksum: 319676098397120058359563686599717628649512469433585186281953374344593168988field }
+      ]
+    },
+    { _program_id: usdcx_stablecoin.aleo, _function_name: transfer_public_to_private, _checksum: 3197528702340469026857317084363513075683078021453352790249879764304089057451field }
+  ]
+}
+
+📡 Broadcasting execution for pwn_loan_poc.aleo...
+💰Your current public balance is 999.422264 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at12cs8zgns8cppjf9ftvqdqy7u8a5twe7fgyxatqqre80l49zx9vxs6s89p8'
+  - fee ID: 'au158mf996r6526f4p8cpszkltcwtr8920h33mcvyvqzs4u7q0aduyqljmx8x'
+  - fee transaction ID: 'at14x2h9kt9yexrgtfltuvgnjhvpcsx0qj87dy82pvntjjpzhxf6szs6g6lgx'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Execution confirmed!

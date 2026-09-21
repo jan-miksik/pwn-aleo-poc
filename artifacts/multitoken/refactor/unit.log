@@ -1,0 +1,28 @@
+python3 -m unittest discover -s tests -v
+test_guard_reports_changed_or_missing_finalizers (test_multitoken_tooling.CompatibilityTests.test_guard_reports_changed_or_missing_finalizers) ... ok
+test_only_internal_proof_code_can_change_without_changing_fingerprint (test_multitoken_tooling.CompatibilityTests.test_only_internal_proof_code_can_change_without_changing_fingerprint) ... ok
+test_boundaries_include_valid_and_overflowing_results_for_every_operation (test_multitoken_tooling.CorpusTests.test_boundaries_include_valid_and_overflowing_results_for_every_operation) ... ok
+test_corpus_is_replayable (test_multitoken_tooling.CorpusTests.test_corpus_is_replayable) ... ok
+test_dynamic_assets_do_not_become_static_dependencies (test_multitoken_tooling.GenerationTests.test_dynamic_assets_do_not_become_static_dependencies) ... ok
+test_fuzz_executes_the_production_math_fragment (test_multitoken_tooling.GenerationTests.test_fuzz_executes_the_production_math_fragment) ... ok
+test_generated_files_are_current (test_multitoken_tooling.GenerationTests.test_generated_files_are_current) ... ok
+test_generation_is_deterministic_and_can_target_a_temporary_directory (test_multitoken_tooling.GenerationTests.test_generation_is_deterministic_and_can_target_a_temporary_directory) ... ok
+test_closed_positions_cannot_retain_drawable_credit (test_multitoken_tooling.InvariantOracleTests.test_closed_positions_cannot_retain_drawable_credit) ... ok
+test_consistent_balances_with_unclaimed_donation (test_multitoken_tooling.InvariantOracleTests.test_consistent_balances_with_unclaimed_donation) ... ok
+test_oracle_detects_corrupt_accounting_and_immutable_fields (test_multitoken_tooling.InvariantOracleTests.test_oracle_detects_corrupt_accounting_and_immutable_fields) ... ok
+test_terminal_loans_must_release_collateral_liabilities (test_multitoken_tooling.InvariantOracleTests.test_terminal_loans_must_release_collateral_liabilities) ... ok
+test_terminal_state_cannot_be_reopened (test_multitoken_tooling.InvariantOracleTests.test_terminal_state_cannot_be_reopened) ... ok
+test_acceptance_requires_cli_and_chain_agreement (test_multitoken_tooling.ResultTests.test_acceptance_requires_cli_and_chain_agreement) ... ok
+test_arithmetic_errors_are_not_arbitrary_panics (test_multitoken_tooling.ResultTests.test_arithmetic_errors_are_not_arbitrary_panics) ... ok
+test_confirmed_transactions_cannot_pass_a_negative_test (test_multitoken_tooling.ResultTests.test_confirmed_transactions_cannot_pass_a_negative_test) ... ok
+test_finalization_and_vm_rejection (test_multitoken_tooling.ResultTests.test_finalization_and_vm_rejection) ... ok
+test_mapping_parser_rejects_malformed_or_truncated_amounts (test_multitoken_tooling.ResultTests.test_mapping_parser_rejects_malformed_or_truncated_amounts) ... ok
+test_missing_record_needs_exact_node_evidence (test_multitoken_tooling.ResultTests.test_missing_record_needs_exact_node_evidence) ... ok
+test_negative_tests_do_not_accept_tool_or_rpc_failures (test_multitoken_tooling.ResultTests.test_negative_tests_do_not_accept_tool_or_rpc_failures) ... ok
+test_private_payout_amount_is_an_exact_field_match (test_multitoken_tooling.ResultTests.test_private_payout_amount_is_an_exact_field_match) ... ok
+test_spending_decrypted_payout_preserves_each_token_abi (test_multitoken_tooling.ResultTests.test_spending_decrypted_payout_preserves_each_token_abi) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.025s
+
+OK

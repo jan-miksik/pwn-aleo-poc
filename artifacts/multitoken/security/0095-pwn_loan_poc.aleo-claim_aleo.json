@@ -1,0 +1,26 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:52479",
+    "consensus_version": 19
+  },
+  "program": "pwn_loan_poc.aleo",
+  "function": "claim_aleo",
+  "outputs": [
+    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  microcredits: 600u64.private,\n  _nonce: 8072022856100758598798728150969903753689257679711476587964249816804489529275group.public,\n  _version: 1u8.public\n}",
+    "{\n  program_id: pwn_loan_poc.aleo,\n  function_name: claim_aleo,\n  arguments: [\n    {\n  loan_id: 2838704156110115161346244631220177543349805484566540805171964198260421694631field,\n  commitment_id: 1974271199080453644503879091606545010508868763627421650575835241703989982674field,\n  credit_asset: {\n    program_id: 'arc20_sol',\n    token_id: 0field,\n    family: 2u8,\n    version: 1u16\n  },\n  collateral_asset: {\n    program_id: 'credits',\n    token_id: 0field,\n    family: 1u8,\n    version: 1u16\n  },\n  credit_amount: 400u128,\n  collateral_amount: 600u128,\n  repayment_amount: 440u128,\n  accruing_apr: 0u32,\n  borrower_auth: 3413984228868243594529536627366633792161113974909409260243210321638004678828field,\n  lender_auth: 3358309516245542785367682086691191064602799441103896470943907357182109369252field\n},\n    4659020870026729860963515261408352726561994155276005747982100901695651621597field,\n    {\n      program_id: credits.aleo,\n      function_name: transfer_public_to_private,\n      arguments: [\n        aleo1gqzuhr60tnlt0fhjevmu5y4ymc46qsky2emzkcvf98rwkq7s759spr0n8j,\n        600u64\n      ]\n    }\n  \n  ]\n}"
+  ],
+  "transaction_id": "at1gdtta0yzhc2ju9g3els0gj4dqu77q8f8znj9qnpgjmslpegqrq8shhpjut",
+  "stats": {
+    "storage_cost": 3804,
+    "execution_cost": 2584,
+    "priority_fee": 0,
+    "total_cost": 6388
+  },
+  "broadcast": {
+    "fee_id": "au18s30km5cwx9wgvqac8r34y7n7lreuy8047xun06a604nysm38y9s7g6g2d",
+    "fee_transaction_id": "at1udyp9x86gkc0xw6hg2qd68vtj0gm234l9k2un46hq74gzgv5uq8q69rpxt",
+    "confirmed": false
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "config": {
+    "address": "aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:49364",
+    "consensus_version": 19
+  },
+  "program": "pwn_loan.aleo",
+  "function": "repay",
+  "outputs": [
+    "{\n  owner: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue.private,\n  microcredits: 390u64.private,\n  _nonce: 846489329295427755877863440070896407999696716933674556767639843176665863154group.public,\n  _version: 1u8.public\n}",
+    "{\n  owner: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue.private,\n  amount: 150u128.private,\n  token_id: 987654321field.private,\n  external_authorization_required: false.private,\n  authorized_until: 4294967295u32.private,\n  _nonce: 6746157898908082791797835190446932488195054263478073490304745635269272821074group.public,\n  _version: 1u8.public\n}",
+    "{\n  program_id: pwn_loan.aleo,\n  function_name: repay,\n  arguments: [\n    {\n  loan_id: 41field,\n  commitment_id: 4field,\n  credit_amount: 100u64,\n  collateral_asset: 987654321field,\n  collateral_amount: 150u128,\n  repayment_amount: 110u64,\n  borrower_auth: 6301662748114510120818015080756981986896207374424003128638128079134792756953field,\n  lender_auth: 7134663253364879438032568740649159329065438500937956886885468873760437635961field\n},\n    2861654705470337649266230864227617370486703358928136853048332315092453726925field,\n    {\n      program_id: pwn_elastic_proposal.aleo,\n      function_name: receive_repayment,\n      arguments: [\n        4field,\n        110u64,\n        {\n          program_id: credits.aleo,\n          function_name: transfer_private_to_public,\n          arguments: [\n            aleo1u26eefy7w0fxep9wqq292vvf2vjc0hw94sxewdxhyrxc04mg8qysea2zkr,\n            110u64\n          ]\n        }\n      \n      ]\n    },\n    {\n      program_id: token_registry.aleo,\n      function_name: transfer_public_to_private,\n      arguments: [\n        987654321field,\n        150u128,\n        aleo1r3qt3tgecdh472wzu0x0lzrsh9qsjmh2s5t94exw7sr0l0y7vq8s4cx2f6,\n        false,\n        7785236584760618167812019533458563849883172283054908453279138603435459108777field\n      ]\n    }\n  \n  ]\n}"
+  ],
+  "transaction_id": "at1sde7n0kf2jc0k8duxk8z7379p5e9yy7t84qtjf5fj2607f84kyysarhye0",
+  "stats": {
+    "storage_cost": 9414,
+    "execution_cost": 3654,
+    "priority_fee": 0,
+    "total_cost": 13068
+  },
+  "broadcast": {
+    "fee_id": "au1wcc8sxzz5cp09386wy5klrxe04wzkzltt5cdg25spt4xhycglcgquz5cfq",
+    "fee_transaction_id": "at12ve9v220hp2utcxvt86q0a7mdhc3fpfexslugznsnnx0jdf86y9sezvkqq",
+    "confirmed": false
+  }
+}

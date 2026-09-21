@@ -1,0 +1,46 @@
+{
+  "label": "06-mint-collateral",
+  "actor": "lender",
+  "function": "token_registry.aleo::mint_private",
+  "fee_mode": "public",
+  "expect": "accepted",
+  "prepare_wall_seconds": 12.243,
+  "prepare_exit_code": 0,
+  "started_at": "2026-09-16T07:39:11.763637+00:00",
+  "phase": "done",
+  "transaction_id": "at1z9m8hua3c52w7g8ydal0th2xn4u00spl8tvsfte5r96cr3tn55ysqd6acm",
+  "fee_microcredits": 4026,
+  "fee_function": "fee_public",
+  "submitted_at": "2026-09-16T07:39:11.764219+00:00",
+  "status": "accepted",
+  "block_height": 19653604,
+  "block_timestamp": 1789544354,
+  "confirmed_at": "2026-09-16T07:39:24.092796+00:00",
+  "execution_transitions": [
+    [
+      "token_registry.aleo",
+      "mint_private"
+    ]
+  ],
+  "top_level_input_types": [
+    "public",
+    "private",
+    "public",
+    "public",
+    "public"
+  ],
+  "top_level_output_types": [
+    "record",
+    "future"
+  ],
+  "fee_input_types": [
+    "public",
+    "public",
+    "public"
+  ],
+  "lender_address_on_chain": true,
+  "borrower_address_on_chain": false,
+  "addresses_on_chain": [
+    "aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s"
+  ]
+}

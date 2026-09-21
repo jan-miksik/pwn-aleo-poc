@@ -1,0 +1,27 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:59301",
+    "consensus_version": 19
+  },
+  "program": "usdcx_stablecoin.aleo",
+  "function": "mint_private",
+  "outputs": [
+    "{\n  owner: aleo1l4s8l9fkl0rughvj0qzv3hduzr2ktpwgmwyue3ehkdrgtdl9vgys4xyw23.private,\n  amount: 1000u128.private,\n  sender: aleo1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq3ljyzc.private,\n  recipient: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue.private,\n  _nonce: 3467714275093628186734963989515529706151399531827685013943826248788707485390group.public,\n  _version: 1u8.public\n}",
+    "{\n  owner: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue.private,\n  amount: 1000u128.private,\n  _nonce: 7970809985824248762697316963366371845390061100168813079505016913734352468929group.public,\n  _version: 1u8.public\n}",
+    "{\n  program_id: usdcx_stablecoin.aleo,\n  function_name: mint_private,\n  arguments: [\n    1000u128,\n    aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px\n  ]\n}"
+  ],
+  "transaction_id": "at1yaxwy8jt5kax98j68r0nrpgauw66fggwnqemcndp2z7cgl9f7v9sg0hcd7",
+  "stats": {
+    "storage_cost": 2018,
+    "execution_cost": 1147,
+    "priority_fee": 0,
+    "total_cost": 3165
+  },
+  "broadcast": {
+    "fee_id": "au1mclaj8hutjzchqujpst4r4lt20yt29mudf8kujgtzs66wz5ygyrsxenvxl",
+    "fee_transaction_id": "at1697a9q6wfvzc3h5fr8aw6772v7a7l9f5fxua0zxk5272kqn5wvgqfjxm30",
+    "confirmed": true
+  }
+}

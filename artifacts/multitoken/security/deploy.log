@@ -1,0 +1,1960 @@
+
+       Leo 🔨 Compiling 'pwn_local_fixture.aleo'
+[WCEI03713000] Warning: a call to `_mapping_get_or_use` runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:151:23 ]
+     │
+ 151 │             assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before + amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a call to `_mapping_get_or_use` runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:168:23 ]
+     │
+ 168 │             assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before - amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a call to `_mapping_get_or_use` runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:180:23 ]
+     │
+ 180 │             assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before + amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a call to `_mapping_get_or_use` runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:197:23 ]
+     │
+ 197 │             assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before - amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a call to `_mapping_get_or_use` runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:214:23 ]
+     │
+ 214 │             assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before - amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:233:23 ]
+     │
+ 233 │             assert_eq(Reserves@(terms.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before + amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:250:23 ]
+     │
+ 250 │             assert_eq(Reserves@(terms.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:262:23 ]
+     │
+ 262 │             assert_eq(Reserves@(asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before + amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:279:23 ]
+     │
+ 279 │             assert_eq(Reserves@(terms.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:296:23 ]
+     │
+ 296 │             assert_eq(Reserves@(terms.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:315:23 ]
+     │
+ 315 │             assert_eq(Reserves@(terms.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before + amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:332:23 ]
+     │
+ 332 │             assert_eq(Reserves@(terms.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:344:23 ]
+     │
+ 344 │             assert_eq(Reserves@(asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before + amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:361:23 ]
+     │
+ 361 │             assert_eq(Reserves@(terms.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_proposal_poc/src/main.leo:378:23 ]
+     │
+ 378 │             assert_eq(Reserves@(terms.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a call to `_mapping_get_or_use` runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:126:23 ]
+     │
+ 126 │             assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before + collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a call to `_mapping_get_or_use` runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:141:23 ]
+     │
+ 141 │             assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before - witness.collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:160:23 ]
+     │
+ 160 │             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before + collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:175:23 ]
+     │
+ 175 │             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - witness.collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:194:23 ]
+     │
+ 194 │             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before + collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:209:23 ]
+     │
+ 209 │             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - witness.collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a call to `_mapping_get_or_use` runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:228:23 ]
+     │
+ 228 │             assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before + collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a call to `_mapping_get_or_use` runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:243:23 ]
+     │
+ 243 │             assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before - witness.collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:262:23 ]
+     │
+ 262 │             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before + collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:277:23 ]
+     │
+ 277 │             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - witness.collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:296:23 ]
+     │
+ 296 │             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before + collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:311:23 ]
+     │
+ 311 │             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - witness.collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a call to `_mapping_get_or_use` runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:330:23 ]
+     │
+ 330 │             assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before + collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a call to `_mapping_get_or_use` runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:345:23 ]
+     │
+ 345 │             assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before - witness.collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:364:23 ]
+     │
+ 364 │             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before + collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:379:23 ]
+     │
+ 379 │             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - witness.collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:398:23 ]
+     │
+ 398 │             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before + collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:413:23 ]
+     │
+ 413 │             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - witness.collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a call to `_mapping_get_or_use` runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:427:23 ]
+     │
+ 427 │             assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before - witness.collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:441:23 ]
+     │
+ 441 │             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - witness.collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+[WCEI03713000] Warning: a `get_or_use` call on dynamic storage runs after an interaction (`Final.run()`)
+     ╭─[ /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/local-workspace/pwn_loan_poc/src/main.leo:455:23 ]
+     │
+ 455 │             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - witness.collateral_amount);
+     │ 
+     │ Help: Move this check above the `.run()` call to avoid reentrancy issues.
+     │ 
+     │ Note: Under the Checks-Effects-Interactions pattern, all checks (reads, asserts) must precede any `.run()` calls in the same execution path.
+─────╯
+
+       Leo     Program size: 2.62 KB / 2000.00 KB
+       Leo ✅ Compiled 'pwn_local_fixture.aleo' into Aleo instructions.
+       Leo     Import 'pwn_delta_token.aleo': program size: 1.75 KB / 2000.00 KB
+       Leo     Import 'pwn_config_poc.aleo': program size: 3.22 KB / 2000.00 KB
+       Leo     Import 'pwn_hub_poc.aleo': program size: 2.66 KB / 2000.00 KB
+       Leo     Import 'pwn_proposal_poc.aleo': program size: 33.65 KB / 2000.00 KB
+       Leo     Import 'pwn_loan_poc.aleo': program size: 51.12 KB / 2000.00 KB
+       Leo ✅ Generated ABI for program 'pwn_local_fixture.aleo'.
+
+📢 Using the following consensus heights: 0,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+  To override, pass in `--consensus-heights` or override the environment variable `CONSENSUS_VERSION_HEIGHTS`.
+
+
+🛠️  Deployment Plan Summary
+──────────────────────────────────────────────
+🔧 Configuration:
+  Private Key:        APrivateKey1zkp8CZNn3yeC...
+  Address:            aleo1rhgdu77hgyqd3xjj8uc...
+  Endpoint:           http://127.0.0.1:63307
+  Network:            testnet
+  Consensus Version:  19
+
+📦 Deployment Tasks:
+  • merkle_tree.aleo  │ priority fee: 0  │ fee record: no (public fee)
+  • arc20_multisig_core.aleo  │ priority fee: 0  │ fee record: no (public fee)
+  • arc20_sol.aleo  │ priority fee: 0  │ fee record: no (public fee)
+  • arc20_wbtc.aleo  │ priority fee: 0  │ fee record: no (public fee)
+  • usdcx_multisig_core.aleo  │ priority fee: 0  │ fee record: no (public fee)
+  • usdcx_freezelist.aleo  │ priority fee: 0  │ fee record: no (public fee)
+  • usdcx_stablecoin.aleo  │ priority fee: 0  │ fee record: no (public fee)
+  • usad_multisig_core.aleo  │ priority fee: 0  │ fee record: no (public fee)
+  • usad_freezelist.aleo  │ priority fee: 0  │ fee record: no (public fee)
+  • usad_stablecoin.aleo  │ priority fee: 0  │ fee record: no (public fee)
+  • pwn_delta_token.aleo  │ priority fee: 0  │ fee record: no (public fee)
+  • pwn_config_poc.aleo  │ priority fee: 0  │ fee record: no (public fee)
+  • pwn_hub_poc.aleo  │ priority fee: 0  │ fee record: no (public fee)
+  • pwn_proposal_poc.aleo  │ priority fee: 0  │ fee record: no (public fee)
+  • pwn_loan_poc.aleo  │ priority fee: 0  │ fee record: no (public fee)
+  • pwn_local_fixture.aleo  │ priority fee: 0  │ fee record: no (public fee)
+
+🚫 Skipped Programs:
+  • credits.aleo
+
+⚙️ Actions:
+  • Transaction(s) will NOT be printed to the console.
+  • Transaction(s) will NOT be saved to a file.
+  • Transaction(s) will be broadcast to http://127.0.0.1:63307
+
+⚠️ Warnings:
+  • The program 'credits.aleo' already exists on the network. Please use `leo upgrade` instead.
+  • The program 'credits.aleo' does not contain a constructor. The deployment will likely fail
+──────────────────────────────────────────────
+
+
+🔧 Your program 'merkle_tree.aleo' has the following constructor.
+──────────────────────────────────────────────
+constructor:
+    assert.eq edition 0u16;
+──────────────────────────────────────────────
+Once it is deployed, it CANNOT be changed.
+
+📦 Creating deployment transaction for 'merkle_tree.aleo'...
+
+⚠️  Skipping deployment certificate and verifier key generation as per user request.
+
+
+📊 Deployment Summary for merkle_tree.aleo
+──────────────────────────────────────────────
+  Program Size:         15.22 KB / 2000.00 KB
+💰 Cost Breakdown (credits)
+  Transaction Storage:  10.494000
+  Program Synthesis:    0.095586
+  Namespace:            1.000000
+  Constructor:          0.002000
+  Priority Fee:         0.000000
+  Total Fee:            11.591586
+  Function 'verify_non_inclusion'
+    Total Execution Cost:   0.002709
+    |- Storage Cost:        0.002709
+    |- Finalize Cost:       0.000000
+──────────────────────────────────────────────
+
+🔧 Your program 'arc20_multisig_core.aleo' has the following constructor.
+──────────────────────────────────────────────
+constructor:
+    gt edition 0u16 into r0;
+    branch.eq r0 false to end_then_0_0;
+    contains program_settings_map[true] into r1;
+    assert.eq r1 true;
+    get program_settings_map[true] into r2;
+    assert.eq r2.allow_upgrades true;
+    assert.eq program_owner r2.upgrader_address;
+    branch.eq true true to end_otherwise_0_1;
+    position end_then_0_0;
+    position end_otherwise_0_1;
+──────────────────────────────────────────────
+Once it is deployed, it CANNOT be changed.
+
+📦 Creating deployment transaction for 'arc20_multisig_core.aleo'...
+
+⚠️  Skipping deployment certificate and verifier key generation as per user request.
+
+
+📊 Deployment Summary for arc20_multisig_core.aleo
+──────────────────────────────────────────────
+  Program Size:         38.31 KB / 2000.00 KB
+💰 Cost Breakdown (credits)
+  Transaction Storage:  34.304000
+  Program Synthesis:    1.338204
+  Namespace:            1.000000
+  Constructor:          0.024880
+  Priority Fee:         0.000000
+  Total Fee:            36.667084
+  Function 'init'
+    Total Execution Cost:   0.002273
+    |- Storage Cost:        0.001469
+    |- Finalize Cost:       0.000804
+  Function 'disallow_upgrades'
+    Total Execution Cost:   0.002126
+    |- Storage Cost:        0.001282
+    |- Finalize Cost:       0.000844
+  Function 'set_upgrader_address'
+    Total Execution Cost:   0.002290
+    |- Storage Cost:        0.001426
+    |- Finalize Cost:       0.000864
+  Function 'create_wallet'
+    Total Execution Cost:   0.025058
+    |- Storage Cost:        0.003186
+    |- Finalize Cost:       0.021872
+  Function 'initiate_signing_op'
+    Total Execution Cost:   0.010052
+    |- Storage Cost:        0.001651
+    |- Finalize Cost:       0.008401
+  Function 'sign'
+    Total Execution Cost:   0.010199
+    |- Storage Cost:        0.001470
+    |- Finalize Cost:       0.008729
+  Function 'sign_for_round'
+    Total Execution Cost:   0.010350
+    |- Storage Cost:        0.001541
+    |- Finalize Cost:       0.008809
+  Function 'sign_ecdsa'
+    Total Execution Cost:   0.023385
+    |- Storage Cost:        0.002681
+    |- Finalize Cost:       0.020704
+  Function 'sign_ecdsa_for_round'
+    Total Execution Cost:   0.023536
+    |- Storage Cost:        0.002752
+    |- Finalize Cost:       0.020784
+  Function 'init_admin_op'
+    Total Execution Cost:   0.010380
+    |- Storage Cost:        0.002118
+    |- Finalize Cost:       0.008262
+  Function 'exec_admin_op'
+    Total Execution Cost:   0.018765
+    |- Storage Cost:        0.001929
+    |- Finalize Cost:       0.016836
+  Function 'get_signing_op_id_hash'
+    Total Execution Cost:   0.001409
+    |- Storage Cost:        0.001409
+    |- Finalize Cost:       0.000000
+  Function 'guarded_create_wallet_op_hash'
+    Total Execution Cost:   0.002161
+    |- Storage Cost:        0.002161
+    |- Finalize Cost:       0.000000
+  Function 'assert_signing_completed'
+    Total Execution Cost:   0.004667
+    |- Storage Cost:        0.001472
+    |- Finalize Cost:       0.003195
+──────────────────────────────────────────────
+
+🔧 Your program 'arc20_sol.aleo' has the following constructor.
+──────────────────────────────────────────────
+constructor:
+    cast 61u8 159u8 3u8 215u8 96u8 144u8 14u8 107u8 28u8 185u8 132u8 93u8 240u8 41u8 185u8 98u8 59u8 228u8 145u8 252u8 47u8 61u8 169u8 89u8 220u8 145u8 35u8 43u8 185u8 212u8 203u8 112u8 into r0 as [u8; 32u32];
+    assert.eq name/checksum r0;
+    cast 173u8 218u8 35u8 221u8 212u8 91u8 120u8 219u8 132u8 140u8 19u8 254u8 254u8 25u8 236u8 112u8 198u8 78u8 201u8 44u8 232u8 48u8 135u8 17u8 169u8 213u8 42u8 36u8 15u8 231u8 104u8 244u8 into r1 as [u8; 32u32];
+    assert.eq symbol/checksum r1;
+    cast 16u8 182u8 204u8 42u8 138u8 98u8 10u8 66u8 245u8 211u8 153u8 203u8 96u8 208u8 143u8 236u8 80u8 88u8 65u8 126u8 163u8 246u8 221u8 93u8 156u8 97u8 74u8 221u8 204u8 71u8 215u8 236u8 into r2 as [u8; 32u32];
+    assert.eq decimals/checksum r2;
+    cast 205u8 178u8 247u8 132u8 253u8 223u8 249u8 127u8 47u8 226u8 176u8 159u8 28u8 113u8 162u8 63u8 192u8 245u8 28u8 142u8 229u8 97u8 243u8 122u8 9u8 163u8 70u8 84u8 253u8 150u8 63u8 127u8 into r3 as [u8; 32u32];
+    assert.eq max_supply/checksum r3;
+    is.eq edition 0u16 into r4;
+    branch.eq r4 false to end_then_0_0;
+    set 8u16 into address_to_role[aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px];
+    set 4u16 into address_to_role[aleo126h6shw93wegf2fajnux390sfl8r89rym2wwrkge3al43z5mku8shkzk3t];
+    set 0u128 into token_supply__[false];
+    branch.eq true true to end_otherwise_0_1;
+    position end_then_0_0;
+    position end_otherwise_0_1;
+    gt edition 0u16 into r5;
+    branch.eq r5 false to end_then_0_2;
+    cast checksum edition into r6 as ChecksumEdition;
+    hash.bhp256 r6 into r7 as field;
+    cast arc20_sol.aleo r7 into r8 as arc20_multisig_core.aleo/WalletSigningOpId;
+    hash.bhp256 r8 into r9 as field;
+    contains arc20_multisig_core.aleo/completed_signing_ops[r9] into r10;
+    assert.eq r10 true;
+    branch.eq true true to end_otherwise_0_3;
+    position end_then_0_2;
+    position end_otherwise_0_3;
+──────────────────────────────────────────────
+Once it is deployed, it CANNOT be changed.
+
+📦 Creating deployment transaction for 'arc20_sol.aleo'...
+
+⚠️  Skipping deployment certificate and verifier key generation as per user request.
+
+
+📊 Deployment Summary for arc20_sol.aleo
+──────────────────────────────────────────────
+  Program Size:         15.35 KB / 2000.00 KB
+💰 Cost Breakdown (credits)
+  Transaction Storage:  23.254000
+  Program Synthesis:    1.911720
+  Namespace:            10.000000
+  Constructor:          0.786480
+  Priority Fee:         0.000000
+  Total Fee:            35.952200
+  Function 'approve_public'
+    Total Execution Cost:   0.002084
+    |- Storage Cost:        0.001400
+    |- Finalize Cost:       0.000684
+  Function 'unapprove_public'
+    Total Execution Cost:   0.002128
+    |- Storage Cost:        0.001404
+    |- Finalize Cost:       0.000724
+  Function 'transfer_public'
+    Total Execution Cost:   0.002849
+    |- Storage Cost:        0.001440
+    |- Finalize Cost:       0.001409
+  Function 'transfer_public_as_signer'
+    Total Execution Cost:   0.002869
+    |- Storage Cost:        0.001460
+    |- Finalize Cost:       0.001409
+  Function 'transfer_private'
+    Total Execution Cost:   0.002298
+    |- Storage Cost:        0.002298
+    |- Finalize Cost:       0.000000
+  Function 'transfer_private_to_public'
+    Total Execution Cost:   0.002872
+    |- Storage Cost:        0.002188
+    |- Finalize Cost:       0.000684
+  Function 'transfer_public_to_private'
+    Total Execution Cost:   0.002390
+    |- Storage Cost:        0.001666
+    |- Finalize Cost:       0.000724
+  Function 'transfer_from_public'
+    Total Execution Cost:   0.003691
+    |- Storage Cost:        0.001557
+    |- Finalize Cost:       0.002134
+  Function 'transfer_from_public_to_private'
+    Total Execution Cost:   0.003232
+    |- Storage Cost:        0.001783
+    |- Finalize Cost:       0.001449
+  Function 'shield'
+    Total Execution Cost:   0.002250
+    |- Storage Cost:        0.001526
+    |- Finalize Cost:       0.000724
+  Function 'unshield'
+    Total Execution Cost:   0.002782
+    |- Storage Cost:        0.002098
+    |- Finalize Cost:       0.000684
+  Function 'join'
+    Total Execution Cost:   0.002116
+    |- Storage Cost:        0.002116
+    |- Finalize Cost:       0.000000
+  Function 'split'
+    Total Execution Cost:   0.002187
+    |- Storage Cost:        0.002187
+    |- Finalize Cost:       0.000000
+  Function 'mint_public'
+    Total Execution Cost:   0.003234
+    |- Storage Cost:        0.001432
+    |- Finalize Cost:       0.001802
+  Function 'mint_private'
+    Total Execution Cost:   0.002771
+    |- Storage Cost:        0.001653
+    |- Finalize Cost:       0.001118
+  Function 'burn_public'
+    Total Execution Cost:   0.003274
+    |- Storage Cost:        0.001432
+    |- Finalize Cost:       0.001842
+  Function 'burn_private'
+    Total Execution Cost:   0.003224
+    |- Storage Cost:        0.002106
+    |- Finalize Cost:       0.001118
+  Function 'update_role'
+    Total Execution Cost:   0.002229
+    |- Storage Cost:        0.001433
+    |- Finalize Cost:       0.000796
+  Function 'set_pause_status'
+    Total Execution Cost:   0.001845
+    |- Storage Cost:        0.001305
+    |- Finalize Cost:       0.000540
+──────────────────────────────────────────────
+
+🔧 Your program 'arc20_wbtc.aleo' has the following constructor.
+──────────────────────────────────────────────
+constructor:
+    cast 57u8 36u8 75u8 31u8 136u8 141u8 100u8 91u8 76u8 96u8 163u8 184u8 180u8 154u8 171u8 70u8 102u8 59u8 48u8 116u8 130u8 175u8 150u8 42u8 138u8 100u8 84u8 82u8 22u8 215u8 165u8 66u8 into r0 as [u8; 32u32];
+    assert.eq name/checksum r0;
+    cast 234u8 150u8 141u8 108u8 50u8 214u8 193u8 166u8 240u8 5u8 230u8 225u8 74u8 232u8 15u8 99u8 73u8 134u8 223u8 223u8 148u8 170u8 203u8 136u8 70u8 30u8 186u8 54u8 199u8 66u8 79u8 101u8 into r1 as [u8; 32u32];
+    assert.eq symbol/checksum r1;
+    cast 253u8 167u8 73u8 192u8 206u8 60u8 95u8 61u8 123u8 55u8 219u8 240u8 169u8 153u8 102u8 140u8 5u8 39u8 44u8 93u8 165u8 45u8 44u8 138u8 190u8 58u8 115u8 213u8 182u8 134u8 73u8 99u8 into r2 as [u8; 32u32];
+    assert.eq decimals/checksum r2;
+    cast 205u8 178u8 247u8 132u8 253u8 223u8 249u8 127u8 47u8 226u8 176u8 159u8 28u8 113u8 162u8 63u8 192u8 245u8 28u8 142u8 229u8 97u8 243u8 122u8 9u8 163u8 70u8 84u8 253u8 150u8 63u8 127u8 into r3 as [u8; 32u32];
+    assert.eq max_supply/checksum r3;
+    is.eq edition 0u16 into r4;
+    branch.eq r4 false to end_then_0_0;
+    set 8u16 into address_to_role[aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px];
+    set 4u16 into address_to_role[aleo126h6shw93wegf2fajnux390sfl8r89rym2wwrkge3al43z5mku8shkzk3t];
+    set 0u128 into token_supply__[false];
+    branch.eq true true to end_otherwise_0_1;
+    position end_then_0_0;
+    position end_otherwise_0_1;
+    gt edition 0u16 into r5;
+    branch.eq r5 false to end_then_0_2;
+    cast checksum edition into r6 as ChecksumEdition;
+    hash.bhp256 r6 into r7 as field;
+    cast arc20_wbtc.aleo r7 into r8 as arc20_multisig_core.aleo/WalletSigningOpId;
+    hash.bhp256 r8 into r9 as field;
+    contains arc20_multisig_core.aleo/completed_signing_ops[r9] into r10;
+    assert.eq r10 true;
+    branch.eq true true to end_otherwise_0_3;
+    position end_then_0_2;
+    position end_otherwise_0_3;
+──────────────────────────────────────────────
+Once it is deployed, it CANNOT be changed.
+
+📦 Creating deployment transaction for 'arc20_wbtc.aleo'...
+
+⚠️  Skipping deployment certificate and verifier key generation as per user request.
+
+
+📊 Deployment Summary for arc20_wbtc.aleo
+──────────────────────────────────────────────
+  Program Size:         15.37 KB / 2000.00 KB
+💰 Cost Breakdown (credits)
+  Transaction Storage:  23.281000
+  Program Synthesis:    1.911720
+  Namespace:            1.000000
+  Constructor:          0.786480
+  Priority Fee:         0.000000
+  Total Fee:            26.979200
+  Function 'approve_public'
+    Total Execution Cost:   0.002086
+    |- Storage Cost:        0.001402
+    |- Finalize Cost:       0.000684
+  Function 'unapprove_public'
+    Total Execution Cost:   0.002130
+    |- Storage Cost:        0.001406
+    |- Finalize Cost:       0.000724
+  Function 'transfer_public'
+    Total Execution Cost:   0.002851
+    |- Storage Cost:        0.001442
+    |- Finalize Cost:       0.001409
+  Function 'transfer_public_as_signer'
+    Total Execution Cost:   0.002871
+    |- Storage Cost:        0.001462
+    |- Finalize Cost:       0.001409
+  Function 'transfer_private'
+    Total Execution Cost:   0.002299
+    |- Storage Cost:        0.002299
+    |- Finalize Cost:       0.000000
+  Function 'transfer_private_to_public'
+    Total Execution Cost:   0.002874
+    |- Storage Cost:        0.002190
+    |- Finalize Cost:       0.000684
+  Function 'transfer_public_to_private'
+    Total Execution Cost:   0.002392
+    |- Storage Cost:        0.001668
+    |- Finalize Cost:       0.000724
+  Function 'transfer_from_public'
+    Total Execution Cost:   0.003693
+    |- Storage Cost:        0.001559
+    |- Finalize Cost:       0.002134
+  Function 'transfer_from_public_to_private'
+    Total Execution Cost:   0.003234
+    |- Storage Cost:        0.001785
+    |- Finalize Cost:       0.001449
+  Function 'shield'
+    Total Execution Cost:   0.002252
+    |- Storage Cost:        0.001528
+    |- Finalize Cost:       0.000724
+  Function 'unshield'
+    Total Execution Cost:   0.002784
+    |- Storage Cost:        0.002100
+    |- Finalize Cost:       0.000684
+  Function 'join'
+    Total Execution Cost:   0.002117
+    |- Storage Cost:        0.002117
+    |- Finalize Cost:       0.000000
+  Function 'split'
+    Total Execution Cost:   0.002188
+    |- Storage Cost:        0.002188
+    |- Finalize Cost:       0.000000
+  Function 'mint_public'
+    Total Execution Cost:   0.003236
+    |- Storage Cost:        0.001434
+    |- Finalize Cost:       0.001802
+  Function 'mint_private'
+    Total Execution Cost:   0.002773
+    |- Storage Cost:        0.001655
+    |- Finalize Cost:       0.001118
+  Function 'burn_public'
+    Total Execution Cost:   0.003276
+    |- Storage Cost:        0.001434
+    |- Finalize Cost:       0.001842
+  Function 'burn_private'
+    Total Execution Cost:   0.003226
+    |- Storage Cost:        0.002108
+    |- Finalize Cost:       0.001118
+  Function 'update_role'
+    Total Execution Cost:   0.002231
+    |- Storage Cost:        0.001435
+    |- Finalize Cost:       0.000796
+  Function 'set_pause_status'
+    Total Execution Cost:   0.001847
+    |- Storage Cost:        0.001307
+    |- Finalize Cost:       0.000540
+──────────────────────────────────────────────
+
+🔧 Your program 'usdcx_multisig_core.aleo' has the following constructor.
+──────────────────────────────────────────────
+constructor:
+    is.eq edition 0u16 into r0;
+    branch.eq r0 false to end_then_0_50;
+    assert.eq program_owner aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px;
+    branch.eq true true to end_otherwise_0_51;
+    position end_then_0_50;
+    contains program_settings_map[true] into r1;
+    assert.eq r1 true;
+    get program_settings_map[true] into r2;
+    assert.eq r2.allow_upgrades true;
+    assert.eq program_owner r2.upgrader_address;
+    position end_otherwise_0_51;
+──────────────────────────────────────────────
+Once it is deployed, it CANNOT be changed.
+
+📦 Creating deployment transaction for 'usdcx_multisig_core.aleo'...
+
+⚠️  Skipping deployment certificate and verifier key generation as per user request.
+
+
+📊 Deployment Summary for usdcx_multisig_core.aleo
+──────────────────────────────────────────────
+  Program Size:         39.10 KB / 2000.00 KB
+💰 Cost Breakdown (credits)
+  Transaction Storage:  34.760000
+  Program Synthesis:    1.338204
+  Namespace:            1.000000
+  Constructor:          0.026880
+  Priority Fee:         0.000000
+  Total Fee:            37.125084
+  Function 'init'
+    Total Execution Cost:   0.002273
+    |- Storage Cost:        0.001469
+    |- Finalize Cost:       0.000804
+  Function 'disallow_upgrades'
+    Total Execution Cost:   0.002126
+    |- Storage Cost:        0.001282
+    |- Finalize Cost:       0.000844
+  Function 'set_upgrader_address'
+    Total Execution Cost:   0.002290
+    |- Storage Cost:        0.001426
+    |- Finalize Cost:       0.000864
+  Function 'create_wallet'
+    Total Execution Cost:   0.025078
+    |- Storage Cost:        0.003186
+    |- Finalize Cost:       0.021892
+  Function 'initiate_signing_op'
+    Total Execution Cost:   0.010132
+    |- Storage Cost:        0.001870
+    |- Finalize Cost:       0.008262
+  Function 'sign'
+    Total Execution Cost:   0.010289
+    |- Storage Cost:        0.001480
+    |- Finalize Cost:       0.008809
+  Function 'sign_for_round'
+    Total Execution Cost:   0.010350
+    |- Storage Cost:        0.001541
+    |- Finalize Cost:       0.008809
+  Function 'sign_ecdsa'
+    Total Execution Cost:   0.023475
+    |- Storage Cost:        0.002691
+    |- Finalize Cost:       0.020784
+  Function 'sign_ecdsa_for_round'
+    Total Execution Cost:   0.023536
+    |- Storage Cost:        0.002752
+    |- Finalize Cost:       0.020784
+  Function 'init_admin_op'
+    Total Execution Cost:   0.010380
+    |- Storage Cost:        0.002118
+    |- Finalize Cost:       0.008262
+  Function 'exec_admin_op'
+    Total Execution Cost:   0.018765
+    |- Storage Cost:        0.001929
+    |- Finalize Cost:       0.016836
+  Function 'get_signing_op_id_hash'
+    Total Execution Cost:   0.001409
+    |- Storage Cost:        0.001409
+    |- Finalize Cost:       0.000000
+  Function 'guarded_create_wallet_op_hash'
+    Total Execution Cost:   0.002161
+    |- Storage Cost:        0.002161
+    |- Finalize Cost:       0.000000
+  Function 'assert_signing_completed'
+    Total Execution Cost:   0.004667
+    |- Storage Cost:        0.001472
+    |- Finalize Cost:       0.003195
+──────────────────────────────────────────────
+
+🔧 Your program 'usdcx_freezelist.aleo' has the following constructor.
+──────────────────────────────────────────────
+constructor:
+    is.eq edition 0u16 into r0;
+    branch.eq r0 false to end_then_0_8;
+    assert.eq program_owner aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px;
+    branch.eq true true to end_otherwise_0_9;
+    position end_then_0_8;
+    cast checksum edition into r1 as ChecksumEdition;
+    hash.bhp256 r1 into r2 as field;
+    cast usdcx_freezelist.aleo r2 into r3 as WalletSigningOpId;
+    hash.bhp256 r3 into r4 as field;
+    contains usdcx_multisig_core.aleo/completed_signing_ops[r4] into r5;
+    assert.eq r5 true;
+    position end_otherwise_0_9;
+──────────────────────────────────────────────
+Once it is deployed, it CANNOT be changed.
+
+📦 Creating deployment transaction for 'usdcx_freezelist.aleo'...
+
+⚠️  Skipping deployment certificate and verifier key generation as per user request.
+
+
+📊 Deployment Summary for usdcx_freezelist.aleo
+──────────────────────────────────────────────
+  Program Size:         6.67 KB / 2000.00 KB
+💰 Cost Breakdown (credits)
+  Transaction Storage:  8.807000
+  Program Synthesis:    0.669102
+  Namespace:            1.000000
+  Constructor:          0.596320
+  Priority Fee:         0.000000
+  Total Fee:            11.072422
+  Function 'get_signing_op_id_for_deploy'
+    Total Execution Cost:   0.001602
+    |- Storage Cost:        0.001602
+    |- Finalize Cost:       0.000000
+  Function 'initialize'
+    Total Execution Cost:   0.004504
+    |- Storage Cost:        0.001420
+    |- Finalize Cost:       0.003084
+  Function 'update_role'
+    Total Execution Cost:   0.002243
+    |- Storage Cost:        0.001447
+    |- Finalize Cost:       0.000796
+  Function 'update_block_height_window'
+    Total Execution Cost:   0.001897
+    |- Storage Cost:        0.001345
+    |- Finalize Cost:       0.000552
+  Function 'update_freeze_list'
+    Total Execution Cost:   0.005863
+    |- Storage Cost:        0.001695
+    |- Finalize Cost:       0.004168
+  Function 'verify_non_inclusion_pub'
+    Total Execution Cost:   0.001451
+    |- Storage Cost:        0.001359
+    |- Finalize Cost:       0.000092
+  Function 'verify_non_inclusion_priv'
+    Total Execution Cost:   0.005334
+    |- Storage Cost:        0.004945
+    |- Finalize Cost:       0.000389
+──────────────────────────────────────────────
+
+🔧 Your program 'usdcx_stablecoin.aleo' has the following constructor.
+──────────────────────────────────────────────
+constructor:
+    is.eq edition 0u16 into r0;
+    branch.eq r0 false to end_then_0_10;
+    assert.eq program_owner aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px;
+    branch.eq true true to end_otherwise_0_11;
+    position end_then_0_10;
+    cast checksum edition into r1 as ChecksumEdition;
+    hash.bhp256 r1 into r2 as field;
+    cast usdcx_stablecoin.aleo r2 into r3 as WalletSigningOpId;
+    hash.bhp256 r3 into r4 as field;
+    contains usdcx_multisig_core.aleo/completed_signing_ops[r4] into r5;
+    assert.eq r5 true;
+    position end_otherwise_0_11;
+──────────────────────────────────────────────
+Once it is deployed, it CANNOT be changed.
+
+📦 Creating deployment transaction for 'usdcx_stablecoin.aleo'...
+
+⚠️  Skipping deployment certificate and verifier key generation as per user request.
+
+
+📊 Deployment Summary for usdcx_stablecoin.aleo
+──────────────────────────────────────────────
+  Program Size:         74.57 KB / 2000.00 KB
+💰 Cost Breakdown (credits)
+  Transaction Storage:  69.509000
+  Program Synthesis:    2.294064
+  Namespace:            1.000000
+  Constructor:          0.596320
+  Priority Fee:         0.000000
+  Total Fee:            73.399384
+  Function 'get_signing_op_id_for_deploy'
+    Total Execution Cost:   0.001602
+    |- Storage Cost:        0.001602
+    |- Finalize Cost:       0.000000
+  Function 'update_role'
+    Total Execution Cost:   0.002243
+    |- Storage Cost:        0.001447
+    |- Finalize Cost:       0.000796
+  Function 'initialize'
+    Total Execution Cost:   0.003497
+    |- Storage Cost:        0.001639
+    |- Finalize Cost:       0.001858
+  Function 'get_credentials'
+    Total Execution Cost:   0.003262
+    |- Storage Cost:        0.002873
+    |- Finalize Cost:       0.000389
+  Function 'mint_public'
+    Total Execution Cost:   0.003278
+    |- Storage Cost:        0.001446
+    |- Finalize Cost:       0.001832
+  Function 'mint_private'
+    Total Execution Cost:   0.003165
+    |- Storage Cost:        0.002018
+    |- Finalize Cost:       0.001147
+  Function 'burn_public'
+    Total Execution Cost:   0.003238
+    |- Storage Cost:        0.001446
+    |- Finalize Cost:       0.001792
+  Function 'burn_private'
+    Total Execution Cost:   0.003578
+    |- Storage Cost:        0.002471
+    |- Finalize Cost:       0.001107
+  Function 'transfer_public'
+    Total Execution Cost:   0.003089
+    |- Storage Cost:        0.001454
+    |- Finalize Cost:       0.001635
+  Function 'transfer_public_as_signer'
+    Total Execution Cost:   0.003109
+    |- Storage Cost:        0.001474
+    |- Finalize Cost:       0.001635
+  Function 'approve_public'
+    Total Execution Cost:   0.002179
+    |- Storage Cost:        0.001414
+    |- Finalize Cost:       0.000765
+  Function 'unapprove_public'
+    Total Execution Cost:   0.002183
+    |- Storage Cost:        0.001418
+    |- Finalize Cost:       0.000765
+  Function 'transfer_from_public'
+    Total Execution Cost:   0.003891
+    |- Storage Cost:        0.001571
+    |- Finalize Cost:       0.002320
+  Function 'transfer_public_to_private'
+    Total Execution Cost:   0.002904
+    |- Storage Cost:        0.002046
+    |- Finalize Cost:       0.000858
+  Function 'transfer_from_public_to_private'
+    Total Execution Cost:   0.003705
+    |- Storage Cost:        0.002163
+    |- Finalize Cost:       0.001542
+  Function 'transfer_private'
+    Total Execution Cost:   0.004601
+    |- Storage Cost:        0.004131
+    |- Finalize Cost:       0.000470
+  Function 'transfer_private_to_public'
+    Total Execution Cost:   0.005201
+    |- Storage Cost:        0.003954
+    |- Finalize Cost:       0.001247
+  Function 'set_pause_status'
+    Total Execution Cost:   0.001889
+    |- Storage Cost:        0.001349
+    |- Finalize Cost:       0.000540
+  Function 'join'
+    Total Execution Cost:   0.002123
+    |- Storage Cost:        0.002123
+    |- Finalize Cost:       0.000000
+  Function 'split'
+    Total Execution Cost:   0.002194
+    |- Storage Cost:        0.002194
+    |- Finalize Cost:       0.000000
+  Function 'transfer_private_with_creds'
+    Total Execution Cost:   0.003737
+    |- Storage Cost:        0.003267
+    |- Finalize Cost:       0.000470
+──────────────────────────────────────────────
+
+🔧 Your program 'usad_multisig_core.aleo' has the following constructor.
+──────────────────────────────────────────────
+constructor:
+    is.eq edition 0u16 into r0;
+    branch.eq r0 false to end_then_0_50;
+    assert.eq program_owner aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px;
+    branch.eq true true to end_otherwise_0_51;
+    position end_then_0_50;
+    contains program_settings_map[true] into r1;
+    assert.eq r1 true;
+    get program_settings_map[true] into r2;
+    assert.eq r2.allow_upgrades true;
+    assert.eq program_owner r2.upgrader_address;
+    position end_otherwise_0_51;
+──────────────────────────────────────────────
+Once it is deployed, it CANNOT be changed.
+
+📦 Creating deployment transaction for 'usad_multisig_core.aleo'...
+
+⚠️  Skipping deployment certificate and verifier key generation as per user request.
+
+
+📊 Deployment Summary for usad_multisig_core.aleo
+──────────────────────────────────────────────
+  Program Size:         39.09 KB / 2000.00 KB
+💰 Cost Breakdown (credits)
+  Transaction Storage:  34.744000
+  Program Synthesis:    1.338204
+  Namespace:            1.000000
+  Constructor:          0.026880
+  Priority Fee:         0.000000
+  Total Fee:            37.109084
+  Function 'init'
+    Total Execution Cost:   0.002271
+    |- Storage Cost:        0.001467
+    |- Finalize Cost:       0.000804
+  Function 'disallow_upgrades'
+    Total Execution Cost:   0.002124
+    |- Storage Cost:        0.001280
+    |- Finalize Cost:       0.000844
+  Function 'set_upgrader_address'
+    Total Execution Cost:   0.002288
+    |- Storage Cost:        0.001424
+    |- Finalize Cost:       0.000864
+  Function 'create_wallet'
+    Total Execution Cost:   0.025076
+    |- Storage Cost:        0.003184
+    |- Finalize Cost:       0.021892
+  Function 'initiate_signing_op'
+    Total Execution Cost:   0.010130
+    |- Storage Cost:        0.001868
+    |- Finalize Cost:       0.008262
+  Function 'sign'
+    Total Execution Cost:   0.010287
+    |- Storage Cost:        0.001478
+    |- Finalize Cost:       0.008809
+  Function 'sign_for_round'
+    Total Execution Cost:   0.010348
+    |- Storage Cost:        0.001539
+    |- Finalize Cost:       0.008809
+  Function 'sign_ecdsa'
+    Total Execution Cost:   0.023473
+    |- Storage Cost:        0.002689
+    |- Finalize Cost:       0.020784
+  Function 'sign_ecdsa_for_round'
+    Total Execution Cost:   0.023534
+    |- Storage Cost:        0.002750
+    |- Finalize Cost:       0.020784
+  Function 'init_admin_op'
+    Total Execution Cost:   0.010378
+    |- Storage Cost:        0.002116
+    |- Finalize Cost:       0.008262
+  Function 'exec_admin_op'
+    Total Execution Cost:   0.018763
+    |- Storage Cost:        0.001927
+    |- Finalize Cost:       0.016836
+  Function 'get_signing_op_id_hash'
+    Total Execution Cost:   0.001408
+    |- Storage Cost:        0.001408
+    |- Finalize Cost:       0.000000
+  Function 'guarded_create_wallet_op_hash'
+    Total Execution Cost:   0.002160
+    |- Storage Cost:        0.002160
+    |- Finalize Cost:       0.000000
+  Function 'assert_signing_completed'
+    Total Execution Cost:   0.004665
+    |- Storage Cost:        0.001470
+    |- Finalize Cost:       0.003195
+──────────────────────────────────────────────
+
+🔧 Your program 'usad_freezelist.aleo' has the following constructor.
+──────────────────────────────────────────────
+constructor:
+    is.eq edition 0u16 into r0;
+    branch.eq r0 false to end_then_0_8;
+    assert.eq program_owner aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px;
+    branch.eq true true to end_otherwise_0_9;
+    position end_then_0_8;
+    cast checksum edition into r1 as ChecksumEdition;
+    hash.bhp256 r1 into r2 as field;
+    cast usad_freezelist.aleo r2 into r3 as WalletSigningOpId;
+    hash.bhp256 r3 into r4 as field;
+    contains usad_multisig_core.aleo/completed_signing_ops[r4] into r5;
+    assert.eq r5 true;
+    position end_otherwise_0_9;
+──────────────────────────────────────────────
+Once it is deployed, it CANNOT be changed.
+
+📦 Creating deployment transaction for 'usad_freezelist.aleo'...
+
+⚠️  Skipping deployment certificate and verifier key generation as per user request.
+
+
+📊 Deployment Summary for usad_freezelist.aleo
+──────────────────────────────────────────────
+  Program Size:         6.66 KB / 2000.00 KB
+💰 Cost Breakdown (credits)
+  Transaction Storage:  8.797000
+  Program Synthesis:    0.669102
+  Namespace:            1.000000
+  Constructor:          0.596320
+  Priority Fee:         0.000000
+  Total Fee:            11.062422
+  Function 'get_signing_op_id_for_deploy'
+    Total Execution Cost:   0.001601
+    |- Storage Cost:        0.001601
+    |- Finalize Cost:       0.000000
+  Function 'initialize'
+    Total Execution Cost:   0.004502
+    |- Storage Cost:        0.001418
+    |- Finalize Cost:       0.003084
+  Function 'update_role'
+    Total Execution Cost:   0.002241
+    |- Storage Cost:        0.001445
+    |- Finalize Cost:       0.000796
+  Function 'update_block_height_window'
+    Total Execution Cost:   0.001895
+    |- Storage Cost:        0.001343
+    |- Finalize Cost:       0.000552
+  Function 'update_freeze_list'
+    Total Execution Cost:   0.005861
+    |- Storage Cost:        0.001693
+    |- Finalize Cost:       0.004168
+  Function 'verify_non_inclusion_pub'
+    Total Execution Cost:   0.001449
+    |- Storage Cost:        0.001357
+    |- Finalize Cost:       0.000092
+  Function 'verify_non_inclusion_priv'
+    Total Execution Cost:   0.005332
+    |- Storage Cost:        0.004943
+    |- Finalize Cost:       0.000389
+──────────────────────────────────────────────
+
+🔧 Your program 'usad_stablecoin.aleo' has the following constructor.
+──────────────────────────────────────────────
+constructor:
+    is.eq edition 0u16 into r0;
+    branch.eq r0 false to end_then_0_8;
+    assert.eq program_owner aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px;
+    branch.eq true true to end_otherwise_0_9;
+    position end_then_0_8;
+    cast checksum edition into r1 as ChecksumEdition;
+    hash.bhp256 r1 into r2 as field;
+    cast usad_stablecoin.aleo r2 into r3 as WalletSigningOpId;
+    hash.bhp256 r3 into r4 as field;
+    contains usad_multisig_core.aleo/completed_signing_ops[r4] into r5;
+    assert.eq r5 true;
+    position end_otherwise_0_9;
+──────────────────────────────────────────────
+Once it is deployed, it CANNOT be changed.
+
+📦 Creating deployment transaction for 'usad_stablecoin.aleo'...
+
+⚠️  Skipping deployment certificate and verifier key generation as per user request.
+
+
+📊 Deployment Summary for usad_stablecoin.aleo
+──────────────────────────────────────────────
+  Program Size:         74.28 KB / 2000.00 KB
+💰 Cost Breakdown (credits)
+  Transaction Storage:  69.329000
+  Program Synthesis:    2.294064
+  Namespace:            1.000000
+  Constructor:          0.596320
+  Priority Fee:         0.000000
+  Total Fee:            73.219384
+  Function 'get_signing_op_id_for_deploy'
+    Total Execution Cost:   0.001601
+    |- Storage Cost:        0.001601
+    |- Finalize Cost:       0.000000
+  Function 'update_role'
+    Total Execution Cost:   0.002113
+    |- Storage Cost:        0.001445
+    |- Finalize Cost:       0.000668
+  Function 'initialize'
+    Total Execution Cost:   0.003495
+    |- Storage Cost:        0.001637
+    |- Finalize Cost:       0.001858
+  Function 'get_credentials'
+    Total Execution Cost:   0.003260
+    |- Storage Cost:        0.002871
+    |- Finalize Cost:       0.000389
+  Function 'mint_public'
+    Total Execution Cost:   0.003276
+    |- Storage Cost:        0.001444
+    |- Finalize Cost:       0.001832
+  Function 'mint_private'
+    Total Execution Cost:   0.003163
+    |- Storage Cost:        0.002016
+    |- Finalize Cost:       0.001147
+  Function 'burn_public'
+    Total Execution Cost:   0.003236
+    |- Storage Cost:        0.001444
+    |- Finalize Cost:       0.001792
+  Function 'burn_private'
+    Total Execution Cost:   0.003576
+    |- Storage Cost:        0.002469
+    |- Finalize Cost:       0.001107
+  Function 'transfer_public'
+    Total Execution Cost:   0.003087
+    |- Storage Cost:        0.001452
+    |- Finalize Cost:       0.001635
+  Function 'transfer_public_as_signer'
+    Total Execution Cost:   0.003107
+    |- Storage Cost:        0.001472
+    |- Finalize Cost:       0.001635
+  Function 'approve_public'
+    Total Execution Cost:   0.002177
+    |- Storage Cost:        0.001412
+    |- Finalize Cost:       0.000765
+  Function 'unapprove_public'
+    Total Execution Cost:   0.002181
+    |- Storage Cost:        0.001416
+    |- Finalize Cost:       0.000765
+  Function 'transfer_from_public'
+    Total Execution Cost:   0.003889
+    |- Storage Cost:        0.001569
+    |- Finalize Cost:       0.002320
+  Function 'transfer_public_to_private'
+    Total Execution Cost:   0.002902
+    |- Storage Cost:        0.002044
+    |- Finalize Cost:       0.000858
+  Function 'transfer_from_public_to_private'
+    Total Execution Cost:   0.003703
+    |- Storage Cost:        0.002161
+    |- Finalize Cost:       0.001542
+  Function 'transfer_private'
+    Total Execution Cost:   0.004599
+    |- Storage Cost:        0.004129
+    |- Finalize Cost:       0.000470
+  Function 'transfer_private_to_public'
+    Total Execution Cost:   0.005199
+    |- Storage Cost:        0.003952
+    |- Finalize Cost:       0.001247
+  Function 'set_pause_status'
+    Total Execution Cost:   0.001887
+    |- Storage Cost:        0.001347
+    |- Finalize Cost:       0.000540
+  Function 'join'
+    Total Execution Cost:   0.002122
+    |- Storage Cost:        0.002122
+    |- Finalize Cost:       0.000000
+  Function 'split'
+    Total Execution Cost:   0.002193
+    |- Storage Cost:        0.002193
+    |- Finalize Cost:       0.000000
+  Function 'transfer_private_with_creds'
+    Total Execution Cost:   0.003735
+    |- Storage Cost:        0.003265
+    |- Finalize Cost:       0.000470
+──────────────────────────────────────────────
+
+🔧 Your program 'pwn_delta_token.aleo' has the following constructor.
+──────────────────────────────────────────────
+constructor:
+    assert.eq edition 0u16;
+──────────────────────────────────────────────
+Once it is deployed, it CANNOT be changed.
+
+📦 Creating deployment transaction for 'pwn_delta_token.aleo'...
+
+⚠️  Skipping deployment certificate and verifier key generation as per user request.
+
+
+📊 Deployment Summary for pwn_delta_token.aleo
+──────────────────────────────────────────────
+  Program Size:         1.75 KB / 2000.00 KB
+💰 Cost Breakdown (credits)
+  Transaction Storage:  4.642000
+  Program Synthesis:    0.477930
+  Namespace:            1.000000
+  Constructor:          0.002000
+  Priority Fee:         0.000000
+  Total Fee:            6.121930
+  Function 'set_bad'
+    Total Execution Cost:   0.001669
+    |- Storage Cost:        0.001261
+    |- Finalize Cost:       0.000408
+  Function 'mint'
+    Total Execution Cost:   0.001528
+    |- Storage Cost:        0.001528
+    |- Finalize Cost:       0.000000
+  Function 'transfer_private_to_public'
+    Total Execution Cost:   0.002985
+    |- Storage Cost:        0.002200
+    |- Finalize Cost:       0.000785
+  Function 'transfer_public_to_private'
+    Total Execution Cost:   0.002362
+    |- Storage Cost:        0.001678
+    |- Finalize Cost:       0.000684
+──────────────────────────────────────────────
+
+🔧 Your program 'pwn_config_poc.aleo' has the following constructor.
+──────────────────────────────────────────────
+constructor:
+    is.eq edition 0u16 into r0;
+    branch.eq r0 false to end_then_0_0;
+    assert.eq program_owner aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px;
+    branch.eq true true to end_otherwise_0_1;
+    position end_then_0_0;
+    get settings[true] into r1;
+    assert.eq program_owner r1.upgrader;
+    cast pwn_config_poc.aleo edition into r2 as UpgradeKey;
+    hash.bhp256 r2 into r3 as field;
+    get upgrade_after[r3] into r4;
+    gte block.height r4 into r5;
+    assert.eq r5 true;
+    position end_otherwise_0_1;
+──────────────────────────────────────────────
+Once it is deployed, it CANNOT be changed.
+
+📦 Creating deployment transaction for 'pwn_config_poc.aleo'...
+
+⚠️  Skipping deployment certificate and verifier key generation as per user request.
+
+
+📊 Deployment Summary for pwn_config_poc.aleo
+──────────────────────────────────────────────
+  Program Size:         3.22 KB / 2000.00 KB
+💰 Cost Breakdown (credits)
+  Transaction Storage:  5.398000
+  Program Synthesis:    0.477930
+  Namespace:            1.000000
+  Constructor:          0.289520
+  Priority Fee:         0.000000
+  Total Fee:            7.165450
+  Function 'set_admin'
+    Total Execution Cost:   0.002364
+    |- Storage Cost:        0.001470
+    |- Finalize Cost:       0.000894
+  Function 'initialize'
+    Total Execution Cost:   0.002134
+    |- Storage Cost:        0.001220
+    |- Finalize Cost:       0.000914
+  Function 'accept_admin'
+    Total Execution Cost:   0.002446
+    |- Storage Cost:        0.001262
+    |- Finalize Cost:       0.001184
+  Function 'schedule_upgrade'
+    Total Execution Cost:   0.002173
+    |- Storage Cost:        0.001416
+    |- Finalize Cost:       0.000757
+  Function 'cancel_upgrade'
+    Total Execution Cost:   0.001892
+    |- Storage Cost:        0.001412
+    |- Finalize Cost:       0.000480
+──────────────────────────────────────────────
+
+🔧 Your program 'pwn_hub_poc.aleo' has the following constructor.
+──────────────────────────────────────────────
+constructor:
+    is.eq edition 0u16 into r0;
+    branch.eq r0 false to end_then_0_0;
+    assert.eq program_owner aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px;
+    branch.eq true true to end_otherwise_0_1;
+    position end_then_0_0;
+    get pwn_config_poc.aleo/settings[true] into r1;
+    assert.eq program_owner r1.upgrader;
+    cast pwn_hub_poc.aleo edition into r2 as UpgradeKey;
+    hash.bhp256 r2 into r3 as field;
+    get pwn_config_poc.aleo/upgrade_after[r3] into r4;
+    gte block.height r4 into r5;
+    assert.eq r5 true;
+    position end_otherwise_0_1;
+──────────────────────────────────────────────
+Once it is deployed, it CANNOT be changed.
+
+📦 Creating deployment transaction for 'pwn_hub_poc.aleo'...
+
+⚠️  Skipping deployment certificate and verifier key generation as per user request.
+
+
+📊 Deployment Summary for pwn_hub_poc.aleo
+──────────────────────────────────────────────
+  Program Size:         2.66 KB / 2000.00 KB
+💰 Cost Breakdown (credits)
+  Transaction Storage:  2.837000
+  Program Synthesis:    0.191172
+  Namespace:            1.000000
+  Constructor:          0.289520
+  Priority Fee:         0.000000
+  Total Fee:            4.317692
+  Function 'set_asset'
+    Total Execution Cost:   0.002331
+    |- Storage Cost:        0.001391
+    |- Finalize Cost:       0.000940
+  Function 'set_tag'
+    Total Execution Cost:   0.002048
+    |- Storage Cost:        0.001436
+    |- Finalize Cost:       0.000612
+──────────────────────────────────────────────
+
+🔧 Your program 'pwn_proposal_poc.aleo' has the following constructor.
+──────────────────────────────────────────────
+constructor:
+    is.eq edition 0u16 into r0;
+    branch.eq r0 false to end_then_0_0;
+    assert.eq program_owner aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px;
+    branch.eq true true to end_otherwise_0_1;
+    position end_then_0_0;
+    get pwn_config_poc.aleo/settings[true] into r1;
+    assert.eq program_owner r1.upgrader;
+    cast pwn_proposal_poc.aleo edition into r2 as UpgradeKey;
+    hash.bhp256 r2 into r3 as field;
+    get pwn_config_poc.aleo/upgrade_after[r3] into r4;
+    gte block.height r4 into r5;
+    assert.eq r5 true;
+    position end_otherwise_0_1;
+──────────────────────────────────────────────
+Once it is deployed, it CANNOT be changed.
+
+📦 Creating deployment transaction for 'pwn_proposal_poc.aleo'...
+
+⚠️  Skipping deployment certificate and verifier key generation as per user request.
+
+
+📊 Deployment Summary for pwn_proposal_poc.aleo
+──────────────────────────────────────────────
+  Program Size:         33.65 KB / 2000.00 KB
+💰 Cost Breakdown (credits)
+  Transaction Storage:  31.812000
+  Program Synthesis:    1.433790
+  Namespace:            1.000000
+  Constructor:          0.289520
+  Priority Fee:         0.000000
+  Total Fee:            34.535310
+  Function 'open_aleo'
+    Total Execution Cost:   0.009915
+    |- Storage Cost:        0.004478
+    |- Finalize Cost:       0.005437
+  Function 'draw_aleo'
+    Total Execution Cost:   0.007028
+    |- Storage Cost:        0.003896
+    |- Finalize Cost:       0.003132
+  Function 'receive_aleo'
+    Total Execution Cost:   0.005857
+    |- Storage Cost:        0.003501
+    |- Finalize Cost:       0.002356
+  Function 'cancel_aleo'
+    Total Execution Cost:   0.006891
+    |- Storage Cost:        0.003850
+    |- Finalize Cost:       0.003041
+  Function 'withdraw_aleo'
+    Total Execution Cost:   0.006210
+    |- Storage Cost:        0.003814
+    |- Finalize Cost:       0.002396
+  Function 'open_arc20'
+    Total Execution Cost:   0.004744 (lower bound)
+    |- Storage Cost:        N/A (dynamic call)
+    |- Finalize Cost:       0.004744 (lower bound)
+  Function 'draw_arc20'
+    Total Execution Cost:   0.002439 (lower bound)
+    |- Storage Cost:        N/A (dynamic call)
+    |- Finalize Cost:       0.002439 (lower bound)
+  Function 'receive_arc20'
+    Total Execution Cost:   0.001663 (lower bound)
+    |- Storage Cost:        N/A (dynamic call)
+    |- Finalize Cost:       0.001663 (lower bound)
+  Function 'cancel_arc20'
+    Total Execution Cost:   0.002348 (lower bound)
+    |- Storage Cost:        N/A (dynamic call)
+    |- Finalize Cost:       0.002348 (lower bound)
+  Function 'withdraw_arc20'
+    Total Execution Cost:   0.001703 (lower bound)
+    |- Storage Cost:        N/A (dynamic call)
+    |- Finalize Cost:       0.001703 (lower bound)
+  Function 'open_compliant'
+    Total Execution Cost:   0.004744 (lower bound)
+    |- Storage Cost:        N/A (dynamic call)
+    |- Finalize Cost:       0.004744 (lower bound)
+  Function 'draw_compliant'
+    Total Execution Cost:   0.002439 (lower bound)
+    |- Storage Cost:        N/A (dynamic call)
+    |- Finalize Cost:       0.002439 (lower bound)
+  Function 'receive_compliant'
+    Total Execution Cost:   0.001663 (lower bound)
+    |- Storage Cost:        N/A (dynamic call)
+    |- Finalize Cost:       0.001663 (lower bound)
+  Function 'cancel_compliant'
+    Total Execution Cost:   0.002348 (lower bound)
+    |- Storage Cost:        N/A (dynamic call)
+    |- Finalize Cost:       0.002348 (lower bound)
+  Function 'withdraw_compliant'
+    Total Execution Cost:   0.001703 (lower bound)
+    |- Storage Cost:        N/A (dynamic call)
+    |- Finalize Cost:       0.001703 (lower bound)
+──────────────────────────────────────────────
+
+🔧 Your program 'pwn_loan_poc.aleo' has the following constructor.
+──────────────────────────────────────────────
+constructor:
+    is.eq edition 0u16 into r0;
+    branch.eq r0 false to end_then_0_0;
+    assert.eq program_owner aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px;
+    branch.eq true true to end_otherwise_0_1;
+    position end_then_0_0;
+    get pwn_config_poc.aleo/settings[true] into r1;
+    assert.eq program_owner r1.upgrader;
+    cast pwn_loan_poc.aleo edition into r2 as UpgradeKey;
+    hash.bhp256 r2 into r3 as field;
+    get pwn_config_poc.aleo/upgrade_after[r3] into r4;
+    gte block.height r4 into r5;
+    assert.eq r5 true;
+    position end_otherwise_0_1;
+──────────────────────────────────────────────
+Once it is deployed, it CANNOT be changed.
+
+📦 Creating deployment transaction for 'pwn_loan_poc.aleo'...
+
+⚠️  Skipping deployment certificate and verifier key generation as per user request.
+
+
+📊 Deployment Summary for pwn_loan_poc.aleo
+──────────────────────────────────────────────
+  Program Size:         51.12 KB / 2000.00 KB
+💰 Cost Breakdown (credits)
+  Transaction Storage:  47.502000
+  Program Synthesis:    2.007306
+  Namespace:            1.000000
+  Constructor:          0.289520
+  Priority Fee:         0.000000
+  Total Fee:            50.798826
+  Function 'accept_aleo_aleo'
+    Total Execution Cost:   0.024706
+    |- Storage Cost:        0.018969
+    |- Finalize Cost:       0.005737
+  Function 'repay_aleo_aleo'
+    Total Execution Cost:   0.015680
+    |- Storage Cost:        0.010419
+    |- Finalize Cost:       0.005261
+  Function 'accept_aleo_arc20'
+    Total Execution Cost:   0.005044 (lower bound)
+    |- Storage Cost:        N/A (dynamic call)
+    |- Finalize Cost:       0.005044 (lower bound)
+  Function 'repay_aleo_arc20'
+    Total Execution Cost:   0.004568 (lower bound)
+    |- Storage Cost:        N/A (dynamic call)
+    |- Finalize Cost:       0.004568 (lower bound)
+  Function 'accept_aleo_compliant'
+    Total Execution Cost:   0.005044 (lower bound)
+    |- Storage Cost:        N/A (dynamic call)
+    |- Finalize Cost:       0.005044 (lower bound)
+  Function 'repay_aleo_compliant'
+    Total Execution Cost:   0.004568 (lower bound)
+    |- Storage Cost:        N/A (dynamic call)
+    |- Finalize Cost:       0.004568 (lower bound)
+  Function 'accept_arc20_aleo'
+    Total Execution Cost:   0.005044 (lower bound)
+    |- Storage Cost:        N/A (dynamic call)
+    |- Finalize Cost:       0.005044 (lower bound)
+  Function 'repay_arc20_aleo'
+    Total Execution Cost:   0.004568 (lower bound)
+    |- Storage Cost:        N/A (dynamic call)
+    |- Finalize Cost:       0.004568 (lower bound)
+  Function 'accept_arc20_arc20'
+    Total Execution Cost:   0.004351 (lower bound)
+    |- Storage Cost:        N/A (dynamic call)
+    |- Finalize Cost:       0.004351 (lower bound)
+  Function 'repay_arc20_arc20'
+    Total Execution Cost:   0.003875 (lower bound)
+    |- Storage Cost:        N/A (dynamic call)
+    |- Finalize Cost:       0.003875 (lower bound)
+  Function 'accept_arc20_compliant'
+    Total Execution Cost:   0.004351 (lower bound)
+    |- Storage Cost:        N/A (dynamic call)
+    |- Finalize Cost:       0.004351 (lower bound)
+  Function 'repay_arc20_compliant'
+    Total Execution Cost:   0.003875 (lower bound)
+    |- Storage Cost:        N/A (dynamic call)
+    |- Finalize Cost:       0.003875 (lower bound)
+  Function 'accept_compliant_aleo'
+    Total Execution Cost:   0.005044 (lower bound)
+    |- Storage Cost:        N/A (dynamic call)
+    |- Finalize Cost:       0.005044 (lower bound)
+  Function 'repay_compliant_aleo'
+    Total Execution Cost:   0.004568 (lower bound)
+    |- Storage Cost:        N/A (dynamic call)
+    |- Finalize Cost:       0.004568 (lower bound)
+  Function 'accept_compliant_arc20'
+    Total Execution Cost:   0.004351 (lower bound)
+    |- Storage Cost:        N/A (dynamic call)
+    |- Finalize Cost:       0.004351 (lower bound)
+  Function 'repay_compliant_arc20'
+    Total Execution Cost:   0.003875 (lower bound)
+    |- Storage Cost:        N/A (dynamic call)
+    |- Finalize Cost:       0.003875 (lower bound)
+  Function 'accept_compliant_compliant'
+    Total Execution Cost:   0.004351 (lower bound)
+    |- Storage Cost:        N/A (dynamic call)
+    |- Finalize Cost:       0.004351 (lower bound)
+  Function 'repay_compliant_compliant'
+    Total Execution Cost:   0.003875 (lower bound)
+    |- Storage Cost:        N/A (dynamic call)
+    |- Finalize Cost:       0.003875 (lower bound)
+  Function 'claim_aleo'
+    Total Execution Cost:   0.006438
+    |- Storage Cost:        0.003854
+    |- Finalize Cost:       0.002584
+  Function 'claim_arc20'
+    Total Execution Cost:   0.001892 (lower bound)
+    |- Storage Cost:        N/A (dynamic call)
+    |- Finalize Cost:       0.001892 (lower bound)
+  Function 'claim_compliant'
+    Total Execution Cost:   0.001892 (lower bound)
+    |- Storage Cost:        N/A (dynamic call)
+    |- Finalize Cost:       0.001892 (lower bound)
+──────────────────────────────────────────────
+
+🔧 Your program 'pwn_local_fixture.aleo' has the following constructor.
+──────────────────────────────────────────────
+constructor:
+    assert.eq edition 0u16;
+──────────────────────────────────────────────
+Once it is deployed, it CANNOT be changed.
+
+📦 Creating deployment transaction for 'pwn_local_fixture.aleo'...
+
+⚠️  Skipping deployment certificate and verifier key generation as per user request.
+
+
+📊 Deployment Summary for pwn_local_fixture.aleo
+──────────────────────────────────────────────
+  Program Size:         2.62 KB / 2000.00 KB
+💰 Cost Breakdown (credits)
+  Transaction Storage:  6.774000
+  Program Synthesis:    0.669102
+  Namespace:            1.000000
+  Constructor:          0.002000
+  Priority Fee:         0.000000
+  Total Fee:            8.445102
+  Function 'auth'
+    Total Execution Cost:   0.001451
+    |- Storage Cost:        0.001451
+    |- Finalize Cost:       0.000000
+  Function 'freeze_root'
+    Total Execution Cost:   0.001358
+    |- Storage Cost:        0.001358
+    |- Finalize Cost:       0.000000
+  Function 'math_round'
+    Total Execution Cost:   0.001361
+    |- Storage Cost:        0.001361
+    |- Finalize Cost:       0.000000
+  Function 'math_interest'
+    Total Execution Cost:   0.001432
+    |- Storage Cost:        0.001432
+    |- Finalize Cost:       0.000000
+  Function 'dynamic_sol'
+    Total Execution Cost:   0.001224
+    |- Storage Cost:        0.001224
+    |- Finalize Cost:       0.000000
+  Function 'forward_set_asset'
+    Total Execution Cost:   0.003313
+    |- Storage Cost:        0.002353
+    |- Finalize Cost:       0.000960
+  Function 'forward_set_admin'
+    Total Execution Cost:   0.003406
+    |- Storage Cost:        0.002492
+    |- Finalize Cost:       0.000914
+──────────────────────────────────────────────
+
+📡 Broadcasting deployment for merkle_tree.aleo...
+💰Your current public balance is 9374999.894112 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at1t8ae9sr3g9ppawe4ypq725qqe5f9xg7n57qsgktnv9q2jn995yysn2ymj9'
+  - fee ID: 'au1e9f9a87cdpzprju5qcdvhg36qevx0tuf97ag8ktkx5fyttvnsg8s952n9l'
+  - fee transaction ID: 'at1mnmuju3u8x4fa9pm830v7djyr9283lwfeekrpg3jqsjtjnqmfufqfhe7yr'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Deployment confirmed!
+
+📡 Broadcasting deployment for arc20_multisig_core.aleo...
+💰Your current public balance is 9374988.302526 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at19hs43hnrpqru4hzagy24f99de5pcpdvw4e9mrxh9qsw35wh9agpsejkvw8'
+  - fee ID: 'au1xwg2hsq972mdw77vlf9xr93vdyl7tfv692y3xtltu3x6gmlzvs9sphgdvr'
+  - fee transaction ID: 'at1svg33t5ztnrxav627w5eztyzvrehjta00umq7uqqsw4y3nav85zqk0r009'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Deployment confirmed!
+
+📡 Broadcasting deployment for arc20_sol.aleo...
+💰Your current public balance is 9374951.635442 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at1pwe27gxyzzdqf0et0maea74dvltzyap4z46cr9nrmrs9w5m32y9swgskc0'
+  - fee ID: 'au1zvlfw82pjl8t7yhhrk4ex7ctf3cprxka46manxt6ztgqtr8q4yzqjdrrvu'
+  - fee transaction ID: 'at1kw54md5h3ghjfmdphq3fxlt47v2u2gcqjnzyxf4q207mvc0u85pqfa4pa3'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Deployment confirmed!
+
+📡 Broadcasting deployment for arc20_wbtc.aleo...
+💰Your current public balance is 9374915.683242 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at10wzw9h59g322hfw2jvsl4e50zenpetk4ztnf056he26pcu7sgvyqsaunuf'
+  - fee ID: 'au19q499u8cewqfjf3qa95frytsga3ux5ddltd3dytylgg48r4c7yxsa6hsj6'
+  - fee transaction ID: 'at1hlj490u4pttl0cnckuhkkaxwj76vypd2l5e66thxgv7z2x5sqqgqjf3m3l'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Deployment confirmed!
+
+📡 Broadcasting deployment for usdcx_multisig_core.aleo...
+💰Your current public balance is 9374888.704042 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at12k7p3dnjy02usy03jtd788d7a8p2h0cmrzfxjvfavap2mlusj5pqf9hj7v'
+  - fee ID: 'au1xy3r9mta6jegnkkgnnfw6mrxmqnpk5943n6lkhul3cuvdr8l5vzqats6l9'
+  - fee transaction ID: 'at1far0k3x6lw0e04pn6qkw4svgrs3dpsqgxha33gdsyh47nfjjzcyqz74tdc'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Deployment confirmed!
+
+📡 Broadcasting deployment for usdcx_freezelist.aleo...
+💰Your current public balance is 9374851.578958 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at1lp3r44mpzj4klh58smwzf78ar78386y3c03klvd7w76epcgjts9qk2820a'
+  - fee ID: 'au1p499lkyjvnxcrza32ew54596hjz40lqdec6n9wqkkzvzaq2xh5qsmu7egj'
+  - fee transaction ID: 'at1x5vmz66gwexc3e4zqytgwvj8swwn7pplel9xj46djae3spuk5yqsvlgtg8'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Deployment confirmed!
+
+📡 Broadcasting deployment for usdcx_stablecoin.aleo...
+💰Your current public balance is 9374840.506536 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at13e27ph5gwts3w5c8t47dqvf3wgshg6a8s4w5xt5q5hwdr6jphqgs6kaf3w'
+  - fee ID: 'au1sfp0resgcawtmvsk6xdxdpspvj8dhranqs9z2hv6r0cews98vc9sujwawa'
+  - fee transaction ID: 'at1j70zr5j4uhpr78j6gftmldhdaxgrv9s62nrpf8n8d6reesffn5xszeqh2h'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Deployment confirmed!
+
+📡 Broadcasting deployment for usad_multisig_core.aleo...
+💰Your current public balance is 9374767.107152 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at1nde6pldpf7faklk9krq5ww9vvwktyw6d9dqdgfz4m97u6fj8nuqqddj6vy'
+  - fee ID: 'au1jr2p64nhl76v8jhg5vm2llr5u5gsdwvtn7kwwge7u2zu7mtuh5rszgu3tz'
+  - fee transaction ID: 'at13ce4pmwuehjryljf5v4p9qplc4d5fueclah528vl8zvc2zf4z5qqj7dyd2'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Deployment confirmed!
+
+📡 Broadcasting deployment for usad_freezelist.aleo...
+💰Your current public balance is 9374729.998068 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at1ejh7spc2s5ptaslyxq8us9wv0q5z29adx7ayz7uruvqnktndpyrstw9t7p'
+  - fee ID: 'au1jwemhqep2ctz6gpygrle9pwepseuy0dtgrlaltzj8z22uxe2xspsc0qgm8'
+  - fee transaction ID: 'at1t8qgrfer9nxxg8esja0uv45w6dp7wu9qtzluqwptt0guj9r5rc9s2qphsm'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Deployment confirmed!
+
+📡 Broadcasting deployment for usad_stablecoin.aleo...
+💰Your current public balance is 9374718.935646 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at165rywe79qkexgf5dg4k6ny98s6vsx4t9lpeteu4umk5yvg4zysysy7ehjn'
+  - fee ID: 'au1ul8pke3agwsd0zpgvvzyf5lmtdhe2nnkrvv67qe6d52eepufmszsswed9l'
+  - fee transaction ID: 'at1e2ru84rth9tpkdsw4peamsn3jkzw9gezlg0f20hkr3dthnvcs5psz56uvp'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Deployment confirmed!
+
+📡 Broadcasting deployment for pwn_delta_token.aleo...
+💰Your current public balance is 9374645.716262 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at1rxwamza4fr3cz9kahe9ysyruryv3rs8mn9z890plzd2py2se0grqf3g0pj'
+  - fee ID: 'au1u8epzj2ssdckns4p0knpckjywpwfmg4030n39dw69h6w76eygy9shpp44x'
+  - fee transaction ID: 'at1r3vmgkmpdu0fxmzs3nkpp6ag4tqxagnvmmu02z9444v0gnk8evqsvwesdx'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Deployment confirmed!
+
+📡 Broadcasting deployment for pwn_config_poc.aleo...
+💰Your current public balance is 9374639.594332 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at1r30a95qs9grzwjyqykg9xtjp8wrsu565aufdpn907ws967ql0sfq86rlwe'
+  - fee ID: 'au1yf9y389m9vyr27s8qdrucsxd8044t7ncfgmt0vyvq9qgvw83cuqq8f3q58'
+  - fee transaction ID: 'at1z3g7xlewghu0347ecfj50h8j66u4gw7jf492klplmezac4n6pvfq4w7et7'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Deployment confirmed!
+
+📡 Broadcasting deployment for pwn_hub_poc.aleo...
+💰Your current public balance is 9374632.428882 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at1rs4j83cvz8x5lmawfntay5x5u4kvup97uneaeeks32lyxc7mvszssejpvn'
+  - fee ID: 'au1vvh88k9an6vgrxgx4l38ze08dahkvvvmjfytuxnxv8d3qwxyp58qvstqsn'
+  - fee transaction ID: 'at10ua8jcksa4wjdkdaks6puspnc3tjm5y26wkltk9ulsyfwhse3c8s7smhv0'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Deployment confirmed!
+
+📡 Broadcasting deployment for pwn_proposal_poc.aleo...
+💰Your current public balance is 9374628.11119 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at1s644cyxzk3evkdul5s40j6tj86vjrhwpj4tpst6r4nkgwkq5jqgspw635u'
+  - fee ID: 'au1rmzcd9e5lgep7zqfy30k472kt0zvyhyc70ndcet34zl4f87lrqqq2acmjg'
+  - fee transaction ID: 'at1d5uz3vsp36knrc6w80zq6krspsczv428g942hshv8lsplpfh0gpstq8gf4'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Deployment confirmed!
+
+📡 Broadcasting deployment for pwn_loan_poc.aleo...
+💰Your current public balance is 9374593.57588 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at1fsf46jz8jxm4z6hrx9xkmx9apze4nxduefst4qqjkc2d8j2m35yqgh3s90'
+  - fee ID: 'au10eur9aq97zzsqp6jznmp3zthkgxgklu3zpc2z837gkyu99y095zslpnesz'
+  - fee transaction ID: 'at1v6e64u26khyf8rn2pxwscz8cvz0we98vmhk24jmh5d0g5dl0avgs7s0700'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Deployment confirmed!
+
+📡 Broadcasting deployment for pwn_local_fixture.aleo...
+💰Your current public balance is 9374542.777054 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at1py2ulvdaqtap28uv58u3caxjslnvj3x7j0ssdy0nn2n4ul8y7g8she6ehn'
+  - fee ID: 'au1yqa88hxa6azqn54zhva04g8fw7yrhgygzc7fhc97e0gpj3lkjv9skhu80r'
+  - fee transaction ID: 'at1xulfka42sk95876ny2pu5wv8dhmrdusdh4q704ankjv5a4rl3c8qxj4n0d'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Deployment confirmed!

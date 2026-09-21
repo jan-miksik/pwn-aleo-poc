@@ -1,0 +1,81 @@
+
+
+📢 Using the following consensus heights: 0,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+  To override, pass in `--consensus-heights` or override the environment variable `CONSENSUS_VERSION_HEIGHTS`.
+
+
+🚀 Execution Plan Summary
+──────────────────────────────────────────────
+🔧 Configuration:
+  Private Key:        APrivateKey1zkpGPDbTcP2r...
+  Address:            aleo16k6wjpe5snzfhzf07mf...
+  Endpoint:           http://127.0.0.1:53600
+  Network:            testnet
+  Consensus Version:  19
+
+🎯 Execution Target:
+  Program:        token_registry.aleo
+  Function:       burn_public
+  Source:         local
+
+💸 Fee Info:
+  Priority Fee:   0 μcredits
+  Fee Record:     no (public fee)
+
+⚙️ Actions:
+  - A transaction will be generated, WITHOUT a proof.
+  - Transaction will NOT be printed to the console.
+  - Transaction will be saved to /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/security-review/devnode/transactions/015-token_registry.aleo-burn_public
+  - Transaction will be broadcast to http://127.0.0.1:53600
+──────────────────────────────────────────────
+
+
+➕Adding programs to the VM in the following order:
+  - credits.aleo (already included)
+  - token_registry.aleo (local)
+  - pwn_config.aleo (local)
+  - pwn_hub.aleo (local)
+  - pwn_elastic_proposal.aleo (local)
+  - pwn_loan.aleo (local)
+
+⚙️ Generating transaction WITHOUT a proof for token_registry.aleo/burn_public...
+
+📊 Execution Cost Summary for token_registry.aleo
+──────────────────────────────────────────────
+💰 Cost Breakdown (credits)
+  Transaction Storage:  0.001645
+  On-chain Execution:   0.006515
+  Priority Fee:         0.000000
+  Total Fee:            0.008160
+──────────────────────────────────────────────
+💾 Saving execution for transaction at /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/security-review/devnode/transactions/015-token_registry.aleo-burn_public/transaction.execution.json
+
+➡️  Output
+
+ • {
+  program_id: token_registry.aleo,
+  function_name: burn_public,
+  arguments: [
+    {
+  account: aleo1r3qt3tgecdh472wzu0x0lzrsh9qsjmh2s5t94exw7sr0l0y7vq8s4cx2f6,
+  token_id: 987654321field
+},
+    600u128,
+    aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue,
+    5431157008907874566335418771567710869508698093951403847168179087385681277620field,
+    7785236584760618167812019533458563849883172283054908453279138603435459108777field
+  ]
+}
+
+📡 Broadcasting execution for token_registry.aleo...
+💰Your current public balance is 999.987301 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at1cn506uyjpjt8rts9lq5tdfcqm9vmzzzl5rsyn57ye8eqcazcqv9s7sc0wf'
+  - fee ID: 'au1s4a5xcnayhupc47ru042hg8lxtwhgysu5g8c2p4c5a4ewmv8jvys8akkq3'
+  - fee transaction ID: 'at1ezl09jm0qscnajafh0uunatuw4tkaj37tgwe0lg84p6722a28syq04sy7m'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction rejected.

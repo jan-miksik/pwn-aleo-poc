@@ -1,0 +1,40 @@
+{
+  "program": "pwn_loan_demo.aleo",
+  "version": "0.1.0",
+  "description": "PWN lending PoC, public testnet demo deployment (immutable, no real value)",
+  "license": "MIT",
+  "leo": "4.4.2",
+  "dependencies": [
+    {
+      "name": "credits.aleo",
+      "location": "network",
+      "network": "testnet",
+      "edition": null
+    },
+    {
+      "name": "token_registry.aleo",
+      "location": "network",
+      "network": "testnet",
+      "edition": null
+    },
+    {
+      "name": "pwn_config_demo.aleo",
+      "location": "local",
+      "path": "../pwn_config_demo",
+      "edition": null
+    },
+    {
+      "name": "pwn_hub_demo.aleo",
+      "location": "local",
+      "path": "../pwn_hub_demo",
+      "edition": null
+    },
+    {
+      "name": "pwn_elastic_proposal_demo.aleo",
+      "location": "local",
+      "path": "../pwn_elastic_proposal_demo",
+      "edition": null
+    }
+  ],
+  "dev_dependencies": null
+}

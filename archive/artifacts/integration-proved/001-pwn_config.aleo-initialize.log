@@ -1,0 +1,72 @@
+
+
+📢 Using the following consensus heights: 0,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+  To override, pass in `--consensus-heights` or override the environment variable `CONSENSUS_VERSION_HEIGHTS`.
+
+
+🚀 Execution Plan Summary
+──────────────────────────────────────────────
+🔧 Configuration:
+  Private Key:        APrivateKey1zkp8CZNn3yeC...
+  Address:            aleo1rhgdu77hgyqd3xjj8uc...
+  Endpoint:           http://127.0.0.1:49364
+  Network:            testnet
+  Consensus Version:  19
+
+🎯 Execution Target:
+  Program:        pwn_config.aleo
+  Function:       initialize
+  Source:         local
+
+💸 Fee Info:
+  Priority Fee:   0 μcredits
+  Fee Record:     no (public fee)
+
+⚙️ Actions:
+  - A transaction will be generated, WITHOUT a proof.
+  - Transaction will NOT be printed to the console.
+  - Transaction will NOT be saved to a file.
+  - Transaction will be broadcast to http://127.0.0.1:49364
+──────────────────────────────────────────────
+
+
+➕Adding programs to the VM in the following order:
+  - credits.aleo (already included)
+  - token_registry.aleo (local)
+  - pwn_config.aleo (local)
+  - pwn_hub.aleo (local)
+  - pwn_elastic_proposal.aleo (local)
+  - pwn_loan.aleo (local)
+
+⚙️ Generating transaction WITHOUT a proof for pwn_config.aleo/initialize...
+
+📊 Execution Cost Summary for pwn_config.aleo
+──────────────────────────────────────────────
+💰 Cost Breakdown (credits)
+  Transaction Storage:  0.001212
+  On-chain Execution:   0.000914
+  Priority Fee:         0.000000
+  Total Fee:            0.002126
+──────────────────────────────────────────────
+
+➡️  Output
+
+ • {
+  program_id: pwn_config.aleo,
+  function_name: initialize,
+  arguments: []
+}
+
+📡 Broadcasting execution for pwn_config.aleo...
+💰Your current public balance is 9373845.134188 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at1t6vl06ggpvlefufkmt55u73r60q9wwpgxn8v5nrlqw3rxpaxwuxsh3a2hx'
+  - fee ID: 'au1kmc6fcnkyn4xe445yqs9lh2p52a2jq0auh77w9tq43j70w5d6ggspkkut0'
+  - fee transaction ID: 'at12w3ckczzduwnfmcdcdycp4nllgg2k90pfunazlm4kp9nuacepygqv6w5dj'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Execution confirmed!

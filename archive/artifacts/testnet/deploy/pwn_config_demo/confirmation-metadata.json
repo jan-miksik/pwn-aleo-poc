@@ -1,0 +1,10 @@
+{
+  "program": "pwn_config_demo.aleo",
+  "transaction_id": "at135su2aghf5srsx666ujts77my3ugs2xrn6c89gt56qryrmhjmq9qew46ml",
+  "status": "accepted",
+  "block_hash": "ab1t0ag006qmm6lrjp48ekr40dne9ue7d0ka227dehkdcnrjewyns8snrl5nr",
+  "block_height": 19653434,
+  "block_timestamp": 1789543866,
+  "program_visible_on_chain": true,
+  "confirmed_checked_at": "2026-09-16T07:31:16.697192+00:00"
+}

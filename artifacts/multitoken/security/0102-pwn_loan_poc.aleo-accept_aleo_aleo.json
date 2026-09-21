@@ -1,0 +1,28 @@
+{
+  "config": {
+    "address": "aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:63307",
+    "consensus_version": 19
+  },
+  "program": "pwn_loan_poc.aleo",
+  "function": "accept_aleo_aleo",
+  "outputs": [
+    "{\n  owner: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue.private,\n  microcredits: 400u64.private,\n  _nonce: 7868873438362085280173946950529758359534180943044067421192749903409999239127group.public,\n  _version: 1u8.public\n}",
+    "{\n  owner: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue.private,\n  microcredits: 400u64.private,\n  _nonce: 37747877545692407797769249550223123975804997986339649325175876920760124545group.public,\n  _version: 1u8.public\n}",
+    "{\n  loan_id: 1977801515605263261670019512776144966195530626930445811697317836340237207396field,\n  commitment_id: 2574689654843380506490927515680339060205930730431761295846389234792032459919field,\n  credit_asset: {\n    program_id: 'credits',\n    token_id: 0field,\n    family: 1u8,\n    version: 1u16\n  },\n  collateral_asset: {\n    program_id: 'credits',\n    token_id: 0field,\n    family: 1u8,\n    version: 1u16\n  },\n  credit_amount: 400u128,\n  collateral_amount: 600u128,\n  repayment_amount: 440u128,\n  accruing_apr: 0u32,\n  borrower_auth: 707035143366103911644238504359379236895204147647883711658846304861840989311field,\n  lender_auth: 6633801488179863093835564364553483316697909624346377830188832161338146516420field\n}",
+    "{\n  program_id: pwn_loan_poc.aleo,\n  function_name: accept_aleo_aleo,\n  arguments: [\n    1977801515605263261670019512776144966195530626930445811697317836340237207396field,\n    {\n  loan_id: 1977801515605263261670019512776144966195530626930445811697317836340237207396field,\n  commitment_id: 2574689654843380506490927515680339060205930730431761295846389234792032459919field,\n  credit_asset: {\n    program_id: 'credits',\n    token_id: 0field,\n    family: 1u8,\n    version: 1u16\n  },\n  collateral_asset: {\n    program_id: 'credits',\n    token_id: 0field,\n    family: 1u8,\n    version: 1u16\n  },\n  credit_amount: 400u128,\n  collateral_amount: 600u128,\n  repayment_amount: 440u128,\n  accruing_apr: 0u32,\n  borrower_auth: 707035143366103911644238504359379236895204147647883711658846304861840989311field,\n  lender_auth: 6633801488179863093835564364553483316697909624346377830188832161338146516420field\n},\n    4095124813227386205371206857335859631504121870381734077199026836720214833836field,\n    {\n  credit_asset: {\n    program_id: 'credits',\n    token_id: 0field,\n    family: 1u8,\n    version: 1u16\n  },\n  collateral_asset: {\n    program_id: 'credits',\n    token_id: 0field,\n    family: 1u8,\n    version: 1u16\n  },\n  min_draw: 100u128,\n  max_draw: 600u128,\n  collateral_ratio: 15000u64,\n  repayment_ratio: 11000u64,\n  accruing_apr: 0u32,\n  duration: 10u32,\n  expiry: 5103u32,\n  lender_auth: 6633801488179863093835564364553483316697909624346377830188832161338146516420field\n},\n    600u128,\n    {\n      program_id: credits.aleo,\n      function_name: transfer_private_to_public,\n      arguments: [\n        aleo1gqzuhr60tnlt0fhjevmu5y4ymc46qsky2emzkcvf98rwkq7s759spr0n8j,\n        600u64\n      ]\n    },\n    {\n      program_id: pwn_proposal_poc.aleo,\n      function_name: draw_aleo,\n      arguments: [\n        7298663685341555103192413162654463530900305128120983956066599834857605933931field,\n        6015164828284017904487852449616947169216606668584332534936450170525960040230field,\n        {\n  credit_asset: {\n    program_id: 'credits',\n    token_id: 0field,\n    family: 1u8,\n    version: 1u16\n  },\n  collateral_asset: {\n    program_id: 'credits',\n    token_id: 0field,\n    family: 1u8,\n    version: 1u16\n  },\n  min_draw: 100u128,\n  max_draw: 600u128,\n  collateral_ratio: 15000u64,\n  repayment_ratio: 11000u64,\n  accruing_apr: 0u32,\n  duration: 10u32,\n  expiry: 5103u32,\n  lender_auth: 6633801488179863093835564364553483316697909624346377830188832161338146516420field\n},\n        2574689654843380506490927515680339060205930730431761295846389234792032459919field,\n        7251851355056307400858022045979649343655016440089868775784225521099528333028field,\n        400u128,\n        {\n          program_id: credits.aleo,\n          function_name: transfer_public_to_private,\n          arguments: [\n            aleo1j54x8q6r0gvp5atcz7mqe5ap69glart8wchwun8fr7tfukzu6qrsezfa7a,\n            400u64\n          ]\n        }\n      \n      ]\n    }\n  \n  ]\n}"
+  ],
+  "transaction_id": "at190q3enw4m39fpmjzc5hhmk72d448v9c4pslvucnempvjwqh7lqrq6fc9y5",
+  "stats": {
+    "storage_cost": 18915,
+    "execution_cost": 5737,
+    "priority_fee": 0,
+    "total_cost": 24652
+  },
+  "broadcast": {
+    "fee_id": "au1wm7pej9hk2c9td2cfnx47w4hxthmhqsnjhm29kcv8gqalute5urq9ctzqu",
+    "fee_transaction_id": "at108r08dn26gtzejg4tq0xhruaw9jy00fznljqs8u425prp3mdv59su4uhgp",
+    "confirmed": true
+  }
+}

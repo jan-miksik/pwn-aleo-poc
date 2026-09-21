@@ -1,0 +1,25 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:62679",
+    "consensus_version": 19
+  },
+  "program": "usad_stablecoin.aleo",
+  "function": "set_pause_status",
+  "outputs": [
+    "{\n  program_id: usad_stablecoin.aleo,\n  function_name: set_pause_status,\n  arguments: [\n    true,\n    aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px\n  ]\n}"
+  ],
+  "transaction_id": "at1yusx98tq8ha62am8m8f7aygcndaj0he7yg0f4z6fe5mpnr3dps9qpenj72",
+  "stats": {
+    "storage_cost": 1347,
+    "execution_cost": 540,
+    "priority_fee": 0,
+    "total_cost": 1887
+  },
+  "broadcast": {
+    "fee_id": "au1qz6nn3fxwu5dq5qyclkyk52arup3tqj6c8rsrkljmk8p6eyj6upsypnjnj",
+    "fee_transaction_id": "at19k26py2w7plm5f9az9fneyqkjrc5zz3mcux93mqwxv7juyxagv8s0q2m5d",
+    "confirmed": true
+  }
+}

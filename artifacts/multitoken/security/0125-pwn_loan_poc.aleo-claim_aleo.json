@@ -1,0 +1,26 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:52479",
+    "consensus_version": 19
+  },
+  "program": "pwn_loan_poc.aleo",
+  "function": "claim_aleo",
+  "outputs": [
+    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  microcredits: 600u64.private,\n  _nonce: 5474402277845585712428740696046554499858315787998143334906080757545826674567group.public,\n  _version: 1u8.public\n}",
+    "{\n  program_id: pwn_loan_poc.aleo,\n  function_name: claim_aleo,\n  arguments: [\n    {\n  loan_id: 4046540355710921804532326067774514693452361710329585336166307148446065570899field,\n  commitment_id: 7264746022801088716005720180760002606179505589996027509723139009640151381951field,\n  credit_asset: {\n    program_id: 'usdcx_stablecoin',\n    token_id: 0field,\n    family: 3u8,\n    version: 1u16\n  },\n  collateral_asset: {\n    program_id: 'credits',\n    token_id: 0field,\n    family: 1u8,\n    version: 1u16\n  },\n  credit_amount: 400u128,\n  collateral_amount: 600u128,\n  repayment_amount: 440u128,\n  accruing_apr: 0u32,\n  borrower_auth: 5201728553741021750092487247358324775362157501263508098575269407270733444496field,\n  lender_auth: 749017738597385943398032241920209016329931992994227480056564239264489019311field\n},\n    2679293801815398885284919162642928859415113299420767047482377316464504880829field,\n    {\n      program_id: credits.aleo,\n      function_name: transfer_public_to_private,\n      arguments: [\n        aleo1gqzuhr60tnlt0fhjevmu5y4ymc46qsky2emzkcvf98rwkq7s759spr0n8j,\n        600u64\n      ]\n    }\n  \n  ]\n}"
+  ],
+  "transaction_id": "at1yt0mplfjqmqfrhwy7h4y8lut28azrw34a2lzvjfgarkyny7xkgrqzmxru6",
+  "stats": {
+    "storage_cost": 3818,
+    "execution_cost": 2584,
+    "priority_fee": 0,
+    "total_cost": 6402
+  },
+  "broadcast": {
+    "fee_id": "au1yeypajnfjvfyzzedtktzqnl3wtsyjwl9vnwlxcfr88xrlyx34ugsmgv6st",
+    "fee_transaction_id": "at1aazy7h0mzuq55qc4x6kpm5w65jtn9vyczyz93gntdk5v2y9qe5gqxw5aay",
+    "confirmed": false
+  }
+}

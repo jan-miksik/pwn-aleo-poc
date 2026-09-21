@@ -1,0 +1,25 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:56761",
+    "consensus_version": 19
+  },
+  "program": "credits.aleo",
+  "function": "transfer_public",
+  "outputs": [
+    "{\n  program_id: credits.aleo,\n  function_name: transfer_public,\n  arguments: [\n    aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n    aleo13pnm0ru8knk2lv6zpp9u95wkxhfpr4cw5xrldz5urefjnpfr0yzs0wkruu,\n    1000000000u64\n  ]\n}"
+  ],
+  "transaction_id": "at1utnwenps90ld7eva90wkvnyddqz3j7fuvakj29h8rg870ca6jgqsppudpq",
+  "stats": {
+    "storage_cost": 1420,
+    "execution_cost": 1305,
+    "priority_fee": 0,
+    "total_cost": 2725
+  },
+  "broadcast": {
+    "fee_id": "au185lxs484mpxp3cs368g8zk7eqjumgyc0y62jc43rj6xfqcx4dvgqamd6e5",
+    "fee_transaction_id": "at19qg3aml86zjgfdw749tdmrn2l4nrnjt64a7k99azhzzwnm9skg9s7cn965",
+    "confirmed": true
+  }
+}

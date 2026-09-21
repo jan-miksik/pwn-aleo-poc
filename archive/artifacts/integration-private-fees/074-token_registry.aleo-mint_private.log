@@ -1,0 +1,89 @@
+
+
+📢 Using the following consensus heights: 0,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+  To override, pass in `--consensus-heights` or override the environment variable `CONSENSUS_VERSION_HEIGHTS`.
+
+
+🚀 Execution Plan Summary
+──────────────────────────────────────────────
+🔧 Configuration:
+  Private Key:        APrivateKey1zkp8CZNn3yeC...
+  Address:            aleo1rhgdu77hgyqd3xjj8uc...
+  Endpoint:           http://127.0.0.1:50991
+  Network:            testnet
+  Consensus Version:  19
+
+🎯 Execution Target:
+  Program:        token_registry.aleo
+  Function:       mint_private
+  Source:         local
+
+💸 Fee Info:
+  Priority Fee:   0 μcredits
+  Fee Record:     no (public fee)
+
+⚙️ Actions:
+  - A transaction will be generated, WITHOUT a proof.
+  - Transaction will NOT be printed to the console.
+  - Transaction will be saved to /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/integration-private-fees/transactions/074-token_registry.aleo-mint_private
+  - Transaction will be broadcast to http://127.0.0.1:50991
+──────────────────────────────────────────────
+
+
+➕Adding programs to the VM in the following order:
+  - credits.aleo (already included)
+  - token_registry.aleo (local)
+  - pwn_config.aleo (local)
+  - pwn_hub.aleo (local)
+  - pwn_elastic_proposal.aleo (local)
+  - pwn_loan.aleo (local)
+
+⚙️ Generating transaction WITHOUT a proof for token_registry.aleo/mint_private...
+
+📊 Execution Cost Summary for token_registry.aleo
+──────────────────────────────────────────────
+💰 Cost Breakdown (credits)
+  Transaction Storage:  0.002090
+  On-chain Execution:   0.001936
+  Priority Fee:         0.000000
+  Total Fee:            0.004026
+──────────────────────────────────────────────
+💾 Saving execution for transaction at /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/integration-private-fees/transactions/074-token_registry.aleo-mint_private/transaction.execution.json
+
+➡️  Outputs
+
+ • {
+  owner: aleo13pnm0ru8knk2lv6zpp9u95wkxhfpr4cw5xrldz5urefjnpfr0yzs0wkruu.private,
+  amount: 100000u128.private,
+  token_id: 987654321field.private,
+  external_authorization_required: false.private,
+  authorized_until: 4294967295u32.private,
+  _nonce: 4895546773378781569442836455822391373238023966823427312733976665093628727244group.public,
+  _version: 1u8.public
+}
+ • {
+  program_id: token_registry.aleo,
+  function_name: mint_private,
+  arguments: [
+    987654321field,
+    100000u128,
+    false,
+    4294967295u32,
+    aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,
+    5881482511556734143299913091949552631184592859519038963985945120151781986071field
+  ]
+}
+
+📡 Broadcasting execution for token_registry.aleo...
+💰Your current public balance is 9371835.053097 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at1k8auevhfhe2pzz5u5rzfjgzevasku3wt7hejugmpnjvts0zs3g8sgn3sfk'
+  - fee ID: 'au1hnyw36q2dtk09hv9tldfadw3x7cuhhyy50xp22zdn8mer47yuvqsluq8aw'
+  - fee transaction ID: 'at1apxpnjuvfnqr24nvurw8l5vcnvxmy235flxlkz7nar33dc3shupsprwxl7'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Execution confirmed!

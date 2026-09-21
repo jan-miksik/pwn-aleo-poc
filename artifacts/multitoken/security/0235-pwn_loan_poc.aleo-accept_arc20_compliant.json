@@ -1,0 +1,29 @@
+{
+  "config": {
+    "address": "aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:62679",
+    "consensus_version": 19
+  },
+  "program": "pwn_loan_poc.aleo",
+  "function": "accept_arc20_compliant",
+  "outputs": [
+    "{\n  owner: aleo1l4s8l9fkl0rughvj0qzv3hduzr2ktpwgmwyue3ehkdrgtdl9vgys4xyw23,\n  _root: 2238658759901105636988364461688830638964956639416200637563250481030232232243field,\n  _nonce: 7333324582994281760478355445188724124118113831534471227904941609863202612035group,\n  _version: 1u8\n}",
+    "{\n  owner: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue,\n  _root: 7907710830747846252012169120663688607130679151171038536649161869283642952979field,\n  _nonce: 7090341668810022634120534747747727830185789532807977652059140459642028570125group,\n  _version: 1u8\n}",
+    "{\n  owner: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue,\n  _root: 7907710830747846252012169120663688607130679151171038536649161869283642952979field,\n  _nonce: 4564438694047118554190743294754595112252715597423679232095808059369693635918group,\n  _version: 1u8\n}",
+    "{\n  loan_id: 1777375023329499203207144866382730745991252817408665999728570355552815785214field,\n  commitment_id: 5087711625948632720505841011240617978089423311851083073355537714369582554009field,\n  credit_asset: {\n    program_id: 'arc20_wbtc',\n    token_id: 0field,\n    family: 2u8,\n    version: 1u16\n  },\n  collateral_asset: {\n    program_id: 'usdcx_stablecoin',\n    token_id: 0field,\n    family: 3u8,\n    version: 1u16\n  },\n  credit_amount: 400u128,\n  collateral_amount: 600u128,\n  repayment_amount: 440u128,\n  accruing_apr: 0u32,\n  borrower_auth: 5244357401473436991444248092266705314499247152681463714113841065704595423692field,\n  lender_auth: 6748129827485665569690707023735239558946946244436044135300528069294961983428field\n}",
+    "{\n  program_id: pwn_loan_poc.aleo,\n  function_name: accept_arc20_compliant,\n  arguments: [\n    1777375023329499203207144866382730745991252817408665999728570355552815785214field,\n    {\n  loan_id: 1777375023329499203207144866382730745991252817408665999728570355552815785214field,\n  commitment_id: 5087711625948632720505841011240617978089423311851083073355537714369582554009field,\n  credit_asset: {\n    program_id: 'arc20_wbtc',\n    token_id: 0field,\n    family: 2u8,\n    version: 1u16\n  },\n  collateral_asset: {\n    program_id: 'usdcx_stablecoin',\n    token_id: 0field,\n    family: 3u8,\n    version: 1u16\n  },\n  credit_amount: 400u128,\n  collateral_amount: 600u128,\n  repayment_amount: 440u128,\n  accruing_apr: 0u32,\n  borrower_auth: 5244357401473436991444248092266705314499247152681463714113841065704595423692field,\n  lender_auth: 6748129827485665569690707023735239558946946244436044135300528069294961983428field\n},\n    2816863516493604236180978106646562872794968744840236813610888612782475867325field,\n    {\n  credit_asset: {\n    program_id: 'arc20_wbtc',\n    token_id: 0field,\n    family: 2u8,\n    version: 1u16\n  },\n  collateral_asset: {\n    program_id: 'usdcx_stablecoin',\n    token_id: 0field,\n    family: 3u8,\n    version: 1u16\n  },\n  min_draw: 100u128,\n  max_draw: 600u128,\n  collateral_ratio: 15000u64,\n  repayment_ratio: 11000u64,\n  accruing_apr: 0u32,\n  duration: 1000u32,\n  expiry: 5267u32,\n  lender_auth: 6748129827485665569690707023735239558946946244436044135300528069294961983428field\n},\n    600u128,\n    { _program_id: usdcx_stablecoin.aleo, _function_name: transfer_private_to_public, _checksum: 4550185716404114563491559406060301507369654478724260357654969353914000624722field },\n    {\n      program_id: pwn_proposal_poc.aleo,\n      function_name: draw_arc20,\n      arguments: [\n        7298663685341555103192413162654463530900305128120983956066599834857605933931field,\n        6015164828284017904487852449616947169216606668584332534936450170525960040230field,\n        {\n  credit_asset: {\n    program_id: 'arc20_wbtc',\n    token_id: 0field,\n    family: 2u8,\n    version: 1u16\n  },\n  collateral_asset: {\n    program_id: 'usdcx_stablecoin',\n    token_id: 0field,\n    family: 3u8,\n    version: 1u16\n  },\n  min_draw: 100u128,\n  max_draw: 600u128,\n  collateral_ratio: 15000u64,\n  repayment_ratio: 11000u64,\n  accruing_apr: 0u32,\n  duration: 1000u32,\n  expiry: 5267u32,\n  lender_auth: 6748129827485665569690707023735239558946946244436044135300528069294961983428field\n},\n        5087711625948632720505841011240617978089423311851083073355537714369582554009field,\n        665805452595059966993550699835500095553299652826514555196965574426340150033field,\n        400u128,\n        { _program_id: arc20_wbtc.aleo, _function_name: transfer_public_to_private, _checksum: 6422974191190668500358115580012550746077937836631476621770806379901472786911field }\n      ]\n    }\n  \n  ]\n}"
+  ],
+  "transaction_id": "at1ssctwwrrnsky9fsdsh73e29dz0lsjfpf6e7xjzypj6ctvdca7cxs9yez3r",
+  "stats": {
+    "storage_cost": 44074,
+    "execution_cost": 6304,
+    "priority_fee": 0,
+    "total_cost": 50378
+  },
+  "broadcast": {
+    "fee_id": "au1xy7aaex6nyck9kqlkl9aswuzze5acdqax3xj3atej2ejref745rsv4mdd2",
+    "fee_transaction_id": "at17nng86n6xuzdjfmqmfvxxqlm5ngk7rvnwevuleu6cff5cu8c9ggqyus6es",
+    "confirmed": true
+  }
+}

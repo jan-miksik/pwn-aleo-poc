@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<title>Kontext: Lending na ALEO</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 20mm 19mm 22mm 19mm; }
+  :root { --ink:#17191c; --ink-2:#4a4f57; --ink-3:#7a8089; --rule:#e2e4e8; --accent:#1f3a5f; --accent-2:#2e6e7e; --tint:#f3f4f7; }
+  * { box-sizing: border-box; min-width: 0; }
+  body { margin: 0; font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 10.2pt; line-height: 1.55; color: var(--ink); background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  @media screen { body { max-width: 487pt; margin: 0 auto; padding: 28pt 16pt 60pt 16pt; } }
+  h1 { font-size: 22pt; margin: 0 0 3pt 0; letter-spacing: -0.01em; }
+  .sub { color: var(--ink-2); margin-bottom: 8pt; }
+  hr { border: 0; border-top: 1pt solid var(--accent); margin: 8pt 0 18pt 0; }
+  h2 { font-size: 14pt; color: var(--accent); margin: 20pt 0 6pt 0; break-after: avoid; }
+  h3 { font-size: 11pt; margin: 12pt 0 2pt 0; break-after: avoid; }
+  .note { color: var(--ink-3); font-size: 9pt; margin: 0 0 4pt 0; }
+  .lead { font-style: italic; color: var(--ink-2); }
+  p { margin: 0 0 7pt 0; }
+  ul { margin: 0 0 8pt 0; padding-left: 14pt; }
+  li { margin: 0 0 2pt 0; }
+  a { color: var(--accent-2); }
+  table { border-collapse: collapse; width: 100%; margin: 8pt 0 12pt 0; font-size: 9.6pt; }
+  th { background: var(--accent); color: #fff; text-align: left; padding: 5pt 8pt; font-weight: 600; }
+  td { padding: 5pt 8pt; border-bottom: 0.6pt solid var(--rule); vertical-align: top; }
+  tr:nth-child(even) td { background: var(--tint); }
+  .quote { background: var(--tint); border-radius: 3pt; padding: 9pt 12pt; margin: 4pt 0 10pt 0; font-size: 9.6pt; }
+  .quote p:last-child { margin-bottom: 0; }
+  .who { color: var(--accent); font-weight: 600; font-size: 9.6pt; margin: 6pt 0 2pt 0; }
+  .callout { border-left: 3pt solid var(--accent-2); background: var(--tint); padding: 8pt 12pt; margin: 8pt 0 10pt 0; }
+  .page-break { break-before: page; }
+</style>
+</head>
+<body>
+
+<h1>Kontext: Lending na ALEO</h1>
+<div class="sub">Interní poznámky k průzkumu ekosystému, stav září 2026</div>
+<hr>
+
+<h2>ALEO</h2>
+<ul>
+  <li>menší ZK L1 specializovaná na privacy</li>
+  <li>na vývoj chainu získali v roce 2022 investici $200M (Series B, vedly SoftBank Vision Fund 2 a Kora, účast Tiger Global, Samsung NEXT, Sea Capital, Slow Ventures) <a href="https://www.theblock.co/news/deals/2022-02-07-aleo-raises-200-million-softbank-tiger-others-blockchain-133218">(The Block, 7. 2. 2022)</a></li>
+  <li>je teď okolo ATL (all time low), poměrně malý market cap ~$24M</li>
+  <li>používá programovací jazyk Leo pro kontrakty</li>
+  <li>investoři: a16z, SoftBank Vision Fund, Samsung NEXT, Tiger Global, Coinbase Ventures, Galaxy Digital a další</li>
+</ul>
+
+<h2>Lending na ALEO</h2>
+<p class="lead">Nic z toho zatím není v produkci, všechno je na testnetu.</p>
+
+<h3>Eclipse</h3>
+<div class="note">spíš neaktivní</div>
+<ul>
+  <li>Morpho-inspired overcollateralized lending systém s oracle + pool/vault architekturou</li>
+  <li>testnet only</li>
+  <li>vyhráli hackathon, dostali $70k</li>
+  <li>kontakt: <a href="https://www.linkedin.com/in/guillaume-roboam/">Guillaume Roboam (LinkedIn)</a></li>
+  <li><a href="https://www.linkedin.com/posts/guillaume-roboam_we-won-europes-biggest-100000-hackathon-share-7339303483872882688-W8QW/">LinkedIn post o výhře v hackathonu</a></li>
+</ul>
+
+<h3>AleoIOU</h3>
+<div class="note">neaktivní</div>
+<ul>
+  <li>privacy-focused decentralized P2P lending, projekt z 2023</li>
+  <li>podobný princip jako PWN (P2P lending)</li>
+  <li>podle všeho skončili, protože chain tehdy nebyl dostatečně zralý a hodně se měnil</li>
+</ul>
+
+<h3>AXIS</h3>
+<ul>
+  <li>pool-based lending</li>
+  <li>credit scoring lending, self-reported score a řada dalších problémů</li>
+</ul>
+
+<div class="page-break"></div>
+<h2>Projekty na ALEO, ze kterých se dá inspirovat</h2>
+<p class="lead">Cíl: přebrat některé osvědčené části architektury.</p>
+
+<h3>Arcane Finance</h3>
+<div class="note">private DEX, produkční app, pivot na Stellar</div>
+<p>Zvažoval jsem převzetí jejich <strong>RFQ = Request For Quote</strong>: maker podepíše nabídku off-chain, taker ji předloží a program v jedné transakci ověří podpis a provede atomický swap.</p>
+
+<table>
+  <tr><th>Arcane</th><th>Původní představa pro PWN</th><th>Co jsme nakonec postavili</th></tr>
+  <tr><td>maker</td><td>lender</td><td>lender</td></tr>
+  <tr><td>reserve liquidity</td><td>reserve principal</td><td>principal vložený do veřejného escrow, podmínky ve veřejném stavu</td></tr>
+  <tr><td>signed swap quote</td><td>signed loan offer</td><td>bez podpisu, podmínky zahashované on-chain</td></tr>
+  <tr><td>taker accepts</td><td>borrower accepts</td><td>borrower čerpá sám, i opakovaně, bez účasti lendera</td></tr>
+  <tr><td>atomic swap</td><td>loan originates</td><td>loan originates a žije dál: splatnost, splacení, default</td></tr>
+</table>
+
+<p><strong>Proč RFQ nepoužíváme.</strong> Půjčka není atomický swap: potřebuje escrow, který přežije transakci, a životní cyklus. Aleo navíc neumí utratit cizí privátní record, takže lender musí kapitál vložit předem tak jako tak. Podepsané nabídky by potřebovaly backend na distribuci, financované commitmenty jsou čitelné přímo z veřejného stavu. Z Arcane zůstala hranice veřejná likvidita / privátní vypořádání a autorizace hashem místo adresy. Z grantového návrhu jsem referenci odstranil.</p>
+
+<h2>Kontaktování týmů</h2>
+<p>Zkouším kontaktovat lidi z těch projektů, zjistit, proč zůstali na testnetu a jestli tam není nějaký tvrdý blocker.</p>
+<ul>
+  <li>Eclipse → contact@ailog.fr</li>
+  <li>AleoIOU / DamoMiner → damominerofficial@gmail.com</li>
+  <li>Arcane Finance → admin@polynomlabs.com</li>
+</ul>
+
+<h2>Shrnutí dosavadní komunikace</h2>
+<h3>Co odpověděli z Eclipse</h3>
+<p>Kdybych to shrnul, tak přestali, protože museli udržovat vlastní oracle a celkově se jim to finančně nevyplatilo. Potom taky narazili na MiCA compliance, protože jejich lending zahrnoval vydávání tokenu.</p>
+<h3>Z Discordu, chat s ALEO</h3>
+<p>Ve zkratce: potvrdili mi, že na ALEO zatím není žádný lending, většinou kvůli provozním nákladům. Grant může obsahovat security review jako milestone a jsou teď zaměření na zavedené projekty.</p>
+
+<div class="page-break"></div>
+<h2>Příloha A: Detail chatu s ALEO (Discord)</h2>
+<div class="who">Moje otázka</div>
+<div class="quote">
+<p>Hey. Two questions from someone scoping an ANF grant proposal for a lending protocol.</p>
+<p>1. Security review. The bug bounty scope looks like it's core protocol only (snarkOS/snarkVM), and the grants page doesn't mention audits either way. For a DeFi program handling user collateral, can a security review be scoped as a grant milestone, or is that expected to be self-funded? If anyone's been through this, I'd love to know what is possible. Also: are there auditors who genuinely know Leo, or is that still a very short list?</p>
+<p>2. Lending on Aleo. As far as I explored, nothing related to loans has been deployed to the mainnet yet. Eclipse, AleoIOU, Spectre and Shadowfi all seem to be at various pre-launch or inactive stages, but I'm going off public write-ups rather than chain data, so I may well be wrong. Is that roughly right? And if so, is there a known blocker people keep running into, or is it just that nobody has finished yet?</p>
+</div>
+<div class="who">Odpověď</div>
+<div class="quote">
+<p>1. DeFi projects are built by 3rd parties thus their creators should handle their own audits and bug bounty programs. The Foundation is only maintaining the core protocols, which are snarkOS and snarkVM. Grants application can include security review as milestones, however the current grants program is only focusing on established and proven projects partnerships rather than projects built from scratch. There are some audit companies that are experienced in auditing Leo and the Aleo protocols that we can introduce if needed.</p>
+<p>2. Yes there's no lending protocol live on Aleo yet. Previous projects are inactive or stopped developing, mostly due to the inability to sustain project maintenance costs and decided not to continue without grants support.</p>
+</div>
+
+<h2>Příloha B: E-mailová komunikace s Eclipse</h2>
+<div class="who">Můj e-mail</div>
+<div class="quote">
+<p>Hi,</p>
+<p>We're exploring building a privacy-preserving P2P lending protocol on Aleo under PWN DAO.</p>
+<p>I came across Eclipse and it looks very relevant to several architecture questions we're working through, especially private lending positions, vault / collateral handling, the SDK layer and the move from public aggregate state to private user positions.</p>
+<p>I'd be especially interested in what was hardest to build on Aleo, what you would design differently today, and whether there was a specific reason Eclipse stayed at the hackathon / testnet stage rather than progressing to mainnet.</p>
+<p>Happy to continue by email. I'd also be glad to do a short call.</p>
+<p>Thanks,<br>Jan</p>
+</div>
+<div class="who">Odpověď (Florent, Eclipse)</div>
+<div class="quote">
+<p>Hi Jan,</p>
+<p>Thanks for reaching out. Alexandre forwarded your email, I'm replying on behalf of the team. Really glad the work is useful to you. Happy to share whatever we learned.</p>
+<p>To your first point, the hardest parts weren't really the code but the infrastructure around Aleo. Nothing really existed to build on. Our first issue was the lack of a usable price oracle, so we ended up building one ourselves before we could even start on the lending side. It worked, but only because we were the ones running it, and being modelled on Chainlink it had no economic sustainability for a team our size.</p>
+<p>The second is the one you're probably going to run into: liquidating a position that's private. A liquidator has to be able to prove that someone else's position is unhealthy, and if the numbers sit behind a commitment only the borrower can open, there's no way for them to build that proof. Asking the borrower to prove their own insolvency obviously doesn't work either.</p>
+<p>What we did was cut the link between the owner and the data instead of hiding the data. The private record only holds { owner, position_id }, and a public mapping holds the collateral and debt under that anonymous id. Liquidators scan the mapping, spot the unhealthy ids and liquidate, without ever knowing whose position it is. The liquidator then gets paid through a private LiquidatorReceipt record, so consuming it is what proves they're entitled to the collateral, and no address ends up on-chain on either side. What it doesn't do is hide the amounts themselves, which as far as I know nobody has solved on any private chain.</p>
+<p>On what we would change: permissionless pools over arbitrary pairs instead of one admin vault, and partial liquidations instead of seizing the full collateral.</p>
+<p>As for why it stopped, we were in talks with the Aleo Foundation for funding and it fell through when we were asked to be MiCA compliant for the vault, since it involved issuing a stablecoin. We were confident in the technical direction, it simply wasn't economically viable for us to pursue.</p>
+<p>Email is easy, ask me anything. A call is harder before Thursday 24 September, I'm fairly unavailable until then but free from that evening onwards, Friday to Sunday included. The last commit dates back a while, so send specifics ahead and I'll go back through the code properly.</p>
+<p>Best,<br>Florent</p>
+</div>
+
+</body>
+</html>

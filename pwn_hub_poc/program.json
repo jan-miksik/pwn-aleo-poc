@@ -1,0 +1,15 @@
+{
+  "program": "pwn_hub_poc.aleo",
+  "version": "0.3.0",
+  "description": "Versioned multi-token lending",
+  "license": "MIT",
+  "leo": "4.4.2",
+  "dependencies": [
+    {
+      "name": "pwn_config_poc.aleo",
+      "location": "local",
+      "path": "../pwn_config_poc",
+      "edition": null
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "status": "accepted",
+  "type": "deploy",
+  "index": 0,
+  "transaction": {
+    "type": "deploy",
+    "id": "at1xxhtlhep6k4yr0cke7htc9nevglunl2mlksay6z8jrzpm5w3cvpsxhvqex",
+    "owner": {
+      "address": "aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s",
+      "signature": "sign17ma66cp6p9vwnj20gkxgk28xlqxyh43t44n03hufvu55cvf50yqnclp9pu3gz6zqt9czmrc0jkam3nf8cqrw74nadqynwgsu954njqcegrr08yuxfcqgwaskqnzdz4ppd5j6sey7aplul0kah3s74q2mpsa4cj3kwendvkrgfg8w4ea04qm6w2heusxsqy2a2y0fypkmlwupz5lkwpx"
+    },
+    "deployment": {
+      "edition": 0,
+      "program": "import credits.aleo;\nimport pwn_config_demo.aleo;\nimport pwn_hub_demo.aleo;\n\nprogram pwn_elastic_proposal_demo.aleo;\n\nstruct Terms:\n    credit_asset as address;\n    collateral_asset as field;\n    min_draw as u64;\n    max_draw as u64;\n    collateral_ratio as u64;\n    repayment_ratio as u64;\n    duration as u32;\n    expiry as u32;\n    lender_auth as field;\n\nstruct Authority:\n    domain as u8;\n    account as address;\n    salt as field;\n\nstruct ModuleTag:\n    module as address;\n    tag as u8;\n\nmapping terms_hash:\n    key as field.public;\n    value as field.public;\n\nmapping available_credit:\n    key as field.public;\n    value as u64.public;\n\nmapping repayments:\n    key as field.public;\n    value as u64.public;\n\nmapping closed:\n    key as field.public;\n    value as boolean.public;\n\nfunction draw:\n    input r0 as field.public;\n    input r1 as Terms.public;\n    input r2 as u64.public;\n    input r3 as address.private;\n    assert.eq self.caller pwn_loan_demo.aleo;\n    assert.eq r3 self.signer;\n    gte r2 r1.min_draw into r4;\n    lte r2 r1.max_draw into r5;\n    and r4 r5 into r6;\n    assert.eq r6 true;\n    hash.bhp256 r1 into r7 as field;\n    cast pwn_elastic_proposal_demo.aleo 2u8 into r8 as ModuleTag;\n    hash.bhp256 r8 into r9 as field;\n    call credits.aleo/transfer_public_to_private r3 r2 into r10 r11;\n    async draw 4689983254106756858434100106993802722955720561375257438640100644187670946491field r9 r0 r7 r1 r2 r11 into r12;\n    output r10 as credits.aleo/credits.record;\n    output r12 as pwn_elastic_proposal_demo.aleo/draw.future;\n\nfinalize draw:\n    input r0 as field.public;\n    input r1 as field.public;\n    input r2 as field.public;\n    input r3 as field.public;\n    input r4 as Terms.public;\n    input r5 as u64.public;\n    input r6 as credits.aleo/transfer_public_to_private.future;\n    get.or_use pwn_hub_demo.aleo/approved[r0] false into r7;\n    assert.eq r7 true;\n    get.or_use pwn_hub_demo.aleo/approved[r1] false into r8;\n    assert.eq r8 true;\n    get terms_hash[r2] into r9;\n    assert.eq r9 r3;\n    get closed[r2] into r10;\n    not r10 into r11;\n    assert.eq r11 true;\n    lt block.height r4.expiry into r12;\n    assert.eq r12 true;\n    get available_credit[r2] into r13;\n    sub r13 r5 into r14;\n    set r14 into available_credit[r2];\n    await r6;\n\nfunction receive_repayment:\n    input r0 as field.public;\n    input r1 as credits.aleo/credits.record;\n    input r2 as u64.public;\n    assert.eq self.caller pwn_loan_demo.aleo;\n    call credits.aleo/transfer_private_to_public r1 pwn_elastic_proposal_demo.aleo r2 into r3 r4;\n    async receive_repayment r0 r2 r4 into r5;\n    output r3 as credits.aleo/credits.record;\n    output r5 as pwn_elastic_proposal_demo.aleo/receive_repayment.future;\n\nfinalize receive_repayment:\n    input r0 as field.public;\n    input r1 as u64.public;\n    input r2 as credits.aleo/transfer_private_to_public.future;\n    get repayments[r0] into r3;\n    add r3 r1 into r4;\n    set r4 into repayments[r0];\n    await r2;\n\nfunction open_commitment:\n    input r0 as field.public;\n    input r1 as Terms.public;\n    input r2 as credits.aleo/credits.record;\n    input r3 as u64.public;\n    input r4 as field.private;\n    assert.eq r1.credit_asset credits.aleo;\n    cast 1u8 self.signer r4 into r5 as Authority;\n    hash.bhp256 r5 into r6 as field;\n    assert.eq r1.lender_auth r6;\n    gt r1.min_draw 0u64 into r7;\n    gte r1.max_draw r1.min_draw into r8;\n    and r7 r8 into r9;\n    assert.eq r9 true;\n    gte r3 r1.min_draw into r10;\n    assert.eq r10 true;\n    gt r1.collateral_ratio 0u64 into r11;\n    gte r1.repayment_ratio 10000u64 into r12;\n    and r11 r12 into r13;\n    assert.eq r13 true;\n    gt r1.duration 0u32 into r14;\n    assert.eq r14 true;\n    hash.bhp256 r1 into r15 as field;\n    cast pwn_elastic_proposal_demo.aleo 2u8 into r16 as ModuleTag;\n    hash.bhp256 r16 into r17 as field;\n    call credits.aleo/transfer_private_to_public r2 pwn_elastic_proposal_demo.aleo r3 into r18 r19;\n    async open_commitment r17 r0 r1 r15 r3 r19 into r20;\n    output r18 as credits.aleo/credits.record;\n    output r20 as pwn_elastic_proposal_demo.aleo/open_commitment.future;\n\nfinalize open_commitment:\n    input r0 as field.public;\n    input r1 as field.public;\n    input r2 as Terms.public;\n    input r3 as field.public;\n    input r4 as u64.public;\n    input r5 as credits.aleo/transfer_private_to_public.future;\n    get.or_use pwn_hub_demo.aleo/approved[r0] false into r6;\n    assert.eq r6 true;\n    get pwn_config_demo.aleo/settings[true] into r7;\n    assert.eq r7.protocol_fee_bps 0u16;\n    contains terms_hash[r1] into r8;\n    not r8 into r9;\n    assert.eq r9 true;\n    lt block.height r2.expiry into r10;\n    assert.eq r10 true;\n    set r3 into terms_hash[r1];\n    set r4 into available_credit[r1];\n    set 0u64 into repayments[r1];\n    set false into closed[r1];\n    await r5;\n\nfunction cancel_commitment:\n    input r0 as field.public;\n    input r1 as Terms.public;\n    input r2 as field.private;\n    input r3 as u64.public;\n    cast 1u8 self.signer r2 into r4 as Authority;\n    hash.bhp256 r4 into r5 as field;\n    assert.eq r1.lender_auth r5;\n    hash.bhp256 r1 into r6 as field;\n    call credits.aleo/transfer_public_to_private self.signer r3 into r7 r8;\n    async cancel_commitment r0 r6 r3 r8 into r9;\n    output r7 as credits.aleo/credits.record;\n    output r9 as pwn_elastic_proposal_demo.aleo/cancel_commitment.future;\n\nfinalize cancel_commitment:\n    input r0 as field.public;\n    input r1 as field.public;\n    input r2 as u64.public;\n    input r3 as credits.aleo/transfer_public_to_private.future;\n    get terms_hash[r0] into r4;\n    assert.eq r4 r1;\n    get closed[r0] into r5;\n    not r5 into r6;\n    assert.eq r6 true;\n    get available_credit[r0] into r7;\n    assert.eq r7 r2;\n    set 0u64 into available_credit[r0];\n    set true into closed[r0];\n    await r3;\n\nfunction withdraw_repayment:\n    input r0 as field.public;\n    input r1 as Terms.public;\n    input r2 as field.private;\n    input r3 as u64.public;\n    gt r3 0u64 into r4;\n    assert.eq r4 true;\n    cast 1u8 self.signer r2 into r5 as Authority;\n    hash.bhp256 r5 into r6 as field;\n    assert.eq r1.lender_auth r6;\n    hash.bhp256 r1 into r7 as field;\n    call credits.aleo/transfer_public_to_private self.signer r3 into r8 r9;\n    async withdraw_repayment r0 r7 r3 r9 into r10;\n    output r8 as credits.aleo/credits.record;\n    output r10 as pwn_elastic_proposal_demo.aleo/withdraw_repayment.future;\n\nfinalize withdraw_repayment:\n    input r0 as field.public;\n    input r1 as field.public;\n    input r2 as u64.public;\n    input r3 as credits.aleo/transfer_public_to_private.future;\n    get terms_hash[r0] into r4;\n    assert.eq r4 r1;\n    get repayments[r0] into r5;\n    sub r5 r2 into r6;\n    set r6 into repayments[r0];\n    await r3;\n\nconstructor:\n    assert.eq edition 0u16;\n",
+      "verifying_keys": [
+        [
+          "draw",
+          [
+            "verifier1qysqqqqqqqqqqqyr5gqqqqqqqqqgegsqqqqqqqqqn22qzqqqqqqqq5h8qyqqqqqqqr477qqqqqqqqqqvqqqqqqqqqqqr83y7hhhlcwf02p6c2qthuaf6lgky0e8aq75g69xuks7q44j6lcwusvhxj8f4fznrf9nan7cqe3uqyj9tgxc7t4up6f5fdlyzpxdgl5c3tn75w6gqqjqw8xtmc03nszxdklg56fcsw2n5sjvzt6pdfzusprzhftd7hcagnas0mguhze8grrac745f7sf87pzyhn28nepn0r0nx2k22qy3t3rgqlqxqfjs4jn5q9ktujad5y77xz7evw4g3yv58m7y8c5zjnhjvy4tgmkl9a269hzxrhnplec5x23gj6cavf9f539rzqqtx5yu27hk6q2seztkqtdyzswj808zrf48jzrp9wxffc2fyxal43ppyccqyv8ufc9kfwu390v8cuqw8kjy2kxc4lye6p0fg72ve8298g46lmeskvnkvw36wkdqcmrhudxra7dahvd84vqdsjgk9ppgswgp2p6xv2ex4dfml3dg8srdp4kzsu2nyy6vcuj7fnmys9adlk9h6ugn3ktgcw9p9lmlsfeax49jdr0cp8cryvd6jzezzqkdy2myum0g5afpfazppsate2dg0gqzt7a7x4xapvgamjsqfefmyn3e2ydmnuw3qzeyhrl4yxcjcwt5ucvqm9q5m0xutgxrcc2vzvttqwshfevrkymfhp6lkj2j53y7u607ux4ks0x7nqyw3mzjrggceu7402p23wn3rdn2u8h22ep37nswp98kq0js8w8vghu9pdnlevg4h3rr6kewzlq54xqrl3063h6kgu4hl2yln5r7c8aqfz8682vxf2pf33wp3hrze70y59wak0x38cv2tjkpad4qfj3wn2upyf0l2nhxl257cwz7fq8z3s3kple9795j68papqwk4yn2wpd5d3lnjkdtlhl7qtgldrf4ua0l029sqam5lvdqrs6d9876cpmhrt3s55z656egpqec57ahsegprcpuavzeq80sqqqqqqqqqdmuv3f",
+            "certificate1qyqsqqqqqqqqqqy7sg7rd9mvjk03rk654vfgx54u58vhfpevdu78mpwjssv93tdgxmc4q28pd8avevk8358pvraz9wqqq36w5y0"
+          ]
+        ],
+        [
+          "receive_repayment",
+          [
+            "verifier1qysqqqqqqqqqqqrrs5qqqqqqqqq9npgqqqqqqqqq9qkszqqqqqqqq4tuqyqqqqqqqp4muqqqqqqqqqqvqqqqqqqqqqq0l5gvt44xcx7v460wkkyr0x7w49y3ws8fhjy49jhxlrmslx4ukkdx4pgtk2f0fust4kxadnywlrsq94pqf8kmuumm3r63wp5q8kcc55c0v2l58upu9k95mvm0gg6twjxtvr08y3rrvc3wmzaudwvxcu2cr2kdp76mcs8vv7wwj2dwftz46d7uwutchm3w8nuuaqglkj54sx2v37u8ft58ym2k6al7v7vallm3qytnntd9q3wpyu2sgp7ajgjtqak4j5cj485gfas89t2pkkkqa54ggk7c7sjud8rd89yyj50c9effwqfdcxpmlm3fgt73mxdsudds3s2ewljwjc70n620ftr68pk20t0m9qjzev8s9x2ye3sx44xd30yh6kqqwmwe64tjjdharegq9vs6scv8s7xf0a2u8cm822476wspud24raztgv73h4fjztfy0g6ggx2h56cqhdlqpcyjrqvdzsk8v4dyd454ehwqj59cft4zjj8t4p6mv64qxv5l0thzzg4luh980m3vk8ka75jgqnzpeqdtdhmdrnu44csy2rkqf8ffsdys0qs8evhscqh6vzpyl66k05mmf702fxq7xgwsfs048czxs80e9zv994s08pkhr22nhqr4d0rg4dk69jefdpnlng223sk2hjc6lsxdst2zrtqf6e3k8tehpckceqvl9r66t84wwn8ct862mj33kmagvxjw0ujtx0kpukrq0yafdns29la6f24lm2nyztpmnfrrw4tnn2qd0juk95xkfscz3ce30267pwk55xae8tf4mehthaenxzc4wcgx54wcev3008r5sm35vt4av3v2m9qqz62vd8sehd506kyyyy5ahtvlcjnekhg4qf9frj2cv2vvwdflxlh8p72mssv7dynj75auprt60pqqpw0p78v0r3hyx0f6g380cdsv3hxuhlmpf8304hxnkaecyc3ze8hp4j7sqqqqqqqqqhh3g73",
+            "certificate1qyqsqqqqqqqqqqzax2nqvstqwcz92zcacz4gk99rn8m85f68nz4068yu7rt37ajujxg3vk6w8vgmvxt5jfq3lxwwajqqq5znka4"
+          ]
+        ],
+        [
+          "open_commitment",
+          [
+            "verifier1qysqqqqqqqqqqqx065qqqqqqqqqwa4gqqqqqqqqqc8aszqqqqqqqqc3cqgqqqqqqqrdy2qgqqqqqqqqvqqqqqqqqqqq99gl9exsfj8ghyakn5d3pe6eqtv8nrtuym885nm87aq4yk0n64ew25uhkfxuqkqvv8tjn5ft7ajsq7ynruupeakrp2enwdzlxle3j3hmnukywyuz99pkkrgl666ftj89230pfvjst6sk7rr5kwlrltxfqz3c3v3u5yqfkhfka5w8qm4qfu0k2hyfv5z2evlfvzv2anyk0nsszsmq5xt926c4v6ys9xh3llu48s9kc63yztvq4turuy4cuw5599c84gs8vg2sk5j3pp7nag5ymq24dau06yeu3rgj2lkmfj9j59hup7qgsufg35dy0hhcgq9reu98zsj3aphfd5a0rywpd0rseuzd30lm5gdrl55w52flrjh76j5wa6tdddkqa2pnh9c24kr35z9xgacca6ur0tp7q5lywa7hunqa940gy70v0t7jn5r4lse6l9nd6gtxzz2q76qvpzh520a2e64vtmvz7ulupn3vc2vs99xxp77fm7t220u8emls94gswnv40d9dr2elzu3mggvnpeyxqpwhpulgt3qyagsz7ct5anx6w9hpm9aclvc8fdu5rk29sewvklmm8mrhmnkkrk5keszk4xhr8uf2kq9utv67nqkg7trfalza9aq67mtqwetmzjl363fhazw0adeqzhpy8h7gastw7y73wwxz6lcqn4gsfaqwdac9jdl2f2aaykgfusyjzg5tzgvlwj78efuacwhjynq3pyasa5p6znk4mppcs5ygp8gwkujrv5kqyvfzlkr602eszh88zvlnjcru79elkc8e74a8z700jvfpmym3mjg0zg7wc24klq89g0dmr84dpufcpzvu9uadyxcyagrf2xh88jeqefkn2cz0383r8fkmvhnpla8yghjme809p4xhwmx8ma6lprwlk0zxqra9zencckk5q5gscez8wqxn9hhnc02pwuxhzq07r7ucxjrewzle23y5szqqqqqqqqc2nmd8",
+            "certificate1qyqsqqqqqqqqqqxzy5xgpp700usz4s9l7heh5lpp2wcy3rtg5zukcwz3ffmant9rxe76fywyrtf2400ggqk59an9f2qsqljqy78"
+          ]
+        ],
+        [
+          "cancel_commitment",
+          [
+            "verifier1qysqqqqqqqqqqqr5kgqqqqqqqqqg8vsqqqqqqqqqaxkszqqqqqqqph0xqyqqqqqqqrmquqgqqqqqqqqvqqqqqqqqqqq2jjktkfzf5e0n3kuxr92dp6e5dp6dnudmskmhkr4wslmjmcevum27jc32xyfjvy4lu4jvp93yn3gqy8d5aeddw8dy83gspp7gmrfkkrk8s0zhewdud5sygne260wdn5286ejv083mvmdgjlc0q0xz5hrgpg9702ca3z096yezrwqjj9h2awfvgjlgtcqv4h8l27662p887njgth8t6ut9ynh949m535jyazc5qxtpsggsld2p8wqq2d7sf2ysaqch37yvs9sf6686dp6e0rkn5gd6r2axcmpp2z4t9zlws6wuq7rqkqvcr493qjs9kqd60lr3rdtssls2lveky49lzsaaae5vc5x8ak4d830347jfcpv85583agk88ezhwyqr3a3pp7jmczznry5jsqetr2elcqanjddea6s6nqndpxw7ccjxyd9crg4ad3ytxefan92lazy9phcq7m4t2t5uec5zfqup86ysatze9pl2d89d5e0d9emfjgtt5y3rz05myk3e2ndyr37aqljdgpa3tvespsu0avl5drvek0tykhdcatlxuelcs5e8egqxffz42yqtnwmm0lqc2qjeqjtff60kkkrfvk463w6qsr54uktfd7w5j0q326snpggazevxkkachg7dasdalfaksmg0zyk7rmwrqvslddm6km8htwh2zmzy4q93654uc29gplaezyvvyc8jm7t4ncdv79w6ucxfq5j0fnsnp68a0znvdhcnz6k0w0zmlx2yau7t8yqtapsc5620leqpu5vrkkpxaphgtmk5jv0klndt6ccwjw6nx59wt42y9l4eugmg8v8zqzyg2w6pp3sqyrxsuqmw2xe0hf2sf3qc863ehvfrjczq8l8y2gerffk0x2jc2ym730zlmrva633nv5pc9exq8v6qpx4hhunp97t3skkd0ds69nnvd7u4rwn3j6jcesat4gsxlqvgzrw6vm4qqqqqqqqqqn8p5vr",
+            "certificate1qyqsqqqqqqqqqq9tc6ge8wvr2h92fl8u64z5sp7n098ezyvusmwrr2ejgejnvmu9wa5ul4ey77elmav3r57q2szf5xqsqnju7ev"
+          ]
+        ],
+        [
+          "withdraw_repayment",
+          [
+            "verifier1qysqqqqqqqqqqq94kgqqqqqqqqqvdvsqqqqqqqqq46hqzqqqqqqqqg88qyqqqqqqqquq7qgqqqqqqqqvqqqqqqqqqqqwu5m5myk2qyy60tlk7ex7mzsd63sv9fl0dhx5exruhz42ca4kuptzd43vtyxyqrp205ywu8n348sqy5aqn3r6txrt3mvfajvzr4q4je885cdcgyf94nny060mz76220qsd397mrvqclzt96nu2snvvdugp7ca2cgqfgvh8kwgpv2uh888t9qykez6a98nwmf7f42kx59ut6avem0ymg6tmtv9pa4jlww7fg5gs9rgaznlnyh4udtfx4jstd20599nqnst02tww8cfywyuyrpwe6dckrr8v5uny9d7uhgycxwdnfmd7qrd9yec7kn8sl0mzc98qg30636rnllhluegcs8srjrjfm76h3xly3rmehzcnc2vgl05052q382ap7qxuvyhckelf3k8vtwk0e0m70lsctndfkgw5cxn0ml5ewkc3j7y2d5q62pfdxul6lj3phf9ye85cqvp5j28f2gx2zlm05ascrjhxh6jm2vwawhnulxrsm8wg8n6ual9ry3ls0qr2sgzxv3mz2g7dndz27pgq0pgkw44v9eyh6903w9nhyf5uswcggp7um24txkn620fpgqve3lteutenvfacw9vl0dxvc5sjg4yqzryvgrrm0yu9yh5e43zuz3m7nc9uvqlwcer6ge2yemgslhqh674vnweprvaaclqvah8pfkkz4xnuqv2s8vdp4sjx5alwgl9r22k0zqhmy3zvqgekhdt69gahgauy8kdsmnly2z687rfp8xfs265u6q4pqq0nplpgtem54d3qs7rfjft7sreqqxyaktumsz2e9m389qm4n3rzekpr4tjrwarepqrl9vkq428nkgq3ecask4wpdef2fa6p6ukkpkqxztwjdgnl260wqw0eluxc9ymu5rqcewaqcvyrlprun6rg8g94pwszcuk5dmlr09z46wl24p99uylpx065wxe9w0msxx4w6aqfncrz3yntn4sqqqqqqqqqweujme",
+            "certificate1qyqsqqqqqqqqqqyn3g406kw6ukm6fj57zjgjefu8kk0hkzt4nsrme5d7aqgnvtgksfw658jnmhg7qzeep4hh5mrg52qsq4l0kqx"
+          ]
+        ]
+      ],
+      "program_checksum": [
+        "77u8",
+        "180u8",
+        "12u8",
+        "163u8",
+        "4u8",
+        "252u8",
+        "19u8",
+        "89u8",
+        "223u8",
+        "227u8",
+        "233u8",
+        "111u8",
+        "63u8",
+        "188u8",
+        "117u8",
+        "143u8",
+        "137u8",
+        "200u8",
+        "171u8",
+        "94u8",
+        "34u8",
+        "248u8",
+        "131u8",
+        "230u8",
+        "207u8",
+        "107u8",
+        "16u8",
+        "55u8",
+        "101u8",
+        "160u8",
+        "46u8",
+        "124u8"
+      ],
+      "program_owner": "aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s"
+    },
+    "fee": {
+      "transition": {
+        "id": "au19t358zg368562e72832jmlhg07wxx0uey8wv27r0g52cragthqpst9e7jq",
+        "program": "credits.aleo",
+        "function": "fee_public",
+        "inputs": [
+          {
+            "type": "public",
+            "id": "2802880732863879147905146364236684767931979753260493863001524964968310032114field",
+            "value": "9801318u64"
+          },
+          {
+            "type": "public",
+            "id": "7142119509030699848898156392104423089015726311216222942746355637710599881414field",
+            "value": "0u64"
+          },
+          {
+            "type": "public",
+            "id": "1985999487182500206780146571273511236863496674867358972651042879327669686707field",
+            "value": "956469937578522940802821962412700969494734502790678617522665198829780945362field"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "future",
+            "id": "6075174763325542848694829230123800488785623119778026938228622398837435985402field",
+            "value": "{\n  program_id: credits.aleo,\n  function_name: fee_public,\n  arguments: [\n    aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s,\n    9801318u64\n  ]\n}"
+          }
+        ],
+        "tpk": "3514631628671020555926189247925416586428568978358676140101705375817690579369group",
+        "tcm": "1680804250606513064875617141688349800010488812772094379647094244098882948446field",
+        "scm": "4622591720765917955367820927651932175510258169512440446571864507803695513161field"
+      },
+      "global_state_root": "sr1rr3zlvz4c8nyz43l74mysgvcxn5yfccl2hdnh2eeg2u5xpqylvzq8dawst",
+      "proof": "proof1qyqsqqqqqqqqqqqpqqqqqqqqqqq9wd70qm0vx56sa9wm03fr9er9hlzaujfydgkeklqzj4xxwwshud76kk9ph6qycvg2nnt9xg7s9yspq8snq2glc20vphnt7kq7cqvqqn92s8qwl2pdn4egvkd087ch8s00yve5ejng830678fynstcmy0p4qqxvwqt0q27khaefr2ss987fv8qv7p3r6n5cmf7wmkpft6arxuekwujrecud72k230l7y43nnt94qqn0tdshrewc7qptfz8dcv29efhmjke6sjg03aumsnq8ujqgqmtx6e06z9s2r80z72h3zwaqqltz5vq0a9uxn5lxwjrtltaermuf3rkrks70qka5c52q4trut4hh6cg5egf099795wcmc5e7a7zsqmjn6lgqxtydempd3uhy6qnrz2jqrynlrgur9uvem99g88qc9sj003g9mejtdrkrwq92svc0hfhqt9teeunsy8zvtzdkgz7ps5ee79ykn0h98kqswrq7w4wtkf8lvluy8hkdqk555m9udsv4lmmh3l8pye8ddw7mqzus2elyqmxfkyvr3d6lkfhng5sx36me3gt2ku6vx5yvnwzt62stvg9muupycxk74u37k4rj67u2sqhfu67tpssvm4qphf8m64z7m474x9vvakl8223hp8ec7y5u95377x5d8sqe2pydhvg6sk27vs9zdupu3yc7qxk9ht76aqg6eqkkc7cqewatu5mrc8nggc7fg5xtg3z0c9ap3snvc5p24h3mkhsrhq2zxdrdrmkr02emj4wvgpxdnx800d5srzrcdlvnm35h7zeq0rcljh2t0m85zdueyd7amsmwjxmvjztyycmzrqz4a9plyazlt9kg5plcxycr2wfhvzdcc75thjndluhzpzk5p0s85xww0epd6a3nljy96fyvc3lltg3q4l40ttm39nwxxs2f460s7gxwk5jl2ktpn3kj4p2ukljmunmzw8353upde2schj4rl7xwujg3y9v940ctg8gp60z3sce0ykc6ess6csxpl6mslahmv5mtgxnan8evp345s06pecsaprf64ulugvfzpkzp54c3mpmf9dap3hu34rfd9puqsd3qrv9e9a6tf80pf6krl6nf286wz6nj0dx78s0tauk6tdyq43sfesezyuqm9t4knvcrnlwjdxk789uz7gcfdzmhh5f69ud49ckancyqvqqqqqqqqqqqv8ennedq8d4aqn0qnqc774nruyqp4thmvg26sua9ldscnrajlh5630kvs0zt6nky66nwhu5qnzpqyqvv03k33lvhngekqq4z8tvtxd7sr8wj8zsyrs9qtmp0st9m94mr30meujrmfxyaj30p00n06sw5pqqq905szgh23jaf9hjqld2ru3equwmhm9vs8v8fk36vxexchevd7xqj6fnds824hfa72qvyuy25xdzhznxpssgeqwj0terj8pk5vv4nc2fntdjm2vpxwmatnwrfnzdqvz2sqqqhlquxu"
+    }
+  },
+  "finalize": [
+    {
+      "type": "update_key_value",
+      "mapping_id": "2855157744830843716005407030207142101853521493742120919939436395872133863104field",
+      "key_id": "6506976524296272132507800219769308334008756365166160310746465452681451928863field",
+      "value_id": "3884595800397329021852608875183038417058438312142731675965184072475127150381field"
+    },
+    {
+      "type": "initialize_mapping",
+      "mapping_id": "337542054608671435796028481127173594633889539471296153984909721270027840574field"
+    },
+    {
+      "type": "initialize_mapping",
+      "mapping_id": "6619269648874258086171960308339474740543363028191999963959374433358376768294field"
+    },
+    {
+      "type": "initialize_mapping",
+      "mapping_id": "4901254971896447506655742267164519059817484186062257737035906952766668655766field"
+    },
+    {
+      "type": "initialize_mapping",
+      "mapping_id": "5556339919360738966508676378046617538113778296603672309099345479371587184165field"
+    }
+  ]
+}

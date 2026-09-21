@@ -1,0 +1,78 @@
+{
+  "type": "execute",
+  "id": "at14a76tujkk8nqzljx9m7my0mqrm4ufy7xgjzvg8aqrqr2uaj07gysfyhhgs",
+  "execution": {
+    "transitions": [
+      {
+        "id": "au1gazz9m2wgrh92x5h99ekymhd50edgw0t6wlau626fu6uaw25l58qw3zqwn",
+        "program": "credits.aleo",
+        "function": "transfer_public_to_private",
+        "inputs": [
+          {
+            "type": "private",
+            "id": "6636710280446013806925847315353147410902236394423468581129805935396395162448field",
+            "value": "ciphertext1qgqfpjnvww9ugqfcwrrrwgukutpq99esjk7am69478t4yce4c9p2xqseykjll3w7q0c0hjnq4ckh9ls7pwgyz0n2l6kryh654j86ghmgp5pmcsva"
+          },
+          {
+            "type": "public",
+            "id": "717184021605183750286293031492196095063850316467751874082885312607701063764field",
+            "value": "1000000u64"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "record",
+            "id": "3627330591400390428836797321301407463347285193988985647039001245019878043481field",
+            "checksum": "3802962562240231902462691367645268796334895064456711267197208506193605180375field",
+            "value": "record1qvqspz4mgtuzpqdpv4t42p59u8jl4sh2q356zaryz6zh9778mst8jcc0qyxx66trwfhkxun9v35hguerqqpqzqymscc4lsnvsn6ea5esgvxflgak0p5prwyslv8cp9uef2plvj24q3zx8j8xczfsvd6y477emjdqws20eg3evchlyygsdm9tagu6w6zq2wlag37",
+            "sender_ciphertext": "3691835080230138400134515710127673538881014072844106383952160185590437615573field"
+          },
+          {
+            "type": "future",
+            "id": "4496400140611534088539123707362074905886146800627849135036381178999698586120field",
+            "value": "{\n  program_id: credits.aleo,\n  function_name: transfer_public_to_private,\n  arguments: [\n    aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue,\n    1000000u64\n  ]\n}"
+          }
+        ],
+        "tpk": "919583699363639822223477638873046666043029961747080581553323226406703600221group",
+        "tcm": "2462428786304518649456149572749122581789770511390000489944823086844429830196field",
+        "scm": "1195962816807017113968402820117893351540798720602375365702656366897933218488field"
+      }
+    ],
+    "global_state_root": "sr17vdkuqjac63u9ch9nuhu79jwzm3m8uk09qcvq8mzkrtx2japeugs3q7f0c"
+  },
+  "fee": {
+    "transition": {
+      "id": "au14wqmgf8x9zkzh3cne34vu8tdw02kq5eu5l77zrewsderh3gl7sgsdprdlw",
+      "program": "credits.aleo",
+      "function": "fee_public",
+      "inputs": [
+        {
+          "type": "public",
+          "id": "1711040096513849896256660835464321225415600962462088617433292522585993542405field",
+          "value": "1347u64"
+        },
+        {
+          "type": "public",
+          "id": "3309212471361193117104469814965984276005620901564575987680672617673312399691field",
+          "value": "0u64"
+        },
+        {
+          "type": "public",
+          "id": "6653758180032322782316281023060129376549035005291400650534881701900175216183field",
+          "value": "1126880501292195932271652386149650943729869461240051664833738692732226581706field"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "future",
+          "id": "6367946520748327864554497386905297039318053442192337593380065937076043667301field",
+          "value": "{\n  program_id: credits.aleo,\n  function_name: fee_public,\n  arguments: [\n    aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue,\n    1347u64\n  ]\n}"
+        }
+      ],
+      "tpk": "4677195421776059316449244228942698426729818030128779880265236554435798109044group",
+      "tcm": "5020393055680798092962969482277661653545632382276977547879839147387685162010field",
+      "scm": "8345901432041670609187613866407635825569332098941804963908808959772261176707field"
+    },
+    "global_state_root": "sr17vdkuqjac63u9ch9nuhu79jwzm3m8uk09qcvq8mzkrtx2japeugs3q7f0c"
+  }
+}

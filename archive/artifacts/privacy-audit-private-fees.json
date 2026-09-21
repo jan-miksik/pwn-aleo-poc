@@ -1,0 +1,68 @@
+[
+  {
+    "flow": "open_commitment",
+    "execution_transition_count": 2,
+    "plus_fee_transition": 1,
+    "private_inputs_encrypted": true,
+    "token_records_encrypted": true,
+    "known_participant_addresses_in_public_protocol_values": false,
+    "fee_function": "fee_private",
+    "public_fee_reveals_participant": false,
+    "transaction_file": "artifacts/integration-private-fees/transactions/009-pwn_elastic_proposal.aleo-open_commitment/transaction.execution.json"
+  },
+  {
+    "flow": "accept",
+    "execution_transition_count": 4,
+    "plus_fee_transition": 1,
+    "private_inputs_encrypted": true,
+    "token_records_encrypted": true,
+    "known_participant_addresses_in_public_protocol_values": false,
+    "fee_function": "fee_private",
+    "public_fee_reveals_participant": false,
+    "transaction_file": "artifacts/integration-private-fees/transactions/012-pwn_loan.aleo-accept/transaction.execution.json"
+  },
+  {
+    "flow": "repay",
+    "execution_transition_count": 4,
+    "plus_fee_transition": 1,
+    "private_inputs_encrypted": true,
+    "token_records_encrypted": true,
+    "known_participant_addresses_in_public_protocol_values": false,
+    "fee_function": "fee_private",
+    "public_fee_reveals_participant": false,
+    "transaction_file": "artifacts/integration-private-fees/transactions/042-pwn_loan.aleo-repay/transaction.execution.json"
+  },
+  {
+    "flow": "claim_default",
+    "execution_transition_count": 2,
+    "plus_fee_transition": 1,
+    "private_inputs_encrypted": true,
+    "token_records_encrypted": true,
+    "known_participant_addresses_in_public_protocol_values": false,
+    "fee_function": "fee_private",
+    "public_fee_reveals_participant": false,
+    "transaction_file": "artifacts/integration-private-fees/transactions/067-pwn_loan.aleo-claim_default/transaction.execution.json"
+  },
+  {
+    "flow": "cancel_commitment",
+    "execution_transition_count": 2,
+    "plus_fee_transition": 1,
+    "private_inputs_encrypted": true,
+    "token_records_encrypted": true,
+    "known_participant_addresses_in_public_protocol_values": false,
+    "fee_function": "fee_private",
+    "public_fee_reveals_participant": false,
+    "transaction_file": "artifacts/integration-private-fees/transactions/039-pwn_elastic_proposal.aleo-cancel_commitment/transaction.execution.json"
+  },
+  {
+    "flow": "withdraw_repayment",
+    "execution_transition_count": 2,
+    "plus_fee_transition": 1,
+    "private_inputs_encrypted": true,
+    "token_records_encrypted": true,
+    "known_participant_addresses_in_public_protocol_values": false,
+    "fee_function": "fee_private",
+    "public_fee_reveals_participant": false,
+    "transaction_file": "artifacts/integration-private-fees/transactions/047-pwn_elastic_proposal.aleo-withdraw_repayment/transaction.execution.json"
+  }
+]

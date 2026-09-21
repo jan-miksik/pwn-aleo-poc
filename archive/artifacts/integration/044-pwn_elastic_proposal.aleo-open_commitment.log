@@ -1,0 +1,103 @@
+
+
+📢 Using the following consensus heights: 0,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+  To override, pass in `--consensus-heights` or override the environment variable `CONSENSUS_VERSION_HEIGHTS`.
+
+
+🚀 Execution Plan Summary
+──────────────────────────────────────────────
+🔧 Configuration:
+  Private Key:        APrivateKey1zkp8CZNn3yeC...
+  Address:            aleo1rhgdu77hgyqd3xjj8uc...
+  Endpoint:           http://127.0.0.1:49364
+  Network:            testnet
+  Consensus Version:  19
+
+🎯 Execution Target:
+  Program:        pwn_elastic_proposal.aleo
+  Function:       open_commitment
+  Source:         local
+
+💸 Fee Info:
+  Priority Fee:   0 μcredits
+  Fee Record:     no (public fee)
+
+⚙️ Actions:
+  - A transaction will be generated, WITHOUT a proof.
+  - Transaction will NOT be printed to the console.
+  - Transaction will NOT be saved to a file.
+  - Transaction will be broadcast to http://127.0.0.1:49364
+──────────────────────────────────────────────
+
+
+➕Adding programs to the VM in the following order:
+  - credits.aleo (already included)
+  - token_registry.aleo (local)
+  - pwn_config.aleo (local)
+  - pwn_hub.aleo (local)
+  - pwn_elastic_proposal.aleo (local)
+  - pwn_loan.aleo (local)
+
+⚙️ Generating transaction WITHOUT a proof for pwn_elastic_proposal.aleo/open_commitment...
+
+📊 Execution Cost Summary for pwn_elastic_proposal.aleo
+──────────────────────────────────────────────
+💰 Cost Breakdown (credits)
+  Transaction Storage:  0.004037
+  On-chain Execution:   0.003306
+  Priority Fee:         0.000000
+  Total Fee:            0.007343
+──────────────────────────────────────────────
+
+➡️  Outputs
+
+ • {
+  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,
+  microcredits: 0u64.private,
+  _nonce: 2130586336103797503303583162266574253152944956454001242568211904709496271848group.public,
+  _version: 1u8.public
+}
+ • {
+  program_id: pwn_elastic_proposal.aleo,
+  function_name: open_commitment,
+  arguments: [
+    2591453716012702092681193114121394122338651389179742539139594451187170533420field,
+    4field,
+    {
+  credit_asset: aleo1lqmly7ez2k48ajf5hs92ulphaqr05qm4n8qwzj8v0yprmasgpqgsez59gg,
+  collateral_asset: 987654321field,
+  min_draw: 100u64,
+  max_draw: 600u64,
+  collateral_ratio: 15000u64,
+  repayment_ratio: 11000u64,
+  duration: 3u32,
+  expiry: 1067u32,
+  lender_auth: 7134663253364879438032568740649159329065438500937956886885468873760437635961field
+},
+    1577870074828426929479965258958203548193625438675211974212646823905499588645field,
+    1000u64,
+    {
+      program_id: credits.aleo,
+      function_name: transfer_private_to_public,
+      arguments: [
+        aleo1u26eefy7w0fxep9wqq292vvf2vjc0hw94sxewdxhyrxc04mg8qysea2zkr,
+        1000u64
+      ]
+    }
+  
+  ]
+}
+
+📡 Broadcasting execution for pwn_elastic_proposal.aleo...
+💰Your current public balance is 9371845.057231 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at1ctc567s625j0kzfzzz42n8gpjafqm6rvred5rlfuanwmyrfheyxquhvthh'
+  - fee ID: 'au1u6gz3cdl3txvmpu6sceqfu2f40cwz5ww2exv9ucu993hvtg9tsqsafmu2x'
+  - fee transaction ID: 'at1a6lv4chgfj6sk7q8vt28fz0rrv97rkhekhczzzlpt93fzn6w6upq062v8z'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Execution confirmed!

@@ -1,0 +1,87 @@
+
+       Leo 🔨 Compiling 'pwn_loan.aleo'
+       Leo     Program size: 4.41 KB / 2000.00 KB
+       Leo ✅ Compiled 'pwn_loan.aleo' into Aleo instructions.
+       Leo     Import 'pwn_config.aleo': program size: 1.13 KB / 2000.00 KB
+       Leo     Import 'pwn_hub.aleo': program size: 0.79 KB / 2000.00 KB
+       Leo     Import 'pwn_elastic_proposal.aleo': program size: 6.57 KB / 2000.00 KB
+       Leo ✅ Generated ABI for program 'pwn_loan.aleo'.
+
+➕ Adding programs to the VM in the following order:
+  - credits.aleo (already included)
+  - token_registry.aleo (local)
+  - pwn_config.aleo (local)
+  - pwn_hub.aleo (local)
+  - pwn_elastic_proposal.aleo (local)
+  - pwn_loan.aleo (local)
+
+🌱 Synthesizing the following keys in pwn_loan.aleo:
+    - accept (function)
+    - repay (function)
+    - claim_default (function)
+
+⚠️  "powers-of-beta-16.usrs.84631bc" does not exist. Downloading and storing it (in "/Users/janm/.aleo/resources/powers-of-beta-16.usrs.84631bc").
+
+   Installation - Downloading "https://parameters.provable.com/mainnet/powers-of-beta-16.usrs.84631bc"
+   Installation - Download complete (3 MB)
+   Installation - Storing file in "/Users/janm/.aleo/resources/powers-of-beta-16.usrs.84631bc"
+
+⚠️  "powers-of-beta-17.usrs.7c27308" does not exist. Downloading and storing it (in "/Users/janm/.aleo/resources/powers-of-beta-17.usrs.7c27308").
+
+   Installation - Downloading "https://parameters.provable.com/mainnet/powers-of-beta-17.usrs.7c27308"
+   Installation - Download complete (6 MB)
+   Installation - Storing file in "/Users/janm/.aleo/resources/powers-of-beta-17.usrs.7c27308"
+
+⚠️  "shifted-powers-of-beta-17.usrs.2025178" does not exist. Downloading and storing it (in "/Users/janm/.aleo/resources/shifted-powers-of-beta-17.usrs.2025178").
+
+   Installation - Downloading "https://parameters.provable.com/mainnet/shifted-powers-of-beta-17.usrs.2025178"
+   Installation - Download complete (6 MB)
+   Installation - Storing file in "/Users/janm/.aleo/resources/shifted-powers-of-beta-17.usrs.2025178"
+
+⚠️  "powers-of-beta-18.usrs.7a12bcb" does not exist. Downloading and storing it (in "/Users/janm/.aleo/resources/powers-of-beta-18.usrs.7a12bcb").
+
+   Installation - Downloading "https://parameters.provable.com/mainnet/powers-of-beta-18.usrs.7a12bcb"
+   Installation - Download complete (12 MB)
+   Installation - Storing file in "/Users/janm/.aleo/resources/powers-of-beta-18.usrs.7a12bcb"
+
+⚠️  "shifted-powers-of-beta-18.usrs.9a1859e" does not exist. Downloading and storing it (in "/Users/janm/.aleo/resources/shifted-powers-of-beta-18.usrs.9a1859e").
+
+   Installation - Downloading "https://parameters.provable.com/mainnet/shifted-powers-of-beta-18.usrs.9a1859e"
+   Installation - Download complete (12 MB)
+   Installation - Storing file in "/Users/janm/.aleo/resources/shifted-powers-of-beta-18.usrs.9a1859e"
+
+⚠️  "powers-of-beta-19.usrs.e535d44" does not exist. Downloading and storing it (in "/Users/janm/.aleo/resources/powers-of-beta-19.usrs.e535d44").
+
+   Installation - Downloading "https://parameters.provable.com/mainnet/powers-of-beta-19.usrs.e535d44"
+   Installation - Download complete (24 MB)
+   Installation - Storing file in "/Users/janm/.aleo/resources/powers-of-beta-19.usrs.e535d44"
+
+🔑 Synthesized keys for pwn_loan.aleo/accept (edition 1)
+ℹ️ Circuit Information:
+    - Public Inputs: 64
+    - Variables: 108792
+    - Constraints: 82292
+    - Non-Zero Entries in A: 217953
+    - Non-Zero Entries in B: 259648
+    - Non-Zero Entries in C: 119107
+    - Circuit ID: 627390da78827a454f8ca257c1b10e5a78fe1396124842d480ad7de875737b16
+
+🔑 Synthesized keys for pwn_loan.aleo/repay (edition 1)
+ℹ️ Circuit Information:
+    - Public Inputs: 32
+    - Variables: 80247
+    - Constraints: 61799
+    - Non-Zero Entries in A: 163255
+    - Non-Zero Entries in B: 197406
+    - Non-Zero Entries in C: 91183
+    - Circuit ID: 600277d3b056f7aab62ef9b23414fabb8b261502dc1a8a971e9d68a0619e9a5e
+
+🔑 Synthesized keys for pwn_loan.aleo/claim_default (edition 1)
+ℹ️ Circuit Information:
+    - Public Inputs: 32
+    - Variables: 68559
+    - Constraints: 53663
+    - Non-Zero Entries in A: 133438
+    - Non-Zero Entries in B: 150695
+    - Non-Zero Entries in C: 82299
+    - Circuit ID: f75282b21d4fef585a25fb701954cb294c0ceaf8fa459be24cabb36882b6134b

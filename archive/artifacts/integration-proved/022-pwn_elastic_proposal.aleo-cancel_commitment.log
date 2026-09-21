@@ -1,0 +1,51 @@
+
+
+📢 Using the following consensus heights: 0,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+  To override, pass in `--consensus-heights` or override the environment variable `CONSENSUS_VERSION_HEIGHTS`.
+
+
+🚀 Execution Plan Summary
+──────────────────────────────────────────────
+🔧 Configuration:
+  Private Key:        APrivateKey1zkpGPDbTcP2r...
+  Address:            aleo16k6wjpe5snzfhzf07mf...
+  Endpoint:           http://127.0.0.1:49364
+  Network:            testnet
+  Consensus Version:  19
+
+🎯 Execution Target:
+  Program:        pwn_elastic_proposal.aleo
+  Function:       cancel_commitment
+  Source:         local
+
+💸 Fee Info:
+  Priority Fee:   0 μcredits
+  Fee Record:     no (public fee)
+
+⚙️ Actions:
+  - A transaction will be generated, WITHOUT a proof.
+  - Transaction will NOT be printed to the console.
+  - Transaction will NOT be saved to a file.
+  - Transaction will be broadcast to http://127.0.0.1:49364
+──────────────────────────────────────────────
+
+
+➕Adding programs to the VM in the following order:
+  - credits.aleo (already included)
+  - token_registry.aleo (local)
+  - pwn_config.aleo (local)
+  - pwn_hub.aleo (local)
+  - pwn_elastic_proposal.aleo (local)
+  - pwn_loan.aleo (local)
+
+⚙️ Generating transaction WITHOUT a proof for pwn_elastic_proposal.aleo/cancel_commitment...
+
+📊 Execution Cost Summary for pwn_elastic_proposal.aleo
+──────────────────────────────────────────────
+💰 Cost Breakdown (credits)
+  Transaction Storage:  0.003153
+  On-chain Execution:   0.002063
+  Priority Fee:         0.000000
+  Total Fee:            0.005216
+──────────────────────────────────────────────
+Stack evaluation failed: Instruction (assert.eq r1.lender_auth r5;) at index 2 failed: 'assert.eq' failed: '7134663253364879438032568740649159329065438500937956886885468873760437635961field' is not equal to '251673585995087358529469097280506221473045358463080426189950050796663398205field' (should be equal)

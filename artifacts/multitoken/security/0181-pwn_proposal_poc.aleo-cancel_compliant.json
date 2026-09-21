@@ -1,0 +1,27 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:62679",
+    "consensus_version": 19
+  },
+  "program": "pwn_proposal_poc.aleo",
+  "function": "cancel_compliant",
+  "outputs": [
+    "{\n  owner: aleo1cvdcz7hzu7pjca4a429dwzxp2h6rjv95ldw6vrf9395tnef2xc8sn624ch,\n  _root: 3323857531490913808557213140742164159129396023206320746767005629680473146209field,\n  _nonce: 6084733430167574815019625866883769391071828581663000203249448882289598797805group,\n  _version: 1u8\n}",
+    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n  _root: 1175625097653994850205202983895709894746388148318702955971340140266412504597field,\n  _nonce: 7901977050273173076130486939454391579614513639254473113262806352531879493692group,\n  _version: 1u8\n}",
+    "{\n  program_id: pwn_proposal_poc.aleo,\n  function_name: cancel_compliant,\n  arguments: [\n    991472915866624118581621927071960669626878373051698640204533685017783445345field,\n    1333054827443930849739734304187088308813743592409808262479721365810531368965field,\n    {\n  credit_asset: {\n    program_id: 'usad_stablecoin',\n    token_id: 0field,\n    family: 3u8,\n    version: 1u16\n  },\n  collateral_asset: {\n    program_id: 'credits',\n    token_id: 0field,\n    family: 1u8,\n    version: 1u16\n  },\n  min_draw: 100u128,\n  max_draw: 600u128,\n  collateral_ratio: 15000u64,\n  repayment_ratio: 11000u64,\n  accruing_apr: 0u32,\n  duration: 1000u32,\n  expiry: 5217u32,\n  lender_auth: 865229778341903752338166106701835444336754338248750890662787523928986996070field\n},\n    1000u128,\n    { _program_id: usad_stablecoin.aleo, _function_name: transfer_public_to_private, _checksum: 2325626459358916779594094471204346738403263545419283338911017324181130149070field }\n  ]\n}"
+  ],
+  "transaction_id": "at13yfgvqw78q95zjnafatsj6uw9sxnax2szq2q3w08d90gn54z35gq6s5twl",
+  "stats": {
+    "storage_cost": 5632,
+    "execution_cost": 3206,
+    "priority_fee": 0,
+    "total_cost": 8838
+  },
+  "broadcast": {
+    "fee_id": "au15tazuay5xp3hhqkr295udwfmm8kt4hdd7pg92k5cs8djsgjffvrs2hxmu3",
+    "fee_transaction_id": "at1l9665ghkfunkulj9uzale75qa2s4tgsn9x4ukg6z8eww828wacysvjenn2",
+    "confirmed": true
+  }
+}

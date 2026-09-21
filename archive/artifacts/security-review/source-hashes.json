@@ -1,0 +1,14 @@
+{
+  "pwn_config/src/main.leo": "731bf6d1bff3384a2124bf663b51804f4ad0d73b36dd76d6eac4706879d835b8",
+  "pwn_elastic_proposal/src/main.leo": "58764b39f22616b2b6e4c1d88c2fbb0e3bfc4902b10dc729404679d9e7c42cce",
+  "pwn_hub/src/main.leo": "397d9142abf8bbbcbecf6ecaac467eaa4248995717abc7f52e6addc40cd2f7ff",
+  "pwn_loan/src/main.leo": "29a3d6335c5b9e91b97cab4d5b23c0409c459a70a241dca798b59a8db28049ec",
+  "pwn_test_utils/src/main.leo": "a9afe54f96e2df11c14ce501ededac2b328d92d57228d985681291dffc4050e0",
+  "scripts/testnet_lifecycle.py": "9cba6d0fb36a2f2dc74834ee733617d5769cfb914f1e4495a1c8b814ad3262a4",
+  "testnet/programs/pwn_config_demo/src/main.leo": "d8aa787e707a80ff869e71ed96000a7e074eab61d28294727518d374e9018fa3",
+  "testnet/programs/pwn_elastic_proposal_demo/src/main.leo": "f531e5db1731e25478df1cc7b7a4a13ed995ac4a1b086efdc98312c55b1d399c",
+  "testnet/programs/pwn_hub_demo/src/main.leo": "6a898d2ae03e63840cf21c6008fbc65578409273ada48bdfbc3a8d2777f88f88",
+  "testnet/programs/pwn_loan_demo/src/main.leo": "38f59f8ce7f3314c8ff3758817e1f6f6b425bb7127480331a1b022576557c143",
+  "vendor/token_registry.local.aleo": "8234bac444f858aa76d9ddec2132d4c619017c0198059f1ed05381d18f5603f3",
+  "vendor/token_registry.network.aleo": "0534f06f54b1c9ce63621162bd9fbd1c37642a7b514a50a7be1258b0d82c86a0"
+}

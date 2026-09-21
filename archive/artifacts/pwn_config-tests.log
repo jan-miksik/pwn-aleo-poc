@@ -1,0 +1,17 @@
+⚠️ No network specified, defaulting to 'testnet'.
+⚠️ No endpoint specified, defaulting to 'https://api.explorer.provable.com/v1'.
+
+       Leo 🔨 Compiling 'pwn_config.aleo'
+       Leo     Program size: 1.13 KB / 2000.00 KB
+       Leo ✅ Compiled 'pwn_config.aleo' into Aleo instructions.
+       Leo ✅ Generated ABI for program 'pwn_config.aleo'.
+       Leo 🔨 Compiling 'test_pwn_config.aleo'
+
+     Running 5 tests
+        PASS test_pwn_config.leo::initializes_zero_fee
+        PASS test_pwn_config.leo::cannot_initialize_twice
+        PASS test_pwn_config.leo::non_admin_cannot_initialize
+        PASS test_pwn_config.leo::admin_change_preserves_zero_fee
+        PASS test_pwn_config.leo::old_admin_loses_authority
+────────────────────────
+     Summary 5 tests run: 5 passed, 0 failed

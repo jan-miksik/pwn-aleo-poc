@@ -1,0 +1,6 @@
+{
+  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,
+  amount: 452u128.private,
+  _nonce: 2001408380722285204488192762544937505383840216063526670591793499223260559761group.public,
+  _version: 1u8.public
+}

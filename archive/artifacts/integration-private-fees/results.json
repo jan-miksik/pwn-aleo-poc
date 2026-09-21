@@ -1,0 +1,496 @@
+{
+  "tests": [
+    {
+      "test": "all five non-native programs deployed",
+      "status": "PASS"
+    },
+    {
+      "test": "asynchronous borrower receives private credit",
+      "status": "PASS"
+    },
+    {
+      "test": "remaining commitment is 600",
+      "status": "PASS"
+    },
+    {
+      "test": "second independent borrower exhausts commitment",
+      "status": "PASS"
+    },
+    {
+      "test": "016-pwn_loan.aleo-accept rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "overdraw leaves loan and proposal state unchanged",
+      "status": "PASS"
+    },
+    {
+      "test": "017-pwn_loan.aleo-accept rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "018-pwn_loan.aleo-accept rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "022-pwn_loan.aleo-accept rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "023-pwn_loan.aleo-accept rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "duplicate loan ID does not draw commitment",
+      "status": "PASS"
+    },
+    {
+      "test": "024-pwn_loan.aleo-claim_default rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "025-pwn_loan.aleo-claim_default rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "026-pwn_elastic_proposal.aleo-cancel_commitment rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "027-pwn_hub.aleo-set_tag rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "028-pwn_elastic_proposal.aleo-draw rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "029-pwn_loan.aleo-accept rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "031-pwn_loan.aleo-accept rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "033-pwn_elastic_proposal.aleo-open_commitment rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "failed opens and tampered terms leave available credit intact",
+      "status": "PASS"
+    },
+    {
+      "test": "035-pwn_loan.aleo-accept rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "037-pwn_elastic_proposal.aleo-open_commitment rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "Hub revocation blocks new loans and commitments",
+      "status": "PASS"
+    },
+    {
+      "test": "full repayment returns private collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "repayment is allocated to original lender commitment",
+      "status": "PASS"
+    },
+    {
+      "test": "044-pwn_loan.aleo-repay rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "045-pwn_loan.aleo-claim_default rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "lender privately withdraws repayment",
+      "status": "PASS"
+    },
+    {
+      "test": "048-pwn_elastic_proposal.aleo-withdraw_repayment rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "051-pwn_loan.aleo-accept rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "Hub revocation preserves existing settlement and withdrawals",
+      "status": "PASS"
+    },
+    {
+      "test": "057-pwn_loan.aleo-accept rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "065-pwn_loan.aleo-repay rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "default returns collateral privately to lender",
+      "status": "PASS"
+    },
+    {
+      "test": "068-pwn_loan.aleo-claim_default rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "069-pwn_loan.aleo-repay rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "default tombstone retained",
+      "status": "PASS"
+    },
+    {
+      "test": "both competing draws built before any submission",
+      "status": "PASS"
+    },
+    {
+      "test": "stale-state race accepts only first draw",
+      "status": "PASS"
+    },
+    {
+      "test": "rejected race releases input record and preserves escrow accounting",
+      "status": "PASS"
+    },
+    {
+      "test": "identical transaction replay cannot mutate settled ledger twice",
+      "status": "PASS"
+    }
+  ],
+  "measurements": [
+    {
+      "operation": "pwn_config.aleo::initialize",
+      "wall_seconds": 0.932,
+      "proofs": false,
+      "transaction_id": "at1vlplflux4spkw27046hwxv773sh32hf2shkl9e2zeg2efss6dczq7tr7pr"
+    },
+    {
+      "operation": "pwn_hub.aleo::set_tag",
+      "wall_seconds": 0.93,
+      "proofs": false,
+      "transaction_id": "at1g63gmpzsnrv6v9n2lanlqlnhufs3zc7tmc09z5wksvpuzs4yryzssgpt8w"
+    },
+    {
+      "operation": "pwn_hub.aleo::set_tag",
+      "wall_seconds": 0.932,
+      "proofs": false,
+      "transaction_id": "at1czhmy7uyflahr3ks2uyjmpnmatzm2h60sy535y3rf3ahc2xfjg9sjdj340"
+    },
+    {
+      "operation": "credits.aleo::transfer_public",
+      "wall_seconds": 0.903,
+      "proofs": false,
+      "transaction_id": "at1wgn82rqr0jq8dk0hg7yehzc9drh8ftqpshcpeh7k37drz0stkuysrvm0t7"
+    },
+    {
+      "operation": "credits.aleo::transfer_public",
+      "wall_seconds": 0.906,
+      "proofs": false,
+      "transaction_id": "at1ajxnrg6acsjlpqa99uplnafj7paa5zvnax05sted9mflsse8kgqqv58fw2"
+    },
+    {
+      "operation": "token_registry.aleo::register_token",
+      "wall_seconds": 0.966,
+      "proofs": false,
+      "transaction_id": "at1wffp9q88ulyuwmh089g35mh0l368kgrz27un3qfn2krsqf22kuzqvpqc0m"
+    },
+    {
+      "operation": "credits.aleo::transfer_public_to_private",
+      "wall_seconds": 0.978,
+      "proofs": false,
+      "transaction_id": "at1260ex802f599vvz606z6q5jn7lqvt80k9n575y9j70dte8dc9cgshytcu4"
+    },
+    {
+      "operation": "credits.aleo::transfer_public_to_private",
+      "wall_seconds": 0.968,
+      "proofs": false,
+      "transaction_id": "at18nxpk4sdpy7vf9rpec87kp2ulqgrza5e6ttsk9znujl7egzwd5gqseszqk"
+    },
+    {
+      "operation": "pwn_elastic_proposal.aleo::open_commitment",
+      "wall_seconds": 47.877,
+      "proofs": true,
+      "transaction_id": "at1nddcph2pgtjavduye8g7k448e3dpp48nzkdjl7s9mysg4espfvrqrsmn47"
+    },
+    {
+      "operation": "token_registry.aleo::mint_private",
+      "wall_seconds": 1.553,
+      "proofs": false,
+      "transaction_id": "at1r4txghaa9w7kxsynatxqf8r592x9gsurzq3tlhm3yt9q0w6pvc8qexm6yl"
+    },
+    {
+      "operation": "credits.aleo::transfer_public_to_private",
+      "wall_seconds": 1.355,
+      "proofs": false,
+      "transaction_id": "at14a76tujkk8nqzljx9m7my0mqrm4ufy7xgjzvg8aqrqr2uaj07gysfyhhgs"
+    },
+    {
+      "operation": "pwn_loan.aleo::accept",
+      "wall_seconds": 32.688,
+      "proofs": true,
+      "transaction_id": "at1jdrj4ptcf4ac9fe3s38psldgsfexjz0qv2w28uug9cxre2n9ng8sg7spsa"
+    },
+    {
+      "operation": "token_registry.aleo::mint_private",
+      "wall_seconds": 0.988,
+      "proofs": false,
+      "transaction_id": "at1yckdkg5kj3aw0k82aqzc6xg7y38knw6263xps2ymve68kyatvu8qmn8gvh"
+    },
+    {
+      "operation": "credits.aleo::transfer_public_to_private",
+      "wall_seconds": 0.925,
+      "proofs": false,
+      "transaction_id": "at1fjrrra6cfmwer89xdc46pv75vv5a9xf8ekdehrp7y5sc74jnjqyq7vtwld"
+    },
+    {
+      "operation": "pwn_loan.aleo::accept",
+      "wall_seconds": 1.727,
+      "proofs": false,
+      "transaction_id": "at15270qetynay7qns2l0magqawg9xhy7undnnasnlpuyn2lcpu4vxq0z45sj"
+    },
+    {
+      "operation": "credits.aleo::transfer_public_to_private",
+      "wall_seconds": 0.929,
+      "proofs": false,
+      "transaction_id": "at1fx7j2yj6ccv78e0537mvnqjl6km8zm4rqsxzvnkj77f5mk28lgpqprlrq4"
+    },
+    {
+      "operation": "credits.aleo::transfer_public_to_private",
+      "wall_seconds": 0.93,
+      "proofs": false,
+      "transaction_id": "at1h80u7s8m3ja2xwy037yjrf5fawrz3wl78z9ufvp3e3ecwjlkkqpqk7346z"
+    },
+    {
+      "operation": "pwn_elastic_proposal.aleo::open_commitment",
+      "wall_seconds": 1.224,
+      "proofs": false,
+      "transaction_id": "at1jaltaqly005n476f3c6j9jwr8sy4aplzcs2d772c23820gpt0ggq4fgxl4"
+    },
+    {
+      "operation": "token_registry.aleo::mint_private",
+      "wall_seconds": 0.995,
+      "proofs": false,
+      "transaction_id": "at1m4546sv40uvu6heag4ypke0pq7q8fl2vuyyqge33qx7rr9njnqysmvfgn5"
+    },
+    {
+      "operation": "credits.aleo::transfer_public_to_private",
+      "wall_seconds": 0.943,
+      "proofs": false,
+      "transaction_id": "at1mumx2d6dcgs04tfjs7hl38xg0fh7pgvlk580u3wd3jfz2mgd4spqgtut92"
+    },
+    {
+      "operation": "pwn_hub.aleo::set_tag",
+      "wall_seconds": 0.922,
+      "proofs": false,
+      "transaction_id": "at1x3kpmm26wlkzzyrdxslzhl2qyj88pqld8al0u0j20s9qhjcjscpsal9cj9"
+    },
+    {
+      "operation": "pwn_hub.aleo::set_tag",
+      "wall_seconds": 0.914,
+      "proofs": false,
+      "transaction_id": "at15qje3hlkkjypu9d5m7hqamy4thx805gnmqaq4uekuzsvakhynv8swu8j3y"
+    },
+    {
+      "operation": "credits.aleo::transfer_public_to_private",
+      "wall_seconds": 0.942,
+      "proofs": false,
+      "transaction_id": "at1muqqh6nmle0p906xljwdxjsmpjq9cyuapxvv43rhy2jad3jqc5xsastt8n"
+    },
+    {
+      "operation": "pwn_elastic_proposal.aleo::cancel_commitment",
+      "wall_seconds": 1.2,
+      "proofs": false,
+      "transaction_id": "at1gfzq3pgjhntzhkhyltxdnju0ptfp93uych9mwh0dhxme5fmm6yps55ffpj"
+    },
+    {
+      "operation": "credits.aleo::transfer_public_to_private",
+      "wall_seconds": 0.939,
+      "proofs": false,
+      "transaction_id": "at1eeqxgfl38hck9q3rsqnjl85gf2wpweu73ct664ksxqvgw3ggdq9s3cmrcc"
+    },
+    {
+      "operation": "credits.aleo::transfer_public_to_private",
+      "wall_seconds": 0.937,
+      "proofs": false,
+      "transaction_id": "at10pmrf0e7jh6tawtr9wt42ulxdqkadhrf65qv0x3zfy55utuwzurse2qxxx"
+    },
+    {
+      "operation": "pwn_loan.aleo::repay",
+      "wall_seconds": 34.445,
+      "proofs": true,
+      "transaction_id": "at1qfrwxq5kg9uw8exuw9rraf7wy6uwsutc7yezmyxldaln4g37eqgqp967pg"
+    },
+    {
+      "operation": "credits.aleo::transfer_public_to_private",
+      "wall_seconds": 0.968,
+      "proofs": false,
+      "transaction_id": "at12qa5ms2fdm3n2wlahz0qdlpycxf6v4uc5h309jcvq0r28u74mgzsacsmpw"
+    },
+    {
+      "operation": "credits.aleo::transfer_public_to_private",
+      "wall_seconds": 0.925,
+      "proofs": false,
+      "transaction_id": "at16dd84rlmnzfyh5hfv6acurmyl4a44rhdjs8hpvlzmz0cp607ps9q0aa2v4"
+    },
+    {
+      "operation": "pwn_elastic_proposal.aleo::withdraw_repayment",
+      "wall_seconds": 1.174,
+      "proofs": false,
+      "transaction_id": "at15l7ycf73xfgprzchsn3533f3mk7rr3ng9qaw6fm9f42rywrq5v8syr2jpj"
+    },
+    {
+      "operation": "credits.aleo::transfer_public_to_private",
+      "wall_seconds": 0.926,
+      "proofs": false,
+      "transaction_id": "at149c7lhluknzhlk2p09gr5skn725fxa2gpcktjcn2yrd6dfl2l5yq7udech"
+    },
+    {
+      "operation": "pwn_elastic_proposal.aleo::cancel_commitment",
+      "wall_seconds": 1.222,
+      "proofs": false,
+      "transaction_id": "at1fqun9yu4rgcfun2mhul70y49760ztpmdzw5cwpjquadvftkgug8q36jj8z"
+    },
+    {
+      "operation": "pwn_hub.aleo::set_tag",
+      "wall_seconds": 0.898,
+      "proofs": false,
+      "transaction_id": "at1dq6ec5wmm939ydwjexhhhlx46krq8tm62zeeu3aw933we9cf4q9s45n47s"
+    },
+    {
+      "operation": "pwn_hub.aleo::set_tag",
+      "wall_seconds": 0.892,
+      "proofs": false,
+      "transaction_id": "at1c5trw808882qdzxrwy2gpcdz4jzyngtvgv9ne924s3xm3nlelggsd0ywg2"
+    },
+    {
+      "operation": "credits.aleo::transfer_public_to_private",
+      "wall_seconds": 0.941,
+      "proofs": false,
+      "transaction_id": "at1pkekq2vzt2xxjas238rgqkaetpf2wtpyxes7hgcxfm563chazq9qmg7q8n"
+    },
+    {
+      "operation": "credits.aleo::transfer_public_to_private",
+      "wall_seconds": 0.943,
+      "proofs": false,
+      "transaction_id": "at12whpcat35m6fqtyms84fqy6ehvj4p2230sws6mjc009pxhppcuzqfdqf99"
+    },
+    {
+      "operation": "pwn_elastic_proposal.aleo::open_commitment",
+      "wall_seconds": 1.24,
+      "proofs": false,
+      "transaction_id": "at14fsf54ej9w2s3lnevh5p2nqt53rn3dhc8fr76gev3qhxayegsqfq68kejz"
+    },
+    {
+      "operation": "credits.aleo::transfer_public_to_private",
+      "wall_seconds": 0.927,
+      "proofs": false,
+      "transaction_id": "at19dw47jqq9kazfetyhwnw6lv3dctrj9u5up8dmz045y7f6xha3crsc3we39"
+    },
+    {
+      "operation": "pwn_elastic_proposal.aleo::cancel_commitment",
+      "wall_seconds": 1.191,
+      "proofs": false,
+      "transaction_id": "at1334eymh52637ns7l5nl5mp3r8gxwd2vavuaetld5jcpcvy5lqczqd3skdl"
+    },
+    {
+      "operation": "credits.aleo::transfer_public_to_private",
+      "wall_seconds": 0.933,
+      "proofs": false,
+      "transaction_id": "at1sp2qgrgshmwfels8tpafjhv3qk9u5hyh54synrfyq3x3fjfsrq8qh3kxsf"
+    },
+    {
+      "operation": "credits.aleo::transfer_public_to_private",
+      "wall_seconds": 0.928,
+      "proofs": false,
+      "transaction_id": "at17k27hs7plalap3vng02yxxtwrrxwm70jzxxuzwx2dy6cjq53wqqq5q29j6"
+    },
+    {
+      "operation": "pwn_elastic_proposal.aleo::open_commitment",
+      "wall_seconds": 1.269,
+      "proofs": false,
+      "transaction_id": "at1gv08q87xlvuw29snc8tyyjy348200v6v6msgj542j5a6qfk6lursqyhsky"
+    },
+    {
+      "operation": "credits.aleo::transfer_public_to_private",
+      "wall_seconds": 0.936,
+      "proofs": false,
+      "transaction_id": "at1cc6mna8q9ml6w00zqtgxjqmtfvdft2hkel2ly43hhy33hm6pegrq98ktvy"
+    },
+    {
+      "operation": "pwn_loan.aleo::accept",
+      "wall_seconds": 1.739,
+      "proofs": false,
+      "transaction_id": "at1u05q8yp6sxauk84mfjv7v4l2uzkzx009h8p43ue4esdt764c95gqplfkel"
+    },
+    {
+      "operation": "credits.aleo::transfer_public_to_private",
+      "wall_seconds": 0.927,
+      "proofs": false,
+      "transaction_id": "at1ug9u7hphdwmfjll6eeeq9uxekvg6v29h7596aja0zts5af6w6vpscs2r8a"
+    },
+    {
+      "operation": "pwn_loan.aleo::claim_default",
+      "wall_seconds": 22.023,
+      "proofs": true,
+      "transaction_id": "at1ll89g3cejepc3hdv0d2f9tsw42l6qlln9q46c8pfmselj8lshuqq5rv856"
+    },
+    {
+      "operation": "credits.aleo::transfer_public_to_private",
+      "wall_seconds": 0.93,
+      "proofs": false,
+      "transaction_id": "at19ldmmgy8v59d8hq9hut9n8dllykx3tffyez9lwm88hyhtk0tqvgs3c8wsn"
+    },
+    {
+      "operation": "credits.aleo::transfer_public_to_private",
+      "wall_seconds": 0.924,
+      "proofs": false,
+      "transaction_id": "at1zuzh3l2xf00pdut54kjkrap476lmf2r8k2eu4q0lsjx3x5qst59qlky2pd"
+    },
+    {
+      "operation": "pwn_elastic_proposal.aleo::open_commitment",
+      "wall_seconds": 1.23,
+      "proofs": false,
+      "transaction_id": "at1549z6lmllqqxlrr7zls7s9u9ujlvhvv8etyug889gu4pf8yxjvysv7kz2l"
+    },
+    {
+      "operation": "token_registry.aleo::mint_private",
+      "wall_seconds": 0.978,
+      "proofs": false,
+      "transaction_id": "at1gcx9v0zdfu854l63k372033wyqkdf5vhjv0yrhy32z8ydwymucqs8zjd5r"
+    },
+    {
+      "operation": "token_registry.aleo::mint_private",
+      "wall_seconds": 0.97,
+      "proofs": false,
+      "transaction_id": "at1k8auevhfhe2pzz5u5rzfjgzevasku3wt7hejugmpnjvts0zs3g8sgn3sfk"
+    },
+    {
+      "operation": "credits.aleo::transfer_public_to_private",
+      "wall_seconds": 0.924,
+      "proofs": false,
+      "transaction_id": "at1g6538dglrp9v5uf4whyh2dcyz483gqr7awmmqf922thq42cvcypshrt4lp"
+    },
+    {
+      "operation": "pwn_loan.aleo::accept",
+      "wall_seconds": 1.731,
+      "proofs": false,
+      "transaction_id": "at1ywpdzym0mdnsswhyqxjsusn5z26jwhq4nmwht79mkcyxq992lsrqg9mwng"
+    }
+  ],
+  "proved_operations": [
+    "pwn_elastic_proposal.aleo::open_commitment",
+    "pwn_loan.aleo::accept",
+    "pwn_loan.aleo::claim_default",
+    "pwn_loan.aleo::repay"
+  ],
+  "consensus": false,
+  "node_verifies_proofs": false
+}

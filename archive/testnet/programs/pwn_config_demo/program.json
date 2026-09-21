@@ -1,0 +1,9 @@
+{
+  "program": "pwn_config_demo.aleo",
+  "version": "0.1.0",
+  "description": "PWN lending PoC, public testnet demo deployment (immutable, no real value)",
+  "license": "MIT",
+  "leo": "4.4.2",
+  "dependencies": null,
+  "dev_dependencies": null
+}

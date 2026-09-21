@@ -1,0 +1,25 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:50991",
+    "consensus_version": 19
+  },
+  "program": "token_registry.aleo",
+  "function": "register_token",
+  "outputs": [
+    "{\n  program_id: token_registry.aleo,\n  function_name: register_token,\n  arguments: [\n    {\n  token_id: 987654321field,\n  name: 1u128,\n  symbol: 1u128,\n  decimals: 6u8,\n  supply: 0u128,\n  max_supply: 1000000000u128,\n  admin: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n  external_authorization_required: false,\n  external_authorization_party: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px\n}\n  ]\n}"
+  ],
+  "transaction_id": "at1wffp9q88ulyuwmh089g35mh0l368kgrz27un3qfn2krsqf22kuzqvpqc0m",
+  "stats": {
+    "storage_cost": 1928,
+    "execution_cost": 1324,
+    "priority_fee": 0,
+    "total_cost": 3252
+  },
+  "broadcast": {
+    "fee_id": "au1z8y0dc0rkr3h29tql847x9np7whlnslc2wr8r23y45cuaqgz6c8sugdr8p",
+    "fee_transaction_id": "at1hrccprct76yzxwc0f0fykh2n96txgkqmps7a32zxpd39xchegc8s956qlq",
+    "confirmed": true
+  }
+}

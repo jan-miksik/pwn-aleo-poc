@@ -1,0 +1,71 @@
+{
+  "type": "execute",
+  "id": "at1wgn82rqr0jq8dk0hg7yehzc9drh8ftqpshcpeh7k37drz0stkuysrvm0t7",
+  "execution": {
+    "transitions": [
+      {
+        "id": "au1c0fyy3p9g2htfelgna6ydr6xwl0ndl3nx4pcp793ejwsulvqqyrss2k4n3",
+        "program": "credits.aleo",
+        "function": "transfer_public",
+        "inputs": [
+          {
+            "type": "public",
+            "id": "2944765625502828890336998503071807204764662547421978635330571963015416393388field",
+            "value": "aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue"
+          },
+          {
+            "type": "public",
+            "id": "5048010249973804777474729857859368611960871071255445545029678696033176463377field",
+            "value": "1000000000u64"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "future",
+            "id": "2576548783977195629491245620799809236048617483819084076461516444469487169726field",
+            "value": "{\n  program_id: credits.aleo,\n  function_name: transfer_public,\n  arguments: [\n    aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n    aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue,\n    1000000000u64\n  ]\n}"
+          }
+        ],
+        "tpk": "728702779694631401032802565885082512606810494539176948601857839689500566471group",
+        "tcm": "2842438447401315099674685765996343220964969102173406581319086193587096934228field",
+        "scm": "4188608821878869255998155273978238868279556132195221415574460376893332397683field"
+      }
+    ],
+    "global_state_root": "sr1slf776wxn0xhdtnpa64snnkzpxqy9cns67c56dp98qtk0p9sfqfqlzghux"
+  },
+  "fee": {
+    "transition": {
+      "id": "au16hx0jgcuqrg6z2z4y0jtsm6tu0c6gtwpq89q7t8xcrw3w847p5qs3g3t3w",
+      "program": "credits.aleo",
+      "function": "fee_public",
+      "inputs": [
+        {
+          "type": "public",
+          "id": "3576666962257453466470211707664872981010112746535704782366533449514697882227field",
+          "value": "1768u64"
+        },
+        {
+          "type": "public",
+          "id": "6325983634600898884490261273795760228456909688469035574186703386906633797256field",
+          "value": "0u64"
+        },
+        {
+          "type": "public",
+          "id": "5978826680918953653884368091717636846154257409714593187679148828775472496388field",
+          "value": "6099370940170279821231291951371669520748125943041749541928893390263354591128field"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "future",
+          "id": "7256280770050834820063076180276635017187302651449059011938669236969169700791field",
+          "value": "{\n  program_id: credits.aleo,\n  function_name: fee_public,\n  arguments: [\n    aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n    1768u64\n  ]\n}"
+        }
+      ],
+      "tpk": "6780230055050104956573470301730990329474297827991246098066775016277848543389group",
+      "tcm": "1316524956672200500611788968580643445351901990388194213828445576774961047541field",
+      "scm": "1812623929738391556044099301238757337185501831113724930271313213176254645435field"
+    },
+    "global_state_root": "sr1slf776wxn0xhdtnpa64snnkzpxqy9cns67c56dp98qtk0p9sfqfqlzghux"
+  }
+}

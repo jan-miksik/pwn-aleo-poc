@@ -1,0 +1,96 @@
+{
+  "type": "execute",
+  "id": "at1jnstzhkpv8kar8srnu732436pfrauqgst7zn6xwcvwera88pfgysv5dkwe",
+  "execution": {
+    "transitions": [
+      {
+        "id": "au1fdm6cj9vxulzc2qqcur3t0ua4e7pvu9gad9cyu4dj8lc60wencrqfemn6g",
+        "program": "token_registry.aleo",
+        "function": "register_token",
+        "inputs": [
+          {
+            "type": "public",
+            "id": "4638727026134457771930094714771830817001858859340456266189132843741580813158field",
+            "value": "987654321field"
+          },
+          {
+            "type": "public",
+            "id": "2987050991304434256340969719852053657303508913077106525188999175730939409110field",
+            "value": "1u128"
+          },
+          {
+            "type": "public",
+            "id": "3426006194573399659735433813134556145204820002802811415734455759804453268713field",
+            "value": "1u128"
+          },
+          {
+            "type": "public",
+            "id": "2668678945189201148741446034569696628835399008775748106504138158551918458886field",
+            "value": "6u8"
+          },
+          {
+            "type": "public",
+            "id": "2150755095651616004053677508361790890654243586591201142129509231337233246004field",
+            "value": "1000000000u128"
+          },
+          {
+            "type": "public",
+            "id": "1722755188510460310820511917132158461157189767038166507344840537112543107327field",
+            "value": "false"
+          },
+          {
+            "type": "public",
+            "id": "5219821855658755470809313879395921304083649526353057028417510240472393566834field",
+            "value": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "future",
+            "id": "5887051970846330193077588702127179976307379780170099595437267798585128460837field",
+            "value": "{\n  program_id: token_registry.aleo,\n  function_name: register_token,\n  arguments: [\n    {\n  token_id: 987654321field,\n  name: 1u128,\n  symbol: 1u128,\n  decimals: 6u8,\n  supply: 0u128,\n  max_supply: 1000000000u128,\n  admin: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n  external_authorization_required: false,\n  external_authorization_party: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px\n}\n  ]\n}"
+          }
+        ],
+        "tpk": "2253235668395993065499591816295587537273302957196027155042489492037841290191group",
+        "tcm": "2995164351467732727284456849798302200143010640988149631783570033441479085370field",
+        "scm": "4957466876786415304473229869616199754026737183852209040066508459042670855263field"
+      }
+    ],
+    "global_state_root": "sr15m9m7fg9kejyfnk4uwyfgkvp0xl4jknlth0c8fjt77fx8f2vlqgqyazpu3"
+  },
+  "fee": {
+    "transition": {
+      "id": "au1dqahclfpcqdephwec05xs7vq5wzrhk62ke0e6qpa2wtuz7ezgg8swkt49g",
+      "program": "credits.aleo",
+      "function": "fee_public",
+      "inputs": [
+        {
+          "type": "public",
+          "id": "6160674539594619183744716084692712978103602587164144578597793010346057095905field",
+          "value": "2295u64"
+        },
+        {
+          "type": "public",
+          "id": "5193002959516907626646126266005482707496713775313867984710768309882932373020field",
+          "value": "0u64"
+        },
+        {
+          "type": "public",
+          "id": "7193711484948788234711823493540784945384936889948525192832582789042810086747field",
+          "value": "489828870632723981959675135998661295498111832324280652699105600227852697098field"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "future",
+          "id": "874026908786637570131119018413475971161980632035042238916417947815606011742field",
+          "value": "{\n  program_id: credits.aleo,\n  function_name: fee_public,\n  arguments: [\n    aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n    2295u64\n  ]\n}"
+        }
+      ],
+      "tpk": "4929916338445587687667435857597169571329260595527982449594161790751069511597group",
+      "tcm": "3992972638796996203026748977050829029256843763152204836261269344492718605748field",
+      "scm": "8422892517629932427794465817618492443119900829457707792913175069291261632268field"
+    },
+    "global_state_root": "sr15m9m7fg9kejyfnk4uwyfgkvp0xl4jknlth0c8fjt77fx8f2vlqgqyazpu3"
+  }
+}

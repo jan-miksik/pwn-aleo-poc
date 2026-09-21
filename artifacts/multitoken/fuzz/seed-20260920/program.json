@@ -1,0 +1,8 @@
+{
+  "program": "pwn_math_fuzz.aleo",
+  "version": "0.1.0",
+  "description": "Local arithmetic oracle",
+  "license": "MIT",
+  "leo": "4.4.2",
+  "dependencies": []
+}

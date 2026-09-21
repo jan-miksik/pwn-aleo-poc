@@ -1,0 +1,45 @@
+
+⚠️ No valid private key specified, defaulting to 'APrivateKey1zkp8CZNn3yeCseEtxuVPbDCwSyhGW6yZKUYKfgXmcpoGPWH'.
+
+➕Adding programs to the VM in the following order:
+  - pwn_math_fuzz.aleo (local)
+thread `main` panicked at /Users/runner/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/snarkvm-console-network-environment-4.9.1/src/environment.rs:62:9:
+Integer multiplication failed on: 258967829602308133950933911u128 and 748240808657860896u128
+stack backtrace: 
+   0: __mh_execute_header
+   1: __mh_execute_header
+   2: __mh_execute_header
+   3: __mh_execute_header
+   4: __mh_execute_header
+   5: __mh_execute_header
+   6: __mh_execute_header
+   7: __mh_execute_header
+   8: __ZN7rocksdb6ribbon6detail34BandingConfigHelper1MaybeSupportedILNS0_25ConstructionFailureChanceE1ELy128ELb0ELb0ELb1EE11GetNumSlotsEj
+   9: __ZN7rocksdb6ribbon6detail34BandingConfigHelper1MaybeSupportedILNS0_25ConstructionFailureChanceE1ELy128ELb0ELb0ELb1EE11GetNumSlotsEj
+  10: __mh_execute_header
+  11: __mh_execute_header
+  12: __mh_execute_header
+  13: __mh_execute_header
+  14: __mh_execute_header
+  15: __mh_execute_header
+  16: __mh_execute_header
+  17: __mh_execute_header
+  18: __mh_execute_header
+  19: __mh_execute_header
+  20: __mh_execute_header
+  21: __mh_execute_header
+  22: __mh_execute_header
+  23: __mh_execute_header
+
+error: internal compiler error: unexpected panic
+
+note: the compiler unexpectedly panicked. this is a bug.
+
+note: we would appreciate a bug report: https://github.com/ProvableHQ/leo/issues/new?labels=bug,panic&template=bug.md&title=[Bug]
+
+note: leo 4.4.2 (f3578da HEAD) features=[noconfig] running on Darwin 25.5.0
+
+note: compiler args: /Users/janm/Documents/projects-klients/PoC Aleo/.tools/leo --home /Users/janm/Documents/projects-klients/PoC Aleo/.aleo --disable-update-check run check_accrued 81668094743383893122766518180671844754u128 234376212u32 3192477608u32 --path /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/fuzz/seed-20260920 --offline --network testnet --endpoint http://127.0.0.1:1 --json-output=/Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/fuzz/seed-20260920/output.json
+
+note: compiler flags: CLI { debug: false, quiet: false, json_output: Some("/Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/fuzz/seed-20260920/output.json"), disable_update_check: true, command: Run { command: LeoRun { name: "check_accrued", inputs: ["81668094743383893122766518180671844754u128", "234376212u32", "3192477608u32"], env_override: EnvOptions { network: Some(TestnetV0), endpoint: Some("http://127.0.0.1:1"), network_retries: 2 }, key_override: PrivateKeyOptions { private_key: None }, build_options: BuildOptions { build_tests: false, no_cache: false, no_local: false, offline: true, checksums: false, no_std: false }, with: [] } }, path: Some("/Users/janm/Documents/projects-klients/PoC Aleo/artifacts/multitoken/fuzz/seed-20260920"), home: Some("/Users/janm/Documents/projects-klients/PoC Aleo/.aleo"), package: None }
+

@@ -1,0 +1,13 @@
+⚠️ No network specified, defaulting to 'testnet'.
+⚠️ No endpoint specified, defaulting to 'https://api.explorer.provable.com/v1'.
+
+       Leo 🔨 Compiling 'pwn_test_utils.aleo'
+       Leo     Program size: 0.36 KB / 2000.00 KB
+       Leo ✅ Compiled 'pwn_test_utils.aleo' into Aleo instructions.
+       Leo ✅ Generated ABI for program 'pwn_test_utils.aleo'.
+       Leo 🔨 Compiling 'test_pwn_test_utils.aleo'
+
+     Running 1 test
+        PASS test_pwn_test_utils.leo::domain_separation
+────────────────────────
+     Summary 1 test run: 1 passed, 0 failed

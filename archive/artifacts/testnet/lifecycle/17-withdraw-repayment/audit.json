@@ -1,0 +1,52 @@
+{
+  "label": "17-withdraw-repayment",
+  "actor": "lender",
+  "function": "pwn_elastic_proposal_demo.aleo::withdraw_repayment",
+  "fee_mode": "private",
+  "expect": "accepted",
+  "prepare_wall_seconds": 24.415,
+  "prepare_exit_code": 0,
+  "started_at": "2026-09-16T07:50:32.685943+00:00",
+  "phase": "done",
+  "transaction_id": "at1h7fdl2rjhuvwfdwvj09scrkaff53j0mm7m2x46ytux0gdxjgzu8qlzsss6",
+  "fee_microcredits": 4583,
+  "fee_function": "fee_private",
+  "submitted_at": "2026-09-16T07:50:32.686828+00:00",
+  "status": "accepted",
+  "block_height": 19653839,
+  "block_timestamp": 1789545032,
+  "confirmed_at": "2026-09-16T07:50:39.572949+00:00",
+  "on_chain_transaction_id": "at1h7fdl2rjhuvwfdwvj09scrkaff53j0mm7m2x46ytux0gdxjgzu8qlzsss6",
+  "execution_transitions": [
+    [
+      "credits.aleo",
+      "transfer_public_to_private"
+    ],
+    [
+      "pwn_elastic_proposal_demo.aleo",
+      "withdraw_repayment"
+    ]
+  ],
+  "top_level_input_types": [
+    "public",
+    "public",
+    "private",
+    "public"
+  ],
+  "top_level_output_types": [
+    "external_record",
+    "future"
+  ],
+  "fee_input_types": [
+    "record",
+    "public",
+    "public",
+    "public"
+  ],
+  "lender_address_on_chain": false,
+  "borrower_address_on_chain": false,
+  "addresses_on_chain": [
+    "aleo1ksdvl3asju5ycclrktv5rutc0r8p0g9attxda3ew7haqe53tgvrs9q2ps3",
+    "aleo1lqmly7ez2k48ajf5hs92ulphaqr05qm4n8qwzj8v0yprmasgpqgsez59gg"
+  ]
+}

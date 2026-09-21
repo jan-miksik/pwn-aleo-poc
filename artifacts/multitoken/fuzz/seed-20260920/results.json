@@ -1,0 +1,3004 @@
+{
+  "seed": 20260920,
+  "random_cases": 100,
+  "completed": true,
+  "cases": [
+    {
+      "index": 0,
+      "operation": "rounded",
+      "values": [
+        0,
+        0
+      ],
+      "expected": "0",
+      "overflow": false,
+      "actual": [
+        "0u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 1,
+      "operation": "rounded",
+      "values": [
+        0,
+        1
+      ],
+      "expected": "0",
+      "overflow": false,
+      "actual": [
+        "0u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 2,
+      "operation": "rounded",
+      "values": [
+        0,
+        9999
+      ],
+      "expected": "0",
+      "overflow": false,
+      "actual": [
+        "0u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 3,
+      "operation": "rounded",
+      "values": [
+        0,
+        10000
+      ],
+      "expected": "0",
+      "overflow": false,
+      "actual": [
+        "0u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 4,
+      "operation": "rounded",
+      "values": [
+        0,
+        10001
+      ],
+      "expected": "0",
+      "overflow": false,
+      "actual": [
+        "0u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 5,
+      "operation": "rounded",
+      "values": [
+        0,
+        18446744073709551615
+      ],
+      "expected": "0",
+      "overflow": false,
+      "actual": [
+        "0u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 6,
+      "operation": "rounded",
+      "values": [
+        1,
+        0
+      ],
+      "expected": "0",
+      "overflow": false,
+      "actual": [
+        "0u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 7,
+      "operation": "rounded",
+      "values": [
+        1,
+        1
+      ],
+      "expected": "1",
+      "overflow": false,
+      "actual": [
+        "1u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 8,
+      "operation": "rounded",
+      "values": [
+        1,
+        9999
+      ],
+      "expected": "1",
+      "overflow": false,
+      "actual": [
+        "1u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 9,
+      "operation": "rounded",
+      "values": [
+        1,
+        10000
+      ],
+      "expected": "1",
+      "overflow": false,
+      "actual": [
+        "1u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 10,
+      "operation": "rounded",
+      "values": [
+        1,
+        10001
+      ],
+      "expected": "2",
+      "overflow": false,
+      "actual": [
+        "2u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 11,
+      "operation": "rounded",
+      "values": [
+        1,
+        18446744073709551615
+      ],
+      "expected": "1844674407370956",
+      "overflow": false,
+      "actual": [
+        "1844674407370956u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 12,
+      "operation": "rounded",
+      "values": [
+        9999,
+        0
+      ],
+      "expected": "0",
+      "overflow": false,
+      "actual": [
+        "0u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 13,
+      "operation": "rounded",
+      "values": [
+        9999,
+        1
+      ],
+      "expected": "1",
+      "overflow": false,
+      "actual": [
+        "1u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 14,
+      "operation": "rounded",
+      "values": [
+        9999,
+        9999
+      ],
+      "expected": "9999",
+      "overflow": false,
+      "actual": [
+        "9999u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 15,
+      "operation": "rounded",
+      "values": [
+        9999,
+        10000
+      ],
+      "expected": "9999",
+      "overflow": false,
+      "actual": [
+        "9999u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 16,
+      "operation": "rounded",
+      "values": [
+        9999,
+        10001
+      ],
+      "expected": "10000",
+      "overflow": false,
+      "actual": [
+        "10000u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 17,
+      "operation": "rounded",
+      "values": [
+        9999,
+        18446744073709551615
+      ],
+      "expected": "18444899399302180660",
+      "overflow": false,
+      "actual": [
+        "18444899399302180660u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 18,
+      "operation": "rounded",
+      "values": [
+        10000,
+        0
+      ],
+      "expected": "0",
+      "overflow": false,
+      "actual": [
+        "0u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 19,
+      "operation": "rounded",
+      "values": [
+        10000,
+        1
+      ],
+      "expected": "1",
+      "overflow": false,
+      "actual": [
+        "1u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 20,
+      "operation": "rounded",
+      "values": [
+        10000,
+        9999
+      ],
+      "expected": "9999",
+      "overflow": false,
+      "actual": [
+        "9999u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 21,
+      "operation": "rounded",
+      "values": [
+        10000,
+        10000
+      ],
+      "expected": "10000",
+      "overflow": false,
+      "actual": [
+        "10000u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 22,
+      "operation": "rounded",
+      "values": [
+        10000,
+        10001
+      ],
+      "expected": "10001",
+      "overflow": false,
+      "actual": [
+        "10001u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 23,
+      "operation": "rounded",
+      "values": [
+        10000,
+        18446744073709551615
+      ],
+      "expected": "18446744073709551615",
+      "overflow": false,
+      "actual": [
+        "18446744073709551615u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 24,
+      "operation": "rounded",
+      "values": [
+        10001,
+        0
+      ],
+      "expected": "0",
+      "overflow": false,
+      "actual": [
+        "0u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 25,
+      "operation": "rounded",
+      "values": [
+        10001,
+        1
+      ],
+      "expected": "2",
+      "overflow": false,
+      "actual": [
+        "2u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 26,
+      "operation": "rounded",
+      "values": [
+        10001,
+        9999
+      ],
+      "expected": "10000",
+      "overflow": false,
+      "actual": [
+        "10000u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 27,
+      "operation": "rounded",
+      "values": [
+        10001,
+        10000
+      ],
+      "expected": "10001",
+      "overflow": false,
+      "actual": [
+        "10001u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 28,
+      "operation": "rounded",
+      "values": [
+        10001,
+        10001
+      ],
+      "expected": "10003",
+      "overflow": false,
+      "actual": [
+        "10003u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 29,
+      "operation": "rounded",
+      "values": [
+        10001,
+        18446744073709551615
+      ],
+      "expected": "18448588748116922571",
+      "overflow": false,
+      "actual": [
+        "18448588748116922571u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 30,
+      "operation": "rounded",
+      "values": [
+        18446744073709551616,
+        0
+      ],
+      "expected": "0",
+      "overflow": false,
+      "actual": [
+        "0u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 31,
+      "operation": "rounded",
+      "values": [
+        18446744073709551616,
+        1
+      ],
+      "expected": "1844674407370956",
+      "overflow": false,
+      "actual": [
+        "1844674407370956u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 32,
+      "operation": "rounded",
+      "values": [
+        18446744073709551616,
+        9999
+      ],
+      "expected": "18444899399302180661",
+      "overflow": false,
+      "actual": [
+        "18444899399302180661u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 33,
+      "operation": "rounded",
+      "values": [
+        18446744073709551616,
+        10000
+      ],
+      "expected": "18446744073709551616",
+      "overflow": false,
+      "actual": [
+        "18446744073709551616u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 34,
+      "operation": "rounded",
+      "values": [
+        18446744073709551616,
+        10001
+      ],
+      "expected": "18448588748116922572",
+      "overflow": false,
+      "actual": [
+        "18448588748116922572u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 35,
+      "operation": "rounded",
+      "values": [
+        18446744073709551616,
+        18446744073709551615
+      ],
+      "expected": "34028236692093846344492786335805866",
+      "overflow": false,
+      "actual": [
+        "34028236692093846344492786335805866u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 36,
+      "operation": "rounded",
+      "values": [
+        340282366920938463463374607431768211455,
+        0
+      ],
+      "expected": "0",
+      "overflow": false,
+      "actual": [
+        "0u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 37,
+      "operation": "rounded",
+      "values": [
+        340282366920938463463374607431768211455,
+        1
+      ],
+      "expected": "34028236692093846346337460743176822",
+      "overflow": false,
+      "actual": [
+        "34028236692093846346337460743176822u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 38,
+      "operation": "rounded",
+      "values": [
+        340282366920938463463374607431768211455,
+        9999
+      ],
+      "expected": "340248338684246369617028269971025034634",
+      "overflow": false,
+      "actual": [
+        "340248338684246369617028269971025034634u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 39,
+      "operation": "rounded",
+      "values": [
+        340282366920938463463374607431768211455,
+        10000
+      ],
+      "expected": "340282366920938463463374607431768211455",
+      "overflow": false,
+      "actual": [
+        "340282366920938463463374607431768211455u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 40,
+      "operation": "rounded",
+      "values": [
+        340282366920938463463374607431768211455,
+        10001
+      ],
+      "expected": "340316395157630557309720944892511388277",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 41,
+      "operation": "rounded",
+      "values": [
+        340282366920938463463374607431768211455,
+        18446744073709551615
+      ],
+      "expected": "627710173538668076349550705628672795262053409295855675",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 42,
+      "operation": "accrued",
+      "values": [
+        0,
+        0,
+        4294967295
+      ],
+      "expected": "0",
+      "overflow": false,
+      "actual": [
+        "0u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 43,
+      "operation": "accrued",
+      "values": [
+        0,
+        1,
+        1
+      ],
+      "expected": "0",
+      "overflow": false,
+      "actual": [
+        "0u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 44,
+      "operation": "accrued",
+      "values": [
+        0,
+        10000,
+        31536000
+      ],
+      "expected": "0",
+      "overflow": false,
+      "actual": [
+        "0u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 45,
+      "operation": "accrued",
+      "values": [
+        0,
+        1000000000,
+        4294967295
+      ],
+      "expected": "0",
+      "overflow": false,
+      "actual": [
+        "0u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 46,
+      "operation": "accrued",
+      "values": [
+        1,
+        0,
+        4294967295
+      ],
+      "expected": "0",
+      "overflow": false,
+      "actual": [
+        "0u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 47,
+      "operation": "accrued",
+      "values": [
+        1,
+        1,
+        1
+      ],
+      "expected": "0",
+      "overflow": false,
+      "actual": [
+        "0u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 48,
+      "operation": "accrued",
+      "values": [
+        1,
+        10000,
+        31536000
+      ],
+      "expected": "1",
+      "overflow": false,
+      "actual": [
+        "1u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 49,
+      "operation": "accrued",
+      "values": [
+        1,
+        1000000000,
+        4294967295
+      ],
+      "expected": "13619251",
+      "overflow": false,
+      "actual": [
+        "13619251u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 50,
+      "operation": "accrued",
+      "values": [
+        315359999999,
+        0,
+        4294967295
+      ],
+      "expected": "0",
+      "overflow": false,
+      "actual": [
+        "0u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 51,
+      "operation": "accrued",
+      "values": [
+        315359999999,
+        1,
+        1
+      ],
+      "expected": "0",
+      "overflow": false,
+      "actual": [
+        "0u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 52,
+      "operation": "accrued",
+      "values": [
+        315359999999,
+        10000,
+        31536000
+      ],
+      "expected": "315359999999",
+      "overflow": false,
+      "actual": [
+        "315359999999u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 53,
+      "operation": "accrued",
+      "values": [
+        315359999999,
+        1000000000,
+        4294967295
+      ],
+      "expected": "4294967294986380748",
+      "overflow": false,
+      "actual": [
+        "4294967294986380748u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 54,
+      "operation": "accrued",
+      "values": [
+        315360000000,
+        0,
+        4294967295
+      ],
+      "expected": "0",
+      "overflow": false,
+      "actual": [
+        "0u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 55,
+      "operation": "accrued",
+      "values": [
+        315360000000,
+        1,
+        1
+      ],
+      "expected": "1",
+      "overflow": false,
+      "actual": [
+        "1u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 56,
+      "operation": "accrued",
+      "values": [
+        315360000000,
+        10000,
+        31536000
+      ],
+      "expected": "315360000000",
+      "overflow": false,
+      "actual": [
+        "315360000000u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 57,
+      "operation": "accrued",
+      "values": [
+        315360000000,
+        1000000000,
+        4294967295
+      ],
+      "expected": "4294967295000000000",
+      "overflow": false,
+      "actual": [
+        "4294967295000000000u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 58,
+      "operation": "accrued",
+      "values": [
+        315360000001,
+        0,
+        4294967295
+      ],
+      "expected": "0",
+      "overflow": false,
+      "actual": [
+        "0u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 59,
+      "operation": "accrued",
+      "values": [
+        315360000001,
+        1,
+        1
+      ],
+      "expected": "1",
+      "overflow": false,
+      "actual": [
+        "1u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 60,
+      "operation": "accrued",
+      "values": [
+        315360000001,
+        10000,
+        31536000
+      ],
+      "expected": "315360000001",
+      "overflow": false,
+      "actual": [
+        "315360000001u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 61,
+      "operation": "accrued",
+      "values": [
+        315360000001,
+        1000000000,
+        4294967295
+      ],
+      "expected": "4294967295013619251",
+      "overflow": false,
+      "actual": [
+        "4294967295013619251u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 62,
+      "operation": "accrued",
+      "values": [
+        340282366920938463463374607431768211455,
+        0,
+        4294967295
+      ],
+      "expected": "0",
+      "overflow": false,
+      "actual": [
+        "0u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 63,
+      "operation": "accrued",
+      "values": [
+        340282366920938463463374607431768211455,
+        1,
+        1
+      ],
+      "expected": "1079028307080601418897052915",
+      "overflow": false,
+      "actual": [
+        "1079028307080601418897052915u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 64,
+      "operation": "accrued",
+      "values": [
+        340282366920938463463374607431768211455,
+        10000,
+        31536000
+      ],
+      "expected": "340282366920938463463374607431768211455",
+      "overflow": false,
+      "actual": [
+        "340282366920938463463374607431768211455u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 65,
+      "operation": "accrued",
+      "values": [
+        340282366920938463463374607431768211455,
+        1000000000,
+        4294967295
+      ],
+      "expected": "4634391289290400023093437243952652245750473630",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 66,
+      "operation": "native",
+      "values": [
+        0
+      ],
+      "expected": "0",
+      "overflow": false,
+      "actual": [
+        "0u64"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 67,
+      "operation": "native",
+      "values": [
+        1
+      ],
+      "expected": "1",
+      "overflow": false,
+      "actual": [
+        "1u64"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 68,
+      "operation": "native",
+      "values": [
+        18446744073709551615
+      ],
+      "expected": "18446744073709551615",
+      "overflow": false,
+      "actual": [
+        "18446744073709551615u64"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 69,
+      "operation": "native",
+      "values": [
+        18446744073709551616
+      ],
+      "expected": "18446744073709551616",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 213,
+      "cli_panic": false
+    },
+    {
+      "index": 70,
+      "operation": "native",
+      "values": [
+        340282366920938463463374607431768211455
+      ],
+      "expected": "340282366920938463463374607431768211455",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 213,
+      "cli_panic": false
+    },
+    {
+      "index": 71,
+      "operation": "rounded",
+      "values": [
+        340282366920938463463374607431768211454,
+        1
+      ],
+      "expected": "34028236692093846346337460743176822",
+      "overflow": false,
+      "actual": [
+        "34028236692093846346337460743176822u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 72,
+      "operation": "rounded",
+      "values": [
+        340282366920938463463374607431768211455,
+        1
+      ],
+      "expected": "34028236692093846346337460743176822",
+      "overflow": false,
+      "actual": [
+        "34028236692093846346337460743176822u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 73,
+      "operation": "rounded",
+      "values": [
+        340248342086729790484326174814286782775,
+        10001
+      ],
+      "expected": "340282366920938463463374607431768211454",
+      "overflow": false,
+      "actual": [
+        "340282366920938463463374607431768211454u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 74,
+      "operation": "rounded",
+      "values": [
+        340248342086729790484326174814286782776,
+        10001
+      ],
+      "expected": "340282366920938463463374607431768211455",
+      "overflow": false,
+      "actual": [
+        "340282366920938463463374607431768211455u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 75,
+      "operation": "rounded",
+      "values": [
+        340248342086729790484326174814286782777,
+        10001
+      ],
+      "expected": "340282366920938463463374607431768211456",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 76,
+      "operation": "rounded",
+      "values": [
+        226854911280625642308916404954512140969,
+        15000
+      ],
+      "expected": "340282366920938463463374607431768211454",
+      "overflow": false,
+      "actual": [
+        "340282366920938463463374607431768211454u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 77,
+      "operation": "rounded",
+      "values": [
+        226854911280625642308916404954512140970,
+        15000
+      ],
+      "expected": "340282366920938463463374607431768211455",
+      "overflow": false,
+      "actual": [
+        "340282366920938463463374607431768211455u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 78,
+      "operation": "rounded",
+      "values": [
+        226854911280625642308916404954512140971,
+        15000
+      ],
+      "expected": "340282366920938463463374607431768211457",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 79,
+      "operation": "rounded",
+      "values": [
+        184467440737095516169999,
+        18446744073709551615
+      ],
+      "expected": "340282366920938463463372762757360840500",
+      "overflow": false,
+      "actual": [
+        "340282366920938463463372762757360840500u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 80,
+      "operation": "rounded",
+      "values": [
+        184467440737095516170000,
+        18446744073709551615
+      ],
+      "expected": "340282366920938463463374607431768211455",
+      "overflow": false,
+      "actual": [
+        "340282366920938463463374607431768211455u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 81,
+      "operation": "rounded",
+      "values": [
+        184467440737095516170001,
+        18446744073709551615
+      ],
+      "expected": "340282366920938463463376452106175582411",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 82,
+      "operation": "accrued",
+      "values": [
+        340282366920938463463374607431768211454,
+        1,
+        1
+      ],
+      "expected": "1079028307080601418897052915",
+      "overflow": false,
+      "actual": [
+        "1079028307080601418897052915u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 83,
+      "operation": "accrued",
+      "values": [
+        340282366920938463463374607431768211455,
+        1,
+        1
+      ],
+      "expected": "1079028307080601418897052915",
+      "overflow": false,
+      "actual": [
+        "1079028307080601418897052915u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 84,
+      "operation": "accrued",
+      "values": [
+        340282366920938463463374607431768211454,
+        10000,
+        31536000
+      ],
+      "expected": "340282366920938463463374607431768211454",
+      "overflow": false,
+      "actual": [
+        "340282366920938463463374607431768211454u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 85,
+      "operation": "accrued",
+      "values": [
+        340282366920938463463374607431768211455,
+        10000,
+        31536000
+      ],
+      "expected": "340282366920938463463374607431768211455",
+      "overflow": false,
+      "actual": [
+        "340282366920938463463374607431768211455u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 86,
+      "operation": "accrued",
+      "values": [
+        24985393336315766715939525262363,
+        1000000000,
+        4294967295
+      ],
+      "expected": "340282366920938463463374607431745875881",
+      "overflow": false,
+      "actual": [
+        "340282366920938463463374607431745875881u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 87,
+      "operation": "accrued",
+      "values": [
+        24985393336315766715939525262364,
+        1000000000,
+        4294967295
+      ],
+      "expected": "340282366920938463463374607431759495133",
+      "overflow": false,
+      "actual": [
+        "340282366920938463463374607431759495133u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 88,
+      "operation": "accrued",
+      "values": [
+        24985393336315766715939525262365,
+        1000000000,
+        4294967295
+      ],
+      "expected": "340282366920938463463374607431773114385",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 89,
+      "operation": "rounded",
+      "values": [
+        24876834008745819121284806636064077159,
+        53738
+      ],
+      "expected": "133683130596198282793960293900881137838",
+      "overflow": false,
+      "actual": [
+        "133683130596198282793960293900881137838u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 90,
+      "operation": "rounded",
+      "values": [
+        128750485148086855849608701522601574401,
+        24592
+      ],
+      "expected": "316623193076175195905357718784381791767",
+      "overflow": false,
+      "actual": [
+        "316623193076175195905357718784381791767u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 91,
+      "operation": "rounded",
+      "values": [
+        186276629747676918355107809282144251924,
+        68575
+      ],
+      "expected": "1277391988494694467620151802152304207569",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 92,
+      "operation": "rounded",
+      "values": [
+        61300962576785033858265188987995543218,
+        10402341588009710472
+      ],
+      "expected": "63767355239751786232049499186380540806149538924254318",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 93,
+      "operation": "accrued",
+      "values": [
+        177745539971738627334013301946296815578,
+        91387724,
+        3752679885
+      ],
+      "expected": "193295385334488033357152354831698498439387519",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 94,
+      "operation": "rounded",
+      "values": [
+        65342765126264839515334663030741416285,
+        35505
+      ],
+      "expected": "231999487580803312699195721090647398520",
+      "overflow": false,
+      "actual": [
+        "231999487580803312699195721090647398520u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 95,
+      "operation": "accrued",
+      "values": [
+        248914861408849087674513445105968604140,
+        509385314,
+        3047333057
+      ],
+      "expected": "1225210083774355223719712628737240785917471439",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 96,
+      "operation": "rounded",
+      "values": [
+        165442813609590348644137605319649496860,
+        40512
+      ],
+      "expected": "670241926495172420427130266670964041680",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 97,
+      "operation": "rounded",
+      "values": [
+        143880426772005235258493794288829300982,
+        14790358755322879754
+      ],
+      "expected": "212804312982692009701285844291993005319015760705906012",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 98,
+      "operation": "accrued",
+      "values": [
+        127162297508476579062419373025507,
+        593740687,
+        1198469648
+      ],
+      "expected": "286929769455837584425969631585039440949",
+      "overflow": false,
+      "actual": [
+        "286929769455837584425969631585039440949u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 99,
+      "operation": "accrued",
+      "values": [
+        99406957223299197906840376182722,
+        353179135,
+        2070923224
+      ],
+      "expected": "230552168085896260074804058734342516854",
+      "overflow": false,
+      "actual": [
+        "230552168085896260074804058734342516854u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 100,
+      "operation": "accrued",
+      "values": [
+        26774624768665122562944371983876812675,
+        720306630,
+        332417991
+      ],
+      "expected": "20329126527772007106718195704760599028402681",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 101,
+      "operation": "rounded",
+      "values": [
+        9169081241648704672165084966513614153,
+        44300
+      ],
+      "expected": "40619029900503761697691326401655310698",
+      "overflow": false,
+      "actual": [
+        "40619029900503761697691326401655310698u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 102,
+      "operation": "rounded",
+      "values": [
+        211861828521590937927990,
+        13870715006656821093
+      ],
+      "expected": "293867504421218553548591537436669754710",
+      "overflow": false,
+      "actual": [
+        "293867504421218553548591537436669754710u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 103,
+      "operation": "rounded",
+      "values": [
+        66015091426156704266135262692673630283,
+        11246517433426910239
+      ],
+      "expected": "74243987659354272517726311287889662895961330659211317",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 104,
+      "operation": "rounded",
+      "values": [
+        99662149949439698593036616067925244059,
+        4654859884215070788
+      ],
+      "expected": "46391334377427389838117754201258191401173057292086145",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 105,
+      "operation": "rounded",
+      "values": [
+        105700730731558242070222692109202079500,
+        47581
+      ],
+      "expected": "502934646893827271594326591324794414469",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 106,
+      "operation": "rounded",
+      "values": [
+        137054771195092065159661575388939550757,
+        22811
+      ],
+      "expected": "312635638573124509835704019619710009232",
+      "overflow": false,
+      "actual": [
+        "312635638573124509835704019619710009232u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 107,
+      "operation": "rounded",
+      "values": [
+        18613393981443397696492460032288293542,
+        92748
+      ],
+      "expected": "172635506499091224955428268307467464944",
+      "overflow": false,
+      "actual": [
+        "172635506499091224955428268307467464944u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 108,
+      "operation": "rounded",
+      "values": [
+        198271713832189538757847594172506544913,
+        6911
+      ],
+      "expected": "137025581429426190235548472332619273190",
+      "overflow": false,
+      "actual": [
+        "137025581429426190235548472332619273190u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 109,
+      "operation": "rounded",
+      "values": [
+        183531256068486132955120298360400821060,
+        19207
+      ],
+      "expected": "352508483530741315566899557060821857010",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 110,
+      "operation": "accrued",
+      "values": [
+        17761494425752130669673715842912,
+        453044162,
+        1913391889
+      ],
+      "expected": "48822202077767147076558213351857141016",
+      "overflow": false,
+      "actual": [
+        "48822202077767147076558213351857141016u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 111,
+      "operation": "accrued",
+      "values": [
+        275195307007476566816038395430263664799,
+        75299865,
+        253450094
+      ],
+      "expected": "16654096268127815071761151231341676497372071",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 112,
+      "operation": "accrued",
+      "values": [
+        41071177394999732953373240873519118388,
+        490738049,
+        484283446
+      ],
+      "expected": "30951371793732046444666031477986411543080595",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 113,
+      "operation": "accrued",
+      "values": [
+        323866589873504812380844702689690486078,
+        81776202,
+        827193213
+      ],
+      "expected": "69469382787743947497713854918151252063858033",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 114,
+      "operation": "accrued",
+      "values": [
+        22937009461930771728539616120571,
+        698510201,
+        1449330331
+      ],
+      "expected": "73632631343838557382638315598308150336",
+      "overflow": false,
+      "actual": [
+        "73632631343838557382638315598308150336u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 115,
+      "operation": "accrued",
+      "values": [
+        42358164293069679773450597061398,
+        577408357,
+        3864699931
+      ],
+      "expected": "299729416502492273499178248280994723965",
+      "overflow": false,
+      "actual": [
+        "299729416502492273499178248280994723965u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 116,
+      "operation": "accrued",
+      "values": [
+        262308328581421522798838326292787408629,
+        767332997,
+        1858799210
+      ],
+      "expected": "1186374563600720957131808742572964462379266566",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 117,
+      "operation": "rounded",
+      "values": [
+        77638335065186955281120,
+        16737107092594138893
+      ],
+      "expected": "129944112847674082599151366615180514061",
+      "overflow": false,
+      "actual": [
+        "129944112847674082599151366615180514061u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 118,
+      "operation": "rounded",
+      "values": [
+        137573564112591440270219,
+        14422559178067946842
+      ],
+      "expected": "198416286975157479145762095932257500770",
+      "overflow": false,
+      "actual": [
+        "198416286975157479145762095932257500770u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 119,
+      "operation": "accrued",
+      "values": [
+        471522791031675817149057496246872,
+        6172478,
+        3347944055
+      ],
+      "expected": "30898245901048396650594047246325056131",
+      "overflow": false,
+      "actual": [
+        "30898245901048396650594047246325056131u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 120,
+      "operation": "rounded",
+      "values": [
+        116983237953388098819899220527638089294,
+        83479
+      ],
+      "expected": "976564372111088510138636703042670005618",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 121,
+      "operation": "accrued",
+      "values": [
+        322861320168093693143379876266904928430,
+        413300423,
+        23909713
+      ],
+      "expected": "10116950478720059835412447872231084082161794",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 122,
+      "operation": "accrued",
+      "values": [
+        328031292056646377425994161990401302682,
+        121031722,
+        2701118252
+      ],
+      "expected": "340056810800436247889311044045238846089848374",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 123,
+      "operation": "rounded",
+      "values": [
+        117802826319799627284030281565157785669,
+        16831071119827020581
+      ],
+      "expected": "198274774790517792651364926153278749853310837487164986",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 124,
+      "operation": "accrued",
+      "values": [
+        67326139891756154459006787924906131947,
+        580106439,
+        265421417
+      ],
+      "expected": "32871593497227522624704094435057166756658774",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 125,
+      "operation": "rounded",
+      "values": [
+        243849431772203804616905067303310646605,
+        62508
+      ],
+      "expected": "1524254028121691541899350194699534189799",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 126,
+      "operation": "accrued",
+      "values": [
+        100689780891883333693844618365159,
+        122585084,
+        3026922689
+      ],
+      "expected": "118472552805407730094007132281980243993",
+      "overflow": false,
+      "actual": [
+        "118472552805407730094007132281980243993u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 127,
+      "operation": "rounded",
+      "values": [
+        14891611214945532227513407539892549943,
+        57182
+      ],
+      "expected": "85153211249301542383367166994613579085",
+      "overflow": false,
+      "actual": [
+        "85153211249301542383367166994613579085u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 128,
+      "operation": "rounded",
+      "values": [
+        6160328143917898275240697139996630389,
+        31757
+      ],
+      "expected": "19563354086640069552681881907487299127",
+      "overflow": false,
+      "actual": [
+        "19563354086640069552681881907487299127u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 129,
+      "operation": "accrued",
+      "values": [
+        84785070778975611707853086319212,
+        473264306,
+        971288630
+      ],
+      "expected": "123584736469958892990208718235619052526",
+      "overflow": false,
+      "actual": [
+        "123584736469958892990208718235619052526u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 130,
+      "operation": "accrued",
+      "values": [
+        46310829215269069828650840211010,
+        428168302,
+        3689108782
+      ],
+      "expected": "231959372158633287333082708597103980387",
+      "overflow": false,
+      "actual": [
+        "231959372158633287333082708597103980387u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 131,
+      "operation": "rounded",
+      "values": [
+        71240016923424791775559,
+        14760029434073622145
+      ],
+      "expected": "105150474667365289354831079572030101216",
+      "overflow": false,
+      "actual": [
+        "105150474667365289354831079572030101216u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 132,
+      "operation": "accrued",
+      "values": [
+        38797418938624062913866387667605,
+        992536210,
+        2243233758
+      ],
+      "expected": "273915822248765819927760439157395341990",
+      "overflow": false,
+      "actual": [
+        "273915822248765819927760439157395341990u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 133,
+      "operation": "accrued",
+      "values": [
+        13761261402751525564504734069836,
+        331735769,
+        3613852092
+      ],
+      "expected": "52313564508942234810590329652898084027",
+      "overflow": false,
+      "actual": [
+        "52313564508942234810590329652898084027u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 134,
+      "operation": "rounded",
+      "values": [
+        7854197358816971040612754135111965397,
+        16941
+      ],
+      "expected": "13305795745571830639902066780293180580",
+      "overflow": false,
+      "actual": [
+        "13305795745571830639902066780293180580u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 135,
+      "operation": "rounded",
+      "values": [
+        158255662327458750821062649444457782217,
+        96385
+      ],
+      "expected": "1525347201343211169788812346670406333899",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 136,
+      "operation": "rounded",
+      "values": [
+        22186187888183810748532195138110826314,
+        78415
+      ],
+      "expected": "173972992325193351984615208175496044542",
+      "overflow": false,
+      "actual": [
+        "173972992325193351984615208175496044542u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 137,
+      "operation": "accrued",
+      "values": [
+        234260050531378635981023995574465379367,
+        292614662,
+        3530445339
+      ],
+      "expected": "767391882616645475739134278394908802587378720",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 138,
+      "operation": "accrued",
+      "values": [
+        147629415658769857145914384096342433643,
+        535335015,
+        3658708545
+      ],
+      "expected": "916895326294763173519240880902288628618944780",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 139,
+      "operation": "accrued",
+      "values": [
+        52474943991147960303326352801867743311,
+        714370807,
+        1803574429
+      ],
+      "expected": "214389318972929419486206003235624382134291988",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 140,
+      "operation": "accrued",
+      "values": [
+        275651947084346037483332043638502,
+        700783575,
+        186743414
+      ],
+      "expected": "114388842669280853563232836704401636270",
+      "overflow": false,
+      "actual": [
+        "114388842669280853563232836704401636270u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 141,
+      "operation": "accrued",
+      "values": [
+        238856611000943783632951601630531901793,
+        129938647,
+        1128191208
+      ],
+      "expected": "111032906991599470599445130628067899514419898",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 142,
+      "operation": "accrued",
+      "values": [
+        142892449244214505602744042419794,
+        516101469,
+        1258646097
+      ],
+      "expected": "294334657045977236425789536739897956233",
+      "overflow": false,
+      "actual": [
+        "294334657045977236425789536739897956233u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 143,
+      "operation": "accrued",
+      "values": [
+        288821944680564569267105741631132527261,
+        284527174,
+        1027218551
+      ],
+      "expected": "267676463096121955947047397897505589581395821",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 144,
+      "operation": "rounded",
+      "values": [
+        823210158625993417413745216933840488,
+        57327
+      ],
+      "expected": "4719216876355232464007777205116627366",
+      "overflow": false,
+      "actual": [
+        "4719216876355232464007777205116627366u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 145,
+      "operation": "rounded",
+      "values": [
+        97335887952161152732775065606388359317,
+        8758
+      ],
+      "expected": "85246770668502737563364402458074925090",
+      "overflow": false,
+      "actual": [
+        "85246770668502737563364402458074925090u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 146,
+      "operation": "accrued",
+      "values": [
+        160209453186132834408363543132401194088,
+        122708947,
+        741429308
+      ],
+      "expected": "46219741243139876151031667370718393193177178",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 147,
+      "operation": "accrued",
+      "values": [
+        30195785623144647524698861118707,
+        152748796,
+        3027953411
+      ],
+      "expected": "44286026021299597220493402980919463868",
+      "overflow": false,
+      "actual": [
+        "44286026021299597220493402980919463868u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 148,
+      "operation": "rounded",
+      "values": [
+        273351782942213722000717684427249710535,
+        7154
+      ],
+      "expected": "195555865516859696719313431439254442917",
+      "overflow": false,
+      "actual": [
+        "195555865516859696719313431439254442917u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 149,
+      "operation": "rounded",
+      "values": [
+        187684329440174771386631318728916067840,
+        16828264407944318096
+      ],
+      "expected": "315840152104698904981099244262034971287832853220647564",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 150,
+      "operation": "accrued",
+      "values": [
+        16544115836714325860513224868965,
+        616915957,
+        3673718382
+      ],
+      "expected": "118896431566721927446604396963010853308",
+      "overflow": false,
+      "actual": [
+        "118896431566721927446604396963010853308u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 151,
+      "operation": "rounded",
+      "values": [
+        329456923892197466285922,
+        2834522595416880750
+      ],
+      "expected": "93385309498897331191406883830096487781",
+      "overflow": false,
+      "actual": [
+        "93385309498897331191406883830096487781u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 152,
+      "operation": "rounded",
+      "values": [
+        126171578278720323223655697229796546593,
+        7514113966669229965
+      ],
+      "expected": "94806761854083242225836817828563753152217835767155426",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 153,
+      "operation": "accrued",
+      "values": [
+        104921463056405944629568462097029,
+        587026692,
+        837433041
+      ],
+      "expected": "163555695428433208957383250631154809059",
+      "overflow": false,
+      "actual": [
+        "163555695428433208957383250631154809059u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 154,
+      "operation": "accrued",
+      "values": [
+        308092107266496628065286318077385271759,
+        328206085,
+        3068895522
+      ],
+      "expected": "984017218608334552786639804941122424169831793",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 155,
+      "operation": "rounded",
+      "values": [
+        143421125205726661446568839540538452351,
+        98151
+      ],
+      "expected": "1407692686006727754764217816974338963671",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 156,
+      "operation": "accrued",
+      "values": [
+        155187106028384628778289897616912,
+        230839574,
+        1835110339
+      ],
+      "expected": "208459395304114677557546806191790002515",
+      "overflow": false,
+      "actual": [
+        "208459395304114677557546806191790002515u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 157,
+      "operation": "accrued",
+      "values": [
+        137718686211187085916568290822203,
+        217544799,
+        1642455902
+      ],
+      "expected": "156037393446824294458359788827796078986",
+      "overflow": false,
+      "actual": [
+        "156037393446824294458359788827796078986u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 158,
+      "operation": "rounded",
+      "values": [
+        27363985466470186878866,
+        11241689083665639049
+      ],
+      "expected": "30761741670400309964386879220077864244",
+      "overflow": false,
+      "actual": [
+        "30761741670400309964386879220077864244u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 159,
+      "operation": "accrued",
+      "values": [
+        81668094743383893122766518180671844754,
+        234376212,
+        3192477608
+      ],
+      "expected": "193770298238002165229768774608587045759514811",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 160,
+      "operation": "accrued",
+      "values": [
+        26272861995216451487409496755658,
+        906981025,
+        3633184901
+      ],
+      "expected": "274527894698530170044788945790732935154",
+      "overflow": false,
+      "actual": [
+        "274527894698530170044788945790732935154u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 161,
+      "operation": "rounded",
+      "values": [
+        195682237326297914357549171326941988726,
+        87972
+      ],
+      "expected": "1721455778206908012186231569997374063221",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 162,
+      "operation": "accrued",
+      "values": [
+        144647374242081658542166133602089636909,
+        886009576,
+        3123162590
+      ],
+      "expected": "1269220146667595363776223487377919160277941739",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 163,
+      "operation": "rounded",
+      "values": [
+        190278093168145458719456410793437043524,
+        3915
+      ],
+      "expected": "74493873475328947088667184825630602540",
+      "overflow": false,
+      "actual": [
+        "74493873475328947088667184825630602540u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 164,
+      "operation": "accrued",
+      "values": [
+        160043102077815974047712812834073,
+        212006738,
+        2212163637
+      ],
+      "expected": "238011130311103929376303730505882704491",
+      "overflow": false,
+      "actual": [
+        "238011130311103929376303730505882704491u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 165,
+      "operation": "accrued",
+      "values": [
+        281140312771212668850991615378434,
+        92934719,
+        3993336649
+      ],
+      "expected": "330849460485825317321980951085739842077",
+      "overflow": false,
+      "actual": [
+        "330849460485825317321980951085739842077u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 166,
+      "operation": "rounded",
+      "values": [
+        43882172842689077627706175611805693498,
+        73164
+      ],
+      "expected": "321059529386250367555349463246215175909",
+      "overflow": false,
+      "actual": [
+        "321059529386250367555349463246215175909u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 167,
+      "operation": "rounded",
+      "values": [
+        38431094873151917059670,
+        14820861981167511317
+      ],
+      "expected": "56958195290013890850288203697401008929",
+      "overflow": false,
+      "actual": [
+        "56958195290013890850288203697401008929u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 168,
+      "operation": "accrued",
+      "values": [
+        214091323536357518137122503094449,
+        244296320,
+        1626987634
+      ],
+      "expected": "269832114783556793625123970979258977071",
+      "overflow": false,
+      "actual": [
+        "269832114783556793625123970979258977071u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 169,
+      "operation": "rounded",
+      "values": [
+        344406550277041285406139,
+        7815052422300576137
+      ],
+      "expected": "269155524499877665894700919497554973671",
+      "overflow": false,
+      "actual": [
+        "269155524499877665894700919497554973671u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 170,
+      "operation": "rounded",
+      "values": [
+        148211276025679815949333,
+        14115109844656423417
+      ],
+      "expected": "209201844131916371914524535806744426674",
+      "overflow": false,
+      "actual": [
+        "209201844131916371914524535806744426674u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 171,
+      "operation": "rounded",
+      "values": [
+        137333250559545300458017904974065864037,
+        2804833870207071218
+      ],
+      "expected": "38519695267504687398923935982971913251058061006836399",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 172,
+      "operation": "rounded",
+      "values": [
+        15387133569714846295007418051013298739,
+        61310
+      ],
+      "expected": "94338515915921722634690480070762534569",
+      "overflow": false,
+      "actual": [
+        "94338515915921722634690480070762534569u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 173,
+      "operation": "accrued",
+      "values": [
+        55120931955182024426184160328356,
+        479993491,
+        1856846784
+      ],
+      "expected": "155783466222462899911472465004048966136",
+      "overflow": false,
+      "actual": [
+        "155783466222462899911472465004048966136u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 174,
+      "operation": "rounded",
+      "values": [
+        61936665543762610204150286302192469473,
+        47496
+      ],
+      "expected": "294174386666654893425632199820893353009",
+      "overflow": false,
+      "actual": [
+        "294174386666654893425632199820893353009u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 175,
+      "operation": "rounded",
+      "values": [
+        149694954280465945353257,
+        9711108682384114333
+      ],
+      "expected": "145370397022212588244225828120585476194",
+      "overflow": false,
+      "actual": [
+        "145370397022212588244225828120585476194u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 176,
+      "operation": "accrued",
+      "values": [
+        174555756343349526891913639561813,
+        338132553,
+        726700151
+      ],
+      "expected": "136009674803600533399275799084371018933",
+      "overflow": false,
+      "actual": [
+        "136009674803600533399275799084371018933u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 177,
+      "operation": "rounded",
+      "values": [
+        15402741788362515873147003479160827916,
+        47591
+      ],
+      "expected": "73303188444996049291893904257674296136",
+      "overflow": false,
+      "actual": [
+        "73303188444996049291893904257674296136u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 178,
+      "operation": "accrued",
+      "values": [
+        78066368806311298947202575732126371782,
+        895706125,
+        2401102428
+      ],
+      "expected": "532394552337280069548116679976083423926236047",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 179,
+      "operation": "rounded",
+      "values": [
+        22549619775486217222558007429982863818,
+        59284
+      ],
+      "expected": "133683165876992490182212891247910409859",
+      "overflow": false,
+      "actual": [
+        "133683165876992490182212891247910409859u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 180,
+      "operation": "accrued",
+      "values": [
+        86101158243078954084372221319573791023,
+        213902243,
+        2975150810
+      ],
+      "expected": "173750758973992390952175759295956702650476105",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 181,
+      "operation": "accrued",
+      "values": [
+        33287000994324377061063644999404,
+        758043870,
+        1659498326
+      ],
+      "expected": "132782004587694264262920948668239782437",
+      "overflow": false,
+      "actual": [
+        "132782004587694264262920948668239782437u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 182,
+      "operation": "rounded",
+      "values": [
+        103450532171061910000424899629210841232,
+        10663384103151647105
+      ],
+      "expected": "110313276021547962144179850137883246362725113240344744",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 183,
+      "operation": "accrued",
+      "values": [
+        48800982809688382864680327199801869602,
+        397141801,
+        4036949364
+      ],
+      "expected": "248096629630274057678727911344993607386827556",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 184,
+      "operation": "rounded",
+      "values": [
+        29982909764406054859722,
+        14803153669591084203
+      ],
+      "expected": "44384162070398584092422387532515105518",
+      "overflow": false,
+      "actual": [
+        "44384162070398584092422387532515105518u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 185,
+      "operation": "rounded",
+      "values": [
+        307595571414037790632590607413358172236,
+        1456651974797623783
+      ],
+      "expected": "44805969653926166234087329889185609893191198393684389",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 186,
+      "operation": "accrued",
+      "values": [
+        239847728980132525820247400874978274338,
+        902142736,
+        1163907776
+      ],
+      "expected": "798588091960342170769596522303869785031469043",
+      "overflow": true,
+      "actual": null,
+      "passed": true,
+      "returncode": 101,
+      "cli_panic": true
+    },
+    {
+      "index": 187,
+      "operation": "rounded",
+      "values": [
+        277644654768784625709428108151987216596,
+        5892
+      ],
+      "expected": "163588230589767901467995041323150868019",
+      "overflow": false,
+      "actual": [
+        "163588230589767901467995041323150868019u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    },
+    {
+      "index": 188,
+      "operation": "accrued",
+      "values": [
+        32785847304980952662146186668475,
+        564180557,
+        1304664656
+      ],
+      "expected": "76523851015903208703999406732054135778",
+      "overflow": false,
+      "actual": [
+        "76523851015903208703999406732054135778u128"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "cli_panic": false
+    }
+  ]
+}

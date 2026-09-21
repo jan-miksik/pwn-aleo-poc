@@ -1,0 +1,15 @@
+{
+  "actor": "borrower",
+  "function": "pwn_loan_demo.aleo::accept",
+  "fee_mode": "private",
+  "expect": "local_fail",
+  "prepare_wall_seconds": 8.787,
+  "prepare_exit_code": 248,
+  "started_at": "2026-09-16T07:43:43.486105+00:00",
+  "phase": "done",
+  "status": "local_fail",
+  "transaction_id": null,
+  "reason": "failed: Stack execution failed: Instruction (call pwn_elastic_proposal_demo.aleo/draw r1 r2 r3 self.signer into r16 r17;) at index 11 failed: Failed to evaluate: Call failed: Substack evaluation faile",
+  "label": "11-accept-overdraw-local",
+  "note": "No transaction created; execution aborted at proof time. No fee paid."
+}

@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-09-17T17:37:14.946800+00:00",
+  "network": "testnet",
+  "endpoint": "https://api.explorer.provable.com/v1",
+  "address": "aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s",
+  "consensus_version": "not exposed by this API endpoint",
+  "block_hash": "ab1f3uyza3skvp3zf002fw0gvfgqdw4jeywhczqmnsqshdadsy5nqgsmy3swa",
+  "block_timestamp": 1789666630,
+  "latest_height": 19695855,
+  "credits_public_balance": "2773390u64",
+  "usdcx_public_balance": null,
+  "usdcx_paused": "false",
+  "freeze_root": "3642222252059314292809609689035560016959342421640560347114299934615987159853field",
+  "private_balances": "not scanned",
+  "errors": {},
+  "connected": true
+}

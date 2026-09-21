@@ -1,0 +1,7 @@
+{
+  "program": "pwn_local_fixture.aleo",
+  "function": "math_interest",
+  "outputs": [
+    "4019693684133147518698323206376839u128"
+  ]
+}

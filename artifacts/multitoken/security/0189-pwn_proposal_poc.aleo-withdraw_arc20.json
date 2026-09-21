@@ -1,0 +1,26 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:52479",
+    "consensus_version": 19
+  },
+  "program": "pwn_proposal_poc.aleo",
+  "function": "withdraw_arc20",
+  "outputs": [
+    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n  _root: 2617414473409732370536860627613633038819204906779826933049057714978046327986field,\n  _nonce: 4037483252323806061664197290049426112590242556651852399683530846006441945132group,\n  _version: 1u8\n}",
+    "{\n  program_id: pwn_proposal_poc.aleo,\n  function_name: withdraw_arc20,\n  arguments: [\n    3444424546340229145149874483642230461324436642902559950131007059188053059411field,\n    2259265604210485173873027478212031212918194785781151251591373859749309309914field,\n    {\n  credit_asset: {\n    program_id: 'arc20_sol',\n    token_id: 0field,\n    family: 2u8,\n    version: 1u16\n  },\n  collateral_asset: {\n    program_id: 'arc20_wbtc',\n    token_id: 0field,\n    family: 2u8,\n    version: 1u16\n  },\n  min_draw: 1208925819614629174706176u128,\n  max_draw: 1208925819614629174706176u128,\n  collateral_ratio: 10000u64,\n  repayment_ratio: 10000u64,\n  accruing_apr: 0u32,\n  duration: 1000u32,\n  expiry: 5239u32,\n  lender_auth: 4809402765859905060594120278616786066909153534073558940498735211674851221852field\n},\n    1208925819614629174706176u128,\n    { _program_id: arc20_sol.aleo, _function_name: transfer_public_to_private, _checksum: 5187257105698990495126916567297807361436910054975317074659337117817768583217field }\n  ]\n}"
+  ],
+  "transaction_id": "at1g9f44r3u2hu3rzcru3tgdrzue5enlnfpcyjmqlck26xcuqpxhcxs7p0xys",
+  "stats": {
+    "storage_cost": 4366,
+    "execution_cost": 2428,
+    "priority_fee": 0,
+    "total_cost": 6794
+  },
+  "broadcast": {
+    "fee_id": "au1fxc3gdetd4e6a5tj2f7aclven4em5tj56knwvuuk7ev4z2apdqzqx3m9tw",
+    "fee_transaction_id": "at15te8a3eemmjecg5rc8znplrwqw3qx9tac57966nt6cqsthuk2sgsra7vya",
+    "confirmed": true
+  }
+}

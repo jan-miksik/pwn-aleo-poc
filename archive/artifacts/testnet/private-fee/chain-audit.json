@@ -1,0 +1,83 @@
+{
+  "checked_from": "public API, not local files",
+  "payer": "aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s",
+  "results": [
+    {
+      "label": "shield-fee",
+      "transaction_id": "at1y24spcvs5m0lxn7f6vu52muyyzep25prh40q52r764m3g4effv9qjfekl6",
+      "status": "accepted",
+      "fee_function": "fee_public",
+      "fee_inputs": [
+        "public",
+        "public",
+        "public"
+      ],
+      "payer_address_in_chain_serialization": true,
+      "addresses_visible_on_chain": [
+        "aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s"
+      ],
+      "public_values": [
+        "1000000u64",
+        "{\n  program_id: credits.aleo,\n  function_name: transfer_public_to_private,\n  arguments: [\n    aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s,\n    1000000u64\n  ]\n}",
+        "2304u64",
+        "0u64",
+        "5891161952078241768804714122070770577230634389358274386554199229507520200457field",
+        "{\n  program_id: credits.aleo,\n  function_name: fee_public,\n  arguments: [\n    aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s,\n    2304u64\n  ]\n}"
+      ],
+      "fee_amount_public": "2304u64",
+      "serial_numbers": []
+    },
+    {
+      "label": "shield-transfer",
+      "transaction_id": "at1pduf8ugznd2hw9vvapm4fa9j03t89ff7wduljh9xgc88w5gyj5pq009muw",
+      "status": "accepted",
+      "fee_function": "fee_public",
+      "fee_inputs": [
+        "public",
+        "public",
+        "public"
+      ],
+      "payer_address_in_chain_serialization": true,
+      "addresses_visible_on_chain": [
+        "aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s"
+      ],
+      "public_values": [
+        "1000000u64",
+        "{\n  program_id: credits.aleo,\n  function_name: transfer_public_to_private,\n  arguments: [\n    aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s,\n    1000000u64\n  ]\n}",
+        "2304u64",
+        "0u64",
+        "3887750849952027087438218001228810587240778835136847325567443540221812191536field",
+        "{\n  program_id: credits.aleo,\n  function_name: fee_public,\n  arguments: [\n    aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s,\n    2304u64\n  ]\n}"
+      ],
+      "fee_amount_public": "2304u64",
+      "serial_numbers": []
+    },
+    {
+      "label": "private-transfer",
+      "transaction_id": "at18z9e36dwmxfwqhjw85hwzz6t9asgzg2pgk48ymgvdypejsp5xspslpdzvx",
+      "status": "accepted",
+      "fee_function": "fee_private",
+      "fee_inputs": [
+        "record",
+        "public",
+        "public",
+        "public"
+      ],
+      "payer_address_in_chain_serialization": false,
+      "addresses_visible_on_chain": [],
+      "public_values": [
+        "2308u64",
+        "0u64",
+        "1495869150092839265156181454875558048069989813311750453587180716913877412873field"
+      ],
+      "fee_amount_public": "2308u64",
+      "serial_numbers": [
+        "3984039044164402967596695843871578998176862698323858866753273912612843008003field",
+        "1941036058208172409892910824813481706370831766980355004832203114493200591722field"
+      ]
+    },
+    {
+      "public_balance_after": "7995392u64"
+    }
+  ]
+}

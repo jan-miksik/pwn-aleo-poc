@@ -1,0 +1,357 @@
+
+
+📢 Using the following consensus heights: 0,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+  To override, pass in `--consensus-heights` or override the environment variable `CONSENSUS_VERSION_HEIGHTS`.
+
+
+🛠️  Deployment Plan Summary
+──────────────────────────────────────────────
+🔧 Configuration:
+  Private Key:        APrivateKey1zkp8CZNn3yeC...
+  Address:            aleo1rhgdu77hgyqd3xjj8uc...
+  Endpoint:           http://127.0.0.1:3030
+  Network:            testnet
+  Consensus Version:  19
+
+📦 Deployment Tasks:
+  • token_registry.aleo  │ priority fee: 0  │ fee record: no (public fee)
+  • pwn_config.aleo  │ priority fee: 0  │ fee record: no (public fee)
+  • pwn_hub.aleo  │ priority fee: 0  │ fee record: no (public fee)
+  • pwn_elastic_proposal.aleo  │ priority fee: 0  │ fee record: no (public fee)
+  • pwn_loan.aleo  │ priority fee: 0  │ fee record: no (public fee)
+
+🚫 Skipped Programs:
+  • credits.aleo
+
+⚙️ Actions:
+  • Transaction(s) will NOT be printed to the console.
+  • Transaction(s) will NOT be saved to a file.
+  • Transaction(s) will be broadcast to http://127.0.0.1:3030
+
+⚠️ Warnings:
+  • The program 'credits.aleo' already exists on the network. Please use `leo upgrade` instead.
+  • The program 'credits.aleo' does not contain a constructor. The deployment will likely fail
+──────────────────────────────────────────────
+
+
+🔧 Your program 'token_registry.aleo' has the following constructor.
+──────────────────────────────────────────────
+constructor:
+    assert.eq edition 0u16;
+──────────────────────────────────────────────
+Once it is deployed, it CANNOT be changed.
+
+📦 Creating deployment transaction for 'token_registry.aleo'...
+
+⚠️  Skipping deployment certificate and verifier key generation as per user request.
+
+
+📊 Deployment Summary for token_registry.aleo
+──────────────────────────────────────────────
+  Program Size:         26.80 KB / 2000.00 KB
+💰 Cost Breakdown (credits)
+  Transaction Storage:  33.142000
+  Program Synthesis:    2.198478
+  Namespace:            1.000000
+  Constructor:          0.002000
+  Priority Fee:         0.000000
+  Total Fee:            36.342478
+  Function 'transfer_public'
+    Total Execution Cost:   0.005474
+    |- Storage Cost:        0.001633
+    |- Finalize Cost:       0.003841
+  Function 'transfer_public_as_signer'
+    Total Execution Cost:   0.005494
+    |- Storage Cost:        0.001653
+    |- Finalize Cost:       0.003841
+  Function 'transfer_private'
+    Total Execution Cost:   0.002874
+    |- Storage Cost:        0.002794
+    |- Finalize Cost:       0.000080
+  Function 'transfer_private_to_public'
+    Total Execution Cost:   0.005141
+    |- Storage Cost:        0.002492
+    |- Finalize Cost:       0.002649
+  Function 'transfer_public_to_private'
+    Total Execution Cost:   0.003431
+    |- Storage Cost:        0.002067
+    |- Finalize Cost:       0.001364
+  Function 'join'
+    Total Execution Cost:   0.002322
+    |- Storage Cost:        0.002322
+    |- Finalize Cost:       0.000000
+  Function 'split'
+    Total Execution Cost:   0.002594
+    |- Storage Cost:        0.002594
+    |- Finalize Cost:       0.000000
+  Function 'initialize'
+    Total Execution Cost:   0.002776
+    |- Storage Cost:        0.001220
+    |- Finalize Cost:       0.001556
+  Function 'register_token'
+    Total Execution Cost:   0.003252
+    |- Storage Cost:        0.001928
+    |- Finalize Cost:       0.001324
+  Function 'update_token_management'
+    Total Execution Cost:   0.003161
+    |- Storage Cost:        0.001605
+    |- Finalize Cost:       0.001556
+  Function 'set_role'
+    Total Execution Cost:   0.002137
+    |- Storage Cost:        0.001513
+    |- Finalize Cost:       0.000624
+  Function 'remove_role'
+    Total Execution Cost:   0.001966
+    |- Storage Cost:        0.001474
+    |- Finalize Cost:       0.000492
+  Function 'mint_public'
+    Total Execution Cost:   0.005989
+    |- Storage Cost:        0.001676
+    |- Finalize Cost:       0.004313
+  Function 'mint_private'
+    Total Execution Cost:   0.004026
+    |- Storage Cost:        0.002090
+    |- Finalize Cost:       0.001936
+  Function 'burn_public'
+    Total Execution Cost:   0.008160
+    |- Storage Cost:        0.001645
+    |- Finalize Cost:       0.006515
+  Function 'burn_private'
+    Total Execution Cost:   0.004174
+    |- Storage Cost:        0.002378
+    |- Finalize Cost:       0.001796
+  Function 'prehook_public'
+    Total Execution Cost:   0.004234
+    |- Storage Cost:        0.001653
+    |- Finalize Cost:       0.002581
+  Function 'prehook_private'
+    Total Execution Cost:   0.002931
+    |- Storage Cost:        0.002819
+    |- Finalize Cost:       0.000112
+  Function 'approve_public'
+    Total Execution Cost:   0.002163
+    |- Storage Cost:        0.001479
+    |- Finalize Cost:       0.000684
+  Function 'unapprove_public'
+    Total Execution Cost:   0.002167
+    |- Storage Cost:        0.001483
+    |- Finalize Cost:       0.000684
+  Function 'transfer_from_public'
+    Total Execution Cost:   0.006276
+    |- Storage Cost:        0.001750
+    |- Finalize Cost:       0.004526
+  Function 'transfer_from_public_to_private'
+    Total Execution Cost:   0.004233
+    |- Storage Cost:        0.002184
+    |- Finalize Cost:       0.002049
+──────────────────────────────────────────────
+
+🔧 Your program 'pwn_config.aleo' has the following constructor.
+──────────────────────────────────────────────
+constructor:
+    assert.eq edition 0u16;
+──────────────────────────────────────────────
+Once it is deployed, it CANNOT be changed.
+
+📦 Creating deployment transaction for 'pwn_config.aleo'...
+
+⚠️  Skipping deployment certificate and verifier key generation as per user request.
+
+
+📊 Deployment Summary for pwn_config.aleo
+──────────────────────────────────────────────
+  Program Size:         1.13 KB / 2000.00 KB
+💰 Cost Breakdown (credits)
+  Transaction Storage:  2.113000
+  Program Synthesis:    0.191172
+  Namespace:            1.000000
+  Constructor:          0.002000
+  Priority Fee:         0.000000
+  Total Fee:            3.306172
+  Function 'initialize'
+    Total Execution Cost:   0.002126
+    |- Storage Cost:        0.001212
+    |- Finalize Cost:       0.000914
+  Function 'set_admin'
+    Total Execution Cost:   0.002356
+    |- Storage Cost:        0.001462
+    |- Finalize Cost:       0.000894
+──────────────────────────────────────────────
+
+🔧 Your program 'pwn_hub.aleo' has the following constructor.
+──────────────────────────────────────────────
+constructor:
+    assert.eq edition 0u16;
+──────────────────────────────────────────────
+Once it is deployed, it CANNOT be changed.
+
+📦 Creating deployment transaction for 'pwn_hub.aleo'...
+
+⚠️  Skipping deployment certificate and verifier key generation as per user request.
+
+
+📊 Deployment Summary for pwn_hub.aleo
+──────────────────────────────────────────────
+  Program Size:         0.79 KB / 2000.00 KB
+💰 Cost Breakdown (credits)
+  Transaction Storage:  1.141000
+  Program Synthesis:    0.095586
+  Namespace:            1000.000000
+  Constructor:          0.002000
+  Priority Fee:         0.000000
+  Total Fee:            1001.238586
+  Function 'set_tag'
+    Total Execution Cost:   0.002040
+    |- Storage Cost:        0.001428
+    |- Finalize Cost:       0.000612
+──────────────────────────────────────────────
+
+🔧 Your program 'pwn_elastic_proposal.aleo' has the following constructor.
+──────────────────────────────────────────────
+constructor:
+    assert.eq edition 0u16;
+──────────────────────────────────────────────
+Once it is deployed, it CANNOT be changed.
+
+📦 Creating deployment transaction for 'pwn_elastic_proposal.aleo'...
+
+⚠️  Skipping deployment certificate and verifier key generation as per user request.
+
+
+📊 Deployment Summary for pwn_elastic_proposal.aleo
+──────────────────────────────────────────────
+  Program Size:         6.57 KB / 2000.00 KB
+💰 Cost Breakdown (credits)
+  Transaction Storage:  7.229000
+  Program Synthesis:    0.477930
+  Namespace:            1.000000
+  Constructor:          0.002000
+  Priority Fee:         0.000000
+  Total Fee:            8.708930
+  Function 'draw'
+    Total Execution Cost:   0.005254
+    |- Storage Cost:        0.003498
+    |- Finalize Cost:       0.001756
+  Function 'receive_repayment'
+    Total Execution Cost:   0.004569
+    |- Storage Cost:        0.003244
+    |- Finalize Cost:       0.001325
+  Function 'open_commitment'
+    Total Execution Cost:   0.007343
+    |- Storage Cost:        0.004037
+    |- Finalize Cost:       0.003306
+  Function 'cancel_commitment'
+    Total Execution Cost:   0.005216
+    |- Storage Cost:        0.003153
+    |- Finalize Cost:       0.002063
+  Function 'withdraw_repayment'
+    Total Execution Cost:   0.004573
+    |- Storage Cost:        0.003155
+    |- Finalize Cost:       0.001418
+──────────────────────────────────────────────
+
+🔧 Your program 'pwn_loan.aleo' has the following constructor.
+──────────────────────────────────────────────
+constructor:
+    assert.eq edition 0u16;
+──────────────────────────────────────────────
+Once it is deployed, it CANNOT be changed.
+
+📦 Creating deployment transaction for 'pwn_loan.aleo'...
+
+⚠️  Skipping deployment certificate and verifier key generation as per user request.
+
+
+📊 Deployment Summary for pwn_loan.aleo
+──────────────────────────────────────────────
+  Program Size:         4.41 KB / 2000.00 KB
+💰 Cost Breakdown (credits)
+  Transaction Storage:  4.875000
+  Program Synthesis:    0.286758
+  Namespace:            100.000000
+  Constructor:          0.002000
+  Priority Fee:         0.000000
+  Total Fee:            105.163758
+  Function 'accept'
+    Total Execution Cost:   0.018647
+    |- Storage Cost:        0.013297
+    |- Finalize Cost:       0.005350
+  Function 'repay'
+    Total Execution Cost:   0.013068
+    |- Storage Cost:        0.009414
+    |- Finalize Cost:       0.003654
+  Function 'claim_default'
+    Total Execution Cost:   0.006184
+    |- Storage Cost:        0.003875
+    |- Finalize Cost:       0.002309
+──────────────────────────────────────────────
+
+📡 Broadcasting deployment for token_registry.aleo...
+💰Your current public balance is 9374999.894112 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at19e96qxk489pkcpx6t8dzk43xq4qgl4emclmktrs2ddt4qyv27cgqkeg74t'
+  - fee ID: 'au13fksr06kfctdlr5wg6t8cjxtrxg3u0kag6t4lse2zu7vx2jz7y9s04xv32'
+  - fee transaction ID: 'at17egdswdr2xre5845732rhwre7uxz9nw0xz5n63c7huept0vutgqsnw96f7'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Deployment confirmed!
+
+📡 Broadcasting deployment for pwn_config.aleo...
+💰Your current public balance is 9374963.551634 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at1paw9agz3y9034v7y5yw0n2jumvpewqw57437s97ns2u57utfjyfq2htvkj'
+  - fee ID: 'au123h7rtpry4ml2l4hmt5yf7038z0dv03fuv4rd5ctez0yhn8ks5pqze3xjq'
+  - fee transaction ID: 'at1sp5kc0jea7e28ss7scxspdkw852p8akgey2qsq4t2gun72ds8vxqrhrv4l'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Deployment confirmed!
+
+📡 Broadcasting deployment for pwn_hub.aleo...
+💰Your current public balance is 9374960.245462 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at1f5a2n8se2jzpa9n3wlgeq8ujcug2vn34lujp3qr0dagsv6wrkg9qzjxkmq'
+  - fee ID: 'au1u8lqgeh64y4mps7y3zdnwmhrew8whktch3uh73re408pgvymsvys9gmeef'
+  - fee transaction ID: 'at102k6lvr6nafqx084smsmevtj3f4grgncjz9f880gccrrkrumry9qecxdys'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Deployment confirmed!
+
+📡 Broadcasting deployment for pwn_elastic_proposal.aleo...
+💰Your current public balance is 9373959.006876 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at1ss5csgkxvxh6wpe8zltfzjg9ku5ejmz7m6y25vx4kpf56a25jy9s2f68s2'
+  - fee ID: 'au1czn2uhgdceu9xyyrukzqhm99dmlfrrfxhmasglxvt2cl74tzwursrx97ez'
+  - fee transaction ID: 'at1qurr8ahg0rye5pw3lcxnxm4lm3g6t3cy446fa0gd0wuyxc0udvpsc30ftc'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Deployment confirmed!
+
+📡 Broadcasting deployment for pwn_loan.aleo...
+💰Your current public balance is 9373950.297946 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at1cra3avp9ugvseuzvd36eejkw3tqtv8r6g2jpe7hhrqqu99utf59qdqqk2x'
+  - fee ID: 'au1n5u6ddwy25tyst02trve0hyc7zm76syhqllrtqsmcax9pdhgjvyqqh8fep'
+  - fee transaction ID: 'at16xqxgw863jk7ffeg0efgkgfkuycdlwd5x2vljfjj8fh2dm72gc9sj3mm9x'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Deployment confirmed!

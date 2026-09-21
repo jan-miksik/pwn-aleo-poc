@@ -1,0 +1,47 @@
+{
+  "label": "04-register-token",
+  "actor": "lender",
+  "function": "token_registry.aleo::register_token",
+  "fee_mode": "public",
+  "expect": "accepted",
+  "prepare_wall_seconds": 10.524,
+  "prepare_exit_code": 0,
+  "started_at": "2026-09-16T07:38:30.354108+00:00",
+  "phase": "done",
+  "transaction_id": "at1qz7xnm64wrrc0z8hcd5gl2vc2urkfjfdcx0nspxg8q4fy6darqzqnpvvkj",
+  "fee_microcredits": 3252,
+  "fee_function": "fee_public",
+  "submitted_at": "2026-09-16T07:38:30.354686+00:00",
+  "status": "accepted",
+  "block_height": 19653594,
+  "block_timestamp": 1789544309,
+  "confirmed_at": "2026-09-16T07:38:36.999515+00:00",
+  "execution_transitions": [
+    [
+      "token_registry.aleo",
+      "register_token"
+    ]
+  ],
+  "top_level_input_types": [
+    "public",
+    "public",
+    "public",
+    "public",
+    "public",
+    "public",
+    "public"
+  ],
+  "top_level_output_types": [
+    "future"
+  ],
+  "fee_input_types": [
+    "public",
+    "public",
+    "public"
+  ],
+  "lender_address_on_chain": true,
+  "borrower_address_on_chain": false,
+  "addresses_on_chain": [
+    "aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s"
+  ]
+}

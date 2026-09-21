@@ -1,0 +1,27 @@
+{
+  "config": {
+    "address": "aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:65083",
+    "consensus_version": 19
+  },
+  "program": "pwn_loan_poc.aleo",
+  "function": "repay_arc20_arc20",
+  "outputs": [
+    "{\n  owner: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue,\n  _root: 2283550889218984820829025596164569630292585230308378085728011493249959785105field,\n  _nonce: 436227147440284993525520759581577556091900811926655715376956925611615959601group,\n  _version: 1u8\n}",
+    "{\n  owner: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue,\n  _root: 7272673248939714434950663817747676980911724299724535706949398312495758163088field,\n  _nonce: 8162060692098511167584272695194640459726135929382167852449949003584353231672group,\n  _version: 1u8\n}",
+    "{\n  program_id: pwn_loan_poc.aleo,\n  function_name: repay_arc20_arc20,\n  arguments: [\n    {\n  loan_id: 4658478431516950204529279615141365331787675211845953309632787146776244308205field,\n  commitment_id: 7859942922592895014296269904865895967950814285618460236076382018304424925373field,\n  credit_asset: {\n    program_id: 'arc20_sol',\n    token_id: 0field,\n    family: 2u8,\n    version: 1u16\n  },\n  collateral_asset: {\n    program_id: 'arc20_sol',\n    token_id: 0field,\n    family: 2u8,\n    version: 1u16\n  },\n  credit_amount: 301u128,\n  collateral_amount: 452u128,\n  repayment_amount: 301u128,\n  accruing_apr: 0u32,\n  borrower_auth: 2860940721950287032492000479068245639342974500103276264940757695219008338474field,\n  lender_auth: 339576322825442117135504901918126503044778088138292348508953293852458530971field\n},\n    5024273000825165307387647367414397116064414331623076541218000713854217166682field,\n    301u128,\n    {\n      program_id: pwn_proposal_poc.aleo,\n      function_name: receive_arc20,\n      arguments: [\n        7859942922592895014296269904865895967950814285618460236076382018304424925373field,\n        {\n  program_id: 'arc20_sol',\n  token_id: 0field,\n  family: 2u8,\n  version: 1u16\n},\n        301u128,\n        { _program_id: arc20_sol.aleo, _function_name: transfer_private_to_public, _checksum: 5238894857547257214432337200511497210827730134463137020219167256335771032710field }\n      ]\n    },\n    { _program_id: arc20_sol.aleo, _function_name: transfer_public_to_private, _checksum: 5111496978890007709417008277153689413754146708460279271709385968498329551692field }\n  ]\n}"
+  ],
+  "transaction_id": "at16qzt3mg3zz089a4fva0ypd9s7hlu0amn7dm3dwmtnk3vqqeshu8sf2vlyk",
+  "stats": {
+    "storage_cost": 13622,
+    "execution_cost": 5285,
+    "priority_fee": 0,
+    "total_cost": 18907
+  },
+  "broadcast": {
+    "fee_id": "au1ly8d03avh4tad7njem94l0eagmwvtqukyrtwyrsdsrg8zhke25zqpm8z60",
+    "fee_transaction_id": "at1l4atywn9ua60r0ak5lfzjj8d8eudn40vvhmsa22aslf49y60tczsvky0lf",
+    "confirmed": false
+  }
+}

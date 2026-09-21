@@ -1,0 +1,15 @@
+⚠️ No network specified, defaulting to 'testnet'.
+⚠️ No endpoint specified, defaulting to 'https://api.explorer.provable.com/v1'.
+
+       Leo 🔨 Compiling 'pwn_elastic_proposal.aleo'
+       Leo     Program size: 6.57 KB / 2000.00 KB
+       Leo ✅ Compiled 'pwn_elastic_proposal.aleo' into Aleo instructions.
+       Leo     Import 'pwn_config.aleo': program size: 1.13 KB / 2000.00 KB
+       Leo     Import 'pwn_hub.aleo': program size: 0.79 KB / 2000.00 KB
+       Leo ✅ Generated ABI for program 'pwn_elastic_proposal.aleo'.
+       Leo 🔨 Compiling 'test_pwn_elastic_proposal.aleo'
+
+     Running 1 test
+        PASS test_pwn_elastic_proposal.leo::rejects_direct_draw
+────────────────────────
+     Summary 1 test run: 1 passed, 0 failed

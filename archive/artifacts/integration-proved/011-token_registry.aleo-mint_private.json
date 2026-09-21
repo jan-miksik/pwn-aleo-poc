@@ -1,0 +1,26 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:49364",
+    "consensus_version": 19
+  },
+  "program": "token_registry.aleo",
+  "function": "mint_private",
+  "outputs": [
+    "{\n  owner: aleo13pnm0ru8knk2lv6zpp9u95wkxhfpr4cw5xrldz5urefjnpfr0yzs0wkruu.private,\n  amount: 100000u128.private,\n  token_id: 987654321field.private,\n  external_authorization_required: false.private,\n  authorized_until: 4294967295u32.private,\n  _nonce: 43396691588821828368779625132962768894716788999754146950858822905691070754group.public,\n  _version: 1u8.public\n}",
+    "{\n  program_id: token_registry.aleo,\n  function_name: mint_private,\n  arguments: [\n    987654321field,\n    100000u128,\n    false,\n    4294967295u32,\n    aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n    5881482511556734143299913091949552631184592859519038963985945120151781986071field\n  ]\n}"
+  ],
+  "transaction_id": "at1m6y0znjla6y7nwvn9vzqgnve9u3ecswn4uhjtj6s4hesuk4a3cgqcgrvfp",
+  "stats": {
+    "storage_cost": 2090,
+    "execution_cost": 1936,
+    "priority_fee": 0,
+    "total_cost": 4026
+  },
+  "broadcast": {
+    "fee_id": "au1g0allpxydx0xn5eg4etw37euqdgcjxyaanv7d5wu79y8v0dpjqqq95nwym",
+    "fee_transaction_id": "at1lk43pcdzak0eekpefw43e7f7sfdy7up6mherxdxrtq2xrr4jsvxsd8934p",
+    "confirmed": true
+  }
+}

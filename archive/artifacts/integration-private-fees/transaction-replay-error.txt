@@ -1,0 +1,1 @@
+Invalid transaction — Transaction 'at153jhsyvzwyk0lpfl7qxjrptkwje6zdgdkuqk3xmmarfqqlrz6sxqylrujq' already exists in the ledger

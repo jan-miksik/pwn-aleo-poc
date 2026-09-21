@@ -1,0 +1,25 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:62679",
+    "consensus_version": 19
+  },
+  "program": "usad_stablecoin.aleo",
+  "function": "mint_public",
+  "outputs": [
+    "{\n  program_id: usad_stablecoin.aleo,\n  function_name: mint_public,\n  arguments: [\n    aleo1gqzuhr60tnlt0fhjevmu5y4ymc46qsky2emzkcvf98rwkq7s759spr0n8j,\n    600u128,\n    aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px\n  ]\n}"
+  ],
+  "transaction_id": "at1ls47fxn0lucqz7ka8txdwx83d7xjn80sfe9qwcuutuq56kwvr59sjh0sll",
+  "stats": {
+    "storage_cost": 1444,
+    "execution_cost": 1832,
+    "priority_fee": 0,
+    "total_cost": 3276
+  },
+  "broadcast": {
+    "fee_id": "au1tyu6uk2jgqhfam5fkv7lah2r86pptdlfjwh522dfldud5vexmupsng6fhm",
+    "fee_transaction_id": "at1egfa0yrsl9z4ekwkh6wqaa993s8gr6lhvlzvkyvm8z3043j7a5rs5cmnye",
+    "confirmed": true
+  }
+}

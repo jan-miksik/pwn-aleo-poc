@@ -1,0 +1,10 @@
+{
+  "program": "pwn_loan_demo.aleo",
+  "transaction_id": "at15k3cajkrzq98ygluqkq5v6632m2ngq8ywwgnwym7k6acppfa5upqscede2",
+  "status": "accepted",
+  "block_hash": "ab1ku8n45jjm4cx829ar5e7uqh0cxaew6p8f2rlurcs9swzhdj42y8sggusul",
+  "block_height": 19653445,
+  "block_timestamp": 1789543905,
+  "program_visible_on_chain": true,
+  "confirmed_checked_at": "2026-09-16T07:31:54.160619+00:00"
+}

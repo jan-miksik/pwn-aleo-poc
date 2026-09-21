@@ -1,0 +1,8 @@
+PASS all five non-native programs deployed
+PASS 015-token_registry.aleo-burn_public rejected
+PASS issuer burned 600 collateral while both loan obligations remain active
+PASS 018-pwn_loan.aleo-repay rejected
+PASS pooled loss hits second borrower; failed repay leaves debt active
+PASS 024-pwn_loan.aleo-accept rejected
+PASS global loan ID can be occupied by a different signer
+7 security checks passed. Evidence: /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/security-review/devnode

@@ -1,0 +1,99 @@
+Starting the Devnode server...
+2026-09-15T09:58:55.140217Z  INFO Loading the ledger from storage...
+Server running on http://127.0.0.1:3030
+Advancing the Devnode to the latest consensus version
+2026-09-15T09:58:55.473582Z  INFO Received POST /block/create from 127.0.0.1:62198
+2026-09-15T10:02:42.743801Z  INFO Received GET /program/credits.aleo from 127.0.0.1:63133
+2026-09-15T10:02:42.752487Z  INFO Received GET /program/token_registry.aleo/latest_edition from 127.0.0.1:63134
+2026-09-15T10:02:42.752712Z  INFO Returning REST error: {"message":"Missing latest edition for program ID token_registry.aleo","error_type":"internal_server_error"}
+2026-09-15T10:02:42.752729Z ERROR response failed classification=Status code: 500 Internal Server Error latency=0 ms
+2026-09-15T10:03:26.034792Z  INFO Received GET /block/height/latest from 127.0.0.1:63326
+2026-09-15T10:03:26.035241Z  INFO Received GET /consensus_version from 127.0.0.1:63327
+2026-09-15T10:03:26.130603Z  INFO Received GET /program/credits.aleo from 127.0.0.1:63329
+2026-09-15T10:03:26.132837Z  INFO Received GET /program/token_registry.aleo from 127.0.0.1:63330
+2026-09-15T10:03:26.132875Z  INFO Returning REST error: {"message":"Failed to find program `token_registry.aleo`","error_type":"internal_server_error","chain":["Missing program for ID token_registry.aleo"]}
+2026-09-15T10:03:26.132882Z ERROR response failed classification=Status code: 500 Internal Server Error latency=0 ms
+2026-09-15T10:03:26.133710Z  INFO Received GET /program/pwn_config.aleo from 127.0.0.1:63331
+2026-09-15T10:03:26.133723Z  INFO Returning REST error: {"message":"Failed to find program `pwn_config.aleo`","error_type":"internal_server_error","chain":["Missing program for ID pwn_config.aleo"]}
+2026-09-15T10:03:26.133727Z ERROR response failed classification=Status code: 500 Internal Server Error latency=0 ms
+2026-09-15T10:03:26.134017Z  INFO Received GET /program/pwn_hub.aleo from 127.0.0.1:63332
+2026-09-15T10:03:26.134027Z  INFO Returning REST error: {"message":"Failed to find program `pwn_hub.aleo`","error_type":"internal_server_error","chain":["Missing program for ID pwn_hub.aleo"]}
+2026-09-15T10:03:26.134031Z ERROR response failed classification=Status code: 500 Internal Server Error latency=0 ms
+2026-09-15T10:03:26.134302Z  INFO Received GET /program/pwn_elastic_proposal.aleo from 127.0.0.1:63333
+2026-09-15T10:03:26.134319Z  INFO Returning REST error: {"message":"Failed to find program `pwn_elastic_proposal.aleo`","error_type":"internal_server_error","chain":["Missing program for ID pwn_elastic_proposal.aleo"]}
+2026-09-15T10:03:26.134324Z ERROR response failed classification=Status code: 500 Internal Server Error latency=0 ms
+2026-09-15T10:03:26.134602Z  INFO Received GET /program/pwn_loan.aleo from 127.0.0.1:63334
+2026-09-15T10:03:26.134623Z  INFO Returning REST error: {"message":"Failed to find program `pwn_loan.aleo`","error_type":"internal_server_error","chain":["Missing program for ID pwn_loan.aleo"]}
+2026-09-15T10:03:26.134629Z ERROR response failed classification=Status code: 500 Internal Server Error latency=0 ms
+2026-09-15T10:03:26.134921Z  INFO Received GET /consensus_version from 127.0.0.1:63335
+2026-09-15T10:03:43.863136Z  INFO Received GET /consensus_version from 127.0.0.1:63409
+2026-09-15T10:03:43.976237Z  INFO Received GET /program/credits.aleo from 127.0.0.1:63415
+2026-09-15T10:03:43.976732Z  INFO Received GET /program/token_registry.aleo from 127.0.0.1:63416
+2026-09-15T10:03:43.976762Z  INFO Returning REST error: {"message":"Failed to find program `token_registry.aleo`","error_type":"internal_server_error","chain":["Missing program for ID token_registry.aleo"]}
+2026-09-15T10:03:43.976769Z ERROR response failed classification=Status code: 500 Internal Server Error latency=0 ms
+2026-09-15T10:03:43.977545Z  INFO Received GET /program/pwn_config.aleo from 127.0.0.1:63417
+2026-09-15T10:03:43.977566Z  INFO Returning REST error: {"message":"Failed to find program `pwn_config.aleo`","error_type":"internal_server_error","chain":["Missing program for ID pwn_config.aleo"]}
+2026-09-15T10:03:43.977571Z ERROR response failed classification=Status code: 500 Internal Server Error latency=0 ms
+2026-09-15T10:03:43.977854Z  INFO Received GET /program/pwn_hub.aleo from 127.0.0.1:63418
+2026-09-15T10:03:43.977863Z  INFO Returning REST error: {"message":"Failed to find program `pwn_hub.aleo`","error_type":"internal_server_error","chain":["Missing program for ID pwn_hub.aleo"]}
+2026-09-15T10:03:43.977867Z ERROR response failed classification=Status code: 500 Internal Server Error latency=0 ms
+2026-09-15T10:03:43.978058Z  INFO Received GET /program/pwn_elastic_proposal.aleo from 127.0.0.1:63419
+2026-09-15T10:03:43.978067Z  INFO Returning REST error: {"message":"Failed to find program `pwn_elastic_proposal.aleo`","error_type":"internal_server_error","chain":["Missing program for ID pwn_elastic_proposal.aleo"]}
+2026-09-15T10:03:43.978070Z ERROR response failed classification=Status code: 500 Internal Server Error latency=0 ms
+2026-09-15T10:03:43.978259Z  INFO Received GET /program/pwn_loan.aleo from 127.0.0.1:63420
+2026-09-15T10:03:43.978267Z  INFO Returning REST error: {"message":"Failed to find program `pwn_loan.aleo`","error_type":"internal_server_error","chain":["Missing program for ID pwn_loan.aleo"]}
+2026-09-15T10:03:43.978270Z ERROR response failed classification=Status code: 500 Internal Server Error latency=0 ms
+2026-09-15T10:03:43.978456Z  INFO Received GET /consensus_version from 127.0.0.1:63421
+2026-09-15T10:03:44.440711Z  INFO Received GET /stateRoot/latest from 127.0.0.1:63423
+2026-09-15T10:03:47.526994Z  INFO Received GET /stateRoot/latest from 127.0.0.1:63436
+2026-09-15T10:03:47.726881Z  INFO Received GET /stateRoot/latest from 127.0.0.1:63437
+2026-09-15T10:03:47.890331Z  INFO Received GET /stateRoot/latest from 127.0.0.1:63438
+2026-09-15T10:03:49.625529Z  INFO Received GET /stateRoot/latest from 127.0.0.1:63447
+2026-09-15T10:03:51.697827Z  INFO Received GET /program/credits.aleo/mapping/account/aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px from 127.0.0.1:63456
+2026-09-15T10:03:51.698693Z  INFO Received GET /block/height/latest from 127.0.0.1:63457
+2026-09-15T10:03:51.699568Z  INFO Received POST /transaction/broadcast?check_transaction=true from 127.0.0.1:63458
+2026-09-15T10:03:51.878967Z  INFO Received GET /block/height/latest from 127.0.0.1:63459
+2026-09-15T10:03:51.880101Z  INFO Received GET /block/23 from 127.0.0.1:63460
+2026-09-15T10:03:51.881400Z  INFO Received GET /program/credits.aleo/mapping/account/aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px from 127.0.0.1:63461
+2026-09-15T10:03:51.881881Z  INFO Received GET /block/height/latest from 127.0.0.1:63462
+2026-09-15T10:03:51.882125Z  INFO Received POST /transaction/broadcast?check_transaction=true from 127.0.0.1:63463
+2026-09-15T10:03:51.933666Z  INFO Received GET /block/height/latest from 127.0.0.1:63464
+2026-09-15T10:03:51.933896Z  INFO Received GET /block/24 from 127.0.0.1:63465
+2026-09-15T10:03:51.934411Z  INFO Received GET /program/credits.aleo/mapping/account/aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px from 127.0.0.1:63466
+2026-09-15T10:03:51.934898Z  INFO Received GET /block/height/latest from 127.0.0.1:63467
+2026-09-15T10:03:51.935223Z  INFO Received POST /transaction/broadcast?check_transaction=true from 127.0.0.1:63468
+2026-09-15T10:03:51.981345Z  INFO Received GET /block/height/latest from 127.0.0.1:63473
+2026-09-15T10:03:51.981618Z  INFO Received GET /block/25 from 127.0.0.1:63474
+2026-09-15T10:03:51.982080Z  INFO Received GET /program/credits.aleo/mapping/account/aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px from 127.0.0.1:63475
+2026-09-15T10:03:51.982522Z  INFO Received GET /block/height/latest from 127.0.0.1:63476
+2026-09-15T10:03:51.982840Z  INFO Received POST /transaction/broadcast?check_transaction=true from 127.0.0.1:63477
+2026-09-15T10:03:52.050439Z  INFO Received GET /block/height/latest from 127.0.0.1:63478
+2026-09-15T10:03:52.050660Z  INFO Received GET /block/26 from 127.0.0.1:63479
+2026-09-15T10:03:52.051256Z  INFO Received GET /program/credits.aleo/mapping/account/aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px from 127.0.0.1:63480
+2026-09-15T10:03:52.051753Z  INFO Received GET /block/height/latest from 127.0.0.1:63481
+2026-09-15T10:03:52.052084Z  INFO Received POST /transaction/broadcast?check_transaction=true from 127.0.0.1:63482
+2026-09-15T10:03:52.115639Z  INFO Received GET /block/height/latest from 127.0.0.1:63483
+2026-09-15T10:03:52.115860Z  INFO Received GET /block/27 from 127.0.0.1:63484
+2026-09-15T10:04:15.939001Z  INFO Received GET /consensus_version from 127.0.0.1:63582
+2026-09-15T10:04:15.939438Z  INFO Received GET /program/credits.aleo from 127.0.0.1:63583
+2026-09-15T10:04:15.944874Z  INFO Received GET /program/token_registry.aleo from 127.0.0.1:63584
+2026-09-15T10:04:15.954495Z  INFO Received GET /program/pwn_config.aleo from 127.0.0.1:63585
+2026-09-15T10:04:15.955325Z  INFO Received GET /program/pwn_hub.aleo from 127.0.0.1:63586
+2026-09-15T10:04:15.955791Z  INFO Received GET /program/pwn_elastic_proposal.aleo from 127.0.0.1:63587
+2026-09-15T10:04:15.957775Z  INFO Received GET /program/pwn_loan.aleo from 127.0.0.1:63588
+2026-09-15T10:04:15.959330Z  INFO Received GET /consensus_version from 127.0.0.1:63589
+2026-09-15T10:04:16.505529Z  INFO Received GET /stateRoot/latest from 127.0.0.1:63594
+2026-09-15T10:04:16.581755Z  INFO Received GET /program/credits.aleo/mapping/account/aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px from 127.0.0.1:63595
+2026-09-15T10:04:16.582432Z  INFO Received GET /block/height/latest from 127.0.0.1:63596
+2026-09-15T10:04:16.582692Z  INFO Received POST /transaction/broadcast?check_transaction=true from 127.0.0.1:63597
+2026-09-15T10:04:16.624228Z  INFO Received GET /block/height/latest from 127.0.0.1:63598
+2026-09-15T10:04:16.624443Z  INFO Received GET /block/28 from 127.0.0.1:63599
+2026-09-15T10:14:51.471671Z  INFO Received GET /consensus_version from 127.0.0.1:51104
+2026-09-15T10:14:51.473116Z  INFO Received GET /program/credits.aleo from 127.0.0.1:51105
+2026-09-15T10:14:51.478827Z  INFO Received GET /program/token_registry.aleo from 127.0.0.1:51106
+2026-09-15T10:14:51.488584Z  INFO Received GET /program/pwn_config.aleo from 127.0.0.1:51107
+2026-09-15T10:14:51.489417Z  INFO Received GET /program/pwn_hub.aleo from 127.0.0.1:51108
+2026-09-15T10:14:51.489893Z  INFO Received GET /program/pwn_elastic_proposal.aleo from 127.0.0.1:51109
+2026-09-15T10:14:51.492009Z  INFO Received GET /program/pwn_loan.aleo from 127.0.0.1:51110
+2026-09-15T10:14:51.493603Z  INFO Received GET /consensus_version from 127.0.0.1:51111
+2026-09-15T10:14:51.983542Z  INFO Received GET /stateRoot/latest from 127.0.0.1:51117

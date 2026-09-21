@@ -1,0 +1,25 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:63307",
+    "consensus_version": 19
+  },
+  "program": "pwn_config_poc.aleo",
+  "function": "schedule_upgrade",
+  "outputs": [
+    "{\n  program_id: pwn_config_poc.aleo,\n  function_name: schedule_upgrade,\n  arguments: [\n    aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n    8424183081756631828501763220683997851212134945128479806286325010746235007276field\n  ]\n}"
+  ],
+  "transaction_id": "at143kzvt0xupgmfcgezkn3zetkzk6tw3pm6uex5yc3uuf6y4ttwvpsmmcrf5",
+  "stats": {
+    "storage_cost": 1416,
+    "execution_cost": 757,
+    "priority_fee": 0,
+    "total_cost": 2173
+  },
+  "broadcast": {
+    "fee_id": "au1amyjuvrar3hlkmh2trf932uc4cr8ysrayswj0g4hjd9g355t8uyqn3g59d",
+    "fee_transaction_id": "at16aqyl66z875myx4z7pc8r2kjvsn4rlu22ls7myayha5tnxjrvsgq38sh4g",
+    "confirmed": true
+  }
+}

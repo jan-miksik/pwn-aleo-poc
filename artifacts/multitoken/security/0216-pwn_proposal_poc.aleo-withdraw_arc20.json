@@ -1,0 +1,26 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:62679",
+    "consensus_version": 19
+  },
+  "program": "pwn_proposal_poc.aleo",
+  "function": "withdraw_arc20",
+  "outputs": [
+    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n  _root: 2617414473409732370536860627613633038819204906779826933049057714978046327986field,\n  _nonce: 7306539904681357875848220143560002190085495475727353544941349299793348901999group,\n  _version: 1u8\n}",
+    "{\n  program_id: pwn_proposal_poc.aleo,\n  function_name: withdraw_arc20,\n  arguments: [\n    3444424546340229145149874483642230461324436642902559950131007059188053059411field,\n    7386188375626309709115520906423099282272271309112777121470814395863359627557field,\n    {\n  credit_asset: {\n    program_id: 'arc20_sol',\n    token_id: 0field,\n    family: 2u8,\n    version: 1u16\n  },\n  collateral_asset: {\n    program_id: 'arc20_wbtc',\n    token_id: 0field,\n    family: 2u8,\n    version: 1u16\n  },\n  min_draw: 1208925819614629174706176u128,\n  max_draw: 1208925819614629174706176u128,\n  collateral_ratio: 10000u64,\n  repayment_ratio: 10000u64,\n  accruing_apr: 0u32,\n  duration: 1000u32,\n  expiry: 5248u32,\n  lender_auth: 4809402765859905060594120278616786066909153534073558940498735211674851221852field\n},\n    1208925819614629174706176u128,\n    { _program_id: arc20_sol.aleo, _function_name: transfer_public_to_private, _checksum: 5187257105698990495126916567297807361436910054975317074659337117817768583217field }\n  ]\n}"
+  ],
+  "transaction_id": "at1unj6ww6khva9yxzqtnmq6kyvl4782hlvcnr8vljpzhcx84p86vpq73hs9a",
+  "stats": {
+    "storage_cost": 4366,
+    "execution_cost": 2428,
+    "priority_fee": 0,
+    "total_cost": 6794
+  },
+  "broadcast": {
+    "fee_id": "au1fun7m3yelvfw43835szcyl4xf4vwjlzt8vjansm9yv7hqtkfv5gs4j0tpp",
+    "fee_transaction_id": "at1km8e46ypg3chvtpyzh3hew6clw5et5qvqu938x46fn90hp492sysj757dr",
+    "confirmed": true
+  }
+}

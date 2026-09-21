@@ -1,0 +1,1018 @@
+{
+  "program": "pwn_proposal_poc.aleo",
+  "structs": [
+    {
+      "path": [
+        "Terms"
+      ],
+      "fields": [
+        {
+          "name": "credit_asset",
+          "ty": {
+            "Struct": {
+              "path": [
+                "Asset"
+              ],
+              "program": "pwn_hub_poc.aleo"
+            }
+          }
+        },
+        {
+          "name": "collateral_asset",
+          "ty": {
+            "Struct": {
+              "path": [
+                "Asset"
+              ],
+              "program": "pwn_hub_poc.aleo"
+            }
+          }
+        },
+        {
+          "name": "min_draw",
+          "ty": {
+            "Primitive": {
+              "UInt": "U128"
+            }
+          }
+        },
+        {
+          "name": "max_draw",
+          "ty": {
+            "Primitive": {
+              "UInt": "U128"
+            }
+          }
+        },
+        {
+          "name": "collateral_ratio",
+          "ty": {
+            "Primitive": {
+              "UInt": "U64"
+            }
+          }
+        },
+        {
+          "name": "repayment_ratio",
+          "ty": {
+            "Primitive": {
+              "UInt": "U64"
+            }
+          }
+        },
+        {
+          "name": "accruing_apr",
+          "ty": {
+            "Primitive": {
+              "UInt": "U32"
+            }
+          }
+        },
+        {
+          "name": "duration",
+          "ty": {
+            "Primitive": {
+              "UInt": "U32"
+            }
+          }
+        },
+        {
+          "name": "expiry",
+          "ty": {
+            "Primitive": {
+              "UInt": "U32"
+            }
+          }
+        },
+        {
+          "name": "lender_auth",
+          "ty": {
+            "Primitive": "Field"
+          }
+        }
+      ]
+    }
+  ],
+  "records": [],
+  "mappings": [
+    {
+      "name": "terms_hash",
+      "key": {
+        "Primitive": "Field"
+      },
+      "value": {
+        "Primitive": "Field"
+      }
+    },
+    {
+      "name": "credit_assets",
+      "key": {
+        "Primitive": "Field"
+      },
+      "value": {
+        "Struct": {
+          "path": [
+            "Asset"
+          ],
+          "program": "pwn_hub_poc.aleo"
+        }
+      }
+    },
+    {
+      "name": "available_credit",
+      "key": {
+        "Primitive": "Field"
+      },
+      "value": {
+        "Primitive": {
+          "UInt": "U128"
+        }
+      }
+    },
+    {
+      "name": "repayments",
+      "key": {
+        "Primitive": "Field"
+      },
+      "value": {
+        "Primitive": {
+          "UInt": "U128"
+        }
+      }
+    },
+    {
+      "name": "closed",
+      "key": {
+        "Primitive": "Field"
+      },
+      "value": {
+        "Primitive": "Boolean"
+      }
+    },
+    {
+      "name": "liabilities",
+      "key": {
+        "Primitive": "Identifier"
+      },
+      "value": {
+        "Primitive": {
+          "UInt": "U128"
+        }
+      }
+    }
+  ],
+  "storage_variables": [],
+  "functions": [
+    {
+      "name": "draw_aleo",
+      "inputs": [
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Struct": {
+                "path": [
+                  "Terms"
+                ],
+                "program": "pwn_proposal_poc.aleo"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": {
+                "UInt": "U128"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Address"
+            },
+            "mode": "Private"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "Plaintext": {
+            "ty": {
+              "Struct": {
+                "path": [
+                  "credits"
+                ],
+                "program": "credits.aleo"
+              }
+            },
+            "mode": "Private"
+          }
+        },
+        "Final"
+      ]
+    },
+    {
+      "name": "receive_aleo",
+      "inputs": [
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Struct": {
+                "path": [
+                  "Asset"
+                ],
+                "program": "pwn_hub_poc.aleo"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Struct": {
+                "path": [
+                  "credits"
+                ],
+                "program": "credits.aleo"
+              }
+            },
+            "mode": "Private"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": {
+                "UInt": "U128"
+              }
+            },
+            "mode": "Public"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "Plaintext": {
+            "ty": {
+              "Struct": {
+                "path": [
+                  "credits"
+                ],
+                "program": "credits.aleo"
+              }
+            },
+            "mode": "Private"
+          }
+        },
+        "Final"
+      ]
+    },
+    {
+      "name": "draw_arc20",
+      "inputs": [
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Struct": {
+                "path": [
+                  "Terms"
+                ],
+                "program": "pwn_proposal_poc.aleo"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": {
+                "UInt": "U128"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Address"
+            },
+            "mode": "Private"
+          }
+        }
+      ],
+      "outputs": [
+        "DynamicRecord",
+        "Final"
+      ]
+    },
+    {
+      "name": "receive_arc20",
+      "inputs": [
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Struct": {
+                "path": [
+                  "Asset"
+                ],
+                "program": "pwn_hub_poc.aleo"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        "DynamicRecord",
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": {
+                "UInt": "U128"
+              }
+            },
+            "mode": "Public"
+          }
+        }
+      ],
+      "outputs": [
+        "DynamicRecord",
+        "Final"
+      ]
+    },
+    {
+      "name": "draw_compliant",
+      "inputs": [
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Struct": {
+                "path": [
+                  "Terms"
+                ],
+                "program": "pwn_proposal_poc.aleo"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": {
+                "UInt": "U128"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Address"
+            },
+            "mode": "Private"
+          }
+        }
+      ],
+      "outputs": [
+        "DynamicRecord",
+        "DynamicRecord",
+        "Final"
+      ]
+    },
+    {
+      "name": "receive_compliant",
+      "inputs": [
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Struct": {
+                "path": [
+                  "Asset"
+                ],
+                "program": "pwn_hub_poc.aleo"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        "DynamicRecord",
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": {
+                "UInt": "U128"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Array": {
+                "element": {
+                  "Struct": {
+                    "path": [
+                      "MerkleProof"
+                    ],
+                    "program": "pwn_hub_poc.aleo"
+                  }
+                },
+                "length": 2
+              }
+            },
+            "mode": "Private"
+          }
+        }
+      ],
+      "outputs": [
+        "DynamicRecord",
+        "DynamicRecord",
+        "Final"
+      ]
+    },
+    {
+      "name": "open_aleo",
+      "inputs": [
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Struct": {
+                "path": [
+                  "Terms"
+                ],
+                "program": "pwn_proposal_poc.aleo"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Struct": {
+                "path": [
+                  "credits"
+                ],
+                "program": "credits.aleo"
+              }
+            },
+            "mode": "Private"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": {
+                "UInt": "U128"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Private"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "Plaintext": {
+            "ty": {
+              "Struct": {
+                "path": [
+                  "credits"
+                ],
+                "program": "credits.aleo"
+              }
+            },
+            "mode": "Private"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Public"
+          }
+        },
+        "Final"
+      ]
+    },
+    {
+      "name": "cancel_aleo",
+      "inputs": [
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Struct": {
+                "path": [
+                  "Terms"
+                ],
+                "program": "pwn_proposal_poc.aleo"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Private"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": {
+                "UInt": "U128"
+              }
+            },
+            "mode": "Public"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "Plaintext": {
+            "ty": {
+              "Struct": {
+                "path": [
+                  "credits"
+                ],
+                "program": "credits.aleo"
+              }
+            },
+            "mode": "Private"
+          }
+        },
+        "Final"
+      ]
+    },
+    {
+      "name": "withdraw_aleo",
+      "inputs": [
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Struct": {
+                "path": [
+                  "Terms"
+                ],
+                "program": "pwn_proposal_poc.aleo"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Private"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": {
+                "UInt": "U128"
+              }
+            },
+            "mode": "Public"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "Plaintext": {
+            "ty": {
+              "Struct": {
+                "path": [
+                  "credits"
+                ],
+                "program": "credits.aleo"
+              }
+            },
+            "mode": "Private"
+          }
+        },
+        "Final"
+      ]
+    },
+    {
+      "name": "open_arc20",
+      "inputs": [
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Struct": {
+                "path": [
+                  "Terms"
+                ],
+                "program": "pwn_proposal_poc.aleo"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        "DynamicRecord",
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": {
+                "UInt": "U128"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Private"
+          }
+        }
+      ],
+      "outputs": [
+        "DynamicRecord",
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Public"
+          }
+        },
+        "Final"
+      ]
+    },
+    {
+      "name": "cancel_arc20",
+      "inputs": [
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Struct": {
+                "path": [
+                  "Terms"
+                ],
+                "program": "pwn_proposal_poc.aleo"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Private"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": {
+                "UInt": "U128"
+              }
+            },
+            "mode": "Public"
+          }
+        }
+      ],
+      "outputs": [
+        "DynamicRecord",
+        "Final"
+      ]
+    },
+    {
+      "name": "withdraw_arc20",
+      "inputs": [
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Struct": {
+                "path": [
+                  "Terms"
+                ],
+                "program": "pwn_proposal_poc.aleo"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Private"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": {
+                "UInt": "U128"
+              }
+            },
+            "mode": "Public"
+          }
+        }
+      ],
+      "outputs": [
+        "DynamicRecord",
+        "Final"
+      ]
+    },
+    {
+      "name": "open_compliant",
+      "inputs": [
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Struct": {
+                "path": [
+                  "Terms"
+                ],
+                "program": "pwn_proposal_poc.aleo"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        "DynamicRecord",
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": {
+                "UInt": "U128"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Private"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Array": {
+                "element": {
+                  "Struct": {
+                    "path": [
+                      "MerkleProof"
+                    ],
+                    "program": "pwn_hub_poc.aleo"
+                  }
+                },
+                "length": 2
+              }
+            },
+            "mode": "Private"
+          }
+        }
+      ],
+      "outputs": [
+        "DynamicRecord",
+        "DynamicRecord",
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Public"
+          }
+        },
+        "Final"
+      ]
+    },
+    {
+      "name": "cancel_compliant",
+      "inputs": [
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Struct": {
+                "path": [
+                  "Terms"
+                ],
+                "program": "pwn_proposal_poc.aleo"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Private"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": {
+                "UInt": "U128"
+              }
+            },
+            "mode": "Public"
+          }
+        }
+      ],
+      "outputs": [
+        "DynamicRecord",
+        "DynamicRecord",
+        "Final"
+      ]
+    },
+    {
+      "name": "withdraw_compliant",
+      "inputs": [
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Struct": {
+                "path": [
+                  "Terms"
+                ],
+                "program": "pwn_proposal_poc.aleo"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Private"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": {
+                "UInt": "U128"
+              }
+            },
+            "mode": "Public"
+          }
+        }
+      ],
+      "outputs": [
+        "DynamicRecord",
+        "DynamicRecord",
+        "Final"
+      ]
+    }
+  ]
+}

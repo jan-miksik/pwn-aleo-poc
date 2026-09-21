@@ -1,0 +1,658 @@
+{
+  "completed": true,
+  "mode": "invariants",
+  "seed": 20260920,
+  "steps": 30,
+  "checks": [
+    {
+      "test": "protocol and real token fixtures deployed",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 0 (initial)",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 1 (open)",
+      "status": "PASS"
+    },
+    {
+      "test": "sol payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 2 (draw)",
+      "status": "PASS"
+    },
+    {
+      "test": "sol payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 3 (draw)",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 4 (open)",
+      "status": "PASS"
+    },
+    {
+      "test": "sol payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 5 (draw)",
+      "status": "PASS"
+    },
+    {
+      "test": "sol payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 6 (draw)",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 7 (open)",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 8 (draw)",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 9 (draw)",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 10 (open)",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 11 (draw)",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 12 (draw)",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 13 (open)",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 14 (draw)",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 15 (draw)",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 16 (open)",
+      "status": "PASS"
+    },
+    {
+      "test": "usad payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 17 (draw)",
+      "status": "PASS"
+    },
+    {
+      "test": "usad payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 18 (draw)",
+      "status": "PASS"
+    },
+    {
+      "test": "0057-pwn_loan_poc.aleo-accept_arc20_compliant rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 19 (duplicate_draw)",
+      "status": "PASS"
+    },
+    {
+      "test": "0058-pwn_loan_poc.aleo-claim_compliant rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 20 (claim)",
+      "status": "PASS"
+    },
+    {
+      "test": "0060-pwn_loan_poc.aleo-repay_arc20_compliant rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 21 (repay)",
+      "status": "PASS"
+    },
+    {
+      "test": "0062-pwn_loan_poc.aleo-repay_arc20_compliant rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 22 (repay)",
+      "status": "PASS"
+    },
+    {
+      "test": "usad payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 23 (repay)",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 24 (withdraw)",
+      "status": "PASS"
+    },
+    {
+      "test": "0066-pwn_proposal_poc.aleo-withdraw_arc20 rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 25 (withdraw)",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 26 (cancel)",
+      "status": "PASS"
+    },
+    {
+      "test": "0069-pwn_loan_poc.aleo-accept_arc20_compliant rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 27 (draw)",
+      "status": "PASS"
+    },
+    {
+      "test": "usad payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 28 (repay)",
+      "status": "PASS"
+    },
+    {
+      "test": "0073-pwn_loan_poc.aleo-repay_arc20_compliant rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 29 (repay)",
+      "status": "PASS"
+    },
+    {
+      "test": "0074-pwn_proposal_poc.aleo-cancel_arc20 rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 30 (cancel)",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 31 (donate)",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 32 (cancel)",
+      "status": "PASS"
+    },
+    {
+      "test": "0077-pwn_loan_poc.aleo-claim_aleo rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 33 (claim)",
+      "status": "PASS"
+    },
+    {
+      "test": "0078-pwn_proposal_poc.aleo-withdraw_arc20 rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 34 (withdraw)",
+      "status": "PASS"
+    },
+    {
+      "test": "0079-pwn_loan_poc.aleo-claim_arc20 rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 35 (claim)",
+      "status": "PASS"
+    },
+    {
+      "test": "0080-pwn_proposal_poc.aleo-withdraw_compliant rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 36 (withdraw)",
+      "status": "PASS"
+    },
+    {
+      "test": "0082-pwn_loan_poc.aleo-repay_arc20_compliant rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 37 (repay)",
+      "status": "PASS"
+    },
+    {
+      "test": "sol payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 38 (draw)",
+      "status": "PASS"
+    },
+    {
+      "test": "0085-pwn_loan_poc.aleo-claim_compliant rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 39 (claim)",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 40 (repay)",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 41 (cancel)",
+      "status": "PASS"
+    },
+    {
+      "test": "0089-pwn_proposal_poc.aleo-withdraw_arc20 rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 42 (withdraw)",
+      "status": "PASS"
+    },
+    {
+      "test": "0090-pwn_proposal_poc.aleo-withdraw_aleo rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 43 (withdraw)",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 44 (withdraw)",
+      "status": "PASS"
+    },
+    {
+      "test": "0092-pwn_proposal_poc.aleo-withdraw_arc20 rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 45 (withdraw)",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 46 (repay)",
+      "status": "PASS"
+    },
+    {
+      "test": "0095-pwn_proposal_poc.aleo-withdraw_compliant rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 47 (withdraw)",
+      "status": "PASS"
+    },
+    {
+      "test": "0096-pwn_loan_poc.aleo-claim_arc20 rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 48 (claim)",
+      "status": "PASS"
+    },
+    {
+      "test": "0097-pwn_loan_poc.aleo-claim_compliant rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 49 (claim)",
+      "status": "PASS"
+    },
+    {
+      "test": "0098-pwn_proposal_poc.aleo-withdraw_compliant rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 50 (withdraw)",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 51 (withdraw)",
+      "status": "PASS"
+    },
+    {
+      "test": "sol payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 52 (repay)",
+      "status": "PASS"
+    },
+    {
+      "test": "0102-pwn_loan_poc.aleo-claim_arc20 rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 53 (claim)",
+      "status": "PASS"
+    },
+    {
+      "test": "0103-pwn_proposal_poc.aleo-withdraw_compliant rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 54 (withdraw)",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 55 (repay)",
+      "status": "PASS"
+    },
+    {
+      "test": "0107-pwn_loan_poc.aleo-accept_compliant_aleo rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 56 (draw)",
+      "status": "PASS"
+    },
+    {
+      "test": "0108-pwn_proposal_poc.aleo-cancel_aleo rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 57 (cancel)",
+      "status": "PASS"
+    },
+    {
+      "test": "0109-pwn_proposal_poc.aleo-withdraw_arc20 rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 58 (withdraw)",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 59 (repay)",
+      "status": "PASS"
+    },
+    {
+      "test": "0113-pwn_loan_poc.aleo-repay_arc20_compliant rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 60 (repay)",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 61 (repay)",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 62 (open)",
+      "status": "PASS"
+    },
+    {
+      "test": "sol payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 63 (draw)",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 64 (claim)",
+      "status": "PASS"
+    },
+    {
+      "test": "0121-pwn_loan_poc.aleo-claim_aleo rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 65 (claim)",
+      "status": "PASS"
+    },
+    {
+      "test": "0123-pwn_loan_poc.aleo-repay_arc20_aleo rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 66 (repay)",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 67 (open)",
+      "status": "PASS"
+    },
+    {
+      "test": "sol payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 68 (draw)",
+      "status": "PASS"
+    },
+    {
+      "test": "sol payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 69 (claim)",
+      "status": "PASS"
+    },
+    {
+      "test": "0129-pwn_loan_poc.aleo-claim_arc20 rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 70 (claim)",
+      "status": "PASS"
+    },
+    {
+      "test": "0131-pwn_loan_poc.aleo-repay_arc20_arc20 rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 71 (repay)",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 72 (open)",
+      "status": "PASS"
+    },
+    {
+      "test": "sol payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 73 (draw)",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 74 (claim)",
+      "status": "PASS"
+    },
+    {
+      "test": "0137-pwn_loan_poc.aleo-claim_compliant rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 75 (claim)",
+      "status": "PASS"
+    },
+    {
+      "test": "0139-pwn_loan_poc.aleo-repay_arc20_compliant rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 76 (repay)",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 77 (repay)",
+      "status": "PASS"
+    },
+    {
+      "test": "sol payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 78 (repay)",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 79 (repay)",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 80 (repay)",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 81 (repay)",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 82 (drain_repayments)",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 83 (cancel)",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 84 (drain_repayments)",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 85 (drain_repayments)",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 86 (drain_repayments)",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 87 (cancel)",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 88 (drain_repayments)",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 89 (cancel)",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 90 (drain_repayments)",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 91 (cancel)",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 92 (cancel)",
+      "status": "PASS"
+    },
+    {
+      "test": "invariants after action 93 (cancel)",
+      "status": "PASS"
+    },
+    {
+      "test": "all positions settled; only donated surplus remains",
+      "status": "PASS"
+    }
+  ],
+  "attempted_transactions": 161,
+  "execution_proofs": false,
+  "proved_transactions": [],
+  "deployment_certificates": false,
+  "consensus": false,
+  "node_verifies_proofs": false
+}

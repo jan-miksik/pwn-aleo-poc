@@ -1,0 +1,144 @@
+
+
+📢 Using the following consensus heights: 0,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+  To override, pass in `--consensus-heights` or override the environment variable `CONSENSUS_VERSION_HEIGHTS`.
+
+
+🚀 Execution Plan Summary
+──────────────────────────────────────────────
+🔧 Configuration:
+  Private Key:        APrivateKey1zkp2XGgViJG8...
+  Address:            aleo13pnm0ru8knk2lv6zpp9...
+  Endpoint:           http://127.0.0.1:50991
+  Network:            testnet
+  Consensus Version:  19
+
+🎯 Execution Target:
+  Program:        pwn_loan.aleo
+  Function:       accept
+  Source:         local
+
+💸 Fee Info:
+  Priority Fee:   0 μcredits
+  Fee Record:     yes
+
+⚙️ Actions:
+  - A transaction will be generated, WITHOUT a proof.
+  - Transaction will NOT be printed to the console.
+  - Transaction will be saved to /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/integration-private-fees/transactions/076-pwn_loan.aleo-accept
+  - Transaction will be broadcast to http://127.0.0.1:50991
+──────────────────────────────────────────────
+
+
+➕Adding programs to the VM in the following order:
+  - credits.aleo (already included)
+  - token_registry.aleo (local)
+  - pwn_config.aleo (local)
+  - pwn_hub.aleo (local)
+  - pwn_elastic_proposal.aleo (local)
+  - pwn_loan.aleo (local)
+
+⚙️ Generating transaction WITHOUT a proof for pwn_loan.aleo/accept...
+
+📊 Execution Cost Summary for pwn_loan.aleo
+──────────────────────────────────────────────
+💰 Cost Breakdown (credits)
+  Transaction Storage:  0.013297
+  On-chain Execution:   0.005350
+  Priority Fee:         0.000000
+  Total Fee:            0.018647
+──────────────────────────────────────────────
+💾 Saving execution for transaction at /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/integration-private-fees/transactions/076-pwn_loan.aleo-accept/transaction.execution.json
+
+➡️  Outputs
+
+ • {
+  owner: aleo13pnm0ru8knk2lv6zpp9u95wkxhfpr4cw5xrldz5urefjnpfr0yzs0wkruu.private,
+  microcredits: 200u64.private,
+  _nonce: 6964983897237140971966099188205904235242960799066453664320072426222338283089group.public,
+  _version: 1u8.public
+}
+ • {
+  owner: aleo13pnm0ru8knk2lv6zpp9u95wkxhfpr4cw5xrldz5urefjnpfr0yzs0wkruu.private,
+  amount: 99700u128.private,
+  token_id: 987654321field.private,
+  external_authorization_required: false.private,
+  authorized_until: 4294967295u32.private,
+  _nonce: 7597331017060705901433622900480884303317565084634200739755148870018749431884group.public,
+  _version: 1u8.public
+}
+ • {
+  loan_id: 53field,
+  commitment_id: 5field,
+  credit_amount: 200u64,
+  collateral_asset: 987654321field,
+  collateral_amount: 300u128,
+  repayment_amount: 220u64,
+  borrower_auth: 4943823955762365009204012716767168887623482737422964558272235077291851862980field,
+  lender_auth: 7134663253364879438032568740649159329065438500937956886885468873760437635961field
+}
+ • {
+  program_id: pwn_loan.aleo,
+  function_name: accept,
+  arguments: [
+    53field,
+    80769146526951349376976003739994836623830827712832748694866868655975274327field,
+    200u32,
+    {
+      program_id: token_registry.aleo,
+      function_name: transfer_private_to_public,
+      arguments: [
+        987654321field,
+        aleo1r3qt3tgecdh472wzu0x0lzrsh9qsjmh2s5t94exw7sr0l0y7vq8s4cx2f6,
+        300u128,
+        4294967295u32,
+        false,
+        7785236584760618167812019533458563849883172283054908453279138603435459108777field
+      ]
+    },
+    {
+      program_id: pwn_elastic_proposal.aleo,
+      function_name: draw,
+      arguments: [
+        2650460602570250523610827634152444483771374839891951654265244293823137975982field,
+        2591453716012702092681193114121394122338651389179742539139594451187170533420field,
+        5field,
+        6503594651144288936681169357720518801643667261742511104795363054718938119133field,
+        {
+  credit_asset: aleo1lqmly7ez2k48ajf5hs92ulphaqr05qm4n8qwzj8v0yprmasgpqgsez59gg,
+  collateral_asset: 987654321field,
+  min_draw: 100u64,
+  max_draw: 600u64,
+  collateral_ratio: 15000u64,
+  repayment_ratio: 11000u64,
+  duration: 200u32,
+  expiry: 1098u32,
+  lender_auth: 7134663253364879438032568740649159329065438500937956886885468873760437635961field
+},
+        200u64,
+        {
+          program_id: credits.aleo,
+          function_name: transfer_public_to_private,
+          arguments: [
+            aleo1u26eefy7w0fxep9wqq292vvf2vjc0hw94sxewdxhyrxc04mg8qysea2zkr,
+            200u64
+          ]
+        }
+      
+      ]
+    }
+  
+  ]
+}
+
+📡 Broadcasting execution for pwn_loan.aleo...
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at1ywpdzym0mdnsswhyqxjsusn5z26jwhq4nmwht79mkcyxq992lsrqg9mwng'
+  - fee ID: 'au1l76lpamk06jxr05qvzvu3wys8ryw6jhsue9rkaf39ff4jwe2lsyqr8cdx7'
+  - fee transaction ID: 'at1dfqh0ynuqak2rnf8fqnv2nrlc2x4k43usjwy9krz48dvqtegxyps05lm2x'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Execution confirmed!

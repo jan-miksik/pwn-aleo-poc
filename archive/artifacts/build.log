@@ -1,0 +1,10 @@
+⚠️ No network specified, defaulting to 'testnet'.
+⚠️ No endpoint specified, defaulting to 'https://api.explorer.provable.com/v1'.
+
+       Leo 🔨 Compiling 'pwn_loan.aleo'
+       Leo     Program size: 4.41 KB / 2000.00 KB
+       Leo ✅ Compiled 'pwn_loan.aleo' into Aleo instructions.
+       Leo     Import 'pwn_config.aleo': program size: 1.13 KB / 2000.00 KB
+       Leo     Import 'pwn_hub.aleo': program size: 0.79 KB / 2000.00 KB
+       Leo     Import 'pwn_elastic_proposal.aleo': program size: 6.57 KB / 2000.00 KB
+       Leo ✅ Generated ABI for program 'pwn_loan.aleo'.

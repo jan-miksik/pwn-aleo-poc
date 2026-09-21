@@ -1,0 +1,6 @@
+{
+  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,
+  microcredits: 600u64.private,
+  _nonce: 327853109574744811016356139982309794761292747364497799279077134937551812885group.public,
+  _version: 1u8.public
+}

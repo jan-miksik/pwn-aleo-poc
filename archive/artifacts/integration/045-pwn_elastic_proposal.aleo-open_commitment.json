@@ -1,0 +1,26 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:51601",
+    "consensus_version": 19
+  },
+  "program": "pwn_elastic_proposal.aleo",
+  "function": "open_commitment",
+  "outputs": [
+    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  microcredits: 0u64.private,\n  _nonce: 5960149148810307230513415564610608603647254598011766920560876208399268136348group.public,\n  _version: 1u8.public\n}",
+    "{\n  program_id: pwn_elastic_proposal.aleo,\n  function_name: open_commitment,\n  arguments: [\n    2591453716012702092681193114121394122338651389179742539139594451187170533420field,\n    4field,\n    {\n  credit_asset: aleo1lqmly7ez2k48ajf5hs92ulphaqr05qm4n8qwzj8v0yprmasgpqgsez59gg,\n  collateral_asset: 987654321field,\n  min_draw: 100u64,\n  max_draw: 600u64,\n  collateral_ratio: 15000u64,\n  repayment_ratio: 11000u64,\n  duration: 3u32,\n  expiry: 1068u32,\n  lender_auth: 7134663253364879438032568740649159329065438500937956886885468873760437635961field\n},\n    2228284998735109457692709521076081742678457926125788728576640961068159500112field,\n    1000u64,\n    {\n      program_id: credits.aleo,\n      function_name: transfer_private_to_public,\n      arguments: [\n        aleo1u26eefy7w0fxep9wqq292vvf2vjc0hw94sxewdxhyrxc04mg8qysea2zkr,\n        1000u64\n      ]\n    }\n  \n  ]\n}"
+  ],
+  "transaction_id": "at1qd8l4tva9h7p24x07xzu3v60fzr0pgj3lj2uqfh9gs4gyz8ku5zqpg4znk",
+  "stats": {
+    "storage_cost": 4037,
+    "execution_cost": 3306,
+    "priority_fee": 0,
+    "total_cost": 7343
+  },
+  "broadcast": {
+    "fee_id": "au1j4p2kkzr58u3q0emsx3s2s823wm6nqqu4drr6h0wr3s02nunx5gsp7uw9n",
+    "fee_transaction_id": "at1yypf60f9hu2x0yps72jj7hqdfe8khah7x6ahr220ayj0wdenkgxq9sk7y9",
+    "confirmed": true
+  }
+}

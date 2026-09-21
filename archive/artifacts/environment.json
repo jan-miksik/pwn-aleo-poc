@@ -1,0 +1,7 @@
+{
+  "date": "2026-09-15",
+  "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "leo": "leo 4.4.2 (f3578da HEAD) features=[noconfig]",
+  "notes": "Native CLI, local devnode, no browser/WASM benchmark. Public development fee accounts. Single sample per proved flow."
+}

@@ -1,0 +1,44 @@
+{
+  "label": "02-hub-approve-proposal",
+  "actor": "lender",
+  "function": "pwn_hub_demo.aleo::set_tag",
+  "fee_mode": "public",
+  "expect": "accepted",
+  "prepare_wall_seconds": 10.219,
+  "prepare_exit_code": 0,
+  "started_at": "2026-09-16T07:37:57.199549+00:00",
+  "phase": "done",
+  "transaction_id": "at1y6uafwkulxmsu85llgpd8endcle8ad2t4vjm3j3va9yljw0xt5qslrh08u",
+  "fee_microcredits": 2050,
+  "fee_function": "fee_public",
+  "submitted_at": "2026-09-16T07:37:57.200081+00:00",
+  "status": "accepted",
+  "block_height": 19653582,
+  "block_timestamp": 1789544278,
+  "confirmed_at": "2026-09-16T07:38:03.791527+00:00",
+  "execution_transitions": [
+    [
+      "pwn_hub_demo.aleo",
+      "set_tag"
+    ]
+  ],
+  "top_level_input_types": [
+    "public",
+    "public",
+    "public"
+  ],
+  "top_level_output_types": [
+    "future"
+  ],
+  "fee_input_types": [
+    "public",
+    "public",
+    "public"
+  ],
+  "lender_address_on_chain": true,
+  "borrower_address_on_chain": false,
+  "addresses_on_chain": [
+    "aleo1ksdvl3asju5ycclrktv5rutc0r8p0g9attxda3ew7haqe53tgvrs9q2ps3",
+    "aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s"
+  ]
+}

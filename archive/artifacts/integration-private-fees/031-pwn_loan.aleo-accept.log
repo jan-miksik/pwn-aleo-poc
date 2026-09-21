@@ -1,0 +1,101 @@
+
+
+📢 Using the following consensus heights: 0,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+  To override, pass in `--consensus-heights` or override the environment variable `CONSENSUS_VERSION_HEIGHTS`.
+
+
+🚀 Execution Plan Summary
+──────────────────────────────────────────────
+🔧 Configuration:
+  Private Key:        APrivateKey1zkpGPDbTcP2r...
+  Address:            aleo16k6wjpe5snzfhzf07mf...
+  Endpoint:           http://127.0.0.1:50991
+  Network:            testnet
+  Consensus Version:  19
+
+🎯 Execution Target:
+  Program:        pwn_loan.aleo
+  Function:       accept
+  Source:         local
+
+💸 Fee Info:
+  Priority Fee:   0 μcredits
+  Fee Record:     no (public fee)
+
+⚙️ Actions:
+  - A transaction will be generated, WITHOUT a proof.
+  - Transaction will NOT be printed to the console.
+  - Transaction will be saved to /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/integration-private-fees/transactions/031-pwn_loan.aleo-accept
+  - Transaction will be broadcast to http://127.0.0.1:50991
+──────────────────────────────────────────────
+
+
+➕Adding programs to the VM in the following order:
+  - credits.aleo (already included)
+  - token_registry.aleo (local)
+  - pwn_config.aleo (local)
+  - pwn_hub.aleo (local)
+  - pwn_elastic_proposal.aleo (local)
+  - pwn_loan.aleo (local)
+
+⚙️ Generating transaction WITHOUT a proof for pwn_loan.aleo/accept...
+
+📊 Execution Cost Summary for pwn_loan.aleo
+──────────────────────────────────────────────
+💰 Cost Breakdown (credits)
+  Transaction Storage:  0.013297
+  On-chain Execution:   0.005350
+  Priority Fee:         0.000000
+  Total Fee:            0.018647
+──────────────────────────────────────────────
+thread `main` panicked at /Users/runner/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/snarkvm-console-network-environment-4.9.1/src/environment.rs:62:9:
+Integer subtraction failed on: 1u128 and 150u128
+stack backtrace: 
+   0: __mh_execute_header
+   1: __mh_execute_header
+   2: __mh_execute_header
+   3: __mh_execute_header
+   4: __mh_execute_header
+   5: __mh_execute_header
+   6: __mh_execute_header
+   7: __mh_execute_header
+   8: __ZN7rocksdb6ribbon6detail34BandingConfigHelper1MaybeSupportedILNS0_25ConstructionFailureChanceE1ELy128ELb0ELb0ELb1EE11GetNumSlotsEj
+   9: __ZN7rocksdb6ribbon6detail34BandingConfigHelper1MaybeSupportedILNS0_25ConstructionFailureChanceE1ELy128ELb0ELb0ELb1EE11GetNumSlotsEj
+  10: __mh_execute_header
+  11: __mh_execute_header
+  12: __mh_execute_header
+  13: __mh_execute_header
+  14: __mh_execute_header
+  15: __mh_execute_header
+  16: __mh_execute_header
+  17: __mh_execute_header
+  18: __mh_execute_header
+  19: __mh_execute_header
+  20: __mh_execute_header
+  21: __mh_execute_header
+  22: __mh_execute_header
+  23: __mh_execute_header
+  24: __mh_execute_header
+  25: __mh_execute_header
+  26: __mh_execute_header
+
+error: internal compiler error: unexpected panic
+
+note: the compiler unexpectedly panicked. this is a bug.
+
+note: we would appreciate a bug report: https://github.com/ProvableHQ/leo/issues/new?labels=bug,panic&template=bug.md&title=[Bug]
+
+note: leo 4.4.2 (f3578da HEAD) features=[noconfig] running on Darwin 25.5.0
+
+note: compiler args: /Users/janm/Documents/projects-klients/PoC Aleo/.tools/leo --home /Users/janm/Documents/projects-klients/PoC Aleo/.aleo --disable-update-check execute pwn_loan.aleo::accept 17field 2field { credit_asset: credits.aleo, collateral_asset: 987654321field, min_draw: 100u64, max_draw: 600u64, collateral_ratio: 15000u64, repayment_ratio: 11000u64, duration: 200u32, expiry: 1043u32, lender_auth: 7134663253364879438032568740649159329065438500937956886885468873760437635961field } 100u64 {
+  owner: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue.private,
+  amount: 1u128.private,
+  token_id: 987654321field.private,
+  external_authorization_required: false.private,
+  authorized_until: 4294967295u32.private,
+  _nonce: 2561022544377543508429094625096139238096447965233505445409026611481094831533group.public,
+  _version: 1u8.public
+} 222field --path /Users/janm/Documents/projects-klients/PoC Aleo/pwn_loan --endpoint http://127.0.0.1:50991 --network testnet --devnet --consensus-version 19 --offline --private-key APrivateKey1zkpGPDbTcP2rWRMFLa1quxwGMK2BNJ16HWjYjofTH1pMUYj --skip-execute-proof --save /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/integration-private-fees/transactions/031-pwn_loan.aleo-accept --broadcast --yes --json-output=/Users/janm/Documents/projects-klients/PoC Aleo/artifacts/integration-private-fees/031-pwn_loan.aleo-accept.json
+
+note: compiler flags: CLI { debug: false, quiet: false, json_output: Some("/Users/janm/Documents/projects-klients/PoC Aleo/artifacts/integration-private-fees/031-pwn_loan.aleo-accept.json"), disable_update_check: true, command: Execute { command: LeoExecute { name: "pwn_loan.aleo::accept", inputs: ["17field", "2field", "{ credit_asset: credits.aleo, collateral_asset: 987654321field, min_draw: 100u64, max_draw: 600u64, collateral_ratio: 15000u64, repayment_ratio: 11000u64, duration: 200u32, expiry: 1043u32, lender_auth: 7134663253364879438032568740649159329065438500937956886885468873760437635961field }", "100u64", "{\n  owner: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue.private,\n  amount: 1u128.private,\n  token_id: 987654321field.private,\n  external_authorization_required: false.private,\n  authorized_until: 4294967295u32.private,\n  _nonce: 2561022544377543508429094625096139238096447965233505445409026611481094831533group.public,\n  _version: 1u8.public\n}", "222field"], skip_execute_proof: true, fee_options: FeeOptions { priority_fees: [], fee_records: [] }, action: TransactionAction { print: false, broadcast: true, save: Some("/Users/janm/Documents/projects-klients/PoC Aleo/artifacts/integration-private-fees/transactions/031-pwn_loan.aleo-accept") }, env_override: EnvOptions { network: Some(TestnetV0), endpoint: Some("http://127.0.0.1:50991"), network_retries: 2 }, key_override: PrivateKeyOptions { private_key: Some("APrivateKey1zkpGPDbTcP2rWRMFLa1quxwGMK2BNJ16HWjYjofTH1pMUYj") }, consensus_override: ConsensusOptions { devnet: true, consensus_heights: None }, extra: ExtraOptions { yes: true, consensus_version: Some(19), max_wait: 8, blocks_to_check: 12 }, build_options: BuildOptions { build_tests: false, no_cache: false, no_local: false, offline: true, checksums: false, no_std: false }, with: [] } }, path: Some("/Users/janm/Documents/projects-klients/PoC Aleo/pwn_loan"), home: Some("/Users/janm/Documents/projects-klients/PoC Aleo/.aleo"), package: None }
+

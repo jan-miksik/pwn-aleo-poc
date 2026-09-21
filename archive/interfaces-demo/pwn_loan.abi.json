@@ -1,0 +1,297 @@
+{
+  "program": "pwn_loan.aleo",
+  "structs": [
+    {
+      "path": [
+        "Loan"
+      ],
+      "fields": [
+        {
+          "name": "loan_id",
+          "ty": {
+            "Primitive": "Field"
+          }
+        },
+        {
+          "name": "commitment_id",
+          "ty": {
+            "Primitive": "Field"
+          }
+        },
+        {
+          "name": "credit_amount",
+          "ty": {
+            "Primitive": {
+              "UInt": "U64"
+            }
+          }
+        },
+        {
+          "name": "collateral_asset",
+          "ty": {
+            "Primitive": "Field"
+          }
+        },
+        {
+          "name": "collateral_amount",
+          "ty": {
+            "Primitive": {
+              "UInt": "U128"
+            }
+          }
+        },
+        {
+          "name": "repayment_amount",
+          "ty": {
+            "Primitive": {
+              "UInt": "U64"
+            }
+          }
+        },
+        {
+          "name": "borrower_auth",
+          "ty": {
+            "Primitive": "Field"
+          }
+        },
+        {
+          "name": "lender_auth",
+          "ty": {
+            "Primitive": "Field"
+          }
+        }
+      ]
+    },
+    {
+      "path": [
+        "State"
+      ],
+      "fields": [
+        {
+          "name": "witness_hash",
+          "ty": {
+            "Primitive": "Field"
+          }
+        },
+        {
+          "name": "maturity",
+          "ty": {
+            "Primitive": {
+              "UInt": "U32"
+            }
+          }
+        },
+        {
+          "name": "status",
+          "ty": {
+            "Primitive": {
+              "UInt": "U8"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "records": [],
+  "mappings": [
+    {
+      "name": "loans",
+      "key": {
+        "Primitive": "Field"
+      },
+      "value": {
+        "Struct": {
+          "path": [
+            "State"
+          ],
+          "program": "pwn_loan.aleo"
+        }
+      }
+    }
+  ],
+  "storage_variables": [],
+  "functions": [
+    {
+      "name": "accept",
+      "inputs": [
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Struct": {
+                "path": [
+                  "Terms"
+                ],
+                "program": "pwn_elastic_proposal.aleo"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": {
+                "UInt": "U64"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Record": {
+            "path": [
+              "Token"
+            ],
+            "program": "token_registry.aleo"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Private"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "Record": {
+            "path": [
+              "credits"
+            ],
+            "program": "credits.aleo"
+          }
+        },
+        {
+          "Record": {
+            "path": [
+              "Token"
+            ],
+            "program": "token_registry.aleo"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Struct": {
+                "path": [
+                  "Loan"
+                ],
+                "program": "pwn_loan.aleo"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        "Final"
+      ]
+    },
+    {
+      "name": "repay",
+      "inputs": [
+        {
+          "Plaintext": {
+            "ty": {
+              "Struct": {
+                "path": [
+                  "Loan"
+                ],
+                "program": "pwn_loan.aleo"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Record": {
+            "path": [
+              "credits"
+            ],
+            "program": "credits.aleo"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Private"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "Record": {
+            "path": [
+              "credits"
+            ],
+            "program": "credits.aleo"
+          }
+        },
+        {
+          "Record": {
+            "path": [
+              "Token"
+            ],
+            "program": "token_registry.aleo"
+          }
+        },
+        "Final"
+      ]
+    },
+    {
+      "name": "claim_default",
+      "inputs": [
+        {
+          "Plaintext": {
+            "ty": {
+              "Struct": {
+                "path": [
+                  "Loan"
+                ],
+                "program": "pwn_loan.aleo"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Field"
+            },
+            "mode": "Private"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "Record": {
+            "path": [
+              "Token"
+            ],
+            "program": "token_registry.aleo"
+          }
+        },
+        "Final"
+      ]
+    }
+  ]
+}

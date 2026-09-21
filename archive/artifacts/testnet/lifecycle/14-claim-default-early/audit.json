@@ -1,0 +1,49 @@
+{
+  "label": "14-claim-default-early",
+  "actor": "lender",
+  "function": "pwn_loan_demo.aleo::claim_default",
+  "fee_mode": "public",
+  "expect": "rejected",
+  "prepare_wall_seconds": 18.42,
+  "prepare_exit_code": 0,
+  "started_at": "2026-09-16T07:47:53.656309+00:00",
+  "phase": "done",
+  "transaction_id": "at18p959h0up8nddnq3eakew9acfqsqvxfxehsg3ef26ymmu0vpjsgs3ez34j",
+  "fee_microcredits": 6194,
+  "fee_function": "fee_public",
+  "submitted_at": "2026-09-16T07:47:53.656963+00:00",
+  "status": "rejected",
+  "block_height": 19653779,
+  "block_timestamp": 1789544873,
+  "confirmed_at": "2026-09-16T07:48:42.792943+00:00",
+  "on_chain_transaction_id": "at1l03xhdpv3nm3ecks29pcpu636eas69625cdwdvknnpzjfqy0k5zs6xn6gj",
+  "execution_transitions": [
+    [
+      "token_registry.aleo",
+      "transfer_public_to_private"
+    ],
+    [
+      "pwn_loan_demo.aleo",
+      "claim_default"
+    ]
+  ],
+  "top_level_input_types": [
+    "public",
+    "private"
+  ],
+  "top_level_output_types": [
+    "external_record",
+    "future"
+  ],
+  "fee_input_types": [
+    "public",
+    "public",
+    "public"
+  ],
+  "lender_address_on_chain": true,
+  "borrower_address_on_chain": false,
+  "addresses_on_chain": [
+    "aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s",
+    "aleo1y4d32mvldsdsaja7ej5f0z2laladce8mlyu307yl0jlphakqrupq5jkwy0"
+  ]
+}

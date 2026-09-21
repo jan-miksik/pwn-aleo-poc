@@ -1,0 +1,39 @@
+{
+  "label": "01-initialize",
+  "actor": "lender",
+  "function": "pwn_config_demo.aleo::initialize",
+  "fee_mode": "public",
+  "expect": "accepted",
+  "prepare_wall_seconds": 8.536,
+  "prepare_exit_code": 0,
+  "started_at": "2026-09-16T07:37:39.468333+00:00",
+  "phase": "done",
+  "transaction_id": "at1h2amw66wuz9n9d36j7cvhhfcp0hrl5yvkwxezgxl2j042yl8lggquxk6ch",
+  "fee_microcredits": 2136,
+  "fee_function": "fee_public",
+  "submitted_at": "2026-09-16T07:37:39.468779+00:00",
+  "status": "accepted",
+  "block_height": 19653575,
+  "block_timestamp": 1789544260,
+  "confirmed_at": "2026-09-16T07:37:46.595479+00:00",
+  "execution_transitions": [
+    [
+      "pwn_config_demo.aleo",
+      "initialize"
+    ]
+  ],
+  "top_level_input_types": [],
+  "top_level_output_types": [
+    "future"
+  ],
+  "fee_input_types": [
+    "public",
+    "public",
+    "public"
+  ],
+  "lender_address_on_chain": true,
+  "borrower_address_on_chain": false,
+  "addresses_on_chain": [
+    "aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s"
+  ]
+}

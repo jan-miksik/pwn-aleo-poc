@@ -1,0 +1,105 @@
+
+
+📢 Using the following consensus heights: 0,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+  To override, pass in `--consensus-heights` or override the environment variable `CONSENSUS_VERSION_HEIGHTS`.
+
+
+🚀 Execution Plan Summary
+──────────────────────────────────────────────
+🔧 Configuration:
+  Private Key:        APrivateKey1zkp8CZNn3yeC...
+  Address:            aleo1rhgdu77hgyqd3xjj8uc...
+  Endpoint:           http://127.0.0.1:51601
+  Network:            testnet
+  Consensus Version:  19
+
+🎯 Execution Target:
+  Program:        pwn_loan.aleo
+  Function:       claim_default
+  Source:         local
+
+💸 Fee Info:
+  Priority Fee:   0 μcredits
+  Fee Record:     no (public fee)
+
+⚙️ Actions:
+  - A transaction will be generated, WITHOUT a proof.
+  - Transaction will NOT be printed to the console.
+  - Transaction will be saved to /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/integration/transactions/035-pwn_loan.aleo-claim_default
+  - Transaction will be broadcast to http://127.0.0.1:51601
+──────────────────────────────────────────────
+
+
+➕Adding programs to the VM in the following order:
+  - credits.aleo (already included)
+  - token_registry.aleo (local)
+  - pwn_config.aleo (local)
+  - pwn_hub.aleo (local)
+  - pwn_elastic_proposal.aleo (local)
+  - pwn_loan.aleo (local)
+
+⚙️ Generating transaction WITHOUT a proof for pwn_loan.aleo/claim_default...
+
+📊 Execution Cost Summary for pwn_loan.aleo
+──────────────────────────────────────────────
+💰 Cost Breakdown (credits)
+  Transaction Storage:  0.003875
+  On-chain Execution:   0.002309
+  Priority Fee:         0.000000
+  Total Fee:            0.006184
+──────────────────────────────────────────────
+💾 Saving execution for transaction at /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/integration/transactions/035-pwn_loan.aleo-claim_default/transaction.execution.json
+
+➡️  Outputs
+
+ • {
+  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,
+  amount: 600u128.private,
+  token_id: 987654321field.private,
+  external_authorization_required: false.private,
+  authorized_until: 4294967295u32.private,
+  _nonce: 5110574090638673099319383674055607364850911950653130200494865995733721379189group.public,
+  _version: 1u8.public
+}
+ • {
+  program_id: pwn_loan.aleo,
+  function_name: claim_default,
+  arguments: [
+    {
+  loan_id: 11field,
+  commitment_id: 1field,
+  credit_amount: 400u64,
+  collateral_asset: 987654321field,
+  collateral_amount: 600u128,
+  repayment_amount: 440u64,
+  borrower_auth: 6301662748114510120818015080756981986896207374424003128638128079134792756953field,
+  lender_auth: 7134663253364879438032568740649159329065438500937956886885468873760437635961field
+},
+    1943120065577756612128184059421859725276923725128487943579675633664532543464field,
+    {
+      program_id: token_registry.aleo,
+      function_name: transfer_public_to_private,
+      arguments: [
+        987654321field,
+        600u128,
+        aleo1r3qt3tgecdh472wzu0x0lzrsh9qsjmh2s5t94exw7sr0l0y7vq8s4cx2f6,
+        false,
+        7785236584760618167812019533458563849883172283054908453279138603435459108777field
+      ]
+    }
+  
+  ]
+}
+
+📡 Broadcasting execution for pwn_loan.aleo...
+💰Your current public balance is 9371845.084034 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at1dfucarsy783yjgattweur7z44htmdzsg3vj7ft6kh4vql6d2fc9qa025ll'
+  - fee ID: 'au1jyknm8nm5vapggpmhy0cz6rq09w908hsp6dexm5dlgjnsps95gfqyj9p2j'
+  - fee transaction ID: 'at1082sc07mwhdj7wg7al5ulmdpd2y3ycz280sedd6jvqu2sh83p5pqupks4q'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction rejected.

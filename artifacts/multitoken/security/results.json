@@ -1,0 +1,621 @@
+{
+  "completed": true,
+  "mode": "security",
+  "seed": 20260920,
+  "steps": 30,
+  "checks": [
+    {
+      "test": "protocol and real token fixtures deployed",
+      "status": "PASS"
+    },
+    {
+      "test": "0021-pwn_proposal_poc.aleo-open_aleo rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0022-pwn_proposal_poc.aleo-open_aleo rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0023-pwn_proposal_poc.aleo-open_aleo rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0024-pwn_proposal_poc.aleo-open_aleo rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0025-pwn_proposal_poc.aleo-open_aleo rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0026-pwn_proposal_poc.aleo-open_aleo rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0027-pwn_proposal_poc.aleo-open_aleo rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0028-pwn_proposal_poc.aleo-open_aleo rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0029-pwn_proposal_poc.aleo-open_aleo rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo open-term checks reject invalid economics without consuming the deposit",
+      "status": "PASS"
+    },
+    {
+      "test": "0033-pwn_proposal_poc.aleo-open_arc20 rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0034-pwn_proposal_poc.aleo-open_arc20 rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0035-pwn_proposal_poc.aleo-open_arc20 rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0036-pwn_proposal_poc.aleo-open_arc20 rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0037-pwn_proposal_poc.aleo-open_arc20 rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0038-pwn_proposal_poc.aleo-open_arc20 rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0039-pwn_proposal_poc.aleo-open_arc20 rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0040-pwn_proposal_poc.aleo-open_arc20 rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0041-pwn_proposal_poc.aleo-open_arc20 rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "sol open-term checks reject invalid economics without consuming the deposit",
+      "status": "PASS"
+    },
+    {
+      "test": "0045-pwn_proposal_poc.aleo-open_compliant rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0046-pwn_proposal_poc.aleo-open_compliant rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0047-pwn_proposal_poc.aleo-open_compliant rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0048-pwn_proposal_poc.aleo-open_compliant rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0049-pwn_proposal_poc.aleo-open_compliant rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0050-pwn_proposal_poc.aleo-open_compliant rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0051-pwn_proposal_poc.aleo-open_compliant rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0052-pwn_proposal_poc.aleo-open_compliant rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0053-pwn_proposal_poc.aleo-open_compliant rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx open-term checks reject invalid economics without consuming the deposit",
+      "status": "PASS"
+    },
+    {
+      "test": "0056-pwn_local_fixture.aleo-forward_set_asset rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "0057-pwn_local_fixture.aleo-forward_set_admin rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "admin proposal does not transfer control",
+      "status": "PASS"
+    },
+    {
+      "test": "pending admin explicitly accepts control",
+      "status": "PASS"
+    },
+    {
+      "test": "two-step admin handover can be restored",
+      "status": "PASS"
+    },
+    {
+      "test": "0062-pwn_hub_poc.aleo-set_asset rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "0063-pwn_hub_poc.aleo-set_asset rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "0064-pwn_hub_poc.aleo-set_asset rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0065-pwn_hub_poc.aleo-set_asset rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/usad private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "0070-pwn_proposal_poc.aleo-draw_arc20 rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0072-pwn_proposal_poc.aleo-receive_arc20 rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0074-pwn_loan_poc.aleo-repay_arc20_compliant rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0076-pwn_loan_poc.aleo-repay_arc20_compliant rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "0077-pwn_loan_poc.aleo-claim_compliant rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "0079-pwn_loan_poc.aleo-repay_arc20_compliant rejected: record commitment absent from ledger",
+      "status": "PASS"
+    },
+    {
+      "test": "substituted token cannot settle loan",
+      "status": "PASS"
+    },
+    {
+      "test": "0083-pwn_loan_poc.aleo-accept_arc20_compliant rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "0085-pwn_proposal_poc.aleo-open_arc20 rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "genuine repayment proves and settles",
+      "status": "PASS"
+    },
+    {
+      "test": "usad payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "usad payout can actually be spent",
+      "status": "PASS"
+    },
+    {
+      "test": "0094-pwn_loan_poc.aleo-repay_arc20_compliant rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "delisting and module pause preserve existing settlement",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/aleo private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo payout can actually be spent",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/aleo default owner",
+      "status": "PASS"
+    },
+    {
+      "test": "0105-pwn_loan_poc.aleo-claim_aleo rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/aleo default clears collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/wbtc private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc payout can actually be spent",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/wbtc default owner",
+      "status": "PASS"
+    },
+    {
+      "test": "0113-pwn_loan_poc.aleo-claim_arc20 rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/wbtc default clears collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/usad private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "usad payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "usad payout can actually be spent",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/usad default owner",
+      "status": "PASS"
+    },
+    {
+      "test": "0121-pwn_loan_poc.aleo-claim_compliant rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/usad default clears collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/aleo private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo payout can actually be spent",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/aleo default owner",
+      "status": "PASS"
+    },
+    {
+      "test": "0129-pwn_loan_poc.aleo-claim_aleo rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/aleo default clears collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/wbtc private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc payout can actually be spent",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/wbtc default owner",
+      "status": "PASS"
+    },
+    {
+      "test": "0137-pwn_loan_poc.aleo-claim_arc20 rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/wbtc default clears collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/usad private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "usad payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "usad payout can actually be spent",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/usad default owner",
+      "status": "PASS"
+    },
+    {
+      "test": "0145-pwn_loan_poc.aleo-claim_compliant rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/usad default clears collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/aleo private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo payout can actually be spent",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/aleo default owner",
+      "status": "PASS"
+    },
+    {
+      "test": "0153-pwn_loan_poc.aleo-claim_aleo rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/aleo default clears collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/wbtc private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc payout can actually be spent",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/wbtc default owner",
+      "status": "PASS"
+    },
+    {
+      "test": "0161-pwn_loan_poc.aleo-claim_arc20 rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/wbtc default clears collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/usad private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "usad payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "usad payout can actually be spent",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/usad default owner",
+      "status": "PASS"
+    },
+    {
+      "test": "0169-pwn_loan_poc.aleo-claim_compliant rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/usad default clears collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/usad private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "0177-pwn_loan_poc.aleo-claim_compliant rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "late repayment wins atomically over a later claim",
+      "status": "PASS"
+    },
+    {
+      "test": "0181-pwn_proposal_poc.aleo-open_compliant rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx invalid proof preserves deposit",
+      "status": "PASS"
+    },
+    {
+      "test": "0185-pwn_proposal_poc.aleo-open_compliant rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "usad invalid proof preserves deposit",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/usad private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/usad private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "0196-pwn_loan_poc.aleo-repay_arc20_compliant rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "burn preserves both loans and total liabilities",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc/aleo private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "unrelated asset remains usable during deficit",
+      "status": "PASS"
+    },
+    {
+      "test": "0208-pwn_loan_poc.aleo-repay_arc20_compliant rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/usad private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "0223-pwn_proposal_poc.aleo-withdraw_arc20 rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "credit deficit cannot strand borrower collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "amount above u64 survives full loan cycle",
+      "status": "PASS"
+    },
+    {
+      "test": "0236-pwn_proposal_poc.aleo-open_aleo rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0238-pwn_proposal_poc.aleo-open_arc20 rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0240-pwn_proposal_poc.aleo-open_arc20 rejected: VM instruction failure",
+      "status": "PASS"
+    },
+    {
+      "test": "0242-pwn_proposal_poc.aleo-open_arc20 rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "0245-pwn_proposal_poc.aleo-open_arc20 rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "inexact deposit rolls back token reserve",
+      "status": "PASS"
+    },
+    {
+      "test": "new token works with unchanged core",
+      "status": "PASS"
+    },
+    {
+      "test": "wide rounded multiplication 0",
+      "status": "PASS"
+    },
+    {
+      "test": "wide rounded multiplication 1",
+      "status": "PASS"
+    },
+    {
+      "test": "wide rounded multiplication 2",
+      "status": "PASS"
+    },
+    {
+      "test": "wide rounded multiplication 3",
+      "status": "PASS"
+    },
+    {
+      "test": "wide accrued interest avoids intermediate overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc/usdcx private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "0255-pwn_loan_poc.aleo-repay_arc20_compliant rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx payout can actually be spent",
+      "status": "PASS"
+    },
+    {
+      "test": "freeze recovery retains correct accounting",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/usad private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "unauthorized upgrade rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "scheduled upgrade rejected before timelock",
+      "status": "PASS"
+    },
+    {
+      "test": "authorized upgrade code callable",
+      "status": "PASS"
+    },
+    {
+      "test": "pre-upgrade loan settles after upgrade",
+      "status": "PASS"
+    }
+  ],
+  "attempted_transactions": 275,
+  "execution_proofs": false,
+  "proved_transactions": [
+    {
+      "label": "0079-pwn_loan_poc.aleo-repay_arc20_compliant",
+      "accepted": false,
+      "error": "or pwn_loan_poc.aleo \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 \ud83d\udcb0 Cost Breakdown (credits) Transaction Storage: 0.018232 On-chain Execution: 0.005418 Priority Fee: 0.000000 Total Fee: 0.023650 \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Failed to fetch from http://127.0.0.1:63307/testnet/statePaths?commitments=2706331553116292083241195476180321434859108070442467748046723621650638139975field"
+    },
+    {
+      "label": "0089-pwn_loan_poc.aleo-repay_arc20_compliant",
+      "accepted": true,
+      "error": null
+    }
+  ],
+  "deployment_certificates": false,
+  "consensus": false,
+  "node_verifies_proofs": false
+}

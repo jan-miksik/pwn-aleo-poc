@@ -1,0 +1,73 @@
+{
+  "compiler": "Leo 4.4.2 (f3578da)",
+  "description": "Reviewed security-hardened ABI, state/constructor, and finalizer fingerprints. Update only for an intentional reviewed protocol change.",
+  "programs": {
+    "pwn_config_poc": {
+      "abi_sha256": "cec0cf53c7f54badb90487da1b93c54ef868aa9233dae4aea09f9e26062a6c22",
+      "storage_and_constructor_sha256": "069d2a57a568db423696f9ababe0c8486c4c66d7138dfbd171628718e4e02fc9",
+      "finalizers": {
+        "initialize": "c8097919eaa31e02750c6bcfadb90d43a6572f0908e8f58eb40d219307f69fb0",
+        "set_admin": "8ccc66066aa2596b30ea96452fface6760522d3b2bb3e9f9bdfbe201832d6c0a",
+        "accept_admin": "6cf5a690d3d279dfebddf02cd24bc6d0b0287cbffcbb22a89a46a7c576b1133c",
+        "schedule_upgrade": "2eb78bd1b0c238d6fb366263b2b0e980cbc060d3004348c22cc7a81b65581eab",
+        "cancel_upgrade": "db22d3baecaddafd36455faf5949f2002691fdccecdaf457d492db435f0ff808"
+      }
+    },
+    "pwn_hub_poc": {
+      "abi_sha256": "c92cff3bb9d6f1be5600d913ea0f7893e7f0242041437af62aff172406c29461",
+      "storage_and_constructor_sha256": "2de5effa50c9f5560656947d4299878caa1baf32e59aebe45d42dcd3be4b6dab",
+      "finalizers": {
+        "set_tag": "736217e5c2329655fc43064046de4c516890a22a2b859e0a85dcb20f4b5bcfc3",
+        "set_asset": "bac7a89fa4cbe075215f62491c374674d9b70931ffc8a26021a78af2bb98a6e3"
+      }
+    },
+    "pwn_proposal_poc": {
+      "abi_sha256": "97c1c5d0e3ae1bbb72626f56d76a9a96a99c1a1df32275e50e7ba6c39e313324",
+      "storage_and_constructor_sha256": "42ab95e3eb9ce157b009843683010513427a6e63a4c1546bf22084c7ab9b2edf",
+      "finalizers": {
+        "draw_aleo": "8f1d083da94990ada5b0a1e14cba84ef30eb5ca6032785a9870ed34c49301637",
+        "receive_aleo": "4b7fd0e487bb7abe5db09b322d8336050ffde35da2504bb151e709ea0cf2dc2f",
+        "draw_arc20": "fbe50b8fd85c0bc379bc168c857350de4ec99b7986c7a24b93bb4a95b19ad2da",
+        "receive_arc20": "2610dfb3d3ee1339151b35d760dbf7373abcf3b6515df0475b701e648ce7e803",
+        "draw_compliant": "24406a5cc30c63f1d02c3acd32cc9eb2018d5aa47d164d1513cbfaf17761452d",
+        "receive_compliant": "b82cd913bfef288c43b2994798b641976fbf301dfb17786d33d2c87f09cf9cf8",
+        "open_aleo": "7f574f871f549f93d9be05fb150eaf4f75bd2b8de4717207257d682f0642e4d5",
+        "cancel_aleo": "5bf2bab94453f2e5e9cebde78c107a6e6d3b94a159c6ed7fe6cc8c6878e64434",
+        "withdraw_aleo": "967a90848c1e533b78b460b787da2edf6a49f9219c83051d32dc9f70efeb680a",
+        "open_arc20": "34210cbc67cf13f6728a56381198e26fbe08790c46ea219a209af78b3abcb5a2",
+        "cancel_arc20": "38e9a183da8fcd3a6406a9ee5f2c893081438ecd48d3492b8f47a5bb0f4ae8fc",
+        "withdraw_arc20": "7b51d8ec8f787d55791fb998346c151cb70286db7b36c4a4fc3e55258251c197",
+        "open_compliant": "9f8d1dae09df97a99adf65ec45cfcd807c59484e67a22a68bb8574517baf70ed",
+        "cancel_compliant": "6b338c39adbbe10970604e69e24d4ed633ca8163db053afc6ead31eea0afe432",
+        "withdraw_compliant": "e1c2da7c24c8f2aa1ed785be307b40613137c4d8100128e7bbad952a26dc599e"
+      }
+    },
+    "pwn_loan_poc": {
+      "abi_sha256": "83cc121fbfce0cad4c8c35ad5e19d5c9e96102d08881f1b17f41e46cfd36080c",
+      "storage_and_constructor_sha256": "7b7fc1bfde921ab2a4131491cd29be4ecd55e0e0417e23b1ec3ac4596895650c",
+      "finalizers": {
+        "accept_aleo_aleo": "d066efa9d0cf1a59e6e014652de91950baa2716029b9cdb3b12a33570d64ceff",
+        "repay_aleo_aleo": "0ffdaf5b5673861f40f484aaa4f2aa31af3b7cbe5882ec055f885350f90dd842",
+        "accept_aleo_arc20": "aaa981b4ac5a5df355ae34430f9e7ea54be3bc4fe89d6df28745634a6c5c9fc3",
+        "repay_aleo_arc20": "f4401e52ab67fe72fab4c6b0aeec931566e92e9335d7249e1d7a0a0ca308beb7",
+        "accept_aleo_compliant": "a9c7e85294cc599fe1cedeea65d47ff4e0339c4ba28366262edf672354aa4893",
+        "repay_aleo_compliant": "fdce3ede989e6b1475352faa05a32ad401544e7c3a01e0835c5f416140a42ea5",
+        "accept_arc20_aleo": "41fb177b5f2fb6892dab250f6da8283d920724f005a7cebda84b3fb77eabbce5",
+        "repay_arc20_aleo": "581fc320cfbb73036133a1f03d30fdeba90b3a0938479fb0ceae9ad51e9bb7fd",
+        "accept_arc20_arc20": "5ff554c706640ba48e80cd492aeab2bf39c83b91bc403d4d43393104506f6e70",
+        "repay_arc20_arc20": "e1d69a2e475cb15775a23078f1751750702d43a33244d184126547f1a81ab06e",
+        "accept_arc20_compliant": "1501e6f8a9404f8a9f1491889097f6a5224e0684b014260f0c7ed55ee7e3f4b8",
+        "repay_arc20_compliant": "fe6864d2f530ef9f75d3b26772eabdee5fcf9b02b5b710ba01ed5fa75a715f62",
+        "accept_compliant_aleo": "f6b7ecd3c6c39eeed61d4353813d967d569931975436ba49a0209200a9e07f60",
+        "repay_compliant_aleo": "193d4c89ce5fe16c5f33d2c06c2afbbcef1d730184969df700945722d65f2eb2",
+        "accept_compliant_arc20": "dee8b8567fd7099cad9d7f9a906a57ed5a4ac5d1b5abb2539a8dd6e990160289",
+        "repay_compliant_arc20": "e8c32f8d5a268f08235e869df1c23838cfe63727436c70bf4027984e9faebe12",
+        "accept_compliant_compliant": "55245be561908301f973e5e0e0ac09eb8d7ca5e003557fe3f6ed5b20f85d405c",
+        "repay_compliant_compliant": "4aa029070ef36bf7c9c5f68fbfae99fb2d9e04affce9cdea77173d738adf464d",
+        "claim_aleo": "bc8cebb97c234657afe8043e38c83b57487e7dfd4361a5360a437f61b6d3ebcb",
+        "claim_arc20": "4d858c6573e136becf9d93c148470344efa42a5c0c56804d79e7db90ae6f91b6",
+        "claim_compliant": "38f9bef3d51f7c9509708da8a349cc4ac4c2eea1d60919bb3c78cb0c9a5b8b03"
+      }
+    }
+  }
+}

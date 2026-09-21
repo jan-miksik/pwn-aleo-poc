@@ -1,0 +1,25 @@
+{
+  "config": {
+    "address": "aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:63307",
+    "consensus_version": 19
+  },
+  "program": "pwn_hub_poc.aleo",
+  "function": "set_asset",
+  "outputs": [
+    "{\n  program_id: pwn_hub_poc.aleo,\n  function_name: set_asset,\n  arguments: [\n    aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue,\n    'arc20_sol',\n    2u8,\n    false\n  ]\n}"
+  ],
+  "transaction_id": "at1xz8glv3r0ahmkuqhskl8f85g7p4864sad7qrar0eq95qxlmmwqgqg00zq7",
+  "stats": {
+    "storage_cost": 1403,
+    "execution_cost": 940,
+    "priority_fee": 0,
+    "total_cost": 2343
+  },
+  "broadcast": {
+    "fee_id": "au1le5qhpf8arqd5u4xej3a24g6v36w9xlrlt93mhd6crj6cg38rcyswz02c0",
+    "fee_transaction_id": "at1wfmheelkvklemle08sc0v96pu46z97fyl2gfslh4a5432suswg8qw28xgp",
+    "confirmed": false
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:59301",
+    "consensus_version": 19
+  },
+  "program": "usad_stablecoin.aleo",
+  "function": "update_role",
+  "outputs": [
+    "{\n  program_id: usad_stablecoin.aleo,\n  function_name: update_role,\n  arguments: [\n    aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n    aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n    15u16\n  ]\n}"
+  ],
+  "transaction_id": "at15uyu5y878p4esutnqfcw2hjglrmvnung7waaasjqj0xa73255uysgxu074",
+  "stats": {
+    "storage_cost": 1445,
+    "execution_cost": 668,
+    "priority_fee": 0,
+    "total_cost": 2113
+  },
+  "broadcast": {
+    "fee_id": "au1c5llde48t2e020ld0x3q2m2qa73gn08hug4zpfl3dd6mrxhvlvysvjjvw9",
+    "fee_transaction_id": "at1mrgh3322pgq78gw37m9wthqqy52qg8swnq7d6cpuuy7uutajxg9s56wr5j",
+    "confirmed": true
+  }
+}

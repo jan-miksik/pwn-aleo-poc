@@ -1,0 +1,167 @@
+{
+  "program": "pwn_config_poc.aleo",
+  "structs": [
+    {
+      "path": [
+        "Settings"
+      ],
+      "fields": [
+        {
+          "name": "admin",
+          "ty": {
+            "Primitive": "Address"
+          }
+        },
+        {
+          "name": "upgrader",
+          "ty": {
+            "Primitive": "Address"
+          }
+        },
+        {
+          "name": "protocol_fee_bps",
+          "ty": {
+            "Primitive": {
+              "UInt": "U16"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "records": [],
+  "mappings": [
+    {
+      "name": "settings",
+      "key": {
+        "Primitive": "Boolean"
+      },
+      "value": {
+        "Struct": {
+          "path": [
+            "Settings"
+          ],
+          "program": "pwn_config_poc.aleo"
+        }
+      }
+    },
+    {
+      "name": "pending_settings",
+      "key": {
+        "Primitive": "Boolean"
+      },
+      "value": {
+        "Struct": {
+          "path": [
+            "Settings"
+          ],
+          "program": "pwn_config_poc.aleo"
+        }
+      }
+    },
+    {
+      "name": "upgrade_after",
+      "key": {
+        "Primitive": "Field"
+      },
+      "value": {
+        "Primitive": {
+          "UInt": "U32"
+        }
+      }
+    }
+  ],
+  "storage_variables": [],
+  "functions": [
+    {
+      "name": "initialize",
+      "inputs": [],
+      "outputs": [
+        "Final"
+      ]
+    },
+    {
+      "name": "set_admin",
+      "inputs": [
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Address"
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Address"
+            },
+            "mode": "Public"
+          }
+        }
+      ],
+      "outputs": [
+        "Final"
+      ]
+    },
+    {
+      "name": "accept_admin",
+      "inputs": [],
+      "outputs": [
+        "Final"
+      ]
+    },
+    {
+      "name": "schedule_upgrade",
+      "inputs": [
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Address"
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": {
+                "UInt": "U16"
+              }
+            },
+            "mode": "Public"
+          }
+        }
+      ],
+      "outputs": [
+        "Final"
+      ]
+    },
+    {
+      "name": "cancel_upgrade",
+      "inputs": [
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": "Address"
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": {
+                "UInt": "U16"
+              }
+            },
+            "mode": "Public"
+          }
+        }
+      ],
+      "outputs": [
+        "Final"
+      ]
+    }
+  ]
+}

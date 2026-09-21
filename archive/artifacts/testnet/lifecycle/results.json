@@ -1,0 +1,306 @@
+{
+  "network": "testnet",
+  "run": "run1",
+  "programs": [
+    "pwn_config_demo.aleo",
+    "pwn_hub_demo.aleo",
+    "pwn_elastic_proposal_demo.aleo",
+    "pwn_loan_demo.aleo"
+  ],
+  "lender": "aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s",
+  "borrower": "aleo1r7z3attydgg54q22cex0c55mmrnw7caacmau37dxx47uhqafrspsnfdwrd",
+  "generated_at": "2026-09-16T12:14:40.408768+00:00",
+  "steps": [
+    {
+      "label": "01-initialize",
+      "actor": "lender",
+      "function": "pwn_config_demo.aleo::initialize",
+      "fee_mode": "public",
+      "status": "accepted",
+      "transaction_id": "at1h2amw66wuz9n9d36j7cvhhfcp0hrl5yvkwxezgxl2j042yl8lggquxk6ch",
+      "block_height": 19653575,
+      "fee_microcredits": 2136,
+      "prove_wall_seconds": 8.536,
+      "lender_address_on_chain": true,
+      "borrower_address_on_chain": false
+    },
+    {
+      "label": "02-hub-approve-proposal",
+      "actor": "lender",
+      "function": "pwn_hub_demo.aleo::set_tag",
+      "fee_mode": "public",
+      "status": "accepted",
+      "transaction_id": "at1y6uafwkulxmsu85llgpd8endcle8ad2t4vjm3j3va9yljw0xt5qslrh08u",
+      "block_height": 19653582,
+      "fee_microcredits": 2050,
+      "prove_wall_seconds": 10.219,
+      "lender_address_on_chain": true,
+      "borrower_address_on_chain": false
+    },
+    {
+      "label": "03-hub-approve-loan",
+      "actor": "lender",
+      "function": "pwn_hub_demo.aleo::set_tag",
+      "fee_mode": "public",
+      "status": "accepted",
+      "transaction_id": "at1suw39gh2znmz4j9mr3ug7ccuhss376cm9xkjk6fg5275jq540czss3acm2",
+      "block_height": 19653588,
+      "fee_microcredits": 2050,
+      "prove_wall_seconds": 9.098,
+      "lender_address_on_chain": true,
+      "borrower_address_on_chain": false
+    },
+    {
+      "label": "04-register-token",
+      "actor": "lender",
+      "function": "token_registry.aleo::register_token",
+      "fee_mode": "public",
+      "status": "accepted",
+      "transaction_id": "at1qz7xnm64wrrc0z8hcd5gl2vc2urkfjfdcx0nspxg8q4fy6darqzqnpvvkj",
+      "block_height": 19653594,
+      "fee_microcredits": 3252,
+      "prove_wall_seconds": 10.524,
+      "lender_address_on_chain": true,
+      "borrower_address_on_chain": false
+    },
+    {
+      "label": "05-fund-borrower",
+      "actor": "lender",
+      "function": "credits.aleo::transfer_public",
+      "fee_mode": "public",
+      "status": "accepted",
+      "transaction_id": "at1ug6x6kx4jtv94ze6tquaalathkx8nj0984xmr45yprw3ey3sxc9s9y89ug",
+      "block_height": 19653598,
+      "fee_microcredits": 2725,
+      "prove_wall_seconds": 9.7,
+      "lender_address_on_chain": true,
+      "borrower_address_on_chain": true
+    },
+    {
+      "label": "06-mint-collateral",
+      "actor": "lender",
+      "function": "token_registry.aleo::mint_private",
+      "fee_mode": "public",
+      "status": "accepted",
+      "transaction_id": "at1z9m8hua3c52w7g8ydal0th2xn4u00spl8tvsfte5r96cr3tn55ysqd6acm",
+      "block_height": 19653604,
+      "fee_microcredits": 4026,
+      "prove_wall_seconds": 12.243,
+      "lender_address_on_chain": true,
+      "borrower_address_on_chain": false
+    },
+    {
+      "label": "07-borrower-shield-repay-input",
+      "actor": "borrower",
+      "function": "credits.aleo::transfer_public_to_private",
+      "fee_mode": "public",
+      "status": "accepted",
+      "transaction_id": "at1wkfr7ghslenekmq77gu6dccmja3j4rk7v95wpwjeepkz27lengrq5q2f90",
+      "block_height": 19653613,
+      "fee_microcredits": 2304,
+      "prove_wall_seconds": 13.0,
+      "lender_address_on_chain": false,
+      "borrower_address_on_chain": true
+    },
+    {
+      "label": "08-borrower-shield-fee-record",
+      "actor": "borrower",
+      "function": "credits.aleo::transfer_public_to_private",
+      "fee_mode": "public",
+      "status": "accepted",
+      "transaction_id": "at1v4npwptms8y2zh8nyy85yt2z4us48h5uau4djuhxvenc0edxwg9s5ktqvm",
+      "block_height": 19653620,
+      "fee_microcredits": 2304,
+      "prove_wall_seconds": 10.95,
+      "lender_address_on_chain": false,
+      "borrower_address_on_chain": true
+    },
+    {
+      "label": "09-open-commitment-1",
+      "actor": "lender",
+      "function": "pwn_elastic_proposal_demo.aleo::open_commitment",
+      "fee_mode": "private",
+      "status": "accepted",
+      "transaction_id": "at1kjszxytexcksnff27xpaxz9udpnalkqy8txn6agwq9vskpg4lqxqallq5c",
+      "block_height": 19653632,
+      "fee_microcredits": 7353,
+      "prove_wall_seconds": 32.288,
+      "lender_address_on_chain": false,
+      "borrower_address_on_chain": false
+    },
+    {
+      "label": "10-open-commitment-2",
+      "actor": "lender",
+      "function": "pwn_elastic_proposal_demo.aleo::open_commitment",
+      "fee_mode": "private",
+      "status": "accepted",
+      "transaction_id": "at1l5fe5hrnjypzswnucuj726e4qxd7pm6tzec8gmd6x8lc9d5j2v8sxsw833",
+      "block_height": 19653686,
+      "fee_microcredits": 7353,
+      "prove_wall_seconds": 34.207,
+      "lender_address_on_chain": false,
+      "borrower_address_on_chain": false
+    },
+    {
+      "label": "11-accept-overdraw-local",
+      "actor": "borrower",
+      "function": "pwn_loan_demo.aleo::accept",
+      "fee_mode": "private",
+      "status": "local_fail",
+      "transaction_id": null,
+      "block_height": null,
+      "fee_microcredits": null,
+      "prove_wall_seconds": 8.787,
+      "lender_address_on_chain": null,
+      "borrower_address_on_chain": null
+    },
+    {
+      "label": "12-accept-loan-1",
+      "actor": "borrower",
+      "function": "pwn_loan_demo.aleo::accept",
+      "fee_mode": "private",
+      "status": "accepted",
+      "transaction_id": "at1aupepr5au4h6dkgmwhkwlrdcpd4dzyu2zks7jx90yddekg04avgqgyl8ds",
+      "block_height": 19653708,
+      "fee_microcredits": 18729,
+      "prove_wall_seconds": 40.703,
+      "lender_address_on_chain": false,
+      "borrower_address_on_chain": false
+    },
+    {
+      "label": "13-accept-loan-2",
+      "actor": "borrower",
+      "function": "pwn_loan_demo.aleo::accept",
+      "fee_mode": "private",
+      "status": "accepted",
+      "transaction_id": "at1lwtesxgngk2wqkk3j6k4pwjszfhmpj0gf7w3t2pu3ecnj8z87yyq82fudd",
+      "block_height": 19653721,
+      "fee_microcredits": 18729,
+      "prove_wall_seconds": 41.161,
+      "lender_address_on_chain": false,
+      "borrower_address_on_chain": false
+    },
+    {
+      "label": "14-claim-default-early",
+      "actor": "lender",
+      "function": "pwn_loan_demo.aleo::claim_default",
+      "fee_mode": "public",
+      "status": "rejected",
+      "transaction_id": "at18p959h0up8nddnq3eakew9acfqsqvxfxehsg3ef26ymmu0vpjsgs3ez34j",
+      "block_height": 19653779,
+      "fee_microcredits": 6194,
+      "prove_wall_seconds": 18.42,
+      "lender_address_on_chain": true,
+      "borrower_address_on_chain": false
+    },
+    {
+      "label": "15-repay-loan-1",
+      "actor": "borrower",
+      "function": "pwn_loan_demo.aleo::repay",
+      "fee_mode": "private",
+      "status": "accepted",
+      "transaction_id": "at1d37ge98wq96crex800n06janp3e3c4azpx462qyzzd2zz04ejs9qlacc64",
+      "block_height": 19653814,
+      "fee_microcredits": 13137,
+      "prove_wall_seconds": 40.224,
+      "lender_address_on_chain": false,
+      "borrower_address_on_chain": false
+    },
+    {
+      "label": "16-claim-default-loan-2",
+      "actor": "lender",
+      "function": "pwn_loan_demo.aleo::claim_default",
+      "fee_mode": "private",
+      "status": "accepted",
+      "transaction_id": "at14qfk6m64a7q70c4ev043esx6gud7705f79erks06hqg37gcd0srqkqyn7e",
+      "block_height": 19653827,
+      "fee_microcredits": 6194,
+      "prove_wall_seconds": 28.558,
+      "lender_address_on_chain": false,
+      "borrower_address_on_chain": false
+    },
+    {
+      "label": "17-withdraw-repayment",
+      "actor": "lender",
+      "function": "pwn_elastic_proposal_demo.aleo::withdraw_repayment",
+      "fee_mode": "private",
+      "status": "accepted",
+      "transaction_id": "at1h7fdl2rjhuvwfdwvj09scrkaff53j0mm7m2x46ytux0gdxjgzu8qlzsss6",
+      "block_height": 19653839,
+      "fee_microcredits": 4583,
+      "prove_wall_seconds": 24.415,
+      "lender_address_on_chain": false,
+      "borrower_address_on_chain": false
+    },
+    {
+      "label": "18-cancel-commitment-1",
+      "actor": "lender",
+      "function": "pwn_elastic_proposal_demo.aleo::cancel_commitment",
+      "fee_mode": "private",
+      "status": "accepted",
+      "transaction_id": "at18xxsy240hw8e8046kjuhr96mtu0rgwdymwyrc0xh7y3cwxgg6srqx7kya3",
+      "block_height": 19653853,
+      "fee_microcredits": 5226,
+      "prove_wall_seconds": 26.388,
+      "lender_address_on_chain": false,
+      "borrower_address_on_chain": false
+    }
+  ],
+  "checks": [
+    {
+      "check": "config initialized with deployer admin",
+      "status": "PASS",
+      "at": "2026-09-16T07:37:46.978855+00:00"
+    },
+    {
+      "check": "test collateral token registered on live token_registry",
+      "status": "PASS",
+      "at": "2026-09-16T07:38:37.369600+00:00"
+    },
+    {
+      "check": "commitment 1 funded with 400,000",
+      "status": "PASS",
+      "at": "2026-09-16T07:40:41.056804+00:00"
+    },
+    {
+      "check": "commitment 2 funded with 300,000",
+      "status": "PASS",
+      "at": "2026-09-16T07:43:34.695416+00:00"
+    },
+    {
+      "check": "loan 1 active; commitment 1 reduced to 200,000 without lender signing",
+      "status": "PASS",
+      "at": "2026-09-16T07:44:32.147973+00:00"
+    },
+    {
+      "check": "loan 2 exhausts commitment 2",
+      "status": "PASS",
+      "at": "2026-09-16T07:47:35.234447+00:00"
+    },
+    {
+      "check": "early default claim rejected by network finalization",
+      "status": "PASS",
+      "at": "2026-09-16T07:48:43.223100+00:00"
+    },
+    {
+      "check": "loan 1 repaid; 220,000 allocated to commitment 1",
+      "status": "PASS",
+      "at": "2026-09-16T07:49:31.999265+00:00"
+    },
+    {
+      "check": "lender claims collateral after maturity without borrower",
+      "status": "PASS",
+      "at": "2026-09-16T07:50:08.267739+00:00"
+    },
+    {
+      "check": "lender privately withdrew repayment",
+      "status": "PASS",
+      "at": "2026-09-16T07:50:40.015692+00:00"
+    },
+    {
+      "check": "unused 200,000 refunded privately and commitment closed",
+      "status": "PASS",
+      "at": "2026-09-16T07:51:19.944772+00:00"
+    }
+  ]
+}

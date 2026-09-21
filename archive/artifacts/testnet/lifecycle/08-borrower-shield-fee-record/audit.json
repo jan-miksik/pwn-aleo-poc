@@ -1,0 +1,43 @@
+{
+  "label": "08-borrower-shield-fee-record",
+  "actor": "borrower",
+  "function": "credits.aleo::transfer_public_to_private",
+  "fee_mode": "public",
+  "expect": "accepted",
+  "prepare_wall_seconds": 10.95,
+  "prepare_exit_code": 0,
+  "started_at": "2026-09-16T07:39:54.648156+00:00",
+  "phase": "done",
+  "transaction_id": "at1v4npwptms8y2zh8nyy85yt2z4us48h5uau4djuhxvenc0edxwg9s5ktqvm",
+  "fee_microcredits": 2304,
+  "fee_function": "fee_public",
+  "submitted_at": "2026-09-16T07:39:54.648886+00:00",
+  "status": "accepted",
+  "block_height": 19653620,
+  "block_timestamp": 1789544395,
+  "confirmed_at": "2026-09-16T07:40:01.807493+00:00",
+  "execution_transitions": [
+    [
+      "credits.aleo",
+      "transfer_public_to_private"
+    ]
+  ],
+  "top_level_input_types": [
+    "private",
+    "public"
+  ],
+  "top_level_output_types": [
+    "record",
+    "future"
+  ],
+  "fee_input_types": [
+    "public",
+    "public",
+    "public"
+  ],
+  "lender_address_on_chain": false,
+  "borrower_address_on_chain": true,
+  "addresses_on_chain": [
+    "aleo1r7z3attydgg54q22cex0c55mmrnw7caacmau37dxx47uhqafrspsnfdwrd"
+  ]
+}

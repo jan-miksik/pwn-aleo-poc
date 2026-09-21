@@ -1,0 +1,418 @@
+{
+  "completed": true,
+  "mode": "integration",
+  "seed": 20260920,
+  "steps": 30,
+  "checks": [
+    {
+      "test": "protocol and real token fixtures deployed",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/aleo private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/aleo locked",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/aleo returned collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/aleo cleared",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/sol private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/sol locked",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/sol returned collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/sol cleared",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/wbtc private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/wbtc locked",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/wbtc returned collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/wbtc cleared",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/usdcx private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/usdcx locked",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/usdcx returned collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/usdcx cleared",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/usad private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/usad locked",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/usad returned collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "aleo/usad cleared",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/aleo private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/aleo locked",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/aleo returned collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/aleo cleared",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/sol private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/sol locked",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/sol returned collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/sol cleared",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/wbtc private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/wbtc locked",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/wbtc returned collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/wbtc cleared",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/usdcx private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/usdcx locked",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/usdcx returned collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/usdcx cleared",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/usad private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/usad locked",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/usad returned collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/usad cleared",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc/aleo private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc/aleo locked",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc/aleo returned collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc/aleo cleared",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc/sol private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc/sol locked",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc/sol returned collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc/sol cleared",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc/wbtc private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc/wbtc locked",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc/wbtc returned collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc/wbtc cleared",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc/usdcx private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc/usdcx locked",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc/usdcx returned collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc/usdcx cleared",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc/usad private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc/usad locked",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc/usad returned collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "wbtc/usad cleared",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/aleo private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/aleo locked",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/aleo returned collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/aleo cleared",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/sol private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/sol locked",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/sol returned collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/sol cleared",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/wbtc private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/wbtc locked",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/wbtc returned collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/wbtc cleared",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/usdcx private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/usdcx locked",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/usdcx returned collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/usdcx cleared",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/usad private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/usad locked",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/usad returned collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "usdcx/usad cleared",
+      "status": "PASS"
+    },
+    {
+      "test": "usad/aleo private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "usad/aleo locked",
+      "status": "PASS"
+    },
+    {
+      "test": "usad/aleo returned collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "usad/aleo cleared",
+      "status": "PASS"
+    },
+    {
+      "test": "usad/sol private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "usad/sol locked",
+      "status": "PASS"
+    },
+    {
+      "test": "usad/sol returned collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "usad/sol cleared",
+      "status": "PASS"
+    },
+    {
+      "test": "usad/wbtc private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "usad/wbtc locked",
+      "status": "PASS"
+    },
+    {
+      "test": "usad/wbtc returned collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "usad/wbtc cleared",
+      "status": "PASS"
+    },
+    {
+      "test": "usad/usdcx private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "usad/usdcx locked",
+      "status": "PASS"
+    },
+    {
+      "test": "usad/usdcx returned collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "usad/usdcx cleared",
+      "status": "PASS"
+    },
+    {
+      "test": "usad/usad private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "usad/usad locked",
+      "status": "PASS"
+    },
+    {
+      "test": "usad/usad returned collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "usad/usad cleared",
+      "status": "PASS"
+    }
+  ],
+  "attempted_transactions": 219,
+  "execution_proofs": false,
+  "proved_transactions": [],
+  "deployment_certificates": false,
+  "consensus": false,
+  "node_verifies_proofs": false
+}

@@ -1,0 +1,26 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:50991",
+    "consensus_version": 19
+  },
+  "program": "pwn_elastic_proposal.aleo",
+  "function": "cancel_commitment",
+  "outputs": [
+    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  microcredits: 1000u64.private,\n  _nonce: 552191415417552228711390195187773293420329660318255637019890737598555360748group.public,\n  _version: 1u8.public\n}",
+    "{\n  program_id: pwn_elastic_proposal.aleo,\n  function_name: cancel_commitment,\n  arguments: [\n    2field,\n    5380065084390508464577298640385837892880839483657044025051913213221081534852field,\n    1000u64,\n    {\n      program_id: credits.aleo,\n      function_name: transfer_public_to_private,\n      arguments: [\n        aleo1u26eefy7w0fxep9wqq292vvf2vjc0hw94sxewdxhyrxc04mg8qysea2zkr,\n        1000u64\n      ]\n    }\n  \n  ]\n}"
+  ],
+  "transaction_id": "at1fqun9yu4rgcfun2mhul70y49760ztpmdzw5cwpjquadvftkgug8q36jj8z",
+  "stats": {
+    "storage_cost": 3153,
+    "execution_cost": 2063,
+    "priority_fee": 0,
+    "total_cost": 5216
+  },
+  "broadcast": {
+    "fee_id": "au105xue32wsjrzwt5zzxaw6wuct54p69cg6jyq4rrjhcjfz3lljcxqrmsvrz",
+    "fee_transaction_id": "at1fa5dkvwn2q3r48jrrghyc5z852m80ec5zw7qnmk9ndwz00kxycpszhttxn",
+    "confirmed": true
+  }
+}

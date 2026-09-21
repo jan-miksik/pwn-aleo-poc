@@ -1,0 +1,103 @@
+{
+  "checked_at": "2026-09-15T18:54:19.286393+00:00",
+  "network": "testnet",
+  "deployer": "aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s",
+  "consensus_version": 19,
+  "total_fee_microcredits": 22699569,
+  "total_fee_aleo": 22.699569,
+  "public_balance_microcredits": "7995392u64",
+  "funding_sufficient": false,
+  "programs": [
+    {
+      "program": "pwn_config_demo.aleo",
+      "saved": true,
+      "transaction_id": "at135su2aghf5srsx666ujts77my3ugs2xrn6c89gt56qryrmhjmq9qew46ml",
+      "edition": 0,
+      "program_size_bytes": 1176,
+      "functions_certified": 2,
+      "fee_function": "fee_public",
+      "payer_address_in_fee": true,
+      "cost_microcredits": {
+        "storage_cost": 2128000,
+        "synthesis_cost": 149518,
+        "namespace_cost": 1000000,
+        "constructor_cost": 2000,
+        "total_cost": 3279518
+      },
+      "per_call_execution_cost_microcredits": {
+        "initialize": 2136,
+        "set_admin": 2366
+      }
+    },
+    {
+      "program": "pwn_hub_demo.aleo",
+      "saved": true,
+      "transaction_id": "at1kccy9x4qwddqfsgm5cwkzd6a5h875pr4m83tkur3y9x9s9ms5gysythfl7",
+      "edition": 0,
+      "program_size_bytes": 828,
+      "functions_certified": 1,
+      "fee_function": "fee_public",
+      "payer_address_in_fee": true,
+      "cost_microcredits": {
+        "storage_cost": 1161000,
+        "synthesis_cost": 98791,
+        "namespace_cost": 1000000,
+        "constructor_cost": 2000,
+        "total_cost": 2261791
+      },
+      "per_call_execution_cost_microcredits": {
+        "set_tag": 2050
+      }
+    },
+    {
+      "program": "pwn_elastic_proposal_demo.aleo",
+      "saved": true,
+      "transaction_id": "at1xxhtlhep6k4yr0cke7htc9nevglunl2mlksay6z8jrzpm5w3cvpsxhvqex",
+      "edition": 0,
+      "program_size_bytes": 6817,
+      "functions_certified": 5,
+      "fee_function": "fee_public",
+      "payer_address_in_fee": true,
+      "cost_microcredits": {
+        "storage_cost": 7319000,
+        "synthesis_cost": 1480318,
+        "namespace_cost": 1000000,
+        "constructor_cost": 2000,
+        "total_cost": 9801318
+      },
+      "per_call_execution_cost_microcredits": {
+        "draw": 5264,
+        "receive_repayment": 4579,
+        "open_commitment": 7353,
+        "cancel_commitment": 5226,
+        "withdraw_repayment": 4583
+      }
+    },
+    {
+      "program": "pwn_loan_demo.aleo",
+      "saved": true,
+      "transaction_id": "at15k3cajkrzq98ygluqkq5v6632m2ngq8ywwgnwym7k6acppfa5upqscede2",
+      "edition": 0,
+      "program_size_bytes": 4581,
+      "functions_certified": 3,
+      "fee_function": "fee_public",
+      "payer_address_in_fee": true,
+      "cost_microcredits": {
+        "storage_cost": 4940000,
+        "synthesis_cost": 1414942,
+        "namespace_cost": 1000000,
+        "constructor_cost": 2000,
+        "total_cost": 7356942
+      },
+      "per_call_execution_cost_microcredits": {
+        "accept": 18729,
+        "repay": 13137,
+        "claim_default": 6194
+      }
+    }
+  ],
+  "started_at": "2026-09-15T18:51:34.942232+00:00",
+  "prepare_wall_seconds": 63.488,
+  "exit_code": 0,
+  "note": "Deployment fees are paid publicly by the deployer; nothing broadcast by prepare/inspect."
+}

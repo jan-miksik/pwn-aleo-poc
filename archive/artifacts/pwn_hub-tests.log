@@ -1,0 +1,14 @@
+⚠️ No network specified, defaulting to 'testnet'.
+⚠️ No endpoint specified, defaulting to 'https://api.explorer.provable.com/v1'.
+
+       Leo 🔨 Compiling 'pwn_hub.aleo'
+       Leo     Program size: 0.79 KB / 2000.00 KB
+       Leo ✅ Compiled 'pwn_hub.aleo' into Aleo instructions.
+       Leo     Import 'pwn_config.aleo': program size: 1.13 KB / 2000.00 KB
+       Leo ✅ Generated ABI for program 'pwn_hub.aleo'.
+       Leo 🔨 Compiling 'test_pwn_hub.aleo'
+
+     Running 1 test
+        PASS test_pwn_hub.leo::rejects_unknown_tag
+────────────────────────
+     Summary 1 test run: 1 passed, 0 failed

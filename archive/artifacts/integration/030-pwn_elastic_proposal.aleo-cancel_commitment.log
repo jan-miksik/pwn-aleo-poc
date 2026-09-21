@@ -1,0 +1,92 @@
+
+
+📢 Using the following consensus heights: 0,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+  To override, pass in `--consensus-heights` or override the environment variable `CONSENSUS_VERSION_HEIGHTS`.
+
+
+🚀 Execution Plan Summary
+──────────────────────────────────────────────
+🔧 Configuration:
+  Private Key:        APrivateKey1zkp8CZNn3yeC...
+  Address:            aleo1rhgdu77hgyqd3xjj8uc...
+  Endpoint:           http://127.0.0.1:51601
+  Network:            testnet
+  Consensus Version:  19
+
+🎯 Execution Target:
+  Program:        pwn_elastic_proposal.aleo
+  Function:       cancel_commitment
+  Source:         local
+
+💸 Fee Info:
+  Priority Fee:   0 μcredits
+  Fee Record:     no (public fee)
+
+⚙️ Actions:
+  - A transaction will be generated, WITHOUT a proof.
+  - Transaction will NOT be printed to the console.
+  - Transaction will be saved to /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/integration/transactions/030-pwn_elastic_proposal.aleo-cancel_commitment
+  - Transaction will be broadcast to http://127.0.0.1:51601
+──────────────────────────────────────────────
+
+
+➕Adding programs to the VM in the following order:
+  - credits.aleo (already included)
+  - token_registry.aleo (local)
+  - pwn_config.aleo (local)
+  - pwn_hub.aleo (local)
+  - pwn_elastic_proposal.aleo (local)
+  - pwn_loan.aleo (local)
+
+⚙️ Generating transaction WITHOUT a proof for pwn_elastic_proposal.aleo/cancel_commitment...
+
+📊 Execution Cost Summary for pwn_elastic_proposal.aleo
+──────────────────────────────────────────────
+💰 Cost Breakdown (credits)
+  Transaction Storage:  0.003153
+  On-chain Execution:   0.002063
+  Priority Fee:         0.000000
+  Total Fee:            0.005216
+──────────────────────────────────────────────
+💾 Saving execution for transaction at /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/integration/transactions/030-pwn_elastic_proposal.aleo-cancel_commitment/transaction.execution.json
+
+➡️  Outputs
+
+ • {
+  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,
+  microcredits: 0u64.private,
+  _nonce: 521888034941181293094515380589540380164923408534729059577195712229905296068group.public,
+  _version: 1u8.public
+}
+ • {
+  program_id: pwn_elastic_proposal.aleo,
+  function_name: cancel_commitment,
+  arguments: [
+    1field,
+    613739643872168923203090886618219504574763484454076994590963961433844375680field,
+    0u64,
+    {
+      program_id: credits.aleo,
+      function_name: transfer_public_to_private,
+      arguments: [
+        aleo1u26eefy7w0fxep9wqq292vvf2vjc0hw94sxewdxhyrxc04mg8qysea2zkr,
+        0u64
+      ]
+    }
+  
+  ]
+}
+
+📡 Broadcasting execution for pwn_elastic_proposal.aleo...
+💰Your current public balance is 9371845.087805 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at1erqlwnrda62cen8pf4la055ydujmea35pm5alr9zad049584tvxqgt4adf'
+  - fee ID: 'au1wtjecaz4k8pk0x8t02j4z5wzx3j85gh64f3md5ncvgrtdyusrvrqvukqnq'
+  - fee transaction ID: 'at120r9w3gv7c79e6dqyvydp7a82u6pmc2hayxcupp8yepp09tawg9s2jy65j'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Execution confirmed!

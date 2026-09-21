@@ -1,0 +1,26 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:65083",
+    "consensus_version": 19
+  },
+  "program": "pwn_loan_poc.aleo",
+  "function": "claim_arc20",
+  "outputs": [
+    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n  _root: 7552318940852477698033548100401338693803422530387422473849425491446614949610field,\n  _nonce: 1035498037869187310029587525115306618388434175953626771873246890948607184796group,\n  _version: 1u8\n}",
+    "{\n  program_id: pwn_loan_poc.aleo,\n  function_name: claim_arc20,\n  arguments: [\n    {\n  loan_id: 5368853485735871842995875614959065682247367068670477069947455636872039489795field,\n  commitment_id: 8244810899085370609506246681466110501523245188687204179016754688695047785707field,\n  credit_asset: {\n    program_id: 'usad_stablecoin',\n    token_id: 0field,\n    family: 3u8,\n    version: 1u16\n  },\n  collateral_asset: {\n    program_id: 'arc20_wbtc',\n    token_id: 0field,\n    family: 2u8,\n    version: 1u16\n  },\n  credit_amount: 301u128,\n  collateral_amount: 602u128,\n  repayment_amount: 332u128,\n  accruing_apr: 0u32,\n  borrower_auth: 1756069920769360619087917469494491042720650091892916162156014258820640945894field,\n  lender_auth: 254527136376064402140304623860509082226432199599859119684314529843457694900field\n},\n    8253486598943999409135459044935388566175438153795199553041479886641082914906field,\n    { _program_id: arc20_wbtc.aleo, _function_name: transfer_public_to_private, _checksum: 1899319771049421474310436155787261000427259704665912801918663942856387326755field }\n  ]\n}"
+  ],
+  "transaction_id": "at1cswl6yadzqf8uynaqljpseduwztz7en9e3am604c8ejq8twm4sxqcaf53x",
+  "stats": {
+    "storage_cost": 4396,
+    "execution_cost": 2616,
+    "priority_fee": 0,
+    "total_cost": 7012
+  },
+  "broadcast": {
+    "fee_id": "au1wvacmej85t4ft0hkzfp73pantu70032s0hrz4ppfr7vrz6h3yuqscxes7d",
+    "fee_transaction_id": "at1j2melffh840q5n2rvlll4zqzatu8x7c52hnw6gy4fvat8cfm3u8qvewcym",
+    "confirmed": false
+  }
+}

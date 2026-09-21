@@ -1,0 +1,105 @@
+{
+  "scope": "Saved public receipts only; not re-fetched from the network during this review.",
+  "checks": {
+    "rejected_claim_links_known_lender_fee_address_to_loan": true,
+    "lender_auth_reused_across_two_commitments": true,
+    "borrower_auth_reused_across_two_loans": true
+  },
+  "evidence": [
+    {
+      "file": "artifacts/testnet/lifecycle/09-open-commitment-1/transaction.json",
+      "sha256": "49c756aac9acd7437ee2f736e0acf7cb23394815f104c5d50272d86abd554891",
+      "status": "accepted",
+      "transaction_id": "at1kjszxytexcksnff27xpaxz9udpnalkqy8txn6agwq9vskpg4lqxqallq5c",
+      "fee_function": "fee_private",
+      "fee_addresses": [],
+      "lender_auth": [
+        "4533584518326718400798857678128152200654461163793763827119035632868910830941field"
+      ],
+      "borrower_auth": [],
+      "loan_ids": [],
+      "commitment_ids": [],
+      "rejected_execution_visible": false
+    },
+    {
+      "file": "artifacts/testnet/lifecycle/10-open-commitment-2/transaction.json",
+      "sha256": "399275e8e7d9bad09aa469d1a9f1506bbbc8e1e7e7c3771ae467f0b42658502a",
+      "status": "accepted",
+      "transaction_id": "at1l5fe5hrnjypzswnucuj726e4qxd7pm6tzec8gmd6x8lc9d5j2v8sxsw833",
+      "fee_function": "fee_private",
+      "fee_addresses": [],
+      "lender_auth": [
+        "4533584518326718400798857678128152200654461163793763827119035632868910830941field"
+      ],
+      "borrower_auth": [],
+      "loan_ids": [],
+      "commitment_ids": [],
+      "rejected_execution_visible": false
+    },
+    {
+      "file": "artifacts/testnet/lifecycle/12-accept-loan-1/transaction.json",
+      "sha256": "488f5f712b5fe2eb1813981748187967bc8ac6b03f7e320632f9dc7b2acb3cd0",
+      "status": "accepted",
+      "transaction_id": "at1aupepr5au4h6dkgmwhkwlrdcpd4dzyu2zks7jx90yddekg04avgqgyl8ds",
+      "fee_function": "fee_private",
+      "fee_addresses": [],
+      "lender_auth": [
+        "4533584518326718400798857678128152200654461163793763827119035632868910830941field"
+      ],
+      "borrower_auth": [
+        "5107288450332756872126190879032262613217775557665182391212591800475973501385field"
+      ],
+      "loan_ids": [
+        "11field"
+      ],
+      "commitment_ids": [
+        "1field"
+      ],
+      "rejected_execution_visible": false
+    },
+    {
+      "file": "artifacts/testnet/lifecycle/13-accept-loan-2/transaction.json",
+      "sha256": "c3516126d8039272e93b298a83bcf64be48123935eb175103557abb407c12cb9",
+      "status": "accepted",
+      "transaction_id": "at1lwtesxgngk2wqkk3j6k4pwjszfhmpj0gf7w3t2pu3ecnj8z87yyq82fudd",
+      "fee_function": "fee_private",
+      "fee_addresses": [],
+      "lender_auth": [
+        "4533584518326718400798857678128152200654461163793763827119035632868910830941field"
+      ],
+      "borrower_auth": [
+        "5107288450332756872126190879032262613217775557665182391212591800475973501385field"
+      ],
+      "loan_ids": [
+        "12field"
+      ],
+      "commitment_ids": [
+        "2field"
+      ],
+      "rejected_execution_visible": false
+    },
+    {
+      "file": "artifacts/testnet/lifecycle/14-claim-default-early/transaction.json",
+      "sha256": "0fe381357521d6a87328944282464fccee35ecae1b5d4401bc00eb073d0985dd",
+      "status": "rejected",
+      "transaction_id": "at1l03xhdpv3nm3ecks29pcpu636eas69625cdwdvknnpzjfqy0k5zs6xn6gj",
+      "fee_function": "fee_public",
+      "fee_addresses": [
+        "aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s"
+      ],
+      "lender_auth": [
+        "4533584518326718400798857678128152200654461163793763827119035632868910830941field"
+      ],
+      "borrower_auth": [
+        "5107288450332756872126190879032262613217775557665182391212591800475973501385field"
+      ],
+      "loan_ids": [
+        "11field"
+      ],
+      "commitment_ids": [
+        "1field"
+      ],
+      "rejected_execution_visible": true
+    }
+  ]
+}

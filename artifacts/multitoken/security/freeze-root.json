@@ -1,0 +1,7 @@
+{
+  "program": "pwn_local_fixture.aleo",
+  "function": "freeze_root",
+  "outputs": [
+    "6774589149312448947781671663228856257491794800177413819838963270479135183927field"
+  ]
+}

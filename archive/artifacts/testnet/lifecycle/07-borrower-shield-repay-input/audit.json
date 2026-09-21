@@ -1,0 +1,43 @@
+{
+  "label": "07-borrower-shield-repay-input",
+  "actor": "borrower",
+  "function": "credits.aleo::transfer_public_to_private",
+  "fee_mode": "public",
+  "expect": "accepted",
+  "prepare_wall_seconds": 13.0,
+  "prepare_exit_code": 0,
+  "started_at": "2026-09-16T07:39:37.096453+00:00",
+  "phase": "done",
+  "transaction_id": "at1wkfr7ghslenekmq77gu6dccmja3j4rk7v95wpwjeepkz27lengrq5q2f90",
+  "fee_microcredits": 2304,
+  "fee_function": "fee_public",
+  "submitted_at": "2026-09-16T07:39:37.097117+00:00",
+  "status": "accepted",
+  "block_height": 19653613,
+  "block_timestamp": 1789544378,
+  "confirmed_at": "2026-09-16T07:39:43.694168+00:00",
+  "execution_transitions": [
+    [
+      "credits.aleo",
+      "transfer_public_to_private"
+    ]
+  ],
+  "top_level_input_types": [
+    "private",
+    "public"
+  ],
+  "top_level_output_types": [
+    "record",
+    "future"
+  ],
+  "fee_input_types": [
+    "public",
+    "public",
+    "public"
+  ],
+  "lender_address_on_chain": false,
+  "borrower_address_on_chain": true,
+  "addresses_on_chain": [
+    "aleo1r7z3attydgg54q22cex0c55mmrnw7caacmau37dxx47uhqafrspsnfdwrd"
+  ]
+}

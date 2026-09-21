@@ -1,0 +1,82 @@
+{
+  "note": "Owned record outputs were decrypted locally by Leo; only expectations and booleans are published.",
+  "records": [
+    {
+      "step": "12-accept-loan-1",
+      "output": 0,
+      "owner": "borrower",
+      "expected_amount": "200000u64",
+      "decrypts_as_expected": true
+    },
+    {
+      "step": "12-accept-loan-1",
+      "output": 1,
+      "owner": "borrower",
+      "expected_amount": "700000u128",
+      "decrypts_as_expected": true
+    },
+    {
+      "step": "13-accept-loan-2",
+      "output": 0,
+      "owner": "borrower",
+      "expected_amount": "300000u64",
+      "decrypts_as_expected": true
+    },
+    {
+      "step": "13-accept-loan-2",
+      "output": 1,
+      "owner": "borrower",
+      "expected_amount": "250000u128",
+      "decrypts_as_expected": true
+    },
+    {
+      "step": "15-repay-loan-1",
+      "output": 0,
+      "owner": "borrower",
+      "expected_amount": "280000u64",
+      "decrypts_as_expected": true
+    },
+    {
+      "step": "15-repay-loan-1",
+      "output": 1,
+      "owner": "borrower",
+      "expected_amount": "300000u128",
+      "decrypts_as_expected": true
+    },
+    {
+      "step": "16-claim-default-loan-2",
+      "output": 0,
+      "owner": "lender",
+      "expected_amount": "450000u128",
+      "decrypts_as_expected": true
+    },
+    {
+      "step": "17-withdraw-repayment",
+      "output": 0,
+      "owner": "lender",
+      "expected_amount": "220000u64",
+      "decrypts_as_expected": true
+    },
+    {
+      "step": "18-cancel-commitment-1",
+      "output": 0,
+      "owner": "lender",
+      "expected_amount": "200000u64",
+      "decrypts_as_expected": true
+    },
+    {
+      "step": "09-open-commitment-1",
+      "output": 0,
+      "owner": "lender",
+      "expected_amount": "500000u64",
+      "decrypts_as_expected": true
+    },
+    {
+      "step": "10-open-commitment-2",
+      "output": 0,
+      "owner": "lender",
+      "expected_amount": "200000u64",
+      "decrypts_as_expected": true
+    }
+  ]
+}

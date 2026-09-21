@@ -1,0 +1,33 @@
+{
+  "program": "pwn_loan_poc.aleo",
+  "version": "0.3.0",
+  "description": "Versioned multi-token lending",
+  "license": "MIT",
+  "leo": "4.4.2",
+  "dependencies": [
+    {
+      "name": "credits.aleo",
+      "location": "local",
+      "path": "../vendor/credits.network.aleo",
+      "edition": null
+    },
+    {
+      "name": "pwn_config_poc.aleo",
+      "location": "local",
+      "path": "../pwn_config_poc",
+      "edition": null
+    },
+    {
+      "name": "pwn_hub_poc.aleo",
+      "location": "local",
+      "path": "../pwn_hub_poc",
+      "edition": null
+    },
+    {
+      "name": "pwn_proposal_poc.aleo",
+      "location": "local",
+      "path": "../pwn_proposal_poc",
+      "edition": null
+    }
+  ]
+}

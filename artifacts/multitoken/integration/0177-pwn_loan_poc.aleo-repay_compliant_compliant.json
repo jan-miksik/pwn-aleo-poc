@@ -1,0 +1,29 @@
+{
+  "config": {
+    "address": "aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:59301",
+    "consensus_version": 19
+  },
+  "program": "pwn_loan_poc.aleo",
+  "function": "repay_compliant_compliant",
+  "outputs": [
+    "{\n  owner: aleo1l4s8l9fkl0rughvj0qzv3hduzr2ktpwgmwyue3ehkdrgtdl9vgys4xyw23,\n  _root: 1339339003239885541736369874707139204472172697888127215137529816595250639244field,\n  _nonce: 7533186106342652421650107294060879514667437799005513485759173556876096319758group,\n  _version: 1u8\n}",
+    "{\n  owner: aleo1cvdcz7hzu7pjca4a429dwzxp2h6rjv95ldw6vrf9395tnef2xc8sn624ch,\n  _root: 4635434787872209144006884268667309001638847150137092796609014666937588844714field,\n  _nonce: 3756073396296656108330994036476205008887175740326662182121459214609574207292group,\n  _version: 1u8\n}",
+    "{\n  owner: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue,\n  _root: 8056141744481445288567982914703716987560062376820765652593100939875080231302field,\n  _nonce: 3261932819857024223925183143825768391251762238476700756626605637464303619425group,\n  _version: 1u8\n}",
+    "{\n  owner: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue,\n  _root: 4490127275315651497532630094800166178689225857535687855630099439696656295007field,\n  _nonce: 5173678347406904329100237927035610041644663822509278332697584668771294657806group,\n  _version: 1u8\n}",
+    "{\n  program_id: pwn_loan_poc.aleo,\n  function_name: repay_compliant_compliant,\n  arguments: [\n    {\n  loan_id: 6988586863644388422955244032395062305935311721109403657827449934130328373479field,\n  commitment_id: 4575745173934757975439068938811576730579106156423296725985205161690492222928field,\n  credit_asset: {\n    program_id: 'usdcx_stablecoin',\n    token_id: 0field,\n    family: 3u8,\n    version: 1u16\n  },\n  collateral_asset: {\n    program_id: 'usad_stablecoin',\n    token_id: 0field,\n    family: 3u8,\n    version: 1u16\n  },\n  credit_amount: 400u128,\n  collateral_amount: 600u128,\n  repayment_amount: 440u128,\n  accruing_apr: 0u32,\n  borrower_auth: 3895740375644823210719818242890687854384647621075190430849940265639957888479field,\n  lender_auth: 8423674602703010558089842335441956139517339052617359351074428050787831328865field\n},\n    4068129886013964176005314984285828705365525789060113172597024259289087007901field,\n    440u128,\n    {\n      program_id: pwn_proposal_poc.aleo,\n      function_name: receive_compliant,\n      arguments: [\n        4575745173934757975439068938811576730579106156423296725985205161690492222928field,\n        {\n  program_id: 'usdcx_stablecoin',\n  token_id: 0field,\n  family: 3u8,\n  version: 1u16\n},\n        440u128,\n        { _program_id: usdcx_stablecoin.aleo, _function_name: transfer_private_to_public, _checksum: 1954300024913348527041897703191371622983869786060834804773609894338528775556field }\n      ]\n    },\n    { _program_id: usad_stablecoin.aleo, _function_name: transfer_public_to_private, _checksum: 5969790945904720954762736861376874470142832606623020379303526014915148658830field }\n  ]\n}"
+  ],
+  "transaction_id": "at1d8zgmtled66xca2umpczywdu9x7ujgj9fnh3rajyxuvvqywm6vyqa3v0u3",
+  "stats": {
+    "storage_cost": 42930,
+    "execution_cost": 5981,
+    "priority_fee": 0,
+    "total_cost": 48911
+  },
+  "broadcast": {
+    "fee_id": "au1gygtsu82vhjd6j0dm2mfqjw7rzgs7jgchv0lry0xrvkm7a2vegpqjmpy8m",
+    "fee_transaction_id": "at1ufag8qy05tlnexywj5ehywcpvdrp8d5ynsrv60pswvgpy9mvuq8sasgu2q",
+    "confirmed": true
+  }
+}

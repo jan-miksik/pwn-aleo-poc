@@ -1,0 +1,27 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:62679",
+    "consensus_version": 19
+  },
+  "program": "pwn_proposal_poc.aleo",
+  "function": "open_arc20",
+  "outputs": [
+    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n  _root: 2283550889218984820829025596164569630292585230308378085728011493249959785105field,\n  _nonce: 2389937644328450745841492071243402395173625138970335315472001954946349301656group,\n  _version: 1u8\n}",
+    "3466913943550439307421531704784632875854262765094439323054166294536860142670field",
+    "{\n  program_id: pwn_proposal_poc.aleo,\n  function_name: open_arc20,\n  arguments: [\n    6015164828284017904487852449616947169216606668584332534936450170525960040230field,\n    {\n  credit_asset: {\n    program_id: 'arc20_sol',\n    token_id: 0field,\n    family: 2u8,\n    version: 1u16\n  },\n  collateral_asset: {\n    program_id: 'arc20_wbtc',\n    token_id: 0field,\n    family: 2u8,\n    version: 1u16\n  },\n  min_draw: 100u128,\n  max_draw: 600u128,\n  collateral_ratio: 15000u64,\n  repayment_ratio: 11000u64,\n  accruing_apr: 0u32,\n  duration: 2u32,\n  expiry: 5149u32,\n  lender_auth: 1105981247869404440554764758161075238765408912045943504525649916114249267579field\n},\n    3466913943550439307421531704784632875854262765094439323054166294536860142670field,\n    3967926985853183215821581560872681966619159414421834169005885802272467097085field,\n    1000u128,\n    { _program_id: arc20_sol.aleo, _function_name: transfer_private_to_public, _checksum: 1792698902005854392680887882644557024741018666699508583712672310358678864206field }\n  ]\n}"
+  ],
+  "transaction_id": "at1glpxyrp6tqsq9emwj7w3ftgqjdsqcd60ppmneryrj3j0f2gzqupqwl45wv",
+  "stats": {
+    "storage_cost": 5399,
+    "execution_cost": 5429,
+    "priority_fee": 0,
+    "total_cost": 10828
+  },
+  "broadcast": {
+    "fee_id": "au19q7478ugfg7nh7ha97glya2e88w7p29jg23dsll0k3vw3hc4sqgqds59ew",
+    "fee_transaction_id": "at1skdc4fp0j05jt9cwtm9k6anx0wv0qntt46lwd8qr0k4alnrxscxqast5xl",
+    "confirmed": true
+  }
+}

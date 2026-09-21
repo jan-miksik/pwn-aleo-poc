@@ -1,0 +1,7 @@
+⚠️ No network specified, defaulting to 'testnet'.
+⚠️ No endpoint specified, defaulting to 'https://api.explorer.provable.com/v1'.
+
+       Leo 🔨 Compiling 'usdcx_composition_probe.aleo'
+       Leo     Program size: 1.67 KB / 2000.00 KB
+       Leo ✅ Compiled 'usdcx_composition_probe.aleo' into Aleo instructions.
+       Leo ✅ Generated ABI for program 'usdcx_composition_probe.aleo'.

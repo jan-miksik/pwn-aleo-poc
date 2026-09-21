@@ -1,0 +1,25 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:65083",
+    "consensus_version": 19
+  },
+  "program": "usdcx_freezelist.aleo",
+  "function": "initialize",
+  "outputs": [
+    "{\n  program_id: usdcx_freezelist.aleo,\n  function_name: initialize,\n  arguments: [\n    aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n    aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n    1000u32\n  ]\n}"
+  ],
+  "transaction_id": "at1wpdh3xetrxerwfkyzr89qzhv4xh9y5gcpzk944j58n4sj9lsnvgq9365h6",
+  "stats": {
+    "storage_cost": 1420,
+    "execution_cost": 3084,
+    "priority_fee": 0,
+    "total_cost": 4504
+  },
+  "broadcast": {
+    "fee_id": "au1x5mzxxwypnlv86cvualk783qzd8fey5k5hdhe68sc8lt33hsr5psqpgzym",
+    "fee_transaction_id": "at1cjjsxjpax8cxjgfvj7a8jwka72280eg7mvtt3vsjhcupq4mrzvysmujuj9",
+    "confirmed": true
+  }
+}

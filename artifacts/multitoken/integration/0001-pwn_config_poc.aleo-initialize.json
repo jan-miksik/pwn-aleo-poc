@@ -1,0 +1,25 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:59301",
+    "consensus_version": 19
+  },
+  "program": "pwn_config_poc.aleo",
+  "function": "initialize",
+  "outputs": [
+    "{\n  program_id: pwn_config_poc.aleo,\n  function_name: initialize,\n  arguments: []\n}"
+  ],
+  "transaction_id": "at1w262lw3e85kyv7s2mwy52d2lal6wj5an6aqf0fshsaykszfxvuysgxpz8r",
+  "stats": {
+    "storage_cost": 1220,
+    "execution_cost": 914,
+    "priority_fee": 0,
+    "total_cost": 2134
+  },
+  "broadcast": {
+    "fee_id": "au15md5w0uk9d6hk07zd65c27qhzwars2un2u7urkuclxtda6rfm5zsgd2f8v",
+    "fee_transaction_id": "at1pgqeym5lwm3etldxg053nankv9mgwclzpq4nmsvtmdjaqe5945rqcvmgj8",
+    "confirmed": true
+  }
+}

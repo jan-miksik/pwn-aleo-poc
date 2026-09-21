@@ -1,0 +1,22 @@
+{
+  "program": "custody_probe.aleo",
+  "version": "0.1.0",
+  "description": "",
+  "license": "MIT",
+  "leo": "4.4.2",
+  "dependencies": [
+    {
+      "name": "credits.aleo",
+      "location": "local",
+      "path": "../vendor/credits.network.aleo",
+      "edition": null
+    },
+    {
+      "name": "token_registry.aleo",
+      "location": "local",
+      "path": "../vendor/token_registry.local.aleo",
+      "edition": null
+    }
+  ],
+  "dev_dependencies": null
+}

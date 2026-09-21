@@ -1,0 +1,28 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:63307",
+    "consensus_version": 19
+  },
+  "program": "pwn_proposal_poc.aleo",
+  "function": "open_compliant",
+  "outputs": [
+    "{\n  owner: aleo1cvdcz7hzu7pjca4a429dwzxp2h6rjv95ldw6vrf9395tnef2xc8sn624ch,\n  _root: 4182835093764884827633829538730706564916160335128690706484386503932013291526field,\n  _nonce: 6396676705167135194320968769317413698210359661442576892424648918473860245302group,\n  _version: 1u8\n}",
+    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n  _root: 2283550889218984820829025596164569630292585230308378085728011493249959785105field,\n  _nonce: 5341368599380458094721021061368328179539396767190641825203511491580574914299group,\n  _version: 1u8\n}",
+    "991472915866624118581621927071960669626878373051698640204533685017783445345field",
+    "{\n  program_id: pwn_proposal_poc.aleo,\n  function_name: open_compliant,\n  arguments: [\n    6015164828284017904487852449616947169216606668584332534936450170525960040230field,\n    {\n  credit_asset: {\n    program_id: 'usad_stablecoin',\n    token_id: 0field,\n    family: 3u8,\n    version: 1u16\n  },\n  collateral_asset: {\n    program_id: 'credits',\n    token_id: 0field,\n    family: 1u8,\n    version: 1u16\n  },\n  min_draw: 100u128,\n  max_draw: 600u128,\n  collateral_ratio: 15000u64,\n  repayment_ratio: 11000u64,\n  accruing_apr: 0u32,\n  duration: 1000u32,\n  expiry: 5297u32,\n  lender_auth: 865229778341903752338166106701835444336754338248750890662787523928986996070field\n},\n    991472915866624118581621927071960669626878373051698640204533685017783445345field,\n    1578458034949404361360397198090253398847452722816994794849184204005502664167field,\n    1000u128,\n    { _program_id: usad_stablecoin.aleo, _function_name: transfer_private_to_public, _checksum: 1091151062730577507971718273676031299818887827013598249377933526538435146081field }\n  ]\n}"
+  ],
+  "transaction_id": "at1xc7yteawfswgh59xanhpkheqktw06w9km8p80hqs09x97xaw0uxqtwe00g",
+  "stats": {
+    "storage_cost": 15753,
+    "execution_cost": 5992,
+    "priority_fee": 0,
+    "total_cost": 21745
+  },
+  "broadcast": {
+    "fee_id": "au1ec4vsvma67k0z2m7f4qhzhsevzz0snuvwklc78t7vhxxvktawy8qplgn6u",
+    "fee_transaction_id": "at1s5pku459qmyxjzfch94pud4dh6w537sc4wzmx9ug0ed3ywqrhvgqrqgk68",
+    "confirmed": true
+  }
+}

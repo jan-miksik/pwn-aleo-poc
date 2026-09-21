@@ -1,0 +1,128 @@
+[
+  {
+    "source": "research/merkle_tree.aleo",
+    "sha256": "8a2bae818bda4e194de82d4b0f2aa227cd9fdb09fad94ae1cd43dd3553306897",
+    "fixture_sha256": "726fc5114eabd0a10cbf695617891a283952e3a468dc838a4547cfd56cf2104e",
+    "changed_lines": [],
+    "appended_constructor": true
+  },
+  {
+    "source": "research/multitoken/arc20_multisig_core.aleo",
+    "sha256": "86c73949e5c07e19a5c6e9c5b24d96531aaf510288227694e65c49bf54ec3f87",
+    "fixture_sha256": "86c73949e5c07e19a5c6e9c5b24d96531aaf510288227694e65c49bf54ec3f87",
+    "changed_lines": [],
+    "appended_constructor": false
+  },
+  {
+    "source": "research/multitoken/arc20_sol.aleo",
+    "sha256": "7859fe197c2f28464f2bc32d212e864e242fb300aae8a636004d124f91d1a65c",
+    "fixture_sha256": "384f942606842ba128fcd6cde53dae23fb36527d7be16cf8288defc4bb403ec4",
+    "changed_lines": [
+      {
+        "before": "    set 8u16 into address_to_role[aleo1kmcydn6me4fn20eq0pcdf8zhh58jpnela8ys3e77xr4x0fn00czqt3v8x2];",
+        "after": "    set 8u16 into address_to_role[aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px];"
+      }
+    ],
+    "appended_constructor": false
+  },
+  {
+    "source": "research/multitoken/arc20_wbtc.aleo",
+    "sha256": "9ea20964edc6b4867af1fa37054418facd98f6f73bc2712aa9e272cdcac4347e",
+    "fixture_sha256": "4007bab795388a7f3cea43f6974e9fa1f44dd700fa4dc1996a012bbb3abbe796",
+    "changed_lines": [
+      {
+        "before": "    set 8u16 into address_to_role[aleo1kmcydn6me4fn20eq0pcdf8zhh58jpnela8ys3e77xr4x0fn00czqt3v8x2];",
+        "after": "    set 8u16 into address_to_role[aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px];"
+      }
+    ],
+    "appended_constructor": false
+  },
+  {
+    "source": "research/multitoken/usdcx_multisig_core.aleo",
+    "sha256": "d658d1bb20189e6c981ac6240300636cc6ed478c1e7ec51a454bfa5057dc63cf",
+    "fixture_sha256": "33b32f40c36889511ea54b62a4f83646adb04ef9b8bd78a4dcdfbefd0f68dbd1",
+    "changed_lines": [
+      {
+        "before": "    assert.eq program_owner aleo1e0kw8agxhvhkj00eaxhxcwrzv6yxpzedctxhaszc5gl6ftsmfq8saj0td6;",
+        "after": "    assert.eq program_owner aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px;"
+      }
+    ],
+    "appended_constructor": false
+  },
+  {
+    "source": "research/multitoken/usdcx_freezelist.aleo",
+    "sha256": "1e7fff73446ad7d2b13f55575bbe5a11a7d4abb5b83602e19da352733a80ec2c",
+    "fixture_sha256": "a3d4669316ee1511a23287b13ee965d3446b8a1bc9bd00ca85099e5273817f21",
+    "changed_lines": [
+      {
+        "before": "    assert.eq r1 aleo1ej3uy9flhw4qw2s45d3ckdkhnfhq9lmznlyw2fnl452s3k8aagzq29fp72;",
+        "after": "    assert.eq r1 aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px;"
+      },
+      {
+        "before": "    assert.eq program_owner aleo1ej3uy9flhw4qw2s45d3ckdkhnfhq9lmznlyw2fnl452s3k8aagzq29fp72;",
+        "after": "    assert.eq program_owner aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px;"
+      }
+    ],
+    "appended_constructor": false
+  },
+  {
+    "source": "research/multitoken/usdcx_stablecoin.aleo",
+    "sha256": "727e71ee99b7df568746d250864b6e9519d522d01088953d8d97290b8eba418f",
+    "fixture_sha256": "167f5c63d2e577412ca11524bf2e9b3d79a4dfd3b641157e309ca8fb1044000c",
+    "changed_lines": [
+      {
+        "before": "    assert.eq r5 aleo1ej3uy9flhw4qw2s45d3ckdkhnfhq9lmznlyw2fnl452s3k8aagzq29fp72;",
+        "after": "    assert.eq r5 aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px;"
+      },
+      {
+        "before": "    assert.eq program_owner aleo1ej3uy9flhw4qw2s45d3ckdkhnfhq9lmznlyw2fnl452s3k8aagzq29fp72;",
+        "after": "    assert.eq program_owner aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px;"
+      }
+    ],
+    "appended_constructor": false
+  },
+  {
+    "source": "research/multitoken/usad_multisig_core.aleo",
+    "sha256": "dacbf78c75f0e352035e673c4a94c15b4d130a0f63ee45a027bd5595a086ef5f",
+    "fixture_sha256": "b0c779b2c4f5c33cf5097c7314b68e9b36e666614811a9531d61cf197b2a00b7",
+    "changed_lines": [
+      {
+        "before": "    assert.eq program_owner aleo1psqst27hpqda06sr2yuzyaf2q8hvu227295p98httv8u4j4clvyshjdldd;",
+        "after": "    assert.eq program_owner aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px;"
+      }
+    ],
+    "appended_constructor": false
+  },
+  {
+    "source": "research/multitoken/usad_freezelist.aleo",
+    "sha256": "7b104434ab0bae1e5a017f9a75b6bcc7b7c8882e0b26de47f6deca5c0fa49608",
+    "fixture_sha256": "72e6d17663c8d7dfbdb50d058c340b5e7aa12f91db1c3b9968dae11a1c7bd2ed",
+    "changed_lines": [
+      {
+        "before": "    assert.eq r1 aleo1apyqe667gtlw2ewxazn97nuc96uf26xwtqe0ulscusnxpkm96crscnn4tr;",
+        "after": "    assert.eq r1 aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px;"
+      },
+      {
+        "before": "    assert.eq program_owner aleo1apyqe667gtlw2ewxazn97nuc96uf26xwtqe0ulscusnxpkm96crscnn4tr;",
+        "after": "    assert.eq program_owner aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px;"
+      }
+    ],
+    "appended_constructor": false
+  },
+  {
+    "source": "research/multitoken/usad_stablecoin.aleo",
+    "sha256": "ff71d2fce2bb599edf620583960986178a1a66b4b74af7332a781421010e3711",
+    "fixture_sha256": "fc9fb8b8c0c4c153cca04d9b49b08cf82f04d084c65c099856f9f4909a882241",
+    "changed_lines": [
+      {
+        "before": "    assert.eq r5 aleo1apyqe667gtlw2ewxazn97nuc96uf26xwtqe0ulscusnxpkm96crscnn4tr;",
+        "after": "    assert.eq r5 aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px;"
+      },
+      {
+        "before": "    assert.eq program_owner aleo1apyqe667gtlw2ewxazn97nuc96uf26xwtqe0ulscusnxpkm96crscnn4tr;",
+        "after": "    assert.eq program_owner aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px;"
+      }
+    ],
+    "appended_constructor": false
+  }
+]

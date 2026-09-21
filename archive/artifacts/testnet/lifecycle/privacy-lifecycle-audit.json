@@ -1,0 +1,415 @@
+{
+  "run_dir": "artifacts/testnet/lifecycle",
+  "source": "saved confirmed receipts (accepted and rejected), not re-fetched",
+  "lending_receipts": 9,
+  "receipts": 17,
+  "findings": [
+    {
+      "finding": "public_fee_on_lending_flow",
+      "step": "14-claim-default-early",
+      "status": "rejected",
+      "fee_payer_addresses": [
+        "aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s"
+      ]
+    },
+    {
+      "finding": "participant_address_in_lending",
+      "step": "14-claim-default-early",
+      "participant": "lender"
+    },
+    {
+      "finding": "lender_auth_reused",
+      "hash": "4533584518326718400798857678128152200654461163793763827119035632868910830941field",
+      "commitment_ids": [
+        "1field",
+        "2field"
+      ]
+    },
+    {
+      "finding": "borrower_auth_reused",
+      "hash": "5107288450332756872126190879032262613217775557665182391212591800475973501385field",
+      "loan_ids": [
+        "11field",
+        "12field"
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "step": "01-initialize",
+      "status": "accepted",
+      "transaction_id": "at1h2amw66wuz9n9d36j7cvhhfcp0hrl5yvkwxezgxl2j042yl8lggquxk6ch",
+      "program": "pwn_config_demo.aleo",
+      "function": "initialize",
+      "lending_flow": false,
+      "execution_published": true,
+      "rejected_execution": false,
+      "fee_function": "fee_public",
+      "fee_payer_addresses": [
+        "aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s"
+      ],
+      "lender_address_visible": true,
+      "borrower_address_visible": false,
+      "lender_auth": [],
+      "borrower_auth": [],
+      "commitment_ids": [],
+      "loan_ids": []
+    },
+    {
+      "step": "02-hub-approve-proposal",
+      "status": "accepted",
+      "transaction_id": "at1y6uafwkulxmsu85llgpd8endcle8ad2t4vjm3j3va9yljw0xt5qslrh08u",
+      "program": "pwn_hub_demo.aleo",
+      "function": "set_tag",
+      "lending_flow": false,
+      "execution_published": true,
+      "rejected_execution": false,
+      "fee_function": "fee_public",
+      "fee_payer_addresses": [
+        "aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s"
+      ],
+      "lender_address_visible": true,
+      "borrower_address_visible": false,
+      "lender_auth": [],
+      "borrower_auth": [],
+      "commitment_ids": [],
+      "loan_ids": []
+    },
+    {
+      "step": "03-hub-approve-loan",
+      "status": "accepted",
+      "transaction_id": "at1suw39gh2znmz4j9mr3ug7ccuhss376cm9xkjk6fg5275jq540czss3acm2",
+      "program": "pwn_hub_demo.aleo",
+      "function": "set_tag",
+      "lending_flow": false,
+      "execution_published": true,
+      "rejected_execution": false,
+      "fee_function": "fee_public",
+      "fee_payer_addresses": [
+        "aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s"
+      ],
+      "lender_address_visible": true,
+      "borrower_address_visible": false,
+      "lender_auth": [],
+      "borrower_auth": [],
+      "commitment_ids": [],
+      "loan_ids": []
+    },
+    {
+      "step": "04-register-token",
+      "status": "accepted",
+      "transaction_id": "at1qz7xnm64wrrc0z8hcd5gl2vc2urkfjfdcx0nspxg8q4fy6darqzqnpvvkj",
+      "program": "token_registry.aleo",
+      "function": "register_token",
+      "lending_flow": false,
+      "execution_published": true,
+      "rejected_execution": false,
+      "fee_function": "fee_public",
+      "fee_payer_addresses": [
+        "aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s"
+      ],
+      "lender_address_visible": true,
+      "borrower_address_visible": false,
+      "lender_auth": [],
+      "borrower_auth": [],
+      "commitment_ids": [],
+      "loan_ids": []
+    },
+    {
+      "step": "05-fund-borrower",
+      "status": "accepted",
+      "transaction_id": "at1ug6x6kx4jtv94ze6tquaalathkx8nj0984xmr45yprw3ey3sxc9s9y89ug",
+      "program": "credits.aleo",
+      "function": "transfer_public",
+      "lending_flow": false,
+      "execution_published": true,
+      "rejected_execution": false,
+      "fee_function": "fee_public",
+      "fee_payer_addresses": [
+        "aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s"
+      ],
+      "lender_address_visible": true,
+      "borrower_address_visible": true,
+      "lender_auth": [],
+      "borrower_auth": [],
+      "commitment_ids": [],
+      "loan_ids": []
+    },
+    {
+      "step": "06-mint-collateral",
+      "status": "accepted",
+      "transaction_id": "at1z9m8hua3c52w7g8ydal0th2xn4u00spl8tvsfte5r96cr3tn55ysqd6acm",
+      "program": "token_registry.aleo",
+      "function": "mint_private",
+      "lending_flow": false,
+      "execution_published": true,
+      "rejected_execution": false,
+      "fee_function": "fee_public",
+      "fee_payer_addresses": [
+        "aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s"
+      ],
+      "lender_address_visible": true,
+      "borrower_address_visible": false,
+      "lender_auth": [],
+      "borrower_auth": [],
+      "commitment_ids": [],
+      "loan_ids": []
+    },
+    {
+      "step": "07-borrower-shield-repay-input",
+      "status": "accepted",
+      "transaction_id": "at1wkfr7ghslenekmq77gu6dccmja3j4rk7v95wpwjeepkz27lengrq5q2f90",
+      "program": "credits.aleo",
+      "function": "transfer_public_to_private",
+      "lending_flow": false,
+      "execution_published": true,
+      "rejected_execution": false,
+      "fee_function": "fee_public",
+      "fee_payer_addresses": [
+        "aleo1r7z3attydgg54q22cex0c55mmrnw7caacmau37dxx47uhqafrspsnfdwrd"
+      ],
+      "lender_address_visible": false,
+      "borrower_address_visible": true,
+      "lender_auth": [],
+      "borrower_auth": [],
+      "commitment_ids": [],
+      "loan_ids": []
+    },
+    {
+      "step": "08-borrower-shield-fee-record",
+      "status": "accepted",
+      "transaction_id": "at1v4npwptms8y2zh8nyy85yt2z4us48h5uau4djuhxvenc0edxwg9s5ktqvm",
+      "program": "credits.aleo",
+      "function": "transfer_public_to_private",
+      "lending_flow": false,
+      "execution_published": true,
+      "rejected_execution": false,
+      "fee_function": "fee_public",
+      "fee_payer_addresses": [
+        "aleo1r7z3attydgg54q22cex0c55mmrnw7caacmau37dxx47uhqafrspsnfdwrd"
+      ],
+      "lender_address_visible": false,
+      "borrower_address_visible": true,
+      "lender_auth": [],
+      "borrower_auth": [],
+      "commitment_ids": [],
+      "loan_ids": []
+    },
+    {
+      "step": "09-open-commitment-1",
+      "status": "accepted",
+      "transaction_id": "at1kjszxytexcksnff27xpaxz9udpnalkqy8txn6agwq9vskpg4lqxqallq5c",
+      "program": "pwn_elastic_proposal_demo.aleo",
+      "function": "open_commitment",
+      "lending_flow": true,
+      "execution_published": true,
+      "rejected_execution": false,
+      "fee_function": "fee_private",
+      "fee_payer_addresses": [],
+      "lender_address_visible": false,
+      "borrower_address_visible": false,
+      "lender_auth": [
+        "4533584518326718400798857678128152200654461163793763827119035632868910830941field"
+      ],
+      "borrower_auth": [],
+      "commitment_ids": [
+        "1field"
+      ],
+      "loan_ids": []
+    },
+    {
+      "step": "10-open-commitment-2",
+      "status": "accepted",
+      "transaction_id": "at1l5fe5hrnjypzswnucuj726e4qxd7pm6tzec8gmd6x8lc9d5j2v8sxsw833",
+      "program": "pwn_elastic_proposal_demo.aleo",
+      "function": "open_commitment",
+      "lending_flow": true,
+      "execution_published": true,
+      "rejected_execution": false,
+      "fee_function": "fee_private",
+      "fee_payer_addresses": [],
+      "lender_address_visible": false,
+      "borrower_address_visible": false,
+      "lender_auth": [
+        "4533584518326718400798857678128152200654461163793763827119035632868910830941field"
+      ],
+      "borrower_auth": [],
+      "commitment_ids": [
+        "2field"
+      ],
+      "loan_ids": []
+    },
+    {
+      "step": "12-accept-loan-1",
+      "status": "accepted",
+      "transaction_id": "at1aupepr5au4h6dkgmwhkwlrdcpd4dzyu2zks7jx90yddekg04avgqgyl8ds",
+      "program": "pwn_loan_demo.aleo",
+      "function": "accept",
+      "lending_flow": true,
+      "execution_published": true,
+      "rejected_execution": false,
+      "fee_function": "fee_private",
+      "fee_payer_addresses": [],
+      "lender_address_visible": false,
+      "borrower_address_visible": false,
+      "lender_auth": [
+        "4533584518326718400798857678128152200654461163793763827119035632868910830941field"
+      ],
+      "borrower_auth": [
+        "5107288450332756872126190879032262613217775557665182391212591800475973501385field"
+      ],
+      "commitment_ids": [
+        "1field"
+      ],
+      "loan_ids": [
+        "11field"
+      ]
+    },
+    {
+      "step": "13-accept-loan-2",
+      "status": "accepted",
+      "transaction_id": "at1lwtesxgngk2wqkk3j6k4pwjszfhmpj0gf7w3t2pu3ecnj8z87yyq82fudd",
+      "program": "pwn_loan_demo.aleo",
+      "function": "accept",
+      "lending_flow": true,
+      "execution_published": true,
+      "rejected_execution": false,
+      "fee_function": "fee_private",
+      "fee_payer_addresses": [],
+      "lender_address_visible": false,
+      "borrower_address_visible": false,
+      "lender_auth": [
+        "4533584518326718400798857678128152200654461163793763827119035632868910830941field"
+      ],
+      "borrower_auth": [
+        "5107288450332756872126190879032262613217775557665182391212591800475973501385field"
+      ],
+      "commitment_ids": [
+        "2field"
+      ],
+      "loan_ids": [
+        "12field"
+      ]
+    },
+    {
+      "step": "14-claim-default-early",
+      "status": "rejected",
+      "transaction_id": "at1l03xhdpv3nm3ecks29pcpu636eas69625cdwdvknnpzjfqy0k5zs6xn6gj",
+      "program": "pwn_loan_demo.aleo",
+      "function": "claim_default",
+      "lending_flow": true,
+      "execution_published": true,
+      "rejected_execution": true,
+      "fee_function": "fee_public",
+      "fee_payer_addresses": [
+        "aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s"
+      ],
+      "lender_address_visible": true,
+      "borrower_address_visible": false,
+      "lender_auth": [
+        "4533584518326718400798857678128152200654461163793763827119035632868910830941field"
+      ],
+      "borrower_auth": [
+        "5107288450332756872126190879032262613217775557665182391212591800475973501385field"
+      ],
+      "commitment_ids": [
+        "1field"
+      ],
+      "loan_ids": [
+        "11field"
+      ]
+    },
+    {
+      "step": "15-repay-loan-1",
+      "status": "accepted",
+      "transaction_id": "at1d37ge98wq96crex800n06janp3e3c4azpx462qyzzd2zz04ejs9qlacc64",
+      "program": "pwn_loan_demo.aleo",
+      "function": "repay",
+      "lending_flow": true,
+      "execution_published": true,
+      "rejected_execution": false,
+      "fee_function": "fee_private",
+      "fee_payer_addresses": [],
+      "lender_address_visible": false,
+      "borrower_address_visible": false,
+      "lender_auth": [
+        "4533584518326718400798857678128152200654461163793763827119035632868910830941field"
+      ],
+      "borrower_auth": [
+        "5107288450332756872126190879032262613217775557665182391212591800475973501385field"
+      ],
+      "commitment_ids": [
+        "1field"
+      ],
+      "loan_ids": [
+        "11field"
+      ]
+    },
+    {
+      "step": "16-claim-default-loan-2",
+      "status": "accepted",
+      "transaction_id": "at14qfk6m64a7q70c4ev043esx6gud7705f79erks06hqg37gcd0srqkqyn7e",
+      "program": "pwn_loan_demo.aleo",
+      "function": "claim_default",
+      "lending_flow": true,
+      "execution_published": true,
+      "rejected_execution": false,
+      "fee_function": "fee_private",
+      "fee_payer_addresses": [],
+      "lender_address_visible": false,
+      "borrower_address_visible": false,
+      "lender_auth": [
+        "4533584518326718400798857678128152200654461163793763827119035632868910830941field"
+      ],
+      "borrower_auth": [
+        "5107288450332756872126190879032262613217775557665182391212591800475973501385field"
+      ],
+      "commitment_ids": [
+        "2field"
+      ],
+      "loan_ids": [
+        "12field"
+      ]
+    },
+    {
+      "step": "17-withdraw-repayment",
+      "status": "accepted",
+      "transaction_id": "at1h7fdl2rjhuvwfdwvj09scrkaff53j0mm7m2x46ytux0gdxjgzu8qlzsss6",
+      "program": "pwn_elastic_proposal_demo.aleo",
+      "function": "withdraw_repayment",
+      "lending_flow": true,
+      "execution_published": true,
+      "rejected_execution": false,
+      "fee_function": "fee_private",
+      "fee_payer_addresses": [],
+      "lender_address_visible": false,
+      "borrower_address_visible": false,
+      "lender_auth": [
+        "4533584518326718400798857678128152200654461163793763827119035632868910830941field"
+      ],
+      "borrower_auth": [],
+      "commitment_ids": [],
+      "loan_ids": []
+    },
+    {
+      "step": "18-cancel-commitment-1",
+      "status": "accepted",
+      "transaction_id": "at18xxsy240hw8e8046kjuhr96mtu0rgwdymwyrc0xh7y3cwxgg6srqx7kya3",
+      "program": "pwn_elastic_proposal_demo.aleo",
+      "function": "cancel_commitment",
+      "lending_flow": true,
+      "execution_published": true,
+      "rejected_execution": false,
+      "fee_function": "fee_private",
+      "fee_payer_addresses": [],
+      "lender_address_visible": false,
+      "borrower_address_visible": false,
+      "lender_auth": [
+        "4533584518326718400798857678128152200654461163793763827119035632868910830941field"
+      ],
+      "borrower_auth": [],
+      "commitment_ids": [],
+      "loan_ids": []
+    }
+  ]
+}

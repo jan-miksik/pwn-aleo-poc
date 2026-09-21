@@ -1,0 +1,64 @@
+{
+  "label": "12-accept-loan-1",
+  "actor": "borrower",
+  "function": "pwn_loan_demo.aleo::accept",
+  "fee_mode": "private",
+  "expect": "accepted",
+  "prepare_wall_seconds": 40.703,
+  "prepare_exit_code": 0,
+  "started_at": "2026-09-16T07:44:24.190322+00:00",
+  "phase": "done",
+  "transaction_id": "at1aupepr5au4h6dkgmwhkwlrdcpd4dzyu2zks7jx90yddekg04avgqgyl8ds",
+  "fee_microcredits": 18729,
+  "fee_function": "fee_private",
+  "submitted_at": "2026-09-16T07:44:24.191229+00:00",
+  "status": "accepted",
+  "block_height": 19653708,
+  "block_timestamp": 1789544665,
+  "confirmed_at": "2026-09-16T07:44:31.320667+00:00",
+  "execution_transitions": [
+    [
+      "token_registry.aleo",
+      "transfer_private_to_public"
+    ],
+    [
+      "credits.aleo",
+      "transfer_public_to_private"
+    ],
+    [
+      "pwn_elastic_proposal_demo.aleo",
+      "draw"
+    ],
+    [
+      "pwn_loan_demo.aleo",
+      "accept"
+    ]
+  ],
+  "top_level_input_types": [
+    "public",
+    "public",
+    "public",
+    "public",
+    "external_record",
+    "private"
+  ],
+  "top_level_output_types": [
+    "external_record",
+    "external_record",
+    "public",
+    "future"
+  ],
+  "fee_input_types": [
+    "record",
+    "public",
+    "public",
+    "public"
+  ],
+  "lender_address_on_chain": false,
+  "borrower_address_on_chain": false,
+  "addresses_on_chain": [
+    "aleo1ksdvl3asju5ycclrktv5rutc0r8p0g9attxda3ew7haqe53tgvrs9q2ps3",
+    "aleo1lqmly7ez2k48ajf5hs92ulphaqr05qm4n8qwzj8v0yprmasgpqgsez59gg",
+    "aleo1y4d32mvldsdsaja7ej5f0z2laladce8mlyu307yl0jlphakqrupq5jkwy0"
+  ]
+}

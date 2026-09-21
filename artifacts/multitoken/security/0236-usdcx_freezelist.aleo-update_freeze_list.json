@@ -1,0 +1,25 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:62679",
+    "consensus_version": 19
+  },
+  "program": "usdcx_freezelist.aleo",
+  "function": "update_freeze_list",
+  "outputs": [
+    "{\n  program_id: usdcx_freezelist.aleo,\n  function_name: update_freeze_list,\n  arguments: [\n    aleo1gqzuhr60tnlt0fhjevmu5y4ymc46qsky2emzkcvf98rwkq7s759spr0n8j,\n    true,\n    1u32,\n    aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n    3642222252059314292809609689035560016959342421640560347114299934615987159853field,\n    6774589149312448947781671663228856257491794800177413819838963270479135183927field\n  ]\n}"
+  ],
+  "transaction_id": "at14gww5lpgdagsnuyydkm5zkc33wnp72xfuqk6awmmd25tts5ae5psdckj3r",
+  "stats": {
+    "storage_cost": 1695,
+    "execution_cost": 4168,
+    "priority_fee": 0,
+    "total_cost": 5863
+  },
+  "broadcast": {
+    "fee_id": "au1j0z005jvr2vpv4y25w5zdgvm7yv9j76lw79cn36z2n2m66hn55gq8qc232",
+    "fee_transaction_id": "at15ktnfmtv8ujmu4q85hg0d9fqvdt53araycrjjvm5e2wjw69asvrq5ak3tv",
+    "confirmed": true
+  }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "program": "custody_probe",
+    "passed": true,
+    "exit_code": 0
+  },
+  {
+    "program": "pwn_config",
+    "passed": true,
+    "exit_code": 0
+  },
+  {
+    "program": "pwn_hub",
+    "passed": true,
+    "exit_code": 0
+  },
+  {
+    "program": "pwn_elastic_proposal",
+    "passed": true,
+    "exit_code": 0
+  },
+  {
+    "program": "pwn_loan",
+    "passed": true,
+    "exit_code": 0
+  },
+  {
+    "program": "pwn_test_utils",
+    "passed": true,
+    "exit_code": 0
+  }
+]

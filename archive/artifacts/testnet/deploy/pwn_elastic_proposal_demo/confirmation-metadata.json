@@ -1,0 +1,10 @@
+{
+  "program": "pwn_elastic_proposal_demo.aleo",
+  "transaction_id": "at1xxhtlhep6k4yr0cke7htc9nevglunl2mlksay6z8jrzpm5w3cvpsxhvqex",
+  "status": "accepted",
+  "block_hash": "ab1gllmajkltjme3yfkw9l9tlahr6ztr60ezw559ej470u5ekse4uqqpank0u",
+  "block_height": 19653440,
+  "block_timestamp": 1789543891,
+  "program_visible_on_chain": true,
+  "confirmed_checked_at": "2026-09-16T07:31:42.144779+00:00"
+}

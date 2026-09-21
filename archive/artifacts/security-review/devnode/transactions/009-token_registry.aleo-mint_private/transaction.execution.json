@@ -1,0 +1,93 @@
+{
+  "type": "execute",
+  "id": "at1p009f73awkxjg9qj82kw7yyht6z3hm6vkmjlau9884rshpzn2gfq77rjxm",
+  "execution": {
+    "transitions": [
+      {
+        "id": "au1aqpfmlmrgn5defveq9fc45em07p70emcg5eh69j4q3y45x70ygfqkk4p3w",
+        "program": "token_registry.aleo",
+        "function": "mint_private",
+        "inputs": [
+          {
+            "type": "public",
+            "id": "3090420706400204282790015770023372163502284714564296050646292836506156549091field",
+            "value": "987654321field"
+          },
+          {
+            "type": "private",
+            "id": "8401879704330390335972331240449488424834647314091998329585627848909222707643field",
+            "value": "ciphertext1qgqrnsqc2234s784w38knm45r3hrxrm2u3gavmpzwl28qzfccygsjp23avkpfd6kvqf83yw9fjkw5anp5q9vez7qvuvvum9exct3ay03p5xl9a5w"
+          },
+          {
+            "type": "public",
+            "id": "449697188026784693406461158364165237564132767591237578796003175693077801175field",
+            "value": "100000u128"
+          },
+          {
+            "type": "public",
+            "id": "6931489211950491523582054352112767920310420068160123344840731212601640726602field",
+            "value": "false"
+          },
+          {
+            "type": "public",
+            "id": "3349938640182139662502087190909051185794673995254402503025249748940119856065field",
+            "value": "4294967295u32"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "record",
+            "id": "4440732062951322507581301015260147291764670052859681477345774882232839885653field",
+            "checksum": "4916565118106170602213549838795795382017764418176579035751717073342742129324field",
+            "value": "record1qvqsqzddwskn4g8t9zedt7zf2cpgt56gt5czp6gzxhezqlfggq2fa9cqqsrxzmt0w4h8ggcqqgqsqjrtw9vkgyv8hp9z5qc73f900hl6dl0qejk2l2q9vufxl70zd3c9pp6x76m9de0kjezrqqpqyqzdj8w6dldflmmmke3a0m46gp6l9kqrashrzj4f55h6lmkhvq6jqahp8558y30mfcnuyamm3gj4pg4qhqq4hn34c5lec2n4w4ffn6aqx8m90p6x2unwv9k97ct4w35x7unf0fshg6t0de0hyet3w45hyetyyvqqyqgqk3fdp3a2uhx0t5gfxxxlptdx8ng64us0qplfrtr3mmrm7ayemgypqct4w35x7unf0fjkghm4de6xjmprqqpqzq8hpwdvxxt4zdyme02mqeahqz7k5m3fzamzvnnm09al23rvmde4pnmcp2fz6s7jdlj62ku4skawl2fh8z8vxq3755l0shlt8kafl3jsy0wce7r",
+            "sender_ciphertext": "5026241530123996856800058006909040655259721862952007039268393388214599039241field"
+          },
+          {
+            "type": "future",
+            "id": "7610814407204449951787183301773928675640575830717299638787239055969553449908field",
+            "value": "{\n  program_id: token_registry.aleo,\n  function_name: mint_private,\n  arguments: [\n    987654321field,\n    100000u128,\n    false,\n    4294967295u32,\n    aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n    5881482511556734143299913091949552631184592859519038963985945120151781986071field\n  ]\n}"
+          }
+        ],
+        "tpk": "6062319542224165490194391394084594016669297223029988973403987605777641921330group",
+        "tcm": "1778778011387884386619081971604378499526062929698926941231461279756513961555field",
+        "scm": "1093472585358954543118861137771150555982497198985164960329885170567284776569field"
+      }
+    ],
+    "global_state_root": "sr1wq0uup0w4agwk4a5m0ypzurej2jpsqztgg5tkrw3ud53ea4zmcrqayap2u"
+  },
+  "fee": {
+    "transition": {
+      "id": "au1seas9em7gmu427naj7gvwxlapudva5fnyxh9m5qh6vcas95qcc8sf6wy9r",
+      "program": "credits.aleo",
+      "function": "fee_public",
+      "inputs": [
+        {
+          "type": "public",
+          "id": "5523292932591368239994270691043338330696249838092594154421543039241387607996field",
+          "value": "3069u64"
+        },
+        {
+          "type": "public",
+          "id": "1806884010258301991861280490623006436050002613229093355346549069951574907347field",
+          "value": "0u64"
+        },
+        {
+          "type": "public",
+          "id": "2251259185575295908495699904950556929241825809151885961035344366449967111820field",
+          "value": "1171106775944117765222981454539835243604987376360059633078282116277120509082field"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "future",
+          "id": "580679215354639184403240698962261995494786484488344321030525468874689857694field",
+          "value": "{\n  program_id: credits.aleo,\n  function_name: fee_public,\n  arguments: [\n    aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n    3069u64\n  ]\n}"
+        }
+      ],
+      "tpk": "328557035267026615772417079235647585877015464908875925152611032892997243137group",
+      "tcm": "7556086670124506464028278900443687501261543887685939874825815305679967285106field",
+      "scm": "862114292828265696893181897842851991113661454972039355316424833683954101891field"
+    },
+    "global_state_root": "sr1wq0uup0w4agwk4a5m0ypzurej2jpsqztgg5tkrw3ud53ea4zmcrqayap2u"
+  }
+}

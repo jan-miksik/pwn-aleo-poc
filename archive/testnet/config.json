@@ -1,0 +1,9 @@
+{
+  "network": "testnet",
+  "endpoint": "https://api.explorer.provable.com/v1",
+  "data_endpoint": "https://api.explorer.provable.com/v2",
+  "credits_program": "credits.aleo",
+  "usdcx_program": "test_usdcx_stablecoin.aleo",
+  "freezelist_program": "test_usdcx_freezelist.aleo",
+  "faucet": "https://faucet.aleo.org/"
+}

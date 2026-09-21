@@ -1,0 +1,30 @@
+[
+  {
+    "path": "research/merkle_tree.aleo",
+    "sha256": "8a2bae818bda4e194de82d4b0f2aa227cd9fdb09fad94ae1cd43dd3553306897"
+  },
+  {
+    "path": "research/test_usdcx_freezelist.aleo",
+    "sha256": "9235a601bfecadcc9f4d55aacc42bc150346d7f825d7280fc65c8140769e8a53"
+  },
+  {
+    "path": "research/test_usdcx_multisig_core.aleo",
+    "sha256": "8e52bb7f03ba9c6b5c922e6fb114a1d2b0e8117c05cada0b43cdb8340f7dd517"
+  },
+  {
+    "path": "research/test_usdcx_stablecoin.aleo",
+    "sha256": "eb251dddb0c5a7790a1aeb2128dd725bf252848eb38b895265a32c6e92aa90b0"
+  },
+  {
+    "path": "vendor/credits.network.aleo",
+    "sha256": "2e0099b57d7d0e09a836f07d8801dd53fb5175b043ee5876b42cd67f741486be"
+  },
+  {
+    "path": "vendor/token_registry.local.aleo",
+    "sha256": "8234bac444f858aa76d9ddec2132d4c619017c0198059f1ed05381d18f5603f3"
+  },
+  {
+    "path": "vendor/token_registry.network.aleo",
+    "sha256": "0534f06f54b1c9ce63621162bd9fbd1c37642a7b514a50a7be1258b0d82c86a0"
+  }
+]

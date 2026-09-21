@@ -1,0 +1,42 @@
+PASS all five non-native programs deployed
+PASS asynchronous borrower receives private credit
+PASS remaining commitment is 600
+PASS second independent borrower exhausts commitment
+PASS 013-pwn_loan.aleo-accept rejected
+PASS overdraw leaves loan and proposal state unchanged
+PASS 014-pwn_loan.aleo-accept rejected
+PASS 015-pwn_loan.aleo-accept rejected
+PASS 018-pwn_loan.aleo-accept rejected
+PASS 019-pwn_loan.aleo-accept rejected
+PASS duplicate loan ID does not draw commitment
+PASS 020-pwn_loan.aleo-claim_default rejected
+PASS 021-pwn_loan.aleo-claim_default rejected
+PASS 022-pwn_elastic_proposal.aleo-cancel_commitment rejected
+PASS 023-pwn_hub.aleo-set_tag rejected
+PASS 024-pwn_elastic_proposal.aleo-draw rejected
+PASS 025-pwn_loan.aleo-accept rejected
+PASS 027-pwn_loan.aleo-accept rejected
+PASS 029-pwn_elastic_proposal.aleo-open_commitment rejected
+PASS failed opens and tampered terms leave available credit intact
+PASS 031-pwn_loan.aleo-accept rejected
+PASS 033-pwn_elastic_proposal.aleo-open_commitment rejected
+PASS Hub revocation blocks new loans and commitments
+PASS full repayment returns private collateral
+PASS repayment is allocated to original lender commitment
+PASS 038-pwn_loan.aleo-repay rejected
+PASS 039-pwn_loan.aleo-claim_default rejected
+PASS lender privately withdraws repayment
+PASS 041-pwn_elastic_proposal.aleo-withdraw_repayment rejected
+PASS 043-pwn_loan.aleo-accept rejected
+PASS Hub revocation preserves existing settlement and withdrawals
+PASS 048-pwn_loan.aleo-accept rejected
+PASS 053-pwn_loan.aleo-repay rejected
+PASS default returns collateral privately to lender
+PASS 055-pwn_loan.aleo-claim_default rejected
+PASS 056-pwn_loan.aleo-repay rejected
+PASS default tombstone retained
+PASS both competing draws built before any submission
+PASS stale-state race accepts only first draw
+PASS rejected race releases input record and preserves escrow accounting
+PASS identical transaction replay cannot mutate settled ledger twice
+41 checks passed. Evidence: /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/integration

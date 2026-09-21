@@ -1,0 +1,28 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:62679",
+    "consensus_version": 19
+  },
+  "program": "pwn_proposal_poc.aleo",
+  "function": "open_compliant",
+  "outputs": [
+    "{\n  owner: aleo1l4s8l9fkl0rughvj0qzv3hduzr2ktpwgmwyue3ehkdrgtdl9vgys4xyw23,\n  _root: 4182835093764884827633829538730706564916160335128690706484386503932013291526field,\n  _nonce: 3136896872705808104406135990142806601053959219243297401945840754909278026928group,\n  _version: 1u8\n}",
+    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n  _root: 2283550889218984820829025596164569630292585230308378085728011493249959785105field,\n  _nonce: 7914504574027149629339163339302502415629758055557054333959740420656099426523group,\n  _version: 1u8\n}",
+    "1390113485587923145754286344773644894136708898444221732809653553105712894348field",
+    "{\n  program_id: pwn_proposal_poc.aleo,\n  function_name: open_compliant,\n  arguments: [\n    6015164828284017904487852449616947169216606668584332534936450170525960040230field,\n    {\n  credit_asset: {\n    program_id: 'usdcx_stablecoin',\n    token_id: 0field,\n    family: 3u8,\n    version: 1u16\n  },\n  collateral_asset: {\n    program_id: 'arc20_wbtc',\n    token_id: 0field,\n    family: 2u8,\n    version: 1u16\n  },\n  min_draw: 100u128,\n  max_draw: 600u128,\n  collateral_ratio: 15000u64,\n  repayment_ratio: 11000u64,\n  accruing_apr: 0u32,\n  duration: 2u32,\n  expiry: 5188u32,\n  lender_auth: 1184318362592949046997803169426867640004610488067643692793113883309484504405field\n},\n    1390113485587923145754286344773644894136708898444221732809653553105712894348field,\n    5299078522332951375248307244264734220196207903595879978415533103579721479832field,\n    1000u128,\n    { _program_id: usdcx_stablecoin.aleo, _function_name: transfer_private_to_public, _checksum: 1091151062730577507971718273676031299818887827013598249377933526538435146081field }\n  ]\n}"
+  ],
+  "transaction_id": "at1ttuees599gy0xdntnx9avyjuuu95c0x86gswkly3nd78degf0gfqrezy8f",
+  "stats": {
+    "storage_cost": 15788,
+    "execution_cost": 5992,
+    "priority_fee": 0,
+    "total_cost": 21780
+  },
+  "broadcast": {
+    "fee_id": "au1gwypq9dmvxxm48rls85n4jxspkgs07evgxz9lnhrr0gvgvg73qxqdckyzd",
+    "fee_transaction_id": "at18e77nxwuh6dy22vq4phv963syret534nd72zr0342yz9v7etgu8qxsty46",
+    "confirmed": true
+  }
+}

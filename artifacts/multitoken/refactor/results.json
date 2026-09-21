@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-09-21T06:34:24.221019+00:00",
+  "compiler": "Leo 4.4.2 (f3578da)",
+  "compatibility": {
+    "programs": 4,
+    "unchanged_finalizers": 40,
+    "abi_storage_constructor_unchanged": true
+  },
+  "unit_tests": 22,
+  "suites": {
+    "integration": {
+      "completed": true,
+      "checks": 101,
+      "attempted_transactions": 219,
+      "proved_transactions": [],
+      "node_verifies_proofs": false,
+      "results": "artifacts/multitoken/integration/results.json",
+      "results_sha256": "e9d783e43ce7cb087e45a59b4024d17082ee4d51ed4aa9640a7ee6c9200d6553"
+    },
+    "security": {
+      "completed": true,
+      "checks": 137,
+      "attempted_transactions": 254,
+      "proved_transactions": [
+        {
+          "label": "0064-pwn_loan_poc.aleo-repay_arc20_compliant",
+          "accepted": false,
+          "error": "or pwn_loan_poc.aleo \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 \ud83d\udcb0 Cost Breakdown (credits) Transaction Storage: 0.018232 On-chain Execution: 0.005478 Priority Fee: 0.000000 Total Fee: 0.023710 \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Failed to fetch from http://127.0.0.1:62679/testnet/statePaths?commitments=7296325052951385652041838330517557234802459974934385039569762708188094912373field"
+        },
+        {
+          "label": "0074-pwn_loan_poc.aleo-repay_arc20_compliant",
+          "accepted": true,
+          "error": null
+        }
+      ],
+      "node_verifies_proofs": false,
+      "results": "artifacts/multitoken/security/results.json",
+      "results_sha256": "e87f7c1d0fbfe32a4508a386e0bbbc605e6eba732e11ea9bd5f3967721c59636"
+    },
+    "invariants": {
+      "completed": true,
+      "checks": 161,
+      "attempted_transactions": 161,
+      "proved_transactions": [],
+      "node_verifies_proofs": false,
+      "results": "artifacts/multitoken/invariants/results.json",
+      "results_sha256": "3ce7032c0b3fd4f14ef9235c122a73ba210cae8a8e9adb2c2495ae3ea67c400c"
+    }
+  },
+  "source_sha256": {
+    "scripts/generate_multitoken.py": "1e25f01e32182bfddf31c6cd72875bcc1f47fe25d1d224d57aba1ac60fecbb49",
+    "scripts/multitoken_logic.py": "bb2b3b3bd3c5a035c66e64fadd4e83ed91391db2657a679cea29fa66f5644e61",
+    "scripts/check_multitoken_compatibility.py": "c7b799072aed6f331ec92b96eba3b544100b2d7446a143b3a7ffaf6f359ba79b",
+    "scripts/multitoken_security.py": "e28147723009a6c0a0711a504d24bb87383f6d48842fbab94f8c2ea1dda01cdc",
+    "tests/fixtures/multitoken-compatibility.json": "072ae096b2e0c2e4405d9cc00bc18ccf730bdac4da3474350582c3fee4afed51",
+    "tests/test_multitoken_tooling.py": "ac817088a8fa9f81a9ab45a1f4db91caf88c20c77567d2f6351d9b2f041bbbb3",
+    "pwn_proposal_poc/src/main.leo": "e41a5ee3a104bbfcc8a2260897720c8f83daee5613ece1117853c906684d029e",
+    "pwn_loan_poc/src/main.leo": "c5b81665a5a2dcc74822991fb4de57c028a146e63ea12a9372152df854f69dfe"
+  }
+}

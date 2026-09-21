@@ -1,0 +1,6 @@
+{
+  "version": "leo-lang-v4.4.2",
+  "url": "https://github.com/ProvableHQ/leo/releases/download/leo-lang-v4.4.2/leo-lang-v4.4.2-aarch64-apple-darwin.zip",
+  "sha256": "22d02d47801dd8c852249a99d8f81aa76ee8043a1dee09f64e196e5d7a185114",
+  "matches_official_release_digest": true
+}

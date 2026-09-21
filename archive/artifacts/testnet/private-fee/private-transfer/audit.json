@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-09-15T18:04:26.762771+00:00",
+  "network": "testnet",
+  "label": "private-transfer",
+  "transaction_id": "at18z9e36dwmxfwqhjw85hwzz6t9asgzg2pgk48ymgvdypejsp5xspslpdzvx",
+  "function": "transfer_private",
+  "fee_function": "fee_private",
+  "fee_microcredits": 2308,
+  "consensus_version": 19,
+  "execution_proof_present": true,
+  "fee_proof_present": true,
+  "payer_address_in_serialized_transaction": false,
+  "payer_address_in_fee": false,
+  "execution_inputs": [
+    "record",
+    "private",
+    "private"
+  ],
+  "fee_inputs": [
+    "record",
+    "public",
+    "public",
+    "public"
+  ],
+  "started_at": "2026-09-15T16:03:07.802331+00:00",
+  "prepare_wall_seconds": 49.393,
+  "exit_code": 0,
+  "timing_note": "Whole Leo prepare command, including fetching, synthesis and proofs; excludes broadcast/confirmation."
+}

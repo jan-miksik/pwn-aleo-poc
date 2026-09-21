@@ -1,0 +1,7 @@
+{
+  "program": "pwn_math_fuzz.aleo",
+  "function": "check_accrued",
+  "outputs": [
+    "76523851015903208703999406732054135778u128"
+  ]
+}

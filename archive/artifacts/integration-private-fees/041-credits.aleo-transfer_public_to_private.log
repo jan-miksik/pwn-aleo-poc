@@ -1,0 +1,82 @@
+
+
+📢 Using the following consensus heights: 0,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+  To override, pass in `--consensus-heights` or override the environment variable `CONSENSUS_VERSION_HEIGHTS`.
+
+
+🚀 Execution Plan Summary
+──────────────────────────────────────────────
+🔧 Configuration:
+  Private Key:        APrivateKey1zkpGPDbTcP2r...
+  Address:            aleo16k6wjpe5snzfhzf07mf...
+  Endpoint:           http://127.0.0.1:50991
+  Network:            testnet
+  Consensus Version:  19
+
+🎯 Execution Target:
+  Program:        credits.aleo
+  Function:       transfer_public_to_private
+  Source:         local
+
+💸 Fee Info:
+  Priority Fee:   0 μcredits
+  Fee Record:     no (public fee)
+
+⚙️ Actions:
+  - A transaction will be generated, WITHOUT a proof.
+  - Transaction will NOT be printed to the console.
+  - Transaction will be saved to /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/integration-private-fees/transactions/041-credits.aleo-transfer_public_to_private
+  - Transaction will be broadcast to http://127.0.0.1:50991
+──────────────────────────────────────────────
+
+
+➕Adding programs to the VM in the following order:
+  - credits.aleo (already included)
+  - token_registry.aleo (local)
+  - pwn_config.aleo (local)
+  - pwn_hub.aleo (local)
+  - pwn_elastic_proposal.aleo (local)
+  - pwn_loan.aleo (local)
+
+⚙️ Generating transaction WITHOUT a proof for credits.aleo/transfer_public_to_private...
+
+📊 Execution Cost Summary for credits.aleo
+──────────────────────────────────────────────
+💰 Cost Breakdown (credits)
+  Transaction Storage:  0.001652
+  On-chain Execution:   0.000652
+  Priority Fee:         0.000000
+  Total Fee:            0.002304
+──────────────────────────────────────────────
+💾 Saving execution for transaction at /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/integration-private-fees/transactions/041-credits.aleo-transfer_public_to_private/transaction.execution.json
+
+➡️  Outputs
+
+ • {
+  owner: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue.private,
+  microcredits: 1000000u64.private,
+  _nonce: 5311398836356113550942246136750754363472629121401271537923262590098554164832group.public,
+  _version: 1u8.public
+}
+ • {
+  program_id: credits.aleo,
+  function_name: transfer_public_to_private,
+  arguments: [
+    aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue,
+    1000000u64
+  ]
+}
+
+📡 Broadcasting execution for credits.aleo...
+💰Your current public balance is 998.952315 credits.
+
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at10pmrf0e7jh6tawtr9wt42ulxdqkadhrf65qv0x3zfy55utuwzurse2qxxx'
+  - fee ID: 'au1qs0f86g62vezw5239ysf5n5tankrt6rcj2p65hpf73javyn78vqseysgdh'
+  - fee transaction ID: 'at1fv0553ac4yqrvc5szjszrv4fcq3ca95mg7g79kul5udhesqpuspq0l5h0s'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Execution confirmed!

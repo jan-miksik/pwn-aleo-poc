@@ -1,0 +1,27 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:65083",
+    "consensus_version": 19
+  },
+  "program": "pwn_loan_poc.aleo",
+  "function": "claim_compliant",
+  "outputs": [
+    "{\n  owner: aleo1l4s8l9fkl0rughvj0qzv3hduzr2ktpwgmwyue3ehkdrgtdl9vgys4xyw23,\n  _root: 2088196341514601390786395678757996185625832350326076651892985572838293851310field,\n  _nonce: 7105683124605114202520471042505647962175448831151666167900797909637230532843group,\n  _version: 1u8\n}",
+    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n  _root: 7272673248939714434950663817747676980911724299724535706949398312495758163088field,\n  _nonce: 8319077082888051340419004340470904468642870834873390130226630062797582016092group,\n  _version: 1u8\n}",
+    "{\n  program_id: pwn_loan_poc.aleo,\n  function_name: claim_compliant,\n  arguments: [\n    {\n  loan_id: 6741431013319980423918563877578897956274117532774380215812169204595622941999field,\n  commitment_id: 3077745783497935559018606292078079038784716040374386516761284269956780080478field,\n  credit_asset: {\n    program_id: 'arc20_sol',\n    token_id: 0field,\n    family: 2u8,\n    version: 1u16\n  },\n  collateral_asset: {\n    program_id: 'usdcx_stablecoin',\n    token_id: 0field,\n    family: 3u8,\n    version: 1u16\n  },\n  credit_amount: 301u128,\n  collateral_amount: 452u128,\n  repayment_amount: 301u128,\n  accruing_apr: 0u32,\n  borrower_auth: 5866671641522425515282025273713289278401333778853831754633969982195172210515field,\n  lender_auth: 6771609430710308873555817788856826493120804081923459923283796251471831843967field\n},\n    3104325266229509449952919273431443852513516419933332523594152012088994565454field,\n    { _program_id: usdcx_stablecoin.aleo, _function_name: transfer_public_to_private, _checksum: 3122037625097933117346273535057828287661406119398080079503976999537778810596field }\n  ]\n}"
+  ],
+  "transaction_id": "at1m9dclktscpsskwvxgh9pksxnrsxsma0a57llrkwsfd55nuhmwypq6cysyu",
+  "stats": {
+    "storage_cost": 5692,
+    "execution_cost": 2750,
+    "priority_fee": 0,
+    "total_cost": 8442
+  },
+  "broadcast": {
+    "fee_id": "au1fkra3kkenc6r8fu54xs7dd72zwkdk32l0quzlagulj353374rv8sf3nqcl",
+    "fee_transaction_id": "at17w60s9nvdacrtxm24v3ws79cxl2a92xfw3qk2atzh59xs27jqcxqwhhlc2",
+    "confirmed": true
+  }
+}

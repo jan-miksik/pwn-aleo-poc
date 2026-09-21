@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-09-15T16:01:15.020050+00:00",
+  "network": "testnet",
+  "label": "shield-fee",
+  "transaction_id": "at1y24spcvs5m0lxn7f6vu52muyyzep25prh40q52r764m3g4effv9qjfekl6",
+  "function": "transfer_public_to_private",
+  "fee_function": "fee_public",
+  "fee_microcredits": 2304,
+  "consensus_version": 19,
+  "execution_proof_present": true,
+  "fee_proof_present": true,
+  "payer_address_in_serialized_transaction": true,
+  "payer_address_in_fee": true,
+  "execution_inputs": [
+    "private",
+    "public"
+  ],
+  "fee_inputs": [
+    "public",
+    "public",
+    "public"
+  ],
+  "started_at": "2026-09-15T16:00:49.557472+00:00",
+  "prepare_wall_seconds": 8.934,
+  "exit_code": 0,
+  "timing_note": "Whole Leo prepare command, including fetching, synthesis and proofs; excludes broadcast/confirmation."
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "flow": "open_commitment",
+    "execution_transition_count": 2,
+    "plus_fee_transition": 1,
+    "private_inputs_encrypted": true,
+    "token_records_encrypted": true,
+    "known_participant_addresses_in_public_protocol_values": false,
+    "public_fee_reveals_participant": true,
+    "transaction_file": "artifacts/integration/transactions/008-pwn_elastic_proposal.aleo-open_commitment/transaction.execution.json"
+  },
+  {
+    "flow": "accept",
+    "execution_transition_count": 4,
+    "plus_fee_transition": 1,
+    "private_inputs_encrypted": true,
+    "token_records_encrypted": true,
+    "known_participant_addresses_in_public_protocol_values": false,
+    "public_fee_reveals_participant": true,
+    "transaction_file": "artifacts/integration/transactions/010-pwn_loan.aleo-accept/transaction.execution.json"
+  },
+  {
+    "flow": "repay",
+    "execution_transition_count": 4,
+    "plus_fee_transition": 1,
+    "private_inputs_encrypted": true,
+    "token_records_encrypted": true,
+    "known_participant_addresses_in_public_protocol_values": false,
+    "public_fee_reveals_participant": true,
+    "transaction_file": "artifacts/integration/transactions/032-pwn_loan.aleo-repay/transaction.execution.json"
+  },
+  {
+    "flow": "claim_default",
+    "execution_transition_count": 2,
+    "plus_fee_transition": 1,
+    "private_inputs_encrypted": true,
+    "token_records_encrypted": true,
+    "known_participant_addresses_in_public_protocol_values": false,
+    "public_fee_reveals_participant": true,
+    "transaction_file": "artifacts/integration/transactions/048-pwn_loan.aleo-claim_default/transaction.execution.json"
+  },
+  {
+    "flow": "cancel_commitment",
+    "execution_transition_count": 2,
+    "plus_fee_transition": 1,
+    "private_inputs_encrypted": true,
+    "token_records_encrypted": true,
+    "known_participant_addresses_in_public_protocol_values": false,
+    "public_fee_reveals_participant": true,
+    "transaction_file": "artifacts/integration/transactions/030-pwn_elastic_proposal.aleo-cancel_commitment/transaction.execution.json"
+  },
+  {
+    "flow": "withdraw_repayment",
+    "execution_transition_count": 2,
+    "plus_fee_transition": 1,
+    "private_inputs_encrypted": true,
+    "token_records_encrypted": true,
+    "known_participant_addresses_in_public_protocol_values": false,
+    "public_fee_reveals_participant": true,
+    "transaction_file": "artifacts/integration/transactions/036-pwn_elastic_proposal.aleo-withdraw_repayment/transaction.execution.json"
+  }
+]

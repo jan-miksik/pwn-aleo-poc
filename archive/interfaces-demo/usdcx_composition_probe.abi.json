@@ -1,0 +1,129 @@
+{
+  "program": "usdcx_composition_probe.aleo",
+  "structs": [],
+  "records": [],
+  "mappings": [],
+  "storage_variables": [],
+  "functions": [
+    {
+      "name": "deposit",
+      "inputs": [
+        {
+          "Record": {
+            "path": [
+              "Token"
+            ],
+            "program": "test_usdcx_stablecoin.aleo"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": {
+                "UInt": "U128"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Array": {
+                "element": {
+                  "Struct": {
+                    "path": [
+                      "MerkleProof"
+                    ],
+                    "program": "test_usdcx_stablecoin.aleo"
+                  }
+                },
+                "length": 2
+              }
+            },
+            "mode": "Private"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "Record": {
+            "path": [
+              "ComplianceRecord"
+            ],
+            "program": "test_usdcx_stablecoin.aleo"
+          }
+        },
+        {
+          "Record": {
+            "path": [
+              "Token"
+            ],
+            "program": "test_usdcx_stablecoin.aleo"
+          }
+        },
+        "Final"
+      ]
+    },
+    {
+      "name": "cross_asset_draw",
+      "inputs": [
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": {
+                "UInt": "U128"
+              }
+            },
+            "mode": "Public"
+          }
+        },
+        {
+          "Record": {
+            "path": [
+              "Token"
+            ],
+            "program": "token_registry.aleo"
+          }
+        },
+        {
+          "Plaintext": {
+            "ty": {
+              "Primitive": {
+                "UInt": "U128"
+              }
+            },
+            "mode": "Public"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "Record": {
+            "path": [
+              "ComplianceRecord"
+            ],
+            "program": "test_usdcx_stablecoin.aleo"
+          }
+        },
+        {
+          "Record": {
+            "path": [
+              "Token"
+            ],
+            "program": "test_usdcx_stablecoin.aleo"
+          }
+        },
+        {
+          "Record": {
+            "path": [
+              "Token"
+            ],
+            "program": "token_registry.aleo"
+          }
+        },
+        "Final"
+      ]
+    }
+  ]
+}

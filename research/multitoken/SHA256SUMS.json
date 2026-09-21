@@ -1,0 +1,11 @@
+{
+  "arc20_multisig_core.aleo": "86c73949e5c07e19a5c6e9c5b24d96531aaf510288227694e65c49bf54ec3f87",
+  "arc20_sol.aleo": "7859fe197c2f28464f2bc32d212e864e242fb300aae8a636004d124f91d1a65c",
+  "arc20_wbtc.aleo": "9ea20964edc6b4867af1fa37054418facd98f6f73bc2712aa9e272cdcac4347e",
+  "usad_freezelist.aleo": "7b104434ab0bae1e5a017f9a75b6bcc7b7c8882e0b26de47f6deca5c0fa49608",
+  "usad_multisig_core.aleo": "dacbf78c75f0e352035e673c4a94c15b4d130a0f63ee45a027bd5595a086ef5f",
+  "usad_stablecoin.aleo": "ff71d2fce2bb599edf620583960986178a1a66b4b74af7332a781421010e3711",
+  "usdcx_freezelist.aleo": "1e7fff73446ad7d2b13f55575bbe5a11a7d4abb5b83602e19da352733a80ec2c",
+  "usdcx_multisig_core.aleo": "d658d1bb20189e6c981ac6240300636cc6ed478c1e7ec51a454bfa5057dc63cf",
+  "usdcx_stablecoin.aleo": "727e71ee99b7df568746d250864b6e9519d522d01088953d8d97290b8eba418f"
+}

@@ -1,0 +1,90 @@
+
+
+📢 Using the following consensus heights: 0,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+  To override, pass in `--consensus-heights` or override the environment variable `CONSENSUS_VERSION_HEIGHTS`.
+
+
+🚀 Execution Plan Summary
+──────────────────────────────────────────────
+🔧 Configuration:
+  Private Key:        APrivateKey1zkp8CZNn3yeC...
+  Address:            aleo1rhgdu77hgyqd3xjj8uc...
+  Endpoint:           http://127.0.0.1:50991
+  Network:            testnet
+  Consensus Version:  19
+
+🎯 Execution Target:
+  Program:        pwn_elastic_proposal.aleo
+  Function:       withdraw_repayment
+  Source:         local
+
+💸 Fee Info:
+  Priority Fee:   0 μcredits
+  Fee Record:     yes
+
+⚙️ Actions:
+  - A transaction will be generated, WITHOUT a proof.
+  - Transaction will NOT be printed to the console.
+  - Transaction will be saved to /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/integration-private-fees/transactions/047-pwn_elastic_proposal.aleo-withdraw_repayment
+  - Transaction will be broadcast to http://127.0.0.1:50991
+──────────────────────────────────────────────
+
+
+➕Adding programs to the VM in the following order:
+  - credits.aleo (already included)
+  - token_registry.aleo (local)
+  - pwn_config.aleo (local)
+  - pwn_hub.aleo (local)
+  - pwn_elastic_proposal.aleo (local)
+  - pwn_loan.aleo (local)
+
+⚙️ Generating transaction WITHOUT a proof for pwn_elastic_proposal.aleo/withdraw_repayment...
+
+📊 Execution Cost Summary for pwn_elastic_proposal.aleo
+──────────────────────────────────────────────
+💰 Cost Breakdown (credits)
+  Transaction Storage:  0.003155
+  On-chain Execution:   0.001418
+  Priority Fee:         0.000000
+  Total Fee:            0.004573
+──────────────────────────────────────────────
+💾 Saving execution for transaction at /Users/janm/Documents/projects-klients/PoC Aleo/artifacts/integration-private-fees/transactions/047-pwn_elastic_proposal.aleo-withdraw_repayment/transaction.execution.json
+
+➡️  Outputs
+
+ • {
+  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,
+  microcredits: 440u64.private,
+  _nonce: 5387087874296358383113955200937692225280055246666218124898361772164971906076group.public,
+  _version: 1u8.public
+}
+ • {
+  program_id: pwn_elastic_proposal.aleo,
+  function_name: withdraw_repayment,
+  arguments: [
+    1field,
+    613739643872168923203090886618219504574763484454076994590963961433844375680field,
+    440u64,
+    {
+      program_id: credits.aleo,
+      function_name: transfer_public_to_private,
+      arguments: [
+        aleo1u26eefy7w0fxep9wqq292vvf2vjc0hw94sxewdxhyrxc04mg8qysea2zkr,
+        440u64
+      ]
+    }
+  
+  ]
+}
+
+📡 Broadcasting execution for pwn_elastic_proposal.aleo...
+✉️ Broadcasted transaction with:
+  - transaction ID: 'at15l7ycf73xfgprzchsn3533f3mk7rr3ng9qaw6fm9f42rywrq5v8syr2jpj'
+  - fee ID: 'au1s8av22cp9xknnzuhn00t5e3j8tw2lp3luth3wst26ap7prujxvps52f6ec'
+  - fee transaction ID: 'at1n9wnlumsex60du9asz28z0hfjasczpxfxzgrutjf87atnw78fvzsfecaz2'
+    (use this to check for rejected transactions)
+
+🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
+Explored 1 blocks.
+Transaction accepted.
+✅ Execution confirmed!

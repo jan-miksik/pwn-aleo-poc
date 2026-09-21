@@ -1,0 +1,26 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:63307",
+    "consensus_version": 19
+  },
+  "program": "pwn_proposal_poc.aleo",
+  "function": "cancel_aleo",
+  "outputs": [
+    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  microcredits: 1000u64.private,\n  _nonce: 2958365909067234468546318686995510298333773416637357468046690236091897602331group.public,\n  _version: 1u8.public\n}",
+    "{\n  program_id: pwn_proposal_poc.aleo,\n  function_name: cancel_aleo,\n  arguments: [\n    2737788549660150855953622770849086702101303870969758242749197408109484265851field,\n    181935857773606957117895118469962381772120010102805974849129695169265728901field,\n    {\n  credit_asset: {\n    program_id: 'credits',\n    token_id: 0field,\n    family: 1u8,\n    version: 1u16\n  },\n  collateral_asset: {\n    program_id: 'arc20_wbtc',\n    token_id: 0field,\n    family: 2u8,\n    version: 1u16\n  },\n  min_draw: 100u128,\n  max_draw: 600u128,\n  collateral_ratio: 15000u64,\n  repayment_ratio: 11000u64,\n  accruing_apr: 0u32,\n  duration: 1000u32,\n  expiry: 5057u32,\n  lender_auth: 2796788516103723474220183765173524937226894644783554713973096343542410070519field\n},\n    1000u128,\n    {\n      program_id: credits.aleo,\n      function_name: transfer_public_to_private,\n      arguments: [\n        aleo1j54x8q6r0gvp5atcz7mqe5ap69glart8wchwun8fr7tfukzu6qrsezfa7a,\n        1000u64\n      ]\n    }\n  \n  ]\n}"
+  ],
+  "transaction_id": "at1gut7xkgm9evw2hljul40vlym6pwl2apjd4axr589yr8f85zxqc8q4lkfla",
+  "stats": {
+    "storage_cost": 3786,
+    "execution_cost": 3041,
+    "priority_fee": 0,
+    "total_cost": 6827
+  },
+  "broadcast": {
+    "fee_id": "au19cu7u2gc89crglt4q8kpjzm4ddssan593wlr4yqjsjga4jdguq9su2n2ds",
+    "fee_transaction_id": "at1zmw9t80pejw892es2tnhaw488pejtzcu6cvkgf46q7d5edfu7vyse98dqm",
+    "confirmed": true
+  }
+}

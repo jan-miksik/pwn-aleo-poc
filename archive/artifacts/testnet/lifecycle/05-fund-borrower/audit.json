@@ -1,0 +1,43 @@
+{
+  "label": "05-fund-borrower",
+  "actor": "lender",
+  "function": "credits.aleo::transfer_public",
+  "fee_mode": "public",
+  "expect": "accepted",
+  "prepare_wall_seconds": 9.7,
+  "prepare_exit_code": 0,
+  "started_at": "2026-09-16T07:38:47.071378+00:00",
+  "phase": "done",
+  "transaction_id": "at1ug6x6kx4jtv94ze6tquaalathkx8nj0984xmr45yprw3ey3sxc9s9y89ug",
+  "fee_microcredits": 2725,
+  "fee_function": "fee_public",
+  "submitted_at": "2026-09-16T07:38:47.071870+00:00",
+  "status": "accepted",
+  "block_height": 19653598,
+  "block_timestamp": 1789544329,
+  "confirmed_at": "2026-09-16T07:38:59.516814+00:00",
+  "execution_transitions": [
+    [
+      "credits.aleo",
+      "transfer_public"
+    ]
+  ],
+  "top_level_input_types": [
+    "public",
+    "public"
+  ],
+  "top_level_output_types": [
+    "future"
+  ],
+  "fee_input_types": [
+    "public",
+    "public",
+    "public"
+  ],
+  "lender_address_on_chain": true,
+  "borrower_address_on_chain": true,
+  "addresses_on_chain": [
+    "aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s",
+    "aleo1r7z3attydgg54q22cex0c55mmrnw7caacmau37dxx47uhqafrspsnfdwrd"
+  ]
+}

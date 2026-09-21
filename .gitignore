@@ -1,0 +1,9 @@
+.tools/
+.aleo/
+**/build/
+**/outputs/
+**/.env
+**/.git/
+__pycache__/
+.DS_Store
+.testnet/

@@ -1,0 +1,28 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:59301",
+    "consensus_version": 19
+  },
+  "program": "pwn_proposal_poc.aleo",
+  "function": "open_compliant",
+  "outputs": [
+    "{\n  owner: aleo1l4s8l9fkl0rughvj0qzv3hduzr2ktpwgmwyue3ehkdrgtdl9vgys4xyw23,\n  _root: 4182835093764884827633829538730706564916160335128690706484386503932013291526field,\n  _nonce: 6287563809798413030914797841380010288971029998564147497661748703622300748544group,\n  _version: 1u8\n}",
+    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n  _root: 2283550889218984820829025596164569630292585230308378085728011493249959785105field,\n  _nonce: 2427452349767915643769530307491955031967753444851055511397540309158649755883group,\n  _version: 1u8\n}",
+    "4575745173934757975439068938811576730579106156423296725985205161690492222928field",
+    "{\n  program_id: pwn_proposal_poc.aleo,\n  function_name: open_compliant,\n  arguments: [\n    6015164828284017904487852449616947169216606668584332534936450170525960040230field,\n    {\n  credit_asset: {\n    program_id: 'usdcx_stablecoin',\n    token_id: 0field,\n    family: 3u8,\n    version: 1u16\n  },\n  collateral_asset: {\n    program_id: 'usad_stablecoin',\n    token_id: 0field,\n    family: 3u8,\n    version: 1u16\n  },\n  min_draw: 100u128,\n  max_draw: 600u128,\n  collateral_ratio: 15000u64,\n  repayment_ratio: 11000u64,\n  accruing_apr: 0u32,\n  duration: 1000u32,\n  expiry: 5209u32,\n  lender_auth: 8423674602703010558089842335441956139517339052617359351074428050787831328865field\n},\n    4575745173934757975439068938811576730579106156423296725985205161690492222928field,\n    3885455216370903145522740607813846603210311854693146426219776406359432054160field,\n    1000u128,\n    { _program_id: usdcx_stablecoin.aleo, _function_name: transfer_private_to_public, _checksum: 1091151062730577507971718273676031299818887827013598249377933526538435146081field }\n  ]\n}"
+  ],
+  "transaction_id": "at135qrevryk598jkvx6tglcz2g7gyfdyznqcknv78dsynwlfq8mcgqpxqrq4",
+  "stats": {
+    "storage_cost": 15824,
+    "execution_cost": 5992,
+    "priority_fee": 0,
+    "total_cost": 21816
+  },
+  "broadcast": {
+    "fee_id": "au1erm0mvjqsung07wuap8rvz7wvswqss4zchv8hrq2fgg3k3f4ec9sqfa8lk",
+    "fee_transaction_id": "at1rd6r5he4u6jqf3n6vum4fygqr2xpjamc04ryh6jlyatfhj8esggs2s75zl",
+    "confirmed": true
+  }
+}

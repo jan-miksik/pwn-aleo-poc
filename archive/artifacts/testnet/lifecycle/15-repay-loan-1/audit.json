@@ -1,0 +1,60 @@
+{
+  "label": "15-repay-loan-1",
+  "actor": "borrower",
+  "function": "pwn_loan_demo.aleo::repay",
+  "fee_mode": "private",
+  "expect": "accepted",
+  "prepare_wall_seconds": 40.224,
+  "prepare_exit_code": 0,
+  "started_at": "2026-09-16T07:49:23.451949+00:00",
+  "phase": "done",
+  "transaction_id": "at1d37ge98wq96crex800n06janp3e3c4azpx462qyzzd2zz04ejs9qlacc64",
+  "fee_microcredits": 13137,
+  "fee_function": "fee_private",
+  "submitted_at": "2026-09-16T07:49:23.452917+00:00",
+  "status": "accepted",
+  "block_height": 19653814,
+  "block_timestamp": 1789544963,
+  "confirmed_at": "2026-09-16T07:49:30.657846+00:00",
+  "on_chain_transaction_id": "at1d37ge98wq96crex800n06janp3e3c4azpx462qyzzd2zz04ejs9qlacc64",
+  "execution_transitions": [
+    [
+      "credits.aleo",
+      "transfer_private_to_public"
+    ],
+    [
+      "pwn_elastic_proposal_demo.aleo",
+      "receive_repayment"
+    ],
+    [
+      "token_registry.aleo",
+      "transfer_public_to_private"
+    ],
+    [
+      "pwn_loan_demo.aleo",
+      "repay"
+    ]
+  ],
+  "top_level_input_types": [
+    "public",
+    "external_record",
+    "private"
+  ],
+  "top_level_output_types": [
+    "external_record",
+    "external_record",
+    "future"
+  ],
+  "fee_input_types": [
+    "record",
+    "public",
+    "public",
+    "public"
+  ],
+  "lender_address_on_chain": false,
+  "borrower_address_on_chain": false,
+  "addresses_on_chain": [
+    "aleo1ksdvl3asju5ycclrktv5rutc0r8p0g9attxda3ew7haqe53tgvrs9q2ps3",
+    "aleo1y4d32mvldsdsaja7ej5f0z2laladce8mlyu307yl0jlphakqrupq5jkwy0"
+  ]
+}
