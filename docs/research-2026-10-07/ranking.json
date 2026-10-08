@@ -1,0 +1,2342 @@
+{
+  "checked_date": "2026-10-07",
+  "source": "https://beta.explorer.provable.com/programs",
+  "rankings": {
+    "allTimeData": [
+      {
+        "program_id": "credits.aleo",
+        "calls": 40459178
+      },
+      {
+        "program_id": "puzzle_arcade_coin_v002.aleo",
+        "calls": 9446254
+      },
+      {
+        "program_id": "token_registry.aleo",
+        "calls": 6622126
+      },
+      {
+        "program_id": "puzzle_arcade_ticket_v002.aleo",
+        "calls": 2181769
+      },
+      {
+        "program_id": "pondo_protocol.aleo",
+        "calls": 1475181
+      },
+      {
+        "program_id": "arcn_pool_v2_2_2.aleo",
+        "calls": 1465782
+      },
+      {
+        "program_id": "arcn_whitelist.aleo",
+        "calls": 737171
+      },
+      {
+        "program_id": "wrapped_credits.aleo",
+        "calls": 696167
+      },
+      {
+        "program_id": "arcn_compliance_v1.aleo",
+        "calls": 653836
+      },
+      {
+        "program_id": "mystery_city_v001.aleo",
+        "calls": 534768
+      },
+      {
+        "program_id": "puzzle_spinner_v002.aleo",
+        "calls": 465585
+      },
+      {
+        "program_id": "par_giveaways_v1.aleo",
+        "calls": 461801
+      },
+      {
+        "program_id": "puzzle_spinner_v003.aleo",
+        "calls": 398244
+      },
+      {
+        "program_id": "arcn_puc_in_helper_v2_2_4.aleo",
+        "calls": 373370
+      },
+      {
+        "program_id": "squash_v3.aleo",
+        "calls": 268532
+      },
+      {
+        "program_id": "arcn_puc_out_helper_v2_2_3.aleo",
+        "calls": 221808
+      },
+      {
+        "program_id": "squash_v4.aleo",
+        "calls": 212998
+      },
+      {
+        "program_id": "vlink_quest_v1.aleo",
+        "calls": 200014
+      },
+      {
+        "program_id": "shield_swap_arc20_wrapped_usdcx.aleo",
+        "calls": 187907
+      },
+      {
+        "program_id": "betastaking.aleo",
+        "calls": 164918
+      },
+      {
+        "program_id": "shield_swap.aleo",
+        "calls": 164823
+      },
+      {
+        "program_id": "usdcx_stablecoin.aleo",
+        "calls": 127226
+      },
+      {
+        "program_id": "shield_swap_router.aleo",
+        "calls": 118254
+      },
+      {
+        "program_id": "shield_swap_arc20_credits.aleo",
+        "calls": 90768
+      },
+      {
+        "program_id": "veru_oracle_v2.aleo",
+        "calls": 71685
+      },
+      {
+        "program_id": "arcn_puc_in_helper_swap_v2_2_5.aleo",
+        "calls": 66780
+      },
+      {
+        "program_id": "arc20_sol.aleo",
+        "calls": 45653
+      },
+      {
+        "program_id": "arc20_eth.aleo",
+        "calls": 44381
+      },
+      {
+        "program_id": "usdcx_freezelist.aleo",
+        "calls": 41498
+      },
+      {
+        "program_id": "merkle_tree.aleo",
+        "calls": 41491
+      },
+      {
+        "program_id": "arcn_pub_v2_2_3.aleo",
+        "calls": 34854
+      },
+      {
+        "program_id": "arc20_wbtc.aleo",
+        "calls": 33934
+      },
+      {
+        "program_id": "puzzle_giveaway_022825.aleo",
+        "calls": 30641
+      },
+      {
+        "program_id": "whalepool_easystaking_v2.aleo",
+        "calls": 29428
+      },
+      {
+        "program_id": "puzzle_giveaway_031925.aleo",
+        "calls": 22696
+      },
+      {
+        "program_id": "puzzle_giveaway_031225.aleo",
+        "calls": 20691
+      },
+      {
+        "program_id": "puzzle_giveaway_030625.aleo",
+        "calls": 20514
+      },
+      {
+        "program_id": "puzzle_giveaway_040225.aleo",
+        "calls": 19517
+      },
+      {
+        "program_id": "puzzle_giveaway_032625.aleo",
+        "calls": 19060
+      },
+      {
+        "program_id": "puzzle_giveaway_040925.aleo",
+        "calls": 18082
+      },
+      {
+        "program_id": "arcn_puc_out_helper_swap_v2_2_6.aleo",
+        "calls": 16515
+      },
+      {
+        "program_id": "puzzle_giveaway_041625.aleo",
+        "calls": 14403
+      },
+      {
+        "program_id": "official_oracle.aleo",
+        "calls": 13264
+      },
+      {
+        "program_id": "puzzle_giveaway_042325.aleo",
+        "calls": 12460
+      },
+      {
+        "program_id": "jusd_oracle_staging.aleo",
+        "calls": 11513
+      },
+      {
+        "program_id": "puzzle_giveaway_050125.aleo",
+        "calls": 10945
+      },
+      {
+        "program_id": "veru_oracle_data_v3.aleo",
+        "calls": 10867
+      },
+      {
+        "program_id": "veru_oracle_interface_v3.aleo",
+        "calls": 10861
+      },
+      {
+        "program_id": "arcn_wiz_nft_v1.aleo",
+        "calls": 10055
+      },
+      {
+        "program_id": "whalepool_easystaking_v3.aleo",
+        "calls": 10017
+      },
+      {
+        "program_id": "arcn_credits_out_helper_v2_2_3.aleo",
+        "calls": 9699
+      },
+      {
+        "program_id": "whalepool_easystaking_v1.aleo",
+        "calls": 9614
+      },
+      {
+        "program_id": "puzzle_raffle_100224.aleo",
+        "calls": 8915
+      },
+      {
+        "program_id": "arcn_priv_v2_2_3.aleo",
+        "calls": 8903
+      },
+      {
+        "program_id": "betastaking_ext.aleo",
+        "calls": 8794
+      },
+      {
+        "program_id": "par_store_inventory_v1.aleo",
+        "calls": 8692
+      },
+      {
+        "program_id": "zkwork_staking.aleo",
+        "calls": 7629
+      },
+      {
+        "program_id": "aj_usdcx_stablecoin_2_10.aleo",
+        "calls": 7398
+      },
+      {
+        "program_id": "zkwork_staker_v1.aleo",
+        "calls": 7240
+      },
+      {
+        "program_id": "jusd_oracle_production.aleo",
+        "calls": 7067
+      },
+      {
+        "program_id": "puzzle_giveaway_021925.aleo",
+        "calls": 6868
+      },
+      {
+        "program_id": "puzzle_giveaway_022525.aleo",
+        "calls": 6861
+      },
+      {
+        "program_id": "main_aj_arc20_2_15.aleo",
+        "calls": 5978
+      },
+      {
+        "program_id": "puzzle_giveaway_021225.aleo",
+        "calls": 5876
+      },
+      {
+        "program_id": "veil_strike_v7_cx.aleo",
+        "calls": 5875
+      },
+      {
+        "program_id": "autojoin_credits_2_10.aleo",
+        "calls": 5176
+      },
+      {
+        "program_id": "cats_nft_collection.aleo",
+        "calls": 4586
+      },
+      {
+        "program_id": "arcn_credits_in_helper_v2_2_3.aleo",
+        "calls": 4075
+      },
+      {
+        "program_id": "usad_stablecoin.aleo",
+        "calls": 4033
+      },
+      {
+        "program_id": "validator_oracle.aleo",
+        "calls": 3676
+      },
+      {
+        "program_id": "lsp_host_02.aleo",
+        "calls": 3525
+      },
+      {
+        "program_id": "privacy_pride_nft_collection.aleo",
+        "calls": 3521
+      },
+      {
+        "program_id": "lsp_host_ui_v1.aleo",
+        "calls": 3492
+      },
+      {
+        "program_id": "hyp_mailbox.aleo",
+        "calls": 3476
+      },
+      {
+        "program_id": "hyp_hook_manager.aleo",
+        "calls": 3433
+      },
+      {
+        "program_id": "betastaker_1.aleo",
+        "calls": 3193
+      },
+      {
+        "program_id": "puzzle_giveaway_010225.aleo",
+        "calls": 3051
+      },
+      {
+        "program_id": "puzzle_giveaway_121124.aleo",
+        "calls": 3025
+      },
+      {
+        "program_id": "puzzle_giveaway_010825b.aleo",
+        "calls": 2985
+      },
+      {
+        "program_id": "puzzle_giveaway_020725.aleo",
+        "calls": 2887
+      },
+      {
+        "program_id": "squash_v001.aleo",
+        "calls": 2866
+      },
+      {
+        "program_id": "vlink_token_bridge_v3.aleo",
+        "calls": 2727
+      },
+      {
+        "program_id": "puzzle_giveaway_122624.aleo",
+        "calls": 2718
+      },
+      {
+        "program_id": "betastaker_3.aleo",
+        "calls": 2592
+      },
+      {
+        "program_id": "puzzle_giveaway_121824.aleo",
+        "calls": 2510
+      },
+      {
+        "program_id": "betastaker_2.aleo",
+        "calls": 2486
+      },
+      {
+        "program_id": "puzzle_giveaway_120524.aleo",
+        "calls": 2437
+      },
+      {
+        "program_id": "puzzle_giveaway_011625.aleo",
+        "calls": 2437
+      },
+      {
+        "program_id": "hyp_ism_manager.aleo",
+        "calls": 2393
+      },
+      {
+        "program_id": "puzzle_giveaway_112024.aleo",
+        "calls": 2140
+      },
+      {
+        "program_id": "aleo_name_service_registry.aleo",
+        "calls": 2068
+      },
+      {
+        "program_id": "vlink_token_service_cd_v3.aleo",
+        "calls": 2039
+      },
+      {
+        "program_id": "ans_registrar_usd2.aleo",
+        "calls": 2020
+      },
+      {
+        "program_id": "puzzle_giveaway_110724.aleo",
+        "calls": 1995
+      },
+      {
+        "program_id": "usdcx_bridge_v2.aleo",
+        "calls": 1955
+      },
+      {
+        "program_id": "vlink_token_bridge_v1.aleo",
+        "calls": 1929
+      },
+      {
+        "program_id": "vlink_token_service_v1.aleo",
+        "calls": 1919
+      },
+      {
+        "program_id": "puzzle_raffle_092524_v2.aleo",
+        "calls": 1888
+      },
+      {
+        "program_id": "puzzle_raffle_102324.aleo",
+        "calls": 1818
+      },
+      {
+        "program_id": "betastaker_4.aleo",
+        "calls": 1805
+      },
+      {
+        "program_id": "delegator2.aleo",
+        "calls": 1742
+      },
+      {
+        "program_id": "delegator1.aleo",
+        "calls": 1742
+      },
+      {
+        "program_id": "delegator3.aleo",
+        "calls": 1741
+      },
+      {
+        "program_id": "delegator5.aleo",
+        "calls": 1739
+      },
+      {
+        "program_id": "delegator4.aleo",
+        "calls": 1735
+      },
+      {
+        "program_id": "puzzle_giveaway_012225.aleo",
+        "calls": 1672
+      },
+      {
+        "program_id": "hyp_dispatch_proxy.aleo",
+        "calls": 1643
+      },
+      {
+        "program_id": "ldg_p_28.aleo",
+        "calls": 1551
+      },
+      {
+        "program_id": "ldg_p2p_28.aleo",
+        "calls": 1532
+      },
+      {
+        "program_id": "alphaswap.aleo",
+        "calls": 1530
+      },
+      {
+        "program_id": "puzzle_giveaway_012925.aleo",
+        "calls": 1497
+      },
+      {
+        "program_id": "puzzle_giveaway_112724.aleo",
+        "calls": 1493
+      },
+      {
+        "program_id": "puzzle_raffle_103024.aleo",
+        "calls": 1475
+      },
+      {
+        "program_id": "arcn_lock_distributor_v2_9.aleo",
+        "calls": 1460
+      },
+      {
+        "program_id": "ans_utils.aleo",
+        "calls": 1419
+      },
+      {
+        "program_id": "arcn_launchpad_v2_9.aleo",
+        "calls": 1344
+      },
+      {
+        "program_id": "par_store_v1.aleo",
+        "calls": 1291
+      },
+      {
+        "program_id": "hyp_warp_token_sol_v2.aleo",
+        "calls": 1245
+      },
+      {
+        "program_id": "withdrawaler.aleo",
+        "calls": 1244
+      },
+      {
+        "program_id": "shielded_usdcx_wrapper.aleo",
+        "calls": 1237
+      },
+      {
+        "program_id": "ghosts_nft_collection.aleo",
+        "calls": 1085
+      },
+      {
+        "program_id": "squash_v2.aleo",
+        "calls": 1072
+      },
+      {
+        "program_id": "lsp_host_bank_v1.aleo",
+        "calls": 1064
+      },
+      {
+        "program_id": "hyp_warp_token_eth_v2.aleo",
+        "calls": 1023
+      },
+      {
+        "program_id": "ans_registrar.aleo",
+        "calls": 1005
+      },
+      {
+        "program_id": "puzzle_raffle_101624.aleo",
+        "calls": 951
+      },
+      {
+        "program_id": "vlink_holding_cd_v3.aleo",
+        "calls": 866
+      },
+      {
+        "program_id": "gmp_lib_v02.aleo",
+        "calls": 827
+      },
+      {
+        "program_id": "ans_coupon_card.aleo",
+        "calls": 763
+      },
+      {
+        "program_id": "puzzle_raffle_100924.aleo",
+        "calls": 738
+      },
+      {
+        "program_id": "exchg_test_v0_0_3.aleo",
+        "calls": 731
+      },
+      {
+        "program_id": "hyp_warp_token_wbtc_v2.aleo",
+        "calls": 724
+      },
+      {
+        "program_id": "aj_usdcx_stablecoin_15_16.aleo",
+        "calls": 692
+      },
+      {
+        "program_id": "vlink_token_service_v3.aleo",
+        "calls": 689
+      },
+      {
+        "program_id": "jusd_vault_staging.aleo",
+        "calls": 627
+      },
+      {
+        "program_id": "lsp_host_controller_1.aleo",
+        "calls": 618
+      },
+      {
+        "program_id": "lsp_host_ui_simple_v1.aleo",
+        "calls": 431
+      },
+      {
+        "program_id": "hyp_multisig_core.aleo",
+        "calls": 412
+      },
+      {
+        "program_id": "par_store_10_13_v1.aleo",
+        "calls": 408
+      },
+      {
+        "program_id": "puzzle_raffle_091724.aleo",
+        "calls": 400
+      },
+      {
+        "program_id": "shield_swap_lp_router.aleo",
+        "calls": 388
+      },
+      {
+        "program_id": "shield_wallet_promo_ethdenver.aleo",
+        "calls": 366
+      },
+      {
+        "program_id": "vlink_holding_v1.aleo",
+        "calls": 348
+      },
+      {
+        "program_id": "arcn_priv_p222_v2_3_2.aleo",
+        "calls": 327
+      },
+      {
+        "program_id": "arcn_pub_p222_v2_3_2.aleo",
+        "calls": 325
+      },
+      {
+        "program_id": "test_ex_v0_0_17.aleo",
+        "calls": 322
+      },
+      {
+        "program_id": "hyp_warp_token_usad.aleo",
+        "calls": 320
+      },
+      {
+        "program_id": "humanity_link_aid_v14_drc.aleo",
+        "calls": 319
+      },
+      {
+        "program_id": "vlink_holding_v3.aleo",
+        "calls": 309
+      },
+      {
+        "program_id": "aj_usad_stablecoin_2_10.aleo",
+        "calls": 305
+      },
+      {
+        "program_id": "usdcx_bridge.aleo",
+        "calls": 296
+      },
+      {
+        "program_id": "alphaswap_waleo.aleo",
+        "calls": 272
+      },
+      {
+        "program_id": "token_registry_airdrop_32b.aleo",
+        "calls": 254
+      },
+      {
+        "program_id": "hyp_warp_token_wbtc.aleo",
+        "calls": 241
+      },
+      {
+        "program_id": "verify_onchain_zpass_rnm.aleo",
+        "calls": 214
+      },
+      {
+        "program_id": "squash_timestamp.aleo",
+        "calls": 205
+      },
+      {
+        "program_id": "connection_v1.aleo",
+        "calls": 197
+      },
+      {
+        "program_id": "arc20_usdc.aleo",
+        "calls": 186
+      },
+      {
+        "program_id": "asset_manager_helper_v1.aleo",
+        "calls": 185
+      },
+      {
+        "program_id": "ans_credit_transfer.aleo",
+        "calls": 185
+      },
+      {
+        "program_id": "asset_manager_core_v1.aleo",
+        "calls": 184
+      },
+      {
+        "program_id": "hyp_warp_token_usdc.aleo",
+        "calls": 181
+      },
+      {
+        "program_id": "arcn_credits_in_helper_v2_2_2.aleo",
+        "calls": 174
+      },
+      {
+        "program_id": "hyp_warp_token_usdc_v2.aleo",
+        "calls": 171
+      },
+      {
+        "program_id": "zsociety_airdrop.aleo",
+        "calls": 166
+      },
+      {
+        "program_id": "hyp_warp_token_eth.aleo",
+        "calls": 162
+      },
+      {
+        "program_id": "token_registry_wrapper.aleo",
+        "calls": 161
+      },
+      {
+        "program_id": "humanity_link_aid_v14_goal_def.aleo",
+        "calls": 158
+      },
+      {
+        "program_id": "par_store_14_v1.aleo",
+        "calls": 152
+      },
+      {
+        "program_id": "arc20_usdt.aleo",
+        "calls": 148
+      },
+      {
+        "program_id": "arcn_puc_in_helper_v2_2_3.aleo",
+        "calls": 145
+      },
+      {
+        "program_id": "gmp_connection_v02.aleo",
+        "calls": 143
+      },
+      {
+        "program_id": "gmp_asset_manager_helper_v02.aleo",
+        "calls": 143
+      },
+      {
+        "program_id": "gmp_asset_manager_core_v02.aleo",
+        "calls": 142
+      },
+      {
+        "program_id": "hyp_warp_token_usdt.aleo",
+        "calls": 140
+      },
+      {
+        "program_id": "hyp_warp_token_usdt_v2.aleo",
+        "calls": 133
+      },
+      {
+        "program_id": "arcn_tokenlocker_v2_9.aleo",
+        "calls": 131
+      },
+      {
+        "program_id": "ans_resolver.aleo",
+        "calls": 128
+      },
+      {
+        "program_id": "hyp_admin_core.aleo",
+        "calls": 120
+      },
+      {
+        "program_id": "hyp_warp_token_sol.aleo",
+        "calls": 120
+      },
+      {
+        "program_id": "mining_jouny_test_v2.aleo",
+        "calls": 118
+      },
+      {
+        "program_id": "arcn_access_manager_v1.aleo",
+        "calls": 116
+      },
+      {
+        "program_id": "arcn_pool_v2_2_4.aleo",
+        "calls": 106
+      },
+      {
+        "program_id": "upgrade_hyp_tokens.aleo",
+        "calls": 101
+      },
+      {
+        "program_id": "gmp_rate_limit_v02.aleo",
+        "calls": 101
+      },
+      {
+        "program_id": "arcn_credits_out_helper_v2_2_2.aleo",
+        "calls": 98
+      },
+      {
+        "program_id": "ans_registrar_usd.aleo",
+        "calls": 92
+      },
+      {
+        "program_id": "aj_usdcx_stablecoin_11_14.aleo",
+        "calls": 90
+      },
+      {
+        "program_id": "autojoin_token_registry_2_9.aleo",
+        "calls": 86
+      },
+      {
+        "program_id": "rate_limit_v1.aleo",
+        "calls": 81
+      },
+      {
+        "program_id": "vlink_council_v1.aleo",
+        "calls": 80
+      },
+      {
+        "program_id": "gmp_lib_v1.aleo",
+        "calls": 80
+      },
+      {
+        "program_id": "hyp_warp_token_credits.aleo",
+        "calls": 76
+      },
+      {
+        "program_id": "shield_swap_multisig_core.aleo",
+        "calls": 73
+      },
+      {
+        "program_id": "daddys_orders_v1.aleo",
+        "calls": 70
+      },
+      {
+        "program_id": "pondo_disbursement.aleo",
+        "calls": 68
+      },
+      {
+        "program_id": "mainnet_test_compliant_token.aleo",
+        "calls": 61
+      },
+      {
+        "program_id": "vlink_council_v03.aleo",
+        "calls": 60
+      },
+      {
+        "program_id": "exchg_test_v0_0_2.aleo",
+        "calls": 58
+      },
+      {
+        "program_id": "jndkweirusn3291.aleo",
+        "calls": 57
+      },
+      {
+        "program_id": "veil_strike_v7.aleo",
+        "calls": 57
+      },
+      {
+        "program_id": "whisper_waffle_swap_v4.aleo",
+        "calls": 56
+      },
+      {
+        "program_id": "xqc_ccc.aleo",
+        "calls": 51
+      },
+      {
+        "program_id": "jusd_vault_production.aleo",
+        "calls": 50
+      },
+      {
+        "program_id": "pubpriv_router_credits_v3.aleo",
+        "calls": 49
+      },
+      {
+        "program_id": "humanity_link_aid_v14_goal.aleo",
+        "calls": 47
+      },
+      {
+        "program_id": "grant_disbursement_dmx.aleo",
+        "calls": 47
+      },
+      {
+        "program_id": "certchain_certificate_v1.aleo",
+        "calls": 46
+      },
+      {
+        "program_id": "autojoin_credits_15_16.aleo",
+        "calls": 42
+      },
+      {
+        "program_id": "zebec_stream_v3.aleo",
+        "calls": 38
+      },
+      {
+        "program_id": "grant_disbursement_arcane1.aleo",
+        "calls": 35
+      },
+      {
+        "program_id": "digital_container_v2_staging.aleo",
+        "calls": 34
+      },
+      {
+        "program_id": "autojoin_usad_2_10.aleo",
+        "calls": 32
+      },
+      {
+        "program_id": "hyp_privacy_hub_usdc_v1.aleo",
+        "calls": 32
+      },
+      {
+        "program_id": "arc20_multisig_core.aleo",
+        "calls": 32
+      },
+      {
+        "program_id": "yokin_pool_4_test.aleo",
+        "calls": 32
+      },
+      {
+        "program_id": "shield_arc22_bat.aleo",
+        "calls": 31
+      },
+      {
+        "program_id": "nonce_program.aleo",
+        "calls": 31
+      },
+      {
+        "program_id": "pondo_multi_sig.aleo",
+        "calls": 29
+      },
+      {
+        "program_id": "arcn_puc_out_helper_v2_2_2.aleo",
+        "calls": 29
+      },
+      {
+        "program_id": "pondo_oracle.aleo",
+        "calls": 28
+      },
+      {
+        "program_id": "beta_multisig.aleo",
+        "calls": 27
+      },
+      {
+        "program_id": "autojoin_credits_11_14.aleo",
+        "calls": 26
+      },
+      {
+        "program_id": "puzzle_giveaway_010825.aleo",
+        "calls": 25
+      },
+      {
+        "program_id": "alphaswap_router.aleo",
+        "calls": 25
+      },
+      {
+        "program_id": "veru_oracle_council_v2.aleo",
+        "calls": 25
+      },
+      {
+        "program_id": "grant_disbursement_arcane2.aleo",
+        "calls": 24
+      },
+      {
+        "program_id": "staleo_wrapper.aleo",
+        "calls": 23
+      },
+      {
+        "program_id": "whisper_waffle_swap_v3.aleo",
+        "calls": 22
+      },
+      {
+        "program_id": "arcn_puc_in_helper_swap_v2_2_7.aleo",
+        "calls": 22
+      },
+      {
+        "program_id": "arcn_tokenlocker_v2_7.aleo",
+        "calls": 22
+      },
+      {
+        "program_id": "usdcx_multisig_core.aleo",
+        "calls": 21
+      },
+      {
+        "program_id": "test_ex_v0_0_12.aleo",
+        "calls": 21
+      },
+      {
+        "program_id": "vusdc_transaction.aleo",
+        "calls": 21
+      },
+      {
+        "program_id": "zkontract_v2.aleo",
+        "calls": 20
+      },
+      {
+        "program_id": "pubpriv_router_usad_stbl_v3.aleo",
+        "calls": 20
+      },
+      {
+        "program_id": "grant_disbursement_haruka.aleo",
+        "calls": 20
+      },
+      {
+        "program_id": "hyp_privacy_hub_usdc_v2.aleo",
+        "calls": 19
+      },
+      {
+        "program_id": "zebec_stream_v1.aleo",
+        "calls": 19
+      },
+      {
+        "program_id": "pondo_core_protocol.aleo",
+        "calls": 18
+      },
+      {
+        "program_id": "whisper_waffle_swap_v1.aleo",
+        "calls": 17
+      },
+      {
+        "program_id": "arcn_launchpad_tokens.aleo",
+        "calls": 17
+      },
+      {
+        "program_id": "certchain_equity_v1.aleo",
+        "calls": 17
+      },
+      {
+        "program_id": "hyp_admin_warp_usdc.aleo",
+        "calls": 16
+      },
+      {
+        "program_id": "multi_token_support_program.aleo",
+        "calls": 16
+      },
+      {
+        "program_id": "vlink_bridge_council_v1.aleo",
+        "calls": 16
+      },
+      {
+        "program_id": "arcn_launchpad_v2_7.aleo",
+        "calls": 16
+      },
+      {
+        "program_id": "vlink_council_v3.aleo",
+        "calls": 16
+      },
+      {
+        "program_id": "arcn_lock_distributor_v2_7.aleo",
+        "calls": 16
+      },
+      {
+        "program_id": "ldg_p_1114.aleo",
+        "calls": 16
+      },
+      {
+        "program_id": "grant_disbursement_obscura.aleo",
+        "calls": 16
+      },
+      {
+        "program_id": "shield_arc22_usdg.aleo",
+        "calls": 16
+      },
+      {
+        "program_id": "hyp_warp_token_bat_v2.aleo",
+        "calls": 15
+      },
+      {
+        "program_id": "hyp_warp_token_usdg_v2.aleo",
+        "calls": 15
+      },
+      {
+        "program_id": "vlink_token_service_council_v1.aleo",
+        "calls": 15
+      },
+      {
+        "program_id": "whisper_waffle_swap.aleo",
+        "calls": 14
+      },
+      {
+        "program_id": "pondo_delegator3.aleo",
+        "calls": 14
+      },
+      {
+        "program_id": "whisper_waffle_swap_v2.aleo",
+        "calls": 14
+      },
+      {
+        "program_id": "pondo_delegator5.aleo",
+        "calls": 14
+      },
+      {
+        "program_id": "arcn_puc_out_helper_swap_v2_2_8.aleo",
+        "calls": 14
+      },
+      {
+        "program_id": "shield_arc22_multisig_core.aleo",
+        "calls": 14
+      },
+      {
+        "program_id": "pondo_delegator1.aleo",
+        "calls": 14
+      },
+      {
+        "program_id": "arcn_priv_v2_2_2.aleo",
+        "calls": 14
+      },
+      {
+        "program_id": "pondo_delegator2.aleo",
+        "calls": 14
+      },
+      {
+        "program_id": "pondo_delegator4.aleo",
+        "calls": 14
+      },
+      {
+        "program_id": "zk_escrow_v2.aleo",
+        "calls": 13
+      },
+      {
+        "program_id": "coinflip_mtsp_v001.aleo",
+        "calls": 13
+      },
+      {
+        "program_id": "zebec_stream_v2.aleo",
+        "calls": 13
+      },
+      {
+        "program_id": "bitwave_central_pause_dev.aleo",
+        "calls": 13
+      },
+      {
+        "program_id": "zsociety_staking.aleo",
+        "calls": 12
+      },
+      {
+        "program_id": "test_ex_v0_0_8.aleo",
+        "calls": 12
+      },
+      {
+        "program_id": "veru_oracle_council_imp_v2.aleo",
+        "calls": 12
+      },
+      {
+        "program_id": "shield_arc22_zec.aleo",
+        "calls": 12
+      },
+      {
+        "program_id": "privacy_hub_v2.aleo",
+        "calls": 11
+      },
+      {
+        "program_id": "vs__2_candidates.aleo",
+        "calls": 11
+      },
+      {
+        "program_id": "veru_oracle_council_v3.aleo",
+        "calls": 11
+      },
+      {
+        "program_id": "puzzle_capital_pool.aleo",
+        "calls": 11
+      },
+      {
+        "program_id": "vlink_token_service_council_v03.aleo",
+        "calls": 10
+      },
+      {
+        "program_id": "usad_multisig_core.aleo",
+        "calls": 10
+      },
+      {
+        "program_id": "alcove_redeem_promo_usdcx.aleo",
+        "calls": 10
+      },
+      {
+        "program_id": "grant_disbursement_puzzle.aleo",
+        "calls": 10
+      },
+      {
+        "program_id": "arcn_tokenlocker_v2_8.aleo",
+        "calls": 10
+      },
+      {
+        "program_id": "hyp_validator_announce.aleo",
+        "calls": 10
+      },
+      {
+        "program_id": "grant_disbursement_mori.aleo",
+        "calls": 10
+      },
+      {
+        "program_id": "zvote_dao_registry.aleo",
+        "calls": 10
+      },
+      {
+        "program_id": "zkontract.aleo",
+        "calls": 10
+      },
+      {
+        "program_id": "hyp_warp_token_zec_v2.aleo",
+        "calls": 9
+      },
+      {
+        "program_id": "yokin_pool_1.aleo",
+        "calls": 9
+      },
+      {
+        "program_id": "arcn_credits_out_helper_v2_2_6.aleo",
+        "calls": 9
+      },
+      {
+        "program_id": "token_disbursement.aleo",
+        "calls": 9
+      },
+      {
+        "program_id": "hyp_admin_warp_usdt.aleo",
+        "calls": 8
+      },
+      {
+        "program_id": "usdcx_mult_xfer_priv_2_8.aleo",
+        "calls": 8
+      },
+      {
+        "program_id": "puzzle_capital_multisig.aleo",
+        "calls": 8
+      },
+      {
+        "program_id": "arcn_puc_out_helper_swap_v2_2_5.aleo",
+        "calls": 8
+      },
+      {
+        "program_id": "usdcx_mult_join_11_14.aleo",
+        "calls": 8
+      },
+      {
+        "program_id": "betastaker_0.aleo",
+        "calls": 8
+      },
+      {
+        "program_id": "grant_disbursement_v23.aleo",
+        "calls": 8
+      },
+      {
+        "program_id": "privacy_hub.aleo",
+        "calls": 8
+      },
+      {
+        "program_id": "vlink_bridge_council_v03.aleo",
+        "calls": 8
+      },
+      {
+        "program_id": "usdcx_mult_join_3_10.aleo",
+        "calls": 8
+      },
+      {
+        "program_id": "humanity_link_bulk_v14_drc.aleo",
+        "calls": 8
+      },
+      {
+        "program_id": "arcn_lock_distributor_v2_8.aleo",
+        "calls": 8
+      },
+      {
+        "program_id": "messenger.aleo",
+        "calls": 7
+      },
+      {
+        "program_id": "pubpriv_router_usdcx_stbl_v3.aleo",
+        "calls": 7
+      },
+      {
+        "program_id": "pondo_disbursement_test.aleo",
+        "calls": 7
+      },
+      {
+        "program_id": "grant_disbursement_privx2.aleo",
+        "calls": 7
+      },
+      {
+        "program_id": "test_ex_v0_0_15.aleo",
+        "calls": 7
+      },
+      {
+        "program_id": "grant_disbursement_payper2.aleo",
+        "calls": 7
+      },
+      {
+        "program_id": "coinflip_admin_v001.aleo",
+        "calls": 7
+      },
+      {
+        "program_id": "mainnet_test_freezelist.aleo",
+        "calls": 7
+      },
+      {
+        "program_id": "daom__no_approval.aleo",
+        "calls": 7
+      },
+      {
+        "program_id": "ans_registrar_quest.aleo",
+        "calls": 7
+      },
+      {
+        "program_id": "pondo_disbursement_test2.aleo",
+        "calls": 7
+      },
+      {
+        "program_id": "betastaking_ms.aleo",
+        "calls": 6
+      },
+      {
+        "program_id": "betastaker_6.aleo",
+        "calls": 6
+      },
+      {
+        "program_id": "privacy_hub_v3.aleo",
+        "calls": 6
+      },
+      {
+        "program_id": "depositvault.aleo",
+        "calls": 6
+      },
+      {
+        "program_id": "bitwave_auth_9nrs0v4gl_beta_v1.aleo",
+        "calls": 6
+      },
+      {
+        "program_id": "betastaker_9.aleo",
+        "calls": 6
+      },
+      {
+        "program_id": "humanity_link_aid_v9d.aleo",
+        "calls": 6
+      },
+      {
+        "program_id": "betastaker_7.aleo",
+        "calls": 6
+      },
+      {
+        "program_id": "usad_freezelist.aleo",
+        "calls": 6
+      },
+      {
+        "program_id": "alphaswap_config.aleo",
+        "calls": 6
+      },
+      {
+        "program_id": "betastaker_8.aleo",
+        "calls": 6
+      },
+      {
+        "program_id": "puzzle_arcade_coin_v001.aleo",
+        "calls": 6
+      },
+      {
+        "program_id": "betastaker_5.aleo",
+        "calls": 6
+      },
+      {
+        "program_id": "bitwave_pay_9nrs0v4gl_beta_v1.aleo",
+        "calls": 5
+      },
+      {
+        "program_id": "zpool_test_1.aleo",
+        "calls": 5
+      },
+      {
+        "program_id": "zkwork_multisig.aleo",
+        "calls": 5
+      },
+      {
+        "program_id": "arcn_puc_out_helper_v2_2_6.aleo",
+        "calls": 5
+      },
+      {
+        "program_id": "vlink_quest_council_v1.aleo",
+        "calls": 5
+      },
+      {
+        "program_id": "arcn_launchpad_v2_8.aleo",
+        "calls": 5
+      },
+      {
+        "program_id": "hyp_warp_token_credits_9ed1.aleo",
+        "calls": 5
+      },
+      {
+        "program_id": "pubpriv_router_credits.aleo",
+        "calls": 5
+      },
+      {
+        "program_id": "veru_oracle_council_imp_v3.aleo",
+        "calls": 5
+      },
+      {
+        "program_id": "zkescrow_v1.aleo",
+        "calls": 5
+      },
+      {
+        "program_id": "test_ex_v0_0_11.aleo",
+        "calls": 5
+      },
+      {
+        "program_id": "grant_disbursement_storswift.aleo",
+        "calls": 5
+      },
+      {
+        "program_id": "ldg_arc20_p2p_213.aleo",
+        "calls": 5
+      },
+      {
+        "program_id": "pool_together_test_1.aleo",
+        "calls": 5
+      },
+      {
+        "program_id": "grant_disbursement_etonec_v2.aleo",
+        "calls": 5
+      },
+      {
+        "program_id": "hyp_admin_warp_eth.aleo",
+        "calls": 4
+      },
+      {
+        "program_id": "hyp_admin_warp_sol.aleo",
+        "calls": 4
+      },
+      {
+        "program_id": "privmart_ecommerce.aleo",
+        "calls": 4
+      },
+      {
+        "program_id": "pondo_multi_sig_test.aleo",
+        "calls": 4
+      },
+      {
+        "program_id": "pondo_protocol_token.aleo",
+        "calls": 4
+      },
+      {
+        "program_id": "lodive_v0_1_1.aleo",
+        "calls": 4
+      },
+      {
+        "program_id": "yokin_pool_3_test.aleo",
+        "calls": 4
+      },
+      {
+        "program_id": "coinflip_faucet_v4.aleo",
+        "calls": 4
+      },
+      {
+        "program_id": "deposit_pool_v1.aleo",
+        "calls": 4
+      },
+      {
+        "program_id": "test_shield_12626.aleo",
+        "calls": 4
+      },
+      {
+        "program_id": "mm1_ldg_arc20_p2p_213.aleo",
+        "calls": 4
+      },
+      {
+        "program_id": "grant_disbursement_test.aleo",
+        "calls": 4
+      },
+      {
+        "program_id": "join_credits_3_10.aleo",
+        "calls": 4
+      },
+      {
+        "program_id": "vlink_bridge_council_v3.aleo",
+        "calls": 4
+      },
+      {
+        "program_id": "join_and_pay_credits.aleo",
+        "calls": 4
+      },
+      {
+        "program_id": "yokin_pool_5_test.aleo",
+        "calls": 4
+      },
+      {
+        "program_id": "mm1_ldg_arc20_p_28.aleo",
+        "calls": 4
+      },
+      {
+        "program_id": "usdcx_locked.aleo",
+        "calls": 4
+      },
+      {
+        "program_id": "hyp_admin_warp_wbtc.aleo",
+        "calls": 4
+      },
+      {
+        "program_id": "ldg_p_910.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "shield_swap_rebalance_router.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "zkycle_rewards.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "grant_disbursement_izar2.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "arcn_priv_v2_2_6.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "ldg_arc20_p_213.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "vlink_token_service_cd_cuncl_v3.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "reference_delegatorimgbph.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "humanity_link_aid_v14_goal_sw1.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "time_oracle.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "grant_disbursement_storswift_2.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "betastaker_0ms.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "locked_display.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "reference_delegatornkpuru.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "bitwave_auth_6zqjrr6mz_beta_v1.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "provable_toronoto25_knightfall.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "jndkweirusn323ws.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "usdcx_mult_xfer_priv2pub_2_8.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "reference_delegatordgndht.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "withdrawaler_multisig.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "daom__approved_proposers.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "yokin_pool_3.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "puzzle_proving_partner.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "reference_delegatorcmaxtm.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "reference_delegatorbdywey.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "ldg_usdcx_p_28.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "helloworld.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "bitwave_auth_uyw5yc9w7_beta_v1.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "grant_disbursement_ans.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "reference_delegatorzuhnsy.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "shield_swap_freezelist.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "bitwave_pay_uyw5yc9w7_beta_v1.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "yokin_test_2.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "grant_disbursement_aethos.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "ldg_usad_p2p_28.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "bitwave_pay_6zqjrr6mz_beta_v1.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "bitwave_auth_wc86dx9j5_beta_v1.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "reference_delegatorkrhkko.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "ldg_usdcx_p2p_28.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "hyp_admin_warp_sol_v2.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "ldg_p2p_910.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "arc20_wusdcx.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "shield_arc22_freezelist.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "grant_disbursement_factblock.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "usdcx_mult_xfer_priv2pub_13_14.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "usad_mult_join_11_14.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "grant_disbursement_zenox.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "zkescrow_v2.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "locked_display_v2.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "grant_disbursement_apybara.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "grant_disbursement_zkportal.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "humanity_link_bulk_v14_goal_sw1.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "price_proof_test_1.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "arcn_credits_in_helper_v2_2_6.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "token_disbursement_test.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "hyp_admin_warp_credits.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "grant_disbursement_ars.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "zvote_dao_factory.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "join_token_registry_3_9.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "bitwave_auth_88pk5cwdl_beta_v1.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "ldg_usad_p_28.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "paleo_token.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "grant_disbursement_payper.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "betastaker_1ms.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "bitwave_pay_rg1i02ala_beta_v1.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "mm2_ldg_arc20_p_213.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "hyp_admin_warp_wbtc_v2.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "pondo_staked_aleo_token.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "grant_disbursement_kryha.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "autojoin_token_registry_16_16.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "reference_delegatordevjxt.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "reference_delegatorrjnfdn.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "hyp_admin_warp_usdt_v2.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "vlink_token_service_cd_cncl_v03.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "locked_display_57583.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "veru_oracle_checksum_v2.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "zpool_test_2.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "hyp_admin_warp_eth_v2.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "gmp_checksum_v02.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "betastaker_9ms.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "bitwave_auth_88pk5cwdl_beta.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "pondo_token.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "betastaker_2ms.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "verify_onchain_zpass_roblox.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "yokin_pool_2.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "reference_delegatorjsmfjv.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "record_economic_state.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "grant_disbursement_etonec.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "alaos_token.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "arcn_pub_v2_2_2.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "bitwave_auth_j0lq1wns2_beta_v1.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "ldg_p2p_1114.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "aj_usad_stablecoin_11_14.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "h__update_daom_helper.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "bitwave_auth_placeholder_dev.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "reference_delegatorymmaha.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "coinflip_native_v001.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "grant_disbursement_arcfin.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "betastaker_8ms.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "whalepool_puzzlecapital.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "bitwave_auth_beta_v1.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "grant_disbursement_ludium.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "bitwave_auth_rg1i02ala_beta_v1.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "aleo_wrapper.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "reference_delegatorrdafdf.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "grant_disbursement_privx.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "player_pool_hash.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "usad_mult_xfer_priv_2_8.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "par_digital_assets_v1.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "betastaker_7ms.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "grant_disbursement_archblock.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "betastaker_3ms.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "gmp_checksum_v1.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "betastaker_6ms.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "multi_split_test3.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "gmp_council_v02.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "betastaker_5ms.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "bitwave_payments_beta_v1.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "betastaker_4ms.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "staking_multisig.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "veil_strike_v7_sd.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "gmp_council_v1.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "victim_vault.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "reference_delegatorwokkqf.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "bitwave_pay_wc86dx9j5_beta_v1.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "zpool_test_3.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "hyp_admin_warp_usdc_v2.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "grant_disbursement_izar.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "vusdc_lock.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "bitwave_auth_ks5yq0836_beta_v1.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "humanity_link_bulk_v14_goal.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "veru_oracle_checksum_v3.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "join_credits_11_14.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "arcn_lp_locker_v2_7.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "phantom_mint.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "locked_display_test1.aleo",
+        "calls": 1
+      }
+    ],
+    "weeklyData": [
+      {
+        "program_id": "shield_swap_arc20_wrapped_usdcx.aleo",
+        "calls": 11957
+      },
+      {
+        "program_id": "shield_swap.aleo",
+        "calls": 8861
+      },
+      {
+        "program_id": "jusd_oracle_staging.aleo",
+        "calls": 7900
+      },
+      {
+        "program_id": "usdcx_stablecoin.aleo",
+        "calls": 7646
+      },
+      {
+        "program_id": "jusd_oracle_production.aleo",
+        "calls": 7067
+      },
+      {
+        "program_id": "shield_swap_router.aleo",
+        "calls": 6687
+      },
+      {
+        "program_id": "arc20_sol.aleo",
+        "calls": 2945
+      },
+      {
+        "program_id": "usdcx_freezelist.aleo",
+        "calls": 2833
+      },
+      {
+        "program_id": "merkle_tree.aleo",
+        "calls": 2833
+      },
+      {
+        "program_id": "shield_swap_arc20_credits.aleo",
+        "calls": 2577
+      },
+      {
+        "program_id": "arc20_eth.aleo",
+        "calls": 2357
+      },
+      {
+        "program_id": "arc20_wbtc.aleo",
+        "calls": 1532
+      },
+      {
+        "program_id": "token_registry.aleo",
+        "calls": 1061
+      },
+      {
+        "program_id": "aj_usdcx_stablecoin_2_10.aleo",
+        "calls": 1015
+      },
+      {
+        "program_id": "hyp_hook_manager.aleo",
+        "calls": 654
+      },
+      {
+        "program_id": "hyp_mailbox.aleo",
+        "calls": 613
+      },
+      {
+        "program_id": "main_aj_arc20_2_15.aleo",
+        "calls": 540
+      },
+      {
+        "program_id": "usdcx_bridge_v2.aleo",
+        "calls": 352
+      },
+      {
+        "program_id": "whalepool_easystaking_v3.aleo",
+        "calls": 341
+      },
+      {
+        "program_id": "autojoin_credits_2_10.aleo",
+        "calls": 340
+      },
+      {
+        "program_id": "hyp_dispatch_proxy.aleo",
+        "calls": 327
+      },
+      {
+        "program_id": "arcn_pool_v2_2_2.aleo",
+        "calls": 299
+      },
+      {
+        "program_id": "hyp_ism_manager.aleo",
+        "calls": 283
+      },
+      {
+        "program_id": "shielded_usdcx_wrapper.aleo",
+        "calls": 239
+      },
+      {
+        "program_id": "hyp_warp_token_sol_v2.aleo",
+        "calls": 223
+      },
+      {
+        "program_id": "arcn_whitelist.aleo",
+        "calls": 212
+      },
+      {
+        "program_id": "arcn_compliance_v1.aleo",
+        "calls": 212
+      },
+      {
+        "program_id": "hyp_warp_token_eth_v2.aleo",
+        "calls": 191
+      },
+      {
+        "program_id": "jusd_vault_staging.aleo",
+        "calls": 185
+      },
+      {
+        "program_id": "hyp_warp_token_wbtc_v2.aleo",
+        "calls": 155
+      },
+      {
+        "program_id": "pondo_protocol.aleo",
+        "calls": 137
+      },
+      {
+        "program_id": "ldg_p2p_28.aleo",
+        "calls": 133
+      },
+      {
+        "program_id": "zkwork_staker_v1.aleo",
+        "calls": 129
+      },
+      {
+        "program_id": "ldg_p_28.aleo",
+        "calls": 127
+      },
+      {
+        "program_id": "arcn_priv_p222_v2_3_2.aleo",
+        "calls": 125
+      },
+      {
+        "program_id": "zkwork_staking.aleo",
+        "calls": 111
+      },
+      {
+        "program_id": "arcn_pub_p222_v2_3_2.aleo",
+        "calls": 87
+      },
+      {
+        "program_id": "usad_stablecoin.aleo",
+        "calls": 68
+      },
+      {
+        "program_id": "vlink_token_bridge_v3.aleo",
+        "calls": 52
+      },
+      {
+        "program_id": "jusd_vault_production.aleo",
+        "calls": 50
+      },
+      {
+        "program_id": "betastaking.aleo",
+        "calls": 46
+      },
+      {
+        "program_id": "vlink_token_service_cd_v3.aleo",
+        "calls": 44
+      },
+      {
+        "program_id": "withdrawaler.aleo",
+        "calls": 34
+      },
+      {
+        "program_id": "shield_arc22_bat.aleo",
+        "calls": 31
+      },
+      {
+        "program_id": "shield_swap_lp_router.aleo",
+        "calls": 26
+      },
+      {
+        "program_id": "ans_registrar_usd2.aleo",
+        "calls": 24
+      },
+      {
+        "program_id": "arc20_usdt.aleo",
+        "calls": 23
+      },
+      {
+        "program_id": "zebec_stream_v3.aleo",
+        "calls": 19
+      },
+      {
+        "program_id": "delegator5.aleo",
+        "calls": 18
+      },
+      {
+        "program_id": "delegator1.aleo",
+        "calls": 18
+      },
+      {
+        "program_id": "delegator2.aleo",
+        "calls": 18
+      },
+      {
+        "program_id": "delegator3.aleo",
+        "calls": 18
+      },
+      {
+        "program_id": "delegator4.aleo",
+        "calls": 18
+      },
+      {
+        "program_id": "hyp_multisig_core.aleo",
+        "calls": 18
+      },
+      {
+        "program_id": "shield_arc22_usdg.aleo",
+        "calls": 16
+      },
+      {
+        "program_id": "hyp_warp_token_usdg_v2.aleo",
+        "calls": 15
+      },
+      {
+        "program_id": "betastaker_4.aleo",
+        "calls": 15
+      },
+      {
+        "program_id": "hyp_warp_token_bat_v2.aleo",
+        "calls": 15
+      },
+      {
+        "program_id": "validator_oracle.aleo",
+        "calls": 13
+      },
+      {
+        "program_id": "ldg_p_1114.aleo",
+        "calls": 12
+      },
+      {
+        "program_id": "shield_arc22_zec.aleo",
+        "calls": 12
+      },
+      {
+        "program_id": "betastaker_3.aleo",
+        "calls": 12
+      },
+      {
+        "program_id": "betastaker_1.aleo",
+        "calls": 12
+      },
+      {
+        "program_id": "hyp_warp_token_usdt_v2.aleo",
+        "calls": 11
+      },
+      {
+        "program_id": "aleo_name_service_registry.aleo",
+        "calls": 10
+      },
+      {
+        "program_id": "ans_utils.aleo",
+        "calls": 10
+      },
+      {
+        "program_id": "hyp_warp_token_zec_v2.aleo",
+        "calls": 9
+      },
+      {
+        "program_id": "vlink_holding_cd_v3.aleo",
+        "calls": 8
+      },
+      {
+        "program_id": "vlink_token_service_v3.aleo",
+        "calls": 8
+      },
+      {
+        "program_id": "vlink_holding_v3.aleo",
+        "calls": 5
+      },
+      {
+        "program_id": "aj_usdcx_stablecoin_11_14.aleo",
+        "calls": 4
+      },
+      {
+        "program_id": "whalepool_easystaking_v2.aleo",
+        "calls": 4
+      },
+      {
+        "program_id": "humanity_link_aid_v14_goal_def.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "aj_usdcx_stablecoin_15_16.aleo",
+        "calls": 3
+      },
+      {
+        "program_id": "aj_usad_stablecoin_2_10.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "hyp_warp_token_credits.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "betastaker_2.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "pondo_protocol_token.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "autojoin_token_registry_2_9.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "autojoin_credits_15_16.aleo",
+        "calls": 2
+      },
+      {
+        "program_id": "shield_arc22_freezelist.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "pondo_disbursement.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "ldg_arc20_p_213.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "arcn_tokenlocker_v2_9.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "arcn_lock_distributor_v2_9.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "betastaking_ext.aleo",
+        "calls": 1
+      },
+      {
+        "program_id": "ans_registrar_usd.aleo",
+        "calls": 1
+      }
+    ]
+  }
+}

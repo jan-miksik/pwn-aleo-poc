@@ -1,0 +1,20 @@
+{
+  "base_source": "/Users/janm/Documents/projects-klients/PoC Aleo/docs/private-lending-aleo-grant-overview-v3.html",
+  "base_sha256": "668e87d5ef0c8806521d2e8d0288bfa19b4bfb87678fa862ea342883fe3af3fc",
+  "output": "/Users/janm/Documents/projects-klients/PoC Aleo/docs/private-lending-aleo-grant-overview-v5.html",
+  "scope": [
+    "OWN and PWN DAO Foundation context",
+    "team",
+    "v1.5-withdraw-restriction reference",
+    "proposal and product extensibility",
+    "future hooks",
+    "post-audit immutability",
+    "privacy corrections"
+  ],
+  "unchanged": [
+    "grant budget and durations",
+    "original source stylesheet",
+    "original illustration layouts",
+    "PoC feasibility and performance sections"
+  ]
+}

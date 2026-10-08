@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <title>Private Lending for Aleo: Grant overview</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <style>
   @page { size: A4; margin: 20mm 19mm 22mm 19mm; }
 
@@ -31,7 +31,9 @@
   html, body { margin: 0; padding: 0; }
   @media screen { body { max-width: 487pt; margin: 0 auto; padding: 28pt 16pt 60pt 16pt; } }
   img, svg { max-width: 100%; }
-  @media print { body { padding-right: 3pt; } }
+  @media print {
+    body { padding-right: 3pt; }
+  }
   @media screen and (max-width: 640px) {
     .facts, .loans, .status, .cols, .stack .hdr, .stack .row { grid-template-columns: 1fr !important; }
     .stack .hdr { display: none; }
@@ -143,7 +145,7 @@
   .stack .hdr { padding: 0 12pt 5pt 12pt; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-3); font-weight: 600; }
   .stack .row { align-items: center; padding: 9pt 12pt; border: 0.7pt solid var(--rule-2); border-radius: 3pt; margin-bottom: 5pt; background: #fff; }
   .stack .lab { font-weight: 700; }
-  .stack .prog { font-family: var(--mono); font-size: 8.6pt; line-height: 1.5; }
+  .stack .prog { overflow-wrap: anywhere; font-family: var(--mono); font-size: 8.6pt; line-height: 1.5; }
   .stack .no { font-weight: 700; }
 
   /* timeline */
@@ -191,54 +193,70 @@
   .oq li { padding: 5pt 0; font-size: 9.6pt; border-bottom: 0.6pt solid var(--rule); margin: 0; break-inside: avoid; page-break-inside: avoid; }
   .oq li:last-child { border-bottom: none; }
   .oq .t { font-family: var(--sans); font-weight: 700; display: block; margin-bottom: 2pt; }
+  @media print {
+    .masthead .sub { font-size: 11pt; line-height: 1.45; }
+    .lead { font-size: 10.5pt; line-height: 1.45; }
+  }
 </style>
-</head>
+<style>a { color: var(--accent-2); text-decoration: none; } .team-section p { margin-bottom: 7pt; } .ref .u { overflow-wrap: anywhere; } .extensibility { margin-top: 10pt; }
+    .privacy-section p { font-size: 9.6pt; line-height: 1.45; margin-bottom: 7pt; }
+    .privacy-section .chip { font-size: 8.2pt; padding: 3pt 7pt; }
+    .privacy-section table { font-size: 9pt !important; line-height: 1.35; }
+    .privacy-section td { padding-top: 5pt; padding-bottom: 5pt; }
+.references-section .ref {font-size: 9.5pt; line-height: 1.45; padding-top: 8pt; padding-bottom: 8pt;}
+@font-face {font-family: Inter; font-style: normal; font-weight: 400; src: url('grant-assets-v8/inter-400.ttf') format('truetype');}
+@font-face {font-family: Inter; font-style: normal; font-weight: 500; src: url('grant-assets-v8/inter-500.ttf') format('truetype');}
+@font-face {font-family: Inter; font-style: normal; font-weight: 600; src: url('grant-assets-v8/inter-600.ttf') format('truetype');}
+@font-face {font-family: Inter; font-style: normal; font-weight: 700; src: url('grant-assets-v8/inter-700.ttf') format('truetype');}</style></head>
 <body>
 
 <!-- ================= PAGE 1 ================= -->
 <div class="masthead">
-  <div class="kicker">Grant overview · PWN DAO Foundation · September 2026</div>
+  <div class="kicker">Grant overview · PWN DAO Foundation · October 2026</div>
   <h1>Private Lending<br>for Aleo</h1>
-  <div class="sub">A native Leo implementation of PWN's bilateral, oracle-free lending protocol.</div>
+  <div class="sub">Universal lending infrastructure for Aleo, built in Leo by the team behind OWN and inspired by PWN’s bilateral, oracle-free lending mechanics.</div>
 </div>
 
 <div class="facts keep">
-  <div class="fact"><div class="l">Applicant</div><div class="v">PWN DAO Foundation<small>P2P lending live on 13 EVM mainnets</small></div></div>
+  <div class="fact"><div class="l">Applicant</div><div class="v">PWN DAO Foundation<small>Team behind OWN · PWN protocol lineage</small></div></div>
   <div class="fact"><div class="l">Timeline</div><div class="v">~4 months<small>four milestones</small></div></div>
-  <div class="fact"><div class="l">Grant request</div><div class="v">$85,000<small>capped mainnet launch</small></div></div>
+  <div class="fact"><div class="l">Grant request</div><div class="v">$85,000<small>mainnet launch</small></div></div>
   <div class="fact"><div class="l">Deliverable</div><div class="v">Protocol on mainnet<small>programs · SDK · reference app</small></div></div>
 </div>
 
-<p class="lead">The applicant is the <strong>PWN DAO Foundation</strong>, which operates a peer-to-peer lending protocol live on 13 EVM mainnets. Lenders and borrowers agree on fixed loan terms directly, without price oracles or price-based liquidations. This bilateral model fits a privacy-first ZK chain particularly well, because individual loans stay isolated instead of depending on global liquidity, utilisation and liquidation state.</p>
+<p class="lead">The applicant is the <strong>PWN DAO Foundation</strong>. The team previously developed PWN, a peer-to-peer lending protocol deployed on 13 EVM chains. The team now operates as <a href="https://ownlabs.co/">OWN</a>, building crypto-backed mortgages on top of PWN’s lending infrastructure. Lenders and borrowers agree on fixed loan terms directly, without price oracles or price-based liquidations. This bilateral model fits a privacy-first ZK chain particularly well, because individual loans stay isolated instead of depending on global liquidity, utilisation and liquidation state.</p>
 
-<p class="lead">This grant funds a native Aleo implementation of that protocol: funded Elastic Proposals, private bilateral loans, a modular Hub and Config layer, a TypeScript SDK and a reference application, <strong>with a capped mainnet launch as the final milestone.</strong> A feasibility PoC of the core programs is already deployed and exercised on the Aleo testnet (see <em>Current status</em>).</p>
+<p class="lead">This grant funds <strong>universal lending infrastructure for Aleo</strong>, designed around PWN v1.5’s lending mechanics: funded Elastic Proposals as the first offer type, private bilateral lending, a modular Hub and Config layer, a TypeScript SDK and a reference application, <strong>with a mainnet launch as the final milestone.</strong> A feasibility PoC of the core programs is already deployed and exercised on the Aleo testnet (see <em>Current status</em>).</p>
 
-<section>
+<section class="team-section"><h2>Team</h2>
+    <p><strong>Josef Jelacic</strong> — Founder of PWN DAO and OWN. <a href="https://www.linkedin.com/in/josefje/">LinkedIn</a></p>
+    <p><strong>Šimon Kozák</strong> — Founding Engineer &amp; CTO at PWN DAO and OWN. <a href="https://www.linkedin.com/in/simon-kozak/">LinkedIn</a> · <a href="https://github.com/microHoffman">GitHub</a></p>
+    <p><strong>Jan Mikšík</strong> — Engineer, 4 years of building PWN’s DeFi lending application. <a href="https://www.linkedin.com/in/jan-miksik/">LinkedIn</a> · <a href="https://github.com/jan-miksik">GitHub</a></p></section><section class="page-break">
   <h2>Protocol model</h2>
-  <p>Each loan fixes the credit asset and amount, the collateral asset and amount, the repayment amount and the maturity. If the borrower repays before maturity, collateral is returned. Otherwise the lender can claim it after default. There is no price feed, no health factor and no liquidation: nobody ever needs to inspect anyone else's position, which is what makes the model a natural fit for a chain where state is private by default.</p>
+  <p>Each loan fixes the credit asset and amount, the collateral asset and amount, the repayment amount and the maturity. If the borrower repays, collateral is returned. If the loan is unpaid at maturity, the lender can claim the collateral; until the lender does so, the borrower can still repay. There is no price feed, no health factor and no price-based liquidation, which makes the model a natural fit for minimising public disclosure on Aleo.</p>
 
-  <p>The Aleo implementation is a native Leo adaptation of PWN, not a Solidity port.</p>
+  <p>The protocol is written in Leo around Aleo's record and execution model, drawing on PWN's lending mechanics and modular architecture.</p>
 
   <div class="fig">
-    <svg style="display:block;width:100%;max-width:487pt;height:86pt" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" viewBox="0 0 760 152" xmlns="http://www.w3.org/2000/svg">
+    <svg style="display:block;width:100%;max-width:487pt;height:86pt" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" viewbox="0 0 760 152" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <marker id="ah" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#7a8089"/></marker>
+        <marker id="ah" markerwidth="8" markerheight="8" refx="7" refy="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#7a8089"></path></marker>
       </defs>
-      <rect x="0" y="46" width="180" height="60" rx="4" fill="#1f3a5f"/>
+      <rect x="0" y="46" width="180" height="60" rx="4" fill="#1f3a5f"></rect>
       <text x="90" y="71" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">Loan originated</text>
       <text x="90" y="89" text-anchor="middle" fill="#fff" font-size="11.5" opacity="0.9">collateral locked · credit delivered</text>
 
-      <path d="M180,66 C300,66 380,33 512,33" fill="none" stroke="#7a8089" stroke-width="1.2" marker-end="url(#ah)"/>
-      <path d="M180,86 C300,86 380,119 512,119" fill="none" stroke="#7a8089" stroke-width="1.2" marker-end="url(#ah)"/>
+      <path d="M180,66 C300,66 380,33 512,33" fill="none" stroke="#7a8089" stroke-width="1.2" marker-end="url(#ah)"></path>
+      <path d="M180,86 C300,86 380,119 512,119" fill="none" stroke="#7a8089" stroke-width="1.2" marker-end="url(#ah)"></path>
 
-      <text x="330" y="38" text-anchor="middle" fill="#4a4f57" font-size="13">borrower repays <tspan font-weight="700">before</tspan> maturity</text>
+      <text x="320" y="24" text-anchor="middle" fill="#4a4f57" font-size="13">borrower repays <tspan font-weight="700">before</tspan> lender claims</text>
       <text x="330" y="126" text-anchor="middle" fill="#4a4f57" font-size="13">no repayment <tspan font-weight="700">at</tspan> maturity</text>
 
-      <rect x="520" y="5" width="240" height="56" rx="4" fill="#2e6e7e"/>
+      <rect x="520" y="5" width="240" height="56" rx="4" fill="#2e6e7e"></rect>
       <text x="640" y="29" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">Collateral returned</text>
       <text x="640" y="46" text-anchor="middle" fill="#fff" font-size="11.5" opacity="0.9">to the borrower</text>
 
-      <rect x="520" y="91" width="240" height="56" rx="4" fill="#5f6b7a"/>
+      <rect x="520" y="91" width="240" height="56" rx="4" fill="#5f6b7a"></rect>
       <text x="640" y="115" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">Lender claims collateral</text>
       <text x="640" y="132" text-anchor="middle" fill="#fff" font-size="11.5" opacity="0.9">unilaterally, after default</text>
     </svg>
@@ -246,23 +264,22 @@
   </div>
 </section>
 
-<div class="page-break"></div>
 <section>
   <h2>Current status</h2>
   <p>The feasibility work is done. The four core programs are deployed on the public Aleo testnet and the complete lifecycle (funded commitment, borrower draw, repayment, default claim, refund and repayment withdrawal) has been executed there with real proofs, collateral on the live <code>token_registry.aleo</code>, and privately paid fees.</p>
   <div class="status keep">
     <div class="box"><b>Custody &amp; funded commitments</b><span class="ok">Demonstrated on testnet.</span> Lender commits once; borrower draws without any lender transaction; every exit settles into a private record.</div>
-    <div class="box"><b>Privacy</b><span class="ok">Measured on real transactions.</span> No lender or borrower address in any lending transaction; amounts, terms and IDs public by design.</div>
+    <div class="box"><b>Privacy</b><span class="ok">Measured on real transactions.</span> No lender or borrower address in any lending transaction paid with a private fee, which the SDK will enforce; amounts, terms and IDs public by design.</div>
     <div class="box"><b>Costs &amp; timings</b><span class="ok">Within limits.</span> 0.005–0.019 ALEO per call; proving 25–41 s on a laptop; confirmation in 1–4 blocks.</div>
   </div>
-  <p class="small" style="margin-top:6pt">Not yet done: direct offers, launch caps, USDCx execution against the live stablecoin, a complete test suite and external review. These are the subject of the milestones below.</p>
+  <p class="small" style="margin-top:6pt">Not yet done: direct offers, USDCx execution against the live stablecoin, a complete test suite and external review. These are the subject of the milestones below.</p>
 </section>
 
-<section>
+<section class="page-break">
   <h2>Feasibility questions, answered by the PoC</h2>
   <ol class="q">
     <li><div><strong>Can lender credit be committed once and drawn asynchronously without lender participation?</strong> Yes. Draws are signed by the borrower only.</div></li>
-    <li><div><strong>Can custody safely support private → controlled state → private asset flows?</strong> Yes, for native credits and token-registry assets; a premature default claim was rejected by network finalization.</div></li>
+    <li><div><strong>Can custody safely support private → controlled state → private asset flows?</strong> Yes, for native credits and token-registry assets; a premature default claim was rejected by network finalization. Escrow is protected against users, not against a collateral token’s issuer powers; see Open questions.</div></li>
     <li><div><strong>What is public, private, inferable or linkable in each transition?</strong> Measured; see the privacy page.</div></li>
     <li><div><strong>Does the model work within USDCx compliance and token-registry constraints?</strong> Token registry: yes, live. USDCx: interfaces compile against the real bytecode; execution with freeze-list proofs is part of Milestone 1.</div></li>
     <li><div><strong>Can Proposal, Loan and token programs compose within proving and transaction limits?</strong> Yes. A draw is four transitions across three programs in one transaction, at about 6% of the constraint limit.</div></li>
@@ -277,7 +294,7 @@
   <h2>Elastic Proposal: the default offer type</h2>
   <p>In PWN's EVM implementation, an <a href="https://dev-docs.pwn.xyz/smart-contracts/core/smart-contract-reference/proposals/simple-loan-proposal/elastic-proposal" style="color:var(--accent-2)">elastic proposal</a> lets one lender publish a single reusable offer with a credit limit, a minimum draw and a fixed credit-to-collateral ratio. Borrowers draw from it independently; each draw is its own bilateral loan with its own collateral and maturity. It is not a pool: no shared position, no mutualised risk.</p>
 
-  <div class="draws keep">
+  <p><strong>Proposal versus loan.</strong> A proposal is an offer and its available funding; each accepted draw creates a separate loan with its own collateral, repayment obligation and maturity. Proposal expiry stops new draws, not existing loans. Cancelling a proposal returns unused funding without cancelling active loans.</p><div class="draws keep">
     <div class="head"><span>Lender commits <b>100,000 USDCx</b></span><span>min draw <b>5,000</b></span></div>
     <div class="bar">
       <div class="a" style="width:10%">10,000</div>
@@ -294,12 +311,12 @@
   <div class="space"></div>
 
   <h3>Why this is the default on Aleo</h3>
-  <p>An Aleo transaction has a single signer and a program cannot spend a private record on a counterparty's behalf, so asynchronous acceptance requires one side to commit capital in advance. Elastic proposals assume exactly that, and bring three things for free: every offer is backed by real capital, offers live in public state so discovery needs no PWN backend, and many draws against one commitment make individual loans harder to link to a lender. Direct offers use the same mechanism with a restricted acceptor.</p>
+  <p>An Aleo transaction has a single signer and a program cannot spend a private record on a counterparty’s behalf, so our asynchronous acceptance flow commits capital in advance. Elastic proposals make every offer backed by real capital and allow discovery from public state without a proprietary backend. Multiple draws reuse one funded offer. The lender’s address stays private in the lending calls, while each loan publicly references the commitment it draws from. Direct offers use the same mechanism, with acceptance restricted to a designated borrower through a private proof of authorisation.</p>
 </section>
 
 <section>
   <h2>Discovery and indexing</h2>
-  <p>Public Elastic Proposals remain canonical in Aleo public state. The SDK queries that state directly; an optional indexer or cache improves filtering and UX but is never a trusted source of truth. Private user loan records require a separate record-discovery strategy at the wallet layer.</p>
+  <p>Public Elastic Proposals remain canonical in Aleo public state. The SDK queries that state directly; an optional indexer or cache improves filtering and UX but is never a trusted source of truth. The wallet and SDK must discover private token records and securely retain the authorisation data needed to recover and manage loan positions.</p>
   <div class="flow">
     <div class="box src">Aleo public state<small>canonical source of truth</small></div>
     <div class="arr">→</div>
@@ -315,11 +332,82 @@
 <section>
   <h2>Architecture</h2>
 
+  <p class="small">Target production architecture. The grant completes and audits these module boundaries before the core is deployed without upgradeability.</p><div class="fig keep">
+    <svg viewbox="0 0 760 428" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="arch-title arch-desc">
+      <title id="arch-title">Protocol architecture and module connections</title>
+      <desc id="arch-desc">PWN DAO Foundation multisig manages Config and Hub. Hub approves Proposal and Loan core modules for new originations. Loan core draws credit from Proposal. Applications use the TypeScript SDK to interact with both modules. Dashed arrows show governance and approval; solid arrows show calls.</desc>
+      <defs>
+        <marker id="arch-gov-arrow" markerwidth="7" markerheight="7" refx="6" refy="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#7a8089"></path></marker>
+        <marker id="arch-call-arrow" markerwidth="7" markerheight="7" refx="6" refy="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#1f3a5f"></path></marker>
+      </defs>
+      <!-- Governance and approval paths -->
+      <g fill="none" stroke="#7a8089" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arch-gov-arrow)">
+        <path d="M286 32 H438"></path>
+        <path d="M595 60 V83 H380 V98"></path>
+        <path d="M300 152 V173 H164 V198"></path>
+        <path d="M460 152 V173 H596 V198"></path>
+      </g>
+      <g font-size="13" fill="#4a4f57" text-anchor="middle">
+        <text x="361" y="23">manages</text>
+        <text x="164" y="167">approves new originations</text>
+        <text x="596" y="167">approves new originations</text>
+      </g>
+      <!-- Module calls and application access -->
+      <g fill="none" stroke="#1f3a5f" stroke-width="1.8" marker-end="url(#arch-call-arrow)">
+        <path d="M440 230 H320"></path>
+        <path d="M290 312 V285 H164 V264"></path>
+        <path d="M470 312 V285 H596 V264"></path>
+        <path d="M380 389 V358"></path>
+      </g>
+      <g font-size="13" fill="#1f3a5f" text-anchor="middle">
+        <text x="380" y="219">draw credit</text>
+        <text x="380" y="298">SDK calls</text>
+        <text x="441" y="379">uses SDK</text>
+      </g>
+      <!-- Blocks -->
+      <g stroke="#cfd3d9" fill="#f5f6f8">
+        <rect x="10" y="4" width="276" height="56" rx="5"></rect>
+        <rect x="440" y="4" width="310" height="56" rx="5"></rect>
+        <rect x="220" y="98" width="320" height="54" rx="5"></rect>
+      </g>
+      <g stroke="#1f3a5f" fill="#e6eef7">
+        <rect x="10" y="198" width="310" height="66" rx="5"></rect>
+        <rect x="440" y="198" width="310" height="66" rx="5"></rect>
+      </g>
+      <g stroke="#cfd3d9" fill="#fff">
+        <rect x="220" y="312" width="320" height="46" rx="5"></rect>
+        <rect x="220" y="389" width="320" height="36" rx="5"></rect>
+      </g>
+      <g text-anchor="middle" fill="#17191c">
+        <g font-size="16" font-weight="700">
+          <text x="148" y="26">Governance</text>
+          <text x="595" y="26">Config</text>
+          <text x="380" y="120">Hub · module registry</text>
+          <text x="165" y="220">Proposal · credit escrow</text>
+          <text x="595" y="220">Loan core · collateral escrow</text>
+          <text x="380" y="332">TypeScript SDK</text>
+          <text x="380" y="412">Reference app &amp; third parties</text>
+        </g>
+        <g font-size="13" fill="#4a4f57">
+          <text x="148" y="46">PWN DAO Foundation multisig</text>
+          <text x="595" y="46">pwn_config.aleo · multisig settings</text>
+          <text x="380" y="140">pwn_hub.aleo · multisig approvals</text>
+          <text x="165" y="239">pwn_elastic_proposal.aleo</text>
+          <text x="165" y="256">Lender controls own commitment</text>
+          <text x="595" y="239">pwn_loan.aleo</text>
+          <text x="595" y="256">Protocol logic · fixed loan terms</text>
+          <text x="380" y="349">Open integration layer · anyone</text>
+        </g>
+      </g>
+    </svg>
+    <div class="cap">Dashed arrows: governance and module approval. Solid arrows: calls between layers. Asset transfers follow the loan lifecycle.</div>
+  </div>
+
   <div class="stack keep">
     <div class="hdr"><div>Layer</div><div>Program</div><div>Controlled by</div><div>Can affect existing loans</div></div>
     <div class="row gov"><div class="lab">Governance</div><div class="prog">–</div><div>PWN DAO Foundation multisig</div><div class="no">No</div></div>
     <div class="row reg"><div class="lab">Registry &amp; config</div><div class="prog">pwn_hub.aleo<br>pwn_config.aleo</div><div>multisig</div><div><b>No</b>: approves modules for <em>new</em> originations only</div></div>
-    <div class="row"><div class="lab">Proposal</div><div class="prog">pwn_elastic_proposal.aleo</div><div>lender</div><div>Own commitment only</div></div>
+    <div class="row"><div class="lab">Proposal</div><div class="prog">pwn_elastic_<wbr>proposal.aleo</wbr></div><div>lender</div><div>Own commitment only</div></div>
     <div class="row core"><div class="lab">Loan core</div><div class="prog">pwn_loan.aleo</div><div>protocol logic</div><div>Terms fixed at origination</div></div>
     <div class="row"><div class="lab">Integration</div><div class="prog">TypeScript SDK</div><div>anyone</div><div>–</div></div>
     <div class="row"><div class="lab">Application</div><div class="prog">Reference app, third parties</div><div>anyone</div><div>–</div></div>
@@ -328,15 +416,18 @@
   <div class="callout keep"><p><span class="t">Governance can decide what may be created next.</span> It can never alter, seize or redirect a loan that already exists.</p></div>
 
   <p><strong>Hub.</strong> Registers approved modules for new loan originations: <code>pwn_loan.aleo → ACTIVE_LOAN</code>, <code>pwn_elastic_proposal.aleo → PROPOSAL_MODULE</code>. Future installments, crowdfunding and refinancing arrive as new versioned modules.</p>
-  <p><strong>Config.</strong> Minimal protocol-wide settings: protocol fee (zero in V1), fee recipient, multisig authority, launch caps, and an emergency stop for new originations. Loan-specific economic terms are fixed at creation and cannot be changed later through Config.</p>
-  <p><strong>Upgradeability.</strong> Extensibility and bug remediation are separate concerns. New functionality is introduced as new Hub-approved modules; upgradeability, if enabled, is only a temporary safety mechanism for bug remediation, and custody and settlement logic capable of causing loss of funds should become immutable after audit and stabilisation.</p>
-</section>
+  <p><strong>Config.</strong> Minimal protocol-wide settings: protocol fee (zero in V1), fee recipient, multisig authority, and an emergency stop for new originations. Loan-specific economic terms are fixed at creation and cannot be changed later through Config.</p>
+  <p><strong>After audit.</strong> The production core will be deployed without upgradeability after the external audit and resolution of material findings. New functionality is introduced through new modules; existing loans remain in the immutable programs holding their funds. Third-party token programs may retain their own issuer and upgrade powers.</p>
+<div class="extensibility"><h3>Universal and extensible lending</h3>
+    <p>Elastic Proposal is the first offer type, not the limit of the framework. Following PWN v1.5, the target architecture separates proposal validation and product rules from shared custody and settlement. Additional proposal types that fit the agreed interfaces can be introduced as new modules without changing the deployed core.</p>
+    <p>Installment products, crowdfunding and refinancing can build on these extension points.</p>
+    <p>PWN v1.5 also provides borrower and lender hooks around loan creation and repayment, enabling integrations such as refinancing and external lender vaults. Equivalent Aleo integration points are a future extension, subject to privacy, authorisation and proving limits; hooks are not part of the demonstrated PoC.</p></div></section>
 
 <!-- ================= PAGE 3: privacy, one page ================= -->
 <div class="page-break"></div>
-<section>
+<section class="privacy-section">
   <h2>Privacy model, measured on testnet</h2>
-  <p class="muted">V1 behaviour as measured on the public Aleo testnet with the PoC programs (September 2026), from confirmed transactions re-fetched from the network. What remains linkable is listed, not hidden.</p>
+  <p class="muted">V1 behaviour as measured on the public Aleo testnet with the PoC programs, from confirmed transactions re-fetched from the network. What remains linkable is listed, not hidden.</p>
 
   <div class="cols keep" style="margin-top:8pt">
     <div>
@@ -355,20 +446,19 @@
     </div>
     <div>
       <h4>Private in V1</h4>
-      <p class="small">Never written to protocol public state.</p>
+      <p class="small">Identities are not written to protocol public state; loan activity remains visible under public identifiers.</p>
       <div class="chips">
         <span class="chip private">identity of the lender</span>
         <span class="chip private">identity of the borrower</span>
         <span class="chip private">the relationship between them</span>
-        <span class="chip private">specific terms of an individual loan</span>
-        <span class="chip private">repayment history</span>
+        <span class="chip private">repayment history linked to a wallet identity</span>
         <span class="chip private">link between an offer and a particular borrower</span>
       </div>
     </div>
   </div>
 
 
-  <div class="fig" style="margin:8pt 0 2pt 0">
+  <p>Direct offers can keep more terms private.</p><div class="fig" style="margin:8pt 0 2pt 0">
     <h4>Where the boundary sits</h4>
     <div class="flow" style="grid-template-columns: 1fr 22pt 1.3fr 22pt 1fr; margin-top:8pt">
       <div class="box" style="border-color:#1f3a5f; background:var(--accent-soft); color:var(--accent)">Lender wallet<small>private record · encrypted</small></div>
@@ -389,7 +479,7 @@
       <tr><td><strong>Collateral amount</strong></td><td>Public in the loan witness and in the token escrow delta</td><td>Normalised denominations; commitment-based private accounting in a later version</td></tr>
       <tr><td><strong>Draw amount</strong></td><td>Public in the loan witness; delta in available liquidity per draw</td><td>Normalised draw steps</td></tr>
       <tr><td><strong>Lender / borrower address</strong></td><td><strong>Not present</strong> in any of the six lending flows when fees are paid from a private record; only program addresses appear. A public fee would name the payer.</td><td>Private fees, validated; the earlier public shielding transaction remains visible</td></tr>
-      <tr><td><strong>Commitment → loan link</strong></td><td>Public by construction (commitment ID inside the loan witness)</td><td>Elastic proposals dilute it: many draws instead of one</td></tr>
+      <tr><td><strong>Commitment → loan link</strong></td><td>Public by construction (commitment ID inside the loan witness)</td><td>The link is public; it does not by itself reveal the lender’s address</td></tr>
       <tr><td><strong>Temporal correlation</strong></td><td>88 blocks between the borrower's shielding and the draw in the test run</td><td>Documented rather than concealed</td></tr>
     </tbody>
   </table>
@@ -401,34 +491,34 @@
 <div class="page-break"></div>
 <section>
   <h2>Milestones</h2>
-  <p>The feasibility gate has already been passed with the testnet PoC. The grant funds the path from PoC to a reviewed, capped mainnet launch: hardening and completing the core programs, an SDK, a usable application, and a security review.</p>
+  <p>The feasibility gate has already been passed with the testnet PoC. The grant funds the path from PoC to a reviewed mainnet launch: hardening and completing the core programs, an SDK, a usable application, and a security review.</p>
 
   <div class="timeline keep">
     <div class="track">
-      <div class="seg s7" style="flex:6"><div class="m">M1</div><div class="w">6 wks</div><div class="c">$30k</div></div>
+      <div class="seg s7" style="flex:7"><div class="m">M1</div><div class="w">7 wks</div><div class="c">$35k</div></div>
       <div class="seg s8" style="flex:3"><div class="m">M2</div><div class="w">3 wks</div><div class="c">$15k</div></div>
-      <div class="seg s9" style="flex:4"><div class="m">M3</div><div class="w">4 wks</div><div class="c">$20k</div></div>
+      <div class="seg s9" style="flex:3"><div class="m">M3</div><div class="w">3 wks</div><div class="c">$15k</div></div>
       <div class="seg s10" style="flex:4"><div class="m">M4</div><div class="w">4 wks</div><div class="c">$20k</div></div>
     </div>
-    <div class="axis"><span>Testnet PoC exists</span><span>~4 months · $85,000 total</span><span>Capped mainnet</span></div>
+    <div class="axis"><span>Testnet PoC exists</span><span>17 weeks · $85,000 total</span><span>Mainnet</span></div>
   </div>
 
   <div class="ms keep">
     <div class="n">1</div>
     <div>
       <div class="title">Core protocol completion &amp; interface freeze</div>
-      <p><span class="k">Scope</span> &nbsp;The core of the project: direct offers, protocol-level launch caps and emergency stop in Config, USDCx execution against the live stablecoin (freeze-list proofs, pause behaviour), a full test suite covering every state transition and failure path, adversarial tests, documented invariants, and agreement of the data model and program interfaces.</p>
-      <p><span class="k">Validation</span> &nbsp;On the public testnet: funded proposal with at least two independent borrowers; direct offer works; expiry, cancellation, overdraw, early-claim, double-settlement and replay protections pass; Hub and Config changes provably do not affect existing loans; one USDCx loan opened, drawn and repaid, or the blocker documented; test suite and invariants published.</p>
+      <p><span class="k">Scope</span>  The core of the project: direct offers, an emergency stop for new offers and draws in Config, USDCx execution against the live stablecoin (freeze-list proofs, pause behaviour), a test suite covering the defined state transitions, critical failure cases and boundary conditions, supplemented by property-based testing and fuzzing, adversarial tests, documented invariants, threat model, freeze of custody and settlement logic, and agreement of the data model, proposal and product extension interfaces, and privacy boundary.</p>
+      <p><span class="k">Validation</span>  On the public testnet: funded proposal with at least two independent borrowers; direct offer works; expiry, cancellation, overdraw, claims before maturity, double-settlement and replay protections pass; Hub and Config changes provably do not affect existing loans; one USDCx loan opened, drawn and repaid, or the blocker documented; test suite, invariants and threat model published; custody and settlement logic frozen for external review.</p>
     </div>
-    <div class="meta"><b>$30k</b>6 weeks</div>
+    <div class="meta"><b>$35k</b>7 weeks</div>
   </div>
 
   <div class="ms keep">
     <div class="n">2</div>
     <div>
       <div class="title">SDK &amp; discovery</div>
-      <p><span class="k">Scope</span> &nbsp;TypeScript SDK, public proposal discovery from Aleo state, private record handling, fee strategy (private fees by default), USDCx integration.</p>
-      <p><span class="k">Validation</span> &nbsp;SDK supports discover, open, accept, repay, claim, cancel and withdraw; discovery works without a proprietary PWN backend; an integration test suite runs against the testnet deployment.</p>
+      <p><span class="k">Scope</span>  TypeScript SDK, public proposal discovery from Aleo state, private record handling, fee strategy (private fees by default), USDCx integration.</p>
+      <p><span class="k">Validation</span>  SDK supports discover, open, accept, repay, claim, cancel and withdraw; discovery works without a proprietary PWN backend; an integration test suite runs against the testnet deployment.</p>
     </div>
     <div class="meta"><b>$15k</b>3 weeks</div>
   </div>
@@ -437,47 +527,44 @@
     <div class="n">3</div>
     <div>
       <div class="title">Reference application</div>
-      <p><span class="k">Scope</span> &nbsp;Lender and borrower application on top of the SDK: wallet connection, offer publishing and browsing, draw, repayment, default claim, position overview from private records, selective disclosure of a loan to a chosen party.</p>
-      <p><span class="k">Validation</span> &nbsp;External testers complete the full lender and borrower journeys on testnet without help from the team; usability findings addressed; the application is published with usage documentation.</p>
+      <p><span class="k">Scope</span>  Lender and borrower application on top of the SDK: wallet connection, offer publishing and browsing, draw, repayment, default claim, position overview from private records, selective disclosure of a loan to a chosen party.</p>
+      <p><span class="k">Validation</span>  External testers complete the full lender and borrower journeys on testnet without help from the team; usability findings addressed; the application is published with usage documentation.</p>
     </div>
-    <div class="meta"><b>$20k</b>4 weeks</div>
+    <div class="meta"><b>$15k</b>3 weeks</div>
   </div>
 
   <div class="ms keep last">
     <div class="n">4</div>
     <div>
-      <div class="title">Security review &amp; capped mainnet launch</div>
-      <p><span class="k">Scope</span> &nbsp;Threat model, freeze of custody and settlement logic, external review or scoped audit of the core programs, mainnet deployment with caps, SDK published as a package.</p>
-      <p><span class="k">Validation</span> &nbsp;All critical invariants covered by tests; external reviewer engaged or a documented audit scope and quote; at least one real loan originated, repaid and settled on mainnet end to end by an external user; deployment addresses published.</p>
+      <div class="title">Security review &amp; mainnet launch</div>
+      <p><span class="k">Scope</span>  External audit of the core programs, resolution of material findings, non-upgradeable mainnet deployment, SDK published as a package.</p>
+      <p><span class="k">Validation</span>  All critical invariants covered by tests; external audit completed and material findings resolved before mainnet deposits; at least one real loan originated, repaid and settled on mainnet end to end by an external user; deployment addresses and immutable constructor rules published.</p>
     </div>
     <div class="meta"><b>$20k</b>4 weeks</div>
   </div>
-
-  <div class="callout ok keep"><p><span class="t">Capped launch.</span> Mainnet deployment launches with protocol-level caps on maximum commitment size and total value locked, lifted only after the security review completes. This allows real usage from day one while bounding worst-case loss.</p></div>
 
   <div class="callout warn keep"><p><span class="t">If Milestone 1 finds a blocker that cannot be resolved,</span> for example in USDCx compliance behaviour, we publish the findings and the privacy analysis as an open report for the ecosystem, and the remaining milestones are not claimed.</p></div>
 </section>
 
 
 
-<section style="margin-top:0">
+<section class="keep" style="margin-top:0">
   <h2>Open questions</h2>
   <ul class="oq">
-    <li><span class="t">Upgradeability</span> Keep selected programs upgradeable for three to six months as a bug-remediation grace period, or launch core financial logic as non-upgradeable from the start? Can upgrade authority be constrained so it cannot seize or redirect existing user funds?</li>
     <li><span class="t">Licensing</span> Does the Developer Grants Program require a specific open-source licence such as Apache-2.0, or is GPL-3.0 acceptable?</li>
-    <li><span class="t">Collateral policy</span> A token issuer with a public-burn role can burn a public balance from any address that holds it, including a loan escrow, without the holder's consent; private records cannot be burned by the issuer, only by their owner. The core currently accepts any registry token as collateral. Should V1 enforce a collateral whitelist in the contracts, or keep the contracts asset-agnostic and leave the policy to the SDK and application layer?</li>
+    <li><span class="t">Collateral policy</span> Token issuers with public-burn, freeze or pause powers can affect a loan escrow. The current multi-token implementation checks a Hub asset allowlist when opening offers and accepting draws. Which issuer powers should V1 accept, and how should an escrow deficit affect positions in that token?</li>
   </ul>
 </section>
 
-<section>
+<section class="keep">
   <div class="cols">
     <div>
       <h2>Out of scope</h2>
-      <p>V1 is deliberately narrow: bilateral loans with terms fixed at origination. No oracles, no price-based liquidation, no pooled lending, no bridging to PWN's EVM deployments, no KYC or credit scoring. Installments, crowdfunded funding and refinancing are planned extensions. Protocol fees are zero. V1 targets a capped mainnet launch; the extensions follow later.</p>
+      <p>V1 is deliberately narrow: bilateral loans with terms fixed at origination. No oracles, no price-based liquidation, no pooled lending, no bridging to PWN's EVM deployments, no KYC or credit scoring. Installments, crowdfunded funding and refinancing are planned extensions. Protocol fees are zero. V1 targets a mainnet launch; the extensions follow later.</p>
     </div>
     <div>
       <h2>After the grant</h2>
-      <p>The deployed protocol becomes part of the PWN DAO Foundation's maintained infrastructure and is operated alongside the existing EVM deployments, under the same governance. The SDK is published as an open-source package for third-party integrators.</p>
+      <p>The protocol becomes part of the PWN DAO Foundation’s maintained infrastructure, with the team behind OWN maintaining the SDK, reference application and integrations. The deployed core remains immutable. The SDK is published as an open-source package for third-party integrators.</p>
     </div>
   </div>
 </section>
@@ -489,22 +576,22 @@
     <span class="chip">Crowdfunded funding: several lenders fund one loan, each holding a private position</span>
     <span class="chip">Refinancing</span>
     <span class="chip">Private collateral amounts</span>
-  </div>
+  <span class="chip">Borrower and lender integration hooks</span></div>
 </section>
 
-<section>
+<section class="references-section">
   <h2>Existing references</h2>
   <div class="keep">
-    <div class="ref">
-      <div><div class="n">PWN Protocol v1.5</div><div class="u">github.com/PWNDAO/pwn_protocol</div></div>
-      <div>Architecture and lending-model reference: Hub, Config, loan lifecycle, Elastic Proposals, installments and crowdfunding concepts.</div>
+    <div class="ref"><div><div class="n">OWN</div><div class="u"><a href="https://ownlabs.co/">ownlabs.co</a></div></div><div>Current team and product reference: longer-term crypto-backed lending and onchain mortgage infrastructure, building on PWN’s lending primitives.</div></div><div class="ref">
+      <div><div class="n">PWN Protocol v1.5</div><div class="u"><a href="https://github.com/PWNDAO/pwn_protocol/tree/v1.5-withdraw-restriction">v1.5-withdraw-restriction</a></div></div>
+      <div>Architecture reference: Hub, Config, modular products and proposals, installments, crowdfunding and borrower/lender hooks.</div>
     </div>
     <div class="ref">
-      <div><div class="n">PWN Elastic Proposal</div><div class="u">dev-docs.pwn.xyz/smart-contracts/core/smart-contract-reference/proposals/simple-loan-proposal/elastic-proposal</div></div>
+      <div><div class="n">PWN Elastic Proposal</div><div class="u"><a href="https://dev-docs.pwn.xyz/smart-contracts/core/smart-contract-reference/proposals/simple-loan-proposal/elastic-proposal">dev-docs.pwn.xyz/smart-contracts/core/smart-contract-reference/proposals/simple-loan-proposal/elastic-proposal</a></div></div>
       <div>Reference semantics of the elastic proposal: credit limit, minimum draw, credit-to-collateral ratio, expiry and per-draw loan creation, as implemented on EVM.</div>
     </div>
     <div class="ref last">
-      <div><div class="n">ProvableHQ compliant stablecoin / USDCx</div><div class="u">github.com/ProvableHQ/compliant-stablecoin</div></div>
+      <div><div class="n">ProvableHQ compliant stablecoin / USDCx</div><div class="u"><a href="https://github.com/ProvableHQ/compliant-stablecoin">github.com/ProvableHQ/compliant-stablecoin</a></div></div>
       <div>Public and private token flows, freeze-list compliance, role administration, multisig upgrades, USDCx integration.</div>
     </div>
   </div>

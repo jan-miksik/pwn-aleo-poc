@@ -1,0 +1,32 @@
+[
+  {
+    "id": "lifecycle",
+    "selector": "section:has(> h2:text-is(\"Protocol model\")) svg",
+    "image": "grant-assets-v8/lifecycle.png"
+  },
+  {
+    "id": "elastic-draws",
+    "selector": ".draws",
+    "image": "grant-assets-v8/elastic-draws.png"
+  },
+  {
+    "id": "discovery",
+    "selector": "section:has(> h2:text-is(\"Discovery and indexing\")) .flow",
+    "image": "grant-assets-v8/discovery.png"
+  },
+  {
+    "id": "architecture",
+    "selector": "section:has(> h2:text-is(\"Architecture\")) svg",
+    "image": "grant-assets-v8/architecture.png"
+  },
+  {
+    "id": "privacy-boundary",
+    "selector": "section:has(> h2:text-is(\"Privacy model, measured on testnet\")) .fig .flow",
+    "image": "grant-assets-v8/privacy-boundary.png"
+  },
+  {
+    "id": "timeline",
+    "selector": ".timeline",
+    "image": "grant-assets-v8/timeline.png"
+  }
+]

@@ -1,0 +1,69 @@
+<!doctype html><meta charset="utf-8"><title>Změny grantového návrhu</title><style>body{font:15px/1.55 Arial;max-width:900px;margin:40px auto;color:#17191c}h1{font-size:28px}h2{font-size:19px;margin-top:28px}p{white-space:pre-wrap}del{background:#fadbd8;color:#9c2525}ins{background:#ddf0df;color:#215e37;text-decoration:none}</style><h1>Změny grantového návrhu</h1><p>Původní v3 → aktuální v8. Výpustka (…) označuje nezměněný text.</p>
+<h2>Úvod</h2>
+<p>… · PWN DAO Foundation · <del>September </del> → <ins>October </ins>2026</p>
+<p><del>A lending protocol built for Aleo in Leo, inspired by PWN&#x27;s </del> → <ins>Universal lending infrastructure for Aleo, built in Leo by the team behind OWN and inspired by PWN’s </ins>bilateral, oracle-free lending mechanics.</p>
+<p>Applicant PWN DAO Foundation <del>P2P lending live on 13 EVM mainnets</del> → <ins>Team behind OWN · PWN protocol lineage</ins></p>
+<p>Grant request $85,000 <del>capped </del>mainnet launch</p>
+<p>… applicant is the PWN DAO <del>Foundation, which operates </del> → <ins>Foundation. The team previously developed PWN, </ins>a peer-to-peer lending protocol <del>live </del> → <ins>deployed </ins>on 13 EVM <del>mainnets. </del> → <ins>chains. The team now operates as OWN, building crypto-backed mortgages on top of PWN’s lending infrastructure. </ins>Lenders and borrowers agree on  …</p>
+<p>… global liquidity, utilisation and liquidation <del>state.</del> → <ins>state. [https://ownlabs.co/]</ins></p>
+<p>This grant funds <del>a lending protocol designed for Aleo and inspired by PWN&#x27;s </del> → <ins>universal lending infrastructure for Aleo, designed around PWN v1.5’s </ins>lending mechanics: funded Elastic <del>Proposals, private bilateral loans, </del> → <ins>Proposals as the first offer type, private bilateral lending, </ins>a modular Hub and Config  …</p>
+<p>… a reference application, with a <del>capped </del>mainnet launch as the final  …</p>
+<h2><ins>Team</ins></h2>
+<p> → <ins>Josef Jelacic — Founder of PWN DAO and OWN. LinkedIn [https://www.linkedin.com/in/josefje/]</ins></p>
+<p> → <ins>Šimon Kozák — Founding Engineer &amp; CTO at PWN DAO and OWN. LinkedIn · GitHub [https://www.linkedin.com/in/simon-kozak/; https://github.com/microHoffman]</ins></p>
+<p> → <ins>Jan Mikšík — Engineer, 4 years of building PWN’s DeFi lending application. LinkedIn · GitHub [https://www.linkedin.com/in/jan-miksik/; https://github.com/jan-miksik]</ins></p>
+<h2>Protocol model</h2>
+<p>… the maturity. If the borrower <del>repays before maturity, </del> → <ins>repays, </ins>collateral is returned. <del>Otherwise </del> → <ins>If the loan is unpaid at maturity, </ins>the lender can claim <del>it after default. </del> → <ins>the collateral; until the lender does so, the borrower can still repay. </ins>There is no price feed, no health factor and no <del>liquidation: nobody ever needs to inspect anyone else&#x27;s position, which is what </del> → <ins>price-based liquidation, which </ins>makes the model a natural fit for <del>a chain where state is private by default.</del> → <ins>minimising public disclosure on Aleo.</ins></p>
+<p>borrower repays before <del>maturity</del> → <ins>lender claims</ins></p>
+<h2>Current status</h2>
+<p>… borrower address in any lending <del>transaction; </del> → <ins>transaction paid with a private fee, which the SDK will enforce; </ins>amounts, terms and IDs public  …</p>
+<p>Not yet done: direct offers, <del>launch caps, </del>USDCx execution against the live  …</p>
+<h2>Feasibility questions, answered by the PoC</h2>
+<p>… claim was rejected by network <del>finalization.</del> → <ins>finalization. Escrow is protected against users, not against a collateral token’s issuer powers; see Open questions.</ins></p>
+<h2>Elastic Proposal: the default offer type</h2>
+<p> → <ins>Proposal versus loan. A proposal is an offer and its available funding; each accepted draw creates a separate loan with its own collateral, repayment obligation and maturity. Proposal expiry stops new draws, not existing loans. Cancelling a proposal returns unused funding without cancelling active loans.</ins></p>
+<p>… a private record on a <del>counterparty&#x27;s behalf, so asynchronous acceptance requires one side to commit </del> → <ins>counterparty’s behalf, so our asynchronous acceptance flow commits </ins>capital in advance. Elastic proposals <del>assume exactly that, and bring three things for free: every offer is </del> → <ins>make every offer </ins>backed by real <del>capital, offers live in public state so discovery needs no PWN backend, and many draws against one commitment make individual loans harder to link to a lender. </del> → <ins>capital and allow discovery from public state without a proprietary backend. Multiple draws reuse one funded offer. The lender’s address stays private in the lending calls, while each loan publicly references the commitment it draws from. </ins>Direct offers use the same <del>mechanism with a restricted acceptor.</del> → <ins>mechanism, with acceptance restricted to a designated borrower through a private proof of authorisation.</ins></p>
+<h2>Discovery and indexing</h2>
+<p>… a trusted source of truth. <del>Private user loan records require a separate record-discovery strategy at the wallet layer.</del> → <ins>The wallet and SDK must discover private token records and securely retain the authorisation data needed to recover and manage loan positions.</ins></p>
+<h2>Architecture</h2>
+<p> → <ins>Target production architecture. The grant completes and audits these module boundaries before the core is deployed without upgradeability.</ins></p>
+<p>… V1), fee recipient, multisig authority, <del>launch caps, </del>and an emergency stop for  …</p>
+<p><del>Upgradeability. Extensibility and bug remediation are separate concerns. </del> → <ins>After audit. The production core will be deployed without upgradeability after the external audit and resolution of material findings. </ins>New functionality is introduced <del>as new Hub-approved modules; upgradeability, if enabled, is only a temporary safety mechanism for bug remediation, and custody and settlement logic capable of causing loss of funds should become immutable after audit and stabilisation.</del> → <ins>through new modules; existing loans remain in the immutable programs holding their funds. Third-party token programs may retain their own issuer and upgrade powers.</ins></p>
+<p> → <ins>Universal and extensible lending</ins></p>
+<p> → <ins>Elastic Proposal is the first offer type, not the limit of the framework. Following PWN v1.5, the target architecture separates proposal validation and product rules from shared custody and settlement. Additional proposal types that fit the agreed interfaces can be introduced as new modules without changing the deployed core.</ins></p>
+<p> → <ins>Installment products, crowdfunding and refinancing can build on these extension points.</ins></p>
+<p> → <ins>PWN v1.5 also provides borrower and lender hooks around loan creation and repayment, enabling integrations such as refinancing and external lender vaults. Equivalent Aleo integration points are a future extension, subject to privacy, authorisation and proving limits; hooks are not part of the demonstrated PoC.</ins></p>
+<h2>Privacy model, measured on testnet</h2>
+<p>… Aleo testnet with the PoC <del>programs (September 2026), </del> → <ins>programs, </ins>from confirmed transactions re-fetched from  …</p>
+<p><del>Never </del> → <ins>Identities are not </ins>written to protocol public <del>state.</del> → <ins>state; loan activity remains visible under public identifiers.</ins></p>
+<p><del>specific terms of an individual loan</del></p>
+<p>repayment <del>history</del> → <ins>history linked to a wallet identity</ins></p>
+<p> → <ins>Direct offers can keep more terms private.</ins></p>
+<p>… ID inside the loan witness) <del>Elastic proposals dilute it: many draws instead of one</del> → <ins>The link is public; it does not by itself reveal the lender’s address</ins></p>
+<h2>Milestones</h2>
+<p>… path from PoC to a <del>reviewed, capped </del> → <ins>reviewed </ins>mainnet launch: hardening and completing  …</p>
+<p>… 17 weeks · $85,000 total <del>Capped mainnet</del> → <ins>Mainnet</ins></p>
+<p>… of the project: direct offers, <del>protocol-level launch caps and emergency stop </del> → <ins>an emergency stop for new offers and draws </ins>in Config, USDCx execution against  …</p>
+<p>… (freeze-list proofs, pause behaviour), a <del>full </del>test suite covering <del>every state transition and failure path, </del> → <ins>the defined state transitions, critical failure cases and boundary conditions, supplemented by property-based testing and fuzzing, </ins>adversarial tests, documented invariants, threat  …</p>
+<p>… and agreement of the data <del>model and program interfaces.</del> → <ins>model, proposal and product extension interfaces, and privacy boundary.</ins></p>
+<p>… offer works; expiry, cancellation, overdraw, <del>early-claim, </del> → <ins>claims before maturity, </ins>double-settlement and replay protections pass;  …</p>
+<p>Security review &amp; <del>capped </del>mainnet launch</p>
+<p>Scope External <del>review or scoped </del>audit of the core programs, <del>mainnet deployment with caps, </del> → <ins>resolution of material findings, non-upgradeable mainnet deployment, </ins>SDK published as a package.</p>
+<p>… invariants covered by tests; external <del>reviewer engaged or a documented audit scope and quote; </del> → <ins>audit completed and material findings resolved before mainnet deposits; </ins>at least one real loan  …</p>
+<p>… an external user; deployment addresses <ins>and immutable constructor rules </ins>published.</p>
+<p><del>Capped launch. Mainnet deployment launches with protocol-level caps on maximum commitment size and total value locked, lifted only after the security review completes. This allows real usage from day one while bounding worst-case loss.</del></p>
+<h2>Open questions</h2>
+<p><del>Upgradeability Keep selected programs upgradeable for three to six months as a bug-remediation grace period, or launch core financial logic as non-upgradeable from the start? Can upgrade authority be constrained so it cannot seize or redirect existing user funds?</del></p>
+<p>Collateral policy <del>A token issuer with a public-burn role can burn a public balance from any address that holds it, including a loan escrow, without the holder&#x27;s consent; private records cannot be burned by the issuer, only by their owner. The core currently accepts any registry token as collateral. Should V1 enforce a collateral whitelist in the contracts, or keep the contracts asset-agnostic and leave the policy to the SDK and application layer?</del> → <ins>Token issuers with public-burn, freeze or pause powers can affect a loan escrow. The current multi-token implementation checks a Hub asset allowlist when opening offers and accepting draws. Which issuer powers should V1 accept, and how should an escrow deficit affect positions in that token?</ins></p>
+<h2>Out of scope</h2>
+<p>… are zero. V1 targets a <del>capped </del>mainnet launch; the extensions follow  …</p>
+<h2>After the grant</h2>
+<p>The <del>deployed </del>protocol becomes part of the PWN DAO <del>Foundation&#x27;s maintained infrastructure and is operated alongside the existing EVM deployments, under the same governance. </del> → <ins>Foundation’s maintained infrastructure, with the team behind OWN maintaining the SDK, reference application and integrations. The deployed core remains immutable. </ins>The SDK is published as  …</p>
+<h2>Possible extensions</h2>
+<p> → <ins>Borrower and lender integration hooks</ins></p>
+<h2>Existing references</h2>
+<p> → <ins>OWN ownlabs.co Current team and product reference: longer-term crypto-backed lending and onchain mortgage infrastructure, building on PWN’s lending primitives. [https://ownlabs.co/]</ins></p>
+<p>PWN Protocol v1.5 <del>github.com/PWNDAO/pwn_protocol Architecture and lending-model </del> → <ins>v1.5-withdraw-restriction Architecture </ins>reference: Hub, Config, <del>loan lifecycle, Elastic Proposals, installments and crowdfunding concepts.</del> → <ins>modular products and proposals, installments, crowdfunding and borrower/lender hooks. [https://github.com/PWNDAO/pwn_protocol/tree/v1.5-withdraw-restriction]</ins></p>
+<p>… loan creation, as implemented on <del>EVM.</del> → <ins>EVM. [https://dev-docs.pwn.xyz/smart-contracts/core/smart-contract-reference/proposals/simple-loan-proposal/elastic-proposal]</ins></p>
+<p>… role administration, multisig upgrades, USDCx <del>integration.</del> → <ins>integration. [https://github.com/ProvableHQ/compliant-stablecoin]</ins></p>
+<h2>Formát</h2><p><ins>Přibyl editovatelný DOCX s textem, tabulkami a šesti ilustracemi. Týmová sekce posunula stránkování.</ins></p>

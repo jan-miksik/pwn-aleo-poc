@@ -1,0 +1,539 @@
+{
+  "checked_date": "2026-10-07",
+  "network": "mainnet",
+  "programs": [
+    {
+      "program": "credits.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/credits.aleo",
+      "sha256": "2e0099b57d7d0e09a836f07d8801dd53fb5175b043ee5876b42cd67f741486be",
+      "constructor": null,
+      "imports": [],
+      "burns": []
+    },
+    {
+      "program": "puzzle_arcade_coin_v002.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/puzzle_arcade_coin_v002.aleo",
+      "sha256": "a6fe3391f15fd35d2c15b9e0f7505ea9405e40814b78eb0f967156f594ff4d2b",
+      "constructor": null,
+      "imports": [],
+      "burns": []
+    },
+    {
+      "program": "token_registry.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/token_registry.aleo",
+      "sha256": "0534f06f54b1c9ce63621162bd9fbd1c37642a7b514a50a7be1258b0d82c86a0",
+      "constructor": null,
+      "imports": [
+        "import credits.aleo;"
+      ],
+      "burns": [
+        "function burn_public:",
+        "function burn_private:"
+      ]
+    },
+    {
+      "program": "puzzle_arcade_ticket_v002.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/puzzle_arcade_ticket_v002.aleo",
+      "sha256": "62705078d06ab0ce2dfb7244b958735e1c8272e7be51db8adf80386df51a938c",
+      "constructor": null,
+      "imports": [],
+      "burns": []
+    },
+    {
+      "program": "pondo_protocol.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/pondo_protocol.aleo",
+      "sha256": "9f4285998b935e90dd14ee8f1e54d1046408af35fc6c48ce066d6af688edeb20",
+      "constructor": null,
+      "imports": [
+        "import credits.aleo;",
+        "import token_registry.aleo;",
+        "import wrapped_credits.aleo;",
+        "import validator_oracle.aleo;",
+        "import paleo_token.aleo;",
+        "import pondo_protocol_token.aleo;",
+        "import delegator1.aleo;",
+        "import delegator2.aleo;",
+        "import delegator3.aleo;",
+        "import delegator4.aleo;",
+        "import delegator5.aleo;"
+      ],
+      "burns": []
+    },
+    {
+      "program": "shield_swap.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/shield_swap.aleo",
+      "sha256": "55ea3a3840963ef625c7f25bc8fa29022cb3f04a2333a24556899d82def033c3",
+      "constructor": "is.eq edition 0u16 into r0;\n    branch.eq r0 false to end_then_0_0;\n    contains admin[true] into r1;\n    not r1 into r2;\n    assert.eq r2 true;\n    set aleo1fxxkwxer36ml7c8zk5dmnl7mvq938mw87d9z2vsm7jcef6fk3sqscvk3wf into admin[true];\n    set false into pool_creation_is_open[true];\n    set false into global_paused[true];\n    branch.eq true true to end_otherwise_0_1;\n    position end_then_0_0;\n    position end_otherwise_0_1;\n    gt edition 0u16 into r3;\n    branch.eq r3 false to end_then_0_2;\n    cast checksum edition into r4 as ChecksumEdition;\n    hash.bhp256 r4 into r5 as field;\n    cast shield_swap.aleo r5 into r6 as shield_swap_multisig_core.aleo/WalletSigningOpId;\n    hash.bhp256 r6 into r7 as field;\n    contains shield_swap_multisig_core.aleo/completed_signing_ops[r7] into r8;\n    assert.eq r8 true;\n    branch.eq true true to end_otherwise_0_3;\n    position end_then_0_2;\n    position end_otherwise_0_3;",
+      "imports": [
+        "import shield_swap_freezelist.aleo;",
+        "import shield_swap_multisig_core.aleo;",
+        "import shield_swap_pricing_terms.aleo;"
+      ],
+      "burns": [
+        "function burn:"
+      ]
+    },
+    {
+      "program": "shield_swap_router.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/shield_swap_router.aleo",
+      "sha256": "d8b608cff266f4041ee673089c450806600dd53dd3254774ae8a4a11b97d2c5c",
+      "constructor": "gt edition 0u16 into r0;\n    branch.eq r0 false to end_then_0_0;\n    cast checksum edition into r1 as ChecksumEdition;\n    hash.bhp256 r1 into r2 as field;\n    cast shield_swap_router.aleo r2 into r3 as shield_swap_multisig_core.aleo/WalletSigningOpId;\n    hash.bhp256 r3 into r4 as field;\n    contains shield_swap_multisig_core.aleo/completed_signing_ops[r4] into r5;\n    assert.eq r5 true;\n    branch.eq true true to end_otherwise_0_1;\n    position end_then_0_0;\n    position end_otherwise_0_1;",
+      "imports": [
+        "import shield_swap.aleo;",
+        "import shield_swap_freezelist.aleo;",
+        "import shield_swap_multisig_core.aleo;",
+        "import shield_swap_pricing_terms.aleo;"
+      ],
+      "burns": []
+    },
+    {
+      "program": "usdcx_stablecoin.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/usdcx_stablecoin.aleo",
+      "sha256": "727e71ee99b7df568746d250864b6e9519d522d01088953d8d97290b8eba418f",
+      "constructor": "is.eq edition 0u16 into r0;\n    branch.eq r0 false to end_then_0_10;\n    assert.eq program_owner aleo1ej3uy9flhw4qw2s45d3ckdkhnfhq9lmznlyw2fnl452s3k8aagzq29fp72;\n    branch.eq true true to end_otherwise_0_11;\n    position end_then_0_10;\n    cast checksum edition into r1 as ChecksumEdition;\n    hash.bhp256 r1 into r2 as field;\n    cast usdcx_stablecoin.aleo r2 into r3 as WalletSigningOpId;\n    hash.bhp256 r3 into r4 as field;\n    contains usdcx_multisig_core.aleo/completed_signing_ops[r4] into r5;\n    assert.eq r5 true;\n    position end_otherwise_0_11;",
+      "imports": [
+        "import merkle_tree.aleo;",
+        "import usdcx_multisig_core.aleo;",
+        "import usdcx_freezelist.aleo;"
+      ],
+      "burns": [
+        "function burn_public:",
+        "function burn_private:"
+      ]
+    },
+    {
+      "program": "usad_stablecoin.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/usad_stablecoin.aleo",
+      "sha256": "ff71d2fce2bb599edf620583960986178a1a66b4b74af7332a781421010e3711",
+      "constructor": "is.eq edition 0u16 into r0;\n    branch.eq r0 false to end_then_0_8;\n    assert.eq program_owner aleo1apyqe667gtlw2ewxazn97nuc96uf26xwtqe0ulscusnxpkm96crscnn4tr;\n    branch.eq true true to end_otherwise_0_9;\n    position end_then_0_8;\n    cast checksum edition into r1 as ChecksumEdition;\n    hash.bhp256 r1 into r2 as field;\n    cast usad_stablecoin.aleo r2 into r3 as WalletSigningOpId;\n    hash.bhp256 r3 into r4 as field;\n    contains usad_multisig_core.aleo/completed_signing_ops[r4] into r5;\n    assert.eq r5 true;\n    position end_otherwise_0_9;",
+      "imports": [
+        "import merkle_tree.aleo;",
+        "import usad_multisig_core.aleo;",
+        "import usad_freezelist.aleo;"
+      ],
+      "burns": [
+        "function burn_public:",
+        "function burn_private:"
+      ]
+    },
+    {
+      "program": "arc20_sol.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/arc20_sol.aleo",
+      "sha256": "7859fe197c2f28464f2bc32d212e864e242fb300aae8a636004d124f91d1a65c",
+      "constructor": "cast 61u8 159u8 3u8 215u8 96u8 144u8 14u8 107u8 28u8 185u8 132u8 93u8 240u8 41u8 185u8 98u8 59u8 228u8 145u8 252u8 47u8 61u8 169u8 89u8 220u8 145u8 35u8 43u8 185u8 212u8 203u8 112u8 into r0 as [u8; 32u32];\n    assert.eq name/checksum r0;\n    cast 173u8 218u8 35u8 221u8 212u8 91u8 120u8 219u8 132u8 140u8 19u8 254u8 254u8 25u8 236u8 112u8 198u8 78u8 201u8 44u8 232u8 48u8 135u8 17u8 169u8 213u8 42u8 36u8 15u8 231u8 104u8 244u8 into r1 as [u8; 32u32];\n    assert.eq symbol/checksum r1;\n    cast 16u8 182u8 204u8 42u8 138u8 98u8 10u8 66u8 245u8 211u8 153u8 203u8 96u8 208u8 143u8 236u8 80u8 88u8 65u8 126u8 163u8 246u8 221u8 93u8 156u8 97u8 74u8 221u8 204u8 71u8 215u8 236u8 into r2 as [u8; 32u32];\n    assert.eq decimals/checksum r2;\n    cast 205u8 178u8 247u8 132u8 253u8 223u8 249u8 127u8 47u8 226u8 176u8 159u8 28u8 113u8 162u8 63u8 192u8 245u8 28u8 142u8 229u8 97u8 243u8 122u8 9u8 163u8 70u8 84u8 253u8 150u8 63u8 127u8 into r3 as [u8; 32u32];\n    assert.eq max_supply/checksum r3;\n    is.eq edition 0u16 into r4;\n    branch.eq r4 false to end_then_0_0;\n    set 8u16 into address_to_role[aleo1kmcydn6me4fn20eq0pcdf8zhh58jpnela8ys3e77xr4x0fn00czqt3v8x2];\n    set 4u16 into address_to_role[aleo126h6shw93wegf2fajnux390sfl8r89rym2wwrkge3al43z5mku8shkzk3t];\n    set 0u128 into token_supply__[false];\n    branch.eq true true to end_otherwise_0_1;\n    position end_then_0_0;\n    position end_otherwise_0_1;\n    gt edition 0u16 into r5;\n    branch.eq r5 false to end_then_0_2;\n    cast checksum edition into r6 as ChecksumEdition;\n    hash.bhp256 r6 into r7 as field;\n    cast arc20_sol.aleo r7 into r8 as arc20_multisig_core.aleo/WalletSigningOpId;\n    hash.bhp256 r8 into r9 as field;\n    contains arc20_multisig_core.aleo/completed_signing_ops[r9] into r10;\n    assert.eq r10 true;\n    branch.eq true true to end_otherwise_0_3;\n    position end_then_0_2;\n    position end_otherwise_0_3;",
+      "imports": [
+        "import arc20_multisig_core.aleo;"
+      ],
+      "burns": [
+        "function burn_public:",
+        "function burn_private:"
+      ]
+    },
+    {
+      "program": "arc20_wbtc.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/arc20_wbtc.aleo",
+      "sha256": "9ea20964edc6b4867af1fa37054418facd98f6f73bc2712aa9e272cdcac4347e",
+      "constructor": "cast 57u8 36u8 75u8 31u8 136u8 141u8 100u8 91u8 76u8 96u8 163u8 184u8 180u8 154u8 171u8 70u8 102u8 59u8 48u8 116u8 130u8 175u8 150u8 42u8 138u8 100u8 84u8 82u8 22u8 215u8 165u8 66u8 into r0 as [u8; 32u32];\n    assert.eq name/checksum r0;\n    cast 234u8 150u8 141u8 108u8 50u8 214u8 193u8 166u8 240u8 5u8 230u8 225u8 74u8 232u8 15u8 99u8 73u8 134u8 223u8 223u8 148u8 170u8 203u8 136u8 70u8 30u8 186u8 54u8 199u8 66u8 79u8 101u8 into r1 as [u8; 32u32];\n    assert.eq symbol/checksum r1;\n    cast 253u8 167u8 73u8 192u8 206u8 60u8 95u8 61u8 123u8 55u8 219u8 240u8 169u8 153u8 102u8 140u8 5u8 39u8 44u8 93u8 165u8 45u8 44u8 138u8 190u8 58u8 115u8 213u8 182u8 134u8 73u8 99u8 into r2 as [u8; 32u32];\n    assert.eq decimals/checksum r2;\n    cast 205u8 178u8 247u8 132u8 253u8 223u8 249u8 127u8 47u8 226u8 176u8 159u8 28u8 113u8 162u8 63u8 192u8 245u8 28u8 142u8 229u8 97u8 243u8 122u8 9u8 163u8 70u8 84u8 253u8 150u8 63u8 127u8 into r3 as [u8; 32u32];\n    assert.eq max_supply/checksum r3;\n    is.eq edition 0u16 into r4;\n    branch.eq r4 false to end_then_0_0;\n    set 8u16 into address_to_role[aleo1kmcydn6me4fn20eq0pcdf8zhh58jpnela8ys3e77xr4x0fn00czqt3v8x2];\n    set 4u16 into address_to_role[aleo126h6shw93wegf2fajnux390sfl8r89rym2wwrkge3al43z5mku8shkzk3t];\n    set 0u128 into token_supply__[false];\n    branch.eq true true to end_otherwise_0_1;\n    position end_then_0_0;\n    position end_otherwise_0_1;\n    gt edition 0u16 into r5;\n    branch.eq r5 false to end_then_0_2;\n    cast checksum edition into r6 as ChecksumEdition;\n    hash.bhp256 r6 into r7 as field;\n    cast arc20_wbtc.aleo r7 into r8 as arc20_multisig_core.aleo/WalletSigningOpId;\n    hash.bhp256 r8 into r9 as field;\n    contains arc20_multisig_core.aleo/completed_signing_ops[r9] into r10;\n    assert.eq r10 true;\n    branch.eq true true to end_otherwise_0_3;\n    position end_then_0_2;\n    position end_otherwise_0_3;",
+      "imports": [
+        "import arc20_multisig_core.aleo;"
+      ],
+      "burns": [
+        "function burn_public:",
+        "function burn_private:"
+      ]
+    },
+    {
+      "program": "usdcx_bridge.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/usdcx_bridge.aleo",
+      "sha256": "15257f657ecea56fac9ce45d8c105c0cb96f28d778a4b20f369d2758db10c709",
+      "constructor": "is.eq edition 0u16 into r0;\n    branch.eq r0 false to end_then_0_2;\n    assert.eq program_owner aleo1ej3uy9flhw4qw2s45d3ckdkhnfhq9lmznlyw2fnl452s3k8aagzq29fp72;\n    branch.eq true true to end_otherwise_0_3;\n    position end_then_0_2;\n    cast checksum edition into r1 as ChecksumEdition;\n    hash.bhp256 r1 into r2 as field;\n    cast usdcx_bridge.aleo r2 into r3 as WalletSigningOpId;\n    hash.bhp256 r3 into r4 as field;\n    contains usdcx_multisig_core.aleo/completed_signing_ops[r4] into r5;\n    assert.eq r5 true;\n    position end_otherwise_0_3;",
+      "imports": [
+        "import merkle_tree.aleo;",
+        "import usdcx_multisig_core.aleo;",
+        "import usdcx_freezelist.aleo;",
+        "import usdcx_stablecoin.aleo;"
+      ],
+      "burns": [
+        "function burn:",
+        "function burn_public:",
+        "function set_minimum_burn_amount:"
+      ]
+    },
+    {
+      "program": "usdcx_bridge_v2.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/usdcx_bridge_v2.aleo",
+      "sha256": "6b35c6603a7323f0e64fdbc670abb41d4dc9e200d596fc8b928d91129a744eec",
+      "constructor": "gt edition 0u16 into r0;\n    branch.eq r0 false to end_then_0_0;\n    cast checksum edition into r1 as ChecksumEdition;\n    hash.bhp256 r1 into r2 as field;\n    cast usdcx_bridge_v2.aleo r2 into r3 as usdcx_multisig_core.aleo/WalletSigningOpId;\n    hash.bhp256 r3 into r4 as field;\n    contains usdcx_multisig_core.aleo/completed_signing_ops[r4] into r5;\n    assert.eq r5 true;\n    branch.eq true true to end_otherwise_0_1;\n    position end_then_0_0;\n    position end_otherwise_0_1;",
+      "imports": [
+        "import merkle_tree.aleo;",
+        "import usdcx_multisig_core.aleo;",
+        "import usdcx_freezelist.aleo;",
+        "import usdcx_stablecoin.aleo;",
+        "import usdcx_bridge.aleo;"
+      ],
+      "burns": [
+        "function burn_public:",
+        "function burn_public_as_signer:",
+        "function set_minimum_burn_amount:",
+        "function set_maximum_burn_amount:"
+      ]
+    },
+    {
+      "program": "usad_bridge.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/usad_bridge.aleo",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "program": "usdcx_multisig_core.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/usdcx_multisig_core.aleo",
+      "sha256": "d658d1bb20189e6c981ac6240300636cc6ed478c1e7ec51a454bfa5057dc63cf",
+      "constructor": "is.eq edition 0u16 into r0;\n    branch.eq r0 false to end_then_0_50;\n    assert.eq program_owner aleo1e0kw8agxhvhkj00eaxhxcwrzv6yxpzedctxhaszc5gl6ftsmfq8saj0td6;\n    branch.eq true true to end_otherwise_0_51;\n    position end_then_0_50;\n    contains program_settings_map[true] into r1;\n    assert.eq r1 true;\n    get program_settings_map[true] into r2;\n    assert.eq r2.allow_upgrades true;\n    assert.eq program_owner r2.upgrader_address;\n    position end_otherwise_0_51;",
+      "imports": [],
+      "burns": []
+    },
+    {
+      "program": "usad_multisig_core.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/usad_multisig_core.aleo",
+      "sha256": "dacbf78c75f0e352035e673c4a94c15b4d130a0f63ee45a027bd5595a086ef5f",
+      "constructor": "is.eq edition 0u16 into r0;\n    branch.eq r0 false to end_then_0_50;\n    assert.eq program_owner aleo1psqst27hpqda06sr2yuzyaf2q8hvu227295p98httv8u4j4clvyshjdldd;\n    branch.eq true true to end_otherwise_0_51;\n    position end_then_0_50;\n    contains program_settings_map[true] into r1;\n    assert.eq r1 true;\n    get program_settings_map[true] into r2;\n    assert.eq r2.allow_upgrades true;\n    assert.eq program_owner r2.upgrader_address;\n    position end_otherwise_0_51;",
+      "imports": [],
+      "burns": []
+    },
+    {
+      "program": "arc20_multisig_core.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/arc20_multisig_core.aleo",
+      "sha256": "86c73949e5c07e19a5c6e9c5b24d96531aaf510288227694e65c49bf54ec3f87",
+      "constructor": "gt edition 0u16 into r0;\n    branch.eq r0 false to end_then_0_0;\n    contains program_settings_map[true] into r1;\n    assert.eq r1 true;\n    get program_settings_map[true] into r2;\n    assert.eq r2.allow_upgrades true;\n    assert.eq program_owner r2.upgrader_address;\n    branch.eq true true to end_otherwise_0_1;\n    position end_then_0_0;\n    position end_otherwise_0_1;",
+      "imports": [],
+      "burns": []
+    },
+    {
+      "program": "usdcx_freezelist.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/usdcx_freezelist.aleo",
+      "sha256": "1e7fff73446ad7d2b13f55575bbe5a11a7d4abb5b83602e19da352733a80ec2c",
+      "constructor": "is.eq edition 0u16 into r0;\n    branch.eq r0 false to end_then_0_8;\n    assert.eq program_owner aleo1ej3uy9flhw4qw2s45d3ckdkhnfhq9lmznlyw2fnl452s3k8aagzq29fp72;\n    branch.eq true true to end_otherwise_0_9;\n    position end_then_0_8;\n    cast checksum edition into r1 as ChecksumEdition;\n    hash.bhp256 r1 into r2 as field;\n    cast usdcx_freezelist.aleo r2 into r3 as WalletSigningOpId;\n    hash.bhp256 r3 into r4 as field;\n    contains usdcx_multisig_core.aleo/completed_signing_ops[r4] into r5;\n    assert.eq r5 true;\n    position end_otherwise_0_9;",
+      "imports": [
+        "import merkle_tree.aleo;",
+        "import usdcx_multisig_core.aleo;"
+      ],
+      "burns": []
+    },
+    {
+      "program": "usad_freezelist.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/usad_freezelist.aleo",
+      "sha256": "7b104434ab0bae1e5a017f9a75b6bcc7b7c8882e0b26de47f6deca5c0fa49608",
+      "constructor": "is.eq edition 0u16 into r0;\n    branch.eq r0 false to end_then_0_8;\n    assert.eq program_owner aleo1apyqe667gtlw2ewxazn97nuc96uf26xwtqe0ulscusnxpkm96crscnn4tr;\n    branch.eq true true to end_otherwise_0_9;\n    position end_then_0_8;\n    cast checksum edition into r1 as ChecksumEdition;\n    hash.bhp256 r1 into r2 as field;\n    cast usad_freezelist.aleo r2 into r3 as WalletSigningOpId;\n    hash.bhp256 r3 into r4 as field;\n    contains usad_multisig_core.aleo/completed_signing_ops[r4] into r5;\n    assert.eq r5 true;\n    position end_otherwise_0_9;",
+      "imports": [
+        "import merkle_tree.aleo;",
+        "import usad_multisig_core.aleo;"
+      ],
+      "burns": []
+    },
+    {
+      "program": "arcn_pool_v2_2_2.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/arcn_pool_v2_2_2.aleo",
+      "sha256": "476a1a3e2adad628a117d4b46e0082f5a1e92f86629156ec6b0ff5ea680f6cce",
+      "constructor": null,
+      "imports": [
+        "import arcn_access_manager_v1.aleo;",
+        "import arcn_whitelist.aleo;",
+        "import credits.aleo;",
+        "import token_registry.aleo;"
+      ],
+      "burns": []
+    },
+    {
+      "program": "arcn_whitelist.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/arcn_whitelist.aleo",
+      "sha256": "93651f10be93ea6c3db5a8136cc22ae4d2ed4146b67965a999de843475525730",
+      "constructor": null,
+      "imports": [
+        "import arcn_access_manager_v1.aleo;"
+      ],
+      "burns": []
+    },
+    {
+      "program": "wrapped_credits.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/wrapped_credits.aleo",
+      "sha256": "ded3b67c4c905f1f0f821411edc055603790f5c8f9a7865aff6c97611c034933",
+      "constructor": null,
+      "imports": [
+        "import credits.aleo;",
+        "import token_registry.aleo;"
+      ],
+      "burns": []
+    },
+    {
+      "program": "arcn_compliance_v1.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/arcn_compliance_v1.aleo",
+      "sha256": "ed85e540b428f0208e63901613df0dacd4b7e6db2108f57c9285a5bf6d06706f",
+      "constructor": null,
+      "imports": [],
+      "burns": []
+    },
+    {
+      "program": "mystery_city_v001.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/mystery_city_v001.aleo",
+      "sha256": "de1653b3e5ad3af4c53f03de94150e961eea30bdd573b5ba55de15dad5748aa2",
+      "constructor": null,
+      "imports": [
+        "import puzzle_arcade_coin_v002.aleo;",
+        "import puzzle_arcade_ticket_v002.aleo;"
+      ],
+      "burns": []
+    },
+    {
+      "program": "puzzle_spinner_v002.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/puzzle_spinner_v002.aleo",
+      "sha256": "65c758c8aeabd4d854982a3744b4cbee9d0eb7494672b31c845bc4ae64677c8e",
+      "constructor": null,
+      "imports": [
+        "import puzzle_arcade_coin_v002.aleo;",
+        "import puzzle_arcade_ticket_v002.aleo;"
+      ],
+      "burns": []
+    },
+    {
+      "program": "par_giveaways_v1.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/par_giveaways_v1.aleo",
+      "sha256": "d633311bba207c19176467f8f0a2b6abcdf9ddc038e07e4af51035e35e211a6e",
+      "constructor": null,
+      "imports": [
+        "import puzzle_arcade_ticket_v002.aleo;",
+        "import par_store_inventory_v1.aleo;"
+      ],
+      "burns": []
+    },
+    {
+      "program": "puzzle_spinner_v003.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/puzzle_spinner_v003.aleo",
+      "sha256": "cb30ac06195584113bc192687701195573e8b4c2f7859da41875d36b40ccb9e6",
+      "constructor": null,
+      "imports": [
+        "import puzzle_arcade_coin_v002.aleo;",
+        "import puzzle_arcade_ticket_v002.aleo;"
+      ],
+      "burns": []
+    },
+    {
+      "program": "arcn_puc_in_helper_v2_2_4.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/arcn_puc_in_helper_v2_2_4.aleo",
+      "sha256": "dac005e284b695763ab1bff310e0d5d31900568d6e9359bfb8a09f307251afb3",
+      "constructor": null,
+      "imports": [
+        "import arcn_compliance_v1.aleo;",
+        "import arcn_access_manager_v1.aleo;",
+        "import arcn_whitelist.aleo;",
+        "import credits.aleo;",
+        "import token_registry.aleo;",
+        "import arcn_pool_v2_2_2.aleo;",
+        "import wrapped_credits.aleo;"
+      ],
+      "burns": []
+    },
+    {
+      "program": "squash_v3.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/squash_v3.aleo",
+      "sha256": "cc84d5442bb276a33e8e05e60c4b9f42421af1bcda4090d1636e113f84732990",
+      "constructor": null,
+      "imports": [
+        "import squash_timestamp.aleo;",
+        "import puzzle_arcade_ticket_v002.aleo;",
+        "import puzzle_arcade_coin_v002.aleo;",
+        "import squash_v001.aleo;",
+        "import squash_v2.aleo;"
+      ],
+      "burns": []
+    },
+    {
+      "program": "arcn_puc_out_helper_v2_2_3.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/arcn_puc_out_helper_v2_2_3.aleo",
+      "sha256": "b812b2da5ab5d5830e9cbd4235cd01991d30ef90189c3a548c2421d56be0cdcf",
+      "constructor": null,
+      "imports": [
+        "import arcn_compliance_v1.aleo;",
+        "import arcn_access_manager_v1.aleo;",
+        "import arcn_whitelist.aleo;",
+        "import credits.aleo;",
+        "import token_registry.aleo;",
+        "import arcn_pool_v2_2_2.aleo;",
+        "import wrapped_credits.aleo;"
+      ],
+      "burns": []
+    },
+    {
+      "program": "squash_v4.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/squash_v4.aleo",
+      "sha256": "ae4053f8374fe37f24036359b0e3943854da7131e5e103bdd0ddf6adce19a124",
+      "constructor": null,
+      "imports": [
+        "import puzzle_arcade_ticket_v002.aleo;",
+        "import puzzle_arcade_coin_v002.aleo;",
+        "import squash_timestamp.aleo;",
+        "import squash_v001.aleo;",
+        "import squash_v2.aleo;",
+        "import squash_v3.aleo;"
+      ],
+      "burns": []
+    },
+    {
+      "program": "vlink_quest_v1.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/vlink_quest_v1.aleo",
+      "sha256": "b3494096ae1d4132ffaeb2844107a9cabe3026a52ec9115b08d1d3cc231e29a7",
+      "constructor": null,
+      "imports": [
+        "import token_registry.aleo;"
+      ],
+      "burns": []
+    },
+    {
+      "program": "shield_swap_arc20_wrapped_usdcx.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/shield_swap_arc20_wrapped_usdcx.aleo",
+      "sha256": "66815a3f0da623597a7e4350ecce77c6b38b52736a38364ecb877901ddd53e6e",
+      "constructor": "cast 154u8 206u8 46u8 41u8 172u8 76u8 39u8 103u8 131u8 133u8 57u8 213u8 153u8 48u8 235u8 223u8 148u8 173u8 53u8 233u8 21u8 36u8 233u8 53u8 87u8 211u8 157u8 130u8 114u8 162u8 66u8 220u8 into r0 as [u8; 32u32];\n    assert.eq name/checksum r0;\n    cast 131u8 253u8 6u8 170u8 64u8 125u8 166u8 53u8 202u8 131u8 142u8 15u8 128u8 93u8 97u8 223u8 186u8 150u8 5u8 255u8 48u8 53u8 136u8 208u8 16u8 164u8 206u8 106u8 249u8 207u8 226u8 65u8 into r1 as [u8; 32u32];\n    assert.eq symbol/checksum r1;\n    cast 79u8 184u8 10u8 23u8 76u8 231u8 192u8 227u8 113u8 114u8 203u8 21u8 227u8 203u8 76u8 60u8 106u8 67u8 110u8 246u8 121u8 247u8 230u8 98u8 155u8 236u8 37u8 144u8 182u8 125u8 48u8 168u8 into r2 as [u8; 32u32];\n    assert.eq decimals/checksum r2;\n    cast 205u8 178u8 247u8 132u8 253u8 223u8 249u8 127u8 47u8 226u8 176u8 159u8 28u8 113u8 162u8 63u8 192u8 245u8 28u8 142u8 229u8 97u8 243u8 122u8 9u8 163u8 70u8 84u8 253u8 150u8 63u8 127u8 into r3 as [u8; 32u32];\n    assert.eq max_supply/checksum r3;\n    is.eq edition 0u16 into r4;\n    branch.eq r4 false to end_then_0_0;\n    set 8u16 into address_to_role[aleo1fxxkwxer36ml7c8zk5dmnl7mvq938mw87d9z2vsm7jcef6fk3sqscvk3wf];\n    set 0u128 into token_supply__[false];\n    branch.eq true true to end_otherwise_0_1;\n    position end_then_0_0;\n    position end_otherwise_0_1;\n    gt edition 0u16 into r5;\n    branch.eq r5 false to end_then_0_2;\n    cast checksum edition into r6 as ChecksumEdition;\n    hash.bhp256 r6 into r7 as field;\n    cast shield_swap_arc20_wrapped_usdcx.aleo r7 into r8 as shield_swap_multisig_core.aleo/WalletSigningOpId;\n    hash.bhp256 r8 into r9 as field;\n    contains shield_swap_multisig_core.aleo/completed_signing_ops[r9] into r10;\n    assert.eq r10 true;\n    branch.eq true true to end_otherwise_0_3;\n    position end_then_0_2;\n    position end_otherwise_0_3;",
+      "imports": [
+        "import merkle_tree.aleo;",
+        "import shield_swap_multisig_core.aleo;",
+        "import usdcx_freezelist.aleo;",
+        "import usdcx_multisig_core.aleo;",
+        "import usdcx_stablecoin.aleo;"
+      ],
+      "burns": [
+        "function burn_empty_record:"
+      ]
+    },
+    {
+      "program": "betastaking.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/betastaking.aleo",
+      "sha256": "03898005854e5f398bab45d969e3b304affc89b737caddd1dcaed7c7ddf94462",
+      "constructor": null,
+      "imports": [
+        "import credits.aleo;"
+      ],
+      "burns": []
+    },
+    {
+      "program": "jusd_oracle_staging.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/jusd_oracle_staging.aleo",
+      "sha256": "e29b919b668b09a9caac3254a935300b63314135fd37e6a2122bd9eadf441bc2",
+      "constructor": "is.eq edition 0u16 into r0;\n    branch.eq r0 false to end_then_0_0;\n    assert.eq program_owner aleo1ugrtmuuejsw9585c7gzylgwkptfaymjksa0q2t4fkr3ln7zwsypsce3dpz;\n    branch.eq true true to end_otherwise_0_1;\n    position end_then_0_0;\n    cast checksum edition into r1 as ChecksumEdition;\n    hash.bhp256 r1 into r2 as field;\n    get.or_use upgrade_approved[r2] false into r3;\n    assert.eq r3 true;\n    get.or_use upgrades_disabled[true] false into r4;\n    not r4 into r5;\n    assert.eq r5 true;\n    get upgrade_eta[r2] into r6;\n    gte block.height r6 into r7;\n    assert.eq r7 true;\n    get admin[true] into r8;\n    get.or_use upgrader[true] r8 into r9;\n    assert.eq program_owner r9;\n    position end_otherwise_0_1;",
+      "imports": [],
+      "burns": []
+    },
+    {
+      "program": "jusd_oracle_production.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/jusd_oracle_production.aleo",
+      "sha256": "76d406cd42ec414ab0f63819479e43ae64acf8879814c24de3bec825c62c3b62",
+      "constructor": "is.eq edition 0u16 into r0;\n    branch.eq r0 false to end_then_0_0;\n    assert.eq program_owner aleo15z3xv5a8r749wn0lmdysq7u4rnj4fd6n3ygv3autsrp4c9nj35gq7n9ljl;\n    branch.eq true true to end_otherwise_0_1;\n    position end_then_0_0;\n    cast checksum edition into r1 as ChecksumEdition;\n    hash.bhp256 r1 into r2 as field;\n    get.or_use upgrade_approved[r2] false into r3;\n    assert.eq r3 true;\n    get.or_use upgrades_disabled[true] false into r4;\n    not r4 into r5;\n    assert.eq r5 true;\n    get upgrade_eta[r2] into r6;\n    gte block.height r6 into r7;\n    assert.eq r7 true;\n    get admin[true] into r8;\n    get.or_use upgrader[true] r8 into r9;\n    assert.eq program_owner r9;\n    position end_otherwise_0_1;",
+      "imports": [],
+      "burns": []
+    },
+    {
+      "program": "merkle_tree.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/merkle_tree.aleo",
+      "sha256": "42382123ebbe9a82466e49ddc85a7c0bb59d0082e26b0e0c396d5128ee26d293",
+      "constructor": "assert.eq edition 0u16;",
+      "imports": [],
+      "burns": []
+    },
+    {
+      "program": "shield_swap_arc20_credits.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/shield_swap_arc20_credits.aleo",
+      "sha256": "f4c76ba15f20df4a583f166cf7ac7aa763fc603c7ca4cc7c5a1638c919ef5efa",
+      "constructor": "cast 77u8 248u8 100u8 246u8 50u8 83u8 63u8 104u8 204u8 250u8 6u8 86u8 76u8 247u8 153u8 135u8 72u8 128u8 118u8 231u8 149u8 79u8 170u8 192u8 126u8 75u8 198u8 227u8 118u8 150u8 175u8 244u8 into r0 as [u8; 32u32];\n    assert.eq name/checksum r0;\n    cast 235u8 74u8 194u8 27u8 47u8 200u8 186u8 202u8 17u8 138u8 230u8 164u8 65u8 64u8 181u8 126u8 100u8 173u8 108u8 65u8 110u8 156u8 179u8 21u8 158u8 88u8 72u8 93u8 61u8 84u8 65u8 2u8 into r1 as [u8; 32u32];\n    assert.eq symbol/checksum r1;\n    cast 79u8 184u8 10u8 23u8 76u8 231u8 192u8 227u8 113u8 114u8 203u8 21u8 227u8 203u8 76u8 60u8 106u8 67u8 110u8 246u8 121u8 247u8 230u8 98u8 155u8 236u8 37u8 144u8 182u8 125u8 48u8 168u8 into r2 as [u8; 32u32];\n    assert.eq decimals/checksum r2;\n    cast 205u8 178u8 247u8 132u8 253u8 223u8 249u8 127u8 47u8 226u8 176u8 159u8 28u8 113u8 162u8 63u8 192u8 245u8 28u8 142u8 229u8 97u8 243u8 122u8 9u8 163u8 70u8 84u8 253u8 150u8 63u8 127u8 into r3 as [u8; 32u32];\n    assert.eq max_supply/checksum r3;\n    is.eq edition 0u16 into r4;\n    branch.eq r4 false to end_then_0_0;\n    set 8u16 into address_to_role[aleo1fxxkwxer36ml7c8zk5dmnl7mvq938mw87d9z2vsm7jcef6fk3sqscvk3wf];\n    set 0u128 into token_supply__[false];\n    branch.eq true true to end_otherwise_0_1;\n    position end_then_0_0;\n    position end_otherwise_0_1;\n    gt edition 0u16 into r5;\n    branch.eq r5 false to end_then_0_2;\n    cast checksum edition into r6 as ChecksumEdition;\n    hash.bhp256 r6 into r7 as field;\n    cast shield_swap_arc20_credits.aleo r7 into r8 as shield_swap_multisig_core.aleo/WalletSigningOpId;\n    hash.bhp256 r8 into r9 as field;\n    contains shield_swap_multisig_core.aleo/completed_signing_ops[r9] into r10;\n    assert.eq r10 true;\n    branch.eq true true to end_otherwise_0_3;\n    position end_then_0_2;\n    position end_otherwise_0_3;",
+      "imports": [
+        "import credits.aleo;",
+        "import shield_swap_multisig_core.aleo;"
+      ],
+      "burns": [
+        "function burn_empty_record:"
+      ]
+    },
+    {
+      "program": "arc20_eth.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/arc20_eth.aleo",
+      "sha256": "b7b7013a95072fd572bf9f3905e6dca0b94d05c70e22e10b65dcb6d47b5ff6a4",
+      "constructor": "cast 84u8 67u8 183u8 135u8 190u8 112u8 42u8 231u8 139u8 206u8 43u8 239u8 194u8 229u8 201u8 56u8 247u8 3u8 223u8 218u8 46u8 226u8 170u8 52u8 45u8 146u8 157u8 238u8 134u8 20u8 2u8 13u8 into r0 as [u8; 32u32];\n    assert.eq name/checksum r0;\n    cast 116u8 97u8 51u8 116u8 62u8 23u8 247u8 9u8 190u8 233u8 13u8 220u8 45u8 79u8 149u8 158u8 103u8 29u8 158u8 190u8 152u8 171u8 222u8 32u8 90u8 139u8 103u8 55u8 184u8 71u8 253u8 83u8 into r1 as [u8; 32u32];\n    assert.eq symbol/checksum r1;\n    cast 104u8 146u8 24u8 45u8 88u8 124u8 174u8 91u8 215u8 92u8 141u8 129u8 22u8 44u8 189u8 73u8 205u8 217u8 240u8 3u8 219u8 72u8 253u8 79u8 222u8 15u8 28u8 79u8 6u8 28u8 239u8 219u8 into r2 as [u8; 32u32];\n    assert.eq decimals/checksum r2;\n    cast 205u8 178u8 247u8 132u8 253u8 223u8 249u8 127u8 47u8 226u8 176u8 159u8 28u8 113u8 162u8 63u8 192u8 245u8 28u8 142u8 229u8 97u8 243u8 122u8 9u8 163u8 70u8 84u8 253u8 150u8 63u8 127u8 into r3 as [u8; 32u32];\n    assert.eq max_supply/checksum r3;\n    is.eq edition 0u16 into r4;\n    branch.eq r4 false to end_then_0_0;\n    set 8u16 into address_to_role[aleo1kmcydn6me4fn20eq0pcdf8zhh58jpnela8ys3e77xr4x0fn00czqt3v8x2];\n    set 4u16 into address_to_role[aleo126h6shw93wegf2fajnux390sfl8r89rym2wwrkge3al43z5mku8shkzk3t];\n    set 0u128 into token_supply__[false];\n    branch.eq true true to end_otherwise_0_1;\n    position end_then_0_0;\n    position end_otherwise_0_1;\n    gt edition 0u16 into r5;\n    branch.eq r5 false to end_then_0_2;\n    cast checksum edition into r6 as ChecksumEdition;\n    hash.bhp256 r6 into r7 as field;\n    cast arc20_eth.aleo r7 into r8 as arc20_multisig_core.aleo/WalletSigningOpId;\n    hash.bhp256 r8 into r9 as field;\n    contains arc20_multisig_core.aleo/completed_signing_ops[r9] into r10;\n    assert.eq r10 true;\n    branch.eq true true to end_otherwise_0_3;\n    position end_then_0_2;\n    position end_otherwise_0_3;",
+      "imports": [
+        "import arc20_multisig_core.aleo;"
+      ],
+      "burns": [
+        "function burn_public:",
+        "function burn_private:"
+      ]
+    },
+    {
+      "program": "aj_usdcx_stablecoin_2_10.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/aj_usdcx_stablecoin_2_10.aleo",
+      "sha256": "545280ba832b68cf20b24c691bc143be0ec524dbbf58133b060859ed162ef778",
+      "constructor": "assert.eq edition 0u16;",
+      "imports": [
+        "import merkle_tree.aleo;",
+        "import usdcx_multisig_core.aleo;",
+        "import usdcx_freezelist.aleo;",
+        "import usdcx_stablecoin.aleo;"
+      ],
+      "burns": []
+    },
+    {
+      "program": "hyp_hook_manager.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/hyp_hook_manager.aleo",
+      "sha256": "37e70ecbf8b3f849dfc82e8e14fb962db162bf855985f28681a443bf6a8b0510",
+      "constructor": "gt edition 0u16 into r0;\n    branch.eq r0 false to end_then_0_8;\n    cast checksum edition into r1 as ChecksumEdition;\n    hash.bhp256 r1 into r2 as field;\n    cast hyp_hook_manager.aleo r2 into r3 as WalletSigningOpId;\n    hash.bhp256 r3 into r4 as field;\n    contains hyp_multisig_core.aleo/completed_signing_ops[r4] into r5;\n    assert.eq r5 true;\n    branch.eq true true to end_otherwise_0_9;\n    position end_then_0_8;\n    position end_otherwise_0_9;",
+      "imports": [
+        "import credits.aleo;",
+        "import hyp_multisig_core.aleo;",
+        "import hyp_ism_manager.aleo;",
+        "import hyp_mailbox.aleo;"
+      ],
+      "burns": []
+    },
+    {
+      "program": "hyp_mailbox.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/hyp_mailbox.aleo",
+      "sha256": "52dde4ff0b510fcddabab604fe8cff6db56c868219d43893a4b7dd638f596f60",
+      "constructor": "gt edition 0u16 into r0;\n    branch.eq r0 false to end_then_0_0;\n    cast checksum edition into r1 as ChecksumEdition;\n    hash.bhp256 r1 into r2 as field;\n    cast hyp_mailbox.aleo r2 into r3 as WalletSigningOpId;\n    hash.bhp256 r3 into r4 as field;\n    contains hyp_multisig_core.aleo/completed_signing_ops[r4] into r5;\n    assert.eq r5 true;\n    branch.eq true true to end_otherwise_0_1;\n    position end_then_0_0;\n    position end_otherwise_0_1;",
+      "imports": [
+        "import hyp_multisig_core.aleo;",
+        "import hyp_ism_manager.aleo;"
+      ],
+      "burns": []
+    },
+    {
+      "program": "main_aj_arc20_2_15.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/main_aj_arc20_2_15.aleo",
+      "sha256": "d1e1455d606391c4717c7e58f0d7c023fe21a5bcf9704aab1ee0d7942220a31e",
+      "constructor": "assert.eq edition 0u16;",
+      "imports": [],
+      "burns": []
+    },
+    {
+      "program": "whalepool_easystaking_v3.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/whalepool_easystaking_v3.aleo",
+      "sha256": "74a93e5ed7acde2ed4bd4a4745701687055c0112d3443572cbeb32f466da95d3",
+      "constructor": "assert.eq program_owner aleo1aekd0ufset8gzaay3eezsq2sre5d69px389qd39et8k2wxzrwg8se976gt;",
+      "imports": [
+        "import credits.aleo;"
+      ],
+      "burns": []
+    },
+    {
+      "program": "autojoin_credits_2_10.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/autojoin_credits_2_10.aleo",
+      "sha256": "4d290a07d2da8f8eda4d3de02be1acf61ac127237a1a8bd8bbe1990a489da712",
+      "constructor": "assert.eq edition 0u16;",
+      "imports": [
+        "import credits.aleo;"
+      ],
+      "burns": []
+    },
+    {
+      "program": "shield_swap_multisig_core.aleo",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/shield_swap_multisig_core.aleo",
+      "sha256": "d2e6ac4c81804be734899346760405184c57240250c1905efba7e0c695b0e395",
+      "constructor": "gt edition 0u16 into r0;\n    branch.eq r0 false to end_then_0_0;\n    contains program_settings_map[true] into r1;\n    assert.eq r1 true;\n    get program_settings_map[true] into r2;\n    assert.eq r2.allow_upgrades true;\n    assert.eq program_owner r2.upgrader_address;\n    branch.eq true true to end_otherwise_0_1;\n    position end_then_0_0;\n    position end_otherwise_0_1;",
+      "imports": [],
+      "burns": []
+    }
+  ]
+}

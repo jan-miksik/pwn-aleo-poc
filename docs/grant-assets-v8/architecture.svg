@@ -1,0 +1,67 @@
+<svg viewBox="0 0 760 428" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="arch-title arch-desc">
+      <title id="arch-title">Protocol architecture and module connections</title>
+      <desc id="arch-desc">PWN DAO Foundation multisig manages Config and Hub. Hub approves Proposal and Loan core modules for new originations. Loan core draws credit from Proposal. Applications use the TypeScript SDK to interact with both modules. Dashed arrows show governance and approval; solid arrows show calls.</desc>
+      <defs>
+        <marker id="arch-gov-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#7a8089"></path></marker>
+        <marker id="arch-call-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#1f3a5f"></path></marker>
+      </defs>
+      <!-- Governance and approval paths -->
+      <g fill="none" stroke="#7a8089" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arch-gov-arrow)">
+        <path d="M286 32 H438"></path>
+        <path d="M595 60 V83 H380 V98"></path>
+        <path d="M300 152 V173 H164 V198"></path>
+        <path d="M460 152 V173 H596 V198"></path>
+      </g>
+      <g font-size="13" fill="#4a4f57" text-anchor="middle">
+        <text x="361" y="23">manages</text>
+        <text x="164" y="167">approves new originations</text>
+        <text x="596" y="167">approves new originations</text>
+      </g>
+      <!-- Module calls and application access -->
+      <g fill="none" stroke="#1f3a5f" stroke-width="1.8" marker-end="url(#arch-call-arrow)">
+        <path d="M440 230 H320"></path>
+        <path d="M290 312 V285 H164 V264"></path>
+        <path d="M470 312 V285 H596 V264"></path>
+        <path d="M380 389 V358"></path>
+      </g>
+      <g font-size="13" fill="#1f3a5f" text-anchor="middle">
+        <text x="380" y="219">draw credit</text>
+        <text x="380" y="298">SDK calls</text>
+        <text x="441" y="379">uses SDK</text>
+      </g>
+      <!-- Blocks -->
+      <g stroke="#cfd3d9" fill="#f5f6f8">
+        <rect x="10" y="4" width="276" height="56" rx="5"></rect>
+        <rect x="440" y="4" width="310" height="56" rx="5"></rect>
+        <rect x="220" y="98" width="320" height="54" rx="5"></rect>
+      </g>
+      <g stroke="#1f3a5f" fill="#e6eef7">
+        <rect x="10" y="198" width="310" height="66" rx="5"></rect>
+        <rect x="440" y="198" width="310" height="66" rx="5"></rect>
+      </g>
+      <g stroke="#cfd3d9" fill="#fff">
+        <rect x="220" y="312" width="320" height="46" rx="5"></rect>
+        <rect x="220" y="389" width="320" height="36" rx="5"></rect>
+      </g>
+      <g text-anchor="middle" fill="#17191c">
+        <g font-size="16" font-weight="700">
+          <text x="148" y="26">Governance</text>
+          <text x="595" y="26">Config</text>
+          <text x="380" y="120">Hub · module registry</text>
+          <text x="165" y="220">Proposal · credit escrow</text>
+          <text x="595" y="220">Loan core · collateral escrow</text>
+          <text x="380" y="332">TypeScript SDK</text>
+          <text x="380" y="412">Reference app &amp; third parties</text>
+        </g>
+        <g font-size="13" fill="#4a4f57">
+          <text x="148" y="46">PWN DAO Foundation multisig</text>
+          <text x="595" y="46">pwn_config.aleo · multisig settings</text>
+          <text x="380" y="140">pwn_hub.aleo · multisig approvals</text>
+          <text x="165" y="239">pwn_elastic_proposal.aleo</text>
+          <text x="165" y="256">Lender controls own commitment</text>
+          <text x="595" y="239">pwn_loan.aleo</text>
+          <text x="595" y="256">Protocol logic · fixed loan terms</text>
+          <text x="380" y="349">Open integration layer · anyone</text>
+        </g>
+      </g>
+    </svg>

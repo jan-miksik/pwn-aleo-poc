@@ -1,0 +1,106 @@
+{
+  "checked_date": "2026-10-07",
+  "complete_role_enumeration": false,
+  "observations": [
+    {
+      "label": "height",
+      "url": "https://api.explorer.provable.com/v1/mainnet/block/height/latest",
+      "value": 22608879
+    },
+    {
+      "label": "pALEO metadata",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/token_registry.aleo/mapping/registered_tokens/1751493913335802797273486270793650302076377624243810059080883537084141842600field",
+      "value": "{\n  token_id: 1751493913335802797273486270793650302076377624243810059080883537084141842600field,\n  name: 1631421259099656974472467909989204u128,\n  symbol: 482131854671u128,\n  decimals: 6u8,\n  supply: 19473044129100u128,\n  max_supply: 10000000000000000u128,\n  admin: aleo16d5d64j5kc0km0fuucw9mt80sfnaf4net36s8h56yf777cks8c8su6kc8g,\n  external_authorization_required: false,\n  external_authorization_party: aleo16d5d64j5kc0km0fuucw9mt80sfnaf4net36s8h56yf777cks8c8su6kc8g\n}"
+    },
+    {
+      "label": "wrapped credits metadata",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/token_registry.aleo/mapping/registered_tokens/3443843282313283355522573239085696902919850365217539366784739393210722344986field",
+      "value": "{\n  token_id: 3443843282313283355522573239085696902919850365217539366784739393210722344986field,\n  name: 1095517519u128,\n  symbol: 1095517519u128,\n  decimals: 6u8,\n  supply: 1666678272335u128,\n  max_supply: 10000000000000000u128,\n  admin: aleo1tjkv7vquk6yldxz53ecwsy5csnun43rfaknpkjc97v5223dlnyxsglv7nm,\n  external_authorization_required: false,\n  external_authorization_party: aleo1m50rc7x4cgsr5y8h2s3d6f7rzm5tvz5zqcz7ak55gmkv76pgu5qsuyq0k7\n}"
+    },
+    {
+      "label": "usdcx_multisig_core.aleo settings",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/usdcx_multisig_core.aleo/mapping/program_settings_map/true",
+      "value": "{\n  allow_upgrades: true,\n  upgrader_address: aleo1qscakv56cp7gsux5axp2g2rxm62kd64dlazmdxllrpuhraq0sg8q6xz6l4,\n  guard_create_wallet: true\n}"
+    },
+    {
+      "label": "usad_multisig_core.aleo settings",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/usad_multisig_core.aleo/mapping/program_settings_map/true",
+      "value": "{\n  allow_upgrades: true,\n  upgrader_address: aleo1tl9upfzwvr8a4uasajx8pd6ygzmqqg54ygcvjsgln39a0nsv9v9qwqyfqv,\n  guard_create_wallet: true\n}"
+    },
+    {
+      "label": "arc20_multisig_core.aleo settings",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/arc20_multisig_core.aleo/mapping/program_settings_map/true",
+      "value": "{\n  allow_upgrades: true,\n  upgrader_address: aleo1sa2gyw566v8k7ezjljs8hg4y6ja3vf0sm0kwzfvw5hvredjq3gys6wvfys,\n  guard_create_wallet: true\n}"
+    },
+    {
+      "label": "shield_swap_multisig_core.aleo settings",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/shield_swap_multisig_core.aleo/mapping/program_settings_map/true",
+      "value": "{\n  allow_upgrades: true,\n  upgrader_address: aleo1zc6eay0nysv02f2qmymhm382jjvgxt3l3m848d9xjqg8r99s5v8qt3yyw8,\n  guard_create_wallet: true\n}"
+    },
+    {
+      "label": "jusd_oracle_staging.aleo upgrades_disabled",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/jusd_oracle_staging.aleo/mapping/upgrades_disabled/true",
+      "value": null
+    },
+    {
+      "label": "jusd_oracle_production.aleo upgrades_disabled",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/jusd_oracle_production.aleo/mapping/upgrades_disabled/true",
+      "value": null
+    },
+    {
+      "label": "usdcx role aleo13zt4uq0u09sffnf4ctgu47k5n30txjx2w9cwcqgneapjeqsywsqqu6hspt",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/usdcx_stablecoin.aleo/mapping/address_to_role/aleo13zt4uq0u09sffnf4ctgu47k5n30txjx2w9cwcqgneapjeqsywsqqu6hspt",
+      "value": "8u16"
+    },
+    {
+      "label": "usdcx role aleo16s9af9darj0j5k7fpaxjq0u9fepd6sc4svrkr9vs4d3wlmp5lqyq4h3fpl",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/usdcx_stablecoin.aleo/mapping/address_to_role/aleo16s9af9darj0j5k7fpaxjq0u9fepd6sc4svrkr9vs4d3wlmp5lqyq4h3fpl",
+      "value": "4u16"
+    },
+    {
+      "label": "usdcx role aleo1ezaara7fgypx7xfzrl4ruzqw9rg6t9juscpv83fw5hd27kezjqxscdzv7t",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/usdcx_stablecoin.aleo/mapping/address_to_role/aleo1ezaara7fgypx7xfzrl4ruzqw9rg6t9juscpv83fw5hd27kezjqxscdzv7t",
+      "value": "3u16"
+    },
+    {
+      "label": "usdcx role aleo16a4n2hcsekxra6k74tvle2c40f5ukfma06j5rltlagfnkr57g5yspj7jr0",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/usdcx_stablecoin.aleo/mapping/address_to_role/aleo16a4n2hcsekxra6k74tvle2c40f5ukfma06j5rltlagfnkr57g5yspj7jr0",
+      "value": "3u16"
+    },
+    {
+      "label": "arc20_sol.aleo role aleo126h6shw93wegf2fajnux390sfl8r89rym2wwrkge3al43z5mku8shkzk3t",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/arc20_sol.aleo/mapping/address_to_role/aleo126h6shw93wegf2fajnux390sfl8r89rym2wwrkge3al43z5mku8shkzk3t",
+      "value": "4u16"
+    },
+    {
+      "label": "arc20_sol.aleo role aleo1kmcydn6me4fn20eq0pcdf8zhh58jpnela8ys3e77xr4x0fn00czqt3v8x2",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/arc20_sol.aleo/mapping/address_to_role/aleo1kmcydn6me4fn20eq0pcdf8zhh58jpnela8ys3e77xr4x0fn00czqt3v8x2",
+      "value": "8u16"
+    },
+    {
+      "label": "arc20_wbtc.aleo role aleo126h6shw93wegf2fajnux390sfl8r89rym2wwrkge3al43z5mku8shkzk3t",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/arc20_wbtc.aleo/mapping/address_to_role/aleo126h6shw93wegf2fajnux390sfl8r89rym2wwrkge3al43z5mku8shkzk3t",
+      "value": "4u16"
+    },
+    {
+      "label": "arc20_wbtc.aleo role aleo1kmcydn6me4fn20eq0pcdf8zhh58jpnela8ys3e77xr4x0fn00czqt3v8x2",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/arc20_wbtc.aleo/mapping/address_to_role/aleo1kmcydn6me4fn20eq0pcdf8zhh58jpnela8ys3e77xr4x0fn00czqt3v8x2",
+      "value": "8u16"
+    },
+    {
+      "label": "usad_stablecoin.aleo role aleo1apyqe667gtlw2ewxazn97nuc96uf26xwtqe0ulscusnxpkm96crscnn4tr",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/usad_stablecoin.aleo/mapping/address_to_role/aleo1apyqe667gtlw2ewxazn97nuc96uf26xwtqe0ulscusnxpkm96crscnn4tr",
+      "value": null
+    },
+    {
+      "label": "usad_stablecoin.aleo role aleo1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq3ljyzc",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/usad_stablecoin.aleo/mapping/address_to_role/aleo1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq3ljyzc",
+      "value": null
+    },
+    {
+      "label": "usad_stablecoin.aleo role aleo1cvdcz7hzu7pjca4a429dwzxp2h6rjv95ldw6vrf9395tnef2xc8sn624ch",
+      "url": "https://api.explorer.provable.com/v1/mainnet/program/usad_stablecoin.aleo/mapping/address_to_role/aleo1cvdcz7hzu7pjca4a429dwzxp2h6rjv95ldw6vrf9395tnef2xc8sn624ch",
+      "value": null
+    }
+  ]
+}
