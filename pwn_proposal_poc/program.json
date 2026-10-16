@@ -22,6 +22,12 @@
       "location": "local",
       "path": "../pwn_hub_poc",
       "edition": null
+    },
+    {
+      "name": "pwn_loan_poc.aleo",
+      "location": "local",
+      "path": "../pwn_loan_poc",
+      "edition": null
     }
   ]
 }

@@ -9,13 +9,23 @@ struct UpgradeKey { module: address, edition: u16 }
 program pwn_hub_poc.aleo {
     mapping approved: field => bool;
     mapping assets: identifier => AssetPolicy;
+    // Offer modules are keyed by program name: dynamic calls resolve names, not addresses.
+    mapping offer_modules: identifier => bool;
     fn set_tag(public module: address, public tag: u8, public enabled: bool) -> Final {
-        assert(tag == 1u8 || tag == 2u8);
+        assert_eq(tag, 1u8);
         let sender = std::ctx::caller();
         let key = BHP256::hash_to_field(ModuleTag { module: module, tag: tag });
         return final {
             assert_eq(pwn_config_poc.aleo::settings.get(true).admin, sender);
             approved.set(key, enabled);
+        };
+    }
+    // Approval admits new loans through a module; revocation never blocks settlement.
+    fn set_offer_module(public module: identifier, public enabled: bool) -> Final {
+        let sender = std::ctx::caller();
+        return final {
+            assert_eq(pwn_config_poc.aleo::settings.get(true).admin, sender);
+            offer_modules.set(module, enabled);
         };
     }
     // A token's route is immutable once registered. Revocation only stops new exposure.

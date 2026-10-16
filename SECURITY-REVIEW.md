@@ -6,7 +6,10 @@ regressions live in `make security` (`artifacts/multitoken/security/results.json
 ## What holds
 
 - Only the hardcoded `pwn_loan_poc` (immediate caller) can draw from or repay
-  into the proposal escrow; a hub tag grants no program spending access.
+  into an offer module's escrow; a Hub approval grants no program spending access.
+- Only Hub-approved offer modules can originate loans. An approved module is
+  trusted to check the borrower's `LoanTerms` against its offer, so approval is a
+  governance decision; revocation never blocks repayment, claim, cancel or withdraw.
 - Lender and borrower are bound by `signer` + secret salt; terms and loan
   witness by hash; position IDs are derived from the account.
 - Accounting is isolated per token; the reserve-delta postcondition catches a

@@ -34,11 +34,28 @@ class GenerationTests(unittest.TestCase):
                 self.assertEqual((Path(directory) / relative).read_text(), content)
 
     def test_dynamic_assets_do_not_become_static_dependencies(self):
-        allowed = {'credits.aleo', 'pwn_config_poc.aleo', 'pwn_hub_poc.aleo', 'pwn_proposal_poc.aleo'}
+        allowed = {'credits.aleo', 'pwn_config_poc.aleo', 'pwn_hub_poc.aleo', 'pwn_loan_poc.aleo'}
         for relative, content in render_programs().items():
             if relative.endswith('program.json'):
                 dependencies = json.loads(content)['dependencies']
                 self.assertLessEqual({d['name'] for d in dependencies}, allowed)
+
+    def test_loan_core_has_no_static_offer_module_dependency(self):
+        programs = render_programs()
+        core = programs['pwn_loan_poc/src/main.leo']
+        self.assertNotIn('pwn_proposal_poc', core)
+        self.assertIn('OfferModule@(offer_module)::draw_', core)
+        self.assertIn('OfferModule@(witness.offer_module)::receive_', core)
+        dependencies = json.loads(programs['pwn_loan_poc/program.json'])['dependencies']
+        self.assertEqual({d['name'] for d in dependencies},
+                         {'credits.aleo', 'pwn_config_poc.aleo', 'pwn_hub_poc.aleo'})
+
+    def test_offer_module_renders_for_any_program_name(self):
+        from generate_multitoken import render_offer_module
+        module = render_offer_module('pwn_offer_b_poc.aleo')
+        self.assertIn('program pwn_offer_b_poc.aleo {', module)
+        self.assertIn("offer_modules.get_or_use('pwn_offer_b_poc', false)", module)
+        self.assertNotIn("'pwn_proposal_poc'", module)
 
     def test_fuzz_executes_the_production_math_fragment(self):
         with tempfile.TemporaryDirectory() as directory:

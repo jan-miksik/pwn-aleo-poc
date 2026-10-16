@@ -3,6 +3,7 @@
 import credits.aleo;
 import pwn_config_poc.aleo;
 import pwn_hub_poc.aleo;
+import pwn_loan_poc.aleo;
 struct Authority { domain: u8, protocol: address, account: address, salt: field }
 struct PositionId { domain: u8, protocol: address, authority: field, nonce: field }
 struct ModuleTag { module: address, tag: u8 }
@@ -71,7 +72,8 @@ final fn require_enabled(asset: pwn_hub_poc.aleo::Asset) {
     assert_eq(asset.token_id, 0field);
 }
 fn validate_open_terms(terms: Terms, amount: u128, salt: field) {
-    assert_eq(terms.lender_auth, authority_hash::[1u8, pwn_proposal_poc.aleo](salt));
+    // Lender authority is scoped to the loan core, so the core can verify claims from any module.
+    assert_eq(terms.lender_auth, authority_hash::[1u8, pwn_loan_poc.aleo](salt));
     assert(terms.min_draw > 0u128 && terms.max_draw >= terms.min_draw && amount >= terms.min_draw);
     assert(terms.collateral_ratio > 0u64 && terms.collateral_ratio <= MAX_RATIO_BPS);
     assert(terms.repayment_ratio >= 10000u64 && terms.repayment_ratio <= MAX_RATIO_BPS);
@@ -87,28 +89,39 @@ fn validate_open_terms(terms: Terms, amount: u128, salt: field) {
         assert(max_repayment + scheduled_interest <= 18446744073709551615u128);
     }
 }
-final fn validate_open(product: field, terms: Terms, id: field) {
-    assert(pwn_hub_poc.aleo::approved.get_or_use(product, false));
+final fn validate_open(terms: Terms, id: field) {
+    assert(pwn_hub_poc.aleo::offer_modules.get_or_use('pwn_proposal_poc', false));
     assert_eq(pwn_config_poc.aleo::settings.get(true).protocol_fee_bps, 0u16);
     require_enabled(terms.credit_asset);
     require_enabled(terms.collateral_asset);
     assert(!terms_hash.contains(id));
     assert(std::ctx::block_height() < terms.expiry);
 }
-final fn register_commitment(id: field, hash: field, asset: pwn_hub_poc.aleo::Asset, amount: u128, total: u128) {
+final fn register_commitment(id: field, hash: field, terms: Terms, amount: u128, total: u128) {
+    let asset = terms.credit_asset;
     terms_hash.set(id, hash);
+    offer_terms.set(id, terms);
     credit_assets.set(id, asset);
     available_credit.set(id, amount);
     repayments.set(id, 0u128);
     closed.set(id, false);
     liabilities.set(asset.program_id, total + amount);
 }
-final fn validate_draw(loan: field, product: field, terms: Terms, id: field, hash: field) {
-    assert(pwn_hub_poc.aleo::approved.get_or_use(loan, false) && pwn_hub_poc.aleo::approved.get_or_use(product, false));
+// The core forwards borrower-supplied LoanTerms; every field must follow from this offer.
+final fn validate_draw(core: field, id: field, loan: pwn_loan_poc.aleo::LoanTerms) {
+    assert(pwn_hub_poc.aleo::approved.get_or_use(core, false) && pwn_hub_poc.aleo::offer_modules.get_or_use('pwn_proposal_poc', false));
+    let terms = offer_terms.get(id);
     require_enabled(terms.credit_asset);
     require_enabled(terms.collateral_asset);
-    assert_eq(terms_hash.get(id), hash);
-    assert_eq(credit_assets.get(id), terms.credit_asset);
+    assert_eq(credit_assets.get(id), loan.credit_asset);
+    assert_eq(terms.credit_asset, loan.credit_asset);
+    assert_eq(terms.collateral_asset, loan.collateral_asset);
+    assert(loan.credit_amount >= terms.min_draw && loan.credit_amount <= terms.max_draw);
+    assert_eq(loan.collateral_amount, rounded(loan.credit_amount, terms.collateral_ratio));
+    assert_eq(loan.repayment_amount, rounded(loan.credit_amount, terms.repayment_ratio));
+    assert_eq(loan.accruing_apr, terms.accruing_apr);
+    assert_eq(loan.duration, terms.duration);
+    assert_eq(loan.lender_auth, terms.lender_auth);
     assert(!closed.get(id));
     assert(std::ctx::block_height() < terms.expiry);
 }
@@ -128,6 +141,7 @@ final fn cancel_available(id: field, amount: u128) {
 }
 program pwn_proposal_poc.aleo {
     mapping terms_hash: field => field;
+    mapping offer_terms: field => Terms;
     mapping credit_assets: field => pwn_hub_poc.aleo::Asset;
     mapping available_credit: field => u128;
     mapping repayments: field => u128;
@@ -140,33 +154,30 @@ program pwn_proposal_poc.aleo {
         validate_open_terms(terms, amount, salt);
         let id = position_id::[1u8, pwn_proposal_poc.aleo](terms.lender_auth, nonce);
         let hash = BHP256::hash_to_field(terms);
-        let product = BHP256::hash_to_field(ModuleTag { module: std::ctx::addr(), tag: 2u8 });
         let (change, deposit) = credits.aleo::transfer_private_to_public(input, std::ctx::addr(), amount as u64);
         return (change, id, final {
-            validate_open(product, terms, id);
+            validate_open(terms, id);
             let total = liabilities.get_or_use(terms.credit_asset.program_id, 0u128);
             let before = credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128; assert(before >= total);
-            register_commitment(id, hash, terms.credit_asset, amount, total);
+            register_commitment(id, hash, terms, amount, total);
             deposit.run();
             // Postcondition checks the actual reserve delta, after the atomic token finalizer.
             assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before + amount);
         });
     }
-    fn draw_aleo(public id: field, public terms: Terms, public amount: u128, recipient: address)
+    // Generic OfferModule entry point: the core passes the borrower's LoanTerms, the module checks them against its offer.
+    fn draw_aleo(public id: field, public loan: pwn_loan_poc.aleo::LoanTerms, recipient: address)
         -> (credits.aleo::credits, Final) {
-        assert_eq(std::ctx::caller(), pwn_loan_poc.aleo); validate_aleo_asset::[1u16](terms.credit_asset);
+        assert_eq(std::ctx::caller(), pwn_loan_poc.aleo); validate_aleo_asset::[1u16](loan.credit_asset);
         assert_eq(recipient, std::ctx::signer());
-        assert(amount >= terms.min_draw && amount <= terms.max_draw);
-        let hash = BHP256::hash_to_field(terms);
-        let loan = BHP256::hash_to_field(ModuleTag { module: pwn_loan_poc.aleo, tag: 1u8 });
-        let product = BHP256::hash_to_field(ModuleTag { module: std::ctx::addr(), tag: 2u8 });
-        let (output, payout) = credits.aleo::transfer_public_to_private(recipient, amount as u64);
+        let core = BHP256::hash_to_field(ModuleTag { module: pwn_loan_poc.aleo, tag: 1u8 });
+        let (output, payout) = credits.aleo::transfer_public_to_private(recipient, loan.credit_amount as u64);
         return (output, final {
-            validate_draw(loan, product, terms, id, hash);
-            let total = liabilities.get(terms.credit_asset.program_id); let before = credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128; assert(before >= total);
-            debit_draw(id, terms.credit_asset.program_id, amount, total);
+            validate_draw(core, id, loan);
+            let total = liabilities.get(loan.credit_asset.program_id); let before = credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128; assert(before >= total);
+            debit_draw(id, loan.credit_asset.program_id, loan.credit_amount, total);
             payout.run(); // Postcondition checks the actual reserve delta, after the atomic token finalizer.
-            assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before - amount);
+            assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before - loan.credit_amount);
         });
     }
     fn receive_aleo(public id: field, public asset: pwn_hub_poc.aleo::Asset, input: credits.aleo::credits, public amount: u128)
@@ -186,7 +197,7 @@ program pwn_proposal_poc.aleo {
         -> (credits.aleo::credits, Final) {
         validate_aleo_asset::[1u16](terms.credit_asset);
         
-        assert_eq(terms.lender_auth, authority_hash::[1u8, pwn_proposal_poc.aleo](salt));
+        assert_eq(terms.lender_auth, authority_hash::[1u8, pwn_loan_poc.aleo](salt));
         let hash = BHP256::hash_to_field(terms);
         let (output, payout) = credits.aleo::transfer_public_to_private(std::ctx::signer(), amount as u64);
         return (output, final {
@@ -203,7 +214,7 @@ program pwn_proposal_poc.aleo {
         -> (credits.aleo::credits, Final) {
         validate_aleo_asset::[1u16](terms.credit_asset);
         assert(amount > 0u128);
-        assert_eq(terms.lender_auth, authority_hash::[1u8, pwn_proposal_poc.aleo](salt));
+        assert_eq(terms.lender_auth, authority_hash::[1u8, pwn_loan_poc.aleo](salt));
         let hash = BHP256::hash_to_field(terms);
         let (output, payout) = credits.aleo::transfer_public_to_private(std::ctx::signer(), amount as u64);
         return (output, final {
@@ -222,33 +233,30 @@ program pwn_proposal_poc.aleo {
         validate_open_terms(terms, amount, salt);
         let id = position_id::[1u8, pwn_proposal_poc.aleo](terms.lender_auth, nonce);
         let hash = BHP256::hash_to_field(terms);
-        let product = BHP256::hash_to_field(ModuleTag { module: std::ctx::addr(), tag: 2u8 });
         let (change, deposit) = Arc20@(terms.credit_asset.program_id)::transfer_private_to_public(input, std::ctx::addr(), amount);
         return (change, id, final {
-            validate_open(product, terms, id);
+            validate_open(terms, id);
             let total = liabilities.get_or_use(terms.credit_asset.program_id, 0u128);
             let before = Reserves@(terms.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128); assert(before >= total);
-            register_commitment(id, hash, terms.credit_asset, amount, total);
+            register_commitment(id, hash, terms, amount, total);
             deposit.run();
             // Postcondition checks the actual reserve delta, after the atomic token finalizer.
             assert_eq(Reserves@(terms.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before + amount);
         });
     }
-    fn draw_arc20(public id: field, public terms: Terms, public amount: u128, recipient: address)
+    // Generic OfferModule entry point: the core passes the borrower's LoanTerms, the module checks them against its offer.
+    fn draw_arc20(public id: field, public loan: pwn_loan_poc.aleo::LoanTerms, recipient: address)
         -> (dyn record, Final) {
-        assert_eq(std::ctx::caller(), pwn_loan_poc.aleo); validate_token_asset::[2u8](terms.credit_asset);
+        assert_eq(std::ctx::caller(), pwn_loan_poc.aleo); validate_token_asset::[2u8](loan.credit_asset);
         assert_eq(recipient, std::ctx::signer());
-        assert(amount >= terms.min_draw && amount <= terms.max_draw);
-        let hash = BHP256::hash_to_field(terms);
-        let loan = BHP256::hash_to_field(ModuleTag { module: pwn_loan_poc.aleo, tag: 1u8 });
-        let product = BHP256::hash_to_field(ModuleTag { module: std::ctx::addr(), tag: 2u8 });
-        let (output, payout) = Arc20@(terms.credit_asset.program_id)::transfer_public_to_private(recipient, amount);
+        let core = BHP256::hash_to_field(ModuleTag { module: pwn_loan_poc.aleo, tag: 1u8 });
+        let (output, payout) = Arc20@(loan.credit_asset.program_id)::transfer_public_to_private(recipient, loan.credit_amount);
         return (output, final {
-            validate_draw(loan, product, terms, id, hash);
-            let total = liabilities.get(terms.credit_asset.program_id); let before = Reserves@(terms.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128); assert(before >= total);
-            debit_draw(id, terms.credit_asset.program_id, amount, total);
+            validate_draw(core, id, loan);
+            let total = liabilities.get(loan.credit_asset.program_id); let before = Reserves@(loan.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128); assert(before >= total);
+            debit_draw(id, loan.credit_asset.program_id, loan.credit_amount, total);
             payout.run(); // Postcondition checks the actual reserve delta, after the atomic token finalizer.
-            assert_eq(Reserves@(terms.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - amount);
+            assert_eq(Reserves@(loan.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - loan.credit_amount);
         });
     }
     fn receive_arc20(public id: field, public asset: pwn_hub_poc.aleo::Asset, input: dyn record, public amount: u128)
@@ -268,7 +276,7 @@ program pwn_proposal_poc.aleo {
         -> (dyn record, Final) {
         validate_token_asset::[2u8](terms.credit_asset);
         
-        assert_eq(terms.lender_auth, authority_hash::[1u8, pwn_proposal_poc.aleo](salt));
+        assert_eq(terms.lender_auth, authority_hash::[1u8, pwn_loan_poc.aleo](salt));
         let hash = BHP256::hash_to_field(terms);
         let (output, payout) = Arc20@(terms.credit_asset.program_id)::transfer_public_to_private(std::ctx::signer(), amount);
         return (output, final {
@@ -285,7 +293,7 @@ program pwn_proposal_poc.aleo {
         -> (dyn record, Final) {
         validate_token_asset::[2u8](terms.credit_asset);
         assert(amount > 0u128);
-        assert_eq(terms.lender_auth, authority_hash::[1u8, pwn_proposal_poc.aleo](salt));
+        assert_eq(terms.lender_auth, authority_hash::[1u8, pwn_loan_poc.aleo](salt));
         let hash = BHP256::hash_to_field(terms);
         let (output, payout) = Arc20@(terms.credit_asset.program_id)::transfer_public_to_private(std::ctx::signer(), amount);
         return (output, final {
@@ -304,33 +312,30 @@ program pwn_proposal_poc.aleo {
         validate_open_terms(terms, amount, salt);
         let id = position_id::[1u8, pwn_proposal_poc.aleo](terms.lender_auth, nonce);
         let hash = BHP256::hash_to_field(terms);
-        let product = BHP256::hash_to_field(ModuleTag { module: std::ctx::addr(), tag: 2u8 });
         let (compliance, change, deposit) = Compliant@(terms.credit_asset.program_id)::transfer_private_to_public(std::ctx::addr(), amount, input, proofs);
         return (compliance, change, id, final {
-            validate_open(product, terms, id);
+            validate_open(terms, id);
             let total = liabilities.get_or_use(terms.credit_asset.program_id, 0u128);
             let before = Reserves@(terms.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128); assert(before >= total);
-            register_commitment(id, hash, terms.credit_asset, amount, total);
+            register_commitment(id, hash, terms, amount, total);
             deposit.run();
             // Postcondition checks the actual reserve delta, after the atomic token finalizer.
             assert_eq(Reserves@(terms.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before + amount);
         });
     }
-    fn draw_compliant(public id: field, public terms: Terms, public amount: u128, recipient: address)
+    // Generic OfferModule entry point: the core passes the borrower's LoanTerms, the module checks them against its offer.
+    fn draw_compliant(public id: field, public loan: pwn_loan_poc.aleo::LoanTerms, recipient: address)
         -> (dyn record, dyn record, Final) {
-        assert_eq(std::ctx::caller(), pwn_loan_poc.aleo); validate_token_asset::[3u8](terms.credit_asset);
+        assert_eq(std::ctx::caller(), pwn_loan_poc.aleo); validate_token_asset::[3u8](loan.credit_asset);
         assert_eq(recipient, std::ctx::signer());
-        assert(amount >= terms.min_draw && amount <= terms.max_draw);
-        let hash = BHP256::hash_to_field(terms);
-        let loan = BHP256::hash_to_field(ModuleTag { module: pwn_loan_poc.aleo, tag: 1u8 });
-        let product = BHP256::hash_to_field(ModuleTag { module: std::ctx::addr(), tag: 2u8 });
-        let (compliance, output, payout) = Compliant@(terms.credit_asset.program_id)::transfer_public_to_private(recipient, amount);
+        let core = BHP256::hash_to_field(ModuleTag { module: pwn_loan_poc.aleo, tag: 1u8 });
+        let (compliance, output, payout) = Compliant@(loan.credit_asset.program_id)::transfer_public_to_private(recipient, loan.credit_amount);
         return (compliance, output, final {
-            validate_draw(loan, product, terms, id, hash);
-            let total = liabilities.get(terms.credit_asset.program_id); let before = Reserves@(terms.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128); assert(before >= total);
-            debit_draw(id, terms.credit_asset.program_id, amount, total);
+            validate_draw(core, id, loan);
+            let total = liabilities.get(loan.credit_asset.program_id); let before = Reserves@(loan.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128); assert(before >= total);
+            debit_draw(id, loan.credit_asset.program_id, loan.credit_amount, total);
             payout.run(); // Postcondition checks the actual reserve delta, after the atomic token finalizer.
-            assert_eq(Reserves@(terms.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - amount);
+            assert_eq(Reserves@(loan.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - loan.credit_amount);
         });
     }
     fn receive_compliant(public id: field, public asset: pwn_hub_poc.aleo::Asset, input: dyn record, public amount: u128, proofs: [pwn_hub_poc.aleo::MerkleProof; 2])
@@ -350,7 +355,7 @@ program pwn_proposal_poc.aleo {
         -> (dyn record, dyn record, Final) {
         validate_token_asset::[3u8](terms.credit_asset);
         
-        assert_eq(terms.lender_auth, authority_hash::[1u8, pwn_proposal_poc.aleo](salt));
+        assert_eq(terms.lender_auth, authority_hash::[1u8, pwn_loan_poc.aleo](salt));
         let hash = BHP256::hash_to_field(terms);
         let (compliance, output, payout) = Compliant@(terms.credit_asset.program_id)::transfer_public_to_private(std::ctx::signer(), amount);
         return (compliance, output, final {
@@ -367,7 +372,7 @@ program pwn_proposal_poc.aleo {
         -> (dyn record, dyn record, Final) {
         validate_token_asset::[3u8](terms.credit_asset);
         assert(amount > 0u128);
-        assert_eq(terms.lender_auth, authority_hash::[1u8, pwn_proposal_poc.aleo](salt));
+        assert_eq(terms.lender_auth, authority_hash::[1u8, pwn_loan_poc.aleo](salt));
         let hash = BHP256::hash_to_field(terms);
         let (compliance, output, payout) = Compliant@(terms.credit_asset.program_id)::transfer_public_to_private(std::ctx::signer(), amount);
         return (compliance, output, final {

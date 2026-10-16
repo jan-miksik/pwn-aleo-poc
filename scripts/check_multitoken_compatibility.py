@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Guard the ABI, storage, constructors and finalizers against the reviewed release.
 
-Run after building pwn_loan_poc (which also compiles its dependencies). The
+Run after building pwn_proposal_poc (which also compiles its dependencies). The
 snapshot is updated only for an intentional reviewed protocol change. Pure
 function bodies may change; state layout, authorization at upgrade and on-chain
 instruction order must not silently change along with a readability refactor.
@@ -60,7 +60,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--update', action='store_true', help='replace the baseline after an intentional reviewed protocol change')
     options = parser.parse_args()
-    build = ROOT / 'pwn_loan_poc/build'
+    build = ROOT / 'pwn_proposal_poc/build'
     if options.update:
         programs = {}
         for name in PROGRAMS:
