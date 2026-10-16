@@ -1,7 +1,8 @@
 # Security status
 
 Reviews on 2026-09-16 and 2026-09-21. Resolved findings are not listed; their
-regressions live in `make security` (`artifacts/multitoken/security/results.json`).
+regressions live in `make security`, which writes its report to
+`artifacts/multitoken/security/results.json`.
 
 ## What holds
 
