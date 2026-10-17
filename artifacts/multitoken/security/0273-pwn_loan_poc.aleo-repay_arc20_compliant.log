@@ -369,7 +369,7 @@
 🔧 Configuration:
   Private Key:        APrivateKey1zkpGPDbTcP2r...
   Address:            aleo16k6wjpe5snzfhzf07mf...
-  Endpoint:           http://127.0.0.1:63307
+  Endpoint:           http://127.0.0.1:54473
   Network:            testnet
   Consensus Version:  19
 
@@ -386,7 +386,7 @@
   - A transaction will be generated, WITHOUT a proof.
   - Transaction will NOT be printed to the console.
   - Transaction will NOT be saved to a file.
-  - Transaction will be broadcast to http://127.0.0.1:63307
+  - Transaction will be broadcast to http://127.0.0.1:54473
 
 ⚠️ Warnings:
   • The program 'pwn_config_poc.aleo' on the network does not match the local copy. If you have a local dependency, you may use the `--no-local` flag to use the network version instead.
@@ -431,19 +431,19 @@
  • {
   owner: aleo1cvdcz7hzu7pjca4a429dwzxp2h6rjv95ldw6vrf9395tnef2xc8sn624ch,
   _root: 4635434787872209144006884268667309001638847150137092796609014666937588844714field,
-  _nonce: 2845279270412840436373140530377591620850250522229578067780763930058806545760group,
+  _nonce: 3991653100757601196402747073800757143584557149008510255476552661186790684614group,
   _version: 1u8
 }
  • {
   owner: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue,
   _root: 8056141744481445288567982914703716987560062376820765652593100939875080231302field,
-  _nonce: 7312782291534244717954498654840358099928622882285843210850986260536898558892group,
+  _nonce: 618210467087617690633869197842668218782940297629614629296654929407439908283group,
   _version: 1u8
 }
  • {
   owner: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue,
   _root: 4490127275315651497532630094800166178689225857535687855630099439696656295007field,
-  _nonce: 128778185031657028664425335315676618752321837807268872794562967897760984333group,
+  _nonce: 7620287874132847711061924199010890753638659100645912896000564781648630619057group,
   _version: 1u8
 }
  • {
@@ -497,9 +497,9 @@
 💰Your current public balance is 5899.07808 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at1tzflp9fk2f9usj5ld3z92ehfmye0gwgplyap9nrvpvl6yqfc3s9qexrrg3'
-  - fee ID: 'au1j44cspn4983haawk5n5238rk76zdkte045jtfqh9f7x726t7mgxq3pq86u'
-  - fee transaction ID: 'at1a9tcrj99ycaqpdwlpmygf3d4wv8g4yen8h28tw4qnj77ay797q9q8c46cx'
+  - transaction ID: 'at1c6qahj85yenfjp6n0agvlkus7dsqmwmdveg6a53ssslsw5d74s9s3j0634'
+  - fee ID: 'au1kdsshhpph6zxugs69f4qrhtv3pzgj8v6kv6gnf5pgpdmvrspwgrs4g3snz'
+  - fee transaction ID: 'at18efajce8v6rqk2l2ff6dhu6fl3nveryjtckr6fv7eewev5ekqspqrwlplg'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...

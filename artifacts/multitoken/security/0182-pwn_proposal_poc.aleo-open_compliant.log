@@ -369,7 +369,7 @@
 🔧 Configuration:
   Private Key:        APrivateKey1zkp8CZNn3yeC...
   Address:            aleo1rhgdu77hgyqd3xjj8uc...
-  Endpoint:           http://127.0.0.1:63307
+  Endpoint:           http://127.0.0.1:54473
   Network:            testnet
   Consensus Version:  19
 
@@ -386,7 +386,7 @@
   - A transaction will be generated, WITHOUT a proof.
   - Transaction will NOT be printed to the console.
   - Transaction will NOT be saved to a file.
-  - Transaction will be broadcast to http://127.0.0.1:63307
+  - Transaction will be broadcast to http://127.0.0.1:54473
 ──────────────────────────────────────────────
 
 
@@ -425,13 +425,13 @@
  • {
   owner: aleo1l4s8l9fkl0rughvj0qzv3hduzr2ktpwgmwyue3ehkdrgtdl9vgys4xyw23,
   _root: 4182835093764884827633829538730706564916160335128690706484386503932013291526field,
-  _nonce: 3509330090988427827429205791075122911556774768122454175323208618965429314211group,
+  _nonce: 6842902889813994799097134306702107075249548663802208938722236150443570709009group,
   _version: 1u8
 }
  • {
   owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,
   _root: 2283550889218984820829025596164569630292585230308378085728011493249959785105field,
-  _nonce: 2481929071770621549377409629018352678616112502278868364639027062392670959495group,
+  _nonce: 6488973774783236844491301679857524776444316962002057437900347815433348260982group,
   _version: 1u8
 }
  • 6120187812737856422013173390853182937314577009824094124805711039086357289004field
@@ -473,9 +473,9 @@
 💰Your current public balance is 9373533.864344 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at1fwe9q0zhzuwjy92ynz936sumv97ns6gyed4k3hkhclcfv6ygcsxstptkdh'
-  - fee ID: 'au14n7f73emmwgrzry3al687arzxdxss3npw7a5gmh8hfm0ha7895pqhupg0s'
-  - fee transaction ID: 'at1t88da7vqa67t2exc4hd3tsutnn0txxs6c68dlxjfgnqz8z7pycxqckwlnz'
+  - transaction ID: 'at1treeegy5kw2wq752juztuc57hkzxwgc8pm7ehmz7hscu99t2cu8szwjs3u'
+  - fee ID: 'au10zx9du9a6y6skjdcjdlkhu2mne2rkysmg4hzwtv6uqmmrgp7ssxq46fgkk'
+  - fee transaction ID: 'at130rn4p8gp90j8u8d6yn8vyn0mtu098j9ratseual4pld8868kvxs4vs8zn'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...

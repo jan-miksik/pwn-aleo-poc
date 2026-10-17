@@ -369,7 +369,7 @@
 🔧 Configuration:
   Private Key:        APrivateKey1zkpGPDbTcP2r...
   Address:            aleo16k6wjpe5snzfhzf07mf...
-  Endpoint:           http://127.0.0.1:65083
+  Endpoint:           http://127.0.0.1:55328
   Network:            testnet
   Consensus Version:  19
 
@@ -386,7 +386,7 @@
   - A transaction will be generated, WITHOUT a proof.
   - Transaction will NOT be printed to the console.
   - Transaction will NOT be saved to a file.
-  - Transaction will be broadcast to http://127.0.0.1:65083
+  - Transaction will be broadcast to http://127.0.0.1:55328
 ──────────────────────────────────────────────
 
 
@@ -425,19 +425,19 @@
  • {
   owner: aleo1l4s8l9fkl0rughvj0qzv3hduzr2ktpwgmwyue3ehkdrgtdl9vgys4xyw23,
   _root: 1394419311954143285324930989835356698646885008932507879267354414248592075111field,
-  _nonce: 7891026974282072684848190586209392539955943246748529484016641057924197332778group,
+  _nonce: 7124741573304534137404265434895938033543246350160394602475679525737721956239group,
   _version: 1u8
 }
  • {
   owner: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue,
   _root: 6663820710844658138644145367300775220014518139397256443480734942232282998514field,
-  _nonce: 4012690989839242602084851230306437584785492939495879815584958140861818624304group,
+  _nonce: 7682051442122835671745478675050263231382882161956804910219331932366515194095group,
   _version: 1u8
 }
  • {
   owner: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue,
   _root: 2283550889218984820829025596164569630292585230308378085728011493249959785105field,
-  _nonce: 6119392573708951053940667655857342794772493192756847143281007549521752408902group,
+  _nonce: 6160326398986522501262637851896136646162040917934844054509168864353286497441group,
   _version: 1u8
 }
  • {
@@ -556,9 +556,9 @@
 💰Your current public balance is 999.816882 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at15g3rsl0e30yrpyntdhgrzdcy79u7e643g4dmwxqnu0ujzmht7ypsz3yvrz'
-  - fee ID: 'au1sh5gt4s934uxcsjusv6wz6225cj0vem3xerygy9flma7t6theq9s9hnaal'
-  - fee transaction ID: 'at1zfnv79retpc0ln5wxry60d3asfehsh2vv48ahrglav5pvyxu6cgqppfkja'
+  - transaction ID: 'at1smt9ycepqz08j0j3gvhw2vpajj33ejffst92gpn8u5f3kg7jt58s9gvqj8'
+  - fee ID: 'au1hjtphe5jt846pm99uhpljj0c6uvlm0u2q7646tll2h7tnez3qvzsp5rtus'
+  - fee transaction ID: 'at16wc60eah0wpdk27ngr9d588jzz44q90j3lul07fvp2m0n49vu5ps2grn45'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...

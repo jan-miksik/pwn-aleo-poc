@@ -369,7 +369,7 @@
 🔧 Configuration:
   Private Key:        APrivateKey1zkp8CZNn3yeC...
   Address:            aleo1rhgdu77hgyqd3xjj8uc...
-  Endpoint:           http://127.0.0.1:63307
+  Endpoint:           http://127.0.0.1:64187
   Network:            testnet
   Consensus Version:  19
 
@@ -386,7 +386,7 @@
   - A transaction will be generated, WITHOUT a proof.
   - Transaction will NOT be printed to the console.
   - Transaction will NOT be saved to a file.
-  - Transaction will be broadcast to http://127.0.0.1:63307
+  - Transaction will be broadcast to http://127.0.0.1:64187
 ──────────────────────────────────────────────
 
 
@@ -425,7 +425,7 @@
  • {
   owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,
   _root: 4490127275315651497532630094800166178689225857535687855630099439696656295007field,
-  _nonce: 3750987355643470507699033501212238075867861991365103457998444942513362646422group,
+  _nonce: 5842712612909192983358924765277440860267958317837107703677307133941329942528group,
   _version: 1u8
 }
  • {
@@ -463,9 +463,9 @@
 💰Your current public balance is 9373534.051574 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at1vzq80m7fjennz0nftqx3w3r0d2xp852apkuqar5kec3hgfhltgxsqcrp59'
-  - fee ID: 'au1wv572adp4p7ga66ys0047cz3rya4el7nvpswnnaxq4fat8qqfgpqvh42n9'
-  - fee transaction ID: 'at1qwp9683ar7hgpylq58d0etu09h2uk5t86gkwaunl66peazle0vzqy348gp'
+  - transaction ID: 'at1f9vcz6pae3feguw7zawc0gnfcw8d7sj42f2kam2028t58nhh0c9syfwn4g'
+  - fee ID: 'au1026fxgh634sfz3cwwvql2998sfh527ke6gkzu5vxq38rp6r7luqq5xjtf2'
+  - fee transaction ID: 'at16x6tnajrqfjq9aaw7jt4678jdpfps24tnvvysslhlncnc2dqsggqvmszpk'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...

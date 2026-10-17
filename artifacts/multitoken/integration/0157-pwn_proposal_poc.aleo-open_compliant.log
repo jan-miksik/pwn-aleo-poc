@@ -369,7 +369,7 @@
 🔧 Configuration:
   Private Key:        APrivateKey1zkp8CZNn3yeC...
   Address:            aleo1rhgdu77hgyqd3xjj8uc...
-  Endpoint:           http://127.0.0.1:59301
+  Endpoint:           http://127.0.0.1:64644
   Network:            testnet
   Consensus Version:  19
 
@@ -386,7 +386,7 @@
   - A transaction will be generated, WITHOUT a proof.
   - Transaction will NOT be printed to the console.
   - Transaction will NOT be saved to a file.
-  - Transaction will be broadcast to http://127.0.0.1:59301
+  - Transaction will be broadcast to http://127.0.0.1:64644
 ──────────────────────────────────────────────
 
 
@@ -425,13 +425,13 @@
  • {
   owner: aleo1l4s8l9fkl0rughvj0qzv3hduzr2ktpwgmwyue3ehkdrgtdl9vgys4xyw23,
   _root: 4182835093764884827633829538730706564916160335128690706484386503932013291526field,
-  _nonce: 4237527071572076809004031664157890391743992841221858084935886474240710722261group,
+  _nonce: 5510696031974736090979606875320828716484200994541371485314992713149297580682group,
   _version: 1u8
 }
  • {
   owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,
   _root: 2283550889218984820829025596164569630292585230308378085728011493249959785105field,
-  _nonce: 6241812317244132836322921446091829479780220626678261569418085675007666877561group,
+  _nonce: 926253643520474880619980807517983167483779770193448089349510022601221804124group,
   _version: 1u8
 }
  • 2714672846959882389370596669691897251478706132348180116300999126622835549307field
@@ -473,9 +473,9 @@
 💰Your current public balance is 9373533.891672 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at1xhl4dzdy548enue3xfhqzpes48g22zghvuuvkd7t2p7r6mep6ggs9kuhuc'
-  - fee ID: 'au1udr2qpnpzfhj3afjvcpd6h5jpfmetsufhltsfrk9yphmxwkf2cysp2hsnu'
-  - fee transaction ID: 'at1gpl608ad03wway2fe6t8az9rea7dttxtjv4lcgv3f79ajzty8vysmj0n4p'
+  - transaction ID: 'at1ln8w0r0ugr8lpjgpvha40q2r5t8wgxvzk7gtkvvu8glf2dt8hgqs9n7g4c'
+  - fee ID: 'au190m2ljynw2hk4mkynken3sp82muu8durx3yuau5eye6w82aqfvxs9ecvxa'
+  - fee transaction ID: 'at1ep0u36mk2fwjayh57mjnpyz7c4hjd4hrc8lev2p4wwxdgatgcvqs9568n4'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...

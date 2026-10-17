@@ -2,7 +2,7 @@
   "config": {
     "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
     "network": "testnet",
-    "endpoint": "http://127.0.0.1:63307",
+    "endpoint": "http://127.0.0.1:64187",
     "consensus_version": 19
   },
   "program": "arc20_sol.aleo",
@@ -10,7 +10,7 @@
   "outputs": [
     "{\n  program_id: arc20_sol.aleo,\n  function_name: update_role,\n  arguments: [\n    aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n    aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n    15u16\n  ]\n}"
   ],
-  "transaction_id": "at1pevlafcv82unq4wscany0ta8j4yg2mrfxrsufrr6aa56m6hsxuyqu392tg",
+  "transaction_id": "at108rkscj2pjt4655emyv9mnl7hrw9ja7uakewgmmrvtd2qv6nmgxq0nwyc9",
   "stats": {
     "storage_cost": 1433,
     "execution_cost": 796,
@@ -18,8 +18,8 @@
     "total_cost": 2229
   },
   "broadcast": {
-    "fee_id": "au1ruq04uur7hgw4m9f23jp348u5duj25rpg6e55655pd7swnp54czqvvd8rh",
-    "fee_transaction_id": "at1wuu93s6eg2w6sz6d7mf9rwheqkq70qnkarhryj3hpwvqs56vxqqsdyew4g",
+    "fee_id": "au1pdrpe0rl70k5r8xpxwez9z4e2r9zxnw22tuwjceu69gvkryyasys0f3k3w",
+    "fee_transaction_id": "at1mx23suma990qvg03fk0f3kzndq2x8y88euzfffva6mgyzyvwhyzscfnujm",
     "confirmed": true
   }
 }

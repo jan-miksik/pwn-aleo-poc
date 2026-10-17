@@ -369,7 +369,7 @@
 🔧 Configuration:
   Private Key:        APrivateKey1zkp8CZNn3yeC...
   Address:            aleo1rhgdu77hgyqd3xjj8uc...
-  Endpoint:           http://127.0.0.1:63307
+  Endpoint:           http://127.0.0.1:54473
   Network:            testnet
   Consensus Version:  19
 
@@ -386,7 +386,7 @@
   - A transaction will be generated, WITHOUT a proof.
   - Transaction will NOT be printed to the console.
   - Transaction will NOT be saved to a file.
-  - Transaction will be broadcast to http://127.0.0.1:63307
+  - Transaction will be broadcast to http://127.0.0.1:54473
 
 ⚠️ Warnings:
   • The program 'pwn_config_poc.aleo' on the network does not match the local copy. If you have a local dependency, you may use the `--no-local` flag to use the network version instead.
@@ -441,9 +441,9 @@
 💰Your current public balance is 9368533.614724 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at1ucpvgjtt8qxfx7pmrnae58ep6edvtjxypd3xhel7998ql4syayyqvkldez'
-  - fee ID: 'au1sg59xmhxv3v42lgw0a2k7ue6v7u6led45zryecw933r4rek2eszst0c4lu'
-  - fee transaction ID: 'at1u2y3vwfl70e08qv6ju83hycayjelzcrev20l5pyj7kkh83ed2gzsvhkv8g'
+  - transaction ID: 'at1kq24mcmrpxlq4ywah060gacwq45r9mdhvnmfprh37l3u9lmmlqgsla8ywv'
+  - fee ID: 'au10lclk77mfltg2gp38q4hxr0vz2u5rn0u387u34ak4vvksx8xrspsjhx87k'
+  - fee transaction ID: 'at1ndq074jxapsxhqlx9axed8q7pen7h36hvf7fumvp5z30x6qpxcpqw4hr88'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...

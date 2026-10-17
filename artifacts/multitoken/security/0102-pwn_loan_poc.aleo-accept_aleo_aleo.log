@@ -369,7 +369,7 @@
 🔧 Configuration:
   Private Key:        APrivateKey1zkpGPDbTcP2r...
   Address:            aleo16k6wjpe5snzfhzf07mf...
-  Endpoint:           http://127.0.0.1:63307
+  Endpoint:           http://127.0.0.1:64187
   Network:            testnet
   Consensus Version:  19
 
@@ -386,7 +386,7 @@
   - A transaction will be generated, WITHOUT a proof.
   - Transaction will NOT be printed to the console.
   - Transaction will NOT be saved to a file.
-  - Transaction will be broadcast to http://127.0.0.1:63307
+  - Transaction will be broadcast to http://127.0.0.1:64187
 ──────────────────────────────────────────────
 
 
@@ -425,13 +425,13 @@
  • {
   owner: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue.private,
   microcredits: 400u64.private,
-  _nonce: 7868873438362085280173946950529758359534180943044067421192749903409999239127group.public,
+  _nonce: 2877671332212111893898860161070031696232977653762945155705428756884696523376group.public,
   _version: 1u8.public
 }
  • {
   owner: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue.private,
   microcredits: 400u64.private,
-  _nonce: 37747877545692407797769249550223123975804997986339649325175876920760124545group.public,
+  _nonce: 1749739065915996443044776622747516262377924509734317410350172118402079295885group.public,
   _version: 1u8.public
 }
  • {
@@ -565,9 +565,9 @@
 💰Your current public balance is 999.889841 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at190q3enw4m39fpmjzc5hhmk72d448v9c4pslvucnempvjwqh7lqrq6fc9y5'
-  - fee ID: 'au1wm7pej9hk2c9td2cfnx47w4hxthmhqsnjhm29kcv8gqalute5urq9ctzqu'
-  - fee transaction ID: 'at108r08dn26gtzejg4tq0xhruaw9jy00fznljqs8u425prp3mdv59su4uhgp'
+  - transaction ID: 'at1xtq3h9crg3r68xaxtm7rhm0g0630etgs8a0wt4jqn46c2f0kdygqyjlejz'
+  - fee ID: 'au1plj7zqawnrtcepth69fuj8m7xh0tqx8cv2dj0uc6f53dlr6jyvqqe8lu68'
+  - fee transaction ID: 'at18zu83wc9etvmg2vqezwl6xxfzxlsmvtw8w4rxljaz977szcz7g9qu8k7m0'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...

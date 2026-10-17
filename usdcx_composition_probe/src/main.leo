@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-only
 import test_usdcx_stablecoin.aleo;
 import token_registry.aleo;
 

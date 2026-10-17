@@ -369,7 +369,7 @@
 🔧 Configuration:
   Private Key:        APrivateKey1zkp8CZNn3yeC...
   Address:            aleo1rhgdu77hgyqd3xjj8uc...
-  Endpoint:           http://127.0.0.1:63307
+  Endpoint:           http://127.0.0.1:64187
   Network:            testnet
   Consensus Version:  19
 
@@ -386,7 +386,7 @@
   - A transaction will be generated, WITHOUT a proof.
   - Transaction will NOT be printed to the console.
   - Transaction will NOT be saved to a file.
-  - Transaction will be broadcast to http://127.0.0.1:63307
+  - Transaction will be broadcast to http://127.0.0.1:64187
 ──────────────────────────────────────────────
 
 
@@ -414,60 +414,60 @@
 📊 Execution Cost Summary for pwn_proposal_poc.aleo
 ──────────────────────────────────────────────
 💰 Cost Breakdown (credits)
-  Transaction Storage:  0.004362
+  Transaction Storage:  0.004360
   On-chain Execution:   0.003073
   Priority Fee:         0.000000
-  Total Fee:            0.007435
+  Total Fee:            0.007433
 ──────────────────────────────────────────────
 
 ➡️  Outputs
 
  • {
   owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,
-  _root: 2283550889218984820829025596164569630292585230308378085728011493249959785105field,
-  _nonce: 7970131360872612251118975682197741308419126540765925651906440942873800172766group,
+  _root: 4490127275315651497532630094800166178689225857535687855630099439696656295007field,
+  _nonce: 5404296474947401874136768295060155929785015172409282912611054203523102680624group,
   _version: 1u8
 }
  • {
   program_id: pwn_proposal_poc.aleo,
   function_name: cancel_arc20,
   arguments: [
-    3444424546340229145149874483642230461324436642902559950131007059188053059411field,
-    8233061985791768665482230200566036344720014045538505621696340835262165050776field,
+    5299764043352510725131571125626912631629591229535786073632389073827455247405field,
+    5299780777022525785750516357600436897386619728111765898389335183118997359317field,
     {
   credit_asset: {
-    program_id: 'arc20_sol',
-    token_id: 0field,
-    family: 2u8,
-    version: 1u16
-  },
-  collateral_asset: {
     program_id: 'arc20_wbtc',
     token_id: 0field,
     family: 2u8,
     version: 1u16
   },
-  min_draw: 1208925819614629174706176u128,
-  max_draw: 1208925819614629174706176u128,
-  collateral_ratio: 10000u64,
-  repayment_ratio: 10000u64,
+  collateral_asset: {
+    program_id: 'credits',
+    token_id: 0field,
+    family: 1u8,
+    version: 1u16
+  },
+  min_draw: 100u128,
+  max_draw: 600u128,
+  collateral_ratio: 15000u64,
+  repayment_ratio: 11000u64,
   accruing_apr: 0u32,
   duration: 1000u32,
-  expiry: 5339u32,
-  lender_auth: 4809402765859905060594120278616786066909153534073558940498735211674851221852field
+  expiry: 5362u32,
+  lender_auth: 7810964033051035128603404370036017701724996838576632194964701932870782601992field
 },
-    0u128,
-    { _program_id: arc20_sol.aleo, _function_name: transfer_public_to_private, _checksum: 4308984521810108003137373610549968555281055872339099334682812664941936788191field }
+    600u128,
+    { _program_id: arc20_wbtc.aleo, _function_name: transfer_public_to_private, _checksum: 5502964613403373612650793645621791269615344994692588406055792098328788320225field }
   ]
 }
 
 📡 Broadcasting execution for pwn_proposal_poc.aleo...
-💰Your current public balance is 9373533.71184 credits.
+💰Your current public balance is 9373533.702217 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at1e8vxwsfrehke5k6cl0q9skmvtur68ujfmspn3xpk6yhg03a5eqgqna4mxj'
-  - fee ID: 'au1mnw0qp8wcetkspk4kesq50vwuqv5czllufy39lj0jw9r95xvrggsny7h53'
-  - fee transaction ID: 'at16cm66yfp0lav6arlz0gsexvvq5vua9h5q87eh3xy7ve3kfskyv9sk28cdg'
+  - transaction ID: 'at10km2f3u4js4xlclrrw7xeruse7hsgx84nmrvgwc567tgw6ykduzqyswjgj'
+  - fee ID: 'au16s7wal4vq2gr6gs39drc7whrq59nmfqmlez8c6c4zz8tp8sakvyq7wp48s'
+  - fee transaction ID: 'at1z59y6juus8h735kxqafqk576zc72905cpr6js84dr0r6jxu6wuzqump5lr'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...

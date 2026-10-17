@@ -369,7 +369,7 @@
 🔧 Configuration:
   Private Key:        APrivateKey1zkp8CZNn3yeC...
   Address:            aleo1rhgdu77hgyqd3xjj8uc...
-  Endpoint:           http://127.0.0.1:65083
+  Endpoint:           http://127.0.0.1:55328
   Network:            testnet
   Consensus Version:  19
 
@@ -386,7 +386,7 @@
   - A transaction will be generated, WITHOUT a proof.
   - Transaction will NOT be printed to the console.
   - Transaction will NOT be saved to a file.
-  - Transaction will be broadcast to http://127.0.0.1:65083
+  - Transaction will be broadcast to http://127.0.0.1:55328
 ──────────────────────────────────────────────
 
 
@@ -425,13 +425,13 @@
  • {
   owner: aleo1l4s8l9fkl0rughvj0qzv3hduzr2ktpwgmwyue3ehkdrgtdl9vgys4xyw23,
   _root: 2088196341514601390786395678757996185625832350326076651892985572838293851310field,
-  _nonce: 1406138769654596857642012955868096204609973177620231363089068119026246496257group,
+  _nonce: 1331129969710062074077109597260385153691418424596419516136112503765961546group,
   _version: 1u8
 }
  • {
   owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,
   _root: 7272673248939714434950663817747676980911724299724535706949398312495758163088field,
-  _nonce: 6804927123625371852431699186406707639041221084430104522389716959432571415611group,
+  _nonce: 5890661057379714451785459545508336387304844384642251632606561322692908455337group,
   _version: 1u8
 }
  • {
@@ -469,9 +469,9 @@
 💰Your current public balance is 9373533.984845 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at1lpd55rt9gj6zp3c6e3udk5nnjlr4dl63h88rfc3xudndnx2qjs8qy7uhgk'
-  - fee ID: 'au1dwvhypfsuwzr8a23u8ez3gqua9skcn30g8f4faaf33rnz3g67uyq8nalwa'
-  - fee transaction ID: 'at1xe5v8kzww4xnz6zwwsthvshu3c7qexyzaktqwsjshzl88kp92vgsx43vec'
+  - transaction ID: 'at1akl4wvjwm86sxh3wvx5vyj7hyneg956x8q09m2yfhqcmdgtu9cqs5kya3j'
+  - fee ID: 'au1yw59wlf7auva22jxwetelk0enpzg7d644py060zyz0jh2v9g2yxswexsat'
+  - fee transaction ID: 'at1qkfterk5yvty4tes58dq7r280g355v8nudwxs0mk8w7l004yagzq2quhlr'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...

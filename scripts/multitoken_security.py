@@ -96,6 +96,32 @@ def run(t):
     X(L+'::claim_compliant',[w,'1190field'],fail=True)
     X(P+'::withdraw_arc20',[cid,ts,'1190field','440u128']);X(P+'::cancel_arc20',[cid,ts,'1190field','600u128'])
     t.check('late repayment wins atomically over a later claim','status: 2u8' in t.mapping(L,'loans',t.lid(w)))
+    # With sibling loans escrowing the same collateral the shared liability total cannot
+    # underflow, so only the terminal status stops a settled loan from paying out again.
+    ts,cid=t.open_('sol','usad',1195,duration=10);w1=t.accept('sol','usad',ts,cid,2195,nonce=1);w2=t.accept('sol','usad',ts,cid,2196,nonce=2)
+    ts3,cid3=t.open_('sol','usad',1196,duration=10);w3=t.accept('sol','usad',ts3,cid3,2197)
+    for _ in range(11):t.rpc('block/create',{})
+    t.repay('sol','usad',w2,2196)
+    X(L+'::claim_compliant',[w2,'1195field'],fail=True)
+    X(L+'::claim_compliant',[w1,'1195field']);t.spend_payout('usad',600)
+    X(L+'::claim_compliant',[w1,'1195field'],fail=True)
+    t.check('settled loans cannot pay out sibling collateral',t.mapping(L,'liabilities',"'usad_stablecoin'")=='600u128'
+            and 'status: 2u8' in t.mapping(L,'loans',t.lid(w2)) and 'status: 3u8' in t.mapping(L,'loans',t.lid(w1)))
+    t.repay('sol','usad',w3,2197)
+    X(P+'::withdraw_arc20',[cid,ts,'1195field','440u128']);X(P+'::cancel_arc20',[cid,ts,'1195field','200u128'])
+    X(P+'::withdraw_arc20',[cid3,ts3,'1196field','440u128']);X(P+'::cancel_arc20',[cid3,ts3,'1196field','600u128'])
+    # Accrued interest is enforced in finalize: the base repayment alone must not settle.
+    n=40_000_000_000;base=n*11000//10000;salt=1198
+    ts=t.terms('sol','usad',salt,duration=10,apr=100000).replace('max_draw: 600u128',f'max_draw: {n}u128')
+    cid=X(P+'::open_arc20',['1field',ts,t.private('sol',n),f'{n}u128',f'{salt}field'])[-2]
+    w=X(L+'::accept_arc20_compliant',['1field',cid,ts,f'{n}u128',t.private('usad',n*15000//10000,B,BK),'2198field',t.PROOFS],BK)[-2]
+    for _ in range(11):t.rpc('block/create',{})
+    X(L+'::repay_arc20_compliant',[w,t.private('sol',base,B,BK),f'{base}u128','2198field'],BK,True)
+    t.check('repayment without accrued interest is rejected','status: 1u8' in t.mapping(L,'loans',t.lid(w)))
+    X(L+'::repay_arc20_compliant',[w,t.private('sol',base+10**8,B,BK),f'{base+10**8}u128','2198field'],BK)
+    X(P+'::withdraw_arc20',[cid,ts,f'{salt}field',f'{base+10**8}u128'])
+    t.check('repayment with accrued interest settles',
+            'status: 2u8' in t.mapping(L,'loans',t.lid(w)) and t.mapping(P,'liabilities',"'arc20_sol'")=='0u128')
     # Invalid compliance proof fails without spending the original record, for both tokens.
     for i,k in enumerate(['usdcx','usad']):
         salt=1200+i;ts=t.terms(k,'aleo',salt);r=t.private(k,1000)

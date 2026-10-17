@@ -2,7 +2,7 @@
   "config": {
     "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
     "network": "testnet",
-    "endpoint": "http://127.0.0.1:63307",
+    "endpoint": "http://127.0.0.1:54473",
     "consensus_version": 19
   },
   "program": "pwn_delta_token.aleo",
@@ -10,7 +10,7 @@
   "outputs": [
     "{\n  program_id: pwn_delta_token.aleo,\n  function_name: set_bad,\n  arguments: [\n    false\n  ]\n}"
   ],
-  "transaction_id": "at13x77arw0znuwc72538halykaqjcp8wxaxut6q2h38m3qcfz5uuxqg7mrgn",
+  "transaction_id": "at1way6389d6qhqym2hzu6hje976g44jjz5ux48z3u9rafj0duca5gqdpl2ps",
   "stats": {
     "storage_cost": 1261,
     "execution_cost": 408,
@@ -18,8 +18,8 @@
     "total_cost": 1669
   },
   "broadcast": {
-    "fee_id": "au145pteecj93cwfglxamddlmevh228cf0wssdfms3h4z9ax6p9kygsnxq76l",
-    "fee_transaction_id": "at1twsdd48yt9srnaj7v27zpyakzgx5ee4kfvnp8rltuzszwctd059s6ry3re",
+    "fee_id": "au14qnk255h30yu6n0gnx2cpjkf40aqudjxz8e3398u0jyxnxc6e5rstchum6",
+    "fee_transaction_id": "at1uxglryrvyvwnw6sp2ffkcrfat809prr4um2cuwya2prr2v99huyqp47009",
     "confirmed": true
   }
 }

@@ -32,7 +32,7 @@ def stage():
         (dst/'program.json').write_text(json.dumps(m,indent=2)+'\n')
     # Deliberately non-conforming transfer semantics to test reserve postconditions.
     bad=base/'pwn_delta_token';(bad/'src').mkdir(parents=True,exist_ok=True)
-    (bad/'program.json').write_text(json.dumps(dict(program='pwn_delta_token.aleo',version='0.1.0',description='TEST ONLY: inexact transfers',license='MIT',leo='4.4.2',dependencies=[])))
+    (bad/'program.json').write_text(json.dumps(dict(program='pwn_delta_token.aleo',version='0.1.0',description='TEST ONLY: inexact transfers',license='GPL-3.0-only',leo='4.4.2',dependencies=[])))
     (bad/'src/main.leo').write_text("""
 program pwn_delta_token.aleo {
     record Token { owner: address, amount: u128 }
@@ -60,7 +60,7 @@ program pwn_delta_token.aleo {
     deps += [dict(name='pwn_delta_token.aleo',location='local',path='../pwn_delta_token',edition=None)]
     deps += [dict(name='credits.aleo',location='local',path='../vendor/credits.aleo',edition=None)]
     deps += [dict(name=n+'.aleo',location='local',path='../'+n,edition=None) for n in CORE]
-    (driver/'program.json').write_text(json.dumps(dict(program='pwn_local_fixture.aleo',version='0.1.0',description='Local-only fixture loader',license='MIT',leo='4.4.2',dependencies=deps),indent=2)+'\n')
+    (driver/'program.json').write_text(json.dumps(dict(program='pwn_local_fixture.aleo',version='0.1.0',description='Local-only fixture loader',license='GPL-3.0-only',leo='4.4.2',dependencies=deps),indent=2)+'\n')
     (driver/'src/main.leo').write_text('\n'.join('import '+d['name']+';' for d in deps)+MATH+'''
 struct Authority { domain: u8, protocol: address, account: address, salt: field }
 program pwn_local_fixture.aleo {

@@ -1,0 +1,25 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:64187",
+    "consensus_version": 19
+  },
+  "program": "pwn_delta_token.aleo",
+  "function": "set_bad",
+  "outputs": [
+    "{\n  program_id: pwn_delta_token.aleo,\n  function_name: set_bad,\n  arguments: [\n    false\n  ]\n}"
+  ],
+  "transaction_id": "at1cm7n5gklrd6q2kmzmt7p3gr2dmywmfqzughrjhhl3m2g9e57hvgqsht2qg",
+  "stats": {
+    "storage_cost": 1261,
+    "execution_cost": 408,
+    "priority_fee": 0,
+    "total_cost": 1669
+  },
+  "broadcast": {
+    "fee_id": "au1vy8335s3x94xk2tw4p6t53eh89mxxhf0tepszthz9heqrcyfgc9sy7wh6u",
+    "fee_transaction_id": "at178qm3esmjs0xy89cmxqr5j0qxv5vcxn8m89ftscl7ncv4mc6dypqptzgpw",
+    "confirmed": true
+  }
+}

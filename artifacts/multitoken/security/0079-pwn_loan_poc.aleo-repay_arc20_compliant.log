@@ -369,7 +369,7 @@
 🔧 Configuration:
   Private Key:        APrivateKey1zkpGPDbTcP2r...
   Address:            aleo16k6wjpe5snzfhzf07mf...
-  Endpoint:           http://127.0.0.1:63307
+  Endpoint:           http://127.0.0.1:64187
   Network:            testnet
   Consensus Version:  19
 
@@ -385,7 +385,7 @@
 ⚙️ Actions:
   - Transaction will NOT be printed to the console.
   - Transaction will NOT be saved to a file.
-  - Transaction will be broadcast to http://127.0.0.1:63307
+  - Transaction will be broadcast to http://127.0.0.1:64187
 ──────────────────────────────────────────────
 
 
@@ -418,4 +418,4 @@
   Priority Fee:         0.000000
   Total Fee:            0.023650
 ──────────────────────────────────────────────
-Failed to fetch from http://127.0.0.1:63307/testnet/statePaths?commitments=2706331553116292083241195476180321434859108070442467748046723621650638139975field
+Failed to fetch from http://127.0.0.1:64187/testnet/statePaths?commitments=4537519285606485920489697782229832929349184422380433788672031935041371018065field

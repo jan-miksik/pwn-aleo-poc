@@ -377,7 +377,7 @@
 🔧 Configuration:
   Private Key:        APrivateKey1zkp8CZNn3yeC...
   Address:            aleo1rhgdu77hgyqd3xjj8uc...
-  Endpoint:           http://127.0.0.1:63307
+  Endpoint:           http://127.0.0.1:64187
   Network:            testnet
   Consensus Version:  19
 
@@ -393,7 +393,7 @@
 ⚙️ Actions:
   • Transaction(s) will NOT be printed to the console.
   • Transaction(s) will NOT be saved to a file.
-  • Transaction(s) will be broadcast to http://127.0.0.1:63307
+  • Transaction(s) will be broadcast to http://127.0.0.1:64187
 
 ⚠️ Warnings:
   • The program 'credits.aleo' can only ever be upgraded once and its contents cannot be changed. Otherwise, the upgrade will likely fail.
@@ -465,8 +465,8 @@ edition for deployed program: 1
     |- Storage Cost:        0.001436
     |- Finalize Cost:       0.000612
   Function 'set_asset'
-    Total Execution Cost:   0.002329
-    |- Storage Cost:        0.001389
+    Total Execution Cost:   0.002355
+    |- Storage Cost:        0.001415
     |- Finalize Cost:       0.000940
   Function 'release_version'
     Total Execution Cost:   0.001224
@@ -488,8 +488,8 @@ edition for deployed program: 1
   Priority Fee:         0.000000
   Total Fee:            35.410896
   Function 'draw_aleo'
-    Total Execution Cost:   0.007024
-    |- Storage Cost:        0.003892
+    Total Execution Cost:   0.007000
+    |- Storage Cost:        0.003868
     |- Finalize Cost:       0.003132
   Function 'receive_aleo'
     Total Execution Cost:   0.005857
@@ -512,16 +512,16 @@ edition for deployed program: 1
     |- Storage Cost:        N/A (dynamic call)
     |- Finalize Cost:       0.001663 (lower bound)
   Function 'open_aleo'
-    Total Execution Cost:   0.009915
-    |- Storage Cost:        0.004478
+    Total Execution Cost:   0.009921
+    |- Storage Cost:        0.004484
     |- Finalize Cost:       0.005437
   Function 'cancel_aleo'
-    Total Execution Cost:   0.006857
-    |- Storage Cost:        0.003816
+    Total Execution Cost:   0.006825
+    |- Storage Cost:        0.003784
     |- Finalize Cost:       0.003041
   Function 'withdraw_aleo'
-    Total Execution Cost:   0.006212
-    |- Storage Cost:        0.003816
+    Total Execution Cost:   0.006190
+    |- Storage Cost:        0.003794
     |- Finalize Cost:       0.002396
   Function 'open_arc20'
     Total Execution Cost:   0.004744 (lower bound)
@@ -567,12 +567,12 @@ edition for deployed program: 1
   Priority Fee:         0.000000
   Total Fee:            51.674412
   Function 'accept_aleo_aleo'
-    Total Execution Cost:   0.024706
-    |- Storage Cost:        0.018969
+    Total Execution Cost:   0.025477
+    |- Storage Cost:        0.019740
     |- Finalize Cost:       0.005737
   Function 'repay_aleo_aleo'
-    Total Execution Cost:   0.016047
-    |- Storage Cost:        0.010786
+    Total Execution Cost:   0.016121
+    |- Storage Cost:        0.010860
     |- Finalize Cost:       0.005261
   Function 'accept_aleo_arc20'
     Total Execution Cost:   0.005044 (lower bound)
@@ -639,8 +639,8 @@ edition for deployed program: 1
     |- Storage Cost:        N/A (dynamic call)
     |- Finalize Cost:       0.003875 (lower bound)
   Function 'claim_aleo'
-    Total Execution Cost:   0.006404
-    |- Storage Cost:        0.003820
+    Total Execution Cost:   0.006368
+    |- Storage Cost:        0.003784
     |- Finalize Cost:       0.002584
   Function 'claim_arc20'
     Total Execution Cost:   0.001892 (lower bound)
@@ -656,12 +656,12 @@ edition for deployed program: 1
     |- Finalize Cost:       0.000000
 ──────────────────────────────────────────────
 📡 Broadcasting upgrade for pwn_config_poc.aleo...
-💰Your current public balance is 9368533.612292 credits.
+💰Your current public balance is 9368533.520189 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at1kun7hdft5n92g24xcue742630gld0lqewfwxvrccrs2pgywlesgscq0w49'
-  - fee ID: 'au1ffm9kkznx9zu5ewxfw7p887f6ehhz4pae8frnkhpht3ucr504yqs7zg96k'
-  - fee transaction ID: 'at1qmyt4xlf79sh7qsu3t3a0wxy2vgupnhf00mpq9rm3pdh0dj7dcqs33q4l5'
+  - transaction ID: 'at1ugm9alffyuy2j8m53x6rnr8yxf0kda8udn8hjuhrux0qgft7r58sf3u5rv'
+  - fee ID: 'au1xnvgqdwhll5mjlq9mh7yx85lx7phhd68lv487sdveqv909zrfq9q8492kf'
+  - fee transaction ID: 'at19qr6l7wf3dj5ncmghkq4l8kp4thnzxymd5x7trnwdu9md8q5qs8qcespsa'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
@@ -669,12 +669,12 @@ Explored 1 blocks.
 Transaction rejected.
 ❌ Failed to upgrade program pwn_config_poc.aleo: could not find the transaction on the network.
 📡 Broadcasting upgrade for pwn_hub_poc.aleo...
-💰Your current public balance is 9368525.571256 credits.
+💰Your current public balance is 9368525.479153 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at12rgvl3zntxvc6ky4494unul5v80pjpwvzrwf7ss44z60q5pyxyrsvc8ryp'
-  - fee ID: 'au1kpjr0xm7y55xwpe34w6sur53vec8cr00fsukmn752r96ahcv0s9sprg5q7'
-  - fee transaction ID: 'at1yme0l08syfwuzgyj9d63mm5fxknxt7wrf80gz789cqhatevq2vps0859k7'
+  - transaction ID: 'at1dtu00nhw7u6tux8e2j0a4empq2x5eusavv7lfr0409mhrchw2u8qux4e3z'
+  - fee ID: 'au18hrm8ngzqhvm5j3tam68ghqhwvmnhwg7nyvk7hr7tf7ugcwn6vysyptle2'
+  - fee transaction ID: 'at18eyguwdxjl9h648yehdpqz2mst9um5f383rldjkk4f326nkv6vyqw4gd7p'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
@@ -682,12 +682,12 @@ Explored 1 blocks.
 Transaction rejected.
 ❌ Failed to upgrade program pwn_hub_poc.aleo: could not find the transaction on the network.
 📡 Broadcasting upgrade for pwn_proposal_poc.aleo...
-💰Your current public balance is 9368520.377978 credits.
+💰Your current public balance is 9368520.285875 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at1ggcewzyvjl8nm9zgx6txk2ej6kx6j72v5f27shp3fd0mqed2svqqm5v0vn'
-  - fee ID: 'au1g289hx3lvr98t7qq3mymh5k0ga9yan99g4yvrkar8zglpec92gyqyt734x'
-  - fee transaction ID: 'at1p4twkwqqcs6lfqqs7wrrhn33fgulv579pmym63wd5ew5xur4h58q9cefan'
+  - transaction ID: 'at1evquacka85cphnptfvg4meshln9wna2804tnn4wgvk590a8cyu9qfzhlzq'
+  - fee ID: 'au1mq26fl4ux0tvukravvstktx7aewxe4cnvjtqxkes75mk88hjlgrsqrm7zm'
+  - fee transaction ID: 'at1hqnep46ttgzkwy95sqnl3zjw249k35ktdgftheul50cfxk7jvgzsksxkcc'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
@@ -695,12 +695,12 @@ Explored 1 blocks.
 Transaction rejected.
 ❌ Failed to upgrade program pwn_proposal_poc.aleo: could not find the transaction on the network.
 📡 Broadcasting upgrade for pwn_loan_poc.aleo...
-💰Your current public balance is 9368484.967082 credits.
+💰Your current public balance is 9368484.874979 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at1c9rzd7wnn56chq99nyp54axfnl2jlhcfch9nv2wgx6r2h7n5k5psl40f2m'
-  - fee ID: 'au166vm7umw5myztgdw4sn0ggh28m3jae39u5x85sht5cky2l6y95xsctpl39'
-  - fee transaction ID: 'at1nplldk8fxr844mlyfjk4qcsk8c456p5gdpufn4vndayeh5euhypq3ch6gd'
+  - transaction ID: 'at1f8gpd4a6f8lk6kfcpmff0quh5nc7ngd8g0v9c267cgjkx7qdpuqqr6xkss'
+  - fee ID: 'au126q6g4fcckmawkyus9j8lupnuzgyeu05xkvg9l8n4m5pc2fge5xqrfd7yw'
+  - fee transaction ID: 'at1nkx5cgjsu78s2v5tfsa5es8jj7rguw8qk4822dh3ur59z8mmfcpqq27npl'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...

@@ -378,7 +378,7 @@
 🔧 Configuration:
   Private Key:        APrivateKey1zkp8CZNn3yeC...
   Address:            aleo1rhgdu77hgyqd3xjj8uc...
-  Endpoint:           http://127.0.0.1:65083
+  Endpoint:           http://127.0.0.1:55328
   Network:            testnet
   Consensus Version:  19
 
@@ -406,7 +406,7 @@
 ⚙️ Actions:
   • Transaction(s) will NOT be printed to the console.
   • Transaction(s) will NOT be saved to a file.
-  • Transaction(s) will be broadcast to http://127.0.0.1:65083
+  • Transaction(s) will be broadcast to http://127.0.0.1:55328
 
 ⚠️ Warnings:
   • The program 'credits.aleo' already exists on the network. Please use `leo upgrade` instead.
@@ -1458,8 +1458,8 @@ Once it is deployed, it CANNOT be changed.
   Priority Fee:         0.000000
   Total Fee:            4.317692
   Function 'set_asset'
-    Total Execution Cost:   0.002339
-    |- Storage Cost:        0.001399
+    Total Execution Cost:   0.002351
+    |- Storage Cost:        0.001411
     |- Finalize Cost:       0.000940
   Function 'set_tag'
     Total Execution Cost:   0.002048
@@ -1502,24 +1502,24 @@ Once it is deployed, it CANNOT be changed.
   Priority Fee:         0.000000
   Total Fee:            34.535310
   Function 'open_aleo'
-    Total Execution Cost:   0.009927
-    |- Storage Cost:        0.004490
+    Total Execution Cost:   0.009863
+    |- Storage Cost:        0.004426
     |- Finalize Cost:       0.005437
   Function 'draw_aleo'
-    Total Execution Cost:   0.007028
-    |- Storage Cost:        0.003896
+    Total Execution Cost:   0.006980
+    |- Storage Cost:        0.003848
     |- Finalize Cost:       0.003132
   Function 'receive_aleo'
-    Total Execution Cost:   0.005873
-    |- Storage Cost:        0.003517
+    Total Execution Cost:   0.005877
+    |- Storage Cost:        0.003521
     |- Finalize Cost:       0.002356
   Function 'cancel_aleo'
-    Total Execution Cost:   0.006807
-    |- Storage Cost:        0.003766
+    Total Execution Cost:   0.006847
+    |- Storage Cost:        0.003806
     |- Finalize Cost:       0.003041
   Function 'withdraw_aleo'
-    Total Execution Cost:   0.006208
-    |- Storage Cost:        0.003812
+    Total Execution Cost:   0.006228
+    |- Storage Cost:        0.003832
     |- Finalize Cost:       0.002396
   Function 'open_arc20'
     Total Execution Cost:   0.004744 (lower bound)
@@ -1598,12 +1598,12 @@ Once it is deployed, it CANNOT be changed.
   Priority Fee:         0.000000
   Total Fee:            50.798826
   Function 'accept_aleo_aleo'
-    Total Execution Cost:   0.024870
-    |- Storage Cost:        0.019133
+    Total Execution Cost:   0.024461
+    |- Storage Cost:        0.018724
     |- Finalize Cost:       0.005737
   Function 'repay_aleo_aleo'
-    Total Execution Cost:   0.015718
-    |- Storage Cost:        0.010457
+    Total Execution Cost:   0.016103
+    |- Storage Cost:        0.010842
     |- Finalize Cost:       0.005261
   Function 'accept_aleo_arc20'
     Total Execution Cost:   0.005044 (lower bound)
@@ -1670,8 +1670,8 @@ Once it is deployed, it CANNOT be changed.
     |- Storage Cost:        N/A (dynamic call)
     |- Finalize Cost:       0.003875 (lower bound)
   Function 'claim_aleo'
-    Total Execution Cost:   0.006428
-    |- Storage Cost:        0.003844
+    Total Execution Cost:   0.006400
+    |- Storage Cost:        0.003816
     |- Finalize Cost:       0.002584
   Function 'claim_arc20'
     Total Execution Cost:   0.001892 (lower bound)
@@ -1726,8 +1726,8 @@ Once it is deployed, it CANNOT be changed.
     |- Storage Cost:        0.001224
     |- Finalize Cost:       0.000000
   Function 'forward_set_asset'
-    Total Execution Cost:   0.003353
-    |- Storage Cost:        0.002393
+    Total Execution Cost:   0.003305
+    |- Storage Cost:        0.002345
     |- Finalize Cost:       0.000960
   Function 'forward_set_admin'
     Total Execution Cost:   0.003406
@@ -1739,9 +1739,9 @@ Once it is deployed, it CANNOT be changed.
 💰Your current public balance is 9374999.894112 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at1ly0kx4kh8xtdzycpk3940aqpux0ankv2s9fdmdr0pteucmmygc9q324cqf'
-  - fee ID: 'au1y09hdynr3kk2p5el6nl23tfgeu76mvckvhjd7d75exmvxkvul5rqfswq7l'
-  - fee transaction ID: 'at165hekglvk4fsrpzepgjac9mxm5dqgp6heqhr80826e0jzv50yg9q540706'
+  - transaction ID: 'at16tay9qntv5gttnnq47n6prz8dnn6clrz9y2vfg8th4qskkr60szspydf86'
+  - fee ID: 'au1yvqm23ad2casawzct33qz6azfa5fte083qjtjfas7km48vaslsrqthzvtu'
+  - fee transaction ID: 'at1gu0qck88zayfzzxgu0r4f8s8dm9mulhn0sr02nu7uhhusgk77vzq8mm3ay'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
@@ -1753,9 +1753,9 @@ Transaction accepted.
 💰Your current public balance is 9374988.302526 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at1a57kj5kc9t3h4c0y6ca80k85e8l2qy7dffltpmvn3d5dz4ccsups62n2v7'
-  - fee ID: 'au125cwm0cmfly5lnnpyxg9uv9n2yzg067skwsx6mcs0v3khxyuwcxsdgv5p0'
-  - fee transaction ID: 'at1xkjq62m709ns2me85yhjppmza5r3h55urv05zwjgzl87a4u9t5gsjtxk9d'
+  - transaction ID: 'at1mywc2cxslw0ldk68h09xufwc9vgeghwdg3atpgn8l4pnf0qejcgsy0lrsq'
+  - fee ID: 'au1uk0yg229tpzppg8sramzek6tcgphy870grzuzpa6weqlwmz65cpqpm7gn3'
+  - fee transaction ID: 'at1wqwzkz02t6pd6ld56jjrnq3mff8qqatzgynjrwel5z2lmkqgksqs74weue'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
@@ -1767,9 +1767,9 @@ Transaction accepted.
 💰Your current public balance is 9374951.635442 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at1dmd5jpm95lcf5xeu3dll0eya3wuzp9qw0hqctnwr7v92atdelvyqdp64en'
-  - fee ID: 'au19t925e4mpkftrcm4psxtq5auc3knlc9xlmtwyscj4s20e02fxgpqf77twy'
-  - fee transaction ID: 'at1d70mfdz9j65vqjd5ea58up58ltmuws7qlrjr77t4cukk0qav2gxqrx3w0u'
+  - transaction ID: 'at1dqcwhzdtm5wschl5k6ratphyxf269k05gweggrk6elvj3g2jhyqq6322nv'
+  - fee ID: 'au1kdve4v3qluwy54tf2tlphde3hag3cstu6nsxddv80wz4p6ck35ys9wldyw'
+  - fee transaction ID: 'at1eazgpcxny94xf62m2y65uwjhkfs4v08xvemmx2d0jxr6jqunpc8sc3rdua'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
@@ -1781,9 +1781,9 @@ Transaction accepted.
 💰Your current public balance is 9374915.683242 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at1acc8h6lyntcm8e5g7t08aa2wvuvq3ecqr6qp95vj2wf2lnh2cgrsa7kdkl'
-  - fee ID: 'au1ak7aucrgdw3fqguuxv4l7ndpfk3zesnyd2nqcrkxhytu03p2zc8q9khkye'
-  - fee transaction ID: 'at1r37ntfcvd964vtwsntlcavu678k6mg3qdm5jy9rklu9hmz0s35zqjl0tnh'
+  - transaction ID: 'at13yhxm07j44v38xd4v3wpyceu69kh9kngv75wfpd4pzepzgcrau9s64zntu'
+  - fee ID: 'au19ck2rdgfxf40jfa02cf2zrqgdvrl4gu3wnznd37mvnwxjehfvuqskrhs6x'
+  - fee transaction ID: 'at1pk4k9lsse9sgqa75v6gj50utut43lc5qs8nsr94u7ykls6fymurqdjjy7e'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
@@ -1795,9 +1795,9 @@ Transaction accepted.
 💰Your current public balance is 9374888.704042 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at1qx70pk7k8w2dpzkfgdppw3k4w7ltekr5ygjxwrkvuaaudk9jy5zqc8m3yj'
-  - fee ID: 'au1aagmneknkf4fqa83xcazksxzlv3kku6avzqh6vxmjc3x3rs3tu9stw6trc'
-  - fee transaction ID: 'at1wwck4lrdktyj6jt7p5u6t5cdl3ex2rgl2x0mssuke2644r8q25zqqphuss'
+  - transaction ID: 'at19zvag9573kwteskamshwq30t0n2w3w4sqjzje42arv5k3m283qyqg75tu0'
+  - fee ID: 'au1gzx83utt7tz49e46hunchw8fk6w6y5cl6c86h5k7q7gzg5h50y8qkuuw0z'
+  - fee transaction ID: 'at1emh68amu5w9redpdqt8dw6du0s3angarcrjk73y53zj8v7gwqqpq9fpxq9'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
@@ -1809,9 +1809,9 @@ Transaction accepted.
 💰Your current public balance is 9374851.578958 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at1ntvvta6y8cz9ghdxg7lnhvkwmvrswmwe5hqrw4enwr2xczgc75xs4cgzjp'
-  - fee ID: 'au1ug48kcv2wyqjlyhyahch9natgydrvujpv9a4wnuqmz845hv5ssyq2pgnsm'
-  - fee transaction ID: 'at1pgl4tywps5jjeveaqyltf7c2hwxd87mvjh63e9j2qp7uqg7gjgqsz42z5a'
+  - transaction ID: 'at1gkhcjnu6h6sxwad43vxv7f254xg9aynfqh2ehz533a54sskj95zq3gyfu7'
+  - fee ID: 'au1nk56t8tlvda9uhkj4mwkvpu2q7cjdwwgmag50pp84n6ymy0jsu8qym6eq5'
+  - fee transaction ID: 'at1xlw6rnmlpyypmqe3tn232dg5wptkqmf36h5yj9mej6f9tfsdfu8spjp0r5'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
@@ -1823,9 +1823,9 @@ Transaction accepted.
 💰Your current public balance is 9374840.506536 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at1zg09qhwvsu4xnljdc9hykflld2yvhp5qqnc34pp6zmjfhw4azyrs9xexra'
-  - fee ID: 'au1tf4z3wvh4dekknze8j2ux6rvupkh905cw8rzg2f6lsj4jmlcxczqs9ky0w'
-  - fee transaction ID: 'at12y9y8ll63kwuvuh0qfv97huztfcwcj7pdckau0mr5ntqqcg5agrsnj70rc'
+  - transaction ID: 'at1xcx2lntj0x2vlyfcukq0fhsgav02shqeflte68379j7vt6l0xsxq8n75ys'
+  - fee ID: 'au1nlhr8l3ejr0e26qld6vuymnmv2v4dt78a2uqqcww9mnef9nxv58qp0cnwg'
+  - fee transaction ID: 'at1azdckur76dg75f3usg0tfnd3tdcldn9yh5udvpqsdtf406qdgsyq7yghyv'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
@@ -1837,9 +1837,9 @@ Transaction accepted.
 💰Your current public balance is 9374767.107152 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at1aqcxaprw4s236txxmsdgue98d8s7f6yc7cvu8ke3k4pc80u75qgs6j3v5f'
-  - fee ID: 'au1s7lftq9jd209s0qmf0x7fuexe5gsjvpndqxsqhgd9pdwwccpm5rslkljsu'
-  - fee transaction ID: 'at145f09eyh5fvcnfdlzns0908y232slrv2lffhkw4er8cjguf6vgfqqanwrl'
+  - transaction ID: 'at1mhgkyt2es54hqxvuzuu53ajfs7ce925tshyjdcgq69xxdh36kggqj6pe5s'
+  - fee ID: 'au16wgtryg6y9v78ztvyxwhhn9c479elm2dfya6lvlr0mt52sdv7qpqzzlp96'
+  - fee transaction ID: 'at10ra20dpxszrvaf549cvqy4ywnu83gpvwcg6z3f2h29khu4tr4uxqcqcedg'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
@@ -1851,9 +1851,9 @@ Transaction accepted.
 💰Your current public balance is 9374729.998068 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at17dk3u2ag0700ctfzc324cvezgvx6f39mws2zarelykv7q9x0w5xq0ky24t'
-  - fee ID: 'au1kd2p28cm7jgmnk8myfsxqwslz4wy8ja5ssxlkc7x0ypghl2w8czqt5de9l'
-  - fee transaction ID: 'at1654y08mspk8fg92pxznmkd24etf6v5fgelk5appw3fycfrvyhvrqf9jr3z'
+  - transaction ID: 'at126wzetjxw8xcw8s57gtflapcsa4wyva8eq0wey2mn3ty894n4qyq6sk50a'
+  - fee ID: 'au1sz90xeutnn5tanadumyykhwah0k2g4479vazzvdqwlv6nxuljqrqtcdlu8'
+  - fee transaction ID: 'at10xgpz89wucj88q5xppkq2r62h8f4rsu03hwux8fz48hp4pyu25zssf4lqw'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
@@ -1865,9 +1865,9 @@ Transaction accepted.
 💰Your current public balance is 9374718.935646 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at15v2art5s0xwq943dfcnqtlc26atmwev9tye4ltq4a282z054ryysa3wlw4'
-  - fee ID: 'au1dqjhpvj8jjzs5xfkgvzxzz5ydan9ef4qvqsywtwaxvg94lnf3sqqcvtqe0'
-  - fee transaction ID: 'at1fzluv53gz2nlzq8r9h28jw0gmfzh23wj52vxumfwxm9mflyaeqrqnpas9h'
+  - transaction ID: 'at17848vqlmdmmeqj7ew7lnz0wgxmfdkstnrezsn9nhmwdtx2q94vrqpqpq98'
+  - fee ID: 'au1eulx8ly3nfyhdqdk840x5jfz9k65czt9y7u7t5gacxhqfg703v8scy23vf'
+  - fee transaction ID: 'at1k3wet4g9y5ky2v4a9er2apeeem0eyhaf2jv24wjj3q80ykdnag9qc0hhk3'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
@@ -1879,9 +1879,9 @@ Transaction accepted.
 💰Your current public balance is 9374645.716262 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at1gue8qe7j6zccmmhlu6dkdp7n0x5jtvd20kk732hq5jtf6klyjq9sjc0jd6'
-  - fee ID: 'au1hwxd0taugu23fsxwtk895hq63dnllf8d2wg0pvs2atep8gphmugqyqzhyx'
-  - fee transaction ID: 'at1suj47zsj5etmt0y8f92dy2wqvzmaw4jzq44c0dtu7f24n45u9ugs75tffm'
+  - transaction ID: 'at1y7gczcj2f6r9e6p9z46z2nna8trvnvpxe5x8jucsvhlue9s9sg9q2kh0gz'
+  - fee ID: 'au18q22wst5yypxcdylce6qvjk62lsy3jws35wyphwkkrrhypyg8vxqt2cj8p'
+  - fee transaction ID: 'at1rx5amrr0ct8fmlcsfutu6x5wqmac535k7adm3c7wp4pf279xkggqn88xdz'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
@@ -1893,9 +1893,9 @@ Transaction accepted.
 💰Your current public balance is 9374639.594332 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at1r878m3u269at4ptcj9zkprstdfy624m3kqxa9x4u5mde7aacagxqy3arvk'
-  - fee ID: 'au1uxrrpq2tz58w6fcmk6lvwh4eymqhevevq3t9gt3rcsh3gzt25yzqvnu30e'
-  - fee transaction ID: 'at1v86nuwyw0pgzrd9ma2ga2md5au4jjuglg2kl0nyvxttunxq6yyqsue4ua9'
+  - transaction ID: 'at17zqtr2hu33k4e492646720sp264nt4qeh5futd6uxxtyv6fqgy9qlhnmxv'
+  - fee ID: 'au1uuhwerl7fd6hyy64x0wjzq4kcxlvgx83lhxp82qkj80c4el26gqsrg0tlm'
+  - fee transaction ID: 'at19un0ge0sf8z60ddmcegaudr2qyxu8v6es5hmzdc60fkk42cmn5ysf23jal'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
@@ -1907,9 +1907,9 @@ Transaction accepted.
 💰Your current public balance is 9374632.428882 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at1ffv0q77lhah7pg20jmjgnuzvnruafxucrjhmpug6uvlpmckr7qgqvpypx7'
-  - fee ID: 'au105hexg0qdsgewc58sp2tymxn24jjmzq34v6ls4ylpppdzx72yuqqt6xf3p'
-  - fee transaction ID: 'at1mrgeal50mlglpwdggna6fynrx3r86n5mslh497guajps50vd3szqkvregt'
+  - transaction ID: 'at162383aur3j7tehx07lw69dxp8j9czknma0clj6ctvs7s545vqsrsfjs908'
+  - fee ID: 'au17jzs0zvrz7sypyef46v9c7lzkzcr4yyj7d004nslc0ztqupzlq8sswu7tv'
+  - fee transaction ID: 'at19zq0yng5y5xv4yphnvute9cunw0lazjusjl9wgsuqgjd586lsv8q4xspqr'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
@@ -1921,9 +1921,9 @@ Transaction accepted.
 💰Your current public balance is 9374628.11119 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at1jufwnw8aql2se3q04ueyxqjze7l87etdltrq64kezq6xdtltcg8s9hgxn0'
-  - fee ID: 'au1nr3xvdffnnzdkvdefw3gzz0qn6p34xcgjym0esr6xswmxlygfyzqgat8c4'
-  - fee transaction ID: 'at1fy7p7hrlj8snxk6mnlycx59d2lgj2wma9v80kt250pgehtk78c9qy5meeu'
+  - transaction ID: 'at1fvkh7al59g3su0pzmved7a0c4kz585wfsglpq80ssuc9hcy8pvrqpdvm90'
+  - fee ID: 'au1au9jmc4p508rn4pz2mxmtq40eu38w9a9qupsxa5r9e4zpt6rnvxs6rtuwr'
+  - fee transaction ID: 'at1vt2tlvph6uaxhqnf4e5u9ztr8zqufm75p7a3dadzmmcwaqpptszs4j6h95'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
@@ -1935,9 +1935,9 @@ Transaction accepted.
 💰Your current public balance is 9374593.57588 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at1ucfjceeeakl5scaf56hv5vpc8z9swelesxl6y46et9gl42zxfurqpsxvsz'
-  - fee ID: 'au1wkczg0ggh8nde3cqazr8fdstet757dmlrl85r4wszhw9vu7yyygsmgy9kz'
-  - fee transaction ID: 'at1dpyfvzhjvq9ned9s3x6l93ex3ejj7kf8vrluk59rp7vx5petagzsw4h2rd'
+  - transaction ID: 'at1m6svynk50dyefdel3kwwepstzelat65v4lquyx8ej0xkege4eqzq2qcn04'
+  - fee ID: 'au1en92qm2gxgwg55swvw4epx3h9807gqc8tedpxpgpz7sruxx77qgsnpwswx'
+  - fee transaction ID: 'at12575049tcm4upm0d89mq5utnqw5mzyq6kndjlfnynuuulqy49gqqj04mqn'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...
@@ -1949,9 +1949,9 @@ Transaction accepted.
 💰Your current public balance is 9374542.777054 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at1rv8ys0thkvdm54f2amm7m7fampus80sj2namv0qmjqjsve276qqsjc5f4s'
-  - fee ID: 'au1vv50v3vhvrvcdspwurg4pxaje8kv6w5dqta680yf2zt6rducg59sfn9s0h'
-  - fee transaction ID: 'at1c4f2ekljsdew3352wg5wdj6hvgz24caz58d8022fl8jclu4xayrqqmj4dl'
+  - transaction ID: 'at15qdnkuh6gw6vzeljc3n7swayfs2lvr67xlf3humpjk4lke88ycyscceqyl'
+  - fee ID: 'au1nrzr8czu5j4tckp4afh8vg7t2fd7la47z8x2h327dr6dvjupdygssa5tmr'
+  - fee transaction ID: 'at1635v9fsf7clxhdd0mpvcm9frfd4lt005mq2ngy4tl0wgl0jmzsgqyfg0tw'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...

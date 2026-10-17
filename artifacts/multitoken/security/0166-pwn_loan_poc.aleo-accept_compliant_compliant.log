@@ -369,7 +369,7 @@
 🔧 Configuration:
   Private Key:        APrivateKey1zkpGPDbTcP2r...
   Address:            aleo16k6wjpe5snzfhzf07mf...
-  Endpoint:           http://127.0.0.1:63307
+  Endpoint:           http://127.0.0.1:64187
   Network:            testnet
   Consensus Version:  19
 
@@ -386,7 +386,7 @@
   - A transaction will be generated, WITHOUT a proof.
   - Transaction will NOT be printed to the console.
   - Transaction will NOT be saved to a file.
-  - Transaction will be broadcast to http://127.0.0.1:63307
+  - Transaction will be broadcast to http://127.0.0.1:64187
 ──────────────────────────────────────────────
 
 
@@ -425,25 +425,25 @@
  • {
   owner: aleo1cvdcz7hzu7pjca4a429dwzxp2h6rjv95ldw6vrf9395tnef2xc8sn624ch,
   _root: 2238658759901105636988364461688830638964956639416200637563250481030232232243field,
-  _nonce: 2365847143788755271251405659040666755017574499713279051918842244099870534631group,
+  _nonce: 3705998734172989141407096309813079464129295468740646320075147759739058061051group,
   _version: 1u8
 }
  • {
   owner: aleo1l4s8l9fkl0rughvj0qzv3hduzr2ktpwgmwyue3ehkdrgtdl9vgys4xyw23,
   _root: 1099041946559857599029183546518011501376700126401463985519044458304362685147field,
-  _nonce: 7751477388970351679264328065795156195067476545808181582706328772362663114212group,
+  _nonce: 7138132170050888474091069905797509564355051637000963741430874501872492310354group,
   _version: 1u8
 }
  • {
   owner: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue,
   _root: 7907710830747846252012169120663688607130679151171038536649161869283642952979field,
-  _nonce: 7200476128975640037347132692422363246325400826448195033140010975590994303486group,
+  _nonce: 4575615863203582162927906821949882468152199817532499262861056275274467448881group,
   _version: 1u8
 }
  • {
   owner: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue,
   _root: 7907710830747846252012169120663688607130679151171038536649161869283642952979field,
-  _nonce: 742969138671685079249799140083179652404202192069111878397580642495363585717group,
+  _nonce: 662225963937667414472967347903701586149528072377034368021701442462580466062group,
   _version: 1u8
 }
  • {
@@ -562,9 +562,9 @@
 💰Your current public balance is 999.734171 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at1hv9m0gxz7lan80t2tq0alry4sxn4ct06meclc6g30e77aujx9s8qqsl3jq'
-  - fee ID: 'au199q0hq7js3suv05wywyhj9fkkczfrgdgs56xpv4nmy07h7ra4y8qdtgkr2'
-  - fee transaction ID: 'at1mzmzzp9w7hfye3a99gut82kclfwevvfdcc8yg93zel0kgy4dgsfqn94ved'
+  - transaction ID: 'at1v2e455qjnfsuz035dhhp4trajm4qyzy4t8s7ehjak88jsg7yng9sqrz583'
+  - fee ID: 'au1esxq8atkucgk5vp0ha9zdr7g8dt297re4qclawmgh8m7k3wdgg9q0hec2l'
+  - fee transaction ID: 'at1fxgznne9fs38j4cme7wzvfjlx5j2tf7y5uj38gz7la2xczn4tcqs84n8yh'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...

@@ -2,7 +2,7 @@
   "program": "custody_probe.aleo",
   "version": "0.1.0",
   "description": "",
-  "license": "MIT",
+  "license": "GPL-3.0-only",
   "leo": "4.4.2",
   "dependencies": [
     {

@@ -2,17 +2,17 @@
   "config": {
     "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
     "network": "testnet",
-    "endpoint": "http://127.0.0.1:59301",
+    "endpoint": "http://127.0.0.1:64644",
     "consensus_version": 19
   },
   "program": "usad_stablecoin.aleo",
   "function": "mint_private",
   "outputs": [
-    "{\n  owner: aleo1cvdcz7hzu7pjca4a429dwzxp2h6rjv95ldw6vrf9395tnef2xc8sn624ch.private,\n  amount: 1000u128.private,\n  sender: aleo1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq3ljyzc.private,\n  recipient: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  _nonce: 7560552019006792598112586454307630804725009410853735017381389982265630767557group.public,\n  _version: 1u8.public\n}",
-    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  amount: 1000u128.private,\n  _nonce: 48876162934097230874957108425944476792896091166534447210435570071326551078group.public,\n  _version: 1u8.public\n}",
+    "{\n  owner: aleo1cvdcz7hzu7pjca4a429dwzxp2h6rjv95ldw6vrf9395tnef2xc8sn624ch.private,\n  amount: 1000u128.private,\n  sender: aleo1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq3ljyzc.private,\n  recipient: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  _nonce: 837571238425178482231245331089226515155147621954006547703256083764981670931group.public,\n  _version: 1u8.public\n}",
+    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  amount: 1000u128.private,\n  _nonce: 6041767913137311460148211673928227674287631114015245510772554474861170545769group.public,\n  _version: 1u8.public\n}",
     "{\n  program_id: usad_stablecoin.aleo,\n  function_name: mint_private,\n  arguments: [\n    1000u128,\n    aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px\n  ]\n}"
   ],
-  "transaction_id": "at15adc9q8r33ghs6a6dua8r9y6hlps6nphpt5uf35cp8a6nuk0fuxql59k00",
+  "transaction_id": "at1cl6ajlurgxv0gryyuy5drvzndpd9g8w6mkaaafuquwgjx64ctyzsws3psr",
   "stats": {
     "storage_cost": 2016,
     "execution_cost": 1147,
@@ -20,8 +20,8 @@
     "total_cost": 3163
   },
   "broadcast": {
-    "fee_id": "au10ug5g6p52regsvxmw0fst4duzw4sl8vkc7xwylwl5j4vldj7vuyqt3wjzv",
-    "fee_transaction_id": "at1jjksvnp9zqn7hk7wgv296umssmcv5ma4jrs6rsswnrflg9ulcyps8qw8sp",
+    "fee_id": "au14ntexmvwgglh03vuwl49u2qpzzmzyvgevn6akudfx8gzpfa0gv8sl4kzc9",
+    "fee_transaction_id": "at1prvtkht4x7z08e9wjxdjnzv459j6dxa7ayf3gkkmxgtv55nwkg9sr6srh4",
     "confirmed": true
   }
 }

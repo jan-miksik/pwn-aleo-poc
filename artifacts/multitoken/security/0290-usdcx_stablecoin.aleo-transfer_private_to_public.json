@@ -1,0 +1,27 @@
+{
+  "config": {
+    "address": "aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:64187",
+    "consensus_version": 19
+  },
+  "program": "usdcx_stablecoin.aleo",
+  "function": "transfer_private_to_public",
+  "outputs": [
+    "{\n  owner: aleo1l4s8l9fkl0rughvj0qzv3hduzr2ktpwgmwyue3ehkdrgtdl9vgys4xyw23.private,\n  amount: 1u128.private,\n  sender: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue.private,\n  recipient: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue.private,\n  _nonce: 7520571934853368757069345582859881691147504314114798656298543924804120267546group.public,\n  _version: 1u8.public\n}",
+    "{\n  owner: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue.private,\n  amount: 599u128.private,\n  _nonce: 5331738804724740905246865352291062783265692614593151330181952943486574415082group.public,\n  _version: 1u8.public\n}",
+    "{\n  program_id: usdcx_stablecoin.aleo,\n  function_name: transfer_private_to_public,\n  arguments: [\n    3642222252059314292809609689035560016959342421640560347114299934615987159853field,\n    aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue,\n    1u128\n  ]\n}"
+  ],
+  "transaction_id": "at1hhmsyjup4s77qpdrhl3yzhat8rhkp4xq4z7zczfzlk7mtlaukuxq3a5scn",
+  "stats": {
+    "storage_cost": 3954,
+    "execution_cost": 1247,
+    "priority_fee": 0,
+    "total_cost": 5201
+  },
+  "broadcast": {
+    "fee_id": "au1skk9nzfgr8z3rgm3hyh0fqgkcau83qp6gz5kjn8m8xv65txztvpq0azzcd",
+    "fee_transaction_id": "at1d0jvgn8kjdgr4agqmh59vnpcf5f47z73k320yyuz3zns35277qzqdu6a0t",
+    "confirmed": true
+  }
+}

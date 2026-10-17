@@ -1,0 +1,26 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:64187",
+    "consensus_version": 19
+  },
+  "program": "arc20_wbtc.aleo",
+  "function": "mint_private",
+  "outputs": [
+    "{\n  owner: aleo16k6wjpe5snzfhzf07mfze8j8lyg6vgyfe25vu67ykpvu6mv6ng8q8p78ue.private,\n  amount: 1208925819614629174706176u128.private,\n  _nonce: 8055516360559359806490076823951365333868722339428429175778086038114450066446group.public,\n  _version: 1u8.public\n}",
+    "{\n  program_id: arc20_wbtc.aleo,\n  function_name: mint_private,\n  arguments: [\n    aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n    1208925819614629174706176u128\n  ]\n}"
+  ],
+  "transaction_id": "at1yrdqw8wruuwqcc22c9xh5za5uzervjgmmfr6ycsm63tnux4hnyrqfycd8f",
+  "stats": {
+    "storage_cost": 1655,
+    "execution_cost": 1118,
+    "priority_fee": 0,
+    "total_cost": 2773
+  },
+  "broadcast": {
+    "fee_id": "au1cpsjdrkc9x7r2qky0q6va3f9hq7nnkly97w6f8yr5ws5tecz7qgs8wajze",
+    "fee_transaction_id": "at1mfw4f4ar7f3a47k9kh8xnsh7juvgvfuxpamlhlsf8g54yxzadvfqhenm76",
+    "confirmed": true
+  }
+}

@@ -2,7 +2,7 @@
   "program": "usdcx_composition_probe.aleo",
   "version": "0.1.0",
   "description": "COMPILE ONLY: exact USDCx transfer interfaces and two-token composition; no authorization, never fund.",
-  "license": "MIT",
+  "license": "GPL-3.0-only",
   "leo": "4.4.2",
   "dependencies": [
     {

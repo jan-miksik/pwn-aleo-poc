@@ -369,7 +369,7 @@
 🔧 Configuration:
   Private Key:        APrivateKey1zkp8CZNn3yeC...
   Address:            aleo1rhgdu77hgyqd3xjj8uc...
-  Endpoint:           http://127.0.0.1:65083
+  Endpoint:           http://127.0.0.1:55328
   Network:            testnet
   Consensus Version:  19
 
@@ -386,7 +386,7 @@
   - A transaction will be generated, WITHOUT a proof.
   - Transaction will NOT be printed to the console.
   - Transaction will NOT be saved to a file.
-  - Transaction will be broadcast to http://127.0.0.1:65083
+  - Transaction will be broadcast to http://127.0.0.1:55328
 ──────────────────────────────────────────────
 
 
@@ -437,9 +437,9 @@
 💰Your current public balance is 9373534.322785 credits.
 
 ✉️ Broadcasted transaction with:
-  - transaction ID: 'at1703plscqg03n5xdhaw75v9ju8qlj4grdr3auees63nks779aw59s5rl4g6'
-  - fee ID: 'au1gmu4sw58uml05jqjtps3zz2xq2euqmrcax8nq6frhdhtmv9pt58qk9uyry'
-  - fee transaction ID: 'at1gp780w9k6czjy9lvl49tnfzxq9meyjfrhmrvzgya0tmc8q3yguqqp7al4z'
+  - transaction ID: 'at1vv6yg3vwu475tsw6wh9sl0hgup3kuczp92qp0x52zlaq89cv3ygqpuvu40'
+  - fee ID: 'au1ksr9wu6fzwpm9c9zl4rhfpdnurkr8ah2ac69evjpph3jjnet7gys9v3w6u'
+  - fee transaction ID: 'at1w2339c0vx67vq7j7w5zdx4qqf2hs8gjk6xavgwwslfqqmhteeqxslsn8u6'
     (use this to check for rejected transactions)
 
 🔄 Searching up to 12 blocks to confirm transaction (this may take several seconds)...

@@ -58,3 +58,7 @@ Use a fresh random salt per position and private fees.
 - [research/](research/SEMANTICS.md), [vendor/README.md](vendor/README.md) — semantics notes, token bytecode provenance
 
 `custody_probe`, `usdcx_composition_probe`, `artifacts/token-dispatch-probe`: compile-only experiments, never funded.
+
+## License
+
+GPL-3.0-only, see [LICENSE](LICENSE).

@@ -81,7 +81,7 @@ make unit           # 22 generator/harness/oracle tests
 make fuzz           # Leo arithmetic vs unbounded-integer oracle (189 cases)
 make test           # 25 credit/collateral pairs, full lifecycle (101 checks)
 make invariants     # model-based accounting checks after every action (161)
-make security       # adversarial suite (149 checks, 1 real execution proof)
+make security       # adversarial suite (160 checks, 1 real execution proof)
 make compatibility  # ABI/storage/constructor/finalizer fingerprints vs reviewed baseline
 ```
 
@@ -91,7 +91,9 @@ no proofs/certificates/consensus except where stated. Details: [docs/TESTING.md]
 `make security` covers: admission/version/token_id, term bounds on all three
 credit families, governance via a hostile intermediary program and two-step
 handover, caller restriction on draw/receive, wrong salt / tampered witness /
-early claim, repayment after maturity vs. later claim, token substitution
+early claim, repayment after maturity vs. later claim, no second payout while
+sibling loans escrow the same collateral, repayment without accrued interest,
+token substitution
 (rejected only at proving time — run with a real proof), delisting and module
 pause, default for all nine pairs, invalid compliance proofs, issuer burn on
 credit and collateral escrow, pause, freeze-list freeze/unfreeze, amounts above

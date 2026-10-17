@@ -2,7 +2,7 @@
   "config": {
     "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
     "network": "testnet",
-    "endpoint": "http://127.0.0.1:63307",
+    "endpoint": "http://127.0.0.1:64187",
     "consensus_version": 19
   },
   "program": "usad_freezelist.aleo",
@@ -10,7 +10,7 @@
   "outputs": [
     "{\n  program_id: usad_freezelist.aleo,\n  function_name: initialize,\n  arguments: [\n    aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n    aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px,\n    1000u32\n  ]\n}"
   ],
-  "transaction_id": "at1urw3yqhyey8t5ppt7zd7fwfk8yscn360k20vp5qc00gam9a7fs9q2qpmcp",
+  "transaction_id": "at1gfufc5ky3cwwk5j7jl5dgrts6dhpz9cg3ee45v2f2r9a8y7smuxsh0mxlv",
   "stats": {
     "storage_cost": 1418,
     "execution_cost": 3084,
@@ -18,8 +18,8 @@
     "total_cost": 4502
   },
   "broadcast": {
-    "fee_id": "au1l9duytu0uy857jd4cdn67h4v4tk85rj3c2n7m293n6s2ngl9wggsskr707",
-    "fee_transaction_id": "at1amt9llgh9vggge43gv25qj7pu7vdfkrpef0cgu2ml7u7jqjm7qrs47dnnf",
+    "fee_id": "au10fm2fh5mc4tuyg00f5evp6rpczpcdl8cgcvyu85j22gxjkfg25zs0xazlu",
+    "fee_transaction_id": "at1xl0u22g64ty4ajfmrca5qg9jxl8sa9ju4mkv9q4ys8e8nh5hvvzsrj2m2e",
     "confirmed": true
   }
 }

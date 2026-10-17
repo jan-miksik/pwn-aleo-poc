@@ -83,7 +83,7 @@ def stage(directory):
     (directory / 'src').mkdir(parents=True, exist_ok=True)
     (directory / 'program.json').write_text(json.dumps(dict(
         program='pwn_math_fuzz.aleo', version='0.1.0', description='Local arithmetic oracle',
-        license='MIT', leo='4.4.2', dependencies=[]), indent=2) + '\n')
+        license='GPL-3.0-only', leo='4.4.2', dependencies=[]), indent=2) + '\n')
     (directory / 'src/main.leo').write_text(MATH + '''
 program pwn_math_fuzz.aleo {
     fn check_rounded(amount: u128, ratio: u64) -> u128 { return rounded(amount, ratio); }

@@ -453,7 +453,51 @@
       "status": "PASS"
     },
     {
-      "test": "0181-pwn_proposal_poc.aleo-open_compliant rejected: VM instruction failure",
+      "test": "sol/usad private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/usad private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "sol/usad private credit owner",
+      "status": "PASS"
+    },
+    {
+      "test": "0192-pwn_loan_poc.aleo-claim_compliant rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "usad payout decrypts with correct owner and amount",
+      "status": "PASS"
+    },
+    {
+      "test": "usad payout can actually be spent",
+      "status": "PASS"
+    },
+    {
+      "test": "0195-pwn_loan_poc.aleo-claim_compliant rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "settled loans cannot pay out sibling collateral",
+      "status": "PASS"
+    },
+    {
+      "test": "0207-pwn_loan_poc.aleo-repay_arc20_compliant rejected: finalize rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "repayment without accrued interest is rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "repayment with accrued interest settles",
+      "status": "PASS"
+    },
+    {
+      "test": "0212-pwn_proposal_poc.aleo-open_compliant rejected: VM instruction failure",
       "status": "PASS"
     },
     {
@@ -461,7 +505,7 @@
       "status": "PASS"
     },
     {
-      "test": "0185-pwn_proposal_poc.aleo-open_compliant rejected: VM instruction failure",
+      "test": "0216-pwn_proposal_poc.aleo-open_compliant rejected: VM instruction failure",
       "status": "PASS"
     },
     {
@@ -477,7 +521,7 @@
       "status": "PASS"
     },
     {
-      "test": "0196-pwn_loan_poc.aleo-repay_arc20_compliant rejected: finalize rejection",
+      "test": "0227-pwn_loan_poc.aleo-repay_arc20_compliant rejected: finalize rejection",
       "status": "PASS"
     },
     {
@@ -493,7 +537,7 @@
       "status": "PASS"
     },
     {
-      "test": "0208-pwn_loan_poc.aleo-repay_arc20_compliant rejected: finalize rejection",
+      "test": "0239-pwn_loan_poc.aleo-repay_arc20_compliant rejected: finalize rejection",
       "status": "PASS"
     },
     {
@@ -501,7 +545,7 @@
       "status": "PASS"
     },
     {
-      "test": "0223-pwn_proposal_poc.aleo-withdraw_arc20 rejected: finalize rejection",
+      "test": "0254-pwn_proposal_poc.aleo-withdraw_arc20 rejected: finalize rejection",
       "status": "PASS"
     },
     {
@@ -513,23 +557,23 @@
       "status": "PASS"
     },
     {
-      "test": "0236-pwn_proposal_poc.aleo-open_aleo rejected: VM instruction failure",
+      "test": "0267-pwn_proposal_poc.aleo-open_aleo rejected: VM instruction failure",
       "status": "PASS"
     },
     {
-      "test": "0238-pwn_proposal_poc.aleo-open_arc20 rejected: VM instruction failure",
+      "test": "0269-pwn_proposal_poc.aleo-open_arc20 rejected: VM instruction failure",
       "status": "PASS"
     },
     {
-      "test": "0240-pwn_proposal_poc.aleo-open_arc20 rejected: VM instruction failure",
+      "test": "0271-pwn_proposal_poc.aleo-open_arc20 rejected: VM instruction failure",
       "status": "PASS"
     },
     {
-      "test": "0242-pwn_proposal_poc.aleo-open_arc20 rejected: finalize rejection",
+      "test": "0273-pwn_proposal_poc.aleo-open_arc20 rejected: finalize rejection",
       "status": "PASS"
     },
     {
-      "test": "0245-pwn_proposal_poc.aleo-open_arc20 rejected: finalize rejection",
+      "test": "0276-pwn_proposal_poc.aleo-open_arc20 rejected: finalize rejection",
       "status": "PASS"
     },
     {
@@ -565,7 +609,7 @@
       "status": "PASS"
     },
     {
-      "test": "0255-pwn_loan_poc.aleo-repay_arc20_compliant rejected: finalize rejection",
+      "test": "0286-pwn_loan_poc.aleo-repay_arc20_compliant rejected: finalize rejection",
       "status": "PASS"
     },
     {
@@ -601,13 +645,13 @@
       "status": "PASS"
     }
   ],
-  "attempted_transactions": 275,
+  "attempted_transactions": 306,
   "execution_proofs": false,
   "proved_transactions": [
     {
       "label": "0079-pwn_loan_poc.aleo-repay_arc20_compliant",
       "accepted": false,
-      "error": "or pwn_loan_poc.aleo \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 \ud83d\udcb0 Cost Breakdown (credits) Transaction Storage: 0.018232 On-chain Execution: 0.005418 Priority Fee: 0.000000 Total Fee: 0.023650 \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Failed to fetch from http://127.0.0.1:63307/testnet/statePaths?commitments=2706331553116292083241195476180321434859108070442467748046723621650638139975field"
+      "error": "or pwn_loan_poc.aleo \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 \ud83d\udcb0 Cost Breakdown (credits) Transaction Storage: 0.018232 On-chain Execution: 0.005418 Priority Fee: 0.000000 Total Fee: 0.023650 \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Failed to fetch from http://127.0.0.1:64187/testnet/statePaths?commitments=4537519285606485920489697782229832929349184422380433788672031935041371018065field"
     },
     {
       "label": "0089-pwn_loan_poc.aleo-repay_arc20_compliant",
