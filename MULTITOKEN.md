@@ -108,7 +108,7 @@ make unit           # 24 generator/harness/oracle tests
 make fuzz           # Leo arithmetic vs unbounded-integer oracle (189 cases)
 make test           # 25 credit/collateral pairs, full lifecycle (101 checks)
 make invariants     # model-based accounting checks after every action (161)
-make security       # adversarial suite (162 checks, 1 real execution proof)
+make security       # adversarial suite (173 checks, 1 real execution proof)
 make compatibility  # ABI/storage/constructor/finalizer fingerprints vs reviewed baseline
 ```
 
