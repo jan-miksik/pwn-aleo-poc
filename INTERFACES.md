@@ -31,6 +31,10 @@ explicit acceptance by PWN.
    rule. Must be closed before real deposits.
 9. **IDs.** Derived from the participant's authorization hash and a nonce;
    nobody can pre-occupy another account's ID.
-10. **Not in scope of the PoC.** Refund of repayment surplus, partial repayment,
+10. **Offer modules.** The core reaches modules only through `OfferModule`
+    dynamic calls; the Hub approves modules by program name. Confirm the
+    interface (borrower-supplied `LoanTerms`, checked by the module), core-scoped
+    lender hashes, and who may approve a module.
+11. **Not in scope of the PoC.** Refund of repayment surplus, partial repayment,
     price liquidation, decimals conversion, salt recovery, fee recipient / launch
     caps / emergency stop beyond module tag revocation.

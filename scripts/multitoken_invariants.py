@@ -123,7 +123,8 @@ class Scenario:
         collateral = (amount * c.collateral_ratio + 9999) // 10000
         repayment = (amount * c.repayment_ratio + 9999) // 10000
         self.record('duplicate_draw' if duplicate else 'draw', commitment=c.id, amount=amount, salt=salt)
-        args = ['1field', c.id, c.terms, f'{amount}u128', t.private(c.collateral, collateral, t.B, t.BK), f'{salt}field'] + t.proofs(c.collateral)
+        args = t.accept_args(c.collateral, c.terms, c.id, salt, amount=amount,
+                             collateral=t.private(c.collateral, collateral, t.B, t.BK))
         fn = t.L + '::accept_' + t.route(c.credit) + '_' + t.route(c.collateral)
         if duplicate or c.closed or amount > c.available or amount > 600:
             self.reject(fn, args, t.BK)

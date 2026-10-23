@@ -52,7 +52,7 @@ def run(t):
     X(H+'::set_asset',["'arc20_sol'",'1u8','true'],fail=True)
     ts,cid=t.open_('sol','usad',901)
     w=t.accept('sol','usad',ts,cid,1901)
-    X(P+'::draw_arc20',[cid,ts,'100u128',B],BK,True)
+    X(P+'::draw_arc20',[cid,t.loan_terms(ts,100),B],BK,True)
     X(P+'::receive_arc20',[cid,t.asset('sol'),t.private('sol',500),'440u128'],fail=True)
     t.repay('sol','usad',w,999,True)
     t.repay('sol','usad',w.replace('repayment_amount: 440u128','repayment_amount: 1u128'),1901,True)
@@ -65,9 +65,9 @@ def run(t):
     # Disable new exposure, then prove that old positions still settle/refund.
     X(H+'::set_asset',["'arc20_sol'",'2u8','false'])
     X(H+'::set_asset',["'usad_stablecoin'",'3u8','false'])
-    X(L+'::accept_arc20_compliant',['2field',cid,ts,'100u128',t.private('usad',200,B,BK),'1902field',t.PROOFS],BK,True)
+    X(L+'::accept_arc20_compliant',t.accept_args('usad',ts,cid,1902,amount=100,nonce=2,collateral=t.private('usad',200,B,BK)),BK,True)
     X(P+'::open_arc20',['2field',ts,t.private('sol',1000),'1000u128','901field'],fail=True)
-    X(H+'::set_tag',[P,'2u8','false']);X(H+'::set_tag',[L,'1u8','false'])
+    X(H+'::set_offer_module',[t.module_id(P),'false']);X(H+'::set_tag',[L,'1u8','false'])
     t.repay('sol','usad',w,1901,prove=True) # Same route, genuine record: proves the proving path itself works.
     t.check('genuine repayment proves and settles',t.PROVED[-1]['accepted'])
     t.spend_payout('usad',600,BK,B)
@@ -75,7 +75,7 @@ def run(t):
     t.repay('sol','usad',w,1901,True)
     t.check('delisting and module pause preserve existing settlement',t.mapping(P,'liabilities',"'arc20_sol'")=='0u128')
     X(H+'::set_asset',["'arc20_sol'",'2u8','true']);X(H+'::set_asset',["'usad_stablecoin'",'3u8','true'])
-    X(H+'::set_tag',[P,'2u8','true']);X(H+'::set_tag',[L,'1u8','true'])
+    X(H+'::set_offer_module',[t.module_id(P),'true']);X(H+'::set_tag',[L,'1u8','true'])
     # All nine family combinations exercise the default route. Once claim wins,
     # repayment must lose through the shared status transition.
     salt=1000
@@ -114,7 +114,7 @@ def run(t):
     n=40_000_000_000;base=n*11000//10000;salt=1198
     ts=t.terms('sol','usad',salt,duration=10,apr=100000).replace('max_draw: 600u128',f'max_draw: {n}u128')
     cid=X(P+'::open_arc20',['1field',ts,t.private('sol',n),f'{n}u128',f'{salt}field'])[-2]
-    w=X(L+'::accept_arc20_compliant',['1field',cid,ts,f'{n}u128',t.private('usad',n*15000//10000,B,BK),'2198field',t.PROOFS],BK)[-2]
+    w=X(L+'::accept_arc20_compliant',t.accept_args('usad',ts,cid,2198,amount=n,collateral=t.private('usad',n*15000//10000,B,BK)),BK)[-2]
     for _ in range(11):t.rpc('block/create',{})
     X(L+'::repay_arc20_compliant',[w,t.private('sol',base,B,BK),f'{base}u128','2198field'],BK,True)
     t.check('repayment without accrued interest is rejected','status: 1u8' in t.mapping(L,'loans',t.lid(w)))
@@ -155,7 +155,7 @@ def run(t):
     # Large u128 ARC-20 principal; native narrowing must reject, not truncate.
     n=2**80;salt=1400;ts=t.terms('sol','wbtc',salt).replace('100u128',f'{n}u128').replace('600u128',f'{n}u128').replace('15000u64','10000u64').replace('11000u64','10000u64')
     cid=X(P+'::open_arc20',['1field',ts,t.private('sol',n),f'{n}u128',f'{salt}field'])[-2]
-    w=X(L+'::accept_arc20_arc20',['1field',cid,ts,f'{n}u128',t.private('wbtc',n,B,BK),'2400field'],BK)[-2]
+    w=X(L+'::accept_arc20_arc20',t.accept_args('wbtc',ts,cid,2400,amount=n,collateral=t.private('wbtc',n,B,BK)),BK)[-2]
     X(L+'::repay_arc20_arc20',[w,t.private('sol',n,B,BK),f'{n}u128','2400field'],BK)
     X(P+'::withdraw_arc20',[cid,ts,'1400field',f'{n}u128']);X(P+'::cancel_arc20',[cid,ts,'1400field','0u128'])
     t.check('amount above u64 survives full loan cycle',t.mapping(P,'liabilities',"'arc20_sol'")=='0u128')
@@ -205,11 +205,13 @@ def run(t):
     t.spend_payout('usdcx',600,BK,B)
     X(P+'::withdraw_arc20',[cid,ts,'1600field','440u128']);X(P+'::cancel_arc20',[cid,ts,'1600field','600u128'])
     t.check('freeze recovery retains correct accounting',t.mapping(L,'liabilities',"'usdcx_stablecoin'")=='0u128')
+    offer_modules(t)
     # Authorized, delayed additive upgrade preserves and settles a live position.
     ts,cid=t.open_('sol','usad',1700);w=t.accept('sol','usad',ts,cid,2700)
     for name in ['pwn_config_poc','pwn_hub_poc','pwn_proposal_poc','pwn_loan_poc']:
         p=t.ENTRY.parent/name/'src/main.leo';s=p.read_text();p.write_text(s.replace('    @custom','    fn release_version() -> u8 { return 2u8; }\n    @custom'))
-    common=list(t.COMMON);common[1]=t.ENTRY.parent/'pwn_loan_poc'
+    # The offer module imports the core, so this upgrade covers all four programs.
+    common=list(t.COMMON);common[1]=t.ENTRY.parent/'pwn_proposal_poc'
     # Names shorter than 10 characters carry a 10^(10-len) credit deployment premium; the account also pays for the rejected attempts.
     X('credits.aleo::transfer_public',[B,'5000000000u64'])
     code,log=t.cli(['upgrade',*common,'--skip','credits.aleo','--private-key',BK,'--skip-deploy-certificate','--broadcast','--yes'],'upgrade-denied')
@@ -225,3 +227,39 @@ def run(t):
     t.repay('sol','usad',w,2700)
     X(P+'::withdraw_arc20',[cid,ts,'1700field','440u128']);X(P+'::cancel_arc20',[cid,ts,'1700field','600u128'])
     t.check('pre-upgrade loan settles after upgrade','status: 2u8' in t.mapping(L,'loans',t.lid(w)))
+
+
+def offer_modules(t):
+    """A second, independently deployed offer module plugs into the unchanged core by Hub approval."""
+    import hashlib
+    X=t.execute; P=t.P; PB=t.PB; L=t.L; H=t.H; BK=t.BK
+    core=t.ENTRY.parent/'pwn_loan_poc'/'src/main.leo'
+    core_hash=hashlib.sha256(core.read_bytes()).hexdigest()
+    ts=t.terms('sol','usad',1800)
+    args=['1field',ts,t.private('sol',1000),'1000u128','1800field']
+    X(PB+'::open_arc20',args,fail=True)
+    t.check('unapproved offer module cannot take deposits',t.mapping(PB,'liabilities',"'arc20_sol'") in [None,'0u128'])
+    X(H+'::set_offer_module',[t.module_id(PB),'true'],BK,True)
+    X(H+'::set_offer_module',[t.module_id(PB),'true'])
+    cid=X(PB+'::open_arc20',args)[-2]
+    w=t.accept('sol','usad',ts,cid,2800,module=PB)
+    t.check('core records the originating offer module',"offer_module: 'pwn_offer_b_poc'" in w)
+    t.check('second module paid the credit from its own escrow',
+            t.mapping(PB,'available_credit',cid)=='600u128' and t.mapping(P,'available_credit',cid) is None)
+    # Naming another module cannot draw on this offer, and borrower-supplied terms must match the offer.
+    X(L+'::accept_arc20_compliant',t.accept_args('usad',ts,cid,2801,nonce=3,module=P),BK,True)
+    bad=t.loan_terms(ts,400).replace('collateral_amount: 600u128','collateral_amount: 599u128')
+    good=t.accept_args('usad',ts,cid,2802,nonce=4,module=PB)
+    X(L+'::accept_arc20_compliant',good[:3]+[bad]+good[4:],BK,True)
+    X(L+'::accept_arc20_compliant',t.accept_args('usad',ts,cid,2803,nonce=5,module=PB,amount=601),BK,True)
+    # Revocation stops new loans through the module; existing loans still repay into it.
+    X(H+'::set_offer_module',[t.module_id(PB),'false'])
+    X(L+'::accept_arc20_compliant',t.accept_args('usad',ts,cid,2804,nonce=6,module=PB),BK,True)
+    t.repay('sol','usad',w,2800)
+    t.check('repayment is routed to the originating module',
+            t.mapping(PB,'repayments',cid)=='440u128' and t.mapping(P,'repayments',cid) is None)
+    X(PB+'::withdraw_arc20',[cid,ts,'1800field','440u128']);X(PB+'::cancel_arc20',[cid,ts,'1800field','600u128'])
+    t.check('revoked module still settles and refunds its lender',
+            'status: 2u8' in t.mapping(L,'loans',t.lid(w)) and t.mapping(PB,'liabilities',"'arc20_sol'")=='0u128')
+    t.check('second module needed no core change',
+            core_hash==hashlib.sha256(core.read_bytes()).hexdigest() and 'pwn_offer_b_poc' not in core.read_text())

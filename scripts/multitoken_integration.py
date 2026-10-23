@@ -11,6 +11,7 @@ _proof='{ siblings: ['+', '.join(['0field']*16)+'], leaf_index: 1u32 }'
 PROOFS='['+_proof+', '+_proof+']'
 OUT=None  # Initialized by main; importing helpers must not create artifacts.
 LEO=str(ROOT/'scripts/leo');C='pwn_config_poc.aleo';H='pwn_hub_poc.aleo';P='pwn_proposal_poc.aleo';L='pwn_loan_poc.aleo'
+PB='pwn_offer_b_poc.aleo'  # test-only second offer module
 ASSETS={'aleo':('credits',1),'sol':('arc20_sol',2),'wbtc':('arc20_wbtc',2),'usdcx':('usdcx_stablecoin',3),'usad':('usad_stablecoin',3)}
 FAMILY={1:'aleo',2:'arc20',3:'compliant'}
 seq=0;checks=[]
@@ -80,10 +81,20 @@ def auth(salt):
     return json.loads(path.read_text())['outputs'][0]
 def terms(c,k,salt,duration=1000,apr=0):
     return f'{{ credit_asset: {asset(c)}, collateral_asset: {asset(k)}, min_draw: 100u128, max_draw: 600u128, collateral_ratio: 15000u64, repayment_ratio: 11000u64, accruing_apr: {apr}u32, duration: {duration}u32, expiry: {height()+5000}u32, lender_auth: {auth(salt)} }}'
-def open_(c,k,salt,duration=1000):
-    ts=terms(c,k,salt,duration);out=execute(P+'::open_'+route(c),['1field',ts,private(c,1000),'1000u128',f'{salt}field']+proofs(c));return ts,out[-2]
-def accept(c,k,ts,cid,salt,nonce=1):
-    out=execute(L+'::accept_'+route(c)+'_'+route(k),[f'{nonce}field',cid,ts,'400u128',private(k,1000,B,BK),f'{salt}field']+proofs(k),BK)
+def open_(c,k,salt,duration=1000,module=P):
+    ts=terms(c,k,salt,duration);out=execute(module+'::open_'+route(c),['1field',ts,private(c,1000),'1000u128',f'{salt}field']+proofs(c));return ts,out[-2]
+def loan_terms(ts,amount):
+    """LoanTerms a borrower derives from an Elastic offer; the module re-derives and compares them."""
+    g=lambda name:re.search(name+r': (\{[^}]*\}|[^,}\s]+)',ts).group(1)
+    ratio=lambda name:int(g(name)[:-3])
+    return (f"{{ credit_asset: {g('credit_asset')}, collateral_asset: {g('collateral_asset')}, credit_amount: {amount}u128, "
+            f"collateral_amount: {(amount*ratio('collateral_ratio')+9999)//10000}u128, repayment_amount: {(amount*ratio('repayment_ratio')+9999)//10000}u128, "
+            f"accruing_apr: {g('accruing_apr')}, duration: {g('duration')}, lender_auth: {g('lender_auth')} }}")
+def module_id(module):return "'"+module[:-5]+"'"
+def accept_args(k,ts,cid,salt,amount=400,nonce=1,module=P,collateral=None):
+    return [f'{nonce}field',module_id(module),cid,loan_terms(ts,amount),collateral or private(k,1000,B,BK),f'{salt}field']+proofs(k)
+def accept(c,k,ts,cid,salt,nonce=1,module=P):
+    out=execute(L+'::accept_'+route(c)+'_'+route(k),accept_args(k,ts,cid,salt,nonce=nonce,module=module),BK)
     check(f'{c}/{k} private credit owner',f'owner: {B}' in out[-4])
     return out[-2]
 def repay(c,k,w,salt,fail=False,prove=False):return execute(L+'::repay_'+route(c)+'_'+route(k),[w,private(c,500,B,BK),'440u128',f'{salt}field']+proofs(c),BK,fail,prove)
@@ -116,8 +127,8 @@ def main(argv=None):
         else:raise RuntimeError('devnode not ready')
         code,log=cli(['deploy',*COMMON,'--skip','credits.aleo','--private-key',AK,'--skip-deploy-certificate','--broadcast','--yes'],'deploy')
         assert code==0,log[-4000:]
-        check('protocol and real token fixtures deployed',log.count('Deployment confirmed!')==16)
-        execute(C+'::initialize');execute(H+'::set_tag',[P,'2u8','true']);execute(H+'::set_tag',[L,'1u8','true'])
+        check('protocol and real token fixtures deployed',log.count('Deployment confirmed!')==17)
+        execute(C+'::initialize');execute(H+'::set_offer_module',[module_id(P),'true']);execute(H+'::set_tag',[L,'1u8','true'])
         execute('credits.aleo::transfer_public',[B,'1000000000u64'])
         for k,(p,f) in ASSETS.items():
             execute(H+'::set_asset',[f"'{p}'",f'{f}u8','true'])

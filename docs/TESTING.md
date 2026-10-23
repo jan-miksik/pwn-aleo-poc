@@ -15,7 +15,8 @@ python3 scripts/multitoken_fuzz.py --seed 20260920 --cases 100 --case 40
 ```
 
 Devnode suites bind a loopback port, use public dev keys and a shared staged
-workspace — run them one at a time. Reports: `artifacts/multitoken/<suite>/results.json`.
+workspace — run them one at a time. Each run writes its report to
+`artifacts/multitoken/<suite>/results.json` (git-ignored; rerun to reproduce).
 
 ## Sources and compatibility gate
 
@@ -37,7 +38,7 @@ compares it with Python's unbounded integers: `ceil(amount × ratio / 10⁴)`,
 `floor(principal × apr × elapsed / 315,360,000,000)` with `elapsed = blocks × 10`,
 u64 narrowing. Each case needs the exact result or a recognized arithmetic
 failure (snarkVM overflow panics count, other panics fail). Logs per case under
-`artifacts/multitoken/fuzz/seed-<seed>/`.
+`artifacts/multitoken/fuzz/seed-<seed>/` (git-ignored).
 
 ## Invariants
 

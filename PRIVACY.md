@@ -9,7 +9,7 @@ the model is unchanged.
 | Operation | Public | Private | Linkable |
 | --- | --- | --- | --- |
 | open | commitment ID, terms, amount, lender hash, escrow delta | input/change records, salt | fee payer (if public), shielding by amount/time |
-| accept | loan ID, commitment ID, terms, amounts, both hashes, maturity, both token calls | collateral record, salt, delivered credit | commitment → loan by ID |
+| accept | loan ID, offer module, commitment ID, terms, amounts, both hashes, maturity, both token calls | collateral record, salt, delivered credit | commitment → loan by ID |
 | repay / claim | full loan witness, amounts, status change | records, salt, recipient | loan → commitment → open |
 | cancel / withdraw | commitment ID, terms, lender hash, amount, escrow delta | salt, payout record | prior positions |
 

@@ -26,7 +26,33 @@ rebasing, NFTs. A token issuer's own upgrade can break the fixed ABI.
 Proposal: `open_<f>`, `draw_<f>`, `receive_<f>`, `cancel_<f>`, `withdraw_<f>`.
 Loan: `accept_<credit>_<collateral>`, `repay_<credit>_<collateral>`, `claim_<collateral>`.
 Custody is the program address's public balance; only `pwn_loan_poc` may call
-`draw`/`receive`. Native records stay typed, other tokens and compliance records
+`draw`/`receive`. The credit output of `accept` and the change output of `repay`
+are `dyn record` because they return through a dynamic call.
+
+## Offer modules
+
+`pwn_loan_poc` imports no offer module. It exports `LoanTerms` (assets, credit,
+collateral and repayment amounts, APR, duration, lender hash) and declares the
+`OfferModule` interface: `draw_<f>(id, loan, recipient)` and
+`receive_<f>(id, asset, input, amount[, proofs])`.
+
+- `accept_*` takes the module's program name and the borrower's `LoanTerms`,
+  locks collateral, and calls `OfferModule@(offer_module)::draw_<credit>`. Its
+  finalizer requires `pwn_hub_poc::offer_modules[offer_module]`.
+- The module re-derives every `LoanTerms` field from its stored offer
+  (`offer_terms`) in its finalizer: assets, draw bounds, rounded collateral and
+  repayment, APR, duration, lender hash.
+- The loan witness records `offer_module`; `repay_*` returns credit to that
+  module even after its approval is revoked.
+- Approval (`set_offer_module`) is a governance trust decision: an approved
+  module is trusted to validate terms and hold lender credit. A new module is
+  one deployment plus one Hub transaction; the core is not redeployed.
+- Lender hashes use `protocol = pwn_loan_poc`, so the core verifies `claim_*`
+  for every module. Commitment IDs stay scoped to their module.
+
+`render_offer_module(name)` renders the Elastic module for any program name;
+`make security` deploys a second one (`pwn_offer_b_poc`, test only) and runs a
+loan through the unchanged core. Native records stay typed, other tokens and compliance records
 are `dyn record`; compliance records are returned unchanged before token outputs.
 ABI snapshots: `interfaces/`.
 
@@ -50,7 +76,8 @@ ABI snapshots: `interfaces/`.
 - Repayments accumulate in `repayments[id]` for private `withdraw_*`; they do not
   reopen draw capacity. `cancel_*` withdraws exactly the unused amount and closes
   the commitment; active loans are unaffected.
-- Lender/borrower authorization: `BHP256({domain, protocol, account: signer, salt})`.
+- Lender/borrower authorization: `BHP256({domain, protocol, account: signer, salt})`,
+  `protocol = pwn_loan_poc` for both.
   Fresh random salt per position; a lost salt strands the position.
 
 ## Reserve guard
@@ -77,11 +104,11 @@ protection; the delay is the users' exit window.
 
 ```sh
 make build          # generate + compile
-make unit           # 22 generator/harness/oracle tests
+make unit           # 24 generator/harness/oracle tests
 make fuzz           # Leo arithmetic vs unbounded-integer oracle (189 cases)
 make test           # 25 credit/collateral pairs, full lifecycle (101 checks)
 make invariants     # model-based accounting checks after every action (161)
-make security       # adversarial suite (160 checks, 1 real execution proof)
+make security       # adversarial suite (173 checks, 1 real execution proof)
 make compatibility  # ABI/storage/constructor/finalizer fingerprints vs reviewed baseline
 ```
 
@@ -89,7 +116,8 @@ Local devnode with pinned mainnet SOL/WBTC/USDCx/USAD bytecode, public dev keys,
 no proofs/certificates/consensus except where stated. Details: [docs/TESTING.md](docs/TESTING.md).
 
 `make security` covers: admission/version/token_id, term bounds on all three
-credit families, governance via a hostile intermediary program and two-step
+credit families, a second independently deployed offer module (approval,
+wrong-module and tampered-`LoanTerms` rejection, revocation that still settles), governance via a hostile intermediary program and two-step
 handover, caller restriction on draw/receive, wrong salt / tampered witness /
 early claim, repayment after maturity vs. later claim, no second payout while
 sibling loans escrow the same collateral, repayment without accrued interest,

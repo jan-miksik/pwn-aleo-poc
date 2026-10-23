@@ -2,9 +2,11 @@
 """Stage the protocol programs and pinned mainnet token code on a disposable local test network."""
 import hashlib,json,re,shutil
 from pathlib import Path
-from generate_multitoken import ROOT,BOOT,MATH
+from generate_multitoken import ROOT,BOOT,MATH,C,H,L,render_offer_module
 DEV='aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px'
 CORE=['pwn_config_poc','pwn_hub_poc','pwn_proposal_poc','pwn_loan_poc']
+# TEST ONLY: an independent second offer module, built from the same renderer, never part of the core.
+OFFER_B='pwn_offer_b_poc'
 TOKENS=['merkle_tree','arc20_multisig_core','arc20_sol','arc20_wbtc','usdcx_multisig_core','usdcx_freezelist','usdcx_stablecoin','usad_multisig_core','usad_freezelist','usad_stablecoin']
 
 def stage():
@@ -30,6 +32,9 @@ def stage():
         for d in m['dependencies']:
             d['path']='../vendor/credits.aleo' if d['name']=='credits.aleo' else '../'+d['name'][:-5]
         (dst/'program.json').write_text(json.dumps(m,indent=2)+'\n')
+    module=base/OFFER_B;(module/'src').mkdir(parents=True,exist_ok=True)
+    (module/'src/main.leo').write_text(render_offer_module(OFFER_B+'.aleo').replace(BOOT,DEV))
+    (module/'program.json').write_text(json.dumps(dict(program=OFFER_B+'.aleo',version='0.1.0',description='TEST ONLY: second offer module',license='GPL-3.0-only',leo='4.4.2',dependencies=[dict(name=n,location='local',path='../vendor/credits.aleo' if n=='credits.aleo' else '../'+n[:-5],edition=None) for n in ['credits.aleo',C,H,L]]),indent=2)+'\n')
     # Deliberately non-conforming transfer semantics to test reserve postconditions.
     bad=base/'pwn_delta_token';(bad/'src').mkdir(parents=True,exist_ok=True)
     (bad/'program.json').write_text(json.dumps(dict(program='pwn_delta_token.aleo',version='0.1.0',description='TEST ONLY: inexact transfers',license='GPL-3.0-only',leo='4.4.2',dependencies=[])))
@@ -59,13 +64,13 @@ program pwn_delta_token.aleo {
     deps=[dict(name=n+'.aleo',location='local',path='../vendor/'+n+'.aleo',edition=None) for n in TOKENS]
     deps += [dict(name='pwn_delta_token.aleo',location='local',path='../pwn_delta_token',edition=None)]
     deps += [dict(name='credits.aleo',location='local',path='../vendor/credits.aleo',edition=None)]
-    deps += [dict(name=n+'.aleo',location='local',path='../'+n,edition=None) for n in CORE]
+    deps += [dict(name=n+'.aleo',location='local',path='../'+n,edition=None) for n in CORE+[OFFER_B]]
     (driver/'program.json').write_text(json.dumps(dict(program='pwn_local_fixture.aleo',version='0.1.0',description='Local-only fixture loader',license='GPL-3.0-only',leo='4.4.2',dependencies=deps),indent=2)+'\n')
     (driver/'src/main.leo').write_text('\n'.join('import '+d['name']+';' for d in deps)+MATH+'''
 struct Authority { domain: u8, protocol: address, account: address, salt: field }
 program pwn_local_fixture.aleo {
     fn auth(account: address, salt: field) -> field {
-        return BHP256::hash_to_field(Authority { domain: 1u8, protocol: pwn_proposal_poc.aleo, account: account, salt: salt });
+        return BHP256::hash_to_field(Authority { domain: 1u8, protocol: pwn_loan_poc.aleo, account: account, salt: salt });
     }
     fn freeze_root(account: address) -> field { return Poseidon4::hash_to_field([1field, 0field, account as field]); }
     fn math_round(amount: u128, ratio: u64) -> u128 { return rounded(amount, ratio); }
