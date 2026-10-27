@@ -30,7 +30,8 @@ fn validate_token_asset::[FAMILY: u8](asset: {hub}::Asset) {{
 '''
 
 
-def proposal_logic(config, hub, proposal):
+def proposal_logic(config, hub, proposal, core):
+    module = proposal[:-5]  # the module's own Hub registry key
     return f'''
 // Admission applies only to new exposure; settlement must survive delisting.
 const MIN_DURATION_BLOCKS: u32 = 10u32;
@@ -46,7 +47,8 @@ final fn require_enabled(asset: {hub}::Asset) {{
     assert_eq(asset.token_id, 0field);
 }}
 fn validate_open_terms(terms: Terms, amount: u128, salt: field) {{
-    assert_eq(terms.lender_auth, authority_hash::[1u8, {proposal}](salt));
+    // Lender authority is scoped to the loan core, so the core can verify claims from any module.
+    assert_eq(terms.lender_auth, authority_hash::[1u8, {core}](salt));
     assert(terms.min_draw > 0u128 && terms.max_draw >= terms.min_draw && amount >= terms.min_draw);
     assert(terms.collateral_ratio > 0u64 && terms.collateral_ratio <= MAX_RATIO_BPS);
     assert(terms.repayment_ratio >= 10000u64 && terms.repayment_ratio <= MAX_RATIO_BPS);
@@ -62,28 +64,39 @@ fn validate_open_terms(terms: Terms, amount: u128, salt: field) {{
         assert(max_repayment + scheduled_interest <= 18446744073709551615u128);
     }}
 }}
-final fn validate_open(product: field, terms: Terms, id: field) {{
-    assert({hub}::approved.get_or_use(product, false));
+final fn validate_open(terms: Terms, id: field) {{
+    assert({hub}::offer_modules.get_or_use('{module}', false));
     assert_eq({config}::settings.get(true).protocol_fee_bps, 0u16);
     require_enabled(terms.credit_asset);
     require_enabled(terms.collateral_asset);
     assert(!terms_hash.contains(id));
     assert(std::ctx::block_height() < terms.expiry);
 }}
-final fn register_commitment(id: field, hash: field, asset: {hub}::Asset, amount: u128, total: u128) {{
+final fn register_commitment(id: field, hash: field, terms: Terms, amount: u128, total: u128) {{
+    let asset = terms.credit_asset;
     terms_hash.set(id, hash);
+    offer_terms.set(id, terms);
     credit_assets.set(id, asset);
     available_credit.set(id, amount);
     repayments.set(id, 0u128);
     closed.set(id, false);
     liabilities.set(asset.program_id, total + amount);
 }}
-final fn validate_draw(loan: field, product: field, terms: Terms, id: field, hash: field) {{
-    assert({hub}::approved.get_or_use(loan, false) && {hub}::approved.get_or_use(product, false));
+// The core forwards borrower-supplied LoanTerms; every field must follow from this offer.
+final fn validate_draw(core: field, id: field, loan: {core}::LoanTerms) {{
+    assert({hub}::approved.get_or_use(core, false) && {hub}::offer_modules.get_or_use('{module}', false));
+    let terms = offer_terms.get(id);
     require_enabled(terms.credit_asset);
     require_enabled(terms.collateral_asset);
-    assert_eq(terms_hash.get(id), hash);
-    assert_eq(credit_assets.get(id), terms.credit_asset);
+    assert_eq(credit_assets.get(id), loan.credit_asset);
+    assert_eq(terms.credit_asset, loan.credit_asset);
+    assert_eq(terms.collateral_asset, loan.collateral_asset);
+    assert(loan.credit_amount >= terms.min_draw && loan.credit_amount <= terms.max_draw);
+    assert_eq(loan.collateral_amount, rounded(loan.credit_amount, terms.collateral_ratio));
+    assert_eq(loan.repayment_amount, rounded(loan.credit_amount, terms.repayment_ratio));
+    assert_eq(loan.accruing_apr, terms.accruing_apr);
+    assert_eq(loan.duration, terms.duration);
+    assert_eq(loan.lender_auth, terms.lender_auth);
     assert(!closed.get(id));
     assert(std::ctx::block_height() < terms.expiry);
 }}
@@ -104,20 +117,19 @@ final fn cancel_available(id: field, amount: u128) {{
 '''
 
 
-def loan_logic(proposal):
+def loan_logic():
     return f'''
 // Interest accrues per finalized block at the nominal block time; the proposal uses the same constant for the native u64 bound.
 const SECONDS_PER_BLOCK: u32 = 10u32;
 fn make_loan::[PROTOCOL: address](
-    nonce: field, commitment_id: field, terms: {proposal}::Terms,
-    credit_amount: u128, collateral_amount: u128, repayment_amount: u128, borrower_salt: field
+    nonce: field, offer_module: identifier, commitment_id: field, loan: LoanTerms, borrower_salt: field
 ) -> (field, Loan) {{
     let borrower_auth = authority_hash::[2u8, PROTOCOL](borrower_salt);
     let id = position_id::[2u8, PROTOCOL](borrower_auth, nonce);
-    let witness = Loan {{ loan_id: id, commitment_id: commitment_id,
-        credit_asset: terms.credit_asset, collateral_asset: terms.collateral_asset,
-        credit_amount: credit_amount, collateral_amount: collateral_amount, repayment_amount: repayment_amount,
-        accruing_apr: terms.accruing_apr, borrower_auth: borrower_auth, lender_auth: terms.lender_auth }};
+    let witness = Loan {{ loan_id: id, offer_module: offer_module, commitment_id: commitment_id,
+        credit_asset: loan.credit_asset, collateral_asset: loan.collateral_asset,
+        credit_amount: loan.credit_amount, collateral_amount: loan.collateral_amount, repayment_amount: loan.repayment_amount,
+        accruing_apr: loan.accruing_apr, borrower_auth: borrower_auth, lender_auth: loan.lender_auth }};
     return (id, witness);
 }}
 fn repayment_witness_hash::[PROTOCOL: address](witness: Loan, amount: u128, borrower_salt: field) -> field {{
@@ -125,9 +137,9 @@ fn repayment_witness_hash::[PROTOCOL: address](witness: Loan, amount: u128, borr
     assert_eq(witness.borrower_auth, authority_hash::[2u8, PROTOCOL](borrower_salt));
     return BHP256::hash_to_field(witness);
 }}
-final fn register_loan(id: field, witness: Loan, hash: field, terms: {proposal}::Terms, collateral_amount: u128, total: u128) {{
-    loans.set(id, State {{ witness_hash: hash, maturity: std::ctx::block_height() + terms.duration, start: std::ctx::block_height() as i64, status: 1u8 }});
-    liabilities.set(witness.collateral_asset.program_id, total + collateral_amount);
+final fn register_loan(id: field, witness: Loan, hash: field, duration: u32, total: u128) {{
+    loans.set(id, State {{ witness_hash: hash, maturity: std::ctx::block_height() + duration, start: std::ctx::block_height() as i64, status: 1u8 }});
+    liabilities.set(witness.collateral_asset.program_id, total + witness.collateral_amount);
 }}
 final fn validate_repayment(witness: Loan, hash: field, amount: u128) -> State {{
     let state = loans.get(witness.loan_id);

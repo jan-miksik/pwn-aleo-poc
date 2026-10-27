@@ -8,7 +8,9 @@ setup:
 	python3 scripts/bootstrap.py
 build:
 	python3 scripts/generate_multitoken.py
-	./scripts/leo build --path pwn_loan_poc --offline
+	@mkdir -p .aleo
+	# The offer module imports the core, so building it compiles all four programs.
+	./scripts/leo build --path pwn_proposal_poc --offline
 compatibility: build
 	python3 scripts/check_multitoken_compatibility.py
 unit:

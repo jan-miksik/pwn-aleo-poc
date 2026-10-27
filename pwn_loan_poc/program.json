@@ -22,12 +22,6 @@
       "location": "local",
       "path": "../pwn_hub_poc",
       "edition": null
-    },
-    {
-      "name": "pwn_proposal_poc.aleo",
-      "location": "local",
-      "path": "../pwn_proposal_poc",
-      "edition": null
     }
   ]
 }
