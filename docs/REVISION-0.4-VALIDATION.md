@@ -18,14 +18,12 @@ Validated locally on 2 November 2026 with Leo 4.4.2 (`f3578da`).
 - Repayment remains possible after maturity until the lender's claim settles.
 - The Python harness covers the new interfaces. The SDK, app, encrypted delivery,
   private-fee UX and recovery remain grant deliverables.
-- The grant HTML has been rebuilt from the full original: all 183 original
-  content blocks are represented, with one additional paragraph for the optional
-  funding-at-acceptance prototype. It retains all 24 section headings, seven
-  tables (104 cells) and three corrected diagrams. The title is "Grant Proposal:
-  Private Lending on Aleo"; SCALE names the grant programme. The $85,000 /
-  17-week milestones are unchanged. The original document is restored and
-  verified. The designated revised document, HTML and native Google Docs PDF
-  are synchronized; see below.
+- The full grant proposal has been revised and edited to 2,790 words. Its
+  substantive sections, 24 section headings, seven tables (104 cells) and three
+  corrected diagrams are retained. The title is "Grant Proposal: Private
+  Lending on Aleo"; SCALE names the grant programme. The $85,000 / 17-week
+  milestones are unchanged. The restored original is preserved. The designated
+  revised document, HTML and native Google Docs PDF are synchronized; see below.
 
 ## Checks
 
@@ -69,35 +67,45 @@ and immutable deployment. See [SECURITY-REVIEW.md](../SECURITY-REVIEW.md).
 
 ## Proposal preservation and verification
 
-The revision uses the full original proposal, preserving all 24 section
-headings, seven tables and three diagrams. Its table shapes are 2×3, 6×3, 7×2,
-6×3, 6×2, 4×3 and 6×4, totaling 104 cells. The full source body has SHA-256
+The revision uses the full original proposal and retains its substantive
+sections, 24 section headings, seven tables and three diagrams. Its table shapes
+are 2×3, 6×3, 7×2, 6×3, 6×2, 4×3 and 6×4, totaling 104 cells. The full source body has SHA-256
 `9851c28ba5543cc4c9d110b22ee5f35ee05e044409cbd0b4b7cb4add2ae1a3db`.
 
 The [original document](https://docs.google.com/document/d/1pGR4fng2Mpj6cYE0aJZ9U-lE5wCBXe88NlC_UzJsSRc/edit)
-is restored. HTML and native DOCX exports verify all 183 original text blocks,
-seven native tables, three embedded diagrams and an empty footer. All three
-figures were visually checked in its 11-page PDF.
+is restored and was left unchanged during the editorial revision. HTML and
+native DOCX exports verify all 183 original text blocks, seven native tables,
+three embedded diagrams and an empty footer. All three figures were visually
+checked in its 11-page PDF during restoration; the final check confirms the
+original text and embedded image contents are unchanged.
 
 The [designated revised document](https://docs.google.com/document/d/1U5hCfMvDNpywJMmi3pvsk516FKDVI3JKPX0qUmsEmls/edit)
 was updated in place and renamed "Grant Proposal: Private Lending on Aleo".
-Its 184 content blocks match the [HTML source](grant-submission.html), including
-one added paragraph separating the optional funding-at-acceptance experiment
-from the funded baseline. All original section headings and table dimensions
-are retained. Native DOCX verification confirms seven tables with repeating
-first-row headers, 25 headings including the title kept with their following
-content, three nonempty embedded diagrams and an empty footer.
+Its 181 content blocks match the [HTML source](grant-submission.html). The
+editorial pass reduces the previous 3,566 words to 2,790 and the overview to
+259 words. It consolidates repeated qualifications, removes speculative salary
+and invoice products, places integration targets in Collaborative Value, and
+keeps token safeguards and disclosures in Asset Scope and Privacy Model.
+Implementation commitments remain in the corresponding milestones. Market
+context and the M2 heading are named consistently. All 42 hyperlinks and the
+table dimensions are retained.
+
+Native DOCX verification confirms seven tables with bold, repeating first-row
+headers, 25 headings including the title kept with their following content,
+three nonempty embedded diagrams and an empty footer.
 
 The [submission PDF](grant-submission.pdf) is the final native Google Docs
-export. All 184 content blocks are present across its 13 pages. Every page was
-visually checked, including the updated lifecycle, architecture and privacy
-figures on pages 6, 7 and 9. The embedded figures were compared with the
-repository assets, allowing for Google Docs' image resizing.
+export. All 181 content blocks are present across its 11 pages, with no blank
+page. The rendered proposal and final layout corrections were visually checked,
+including the lifecycle, architecture and privacy figures on pages 5, 6 and 8.
+The embedded figures match the repository assets, allowing for Google Docs'
+image resizing.
 
 The proposal describes both offer directions and visibility modes, removes
 administrative asset admission while retaining module and token safeguards,
 and documents settlement, custody and privacy limits. SCALE identifies the
 grant programme. The $85,000 request and 17-week milestone schedule are
 unchanged. No additional Google document was created, and the grant application
-has not been submitted. Protocol suites above were completed earlier in this
-revision; the final documentation-only update did not change protocol code.
+has not been submitted. Editorial verification was completed on 3 November 2026.
+Protocol suites above were completed earlier in this revision; the editorial
+update did not change protocol code or APIs, and those suites were not rerun.
