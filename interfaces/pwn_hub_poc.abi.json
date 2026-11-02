@@ -1,36 +1,6 @@
 {
   "program": "pwn_hub_poc.aleo",
-  "structs": [
-    {
-      "path": [
-        "AssetPolicy"
-      ],
-      "fields": [
-        {
-          "name": "family",
-          "ty": {
-            "Primitive": {
-              "UInt": "U8"
-            }
-          }
-        },
-        {
-          "name": "version",
-          "ty": {
-            "Primitive": {
-              "UInt": "U16"
-            }
-          }
-        },
-        {
-          "name": "enabled",
-          "ty": {
-            "Primitive": "Boolean"
-          }
-        }
-      ]
-    }
-  ],
+  "structs": [],
   "records": [],
   "mappings": [
     {
@@ -43,17 +13,12 @@
       }
     },
     {
-      "name": "assets",
+      "name": "offer_modules",
       "key": {
         "Primitive": "Identifier"
       },
       "value": {
-        "Struct": {
-          "path": [
-            "AssetPolicy"
-          ],
-          "program": "pwn_hub_poc.aleo"
-        }
+        "Primitive": "Boolean"
       }
     }
   ],
@@ -94,22 +59,12 @@
       ]
     },
     {
-      "name": "set_asset",
+      "name": "set_offer_module",
       "inputs": [
         {
           "Plaintext": {
             "ty": {
               "Primitive": "Identifier"
-            },
-            "mode": "Public"
-          }
-        },
-        {
-          "Plaintext": {
-            "ty": {
-              "Primitive": {
-                "UInt": "U8"
-              }
             },
             "mode": "Public"
           }

@@ -36,7 +36,7 @@ def run(t):
     validate_terms_regressions(t)
     X=t.execute; C=t.C; P=t.P; L=t.L; H=t.H; B=t.B; BK=t.BK
     # Governance uses the immediate caller and a two-step handover.
-    X('pwn_local_fixture.aleo::forward_set_asset',["'credits'",'1u8','false'],fail=True)
+    X('pwn_local_fixture.aleo::forward_set_module',[t.module_id(P),'false'],fail=True)
     X('pwn_local_fixture.aleo::forward_set_admin',[B,B],fail=True)
     X(C+'::set_admin',[B,B])
     t.check('admin proposal does not transfer control',t.mapping(C,'settings','true').count(t.DEV)==2)
@@ -45,15 +45,12 @@ def run(t):
     X(C+'::set_admin',[t.DEV,t.DEV],BK)
     X(C+'::accept_admin')
     t.check('two-step admin handover can be restored',t.mapping(C,'settings','true').count(t.DEV)==2)
-    # Authorization and admission: no route spoofing, no retroactive rerouting.
-    X(H+'::set_asset',["'arc20_sol'",'2u8','false'],BK,True)
-    X(H+'::set_asset',["'arc20_sol'",'3u8','true'],fail=True)
-    X(H+'::set_asset',["'credits'",'2u8','true'],fail=True)
-    X(H+'::set_asset',["'arc20_sol'",'1u8','true'],fail=True)
+    # Module authorization remains, while asset admission has been removed.
+    X(H+'::set_offer_module',[t.module_id(P),'false'],BK,True)
     ts,cid=t.open_('sol','usad',901)
     w=t.accept('sol','usad',ts,cid,1901)
-    X(P+'::draw_arc20',[cid,t.loan_terms(ts,100),B],BK,True)
-    X(P+'::receive_arc20',[cid,t.asset('sol'),t.private('sol',500),'440u128'],fail=True)
+    X(P+'::draw_arc20',[cid,t.loan_terms(ts,100),t.offer_witness(),B],BK,True)
+    X(P+'::receive_arc20',[w,t.private('sol',500),'440u128'],fail=True)
     t.repay('sol','usad',w,999,True)
     t.repay('sol','usad',w.replace('repayment_amount: 440u128','repayment_amount: 1u128'),1901,True)
     X(L+'::claim_compliant',[w,'901field'],fail=True)
@@ -63,18 +60,15 @@ def run(t):
     X(L+'::repay_arc20_compliant',[w,t.private('wbtc',500,B,BK),'440u128','1901field'],BK,True,prove=True)
     t.check('substituted token cannot settle loan','status: 1u8' in t.mapping(L,'loans',t.lid(w)))
     # Disable new exposure, then prove that old positions still settle/refund.
-    X(H+'::set_asset',["'arc20_sol'",'2u8','false'])
-    X(H+'::set_asset',["'usad_stablecoin'",'3u8','false'])
+    X(H+'::set_offer_module',[t.module_id(P),'false']);X(H+'::set_tag',[L,'1u8','false'])
     X(L+'::accept_arc20_compliant',t.accept_args('usad',ts,cid,1902,amount=100,nonce=2,collateral=t.private('usad',200,B,BK)),BK,True)
     X(P+'::open_arc20',['2field',ts,t.private('sol',1000),'1000u128','901field'],fail=True)
-    X(H+'::set_offer_module',[t.module_id(P),'false']);X(H+'::set_tag',[L,'1u8','false'])
     t.repay('sol','usad',w,1901,prove=True) # Same route, genuine record: proves the proving path itself works.
     t.check('genuine repayment proves and settles',t.PROVED[-1]['accepted'])
     t.spend_payout('usad',600,BK,B)
     X(P+'::withdraw_arc20',[cid,ts,'901field','440u128']);X(P+'::cancel_arc20',[cid,ts,'901field','600u128'])
     t.repay('sol','usad',w,1901,True)
-    t.check('delisting and module pause preserve existing settlement',t.mapping(P,'liabilities',"'arc20_sol'")=='0u128')
-    X(H+'::set_asset',["'arc20_sol'",'2u8','true']);X(H+'::set_asset',["'usad_stablecoin'",'3u8','true'])
+    t.check('module pause preserves existing settlement',t.mapping(P,'liabilities',"'arc20_sol'")=='0u128')
     X(H+'::set_offer_module',[t.module_id(P),'true']);X(H+'::set_tag',[L,'1u8','true'])
     # All nine family combinations exercise the default route. Once claim wins,
     # repayment must lose through the shared status transition.
@@ -161,12 +155,12 @@ def run(t):
     t.check('amount above u64 survives full loan cycle',t.mapping(P,'liabilities',"'arc20_sol'")=='0u128')
     ts=t.terms('aleo','sol',1401)
     X(P+'::open_aleo',['1field',ts,t.private('aleo',1000),f'{2**64}u128','1401field'],fail=True)
-    # Wrong schema version / token_id cannot bypass admission.
+    # Both asset descriptors must be valid without an admission registry.
     ts=t.terms('sol','wbtc',1402)
     for bad in [ts.replace('version: 1u16','version: 2u16'),ts.replace('token_id: 0field','token_id: 1field')]:
         X(P+'::open_arc20',['1field',bad,t.private('sol',1000),'1000u128','1402field'],fail=True)
 
-    # Unknown token is admitted by a transaction; no core code/deployment changes.
+    # An unregistered compatible token works without an admission transaction.
     import hashlib
     from pathlib import Path
     paths=[t.ENTRY.parent/n/'src/main.leo' for n in ['pwn_proposal_poc','pwn_loan_poc']]
@@ -175,15 +169,19 @@ def run(t):
     ts=t.terms('sol','aleo',1500).replace(t.asset('sol'),desc)
     record=X('pwn_delta_token.aleo::mint',[t.DEV,'1000u128'])[0]
     args=['1field',ts,record,'1000u128','1500field']
-    X(P+'::open_arc20',args,fail=True)
-    X(H+'::set_asset',["'pwn_delta_token'",'2u8','true'])
     X('pwn_delta_token.aleo::set_bad',['true'])
     X(P+'::open_arc20',args,fail=True)
     t.check('inexact deposit rolls back token reserve',t.mapping('pwn_delta_token.aleo','balances',P) in [None,'0u128'])
     X('pwn_delta_token.aleo::set_bad',['false'])
     cid=X(P+'::open_arc20',args)[-2]
-    X(P+'::cancel_arc20',[cid,ts,'1500field','1000u128'])
-    t.check('new token works with unchanged core',hashes==[hashlib.sha256(p.read_bytes()).hexdigest() for p in paths])
+    w=X(L+'::accept_arc20_aleo',t.accept_args('aleo',ts,cid,2500),BK)[-2]
+    repayment=X('pwn_delta_token.aleo::mint',[B,'440u128'])[0]
+    X(L+'::repay_arc20_aleo',[w,repayment,'440u128','2500field'],BK)
+    X(P+'::withdraw_arc20',[cid,ts,'1500field','440u128'])
+    X(P+'::cancel_arc20',[cid,ts,'1500field','600u128'])
+    t.check('unregistered token completes lifecycle with unchanged core',
+            hashes==[hashlib.sha256(p.read_bytes()).hexdigest() for p in paths]
+            and t.mapping(P,'liabilities',"'pwn_delta_token'")=='0u128')
     # Arithmetic edge cases against Python's unbounded integer oracle.
     import json
     for i,(n,r) in enumerate([(2**120,10000),(2**100+123,15001),(1,1),(2**128-1,10000)]):
@@ -206,6 +204,8 @@ def run(t):
     X(P+'::withdraw_arc20',[cid,ts,'1600field','440u128']);X(P+'::cancel_arc20',[cid,ts,'1600field','600u128'])
     t.check('freeze recovery retains correct accounting',t.mapping(L,'liabilities',"'usdcx_stablecoin'")=='0u128')
     offer_modules(t)
+    from multitoken_offer_tests import extra_security
+    extra_security(t)
     # Authorized, delayed additive upgrade preserves and settles a live position.
     ts,cid=t.open_('sol','usad',1700);w=t.accept('sol','usad',ts,cid,2700)
     for name in ['pwn_config_poc','pwn_hub_poc','pwn_proposal_poc','pwn_loan_poc']:

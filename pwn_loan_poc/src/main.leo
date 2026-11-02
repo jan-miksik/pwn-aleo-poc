@@ -39,6 +39,12 @@ fn authority_hash::[DOMAIN: u8, PROTOCOL: address](salt: field) -> field {
 fn position_id::[DOMAIN: u8, PROTOCOL: address](authority: field, nonce: field) -> field {
     return BHP256::hash_to_field(PositionId { domain: DOMAIN, protocol: PROTOCOL, authority: authority, nonce: nonce });
 }
+fn validate_asset(asset: pwn_hub_poc.aleo::Asset) {
+    assert(asset.family >= 1u8 && asset.family <= 3u8);
+    assert_eq(asset.version, 1u16);
+    assert_eq(asset.token_id, 0field);
+    assert_eq(asset.program_id == 'credits', asset.family == 1u8);
+}
 fn validate_aleo_asset::[VERSION: u16](asset: pwn_hub_poc.aleo::Asset) {
     assert_eq(asset.family, 1u8);
     assert_eq(asset.version, VERSION);
@@ -61,17 +67,62 @@ export struct Loan {
     loan_id: field, offer_module: identifier, commitment_id: field,
     credit_asset: pwn_hub_poc.aleo::Asset, collateral_asset: pwn_hub_poc.aleo::Asset,
     credit_amount: u128, collateral_amount: u128, repayment_amount: u128,
-    accruing_apr: u32, borrower_auth: field, lender_auth: field,
+    accruing_apr: u32, borrower_auth: field, lender_auth: field, borrower_offer: bool,
 }
 struct State { witness_hash: field, maturity: u32, start: i64, status: u8 }
 // Every offer module implements these entry points; the core calls them dynamically.
 interface OfferModule {
-    fn draw_aleo(public id: field, public loan: LoanTerms, recipient: address) -> (dyn record, Final);
-    fn draw_arc20(public id: field, public loan: LoanTerms, recipient: address) -> (dyn record, Final);
-    fn draw_compliant(public id: field, public loan: LoanTerms, recipient: address) -> (dyn record, dyn record, Final);
-    fn receive_aleo(public id: field, public asset: pwn_hub_poc.aleo::Asset, input: dyn record, public amount: u128) -> (dyn record, Final);
-    fn receive_arc20(public id: field, public asset: pwn_hub_poc.aleo::Asset, input: dyn record, public amount: u128) -> (dyn record, Final);
-    fn receive_compliant(public id: field, public asset: pwn_hub_poc.aleo::Asset, input: dyn record, public amount: u128, proofs: [pwn_hub_poc.aleo::MerkleProof; 2]) -> (dyn record, dyn record, Final);
+    fn draw_aleo(public id: field, public loan: LoanTerms, offer: pwn_hub_poc.aleo::OfferWitness, recipient: address) -> (dyn record, Final);
+    fn draw_arc20(public id: field, public loan: LoanTerms, offer: pwn_hub_poc.aleo::OfferWitness, recipient: address) -> (dyn record, Final);
+    fn draw_compliant(public id: field, public loan: LoanTerms, offer: pwn_hub_poc.aleo::OfferWitness, recipient: address) -> (dyn record, dyn record, Final);
+    fn receive_aleo(public witness: Loan, input: dyn record, public amount: u128) -> (dyn record, Final);
+    fn receive_arc20(public witness: Loan, input: dyn record, public amount: u128) -> (dyn record, Final);
+    fn receive_compliant(public witness: Loan, input: dyn record, public amount: u128, proofs: [pwn_hub_poc.aleo::MerkleProof; 2]) -> (dyn record, dyn record, Final);
+}
+
+fn validate_offer_terms(terms: pwn_hub_poc.aleo::OfferTerms) {
+    assert(terms.direction == 1u8 || terms.direction == 2u8);
+    validate_asset(terms.credit_asset);
+    validate_asset(terms.collateral_asset);
+    assert(terms.min_draw > 0u128 && terms.max_draw >= terms.min_draw);
+    assert(terms.collateral_ratio > 0u64 && terms.collateral_ratio <= 1000000u64);
+    assert(terms.repayment_ratio >= 10000u64 && terms.repayment_ratio <= 1000000u64);
+    assert(terms.accruing_apr <= 100000u32);
+    assert(terms.duration >= 10u32 && terms.duration <= 3153600u32);
+    let collateral = rounded(terms.max_draw, terms.collateral_ratio);
+    let repayment = rounded(terms.max_draw, terms.repayment_ratio);
+    assert(collateral > 0u128 && repayment > 0u128);
+    if terms.collateral_asset.family == 1u8 { assert(collateral <= 18446744073709551615u128); }
+    if terms.credit_asset.family == 1u8 {
+        assert(terms.max_draw <= 18446744073709551615u128);
+        assert(repayment + accrued(terms.max_draw, terms.accruing_apr, terms.duration * 10u32) <= 18446744073709551615u128);
+    }
+}
+fn offer_commitment(module: identifier, terms: pwn_hub_poc.aleo::OfferTerms,
+    opening: pwn_hub_poc.aleo::OfferOpening, private_offer: bool) -> field {
+    assert(opening.salt != 0field);
+    return BHP256::hash_to_field(pwn_hub_poc.aleo::OfferCommitment {
+        protocol: pwn_loan_poc.aleo, module: module, terms: terms,
+        opening: opening, private_offer: private_offer
+    });
+}
+fn check_offer_fill(terms: pwn_hub_poc.aleo::OfferTerms, principal: u128,
+    collateral: u128, repayment: u128, apr: u32, duration: u32) {
+    assert(principal >= terms.min_draw && principal <= terms.max_draw);
+    assert_eq(collateral, rounded(principal, terms.collateral_ratio));
+    assert_eq(repayment, rounded(principal, terms.repayment_ratio));
+    assert_eq(apr, terms.accruing_apr);
+    assert_eq(duration, terms.duration);
+}
+fn empty_offer_terms() -> pwn_hub_poc.aleo::OfferTerms {
+    let asset = pwn_hub_poc.aleo::Asset { program_id: 'credits', token_id: 0field, family: 1u8, version: 1u16 };
+    return pwn_hub_poc.aleo::OfferTerms { direction: 0u8, credit_asset: asset, collateral_asset: asset,
+        min_draw: 0u128, max_draw: 0u128, collateral_ratio: 0u64, repayment_ratio: 0u64,
+        accruing_apr: 0u32, duration: 0u32, expiry: 0u32, maker_auth: 0field };
+}
+final fn require_reserve(asset: pwn_hub_poc.aleo::Asset, total: u128) {
+    if asset.family == 1u8 { assert(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128 >= total); }
+    else { assert(Reserves@(asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128) >= total); }
 }
 
 // Interest accrues per finalized block at the nominal block time; the proposal uses the same constant for the native u64 bound.
@@ -84,7 +135,7 @@ fn make_loan::[PROTOCOL: address](
     let witness = Loan { loan_id: id, offer_module: offer_module, commitment_id: commitment_id,
         credit_asset: loan.credit_asset, collateral_asset: loan.collateral_asset,
         credit_amount: loan.credit_amount, collateral_amount: loan.collateral_amount, repayment_amount: loan.repayment_amount,
-        accruing_apr: loan.accruing_apr, borrower_auth: borrower_auth, lender_auth: loan.lender_auth };
+        accruing_apr: loan.accruing_apr, borrower_auth: borrower_auth, lender_auth: loan.lender_auth, borrower_offer: false };
     return (id, witness);
 }
 fn repayment_witness_hash::[PROTOCOL: address](witness: Loan, amount: u128, borrower_salt: field) -> field {
@@ -123,13 +174,13 @@ program pwn_loan_poc.aleo {
     mapping liabilities: identifier => u128;
 
     fn accept_aleo_aleo(public nonce: field, public offer_module: identifier, public commitment_id: field,
-        public loan: LoanTerms, collateral: credits.aleo::credits, borrower_salt: field)
+        public loan: LoanTerms, offer: pwn_hub_poc.aleo::OfferWitness, collateral: credits.aleo::credits, borrower_salt: field)
         -> (dyn record, credits.aleo::credits, public Loan, Final) {
         validate_aleo_asset::[1u16](loan.credit_asset); validate_aleo_asset::[1u16](loan.collateral_asset);
         let (id, witness) = make_loan::[pwn_loan_poc.aleo](nonce, offer_module, commitment_id, loan, borrower_salt);
         let hash = BHP256::hash_to_field(witness);
         let (change, lock) = credits.aleo::transfer_private_to_public(collateral, std::ctx::addr(), loan.collateral_amount as u64);
-        let (credit, draw) = OfferModule@(offer_module)::draw_aleo(commitment_id, loan, std::ctx::signer());
+        let (credit, draw) = OfferModule@(offer_module)::draw_aleo(commitment_id, loan, offer, std::ctx::signer());
         return (credit, change, witness, final {
             assert(pwn_hub_poc.aleo::offer_modules.get_or_use(offer_module, false));
             assert(!loans.contains(id));
@@ -145,7 +196,7 @@ program pwn_loan_poc.aleo {
         validate_aleo_asset::[1u16](witness.credit_asset); validate_aleo_asset::[1u16](witness.collateral_asset);
         let hash = repayment_witness_hash::[pwn_loan_poc.aleo](witness, amount, borrower_salt);
         // Repayment goes to the module recorded at origination, even if it was revoked since.
-        let (change, pay) = OfferModule@(witness.offer_module)::receive_aleo(witness.commitment_id, witness.credit_asset, input as dyn record, amount);
+        let (change, pay) = OfferModule@(witness.offer_module)::receive_aleo(witness, input as dyn record, amount);
         let (collateral, release) = credits.aleo::transfer_public_to_private(std::ctx::signer(), witness.collateral_amount as u64);
         return (change, collateral, final {
             let state = validate_repayment(witness, hash, amount);
@@ -157,13 +208,13 @@ program pwn_loan_poc.aleo {
     }
 
     fn accept_aleo_arc20(public nonce: field, public offer_module: identifier, public commitment_id: field,
-        public loan: LoanTerms, collateral: dyn record, borrower_salt: field)
+        public loan: LoanTerms, offer: pwn_hub_poc.aleo::OfferWitness, collateral: dyn record, borrower_salt: field)
         -> (dyn record, dyn record, public Loan, Final) {
         validate_aleo_asset::[1u16](loan.credit_asset); validate_token_asset::[2u8](loan.collateral_asset);
         let (id, witness) = make_loan::[pwn_loan_poc.aleo](nonce, offer_module, commitment_id, loan, borrower_salt);
         let hash = BHP256::hash_to_field(witness);
         let (change, lock) = Arc20@(loan.collateral_asset.program_id)::transfer_private_to_public(collateral, std::ctx::addr(), loan.collateral_amount);
-        let (credit, draw) = OfferModule@(offer_module)::draw_aleo(commitment_id, loan, std::ctx::signer());
+        let (credit, draw) = OfferModule@(offer_module)::draw_aleo(commitment_id, loan, offer, std::ctx::signer());
         return (credit, change, witness, final {
             assert(pwn_hub_poc.aleo::offer_modules.get_or_use(offer_module, false));
             assert(!loans.contains(id));
@@ -179,7 +230,7 @@ program pwn_loan_poc.aleo {
         validate_aleo_asset::[1u16](witness.credit_asset); validate_token_asset::[2u8](witness.collateral_asset);
         let hash = repayment_witness_hash::[pwn_loan_poc.aleo](witness, amount, borrower_salt);
         // Repayment goes to the module recorded at origination, even if it was revoked since.
-        let (change, pay) = OfferModule@(witness.offer_module)::receive_aleo(witness.commitment_id, witness.credit_asset, input as dyn record, amount);
+        let (change, pay) = OfferModule@(witness.offer_module)::receive_aleo(witness, input as dyn record, amount);
         let (collateral, release) = Arc20@(witness.collateral_asset.program_id)::transfer_public_to_private(std::ctx::signer(), witness.collateral_amount);
         return (change, collateral, final {
             let state = validate_repayment(witness, hash, amount);
@@ -191,13 +242,13 @@ program pwn_loan_poc.aleo {
     }
 
     fn accept_aleo_compliant(public nonce: field, public offer_module: identifier, public commitment_id: field,
-        public loan: LoanTerms, collateral: dyn record, borrower_salt: field, proofs: [pwn_hub_poc.aleo::MerkleProof; 2])
+        public loan: LoanTerms, offer: pwn_hub_poc.aleo::OfferWitness, collateral: dyn record, borrower_salt: field, proofs: [pwn_hub_poc.aleo::MerkleProof; 2])
         -> (dyn record, dyn record, dyn record, public Loan, Final) {
         validate_aleo_asset::[1u16](loan.credit_asset); validate_token_asset::[3u8](loan.collateral_asset);
         let (id, witness) = make_loan::[pwn_loan_poc.aleo](nonce, offer_module, commitment_id, loan, borrower_salt);
         let hash = BHP256::hash_to_field(witness);
         let (compliance, change, lock) = Compliant@(loan.collateral_asset.program_id)::transfer_private_to_public(std::ctx::addr(), loan.collateral_amount, collateral, proofs);
-        let (credit, draw) = OfferModule@(offer_module)::draw_aleo(commitment_id, loan, std::ctx::signer());
+        let (credit, draw) = OfferModule@(offer_module)::draw_aleo(commitment_id, loan, offer, std::ctx::signer());
         return (compliance, credit, change, witness, final {
             assert(pwn_hub_poc.aleo::offer_modules.get_or_use(offer_module, false));
             assert(!loans.contains(id));
@@ -213,7 +264,7 @@ program pwn_loan_poc.aleo {
         validate_aleo_asset::[1u16](witness.credit_asset); validate_token_asset::[3u8](witness.collateral_asset);
         let hash = repayment_witness_hash::[pwn_loan_poc.aleo](witness, amount, borrower_salt);
         // Repayment goes to the module recorded at origination, even if it was revoked since.
-        let (change, pay) = OfferModule@(witness.offer_module)::receive_aleo(witness.commitment_id, witness.credit_asset, input as dyn record, amount);
+        let (change, pay) = OfferModule@(witness.offer_module)::receive_aleo(witness, input as dyn record, amount);
         let (collateral_compliance, collateral, release) = Compliant@(witness.collateral_asset.program_id)::transfer_public_to_private(std::ctx::signer(), witness.collateral_amount);
         return (collateral_compliance, change, collateral, final {
             let state = validate_repayment(witness, hash, amount);
@@ -225,13 +276,13 @@ program pwn_loan_poc.aleo {
     }
 
     fn accept_arc20_aleo(public nonce: field, public offer_module: identifier, public commitment_id: field,
-        public loan: LoanTerms, collateral: credits.aleo::credits, borrower_salt: field)
+        public loan: LoanTerms, offer: pwn_hub_poc.aleo::OfferWitness, collateral: credits.aleo::credits, borrower_salt: field)
         -> (dyn record, credits.aleo::credits, public Loan, Final) {
         validate_token_asset::[2u8](loan.credit_asset); validate_aleo_asset::[1u16](loan.collateral_asset);
         let (id, witness) = make_loan::[pwn_loan_poc.aleo](nonce, offer_module, commitment_id, loan, borrower_salt);
         let hash = BHP256::hash_to_field(witness);
         let (change, lock) = credits.aleo::transfer_private_to_public(collateral, std::ctx::addr(), loan.collateral_amount as u64);
-        let (credit, draw) = OfferModule@(offer_module)::draw_arc20(commitment_id, loan, std::ctx::signer());
+        let (credit, draw) = OfferModule@(offer_module)::draw_arc20(commitment_id, loan, offer, std::ctx::signer());
         return (credit, change, witness, final {
             assert(pwn_hub_poc.aleo::offer_modules.get_or_use(offer_module, false));
             assert(!loans.contains(id));
@@ -247,7 +298,7 @@ program pwn_loan_poc.aleo {
         validate_token_asset::[2u8](witness.credit_asset); validate_aleo_asset::[1u16](witness.collateral_asset);
         let hash = repayment_witness_hash::[pwn_loan_poc.aleo](witness, amount, borrower_salt);
         // Repayment goes to the module recorded at origination, even if it was revoked since.
-        let (change, pay) = OfferModule@(witness.offer_module)::receive_arc20(witness.commitment_id, witness.credit_asset, input, amount);
+        let (change, pay) = OfferModule@(witness.offer_module)::receive_arc20(witness, input, amount);
         let (collateral, release) = credits.aleo::transfer_public_to_private(std::ctx::signer(), witness.collateral_amount as u64);
         return (change, collateral, final {
             let state = validate_repayment(witness, hash, amount);
@@ -259,13 +310,13 @@ program pwn_loan_poc.aleo {
     }
 
     fn accept_arc20_arc20(public nonce: field, public offer_module: identifier, public commitment_id: field,
-        public loan: LoanTerms, collateral: dyn record, borrower_salt: field)
+        public loan: LoanTerms, offer: pwn_hub_poc.aleo::OfferWitness, collateral: dyn record, borrower_salt: field)
         -> (dyn record, dyn record, public Loan, Final) {
         validate_token_asset::[2u8](loan.credit_asset); validate_token_asset::[2u8](loan.collateral_asset);
         let (id, witness) = make_loan::[pwn_loan_poc.aleo](nonce, offer_module, commitment_id, loan, borrower_salt);
         let hash = BHP256::hash_to_field(witness);
         let (change, lock) = Arc20@(loan.collateral_asset.program_id)::transfer_private_to_public(collateral, std::ctx::addr(), loan.collateral_amount);
-        let (credit, draw) = OfferModule@(offer_module)::draw_arc20(commitment_id, loan, std::ctx::signer());
+        let (credit, draw) = OfferModule@(offer_module)::draw_arc20(commitment_id, loan, offer, std::ctx::signer());
         return (credit, change, witness, final {
             assert(pwn_hub_poc.aleo::offer_modules.get_or_use(offer_module, false));
             assert(!loans.contains(id));
@@ -281,7 +332,7 @@ program pwn_loan_poc.aleo {
         validate_token_asset::[2u8](witness.credit_asset); validate_token_asset::[2u8](witness.collateral_asset);
         let hash = repayment_witness_hash::[pwn_loan_poc.aleo](witness, amount, borrower_salt);
         // Repayment goes to the module recorded at origination, even if it was revoked since.
-        let (change, pay) = OfferModule@(witness.offer_module)::receive_arc20(witness.commitment_id, witness.credit_asset, input, amount);
+        let (change, pay) = OfferModule@(witness.offer_module)::receive_arc20(witness, input, amount);
         let (collateral, release) = Arc20@(witness.collateral_asset.program_id)::transfer_public_to_private(std::ctx::signer(), witness.collateral_amount);
         return (change, collateral, final {
             let state = validate_repayment(witness, hash, amount);
@@ -293,13 +344,13 @@ program pwn_loan_poc.aleo {
     }
 
     fn accept_arc20_compliant(public nonce: field, public offer_module: identifier, public commitment_id: field,
-        public loan: LoanTerms, collateral: dyn record, borrower_salt: field, proofs: [pwn_hub_poc.aleo::MerkleProof; 2])
+        public loan: LoanTerms, offer: pwn_hub_poc.aleo::OfferWitness, collateral: dyn record, borrower_salt: field, proofs: [pwn_hub_poc.aleo::MerkleProof; 2])
         -> (dyn record, dyn record, dyn record, public Loan, Final) {
         validate_token_asset::[2u8](loan.credit_asset); validate_token_asset::[3u8](loan.collateral_asset);
         let (id, witness) = make_loan::[pwn_loan_poc.aleo](nonce, offer_module, commitment_id, loan, borrower_salt);
         let hash = BHP256::hash_to_field(witness);
         let (compliance, change, lock) = Compliant@(loan.collateral_asset.program_id)::transfer_private_to_public(std::ctx::addr(), loan.collateral_amount, collateral, proofs);
-        let (credit, draw) = OfferModule@(offer_module)::draw_arc20(commitment_id, loan, std::ctx::signer());
+        let (credit, draw) = OfferModule@(offer_module)::draw_arc20(commitment_id, loan, offer, std::ctx::signer());
         return (compliance, credit, change, witness, final {
             assert(pwn_hub_poc.aleo::offer_modules.get_or_use(offer_module, false));
             assert(!loans.contains(id));
@@ -315,7 +366,7 @@ program pwn_loan_poc.aleo {
         validate_token_asset::[2u8](witness.credit_asset); validate_token_asset::[3u8](witness.collateral_asset);
         let hash = repayment_witness_hash::[pwn_loan_poc.aleo](witness, amount, borrower_salt);
         // Repayment goes to the module recorded at origination, even if it was revoked since.
-        let (change, pay) = OfferModule@(witness.offer_module)::receive_arc20(witness.commitment_id, witness.credit_asset, input, amount);
+        let (change, pay) = OfferModule@(witness.offer_module)::receive_arc20(witness, input, amount);
         let (collateral_compliance, collateral, release) = Compliant@(witness.collateral_asset.program_id)::transfer_public_to_private(std::ctx::signer(), witness.collateral_amount);
         return (collateral_compliance, change, collateral, final {
             let state = validate_repayment(witness, hash, amount);
@@ -327,13 +378,13 @@ program pwn_loan_poc.aleo {
     }
 
     fn accept_compliant_aleo(public nonce: field, public offer_module: identifier, public commitment_id: field,
-        public loan: LoanTerms, collateral: credits.aleo::credits, borrower_salt: field)
+        public loan: LoanTerms, offer: pwn_hub_poc.aleo::OfferWitness, collateral: credits.aleo::credits, borrower_salt: field)
         -> (dyn record, dyn record, credits.aleo::credits, public Loan, Final) {
         validate_token_asset::[3u8](loan.credit_asset); validate_aleo_asset::[1u16](loan.collateral_asset);
         let (id, witness) = make_loan::[pwn_loan_poc.aleo](nonce, offer_module, commitment_id, loan, borrower_salt);
         let hash = BHP256::hash_to_field(witness);
         let (change, lock) = credits.aleo::transfer_private_to_public(collateral, std::ctx::addr(), loan.collateral_amount as u64);
-        let (credit_compliance, credit, draw) = OfferModule@(offer_module)::draw_compliant(commitment_id, loan, std::ctx::signer());
+        let (credit_compliance, credit, draw) = OfferModule@(offer_module)::draw_compliant(commitment_id, loan, offer, std::ctx::signer());
         return (credit_compliance, credit, change, witness, final {
             assert(pwn_hub_poc.aleo::offer_modules.get_or_use(offer_module, false));
             assert(!loans.contains(id));
@@ -349,7 +400,7 @@ program pwn_loan_poc.aleo {
         validate_token_asset::[3u8](witness.credit_asset); validate_aleo_asset::[1u16](witness.collateral_asset);
         let hash = repayment_witness_hash::[pwn_loan_poc.aleo](witness, amount, borrower_salt);
         // Repayment goes to the module recorded at origination, even if it was revoked since.
-        let (credit_compliance, change, pay) = OfferModule@(witness.offer_module)::receive_compliant(witness.commitment_id, witness.credit_asset, input, amount, proofs);
+        let (credit_compliance, change, pay) = OfferModule@(witness.offer_module)::receive_compliant(witness, input, amount, proofs);
         let (collateral, release) = credits.aleo::transfer_public_to_private(std::ctx::signer(), witness.collateral_amount as u64);
         return (credit_compliance, change, collateral, final {
             let state = validate_repayment(witness, hash, amount);
@@ -361,13 +412,13 @@ program pwn_loan_poc.aleo {
     }
 
     fn accept_compliant_arc20(public nonce: field, public offer_module: identifier, public commitment_id: field,
-        public loan: LoanTerms, collateral: dyn record, borrower_salt: field)
+        public loan: LoanTerms, offer: pwn_hub_poc.aleo::OfferWitness, collateral: dyn record, borrower_salt: field)
         -> (dyn record, dyn record, dyn record, public Loan, Final) {
         validate_token_asset::[3u8](loan.credit_asset); validate_token_asset::[2u8](loan.collateral_asset);
         let (id, witness) = make_loan::[pwn_loan_poc.aleo](nonce, offer_module, commitment_id, loan, borrower_salt);
         let hash = BHP256::hash_to_field(witness);
         let (change, lock) = Arc20@(loan.collateral_asset.program_id)::transfer_private_to_public(collateral, std::ctx::addr(), loan.collateral_amount);
-        let (credit_compliance, credit, draw) = OfferModule@(offer_module)::draw_compliant(commitment_id, loan, std::ctx::signer());
+        let (credit_compliance, credit, draw) = OfferModule@(offer_module)::draw_compliant(commitment_id, loan, offer, std::ctx::signer());
         return (credit_compliance, credit, change, witness, final {
             assert(pwn_hub_poc.aleo::offer_modules.get_or_use(offer_module, false));
             assert(!loans.contains(id));
@@ -383,7 +434,7 @@ program pwn_loan_poc.aleo {
         validate_token_asset::[3u8](witness.credit_asset); validate_token_asset::[2u8](witness.collateral_asset);
         let hash = repayment_witness_hash::[pwn_loan_poc.aleo](witness, amount, borrower_salt);
         // Repayment goes to the module recorded at origination, even if it was revoked since.
-        let (credit_compliance, change, pay) = OfferModule@(witness.offer_module)::receive_compliant(witness.commitment_id, witness.credit_asset, input, amount, proofs);
+        let (credit_compliance, change, pay) = OfferModule@(witness.offer_module)::receive_compliant(witness, input, amount, proofs);
         let (collateral, release) = Arc20@(witness.collateral_asset.program_id)::transfer_public_to_private(std::ctx::signer(), witness.collateral_amount);
         return (credit_compliance, change, collateral, final {
             let state = validate_repayment(witness, hash, amount);
@@ -395,13 +446,13 @@ program pwn_loan_poc.aleo {
     }
 
     fn accept_compliant_compliant(public nonce: field, public offer_module: identifier, public commitment_id: field,
-        public loan: LoanTerms, collateral: dyn record, borrower_salt: field, proofs: [pwn_hub_poc.aleo::MerkleProof; 2])
+        public loan: LoanTerms, offer: pwn_hub_poc.aleo::OfferWitness, collateral: dyn record, borrower_salt: field, proofs: [pwn_hub_poc.aleo::MerkleProof; 2])
         -> (dyn record, dyn record, dyn record, dyn record, public Loan, Final) {
         validate_token_asset::[3u8](loan.credit_asset); validate_token_asset::[3u8](loan.collateral_asset);
         let (id, witness) = make_loan::[pwn_loan_poc.aleo](nonce, offer_module, commitment_id, loan, borrower_salt);
         let hash = BHP256::hash_to_field(witness);
         let (compliance, change, lock) = Compliant@(loan.collateral_asset.program_id)::transfer_private_to_public(std::ctx::addr(), loan.collateral_amount, collateral, proofs);
-        let (credit_compliance, credit, draw) = OfferModule@(offer_module)::draw_compliant(commitment_id, loan, std::ctx::signer());
+        let (credit_compliance, credit, draw) = OfferModule@(offer_module)::draw_compliant(commitment_id, loan, offer, std::ctx::signer());
         return (compliance, credit_compliance, credit, change, witness, final {
             assert(pwn_hub_poc.aleo::offer_modules.get_or_use(offer_module, false));
             assert(!loans.contains(id));
@@ -417,7 +468,7 @@ program pwn_loan_poc.aleo {
         validate_token_asset::[3u8](witness.credit_asset); validate_token_asset::[3u8](witness.collateral_asset);
         let hash = repayment_witness_hash::[pwn_loan_poc.aleo](witness, amount, borrower_salt);
         // Repayment goes to the module recorded at origination, even if it was revoked since.
-        let (credit_compliance, change, pay) = OfferModule@(witness.offer_module)::receive_compliant(witness.commitment_id, witness.credit_asset, input, amount, proofs);
+        let (credit_compliance, change, pay) = OfferModule@(witness.offer_module)::receive_compliant(witness, input, amount, proofs);
         let (collateral_compliance, collateral, release) = Compliant@(witness.collateral_asset.program_id)::transfer_public_to_private(std::ctx::signer(), witness.collateral_amount);
         return (credit_compliance, collateral_compliance, change, collateral, final {
             let state = validate_repayment(witness, hash, amount);
@@ -467,6 +518,317 @@ program pwn_loan_poc.aleo {
             settle_loan::[3u8](witness, hash, state, total);
             release.run(); // Postcondition checks the actual reserve delta, after the atomic token finalizer.
             assert_eq(Reserves@(witness.collateral_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - witness.collateral_amount);
+        });
+    }
+
+    // Total liabilities include unused borrower reservations and active loan collateral.
+    mapping borrow_hashes: field => field;
+    mapping borrow_public_terms: field => pwn_hub_poc.aleo::OfferTerms;
+    mapping borrow_remaining: field => u128;
+    mapping borrow_collateral: field => u128;
+    mapping borrow_expiry: field => u32;
+    mapping borrow_closed: field => bool;
+
+    // Private offers require a canonical empty public listing; no secret terms enter finalize.
+    fn open_borrow_aleo(public nonce: field, public offer_module: identifier,
+        public listing: pwn_hub_poc.aleo::OfferTerms, offer: pwn_hub_poc.aleo::OfferWitness,
+        input: credits.aleo::credits, public funding: pwn_hub_poc.aleo::BorrowFunding, borrower_salt: field)
+        -> (credits.aleo::credits, public field, Final) {
+        let terms = offer.terms; let opening = offer.opening;
+        validate_offer_terms(terms); assert_eq(terms.direction, 2u8);
+        assert_eq(terms.maker_auth, authority_hash::[2u8, pwn_loan_poc.aleo](borrower_salt));
+        assert_eq(opening.recipient, std::ctx::signer());
+        if offer.private_offer { assert_eq(listing, empty_offer_terms()); }
+        else { assert_eq(listing, terms); }
+        assert(funding.requested >= terms.min_draw);
+        assert(funding.collateral >= rounded(funding.requested, terms.collateral_ratio));
+        let asset = terms.collateral_asset; validate_aleo_asset::[1u16](asset);
+        let expiry = terms.expiry; let private_offer = offer.private_offer;
+        let id = position_id::[4u8, pwn_loan_poc.aleo](terms.maker_auth, nonce);
+        let hash = offer_commitment(offer_module, terms, opening, private_offer);
+        let core_tag = BHP256::hash_to_field(ModuleTag { module: pwn_loan_poc.aleo, tag: 1u8 });
+        let (change, deposit) = credits.aleo::transfer_private_to_public(input, std::ctx::addr(), funding.collateral as u64);
+        return (change, id, final {
+            assert(pwn_hub_poc.aleo::offer_modules.get_or_use(offer_module, false));
+            assert(pwn_hub_poc.aleo::approved.get_or_use(core_tag, false));
+            assert_eq(pwn_config_poc.aleo::settings.get(true).protocol_fee_bps, 0u16);
+            assert(!borrow_hashes.contains(id)); assert(std::ctx::block_height() < expiry);
+            let total = liabilities.get_or_use(asset.program_id, 0u128); let before = credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128; assert(before >= total);
+            borrow_hashes.set(id, hash); borrow_expiry.set(id, expiry);
+            borrow_remaining.set(id, funding.requested); borrow_collateral.set(id, funding.collateral);
+            borrow_closed.set(id, false);
+            if !private_offer { borrow_public_terms.set(id, listing); }
+            liabilities.set(asset.program_id, total + funding.collateral);
+            deposit.run(); // Postcondition checks the actual reserve delta, after the atomic token finalizer.
+            assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before + funding.collateral);
+        });
+    }
+    fn cancel_borrow_aleo(public id: field, public offer_module: identifier,
+        offer: pwn_hub_poc.aleo::OfferWitness, borrower_salt: field, public amount: u128)
+        -> (credits.aleo::credits, Final) {
+        assert_eq(offer.terms.direction, 2u8);
+        assert_eq(offer.terms.maker_auth, authority_hash::[2u8, pwn_loan_poc.aleo](borrower_salt));
+        let asset = offer.terms.collateral_asset; validate_aleo_asset::[1u16](asset);
+        let hash = offer_commitment(offer_module, offer.terms, offer.opening, offer.private_offer);
+        let (output, payout) = credits.aleo::transfer_public_to_private(std::ctx::signer(), amount as u64);
+        return (output, final {
+            assert_eq(borrow_hashes.get(id), hash); assert(!borrow_closed.get(id));
+            assert_eq(borrow_collateral.get(id), amount);
+            let total = liabilities.get(asset.program_id); let before = credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128; assert(before >= total);
+            borrow_closed.set(id, true); borrow_remaining.set(id, 0u128); borrow_collateral.set(id, 0u128);
+            liabilities.set(asset.program_id, total - amount);
+            payout.run(); // Postcondition checks the actual reserve delta, after the atomic token finalizer.
+            assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, before - amount);
+        });
+    }
+
+    // Private offers require a canonical empty public listing; no secret terms enter finalize.
+    fn open_borrow_arc20(public nonce: field, public offer_module: identifier,
+        public listing: pwn_hub_poc.aleo::OfferTerms, offer: pwn_hub_poc.aleo::OfferWitness,
+        input: dyn record, public funding: pwn_hub_poc.aleo::BorrowFunding, borrower_salt: field)
+        -> (dyn record, public field, Final) {
+        let terms = offer.terms; let opening = offer.opening;
+        validate_offer_terms(terms); assert_eq(terms.direction, 2u8);
+        assert_eq(terms.maker_auth, authority_hash::[2u8, pwn_loan_poc.aleo](borrower_salt));
+        assert_eq(opening.recipient, std::ctx::signer());
+        if offer.private_offer { assert_eq(listing, empty_offer_terms()); }
+        else { assert_eq(listing, terms); }
+        assert(funding.requested >= terms.min_draw);
+        assert(funding.collateral >= rounded(funding.requested, terms.collateral_ratio));
+        let asset = terms.collateral_asset; validate_token_asset::[2u8](asset);
+        let expiry = terms.expiry; let private_offer = offer.private_offer;
+        let id = position_id::[4u8, pwn_loan_poc.aleo](terms.maker_auth, nonce);
+        let hash = offer_commitment(offer_module, terms, opening, private_offer);
+        let core_tag = BHP256::hash_to_field(ModuleTag { module: pwn_loan_poc.aleo, tag: 1u8 });
+        let (change, deposit) = Arc20@(asset.program_id)::transfer_private_to_public(input, std::ctx::addr(), funding.collateral);
+        return (change, id, final {
+            assert(pwn_hub_poc.aleo::offer_modules.get_or_use(offer_module, false));
+            assert(pwn_hub_poc.aleo::approved.get_or_use(core_tag, false));
+            assert_eq(pwn_config_poc.aleo::settings.get(true).protocol_fee_bps, 0u16);
+            assert(!borrow_hashes.contains(id)); assert(std::ctx::block_height() < expiry);
+            let total = liabilities.get_or_use(asset.program_id, 0u128); let before = Reserves@(asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128); assert(before >= total);
+            borrow_hashes.set(id, hash); borrow_expiry.set(id, expiry);
+            borrow_remaining.set(id, funding.requested); borrow_collateral.set(id, funding.collateral);
+            borrow_closed.set(id, false);
+            if !private_offer { borrow_public_terms.set(id, listing); }
+            liabilities.set(asset.program_id, total + funding.collateral);
+            deposit.run(); // Postcondition checks the actual reserve delta, after the atomic token finalizer.
+            assert_eq(Reserves@(asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before + funding.collateral);
+        });
+    }
+    fn cancel_borrow_arc20(public id: field, public offer_module: identifier,
+        offer: pwn_hub_poc.aleo::OfferWitness, borrower_salt: field, public amount: u128)
+        -> (dyn record, Final) {
+        assert_eq(offer.terms.direction, 2u8);
+        assert_eq(offer.terms.maker_auth, authority_hash::[2u8, pwn_loan_poc.aleo](borrower_salt));
+        let asset = offer.terms.collateral_asset; validate_token_asset::[2u8](asset);
+        let hash = offer_commitment(offer_module, offer.terms, offer.opening, offer.private_offer);
+        let (output, payout) = Arc20@(asset.program_id)::transfer_public_to_private(std::ctx::signer(), amount);
+        return (output, final {
+            assert_eq(borrow_hashes.get(id), hash); assert(!borrow_closed.get(id));
+            assert_eq(borrow_collateral.get(id), amount);
+            let total = liabilities.get(asset.program_id); let before = Reserves@(asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128); assert(before >= total);
+            borrow_closed.set(id, true); borrow_remaining.set(id, 0u128); borrow_collateral.set(id, 0u128);
+            liabilities.set(asset.program_id, total - amount);
+            payout.run(); // Postcondition checks the actual reserve delta, after the atomic token finalizer.
+            assert_eq(Reserves@(asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - amount);
+        });
+    }
+
+    // Private offers require a canonical empty public listing; no secret terms enter finalize.
+    fn open_borrow_compliant(public nonce: field, public offer_module: identifier,
+        public listing: pwn_hub_poc.aleo::OfferTerms, offer: pwn_hub_poc.aleo::OfferWitness,
+        input: dyn record, public funding: pwn_hub_poc.aleo::BorrowFunding, borrower_salt: field, proofs: [pwn_hub_poc.aleo::MerkleProof; 2])
+        -> (dyn record, dyn record, public field, Final) {
+        let terms = offer.terms; let opening = offer.opening;
+        validate_offer_terms(terms); assert_eq(terms.direction, 2u8);
+        assert_eq(terms.maker_auth, authority_hash::[2u8, pwn_loan_poc.aleo](borrower_salt));
+        assert_eq(opening.recipient, std::ctx::signer());
+        if offer.private_offer { assert_eq(listing, empty_offer_terms()); }
+        else { assert_eq(listing, terms); }
+        assert(funding.requested >= terms.min_draw);
+        assert(funding.collateral >= rounded(funding.requested, terms.collateral_ratio));
+        let asset = terms.collateral_asset; validate_token_asset::[3u8](asset);
+        let expiry = terms.expiry; let private_offer = offer.private_offer;
+        let id = position_id::[4u8, pwn_loan_poc.aleo](terms.maker_auth, nonce);
+        let hash = offer_commitment(offer_module, terms, opening, private_offer);
+        let core_tag = BHP256::hash_to_field(ModuleTag { module: pwn_loan_poc.aleo, tag: 1u8 });
+        let (compliance, change, deposit) = Compliant@(asset.program_id)::transfer_private_to_public(std::ctx::addr(), funding.collateral, input, proofs);
+        return (compliance, change, id, final {
+            assert(pwn_hub_poc.aleo::offer_modules.get_or_use(offer_module, false));
+            assert(pwn_hub_poc.aleo::approved.get_or_use(core_tag, false));
+            assert_eq(pwn_config_poc.aleo::settings.get(true).protocol_fee_bps, 0u16);
+            assert(!borrow_hashes.contains(id)); assert(std::ctx::block_height() < expiry);
+            let total = liabilities.get_or_use(asset.program_id, 0u128); let before = Reserves@(asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128); assert(before >= total);
+            borrow_hashes.set(id, hash); borrow_expiry.set(id, expiry);
+            borrow_remaining.set(id, funding.requested); borrow_collateral.set(id, funding.collateral);
+            borrow_closed.set(id, false);
+            if !private_offer { borrow_public_terms.set(id, listing); }
+            liabilities.set(asset.program_id, total + funding.collateral);
+            deposit.run(); // Postcondition checks the actual reserve delta, after the atomic token finalizer.
+            assert_eq(Reserves@(asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before + funding.collateral);
+        });
+    }
+    fn cancel_borrow_compliant(public id: field, public offer_module: identifier,
+        offer: pwn_hub_poc.aleo::OfferWitness, borrower_salt: field, public amount: u128)
+        -> (dyn record, dyn record, Final) {
+        assert_eq(offer.terms.direction, 2u8);
+        assert_eq(offer.terms.maker_auth, authority_hash::[2u8, pwn_loan_poc.aleo](borrower_salt));
+        let asset = offer.terms.collateral_asset; validate_token_asset::[3u8](asset);
+        let hash = offer_commitment(offer_module, offer.terms, offer.opening, offer.private_offer);
+        let (compliance, output, payout) = Compliant@(asset.program_id)::transfer_public_to_private(std::ctx::signer(), amount);
+        return (compliance, output, final {
+            assert_eq(borrow_hashes.get(id), hash); assert(!borrow_closed.get(id));
+            assert_eq(borrow_collateral.get(id), amount);
+            let total = liabilities.get(asset.program_id); let before = Reserves@(asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128); assert(before >= total);
+            borrow_closed.set(id, true); borrow_remaining.set(id, 0u128); borrow_collateral.set(id, 0u128);
+            liabilities.set(asset.program_id, total - amount);
+            payout.run(); // Postcondition checks the actual reserve delta, after the atomic token finalizer.
+            assert_eq(Reserves@(asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), before - amount);
+        });
+    }
+
+    fn accept_borrow_aleo(public nonce: field, public offer_module: identifier, public commitment_id: field,
+        offer: pwn_hub_poc.aleo::OfferWitness, input: credits.aleo::credits, public amount: u128, lender_salt: field)
+        -> (credits.aleo::credits, dyn record, public Loan, Final) {
+        let terms = offer.terms; let opening = offer.opening;
+        assert_eq(terms.direction, 2u8);
+        assert(amount >= terms.min_draw && amount <= terms.max_draw);
+        assert(!offer.private_offer || opening.taker == std::ctx::signer());
+        validate_aleo_asset::[1u16](terms.credit_asset); validate_asset(terms.collateral_asset);
+        let offer_hash = offer_commitment(offer_module, terms, opening, offer.private_offer);
+        let lender_auth = authority_hash::[1u8, pwn_loan_poc.aleo](lender_salt);
+        let id = BHP256::hash_to_field(pwn_hub_poc.aleo::BorrowFillId {
+            protocol: pwn_loan_poc.aleo, module: offer_module, offer_id: commitment_id,
+            borrower_auth: terms.maker_auth, lender_auth: lender_auth, nonce: nonce
+        });
+        let witness = Loan {
+            loan_id: id, offer_module: offer_module, commitment_id: commitment_id,
+            credit_asset: terms.credit_asset, collateral_asset: terms.collateral_asset,
+            credit_amount: amount, collateral_amount: rounded(amount, terms.collateral_ratio),
+            repayment_amount: rounded(amount, terms.repayment_ratio), accruing_apr: terms.accruing_apr,
+            borrower_auth: terms.maker_auth, lender_auth: lender_auth, borrower_offer: true
+        };
+        let hash = BHP256::hash_to_field(witness); let duration = terms.duration;
+        let core_tag = BHP256::hash_to_field(ModuleTag { module: pwn_loan_poc.aleo, tag: 1u8 });
+        let (change, funding) = credits.aleo::transfer_private_to_public(input, std::ctx::addr(), amount as u64);
+        let (credit, delivery) = credits.aleo::transfer_public_to_private(opening.recipient, amount as u64);
+        return (change, credit as dyn record, witness, final {
+            assert(pwn_hub_poc.aleo::offer_modules.get_or_use(offer_module, false));
+            assert(pwn_hub_poc.aleo::approved.get_or_use(core_tag, false));
+            assert_eq(borrow_hashes.get(commitment_id), offer_hash);
+            assert(!borrow_closed.get(commitment_id));
+            assert(std::ctx::block_height() < borrow_expiry.get(commitment_id));
+            assert(!loans.contains(id));
+            let reserved = liabilities.get(witness.collateral_asset.program_id);
+            require_reserve(witness.collateral_asset, reserved);
+            let credit_total = liabilities.get_or_use(witness.credit_asset.program_id, 0u128);
+            let credit_before = credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128; assert(credit_before >= credit_total);
+            borrow_remaining.set(commitment_id, borrow_remaining.get(commitment_id) - amount);
+            borrow_collateral.set(commitment_id, borrow_collateral.get(commitment_id) - witness.collateral_amount);
+            // Reclassify reserved collateral as active; total token liabilities do not change.
+            loans.set(id, State { witness_hash: hash, maturity: std::ctx::block_height() + duration,
+                start: std::ctx::block_height() as i64, status: 1u8 });
+            funding.run();
+            assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, credit_before + amount);
+            delivery.run();
+            assert_eq(credits.aleo::account.get_or_use(std::ctx::addr(), 0u64) as u128, credit_before);
+        });
+    }
+
+    fn accept_borrow_arc20(public nonce: field, public offer_module: identifier, public commitment_id: field,
+        offer: pwn_hub_poc.aleo::OfferWitness, input: dyn record, public amount: u128, lender_salt: field)
+        -> (dyn record, dyn record, public Loan, Final) {
+        let terms = offer.terms; let opening = offer.opening;
+        assert_eq(terms.direction, 2u8);
+        assert(amount >= terms.min_draw && amount <= terms.max_draw);
+        assert(!offer.private_offer || opening.taker == std::ctx::signer());
+        validate_token_asset::[2u8](terms.credit_asset); validate_asset(terms.collateral_asset);
+        let offer_hash = offer_commitment(offer_module, terms, opening, offer.private_offer);
+        let lender_auth = authority_hash::[1u8, pwn_loan_poc.aleo](lender_salt);
+        let id = BHP256::hash_to_field(pwn_hub_poc.aleo::BorrowFillId {
+            protocol: pwn_loan_poc.aleo, module: offer_module, offer_id: commitment_id,
+            borrower_auth: terms.maker_auth, lender_auth: lender_auth, nonce: nonce
+        });
+        let witness = Loan {
+            loan_id: id, offer_module: offer_module, commitment_id: commitment_id,
+            credit_asset: terms.credit_asset, collateral_asset: terms.collateral_asset,
+            credit_amount: amount, collateral_amount: rounded(amount, terms.collateral_ratio),
+            repayment_amount: rounded(amount, terms.repayment_ratio), accruing_apr: terms.accruing_apr,
+            borrower_auth: terms.maker_auth, lender_auth: lender_auth, borrower_offer: true
+        };
+        let hash = BHP256::hash_to_field(witness); let duration = terms.duration;
+        let core_tag = BHP256::hash_to_field(ModuleTag { module: pwn_loan_poc.aleo, tag: 1u8 });
+        let (change, funding) = Arc20@(witness.credit_asset.program_id)::transfer_private_to_public(input, std::ctx::addr(), amount);
+        let (credit, delivery) = Arc20@(witness.credit_asset.program_id)::transfer_public_to_private(opening.recipient, amount);
+        return (change, credit, witness, final {
+            assert(pwn_hub_poc.aleo::offer_modules.get_or_use(offer_module, false));
+            assert(pwn_hub_poc.aleo::approved.get_or_use(core_tag, false));
+            assert_eq(borrow_hashes.get(commitment_id), offer_hash);
+            assert(!borrow_closed.get(commitment_id));
+            assert(std::ctx::block_height() < borrow_expiry.get(commitment_id));
+            assert(!loans.contains(id));
+            let reserved = liabilities.get(witness.collateral_asset.program_id);
+            require_reserve(witness.collateral_asset, reserved);
+            let credit_total = liabilities.get_or_use(witness.credit_asset.program_id, 0u128);
+            let credit_before = Reserves@(witness.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128); assert(credit_before >= credit_total);
+            borrow_remaining.set(commitment_id, borrow_remaining.get(commitment_id) - amount);
+            borrow_collateral.set(commitment_id, borrow_collateral.get(commitment_id) - witness.collateral_amount);
+            // Reclassify reserved collateral as active; total token liabilities do not change.
+            loans.set(id, State { witness_hash: hash, maturity: std::ctx::block_height() + duration,
+                start: std::ctx::block_height() as i64, status: 1u8 });
+            funding.run();
+            assert_eq(Reserves@(witness.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), credit_before + amount);
+            delivery.run();
+            assert_eq(Reserves@(witness.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), credit_before);
+        });
+    }
+
+    fn accept_borrow_compliant(public nonce: field, public offer_module: identifier, public commitment_id: field,
+        offer: pwn_hub_poc.aleo::OfferWitness, input: dyn record, public amount: u128, lender_salt: field, proofs: [pwn_hub_poc.aleo::MerkleProof; 2])
+        -> (dyn record, dyn record, dyn record, dyn record, public Loan, Final) {
+        let terms = offer.terms; let opening = offer.opening;
+        assert_eq(terms.direction, 2u8);
+        assert(amount >= terms.min_draw && amount <= terms.max_draw);
+        assert(!offer.private_offer || opening.taker == std::ctx::signer());
+        validate_token_asset::[3u8](terms.credit_asset); validate_asset(terms.collateral_asset);
+        let offer_hash = offer_commitment(offer_module, terms, opening, offer.private_offer);
+        let lender_auth = authority_hash::[1u8, pwn_loan_poc.aleo](lender_salt);
+        let id = BHP256::hash_to_field(pwn_hub_poc.aleo::BorrowFillId {
+            protocol: pwn_loan_poc.aleo, module: offer_module, offer_id: commitment_id,
+            borrower_auth: terms.maker_auth, lender_auth: lender_auth, nonce: nonce
+        });
+        let witness = Loan {
+            loan_id: id, offer_module: offer_module, commitment_id: commitment_id,
+            credit_asset: terms.credit_asset, collateral_asset: terms.collateral_asset,
+            credit_amount: amount, collateral_amount: rounded(amount, terms.collateral_ratio),
+            repayment_amount: rounded(amount, terms.repayment_ratio), accruing_apr: terms.accruing_apr,
+            borrower_auth: terms.maker_auth, lender_auth: lender_auth, borrower_offer: true
+        };
+        let hash = BHP256::hash_to_field(witness); let duration = terms.duration;
+        let core_tag = BHP256::hash_to_field(ModuleTag { module: pwn_loan_poc.aleo, tag: 1u8 });
+        let (compliance, change, funding) = Compliant@(witness.credit_asset.program_id)::transfer_private_to_public(std::ctx::addr(), amount, input, proofs);
+        let (credit_compliance, credit, delivery) = Compliant@(witness.credit_asset.program_id)::transfer_public_to_private(opening.recipient, amount);
+        return (compliance, credit_compliance, change, credit, witness, final {
+            assert(pwn_hub_poc.aleo::offer_modules.get_or_use(offer_module, false));
+            assert(pwn_hub_poc.aleo::approved.get_or_use(core_tag, false));
+            assert_eq(borrow_hashes.get(commitment_id), offer_hash);
+            assert(!borrow_closed.get(commitment_id));
+            assert(std::ctx::block_height() < borrow_expiry.get(commitment_id));
+            assert(!loans.contains(id));
+            let reserved = liabilities.get(witness.collateral_asset.program_id);
+            require_reserve(witness.collateral_asset, reserved);
+            let credit_total = liabilities.get_or_use(witness.credit_asset.program_id, 0u128);
+            let credit_before = Reserves@(witness.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128); assert(credit_before >= credit_total);
+            borrow_remaining.set(commitment_id, borrow_remaining.get(commitment_id) - amount);
+            borrow_collateral.set(commitment_id, borrow_collateral.get(commitment_id) - witness.collateral_amount);
+            // Reclassify reserved collateral as active; total token liabilities do not change.
+            loans.set(id, State { witness_hash: hash, maturity: std::ctx::block_height() + duration,
+                start: std::ctx::block_height() as i64, status: 1u8 });
+            funding.run();
+            assert_eq(Reserves@(witness.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), credit_before + amount);
+            delivery.run();
+            assert_eq(Reserves@(witness.credit_asset.program_id)::balances.get_or_use(std::ctx::addr(), 0u128), credit_before);
         });
     }
     @custom

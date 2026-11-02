@@ -2,7 +2,7 @@
 """Generate the token-family lending programs (native ALEO, ARC-20, deployed compliance ABI). No keys, RPC, or deployment.
 
 Custody remains in proposal/loan; interfaces are inlined, not custody adapters.
-V2 schemas are deliberately untouched. New layouts require new program IDs.
+Revision 0.4 changes schemas and requires fresh deployments; no position migration.
 
 The loan core does not import any offer module. It reaches the module named in a
 loan through `OfferModule@(name)` dynamic calls, and only Hub-approved modules may
@@ -12,6 +12,7 @@ program name, so a second module needs no core change.
 import json
 from pathlib import Path
 from multitoken_logic import shared_logic, proposal_logic, loan_logic
+from multitoken_offers import offer_types, offer_helpers, lender_extensions, borrower_extensions
 ROOT=Path(__file__).resolve().parents[1]
 BOOT='aleo1l53e5k624kfh0q78phyxzkvvxq54w89jk36emmzvjmxgkhh8cvyq8hp23s'  # bootstrap/admin of the local devnode fixtures (published development key)
 C='pwn_config_poc.aleo'; H='pwn_hub_poc.aleo'; P='pwn_proposal_poc.aleo'; L='pwn_loan_poc.aleo'
@@ -38,12 +39,12 @@ interface Reserves { mapping balances: address => u128; }
 '''
 OFFER_INTERFACE=f'''// Every offer module implements these entry points; the core calls them dynamically.
 interface OfferModule {{
-    fn draw_aleo(public id: field, public loan: LoanTerms, recipient: address) -> (dyn record, Final);
-    fn draw_arc20(public id: field, public loan: LoanTerms, recipient: address) -> (dyn record, Final);
-    fn draw_compliant(public id: field, public loan: LoanTerms, recipient: address) -> (dyn record, dyn record, Final);
-    fn receive_aleo(public id: field, public asset: {H}::Asset, input: dyn record, public amount: u128) -> (dyn record, Final);
-    fn receive_arc20(public id: field, public asset: {H}::Asset, input: dyn record, public amount: u128) -> (dyn record, Final);
-    fn receive_compliant(public id: field, public asset: {H}::Asset, input: dyn record, public amount: u128, proofs: [{H}::MerkleProof; 2]) -> (dyn record, dyn record, Final);
+    fn draw_aleo(public id: field, public loan: LoanTerms, offer: {H}::OfferWitness, recipient: address) -> (dyn record, Final);
+    fn draw_arc20(public id: field, public loan: LoanTerms, offer: {H}::OfferWitness, recipient: address) -> (dyn record, Final);
+    fn draw_compliant(public id: field, public loan: LoanTerms, offer: {H}::OfferWitness, recipient: address) -> (dyn record, dyn record, Final);
+    fn receive_aleo(public witness: Loan, input: dyn record, public amount: u128) -> (dyn record, Final);
+    fn receive_arc20(public witness: Loan, input: dyn record, public amount: u128) -> (dyn record, Final);
+    fn receive_compliant(public witness: Loan, input: dyn record, public amount: u128, proofs: [{H}::MerkleProof; 2]) -> (dyn record, dyn record, Final);
 }}
 '''
 MATH='''// Quotient/remainder avoids overflowing amount*ratio when the result fits u128.
@@ -101,7 +102,7 @@ def render_offer_module(name):
 '''
     # Modules import the core only for its exported LoanTerms; the core never imports a module.
     pre=f'import credits.aleo;\nimport {C};\nimport {H};\nimport {L};\n'+AUTH+INTERFACES+MATH+shared_logic(H)
-    proposal=pre+terms+proposal_logic(C,H,P,L)+f'''program {P} {{
+    proposal=pre+terms+offer_helpers(H,L)+proposal_logic(C,H,P,L)+f'''program {P} {{
     mapping terms_hash: field => field;
     mapping offer_terms: field => Terms;
     mapping credit_assets: field => {H}::Asset;
@@ -130,27 +131,56 @@ def render_offer_module(name):
         }});
     }}
     // Generic OfferModule entry point: the core passes the borrower's LoanTerms, the module checks them against its offer.
-    fn draw_{k}(public id: field, public loan: {L}::LoanTerms, recipient: address)
+    fn draw_{k}(public id: field, public loan: {L}::LoanTerms, offer: {H}::OfferWitness, recipient: address)
         -> {sig([k],[rec(k),'Final'])} {{
         assert_eq(std::ctx::caller(), {L}); {family(k,'loan.credit_asset')}
         assert_eq(recipient, std::ctx::signer());
+        let private_offer = offer.private_offer;
+        let hash = offer_commitment('{P[:-5]}', offer.terms, offer.opening, private_offer);
+        // Proof closures execute eagerly: predicate every private-mode constraint explicitly.
+        assert(!private_offer || offer.terms.direction == 1u8);
+        assert(!private_offer || offer.opening.taker == std::ctx::signer());
+        assert(!private_offer || loan.credit_asset == offer.terms.credit_asset);
+        assert(!private_offer || loan.collateral_asset == offer.terms.collateral_asset);
+        assert(!private_offer || loan.lender_auth == offer.terms.maker_auth);
+        assert(!private_offer || (loan.credit_amount >= offer.terms.min_draw && loan.credit_amount <= offer.terms.max_draw));
+        assert(!private_offer || loan.collateral_amount == rounded(loan.credit_amount, offer.terms.collateral_ratio));
+        assert(!private_offer || loan.repayment_amount == rounded(loan.credit_amount, offer.terms.repayment_ratio));
+        assert(!private_offer || loan.accruing_apr == offer.terms.accruing_apr);
+        assert(!private_offer || loan.duration == offer.terms.duration);
         let core = BHP256::hash_to_field(ModuleTag {{ module: {L}, tag: 1u8 }});
         {payout(k,'loan.credit_asset','loan.credit_amount','recipient')}
         return ({outputs([(k,'compliance')],['output'])}, final {{
-            validate_draw(core, id, loan);
+            if private_offer {{
+                assert({H}::approved.get_or_use(core, false));
+                assert({H}::offer_modules.get_or_use('{P[:-5]}', false));
+                assert_eq(terms_hash.get(id), hash);
+                assert(!closed.get(id)); assert(std::ctx::block_height() < private_expiry.get(id));
+                assert_eq(credit_assets.get(id), loan.credit_asset);
+            }} else {{ validate_draw(core, id, loan); }}
             let total = liabilities.get(loan.credit_asset.program_id); {before(k,'loan.credit_asset')}
             debit_draw(id, loan.credit_asset.program_id, loan.credit_amount, total);
             payout.run(); {after(k,'loan.credit_asset','loan.credit_amount','-')}
         }});
     }}
-    fn receive_{k}(public id: field, public asset: {H}::Asset, input: {rec(k)}, public amount: u128{proof(k)})
+    fn receive_{k}(public witness: {L}::Loan, input: {rec(k)}, public amount: u128{proof(k)})
         -> {sig([k],[rec(k),'Final'])} {{
-        assert_eq(std::ctx::caller(), {L}); {family(k,'asset')}
+        assert_eq(std::ctx::caller(), {L});
+        assert_eq(witness.offer_module, '{P[:-5]}');
+        let asset = witness.credit_asset; {family(k,'asset')}
+        let hash = BHP256::hash_to_field(witness);
         {deposit(k,'asset','amount','input')}
         return ({outputs([(k,'compliance')],['change'])}, final {{
-            assert_eq(credit_assets.get(id), asset);
-            let total = liabilities.get(asset.program_id); let before = {balance(k,'asset')};
-            credit_repayment(id, asset.program_id, amount, total);
+            let total = liabilities.get_or_use(asset.program_id, 0u128); let before = {balance(k,'asset')};
+            if witness.borrower_offer {{
+                assert(!repayment_hashes.contains(witness.loan_id));
+                repayment_hashes.set(witness.loan_id, hash);
+                loan_repayments.set(witness.loan_id, amount);
+                liabilities.set(asset.program_id, total + amount);
+            }} else {{
+                assert_eq(credit_assets.get(witness.commitment_id), asset);
+                credit_repayment(witness.commitment_id, asset.program_id, amount, total);
+            }}
             deposit.run(); {after(k,'asset','amount','+')}
         }});
     }}
@@ -174,7 +204,7 @@ def render_offer_module(name):
         }});
     }}
 '''
-    return proposal+upgrade()+'}\n'
+    return proposal+lender_extensions(globals(),P)+upgrade()+'}\n'
 
 
 def render_programs():
@@ -183,8 +213,9 @@ def render_programs():
 
     def write(name, body, deps):
         directory = name[:-5]
+        body = '\n'.join(line.rstrip() for line in body.splitlines()) + '\n'
         files[f'{directory}/src/main.leo'] = '// SPDX-License-Identifier: GPL-3.0-only\n// Generated by scripts/generate_multitoken.py.\n' + body
-        files[f'{directory}/program.json'] = json.dumps(dict(program=name,version='0.3.0',description='Versioned multi-token lending',license='GPL-3.0-only',leo='4.4.2',dependencies=[dict(name=n,location='local',path='../vendor/credits.network.aleo' if n=='credits.aleo' else '../'+n[:-5],edition=None) for n in deps]),indent=2)+'\n'
+        files[f'{directory}/program.json'] = json.dumps(dict(program=name,version='0.4.0',description='Bidirectional multiple-fill public and private offers',license='GPL-3.0-only',leo='4.4.2',dependencies=[dict(name=n,location='local',path='../vendor/credits.network.aleo' if n=='credits.aleo' else '../'+n[:-5],edition=None) for n in deps]),indent=2)+'\n'
         files[f'{directory}/.gitignore'] = 'build/\noutputs/\n.env\n'
 
     config=f"""const BOOTSTRAP: address = {BOOT};
@@ -243,12 +274,11 @@ program {C} {{
     hub=f'''import {C};
 export struct MerkleProof {{ siblings: [field; 16], leaf_index: u32 }}
 export struct Asset {{ program_id: identifier, token_id: field, family: u8, version: u16 }}
-export struct AssetPolicy {{ family: u8, version: u16, enabled: bool }}
+{offer_types()}
 struct ModuleTag {{ module: address, tag: u8 }}
 struct UpgradeKey {{ module: address, edition: u16 }}
 program {H} {{
     mapping approved: field => bool;
-    mapping assets: identifier => AssetPolicy;
     // Offer modules are keyed by program name: dynamic calls resolve names, not addresses.
     mapping offer_modules: identifier => bool;
     fn set_tag(public module: address, public tag: u8, public enabled: bool) -> Final {{
@@ -268,20 +298,6 @@ program {H} {{
             offer_modules.set(module, enabled);
         }};
     }}
-    // A token's route is immutable once registered. Revocation only stops new exposure.
-    fn set_asset(public token: identifier, public family: u8, public enabled: bool) -> Final {{
-        assert(family >= 1u8 && family <= 3u8);
-        assert_eq(token == 'credits', family == 1u8);
-        let sender = std::ctx::caller();
-        return final {{
-            assert_eq({C}::settings.get(true).admin, sender);
-            if assets.contains(token) {{
-                let old = assets.get(token);
-                assert_eq(old.family, family); assert_eq(old.version, 1u16);
-            }}
-            assets.set(token, AssetPolicy {{ family: family, version: 1u16, enabled: enabled }});
-        }};
-    }}
 {upgrade()}}}
 '''
     write(H,hub,[C])
@@ -297,10 +313,10 @@ export struct Loan {{
     loan_id: field, offer_module: identifier, commitment_id: field,
     credit_asset: {H}::Asset, collateral_asset: {H}::Asset,
     credit_amount: u128, collateral_amount: u128, repayment_amount: u128,
-    accruing_apr: u32, borrower_auth: field, lender_auth: field,
+    accruing_apr: u32, borrower_auth: field, lender_auth: field, borrower_offer: bool,
 }}
 struct State {{ witness_hash: field, maturity: u32, start: i64, status: u8 }}
-'''+OFFER_INTERFACE+f'''{loan_logic()}program {L} {{
+'''+OFFER_INTERFACE+offer_helpers(H,L)+f'''{loan_logic()}program {L} {{
     mapping loans: field => State;
     mapping liabilities: identifier => u128;
 '''
@@ -309,13 +325,13 @@ struct State {{ witness_hash: field, maturity: u32, start: i64, status: u8 }}
             a='witness.collateral_asset'
             loan+=f'''
     fn accept_{c}_{k}(public nonce: field, public offer_module: identifier, public commitment_id: field,
-        public loan: LoanTerms, collateral: {rec(k)}, borrower_salt: field{proof(k)})
+        public loan: LoanTerms, offer: {H}::OfferWitness, collateral: {rec(k)}, borrower_salt: field{proof(k)})
         -> {sig([k,c],['dyn record',rec(k),'public Loan','Final'])} {{
         {family(c,'loan.credit_asset')} {family(k,'loan.collateral_asset')}
         let (id, witness) = make_loan::[{L}](nonce, offer_module, commitment_id, loan, borrower_salt);
         let hash = BHP256::hash_to_field(witness);
         {deposit(k,'loan.collateral_asset','loan.collateral_amount','collateral','lock')}
-        let ({outputs([(c,'credit_compliance')],['credit','draw'])}) = OfferModule@(offer_module)::draw_{c}(commitment_id, loan, std::ctx::signer());
+        let ({outputs([(c,'credit_compliance')],['credit','draw'])}) = OfferModule@(offer_module)::draw_{c}(commitment_id, loan, offer, std::ctx::signer());
         return ({outputs([(k,'compliance'),(c,'credit_compliance')],['credit','change','witness'])}, final {{
             assert({H}::offer_modules.get_or_use(offer_module, false));
             assert(!loans.contains(id));
@@ -330,7 +346,7 @@ struct State {{ witness_hash: field, maturity: u32, start: i64, status: u8 }}
         {family(c,'witness.credit_asset')} {family(k,a)}
         let hash = repayment_witness_hash::[{L}](witness, amount, borrower_salt);
         // Repayment goes to the module recorded at origination, even if it was revoked since.
-        let ({outputs([(c,'credit_compliance')],['change','pay'])}) = OfferModule@(witness.offer_module)::receive_{c}(witness.commitment_id, witness.credit_asset, input{' as dyn record' if c=='aleo' else ''}, amount{', proofs' if c=='compliant' else ''});
+        let ({outputs([(c,'credit_compliance')],['change','pay'])}) = OfferModule@(witness.offer_module)::receive_{c}(witness, input{' as dyn record' if c=='aleo' else ''}, amount{', proofs' if c=='compliant' else ''});
         {payout(k,a,'witness.collateral_amount','std::ctx::signer()','release','collateral','collateral_compliance')}
         return ({outputs([(c,'credit_compliance'),(k,'collateral_compliance')],['change','collateral'])}, final {{
             let state = validate_repayment(witness, hash, amount);
@@ -356,7 +372,7 @@ struct State {{ witness_hash: field, maturity: u32, start: i64, status: u8 }}
         }});
     }}
 '''
-    write(L,loan+upgrade()+'}\n',['credits.aleo',C,H])
+    write(L,loan+borrower_extensions(globals())+upgrade()+'}\n',['credits.aleo',C,H])
     return files
 
 

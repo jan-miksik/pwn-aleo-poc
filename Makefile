@@ -1,4 +1,4 @@
-.PHONY: setup build compatibility test unit fuzz invariants check security probes
+.PHONY: setup build compatibility test unit fuzz invariants check security offers allowance probes
 # Devnode suites share a staged workspace; even `make -j check` must serialize them.
 .NOTPARALLEL:
 SEED ?= 20260920
@@ -19,11 +19,15 @@ fuzz:
 	python3 scripts/multitoken_fuzz.py --seed $(SEED) --cases $(FUZZ_CASES)
 invariants: build
 	python3 scripts/multitoken_integration.py --invariants-only --seed $(SEED) --steps $(STEPS)
-check: unit compatibility fuzz test invariants security
+check: unit compatibility fuzz test invariants security offers
 test: build unit
 	python3 scripts/multitoken_integration.py
 security: build
 	python3 scripts/multitoken_integration.py --security-only
+offers: build
+	python3 scripts/multitoken_integration.py --offers-only
+allowance: build
+	python3 scripts/multitoken_integration.py --allowance-only
 probes:
 	./scripts/leo build --path custody_probe --offline
 	./scripts/leo build --path usdcx_composition_probe --offline

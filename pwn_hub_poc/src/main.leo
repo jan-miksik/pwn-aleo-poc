@@ -3,12 +3,27 @@
 import pwn_config_poc.aleo;
 export struct MerkleProof { siblings: [field; 16], leaf_index: u32 }
 export struct Asset { program_id: identifier, token_id: field, family: u8, version: u16 }
-export struct AssetPolicy { family: u8, version: u16, enabled: bool }
+export struct OfferTerms {
+    direction: u8, credit_asset: Asset, collateral_asset: Asset,
+    min_draw: u128, max_draw: u128, collateral_ratio: u64, repayment_ratio: u64,
+    accruing_apr: u32, duration: u32, expiry: u32, maker_auth: field,
+}
+export struct OfferOpening { recipient: address, taker: address, salt: field }
+export struct OfferWitness { terms: OfferTerms, opening: OfferOpening, private_offer: bool }
+export struct BorrowFunding { requested: u128, collateral: u128 }
+export struct OfferCommitment {
+    protocol: address, module: identifier, terms: OfferTerms,
+    opening: OfferOpening, private_offer: bool,
+}
+export struct BorrowFillId {
+    protocol: address, module: identifier, offer_id: field,
+    borrower_auth: field, lender_auth: field, nonce: field,
+}
+
 struct ModuleTag { module: address, tag: u8 }
 struct UpgradeKey { module: address, edition: u16 }
 program pwn_hub_poc.aleo {
     mapping approved: field => bool;
-    mapping assets: identifier => AssetPolicy;
     // Offer modules are keyed by program name: dynamic calls resolve names, not addresses.
     mapping offer_modules: identifier => bool;
     fn set_tag(public module: address, public tag: u8, public enabled: bool) -> Final {
@@ -26,20 +41,6 @@ program pwn_hub_poc.aleo {
         return final {
             assert_eq(pwn_config_poc.aleo::settings.get(true).admin, sender);
             offer_modules.set(module, enabled);
-        };
-    }
-    // A token's route is immutable once registered. Revocation only stops new exposure.
-    fn set_asset(public token: identifier, public family: u8, public enabled: bool) -> Final {
-        assert(family >= 1u8 && family <= 3u8);
-        assert_eq(token == 'credits', family == 1u8);
-        let sender = std::ctx::caller();
-        return final {
-            assert_eq(pwn_config_poc.aleo::settings.get(true).admin, sender);
-            if assets.contains(token) {
-                let old = assets.get(token);
-                assert_eq(old.family, family); assert_eq(old.version, 1u16);
-            }
-            assets.set(token, AssetPolicy { family: family, version: 1u16, enabled: enabled });
         };
     }
     @custom

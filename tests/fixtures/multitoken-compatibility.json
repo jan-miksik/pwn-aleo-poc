@@ -14,38 +14,49 @@
       }
     },
     "pwn_hub_poc": {
-      "abi_sha256": "261f767b7ac30965eb59549dc2cf7281a66207fec4285917d9fa07b5cc2bde33",
-      "storage_and_constructor_sha256": "e2bda3600146beaf55c46f86e4ab9e5fda618fb14fc0d3fbc12179ce7e8b654b",
+      "abi_sha256": "230721ce9b69e52eb156c12dd7cedcc17d77d3782537851867c01ac799587897",
+      "storage_and_constructor_sha256": "d41fe71b56e267e5dc33c9be94e9ad2a7fae7d90c7fbefbcb8fa561c15749d8a",
       "finalizers": {
         "set_tag": "736217e5c2329655fc43064046de4c516890a22a2b859e0a85dcb20f4b5bcfc3",
-        "set_offer_module": "31e9e0b8c3b236d1bb30629ef3269392c862f1f85c057aa9a2fc5c6fa0575d43",
-        "set_asset": "bac7a89fa4cbe075215f62491c374674d9b70931ffc8a26021a78af2bb98a6e3"
+        "set_offer_module": "31e9e0b8c3b236d1bb30629ef3269392c862f1f85c057aa9a2fc5c6fa0575d43"
       }
     },
     "pwn_proposal_poc": {
-      "abi_sha256": "3fb9c1b348a765230c3ec062200eb92215048f9751fe700db3e8f243faecceda",
-      "storage_and_constructor_sha256": "1a16d20c48fea8d1a108cbbc380e6bc388141083c17697db8c4d64ca7bca5869",
+      "abi_sha256": "9e2910ab166fdf312fd2598fe56dd64e568afa6ca5fb42d7bfe22f3e94ee9ba5",
+      "storage_and_constructor_sha256": "31a6f05ff853131213cebaacc2d937f0578b95ffbc2e94d44e6a7f06f9af8480",
       "finalizers": {
-        "open_aleo": "61a214836805f9c326b8dff59378e539b52b5b8382d4e67278749996804ce87a",
-        "draw_aleo": "963c6d4730e3ec4e0d018eb5f7c5821d36f6538e9079887866ebc6cca09539c5",
-        "receive_aleo": "4b7fd0e487bb7abe5db09b322d8336050ffde35da2504bb151e709ea0cf2dc2f",
+        "open_aleo": "1c1bd3589b47f1e0617c056fe84a5e91c08d1f9a3ec007eff331d05647810d53",
+        "draw_aleo": "3af02a07399d91449ccb19735386f6022f7d8278aced7912af656698c505204a",
+        "receive_aleo": "612cd99df8748fc9f96a504bd361b0694718e88667483cf8592e629bd1a0576b",
         "cancel_aleo": "5bf2bab94453f2e5e9cebde78c107a6e6d3b94a159c6ed7fe6cc8c6878e64434",
         "withdraw_aleo": "967a90848c1e533b78b460b787da2edf6a49f9219c83051d32dc9f70efeb680a",
-        "open_arc20": "0c1824dea33269e52e28bf9c867348c22ea9ef60cdab963caf018dd07a7b793b",
-        "draw_arc20": "35a42cc81f9127aea6f2d9c4356f1c57bdfe79e7e5b95ac0f3ec48c79291bca0",
-        "receive_arc20": "2610dfb3d3ee1339151b35d760dbf7373abcf3b6515df0475b701e648ce7e803",
+        "open_arc20": "24ee4b9b216a762635e3a23b3923ee1b0eaee1b4409a6e2d7f5833acb1953764",
+        "draw_arc20": "ebe230834f701ccaf2f3ee519f3480a1476f67b281364701b0a0f1f7a1d85dcf",
+        "receive_arc20": "151877acb1ac349e112dbb081d2a0f05f814301b922a3ac6f14734bd5af40414",
         "cancel_arc20": "38e9a183da8fcd3a6406a9ee5f2c893081438ecd48d3492b8f47a5bb0f4ae8fc",
         "withdraw_arc20": "7b51d8ec8f787d55791fb998346c151cb70286db7b36c4a4fc3e55258251c197",
-        "open_compliant": "86fd2a265d38a15dbf5e83af403f0b75691f1addc8f9435b23fd101cd553c420",
-        "draw_compliant": "31fc9cc9e26a33a5659c81f9d09bc24dd1047229931dac909c94e1ce85af066a",
-        "receive_compliant": "b82cd913bfef288c43b2994798b641976fbf301dfb17786d33d2c87f09cf9cf8",
+        "open_compliant": "8e9083706e2137a3a7c778b9e610efc7847a854787e7d2f59696d024847367f2",
+        "draw_compliant": "27bf794f89d9abb48e6f639a35cf4950a02cc6b1609a8fddfb62654ea2943cbd",
+        "receive_compliant": "9701148952218d3bc9fda99ea7259ea12c61c1b56bada57a49f8e20383e7f3af",
         "cancel_compliant": "6b338c39adbbe10970604e69e24d4ed633ca8163db053afc6ead31eea0afe432",
-        "withdraw_compliant": "e1c2da7c24c8f2aa1ed785be307b40613137c4d8100128e7bbad952a26dc599e"
+        "withdraw_compliant": "e1c2da7c24c8f2aa1ed785be307b40613137c4d8100128e7bbad952a26dc599e",
+        "open_private_aleo": "61ef7776433d9400c8b42c99488ebc052bfa2fc2874a114b357413a8aed336b4",
+        "cancel_private_aleo": "5df4ba14bf2533c8c70e9c9285b694a2a93b57a28cad86163f9301ce806efff5",
+        "withdraw_private_aleo": "37e5ebab5f501076d4411798d44212aa78f867a15ec3bb6ffbed57c6be301da4",
+        "withdraw_loan_aleo": "cc657c7206d88a2bbab7300a7a7592c68357a1ae3f3375dc0420280399f3f72e",
+        "open_private_arc20": "479a923df08c6d066fc82a24ba294c27fb5e5feddeaa769042c4fdb3007dcb1a",
+        "cancel_private_arc20": "37a9ae8658e4697ce6c5b30e39cf68e1d8d74977a9e4bb269268f2593b0f6619",
+        "withdraw_private_arc20": "b55bbbc1cd5c1e7a60958a8dc104f45f1c416d00e7b1f7e414b4e2ee725f43ed",
+        "withdraw_loan_arc20": "22abe430b6261f40898b6d04263e73d72749d57bc3635e6468826adba5b8174e",
+        "open_private_compliant": "515d2a09cea7802e93bec364ddaa711f3c4f26bac1e43aa6564a372ba0a708c7",
+        "cancel_private_compliant": "c0e278903ca62cd30ca2b52b3f5599e9bfa09972c3b96aa85d49319b7f7ad541",
+        "withdraw_private_compliant": "7a10fcd6b2b35c43f1fe40bb9917c6bdd7e1880629543b584cd0b08c9dc83e03",
+        "withdraw_loan_compliant": "3f76087c2f4c353772e6b300231c5cfbd84603a1f9e2607fc00501e599ea1a7d"
       }
     },
     "pwn_loan_poc": {
-      "abi_sha256": "c42480aaf427f0f8a93e9fa41200f6c58d994e8a81799c747aaa3fdb58b32b22",
-      "storage_and_constructor_sha256": "b5b684223333c0436bc05b370d891f9f111e93f492bd79a6cfb8b8d6aec18cc1",
+      "abi_sha256": "eafe65e825148d22d947814618998e595bc4d9e8e9424522864c45a2a0b00694",
+      "storage_and_constructor_sha256": "23d8b970ff66483f4d752393e377e93c0f26bfadd96d145c58bd5a785b866157",
       "finalizers": {
         "accept_aleo_aleo": "f05f1ee94d457ee2a4c5c40f82698158745c8f812d572ad6595935bed926cd2e",
         "repay_aleo_aleo": "2ca02cf05d5cb0c4378d38ecf594592520e600027186eb78cc9beb1dd46a0b91",
@@ -67,7 +78,16 @@
         "repay_compliant_compliant": "56a6f2fba6ed712bc3f4b881b005f0ee8475e8dbff7657dffb9af3377c7d9f85",
         "claim_aleo": "bc8cebb97c234657afe8043e38c83b57487e7dfd4361a5360a437f61b6d3ebcb",
         "claim_arc20": "4d858c6573e136becf9d93c148470344efa42a5c0c56804d79e7db90ae6f91b6",
-        "claim_compliant": "38f9bef3d51f7c9509708da8a349cc4ac4c2eea1d60919bb3c78cb0c9a5b8b03"
+        "claim_compliant": "38f9bef3d51f7c9509708da8a349cc4ac4c2eea1d60919bb3c78cb0c9a5b8b03",
+        "open_borrow_aleo": "37f884a51da50dd3d80bda568a088cd28ce86cebd1fafc5bdf548e67cce65ad3",
+        "cancel_borrow_aleo": "f459568a352dbe155a21688f796c0f5e4513d433c38585ed19f11f2b0912f2e5",
+        "open_borrow_arc20": "0b7408f127c67fd2282e9715a6c159912a00ecdd58c6cbcdbab098722be8713b",
+        "cancel_borrow_arc20": "7df00721e027c67e749cd1f68d49f65f6d6e8eb9db4a9528b75b713f081dbc13",
+        "open_borrow_compliant": "b54a47cc5c1ab09cc4862584c2654671a485d329b850e258d28a7e9ff30c8f6a",
+        "cancel_borrow_compliant": "037f07ca788e77911f68f8e297b73c86683e2558c8cad524f04bc16e2f12510c",
+        "accept_borrow_aleo": "8ea93c3b6767711c5c25774c4e6bb0fd41979dea9aadb1d48231f62e73e63419",
+        "accept_borrow_arc20": "4f805395ca012b12db6106123e59bcc74a6e0eda02787ede3194c9c6fdb50735",
+        "accept_borrow_compliant": "97e24279dbd48a2415635f31de21245ddade8af999e88a40526a5f1ef3f33796"
       }
     }
   }
