@@ -18,9 +18,10 @@ Validated locally on 2 November 2026 with Leo 4.4.2 (`f3578da`).
 - Repayment remains possible after maturity until the lender's claim settles.
 - The Python harness covers the new interfaces. The SDK, app, encrypted delivery,
   private-fee UX and recovery remain grant deliverables.
-- The grant copy and matching five-page PDF contain approximately 1,440 words,
-  five template sections, an editable flow diagram, explicit privacy limits and
-  the unchanged $85,000 / 17-week milestones.
+- The grant copy and matching PDF retain the original section structure and
+  three tables, with updated offer, settlement and privacy text. The title is
+  "Grant Proposal: Private Lending on Aleo"; SCALE names the grant programme.
+  The $85,000 / 17-week milestones are unchanged.
 
 ## Checks
 
