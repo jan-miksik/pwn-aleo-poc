@@ -18,7 +18,7 @@ Validated locally on 2 November 2026 with Leo 4.4.2 (`f3578da`).
 - Repayment remains possible after maturity until the lender's claim settles.
 - The Python harness covers the new interfaces. The SDK, app, encrypted delivery,
   private-fee UX and recovery remain grant deliverables.
-- The full grant proposal has been revised and edited to 2,790 words. Its
+- The full grant proposal has been revised and edited to 2,768 words. Its
   substantive sections, 24 section headings, seven tables (104 cells) and three
   corrected diagrams are retained. The title is "Grant Proposal: Private
   Lending on Aleo"; SCALE names the grant programme. The $85,000 / 17-week
@@ -81,21 +81,29 @@ original text and embedded image contents are unchanged.
 
 The [designated revised document](https://docs.google.com/document/d/1U5hCfMvDNpywJMmi3pvsk516FKDVI3JKPX0qUmsEmls/edit)
 was updated in place and renamed "Grant Proposal: Private Lending on Aleo".
-Its 181 content blocks match the [HTML source](grant-submission.html). The
-editorial pass reduces the previous 3,566 words to 2,790 and the overview to
-259 words. It consolidates repeated qualifications, removes speculative salary
+Its 186 content blocks match the [HTML source](grant-submission.html). The
+editorial pass reduces the previous 3,566 words to 2,768 and the overview to
+247 words. It consolidates repeated qualifications, removes speculative salary
 and invoice products, places integration targets in Collaborative Value, and
 keeps token safeguards and disclosures in Asset Scope and Privacy Model.
 Implementation commitments remain in the corresponding milestones. Market
 context and the M2 heading are named consistently. All 42 hyperlinks and the
 table dimensions are retained.
 
+The final copy edit clarifies the oracle-free settlement description and the M4
+acceptance sentence, removes two repeated sentences and a generic integration
+phrase, and groups M1 acceptance into four native bullets. All existing M1
+conditions and the closing live-USDCx, privacy-review and audit requirements are
+retained. The final PDF has 12 nonempty pages; changed pages were visually
+reviewed, and pages 2, 3, 7, 8 and 9 are pixel-identical to the previously
+reviewed export.
+
 Native DOCX verification confirms seven tables with bold, repeating first-row
 headers, 25 headings including the title kept with their following content,
 three nonempty embedded diagrams and an empty footer.
 
 The [submission PDF](grant-submission.pdf) is the final native Google Docs
-export. All 181 content blocks are present across its 11 pages, with no blank
+export. All 186 content blocks are present across its 12 pages, with no blank
 page. The rendered proposal and final layout corrections were visually checked,
 including the lifecycle, architecture and privacy figures on pages 5, 6 and 8.
 The embedded figures match the repository assets, allowing for Google Docs'
