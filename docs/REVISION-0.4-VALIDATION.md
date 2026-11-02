@@ -63,6 +63,6 @@ encrypted sharing/recovery, private-fee wallet flows, the deficit policy, audit
 and immutable deployment. See [SECURITY-REVIEW.md](../SECURITY-REVIEW.md).
 
 The proposal is saved in the
-[Google Doc](https://docs.google.com/document/d/1pGR4fng2Mpj6cYE0aJZ9U-lE5wCBXe88NlC_UzJsSRc/edit),
+[Google Doc](https://docs.google.com/document/d/1U5hCfMvDNpywJMmi3pvsk516FKDVI3JKPX0qUmsEmls/edit),
 with [HTML source](grant-submission.html) and [submission PDF](grant-submission.pdf)
 in this directory. The application itself has not been submitted.

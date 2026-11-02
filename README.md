@@ -62,7 +62,7 @@ settlement models may require a new interface/core version.
 - [SECURITY-REVIEW.md](SECURITY-REVIEW.md): invariants and unresolved issuer risks.
 - [Funding at acceptance](research/funding-at-acceptance.md): tested allowance route and its limits.
 - [Revision validation](docs/REVISION-0.4-VALIDATION.md): delivered changes, checks and deployment boundary.
-- [Grant proposal](https://docs.google.com/document/d/1pGR4fng2Mpj6cYE0aJZ9U-lE5wCBXe88NlC_UzJsSRc/edit), [submission PDF](docs/grant-submission.pdf), [market evidence](research/grant-market-evidence.md).
+- [Grant proposal](https://docs.google.com/document/d/1U5hCfMvDNpywJMmi3pvsk516FKDVI3JKPX0qUmsEmls/edit), [submission PDF](docs/grant-submission.pdf), [market evidence](research/grant-market-evidence.md).
 - [archive/](archive/README.md): historical single-pair public-testnet evidence.
 - [research/](research/SEMANTICS.md), [vendor/README.md](vendor/README.md): source provenance.
 
