@@ -9,7 +9,7 @@ CORE=['pwn_config_poc','pwn_hub_poc','pwn_proposal_poc','pwn_loan_poc']
 OFFER_B='pwn_offer_b_poc'
 TOKENS=['merkle_tree','arc20_multisig_core','arc20_sol','arc20_wbtc','usdcx_multisig_core','usdcx_freezelist','usdcx_stablecoin','usad_multisig_core','usad_freezelist','usad_stablecoin']
 
-def stage():
+def stage(include_allowance=False):
     base=ROOT/'artifacts/multitoken/local-workspace'; vendor=base/'vendor';vendor.mkdir(parents=True,exist_ok=True)
     shutil.copyfile(ROOT/'vendor/credits.network.aleo',vendor/'credits.aleo')
     provenance=[]
@@ -65,6 +65,11 @@ program pwn_delta_token.aleo {
     deps += [dict(name='pwn_delta_token.aleo',location='local',path='../pwn_delta_token',edition=None)]
     deps += [dict(name='credits.aleo',location='local',path='../vendor/credits.aleo',edition=None)]
     deps += [dict(name=n+'.aleo',location='local',path='../'+n,edition=None) for n in CORE+[OFFER_B]]
+    if include_allowance:
+        import multitoken_allowance_probe
+        multitoken_allowance_probe.stage(base)
+        name=multitoken_allowance_probe.NAME
+        deps.append(dict(name=name+'.aleo',location='local',path='../'+name,edition=None))
     (driver/'program.json').write_text(json.dumps(dict(program='pwn_local_fixture.aleo',version='0.1.0',description='Local-only fixture loader',license='GPL-3.0-only',leo='4.4.2',dependencies=deps),indent=2)+'\n')
     (driver/'src/main.leo').write_text('\n'.join('import '+d['name']+';' for d in deps)+MATH+'''
 struct Authority { domain: u8, protocol: address, account: address, salt: field }
@@ -76,8 +81,11 @@ program pwn_local_fixture.aleo {
     fn math_round(amount: u128, ratio: u64) -> u128 { return rounded(amount, ratio); }
     fn math_interest(amount: u128, apr: u32, elapsed: u32) -> u128 { return accrued(amount, apr, elapsed); }
     fn dynamic_sol(input: arc20_sol.aleo::Token) -> dyn record { return input as dyn record; }
-    fn forward_set_asset(public token: identifier, public family: u8, public enabled: bool) -> Final {
-        let action = pwn_hub_poc.aleo::set_asset(token, family, enabled);
+    fn authority(account: address, salt: field, domain: u8) -> field {
+        return BHP256::hash_to_field(Authority { domain: domain, protocol: pwn_loan_poc.aleo, account: account, salt: salt });
+    }
+    fn forward_set_module(public module: identifier, public enabled: bool) -> Final {
+        let action = pwn_hub_poc.aleo::set_offer_module(module, enabled);
         return final { action.run(); };
     }
     fn forward_set_admin(public admin: address, public upgrader: address) -> Final {

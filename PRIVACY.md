@@ -1,46 +1,72 @@
 # Privacy and linkability
 
-Amounts are not hidden. The protocol keeps participant addresses out of its
-public state and delivers tokens as private records. No anonymity-set size or
-traffic-analysis resistance is measured. The on-chain measurements come from the
-Milestone 1 testnet run of the single-pair predecessor ([archive/](archive/README.md));
-the model is unchanged.
+Private offers conceal their opening before acceptance; active loan economics
+remain public. This is not anonymity against counterparties, timing/amount
+correlation, issuer observers or delegated provers.
 
-| Operation | Public | Private | Linkable |
-| --- | --- | --- | --- |
-| open | commitment ID, terms, amount, lender hash, escrow delta | input/change records, salt | fee payer (if public), shielding by amount/time |
-| accept | loan ID, offer module, commitment ID, terms, amounts, both hashes, maturity, both token calls | collateral record, salt, delivered credit | commitment → loan by ID |
-| repay / claim | full loan witness, amounts, status change | records, salt, recipient | loan → commitment → open |
-| cancel / withdraw | commitment ID, terms, lender hash, amount, escrow delta | salt, payout record | prior positions |
+| Operation | Public | Private or off-chain |
+| --- | --- | --- |
+| Public lender open | Terms, ID, lender authorization hash, amount and escrow delta | Funding/change records, ownership salt |
+| Private lender open | ID, salted commitment, expiry, credit asset and capacity | Terms, designated taker, opening salt, ownership salt, records |
+| Borrower open | ID, commitment, expiry, requested capacity, escrow asset/amount; advertised terms only in public mode | Opening, recipient, ownership salt, funding/change records |
+| Acceptance | Loan witness, assets, principal/collateral, rate, maturity, authorization hashes, offer link and token movements | Opening, input/output records and ownership secrets |
+| Repay / claim | Loan witness, payment/claim amount and status | Records and ownership salt |
+| Cancel / withdraw | IDs, amounts, assets; public lender cancellation also carries its public terms | Private opening and ownership secrets |
 
-Token futures expose program and amount, not private owners. Transition IDs,
-record commitments/serials and transaction grouping are observable.
+Private borrower openings require a canonical zero public listing, enforced in
+the proof; secret terms are never forwarded to finalization. Public expiry,
+capacity and custody fields still reveal information before acceptance.
+All finalizer arguments, including nested token futures, are public. An acceptance
+attempt exposes its submitted loan economics even if finalization rejects it;
+only the complete offer opening remains private.
 
-## Authorization hashes
+## Discovery and payloads
 
-`BHP256({domain, protocol, account: signer, salt})`. Borrowers need the lender's
-hash, not the address. The hash carries no position ID, so a **reused salt is a
-persistent pseudonym** across positions — use one fresh random salt per
-commitment and per loan (client enforces; audit fails on reuse). A lost salt
-strands the position. Fixture salts are public and give no privacy.
+Public borrower terms alone are insufficient for acceptance: the lender also
+needs the opening (payout recipient and commitment salt). The maker shares it
+off-chain. Once shared, acceptance requires no new maker signature or maker-owned
+private record. Sharing exposes the recipient to the prospective lender; freely
+publishing the payload exposes it to anyone. The SDK must distinguish
+discoverable terms from availability of the acceptance payload.
 
-## Fees and rejected transactions
+Private offers bind the designated taker to the execution signer. Link possession
+does not authorize another account. Both sides support repeated fills, but private
+offers retain one designated counterparty. Changing visibility, recipient, terms,
+salt, module or direction fails commitment verification.
 
-A public fee names the payer. A **rejected** execution is published beside its
-fee transaction, witness included, so it leaks the same way — testnet run 1
-paid a public fee on the expected-rejected early claim and linked the lender to
-both commitments and both loans (still on chain; [M1 report](archive/docs/M1-REPORT.md)).
-The client now requires `fee_private` on every lending call. With private fees
-none of the six lending flows contains a participant address, on devnode
-([privacy-audit-private-fees.json](archive/artifacts/privacy-audit-private-fees.json))
-and on testnet ([privacy-matrix.json](archive/artifacts/testnet/lifecycle/privacy-matrix.json),
-[chain-audit.json](archive/artifacts/testnet/private-fee/chain-audit.json)). Remaining
-exposure: fee amount, the public shielding that funded the fee record, and
-amount/timing correlation between shielding and lending.
+The PoC accepts witness fixtures. Encrypted delivery/import, storage, record
+recovery and wallet UX remain SDK work. Never put ownership salts or spending keys
+into a shared opening. Counterparties verify terms, exact token programs,
+commitment, expiry, current capacity and cancellation against chain state.
 
-## USDCx
+## Authorization and correlation
 
-The compliant token emits `ComplianceRecord` (sender, recipient, amount) to its
-compliance account; private deposits carry two freeze-list non-inclusion
-proofs and the root reaches finalization. Privacy from users is not privacy
-from that operator; a frozen escrow or paused token blocks settlement.
+Ownership is bound to `BHP256({domain, protocol, account: signer, salt})`.
+Use fresh random ownership and opening salts for each new offer. Borrower-created
+loans inherit the borrower's committed authority; each accepting lender uses a
+fresh salt for their loan. These loans are already publicly linked to the offer.
+A lost ownership salt strands the position unless the client has a backup.
+
+The offer commitment includes core, module, direction, full terms, opening and
+visibility. Loan IDs and settlement hashes bind fills independently. Fixtures
+use known salts and development keys and provide no operational privacy.
+
+## Fees, failed calls and proving
+
+The local harness uses public fees and usually skips execution proofs; it is not
+evidence of fee-payer privacy. Its privacy checks inspect the execution separately
+from fees and confirm intended private fields are absent. Generated bytecode is
+also inspected: private arguments forwarded into a finalizer become public.
+Representative proof-generating tests do not make the devnode verify proofs.
+
+A production SDK must require private fees without a silent public fallback and
+inspect rejected as well as successful transactions. The historical
+[predecessor evidence](archive/README.md) demonstrated why a rejected call with
+a public fee links its payer to a loan; it does not validate this revision.
+
+USDCx/USAD compliance records disclose transfer details to their observer.
+A remote prover may see private inputs unless a verified confidential setup
+protects them. Confidential active terms and hidden amounts are not implemented.
+
+The optional allowance experiment intentionally exposes public lender funding
+and quote fields. Its privacy properties differ from funded record-based offers.

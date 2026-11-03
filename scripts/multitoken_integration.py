@@ -46,11 +46,11 @@ def execute(fn,args=(),key=AK,fail=False,prove=False):
     else:assert ok,label+'\n'+log[-3500:]
     LAST=result
     return result.get('outputs',[])
-def decrypt_payout(k,amount,key=AK,owner=DEV):
+def decrypt_payout(k,amount,key=AK,owner=DEV,function='transfer_public_to_private'):
     """Read the actual nested output; a dyn record only exposes its root."""
     tx=rpc('transaction/'+LAST['transaction_id'])
     prog=ASSETS[k][0]+'.aleo'
-    transitions=[x for x in tx['execution']['transitions'] if x['program']==prog and x['function']=='transfer_public_to_private']
+    transitions=[x for x in tx['execution']['transitions'] if x['program']==prog and x['function']==function]
     assert len(transitions)==1,transitions
     records=[x['value'] for x in transitions[0]['outputs'] if x.get('value','').startswith('record1')]
     record=records[1 if ASSETS[k][1]==3 else 0]
@@ -75,8 +75,8 @@ def private(k,amount,account=DEV,key=AK):
     if k=='aleo':return execute('credits.aleo::transfer_public_to_private',[account,f'{amount}u64'],key)[0]
     p,f=ASSETS[k];out=execute(p+'.aleo::mint_private',[account,f'{amount}u128'])
     return out[1 if f==3 else 0]
-def auth(salt):
-    path=OUT/'auth.json';code,log=cli(['run','auth',DEV,f'{salt}field','--path',ENTRY,'--json-output='+str(path)],'auth')
+def auth(salt,account=DEV,domain=1):
+    path=OUT/'auth.json';code,log=cli(['run','authority',account,f'{salt}field',f'{domain}u8','--path',ENTRY,'--json-output='+str(path)],'auth')
     assert code==0,log[-2000:]
     return json.loads(path.read_text())['outputs'][0]
 def terms(c,k,salt,duration=1000,apr=0):
@@ -91,8 +91,13 @@ def loan_terms(ts,amount):
             f"collateral_amount: {(amount*ratio('collateral_ratio')+9999)//10000}u128, repayment_amount: {(amount*ratio('repayment_ratio')+9999)//10000}u128, "
             f"accruing_apr: {g('accruing_apr')}, duration: {g('duration')}, lender_auth: {g('lender_auth')} }}")
 def module_id(module):return "'"+module[:-5]+"'"
-def accept_args(k,ts,cid,salt,amount=400,nonce=1,module=P,collateral=None):
-    return [f'{nonce}field',module_id(module),cid,loan_terms(ts,amount),collateral or private(k,1000,B,BK),f'{salt}field']+proofs(k)
+def empty_terms():
+    return f'{{ direction: 0u8, credit_asset: {asset("aleo")}, collateral_asset: {asset("aleo")}, min_draw: 0u128, max_draw: 0u128, collateral_ratio: 0u64, repayment_ratio: 0u64, accruing_apr: 0u32, duration: 0u32, expiry: 0u32, maker_auth: 0field }}'
+def offer_witness(terms=None,opening=None,private_offer=False):
+    opening=opening or f'{{ recipient: {DEV}, taker: {B}, salt: 1field }}'
+    return f'{{ terms: {terms or empty_terms()}, opening: {opening}, private_offer: {str(private_offer).lower()} }}'
+def accept_args(k,ts,cid,salt,amount=400,nonce=1,module=P,collateral=None,offer=None):
+    return [f'{nonce}field',module_id(module),cid,loan_terms(ts,amount),offer or offer_witness(),collateral or private(k,1000,B,BK),f'{salt}field']+proofs(k)
 def accept(c,k,ts,cid,salt,nonce=1,module=P):
     out=execute(L+'::accept_'+route(c)+'_'+route(k),accept_args(k,ts,cid,salt,nonce=nonce,module=module),BK)
     check(f'{c}/{k} private credit owner',f'owner: {B}' in out[-4])
@@ -105,15 +110,17 @@ def main(argv=None):
     modes=parser.add_mutually_exclusive_group()
     modes.add_argument('--security-only',action='store_true')
     modes.add_argument('--invariants-only',action='store_true')
+    modes.add_argument('--offers-only',action='store_true')
+    modes.add_argument('--allowance-only',action='store_true')
     parser.add_argument('--seed',type=int,default=20260920)
     parser.add_argument('--steps',type=int,default=30,help='Random actions after the invariant regression prefix')
     options=parser.parse_args(argv)
     if options.steps<0:parser.error('--steps must be nonnegative')
-    mode='security' if options.security_only else 'invariants' if options.invariants_only else 'integration'
+    mode='security' if options.security_only else 'invariants' if options.invariants_only else 'offers' if options.offers_only else 'allowance' if options.allowance_only else 'integration'
     OUT=ROOT/'artifacts/multitoken'/mode
     OUT.mkdir(parents=True,exist_ok=True)
     seq=0;LAST={};checks.clear();PROVED.clear()
-    base=stage();ENTRY=base/'pwn_local_fixture'
+    base=stage(include_allowance=options.allowance_only);ENTRY=base/'pwn_local_fixture'
     with socket.socket() as s:s.bind(('127.0.0.1',0));port=s.getsockname()[1]
     ENDPOINT=f'http://127.0.0.1:{port}'
     COMMON=['--path',ENTRY,'--endpoint',ENDPOINT,'--network','testnet','--devnet','--consensus-version','19','--offline']
@@ -127,18 +134,17 @@ def main(argv=None):
         else:raise RuntimeError('devnode not ready')
         code,log=cli(['deploy',*COMMON,'--skip','credits.aleo','--private-key',AK,'--skip-deploy-certificate','--broadcast','--yes'],'deploy')
         assert code==0,log[-4000:]
-        check('protocol and real token fixtures deployed',log.count('Deployment confirmed!')==17)
+        check('protocol and real token fixtures deployed',log.count('Deployment confirmed!')==17+int(options.allowance_only))
         execute(C+'::initialize');execute(H+'::set_offer_module',[module_id(P),'true']);execute(H+'::set_tag',[L,'1u8','true'])
         execute('credits.aleo::transfer_public',[B,'1000000000u64'])
         for k,(p,f) in ASSETS.items():
-            execute(H+'::set_asset',[f"'{p}'",f'{f}u8','true'])
             if f==3:
                 execute(p+'.aleo::initialize',['1u128','1u128','6u8','1000000000000000000000000000000u128',DEV])
                 execute(p.replace('stablecoin','freezelist')+'.aleo::initialize',[DEV,'1000u32'])
                 execute(p.replace('stablecoin','freezelist')+'.aleo::update_role',[DEV,'24u16'])
             if f!=1:execute(p+'.aleo::update_role',[DEV,'15u16'])
         salt=100
-        for c in ([] if options.security_only or options.invariants_only else ASSETS):
+        for c in ([] if mode!='integration' else ASSETS):
             for k in ASSETS:
                 salt+=1;ts,cid=open_(c,k,salt);w=accept(c,k,ts,cid,salt+1000)
                 check(f'{c}/{k} locked',mapping(P,'available_credit',cid)=='600u128' and 'status: 1u8' in mapping(L,'loans',lid(w)))
@@ -153,6 +159,12 @@ def main(argv=None):
         if options.invariants_only:
             import multitoken_invariants
             multitoken_invariants.run(sys.modules[__name__],options.seed,options.steps)
+        if options.offers_only:
+            import multitoken_offer_tests
+            multitoken_offer_tests.run(sys.modules[__name__])
+        if options.allowance_only:
+            import multitoken_allowance_probe
+            multitoken_allowance_probe.run(sys.modules[__name__])
         completed=True
     finally:
         node.terminate()

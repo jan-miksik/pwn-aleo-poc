@@ -1,5 +1,10 @@
 # Design notes before the lending implementation
 
+Historical notes for the September single-pair predecessor. Current interfaces,
+multi-token coverage and privacy limits are in [MULTITOKEN.md](../MULTITOKEN.md),
+[PRIVACY.md](../PRIVACY.md) and the
+[funding-at-acceptance result](funding-at-acceptance.md).
+
 Inspected 2026-09-15:
 
 - [PWNLoan](https://github.com/PWNDAO/pwn_protocol/blob/v1.5-deployment-changes/src/core/loan/PWNLoan.sol): `create`, `_settleNewLoan`, `repay`, repayment custody and loan settlement. Its product-dependent debt calculation, hooks and funding allowances are not copied.

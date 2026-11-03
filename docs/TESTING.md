@@ -2,12 +2,14 @@
 
 ```sh
 make unit            # generator, harness and invariant-oracle regressions (stdlib only)
-make compatibility   # build + compare ABI, storage, constructors, 43 finalizers with tests/fixtures/multitoken-compatibility.json
+make compatibility   # build + compare ABI, storage, constructors, all finalizers with tests/fixtures/multitoken-compatibility.json
 make fuzz            # 89 fixed boundaries + 100 seeded cases in the real Leo VM
 make invariants      # deterministic prefix + 30 randomized lifecycle actions
 make test            # 25 asset-pair lifecycle matrix
 make security        # adversarial suite, incl. real-proof substitution case
-make check           # all of the above
+make offers          # both directions/modes, multiple fills, reservations and loan-specific rights
+make allowance       # isolated public-USDCx allowance/native-collateral experiment
+make check           # all baseline suites (allowance is a separate optional experiment)
 
 make fuzz SEED=42 FUZZ_CASES=1000
 make invariants SEED=42 STEPS=100
@@ -22,7 +24,8 @@ workspace — run them one at a time. Each run writes its report to
 
 `scripts/generate_multitoken.py` renders token-specific entry points (signatures,
 transfers, compliance outputs, reserve reads); `scripts/multitoken_logic.py`
-holds shared validation/accounting helpers rendered into the same programs. The
+holds shared validation/accounting helpers; `scripts/multitoken_offers.py` adds
+commitments and borrower reservations, rendered into the same programs. The
 entry points keep the order: validate → reserve precondition → state update →
 token finalizers → reserve delta postcondition.
 
@@ -42,8 +45,8 @@ failure (snarkVM overflow panics count, other panics fail). Logs per case under
 
 ## Invariants
 
-`multitoken_invariants.py` keeps an event model and compares it with devnode
-mappings after every action, including rejected ones:
+`multitoken_invariants.py` models generated lender-offer lifecycles and compares
+them with devnode mappings after every action, including rejected ones:
 
 1. proposal liabilities per asset = Σ available credit + unwithdrawn repayments;
 2. loan liabilities per collateral = Σ collateral of active loans;
@@ -66,9 +69,33 @@ CLI help or connection errors never count as a passed negative test. The
 substitution case requires the node's "commitment does not exist" diagnostic
 and keeps a genuine-proof control.
 
+## New offers
+
+`make offers` uses three distinct local identities, covers all nine family pairs
+in public/private borrower modes and private lender mode, and checks real payout
+decryption/spendability. It verifies reserve partitioning after each fill,
+rollback on rejected fills, independent lender withdrawals, cancellation of
+unused escrow, mixed repayment/default outcomes, replay and rounding remainders.
+The classic integration suite continues to cover all 25 pinned asset pairs.
+Borrower reservation accounting is exercised in this deterministic suite;
+the randomized lender model does not model unused borrower reservations.
+
+The private-opening checks inspect accepted execution data, excluding public test
+fees. Adversarial tests exercise unauthorized and altered openings; proof-generated
+cases remain separately identified in results. Production encrypted delivery and
+private fee UX are not implemented by these test helpers.
+The security suite also reads a confirmed rejected execution: submitted loan
+economics are public, while the complete opening remains private.
+
+`make allowance` stages a separate test program only for that run. It verifies
+public USDCx approval and quote posting move no principal, borrower-signed atomic
+funding from a public allowance, and rollback on revocation/insufficient funds.
+A test-only refund cleans up collateral; the probe has no loan economics.
+
 ## Scope
 
-Local devnode: no proof verification (except the stated cases), no deployment
-certificates, no consensus. Coverage is counted in scenarios and assertions, not
+Local devnode: no node proof verification, no deployment certificates, no consensus.
+Selected cases generate real execution proofs; reports list them separately.
+Coverage is counted in scenarios and assertions, not
 lines. Not covered: proof-enabled public-network validation, browser/SDK
 proving, live USDCx freeze-list operation, real block-time APR calibration.

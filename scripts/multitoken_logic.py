@@ -15,6 +15,12 @@ fn authority_hash::[DOMAIN: u8, PROTOCOL: address](salt: field) -> field {{
 fn position_id::[DOMAIN: u8, PROTOCOL: address](authority: field, nonce: field) -> field {{
     return BHP256::hash_to_field(PositionId {{ domain: DOMAIN, protocol: PROTOCOL, authority: authority, nonce: nonce }});
 }}
+fn validate_asset(asset: {hub}::Asset) {{
+    assert(asset.family >= 1u8 && asset.family <= 3u8);
+    assert_eq(asset.version, 1u16);
+    assert_eq(asset.token_id, 0field);
+    assert_eq(asset.program_id == 'credits', asset.family == 1u8);
+}}
 fn validate_aleo_asset::[VERSION: u16](asset: {hub}::Asset) {{
     assert_eq(asset.family, 1u8);
     assert_eq(asset.version, VERSION);
@@ -33,20 +39,15 @@ fn validate_token_asset::[FAMILY: u8](asset: {hub}::Asset) {{
 def proposal_logic(config, hub, proposal, core):
     module = proposal[:-5]  # the module's own Hub registry key
     return f'''
-// Admission applies only to new exposure; settlement must survive delisting.
+// Asset compatibility is structural; there is no administrative asset registry.
 const MIN_DURATION_BLOCKS: u32 = 10u32;
 const MAX_DURATION_BLOCKS: u32 = 3153600u32;
 const MAX_APR_BPS: u32 = 100000u32;
 const MAX_RATIO_BPS: u64 = 1000000u64;
 const SECONDS_PER_BLOCK: u32 = 10u32;
-final fn require_enabled(asset: {hub}::Asset) {{
-    let policy = {hub}::assets.get(asset.program_id);
-    assert(policy.enabled);
-    assert_eq(policy.family, asset.family);
-    assert_eq(policy.version, asset.version);
-    assert_eq(asset.token_id, 0field);
-}}
 fn validate_open_terms(terms: Terms, amount: u128, salt: field) {{
+    validate_asset(terms.credit_asset);
+    validate_asset(terms.collateral_asset);
     // Lender authority is scoped to the loan core, so the core can verify claims from any module.
     assert_eq(terms.lender_auth, authority_hash::[1u8, {core}](salt));
     assert(terms.min_draw > 0u128 && terms.max_draw >= terms.min_draw && amount >= terms.min_draw);
@@ -67,8 +68,6 @@ fn validate_open_terms(terms: Terms, amount: u128, salt: field) {{
 final fn validate_open(terms: Terms, id: field) {{
     assert({hub}::offer_modules.get_or_use('{module}', false));
     assert_eq({config}::settings.get(true).protocol_fee_bps, 0u16);
-    require_enabled(terms.credit_asset);
-    require_enabled(terms.collateral_asset);
     assert(!terms_hash.contains(id));
     assert(std::ctx::block_height() < terms.expiry);
 }}
@@ -86,8 +85,6 @@ final fn register_commitment(id: field, hash: field, terms: Terms, amount: u128,
 final fn validate_draw(core: field, id: field, loan: {core}::LoanTerms) {{
     assert({hub}::approved.get_or_use(core, false) && {hub}::offer_modules.get_or_use('{module}', false));
     let terms = offer_terms.get(id);
-    require_enabled(terms.credit_asset);
-    require_enabled(terms.collateral_asset);
     assert_eq(credit_assets.get(id), loan.credit_asset);
     assert_eq(terms.credit_asset, loan.credit_asset);
     assert_eq(terms.collateral_asset, loan.collateral_asset);
@@ -129,7 +126,7 @@ fn make_loan::[PROTOCOL: address](
     let witness = Loan {{ loan_id: id, offer_module: offer_module, commitment_id: commitment_id,
         credit_asset: loan.credit_asset, collateral_asset: loan.collateral_asset,
         credit_amount: loan.credit_amount, collateral_amount: loan.collateral_amount, repayment_amount: loan.repayment_amount,
-        accruing_apr: loan.accruing_apr, borrower_auth: borrower_auth, lender_auth: loan.lender_auth }};
+        accruing_apr: loan.accruing_apr, borrower_auth: borrower_auth, lender_auth: loan.lender_auth, borrower_offer: false }};
     return (id, witness);
 }}
 fn repayment_witness_hash::[PROTOCOL: address](witness: Loan, amount: u128, borrower_salt: field) -> field {{

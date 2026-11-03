@@ -1,40 +1,46 @@
-# Interfaces and decisions pending PWN agreement
+# Protocol decisions — revision 0.4
 
-Data model, entry points and ABI: [MULTITOKEN.md](MULTITOKEN.md) and the
-compiler snapshots in [interfaces/](interfaces/).
+Agreed for this implementation: both offer directions support multiple fills;
+visibility is independent of direction; there is no administrative asset admission;
+repayment stays possible until a default claim settles.
 
-Implemented and tested is not agreed. Status becomes **agreed** only after
-explicit acceptance by PWN.
+1. **Funding.** A lender deposits credit; a borrower deposits collateral. Each
+   acceptance supplies the other asset and creates a separate loan atomically.
+   Posting is funded; the optional allowance experiment is not the baseline.
+2. **Capacity.** Fill limits are strict, requested principal is a cap, and each
+   loan rounds collateral upward. Both principal and collateral remaining must
+   cover a borrower fill. Rounding can leave an unfillable, refundable remainder.
+   Repayment and recovered collateral do not replenish offers.
+3. **Ownership.** Each borrower-offer fill binds the accepting lender. Repayments
+   accumulate by loan ID for that lender; they never belong to the borrower maker.
+   Existing lender offers retain aggregate withdrawals for their single lender.
+4. **Visibility.** Public lender offers retain the `Terms` schema. Private lender
+   and borrower offers use shared `OfferTerms` / `OfferOpening` / `OfferWitness`.
+   Private offers authorize one designated counterparty, who may fill repeatedly.
+   Public borrower acceptance needs an off-chain opening as well as public terms.
+5. **Timing.** Duration is in blocks, starting at each acceptance. Loans repay
+   while active, including after maturity; claims require maturity. First finalized
+   settlement wins. Interest uses the existing nominal 10 seconds per block.
+6. **Exits.** Offer expiry, cancellation and module revocation do not block
+   settlement of existing loans. Cancellation refunds only unused escrow.
+7. **Assets.** Structural validation replaces admission: supported family/version,
+   exact program identity, and token_id zero. Native means `credits` only; token
+   programs require the implemented transfer/balance ABI. Module approval remains.
+8. **Identifiers.** Borrower-fill IDs bind core, module, offer, borrower/lender
+   authorization and nonce. The loan witness binds the offer direction and all
+   settlement rights. Each opening uses a salt distinct from ownership salts.
+9. **Compatibility.** New schemas and call signatures require fresh local
+   deployments. Compiled ABIs are in `interfaces/`. No existing-position migration
+   or production deployment is performed by this change.
 
-1. **Funding model.** Lender funds public escrow once; acceptance and repayment
-   never need the lender online. Repayments accumulate for private withdrawal
-   and do not reopen draw capacity.
-2. **Disclosure.** Terms, amounts, IDs and commitment→loan relations are public;
-   participant identity privacy depends on private fees, fresh salts and wallet
-   behaviour, not on the contracts.
-3. **Timing.** Duration in blocks. Repayment is allowed while the loan is active,
-   also after maturity, until the lender's claim finalizes; first finalized wins.
-   Interest accrues per block at a nominal 10 s/block.
-4. **Term bounds.** duration 10 … 3,153,600 blocks, APR ≤ 100,000 bps, ratios
-   ≤ 1,000,000 bps, native repayment incl. scheduled interest ≤ u64. Confirm the
-   product values.
-5. **Exits survive administration.** Cancel/expiry/delisting/module pause never
-   block repayment, claim, withdrawal or cancellation of existing positions.
-6. **Asset admission.** Admin registers a token once per family/version;
-   supported profiles are native, ARC-20 with `balances`, and the deployed
-   USDCx/USAD ABI. New profiles = new versioned entry points.
-7. **Governance.** Caller-checked admin, two-step handover, per-edition upgrade
-   timelock. Decide the production delay, a multisig admin and final program
-   names (short names carry a namespace premium).
-8. **Issuer powers (SEC-01, open).** Which burn/freeze/pause powers are tolerated
-   for credit and collateral, whitelist in contracts vs. SDK, and the deficit
-   rule. Must be closed before real deposits.
-9. **IDs.** Derived from the participant's authorization hash and a nonce;
-   nobody can pre-occupy another account's ID.
-10. **Offer modules.** The core reaches modules only through `OfferModule`
-    dynamic calls; the Hub approves modules by program name. Confirm the
-    interface (borrower-supplied `LoanTerms`, checked by the module), core-scoped
-    lender hashes, and who may approve a module.
-11. **Not in scope of the PoC.** Refund of repayment surplus, partial repayment,
-    price liquidation, decimals conversion, salt recovery, fee recipient / launch
-    caps / emergency stop beyond module tag revocation.
+## Production decisions still open
+
+Issuer-induced deficit handling, accepted issuer powers, audit remediation,
+wallet integrations, encrypted backup/recovery, production governance and final
+program names remain production work. Asset admission is not an open choice:
+there is no protocol token whitelist. The PoC's 720-block upgrade delay remains
+a test setting; the grant targets an audited immutable core.
+
+Partial repayment of an individual loan, revolving capacity, repayment-surplus
+refunds, pooled/crowdfunded debt, oracle liquidation, new token profiles and
+confidential active-loan economics are outside this revision.

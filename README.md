@@ -1,70 +1,70 @@
-# PWN private fixed-term loan — Aleo PoC
+# PWN lending — Aleo PoC
 
-Leo 4.4.2. One lender funds an Elastic Proposal once; borrowers draw
-independently; fixed-term repayment or default. Native ALEO, ARC-20 and the
-deployed USDCx/USAD compliance ABI in either role. No frontend, SDK,
-installments, pooling or oracle.
+Leo 4.4.2, protocol revision 0.4. Both lenders and borrowers can create offers
+with multiple fills. Offers can be public or restricted to a privately designated
+counterparty. Every fill creates an independent fixed-term loan.
 
-Programs: `pwn_config_poc`, `pwn_hub_poc`, `pwn_loan_poc` (the loan core) and
-`pwn_proposal_poc` (the Elastic Proposal offer module) — generated, local devnode
-only; the `_poc` suffix is interim — shorter names carry a namespace premium.
-Design: [MULTITOKEN.md](MULTITOKEN.md).
+Native ALEO, ARC-20 and the pinned USDCx/USAD compliance ABI are supported in
+either asset role, without administrative asset admission. There is no frontend
+or production SDK. The existing Python harness exercises the contracts locally.
 
-The core imports no offer module. It calls the module named in each loan through
-the `OfferModule` interface (Leo dynamic dispatch), and the Hub decides which
-modules may originate loans. A new offer type is a new program plus one
-`set_offer_module` transaction; the core stays unchanged.
+Programs: `pwn_config_poc`, `pwn_hub_poc`, `pwn_loan_poc` and
+`pwn_proposal_poc`. Generate them with `make build`; do not edit generated Leo.
+Revision 0.4 changes interfaces/storage and requires fresh deployments. It is not
+a migration of the earlier testnet programs.
 
 ```mermaid
 flowchart TD
-    C[pwn_config_poc: admin, timelocked upgrades] --> H[pwn_hub_poc: module tags + asset registry]
-    H --> P[pwn_proposal_poc: offer module, credit escrow]
-    H --> L[pwn_loan_poc: loan core, collateral escrow]
-    A[Lender private record] -->|open| P
-    B[Borrower private collateral] -->|accept| L
-    L -->|draw via OfferModule@name| P
-    P -->|private credit| B
-    B -->|repay until lender claims| L
-    L -->|collateral back| B
-    L -->|claim at/after maturity| A
-    P -->|cancel unused / withdraw repayments| A
+    H[Hub: authorized modules and core] --> P[Offer module: lender credit and repayments]
+    H --> L[Loan core: unused borrower collateral and active loans]
+    A[Lender posts: credit escrow] --> P
+    B[Borrower posts: collateral escrow] --> L
+    P --> F[Each acceptance creates a separate loan]
+    L --> F
+    F --> R[Repayment: lender proceeds and borrower collateral]
+    F --> D[Claim at or after maturity: that lender receives collateral]
+    P --> C[Cancel unused escrow only]
+    L --> C
 ```
 
-Programs own **public** balances; nested calls debit the immediate caller
-program. Private records always belong to a person.
+The maker deposits credit or collateral at posting. The counterparty supplies
+the other asset at acceptance. Repayments do not reopen capacity. A borrower
+offer can have several lenders, so each loan has separate repayment rights.
+Repayment remains possible after maturity until a lender's claim settles.
+
+Private offers hide the opening before acceptance, not subsequent loan economics.
+Public borrower terms are discoverable on-chain, but acceptance also needs an
+off-chain opening containing the payout recipient. Makers can be offline once
+the prospective acceptor has that payload. See [PRIVACY.md](PRIVACY.md).
 
 ## Run
 
 ```sh
-make setup      # pinned Leo 4.4.2 into .tools/leo
-make build      # regenerate + compile
-make check      # unit, compatibility, fuzz, test, invariants, security
+make setup       # install the declared, pinned Leo 4.4.2 tool
+make build       # generate and compile
+make check       # unit, compatibility, arithmetic, lifecycle, invariants, security, offers
+make allowance   # isolated public-USDCx allowance experiment; not a production loan
 ```
 
-Individual suites and scope: [docs/TESTING.md](docs/TESTING.md). Generated
-`pwn_*/src/main.leo` must not be edited by hand.
+Suites use a local devnode and published development credentials. They share a
+staged workspace and must run sequentially. Reports distinguish generated proofs
+from node verification. See [docs/TESTING.md](docs/TESTING.md).
 
-## Lifecycle
-
-1. Admin: `initialize`, `set_offer_module` per offer module, `set_tag` for the loan core, `set_asset` per token.
-2. Lender: `open_<family>(nonce, terms, record, amount, salt)` → escrow.
-3. Borrower: `accept_<credit>_<collateral>(nonce, offer_module, commitment, loan_terms, collateral, salt)` → collateral locked, private credit delivered atomically. The module checks `loan_terms` against its offer.
-4. Borrower: `repay_<credit>_<collateral>` while the loan is active (also after maturity, until the lender claims) → collateral back.
-5. Lender: `claim_<collateral>` at/after maturity; `withdraw_<family>` repayments; `cancel_<family>` unused credit.
-
-Use a fresh random salt per position and private fees.
+The core dynamically calls approved offer modules and has no static import of a
+particular module. New modules must implement this revision's interface; new
+settlement models may require a new interface/core version.
 
 ## Documents
 
-- [MULTITOKEN.md](MULTITOKEN.md) — design, families, terms, reserve guard, governance, tests
-- [SECURITY-REVIEW.md](SECURITY-REVIEW.md) — what holds, open risks (SEC-01 issuer powers)
-- [INTERFACES.md](INTERFACES.md) — decisions pending PWN agreement
-- [PRIVACY.md](PRIVACY.md) — disclosure matrix, salts, fees
-- [archive/](archive/README.md) — Milestone 1 material from the single-pair predecessor (public-testnet deployment, reports, scripts, artifacts); not maintained
-- [research/](research/SEMANTICS.md), [vendor/README.md](vendor/README.md) — semantics notes, token bytecode provenance
+- [MULTITOKEN.md](MULTITOKEN.md): interfaces, capacity, custody, rounding and timing.
+- [INTERFACES.md](INTERFACES.md): agreed behavior and remaining production decisions.
+- [PRIVACY.md](PRIVACY.md): disclosure and payload requirements.
+- [SECURITY-REVIEW.md](SECURITY-REVIEW.md): invariants and unresolved issuer risks.
+- [Funding at acceptance](research/funding-at-acceptance.md): tested allowance route and its limits.
+- [Revision validation](docs/REVISION-0.4-VALIDATION.md): delivered changes, checks and deployment boundary.
+- [Grant proposal](https://docs.google.com/document/d/1U5hCfMvDNpywJMmi3pvsk516FKDVI3JKPX0qUmsEmls/edit), [submission PDF](docs/grant-submission.pdf), [market evidence](research/grant-market-evidence.md).
+- [archive/](archive/README.md): historical single-pair public-testnet evidence.
+- [research/](research/SEMANTICS.md), [vendor/README.md](vendor/README.md): source provenance.
 
-`custody_probe`, `usdcx_composition_probe`, `artifacts/token-dispatch-probe`: compile-only experiments, never funded.
-
-## License
-
-GPL-3.0-only, see [LICENSE](LICENSE).
+The production SDK, encrypted delivery/recovery, wallet integration, external
+audit and immutable mainnet deployment remain grant work. GPL-3.0-only.

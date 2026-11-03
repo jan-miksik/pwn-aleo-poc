@@ -1,9 +1,19 @@
-# Real token bytecode snapshots
+# Token snapshot provenance
 
-See `../research/SEMANTICS.md` and `../research/SHA256SUMS.json` for origin.
+Revision 0.4 uses `credits.network.aleo` for native interface compilation and
+the pinned ARC-20 and USDCx/USAD programs in
+[research/multitoken](../research/multitoken/README.md). The devnode supplies native
+credits. Other token fixtures retain their operational transfer and compliance
+instructions; `scripts/multitoken_workspace.py` changes only local bootstrap
+authorities or adds a constructor, with a per-line provenance report. Tokens
+minted in the disposable local ledger have no economic value.
 
-The lending project statically imports `credits.network.aleo` and `token_registry.local.aleo`. The local registry differs from `token_registry.network.aleo` only by the appended constructor required for new local deployments. All transfer, mint, supply, balance and external-authorization logic is retained unchanged.
+The registry snapshots in this directory belong to the historical single-pair
+implementation. `token_registry.local.aleo` differs from its network snapshot
+only by an appended non-upgradeable constructor. Their original provenance is
+in [SEMANTICS.md](../research/SEMANTICS.md) and
+[SHA256SUMS.json](../research/SHA256SUMS.json). The current core does not use that
+registry for asset admission.
 
-This is **not** a custom mint/transfer mock. Test collateral is minted using the actual registry's administrator-controlled mint, as a new test token with no economic value. The test token has `external_authorization_required = false`; regulated registry assets are unsupported.
-
-Do not deploy the local registry variant to a public network. Use the existing network registry for testnet work and resolve editions/record compatibility separately.
+Do not deploy local bootstrap variants to a public network. Live integration
+must resolve the issuer's current program edition, record ABI and authorization.
